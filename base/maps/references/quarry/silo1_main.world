@@ -1,0 +1,448 @@
+sdWorldFile version 5 {
+
+	meta {
+		sdLODGroup "silo1_main" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		2
+				"uniqueinstance"		1
+			}
+			levels {
+				"silo1_main (Level 01)"
+				"silo1_main (Level 02)"
+			}
+		}
+		sdLODGroup_Level "silo1_main (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		15360
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		1
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+			}
+		}
+		sdLODGroup_Level "silo1_main (Level 02)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		5000
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		1
+				"drawspec"		""
+				"shadowspec"		"medium"
+				"noshadows"		0
+			}
+		}
+		sdGroupVisual "clip" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdGroupVisual "aassolidplayer" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"silo1_main (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -944 8 992 )
+					}
+					
+					faces {
+						plane ( 0.2425355613 0 -0.9701425433 -256.1214294434 ) matrix ( ( -0.0001363475 -0.0078113205 0.375 ) ( 0.0009764151 -0.0000170434 0.0961914063 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 1 0 0 -816 ) matrix ( ( 0 0.0078125 -0.5 ) ( -0.0009765625 0 0.2265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 0 -1 0 -56 ) matrix ( ( 0.0075804382 -0.0018900151 0 ) ( 0.0002362519 0.0009475548 0.0532226563 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 0 1 0 -40 ) matrix ( ( 0.0075804461 0.0018900173 0.375 ) ( -0.0002362522 0.0009475558 0.0532226563 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( -0.2307692468 -0.3076921403 0.9230769873 156.2977600098 ) matrix ( ( 0.0060714586 -0.0049165692 -0.1875 ) ( 0.0006145712 0.0007589323 -0.6303710938 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( -0.2307692021 0.3076924086 0.9230768681 161.2355957031 ) matrix ( ( 0.0060714642 0.0049165753 0.1875 ) ( -0.0006145719 0.000758933 -0.6303710938 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( -1 0 0 -816 ) matrix ( ( 0 0.0078125 0 ) ( -0.0009765625 0 0.2265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/quarry/quarry_works2"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( 40 24 776 )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -584 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9966846704 0.0813620165 0 -703.700012207 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9166959524 0.3995854259 0 -703.0822753906 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.8169679046 0.5766832232 0 -698.9400634766 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5766832232 0.8169679046 0 -683.5618286133 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3995854259 0.9166959524 0 -669.9872436523 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.0813620165 0.9966846704 0 -645.1193847656 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 376 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( 24 -40 776 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -584 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9966846704 0.0813620165 0 -703.700012207 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9166959524 0.3995854259 0 -703.0822753906 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.8169679046 0.5766832232 0 -698.9400634766 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5766832232 0.8169679046 0 -683.5618286133 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3995854259 0.9166959524 0 -669.9872436523 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.0813620165 0.9966846704 0 -645.1193847656 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 376 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( -40.0000305176 -24.0000610352 776 )
+						rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -584 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9966846704 0.0813620165 0 -703.700012207 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9166959524 0.3995854259 0 -703.0822753906 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.8169679046 0.5766832232 0 -698.9400634766 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5766832232 0.8169679046 0 -683.5618286133 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3995854259 0.9166959524 0 -669.9872436523 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.0813620165 0.9966846704 0 -645.1193847656 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 376 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( -24.0000495911 39.9999389648 776 )
+						rotation ( ( -0.0000001788 0.9999998212 0 ) ( -0.9999998212 -0.0000001788 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -584 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9966846704 0.0813620165 0 -703.700012207 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9166959524 0.3995854259 0 -703.0822753906 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.8169679046 0.5766832232 0 -698.9400634766 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5766832232 0.8169679046 0 -683.5618286133 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3995854259 0.9166959524 0 -669.9872436523 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.0813620165 0.9966846704 0 -645.1193847656 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 376 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( 40 24 776 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -120 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -0 -1 -376 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.6863572001 0.0560291596 0.7251031399 -211.9574584961 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.6286387444 0.2740220129 0.7278222442 -208.4885864258 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5692694783 0.4018372893 0.7172579765 -217.3377685547 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.0560291596 0.6863572001 0.7251031399 -171.6164550781 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.2742424905 0.6291445494 0.7273020148 -186.3584594727 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.4023046196 0.5699315071 0.7164698839 -207.4724121094 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( -332 0 980 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -156 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -156 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -476 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -144 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -144 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 188 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( 24 -40 776 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -120 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -0 -1 -376 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.6863572001 0.0560291596 0.7251031399 -211.9574584961 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.6286387444 0.2740220129 0.7278222442 -208.4885864258 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5692694783 0.4018372893 0.7172579765 -217.3377685547 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.0560291596 0.6863572001 0.7251031399 -171.6164550781 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.2742424905 0.6291445494 0.7273020148 -186.3584594727 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.4023046196 0.5699315071 0.7164698839 -207.4724121094 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( -40.0000152588 -24.0000610352 776 )
+						rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -120 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -0 -1 -376 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.6863572001 0.0560291596 0.7251031399 -211.9574584961 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.6286387444 0.2740220129 0.7278222442 -208.4885864258 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5692694783 0.4018372893 0.7172579765 -217.3377685547 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.0560291596 0.6863572001 0.7251031399 -171.6164550781 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.2742424905 0.6291445494 0.7273020148 -186.3584594727 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.4023046196 0.5699315071 0.7164698839 -207.4724121094 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( -24.0000514984 39.9999389648 776 )
+						rotation ( ( -0.0000001788 0.9999998212 0 ) ( -0.9999998212 -0.0000001788 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -120 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -0 -1 -376 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.6863572001 0.0560291596 0.7251031399 -211.9574584961 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.6286387444 0.2740220129 0.7278222442 -208.4885864258 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5692694783 0.4018372893 0.7172579765 -217.3377685547 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.0560291596 0.6863572001 0.7251031399 -171.6164550781 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.2742424905 0.6291445494 0.7273020148 -186.3584594727 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.4023046196 0.5699315071 0.7164698839 -207.4724121094 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"silo1_main (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -192 40 928 )
+					}
+					
+					faces {
+						plane ( -0.242535606 0 0.9701424837 11.6407613754 ) matrix ( ( 0 0.0078125 -0.0075792377 ) ( -0.0009765625 0 -1.77734375 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 0.2425356209 0 -0.9701424837 -19.4028491974 ) matrix ( ( 0 0.0078125 -0.0075792386 ) ( -0.0009765625 0 0.29296875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( -1 0 0 -1568 ) matrix ( ( 0.0078125 0 0.96875 ) ( 0 0.0625 -6.25 ) ) texBounds ( ( 0 0 ) ( 512 64 ) ) "textures/metal/metal_railing1"
+						plane ( 1 0 0 -64 ) matrix ( ( 0.0078125 0 -0.96875 ) ( 0 0.0625 -6.25 ) ) texBounds ( ( 0 0 ) ( 512 64 ) ) "textures/metal/metal_railing1"
+						plane ( 0 -1 0 -12 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0625 -6.25 ) ) texBounds ( ( 0 0 ) ( 512 64 ) ) "textures/metal/metal_railing1"
+						plane ( 0 1 0 -4 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0625 -6.25 ) ) texBounds ( ( 0 0 ) ( 512 64 ) ) "textures/metal/metal_railing1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"silo1_main (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -192 -32 928 )
+					}
+					
+					faces {
+						plane ( -0.242535606 0 0.9701424837 11.6407613754 ) matrix ( ( 0 0.0078125 -0.0075792377 ) ( -0.0009765625 0 -1.70703125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 0.2425356209 0 -0.9701424837 -19.4028491974 ) matrix ( ( 0 0.0078125 -0.0075792386 ) ( -0.0009765625 0 0.22265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( -1 0 0 -1568 ) matrix ( ( 0.0078125 0 0.40625 ) ( 0 0.0625 -6.25 ) ) texBounds ( ( 0 0 ) ( 512 64 ) ) "textures/metal/metal_railing1"
+						plane ( 1 0 0 -64 ) matrix ( ( 0.0078125 0 -0.40625 ) ( 0 0.0625 -6.25 ) ) texBounds ( ( 0 0 ) ( 512 64 ) ) "textures/metal/metal_railing1"
+						plane ( 0 -1 0 -12 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0625 -6.25 ) ) texBounds ( ( 0 0 ) ( 512 64 ) ) "textures/metal/metal_railing1"
+						plane ( 0 1 0 -4 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0625 -6.25 ) ) texBounds ( ( 0 0 ) ( 512 64 ) ) "textures/metal/metal_railing1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( 40 24 776 )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -584 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.9966846704 0.0813620165 0 -703.700012207 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.9166959524 0.3995854259 0 -703.0822753906 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.8169679046 0.5766832232 0 -698.9400634766 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.5766832232 0.8169679046 0 -683.5618286133 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.3995854259 0.9166959524 0 -669.9872436523 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.0813620165 0.9966846704 0 -645.1193847656 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 1 376 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( 24 -40 776 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -584 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.9966846704 0.0813620165 0 -703.700012207 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.9166959524 0.3995854259 0 -703.0822753906 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.8169679046 0.5766832232 0 -698.9400634766 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.5766832232 0.8169679046 0 -683.5618286133 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.3995854259 0.9166959524 0 -669.9872436523 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.0813620165 0.9966846704 0 -645.1193847656 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 1 376 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( -40.0000305176 -24.0000610352 776 )
+						rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -584 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.9966846704 0.0813620165 0 -703.700012207 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.9166959524 0.3995854259 0 -703.0822753906 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.8169679046 0.5766832232 0 -698.9400634766 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.5766832232 0.8169679046 0 -683.5618286133 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.3995854259 0.9166959524 0 -669.9872436523 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.0813620165 0.9966846704 0 -645.1193847656 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 1 376 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( -24.0000495911 39.9999389648 776 )
+						rotation ( ( -0.0000001788 0.9999998212 0 ) ( -0.9999998212 -0.0000001788 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -584 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.9966846704 0.0813620165 0 -703.700012207 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.9166959524 0.3995854259 0 -703.0822753906 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.8169679046 0.5766832232 0 -698.9400634766 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.5766832232 0.8169679046 0 -683.5618286133 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.3995854259 0.9166959524 0 -669.9872436523 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.0813620165 0.9966846704 0 -645.1193847656 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 1 376 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "phook_model_static_1" 
+		groups {
+			"silo1_main (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/quarry/silo/silo.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 0 0 192 )
+			}
+			
+			classname "model_static"
+		}
+	}
+}

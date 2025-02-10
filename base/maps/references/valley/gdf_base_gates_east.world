@@ -1,0 +1,165 @@
+sdWorldFile version 5 {
+
+	meta {
+		sdLODGroup "gdf_base_gates_east" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"gdf_base_gates_east (Level 01)"
+			}
+		}
+		sdLODGroup_Level "gdf_base_gates_east (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		8192
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		"medium"
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -4 368 84 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -84 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -60 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -144 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -136 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9938837886 0 0.110431537 -52.1228179932 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.9946917295 0 0.1028991118 -62.9753494263 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -4 -368 84 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -148 ) matrix ( ( 0.03125 0 23 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -84 ) matrix ( ( 0.03125 0 23 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -60 ) matrix ( ( 0.03125 0 -23 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -136 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -144 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9938837886 0 0.110431537 -52.1228179932 ) matrix ( ( 0.03125 0 -23 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.9946917295 0 0.1028991118 -62.9753494263 ) matrix ( ( 0.03125 0 23 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "z13_model_static_1" 
+		groups {
+			"gdf_base_gates_east (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/gate_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -0.2138671875 368.5244140625 0 )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_3" 
+		groups {
+			"gdf_base_gates_east (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/gate_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -0.2138671875 -368.4755859375 0 )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "valley_east_gatedoor_1" {
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/door_lowpoly.lwo"
+				"group"	"gdf_base_gates_east"
+				"move_delta"	"0 224 0"
+				"speed"	"384"
+				"time"	"0.5"
+				"triggersize"	"512"
+				"networkSync"	"1"
+				"object_name"	"maps/valley/gdf_east_base_gates"
+				"health"	"0"
+			}
+			classname "func_door_gdf_breakable"
+		}
+		sdPrimitiveEntity "z13_func_door_gdf_breakable_4" {
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/door_lowpoly.lwo"
+				"group"	"gdf_base_gates_east"
+				"move_delta"	"0 224 0"
+				"speed"	"384"
+				"time"	"0.5"
+				"triggersize"	"512"
+				"networkSync"	"1"
+				"health"	"0"
+			}
+			sdTransform {
+				translation ( -0.0000047684 -0.0000305176 0 )
+				rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "func_door_gdf_slave"
+		}
+		sdPrimitiveEntity "zombie_func_aasobstacle_1" {
+			sdDictionary {
+				"start_on"	"1"
+				"team"	"1"
+			}
+			sdTransform {
+				translation ( 0 -2144.5 82.5 )
+			}
+			
+			classname "func_aasobstacle"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -0.5000152588 2410 1.5 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -88 ) matrix ( ( 0 0.0312500037 -67 ) ( -0.0312500037 0 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0 0 -1 -91 ) matrix ( ( 0 -0.0312500037 -67 ) ( 0.0312500037 0 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -1 0 0 -15.5 ) matrix ( ( 0.0312500037 0 67 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 1 0 0 -546.5 ) matrix ( ( 0.0312500037 0 -67 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 -1 0 -9.5 ) matrix ( ( 0.0312500037 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 1 0 -9.5 ) matrix ( ( 0.0312500037 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+					}
+				}
+			}
+		}
+	}
+}

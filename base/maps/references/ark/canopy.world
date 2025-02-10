@@ -1,0 +1,1316 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"editor_last_atmosphere"	"atmosphere://ark"
+	}
+
+	meta {
+		sdLODGroup "canopy" {
+			state 0
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		2
+				"uniqueinstance"		1
+			}
+			levels {
+				"canopy (Level 01)"
+				"canopy (Level 02)"
+			}
+		}
+		sdLODGroup_Level "canopy (Level 01)" {
+			state 0
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		10240
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+			}
+		}
+		sdLODGroup_Level "canopy (Level 02)" {
+			state 0
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		8192
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_68" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 131 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -101 ) matrix ( ( 0.03125 0 -121 ) ( 0 0.03125 80.953125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0 0.0078124986 -0.484375 ) ( -0.0019531247 0 0.453125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0 0.0078124986 -0.484375 ) ( -0.0019531247 0 0.390625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0 0.0078124986 -0.484375 ) ( -0.0019531247 0 0.390625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0 0.0078124986 -0.484375 ) ( -0.0019531247 0 0.453125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_72" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 6 258 )
+					}
+					
+					faces {
+						plane ( -0.0000000019 0.1032907143 0.9946511984 -1.3687490225 ) matrix ( ( 0 0.0038285151 0.1015625 ) ( -0.0009765623 0 0.75 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture"
+						plane ( 0 -0.1032907069 -0.9946511984 -2.6084191799 ) matrix ( ( 0 0.0038285151 0.1015625 ) ( -0.0009765623 0 0.75 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture"
+						plane ( -1 0 0 -256 ) matrix ( ( 0.0036980605 -0.0009908924 -0.1015625 ) ( 0.0002527528 0.0009432863 0.787109375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture"
+						plane ( 1 0 0 -256 ) matrix ( ( 0 -0.0038285144 -0.1015625 ) ( 0.000976562 0 0.75 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture"
+						plane ( 0 -1 0 -6 ) matrix ( ( 0 -0.03125 -109.4999923706 ) ( 0.03125 0 81 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -254 ) matrix ( ( 0 -0.0038285144 -0.1015625 ) ( 0.000976562 0 0.75 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_75" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 -250 258 )
+					}
+					
+					faces {
+						plane ( 0 -0.103290759 0.9946511984 23.8343582153 ) matrix ( ( 0 -0.0038285144 -0.1015625 ) ( 0.000976562 0 0.75 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture"
+						plane ( 0 0.1032906994 -0.9946511984 -27.8112182617 ) matrix ( ( 0 0.0038285151 0.1015625 ) ( -0.0009765623 0 0.75 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture"
+						plane ( -1 0 0 -256 ) matrix ( ( -0.0038285139 0 -0.03515625 ) ( 0 -0.0009765619 0.74609375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture"
+						plane ( 1 0 0 -256 ) matrix ( ( 0 -0.0038285144 -0.1015625 ) ( 0.000976562 0 0.75 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture"
+						plane ( 0 1 0 -250 ) matrix ( ( 0 -0.03125 -109.4999923706 ) ( -0.03125 0 81 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -10 ) matrix ( ( 0 -0.0038285144 -0.1015625 ) ( 0.000976562 0 0.75 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_99" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -0.0000915527 480 131 )
+						rotation ( ( -0.0000001026 0.9999998212 0 ) ( -0.9999998212 -0.0000001026 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -131 ) matrix ( ( 0 0.03125 0 ) ( -0.03125 0 15 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 115 ) matrix ( ( 0.015625 0 0 ) ( 0 0.00390625 0.5 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 -1 0 224 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 224 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -256 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -256 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_111" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 480 0 131 )
+					}
+					
+					faces {
+						plane ( 0 -0.1021414176 -0.9947698712 104.2323074341 ) matrix ( ( 0 -0.0078124986 0 ) ( 0.0019531247 0 0.4892578125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -0.0000009487 0.1021415144 0.9947698712 -108.2457046509 ) matrix ( ( 0 -0.0078124986 0 ) ( 0.0019531247 0 1.4267578125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 236 ) matrix ( ( 0.0077697001 0.0008166284 0 ) ( -0.0002041571 0.001942425 1.4150390625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -244 ) matrix ( ( -0.0077697001 0.0008166284 0.0195990819 ) ( 0.0002041571 0.001942425 1.4147822857 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -232 ) matrix ( ( 0.03125 0 -66 ) ( 0 0.03125 1.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 8 ) matrix ( ( 0.03125 0 66 ) ( 0 0.03125 1.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_115" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 480 0 147 )
+					}
+					
+					faces {
+						plane ( 0 -0.1021414176 -0.9947698712 104.2323074341 ) matrix ( ( 0 -0.0078124986 0 ) ( 0.0019531247 0 0.4892578125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -0.0000009487 0.1021415144 0.9947698712 -108.2457046509 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 236 ) matrix ( ( 0.0077697001 0.0008166284 0 ) ( -0.0002041571 0.001942425 1.4462890625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -244 ) matrix ( ( -0.0077697001 0.0008166284 0.0326651372 ) ( 0.0002041571 0.001942425 1.4458611012 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -232 ) matrix ( ( 0.03125 0 -66 ) ( 0 0.03125 1.625 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 8 ) matrix ( ( 0.03125 0 66 ) ( 0 0.03125 1.625 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_122" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 -240 155 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -101 ) matrix ( ( 0.03125 0 -113.5 ) ( 0 0.03125 80.953125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0 0.0078124986 -0.484375 ) ( -0.0019531247 0 0.453125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.921875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 1.3906251192 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.921875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( 0.03125 0 7.5 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_123" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 -240 151 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -57 ) matrix ( ( 0.03125 0 -73.5 ) ( 0 0.03125 -119.8178253174 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( 0.0078125 0 -1.625 ) ( 0 0.001953125 0.2421875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_135" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -0.0000228882 -0.0000305176 147 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 81 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 0.421875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 1 -85 ) matrix ( ( 0.03125 0 -7.5000123978 ) ( 0 0.0312500075 -0.0000692904 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -232 ) matrix ( ( 0.0312500075 0 -0.0000017881 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 236 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3984375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 8 ) matrix ( ( 0.0312500075 0 0.0000017881 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -244 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3984375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_149" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -240 -0.0000610352 147 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 81 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 0.421875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 1 -85 ) matrix ( ( 0.03125 0 -7.5000123978 ) ( 0 0.0312500075 -0.0000692904 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -232 ) matrix ( ( 0.0312500075 0 -0.0000017881 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 236 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3984375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 8 ) matrix ( ( 0.0312500075 0 0.0000017881 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -244 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3984375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_99" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 239.9999084473 480 131 )
+						rotation ( ( -0.0000001026 0.9999998212 0 ) ( -0.9999998212 -0.0000001026 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -131 ) matrix ( ( 0 0.03125 7.5 ) ( -0.03125 0 15 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 115 ) matrix ( ( 0.015625 0 0 ) ( 0 0.00390625 -0.4375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 -1 0 224 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 224 ) matrix ( ( 0.0078125 0 1.875 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -256 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -256 ) matrix ( ( 0.0078125 0 -1.875 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_99" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 479.9999084473 480 131 )
+						rotation ( ( -0.0000001026 0.9999998212 0 ) ( -0.9999998212 -0.0000001026 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -131 ) matrix ( ( 0 0.03125 15 ) ( -0.03125 0 15 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 115 ) matrix ( ( 0.015625 0 0 ) ( 0 0.00390625 -1.375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 -1 0 224 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 224 ) matrix ( ( 0.0078125 0 3.75 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -256 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -256 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_99" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -0.0000915527 240 131 )
+						rotation ( ( -0.0000001026 0.9999998212 0 ) ( -0.9999998212 -0.0000001026 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -131 ) matrix ( ( 0 0.03125 0 ) ( -0.03125 0 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 115 ) matrix ( ( 0.015625 0 3.75 ) ( 0 0.00390625 0.5 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 -1 0 224 ) matrix ( ( 0.0078125 0 1.875 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 224 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -256 ) matrix ( ( 0.0078125 0 -1.875 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -256 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_99" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 239.9999084473 240 131 )
+						rotation ( ( -0.0000001026 0.9999998212 0 ) ( -0.9999998212 -0.0000001026 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -131 ) matrix ( ( 0 0.03125 7.5 ) ( -0.03125 0 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 115 ) matrix ( ( 0.015625 0 3.75 ) ( 0 0.00390625 -0.4375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 -1 0 224 ) matrix ( ( 0.0078125 0 1.875 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 224 ) matrix ( ( 0.0078125 0 1.875 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -256 ) matrix ( ( 0.0078125 0 -1.875 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -256 ) matrix ( ( 0.0078125 0 -1.875 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_99" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 479.9999084473 240 131 )
+						rotation ( ( -0.0000001026 0.9999998212 0 ) ( -0.9999998212 -0.0000001026 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -131 ) matrix ( ( 0 0.03125 15 ) ( -0.03125 0 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 115 ) matrix ( ( 0.015625 0 3.75 ) ( 0 0.00390625 -1.375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 -1 0 224 ) matrix ( ( 0.0078125 0 1.875 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 224 ) matrix ( ( 0.0078125 0 3.75 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -256 ) matrix ( ( 0.0078125 0 -1.875 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -256 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_99" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -0.0000915527 0 131 )
+						rotation ( ( -0.0000001026 0.9999998212 0 ) ( -0.9999998212 -0.0000001026 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -131 ) matrix ( ( 0 0.03125 0 ) ( -0.03125 0 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 115 ) matrix ( ( 0.015625 0 7.5 ) ( 0 0.00390625 0.5 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 -1 0 224 ) matrix ( ( 0.0078125 0 3.75 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 224 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -256 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -256 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_99" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 239.9999084473 0 131 )
+						rotation ( ( -0.0000001026 0.9999998212 0 ) ( -0.9999998212 -0.0000001026 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -131 ) matrix ( ( 0 0.03125 7.5 ) ( -0.03125 0 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 115 ) matrix ( ( 0.015625 0 7.5 ) ( 0 0.00390625 -0.4375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 -1 0 224 ) matrix ( ( 0.0078125 0 3.75 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 224 ) matrix ( ( 0.0078125 0 1.875 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -256 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -256 ) matrix ( ( 0.0078125 0 -1.875 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_99" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 479.9999084473 0 131 )
+						rotation ( ( -0.0000001026 0.9999998212 0 ) ( -0.9999998212 -0.0000001026 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -131 ) matrix ( ( 0 0.03125 15 ) ( -0.03125 0 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 115 ) matrix ( ( 0.015625 0 7.5 ) ( 0 0.00390625 -1.375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 -1 0 224 ) matrix ( ( 0.0078125 0 3.75 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 224 ) matrix ( ( 0.0078125 0 3.75 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -256 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -256 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_68" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 240 0 131 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -101 ) matrix ( ( 0.03125 0 -121 ) ( 0 0.03125 73.453125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0 0.0078124986 -0.484375 ) ( -0.0019531248 0 0.921875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0 0.0078124986 -0.484375 ) ( -0.0019531248 0 0.390625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0 0.0078124986 -0.484375 ) ( -0.0019531248 0 -0.0781249925 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0 0.0078124986 -0.484375 ) ( -0.0019531248 0 0.453125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_68" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 480 0 131 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -101 ) matrix ( ( 0.03125 0 -121 ) ( 0 0.03125 65.953125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0 0.0078124986 -0.484375 ) ( -0.0019531248 0 1.390625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0 0.0078124986 -0.484375 ) ( -0.0019531248 0 0.390625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0 0.0078124986 -0.484375 ) ( -0.0019531248 0 -0.5468749404 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0 0.0078124986 -0.484375 ) ( -0.0019531248 0 0.453125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 15 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_68" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -0.0000228882 -0.0000305176 131 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -101 ) matrix ( ( -0.0312500037 0 -121 ) ( 0 -0.0312500075 80.953125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.4531250596 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.3906250298 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.3906250298 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.4531251192 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( -0.03125 0 0 ) ( 0 -0.0312500037 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_68" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -240 -0.0000610352 131 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -101 ) matrix ( ( -0.0312500037 0 -121 ) ( 0 -0.0312500037 73.453125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.9218751192 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.3906250298 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 -0.0781250149 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.4531251192 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( -0.03125 0 0 ) ( 0 -0.03125 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_68" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -479.9999389648 -0.0000610352 131 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -101 ) matrix ( ( -0.0312500037 0 -121 ) ( 0 -0.03125 65.953125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 1.3906251192 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.3906250298 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 -0.546875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.4531251192 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( -0.03125 0 0 ) ( 0 -0.03125 15 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_122" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 240 -240 155 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -101 ) matrix ( ( 0.03125 0 -113.5 ) ( 0 0.03125 73.453125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0 0.0078124986 -0.484375 ) ( -0.0019531248 0 0.921875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.921875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.9218751192 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.921875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( 0.03125 0 7.5 ) ( 0 0.03125 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_122" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 480 -240 155 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -101 ) matrix ( ( 0.03125 0 -113.5 ) ( 0 0.03125 65.953125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0 0.0078124986 -0.484375 ) ( -0.0019531248 0 1.390625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.921875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.4531251192 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0 0.0078124995 -0.4843750596 ) ( -0.0019531252 0 0.921875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( 0.03125 0 7.5 ) ( 0 0.03125 15 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_123" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 240 -240 151 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -57 ) matrix ( ( 0.03125 0 -73.5 ) ( 0 0.03125 -127.3178253174 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0.0078125 0 -1.875 ) ( 0 0.001953125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0.0078125 0 1.875 ) ( 0 0.001953125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( 0.0078125 0 -1.625 ) ( 0 0.001953125 0.7109375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_123" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 480 -240 151 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -57 ) matrix ( ( 0.03125 0 -73.5 ) ( 0 0.03125 -134.8178253174 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0.0078125 0 3.75 ) ( 0 0.001953125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( 0.0078125 0 -1.625 ) ( 0 0.001953125 1.1796875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_123" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 -480 127 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -57 ) matrix ( ( 0.03125 0 -66 ) ( 0 0.03125 -119.8178253174 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0.0078125 0 1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0.0078125 0 -1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( 0.0078125 0 0.25 ) ( 0 0.001953125 0.2421875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_123" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 240 -480 127 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -57 ) matrix ( ( 0.03125 0 -66 ) ( 0 0.03125 -127.3178253174 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0.0078125 0 -1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0.0078125 0 1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0.0078125 0 1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0.0078125 0 -1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( 0.0078125 0 0.25 ) ( 0 0.001953125 0.7109375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_123" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 480 -480 127 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -57 ) matrix ( ( 0.03125 0 -66 ) ( 0 0.03125 -134.8178253174 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0.0078125 0 1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0.0078125 0 3.75 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0.0078125 0 -1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( 0.0078125 0 0.25 ) ( 0 0.001953125 1.1796875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_123" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 127 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -57 ) matrix ( ( 0.03125 0 -81 ) ( 0 0.03125 -119.8178253174 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0.0078125 0 -1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0.0078125 0 1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( 0.0078125 0 -3.5 ) ( 0 0.001953125 0.2421875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_123" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 240 0 127 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -57 ) matrix ( ( 0.03125 0 -81 ) ( 0 0.03125 -127.3178253174 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0.0078125 0 -1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0.0078125 0 -1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0.0078125 0 1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0.0078125 0 1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( 0.0078125 0 -3.5 ) ( 0 0.001953125 0.7109375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_123" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 480 0 127 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -57 ) matrix ( ( 0.03125 0 -81 ) ( 0 0.03125 -134.8178253174 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 232 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 232 ) matrix ( ( 0.0078125 0 -1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -248 ) matrix ( ( 0.0078125 0 3.75 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0.0078125 0 1.875 ) ( 0 0.001953125 0.296875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 -1 53 ) matrix ( ( 0.0078125 0 -3.5 ) ( 0 0.001953125 1.1796875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_111" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 240 0 131 )
+					}
+					
+					faces {
+						plane ( 0 -0.1021414176 -0.9947698712 104.2323074341 ) matrix ( ( 0 -0.0078124986 0 ) ( 0.0019531248 0 0.9580078125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -0.0000009487 0.1021415144 0.9947698712 -108.2457046509 ) matrix ( ( 0 -0.0078124986 0.0000150876 ) ( 0.0019531248 0 0.9580078125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 236 ) matrix ( ( 0.0077697001 0.0008166284 0 ) ( -0.0002041571 0.001942425 1.4150390625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -244 ) matrix ( ( -0.0077697001 0.0008166284 0.0195990801 ) ( 0.0002041571 0.001942425 1.4147822857 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -232 ) matrix ( ( 0.03125 0 -73.5 ) ( 0 0.03125 1.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 8 ) matrix ( ( 0.03125 0 73.5 ) ( 0 0.03125 1.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_115" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 240 0 147 )
+					}
+					
+					faces {
+						plane ( 0 -0.1021414176 -0.9947698712 104.2323074341 ) matrix ( ( 0 -0.0078124986 0 ) ( 0.0019531248 0 0.9580078125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -0.0000009487 0.1021415144 0.9947698712 -108.2457046509 ) matrix ( ( 0.03125 0 -7.4999995232 ) ( 0 0.03125 -0.0000695294 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 236 ) matrix ( ( 0.0077697001 0.0008166284 0 ) ( -0.0002041571 0.001942425 1.4462890625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -244 ) matrix ( ( -0.0077697001 0.0008166284 0.0326651335 ) ( 0.0002041571 0.001942425 1.4458611012 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -232 ) matrix ( ( 0.03125 0 -73.5 ) ( 0 0.03125 1.625 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 8 ) matrix ( ( 0.03125 0 73.5 ) ( 0 0.03125 1.625 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_111" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 131 )
+					}
+					
+					faces {
+						plane ( 0 -0.1021414176 -0.9947698712 104.2323074341 ) matrix ( ( 0 -0.0078124986 0 ) ( 0.0019531248 0 1.4267578125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -0.0000009487 0.1021415144 0.9947698712 -108.2457046509 ) matrix ( ( 0 -0.0078124986 0.0000342467 ) ( 0.0019531248 0 0.4892578125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 236 ) matrix ( ( 0.0077697001 0.0008166284 0 ) ( -0.0002041571 0.001942425 1.4150390625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -244 ) matrix ( ( -0.0077697001 0.0008166284 0.0195990801 ) ( 0.0002041571 0.001942425 1.4147822857 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -232 ) matrix ( ( 0.03125 0 -81 ) ( 0 0.03125 1.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 8 ) matrix ( ( 0.03125 0 81 ) ( 0 0.03125 1.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_115" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 147 )
+					}
+					
+					faces {
+						plane ( 0 -0.1021414176 -0.9947698712 104.2323074341 ) matrix ( ( 0 -0.0078124986 0 ) ( 0.0019531248 0 1.4267578125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -0.0000009487 0.1021415144 0.9947698712 -108.2457046509 ) matrix ( ( 0.03125 0 -15.0000019073 ) ( 0 0.03125 -0.0001393414 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 236 ) matrix ( ( 0.0077697001 0.0008166284 0 ) ( -0.0002041571 0.001942425 1.4462890625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -244 ) matrix ( ( -0.0077697001 0.0008166284 0.0326651335 ) ( 0.0002041571 0.001942425 1.4458611012 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -232 ) matrix ( ( 0.03125 0 -81 ) ( 0 0.03125 1.625 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 8 ) matrix ( ( 0.03125 0 81 ) ( 0 0.03125 1.625 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_111" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0.0000305176 -0.0000305176 131 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 -0.1021414176 -0.9947698712 104.2323074341 ) matrix ( ( 0 -0.0078125009 0 ) ( 0.0019531252 0 1.4267579317 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -0.0000009487 0.1021415144 0.9947698712 -108.2457046509 ) matrix ( ( 0 -0.0078124995 0.0000351518 ) ( 0.001953125 0 0.4892570674 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 236 ) matrix ( ( 0.007769702 0.0008166285 0 ) ( -0.0002041572 0.0019424253 1.4150401354 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -244 ) matrix ( ( -0.007769702 0.0008166285 0.0195986629 ) ( 0.0002041572 0.0019424253 1.4147833586 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -232 ) matrix ( ( 0.0312500075 0 -81.0000152588 ) ( 0 0.0312500075 1.1250002384 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 8 ) matrix ( ( 0.0312500075 0 81.0000152588 ) ( 0 0.03125 1.1250002384 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_115" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0.0000305176 -0.0000305176 147 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 -0.1021414176 -0.9947698712 104.2323074341 ) matrix ( ( 0 -0.0078125009 0 ) ( 0.0019531252 0 1.4267579317 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -0.0000009487 0.1021415144 0.9947698712 -108.2457046509 ) matrix ( ( 0.03125 0 -15.0000123978 ) ( 0 0.0312500075 -0.0001390278 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 236 ) matrix ( ( 0.007769702 0.0008166285 0 ) ( -0.0002041572 0.0019424253 1.4462901354 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -244 ) matrix ( ( -0.007769702 0.0008166285 0.0326647162 ) ( 0.0002041572 0.0019424253 1.445862174 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -232 ) matrix ( ( 0.0312500075 0 -81.0000152588 ) ( 0 0.0312500075 1.6250002384 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 8 ) matrix ( ( 0.0312500075 0 81.0000152588 ) ( 0 0.03125 1.6250002384 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_111" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -239.9999694824 -0.0000305176 131 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 -0.1021414176 -0.9947698712 104.2323074341 ) matrix ( ( 0 -0.0078125009 0 ) ( 0.0019531252 0 0.9580079317 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -0.0000009487 0.1021415144 0.9947698712 -108.2457046509 ) matrix ( ( 0 -0.0078124995 0.0000177175 ) ( 0.001953125 0 0.9580070972 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 236 ) matrix ( ( 0.007769702 0.0008166285 0 ) ( -0.0002041572 0.0019424254 1.4150401354 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -244 ) matrix ( ( -0.007769702 0.0008166285 0.0195986629 ) ( 0.0002041572 0.0019424254 1.4147833586 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -232 ) matrix ( ( 0.0312500075 0 -73.5000152588 ) ( 0 0.0312500075 1.1250002384 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 8 ) matrix ( ( 0.0312500075 0 73.5000152588 ) ( 0 0.03125 1.1250002384 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_115" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -239.9999694824 -0.0000305176 147 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 -0.1021414176 -0.9947698712 104.2323074341 ) matrix ( ( 0 -0.0078125009 0 ) ( 0.0019531252 0 0.9580079317 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -0.0000009487 0.1021415144 0.9947698712 -108.2457046509 ) matrix ( ( 0.03125 0 -7.5000123978 ) ( 0 0.0312500075 -0.0000692904 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 236 ) matrix ( ( 0.007769702 0.0008166285 0 ) ( -0.0002041572 0.0019424254 1.4462901354 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -244 ) matrix ( ( -0.007769702 0.0008166285 0.0326647162 ) ( 0.0002041572 0.0019424254 1.445862174 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -232 ) matrix ( ( 0.0312500075 0 -73.5000152588 ) ( 0 0.0312500075 1.6250002384 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 8 ) matrix ( ( 0.0312500075 0 73.5000152588 ) ( 0 0.03125 1.6250002384 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_111" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -479.9999694824 -0.0000305176 131 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 -0.1021414176 -0.9947698712 104.2323074341 ) matrix ( ( 0 -0.0078125009 0 ) ( 0.0019531252 0 0.4892579317 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -0.0000009487 0.1021415144 0.9947698712 -108.2457046509 ) matrix ( ( 0 -0.0078124995 0 ) ( 0.001953125 0 1.4267570972 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 236 ) matrix ( ( 0.007769702 0.0008166285 0 ) ( -0.0002041572 0.0019424254 1.4150401354 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -244 ) matrix ( ( -0.007769702 0.0008166285 0.0195986629 ) ( 0.0002041572 0.0019424254 1.4147833586 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -232 ) matrix ( ( 0.0312500075 0 -66.0000152588 ) ( 0 0.0312500075 1.1250002384 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 8 ) matrix ( ( 0.0312500075 0 66.0000152588 ) ( 0 0.03125 1.1250002384 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_115" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -479.9999694824 -0.0000305176 147 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 -0.1021414176 -0.9947698712 104.2323074341 ) matrix ( ( 0 -0.0078125009 0 ) ( 0.0019531252 0 0.4892579317 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -0.0000009487 0.1021415144 0.9947698712 -108.2457046509 ) matrix ( ( 0.03125 0 -0.0000132918 ) ( 0 0.0312500075 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 236 ) matrix ( ( 0.007769702 0.0008166285 0 ) ( -0.0002041572 0.0019424254 1.4462901354 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -244 ) matrix ( ( -0.007769702 0.0008166285 0.0326647162 ) ( 0.0002041572 0.0019424254 1.445862174 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 1 0 -232 ) matrix ( ( 0.0312500075 0 -66.0000152588 ) ( 0 0.0312500075 1.6250002384 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 8 ) matrix ( ( 0.0312500075 0 66.0000152588 ) ( 0 0.03125 1.6250002384 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_135" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -0.0000228882 -0.0000305176 131 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 81 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 0.421875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 1 -85 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 0.421875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -232 ) matrix ( ( 0.0312500075 0 -0.0000017881 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 236 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3671875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 8 ) matrix ( ( 0.0312500075 0 0.0000017881 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -244 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3671875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_149" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -240 -0.0000610352 131 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 81 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 0.421875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 1 -85 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 0.421875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -232 ) matrix ( ( 0.0312500075 0 -0.0000017881 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 236 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3671875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 8 ) matrix ( ( 0.0312500075 0 0.0000017881 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -244 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3671875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_135" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -0.0000228882 239.9999694824 171 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 81 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 -0.0468750075 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 1 -85 ) matrix ( ( 0.03125 0 -15.0000123978 ) ( 0 0.0312500075 -0.0000693202 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -232 ) matrix ( ( 0.0312500075 0 -7.5000023842 ) ( 0 0.03125 1.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 236 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.4453125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 8 ) matrix ( ( 0.0312500075 0 7.5000023842 ) ( 0 0.03125 1.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -244 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.4453125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_149" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -240 239.9999389648 171 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 81 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 -0.0468750075 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 1 -85 ) matrix ( ( 0.03125 0 -15.0000123978 ) ( 0 0.0312500075 -0.0000693202 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -232 ) matrix ( ( 0.0312500075 0 -7.5000023842 ) ( 0 0.03125 1.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 236 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.4453125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 8 ) matrix ( ( 0.0312500075 0 7.5000023842 ) ( 0 0.03125 1.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -244 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.4453125 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_135" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -0.0000228882 239.9999694824 155 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 81 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 -0.0468750075 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 1 -85 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 -0.0468750075 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -232 ) matrix ( ( 0.0312500075 0 -7.5000023842 ) ( 0 0.03125 0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 236 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.4140625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 8 ) matrix ( ( 0.0312500075 0 7.5000023842 ) ( 0 0.03125 0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -244 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.4140625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_149" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -240 239.9999389648 155 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 81 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 -0.0468750075 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 1 -85 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 -0.0468750075 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -232 ) matrix ( ( 0.0312500075 0 -7.5000023842 ) ( 0 0.03125 0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 236 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.4140625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 8 ) matrix ( ( 0.0312500075 0 7.5000023842 ) ( 0 0.03125 0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -244 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.4140625 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_135" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -0.0000228882 479.9999694824 147 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 81 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 -0.5156250596 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 1 -85 ) matrix ( ( 0.03125 0 -22.5000114441 ) ( 0 0.0312500075 -0.0000693202 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -232 ) matrix ( ( 0.0312500075 0 -15.000002861 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 236 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3984375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 8 ) matrix ( ( 0.0312500075 0 15.000002861 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -244 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3984375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_149" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -240 479.9999389648 147 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 81 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 -0.5156250596 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 1 -85 ) matrix ( ( 0.03125 0 -22.5000114441 ) ( 0 0.0312500075 -0.0000693202 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -232 ) matrix ( ( 0.0312500075 0 -15.000002861 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 236 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3984375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 8 ) matrix ( ( 0.0312500075 0 15.000002861 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -244 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3984375 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_135" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -0.0000228882 479.9999694824 131 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 81 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 -0.5156250596 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 1 -85 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 -0.5156250596 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -232 ) matrix ( ( 0.0312500075 0 -15.000002861 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 236 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3671875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 8 ) matrix ( ( 0.0312500075 0 15.000002861 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -244 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3671875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_149" 
+				groups {
+					"canopy (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -240 479.9999389648 131 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 81 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 -0.5156250596 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 0 0 1 -85 ) matrix ( ( 0 -0.0078125009 -3.75 ) ( 0.0019531252 0 -0.5156250596 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( -1 0 0 -232 ) matrix ( ( 0.0312500075 0 -15.000002861 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 236 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3671875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+						plane ( 1 0 0 8 ) matrix ( ( 0.0312500075 0 15.000002861 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -244 ) matrix ( ( 0.0078125 0 -3.75 ) ( 0 0.001953125 0.3671875 ) ) texBounds ( ( 0 0 ) ( 256 1024 ) ) "models/mapobjects/gdf_base/texture2"
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_1" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 131 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0051257806 0 0 ) ( 0 0.0012814451 0.62109375 ) )
+					texBounds ( ( 0 0 ) ( 256 1024 ) )
+					material "models/mapobjects/gdf_base/texture2"
+					explicitSubdivisions( 0 0 )
+					controlPoints( 9 3 ) {
+						(
+							( ( -246 0 -115 0 0.62109375 ) ( -246 -6 -115 0.0307546835 0.62109375 ) ( -240 -6 -115 0.0615093671 0.62109375 ) ( -234 -6 -115 0.0922640488 0.62109375 ) ( -234 0 -115 0.1230187342 0.62109375 ) ( -234 6 -115 0.153773427 0.62109375 ) ( -240 6 -115 0.1845280975 0.62109375 ) ( -246 6 -115 0.2152827829 0.62109375 ) ( -246 0 -115 0.2460374683 0.62109375 ) )
+							( ( -246 0 -21 0 0.7415496111 ) ( -246 -6 -21 0.0307546835 0.7415496111 ) ( -240 -6 -21 0.0615093671 0.7415496111 ) ( -234 -6 -21 0.0922640488 0.7415496111 ) ( -234 0 -21 0.1230187342 0.7415496111 ) ( -234 6 -21 0.153773427 0.7415496111 ) ( -240 6 -21 0.1845280975 0.7415496111 ) ( -246 6 -21 0.2152827829 0.7415496111 ) ( -246 0 -21 0.2460374683 0.7415496111 ) )
+							( ( -246 0 73 0 0.8620054722 ) ( -246 -6 73 0.0307546835 0.8620054722 ) ( -240 -6 73 0.0615093671 0.8620054722 ) ( -234 -6 73 0.0922640488 0.8620054722 ) ( -234 0 73 0.1230187342 0.8620054722 ) ( -234 6 73 0.153773427 0.8620054722 ) ( -240 6 73 0.1845280975 0.8620054722 ) ( -246 6 73 0.2152827829 0.8620054722 ) ( -246 0 73 0.2460374683 0.8620054722 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_2" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 131 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0051257806 0 0 ) ( 0 0.0012814451 0.62109375 ) )
+					texBounds ( ( 0 0 ) ( 256 1024 ) )
+					material "models/mapobjects/gdf_base/texture2"
+					explicitSubdivisions( 0 0 )
+					controlPoints( 9 3 ) {
+						(
+							( ( 0 6 -115 0 0.62109375 ) ( -6 6 -115 0.0307546835 0.62109375 ) ( -6 0 -115 0.0615093671 0.62109375 ) ( -6 -6 -115 0.0922640488 0.62109375 ) ( 0 -6 -115 0.1230187342 0.62109375 ) ( 6 -6 -115 0.153773427 0.62109375 ) ( 6 0 -115 0.1845280975 0.62109375 ) ( 6 6 -115 0.2152827829 0.62109375 ) ( 0 6 -115 0.2460374683 0.62109375 ) )
+							( ( 0 6 -21 0 0.7415496111 ) ( -6 6 -21 0.0307546835 0.7415496111 ) ( -6 0 -21 0.0615093671 0.7415496111 ) ( -6 -6 -21 0.0922640488 0.7415496111 ) ( 0 -6 -21 0.1230187342 0.7415496111 ) ( 6 -6 -21 0.153773427 0.7415496111 ) ( 6 0 -21 0.1845280975 0.7415496111 ) ( 6 6 -21 0.2152827829 0.7415496111 ) ( 0 6 -21 0.2460374683 0.7415496111 ) )
+							( ( 0 6 73 0 0.8620054722 ) ( -6 6 73 0.0307546835 0.8620054722 ) ( -6 0 73 0.0615093671 0.8620054722 ) ( -6 -6 73 0.0922640488 0.8620054722 ) ( 0 -6 73 0.1230187342 0.8620054722 ) ( 6 -6 73 0.153773427 0.8620054722 ) ( 6 0 73 0.1845280975 0.8620054722 ) ( 6 6 73 0.2152827829 0.8620054722 ) ( 0 6 73 0.2460374683 0.8620054722 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_3" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 131 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0051257806 0 0 ) ( 0 0.0012814451 0.62109375 ) )
+					texBounds ( ( 0 0 ) ( 256 1024 ) )
+					material "models/mapobjects/gdf_base/texture2"
+					explicitSubdivisions( 0 0 )
+					controlPoints( 9 3 ) {
+						(
+							( ( 246 0 -115 0 0.62109375 ) ( 246 6 -115 0.0307546835 0.62109375 ) ( 240 6 -115 0.0615093671 0.62109375 ) ( 234 6 -115 0.0922640488 0.62109375 ) ( 234 0 -115 0.1230187342 0.62109375 ) ( 234 -6 -115 0.153773427 0.62109375 ) ( 240 -6 -115 0.1845280975 0.62109375 ) ( 246 -6 -115 0.2152827829 0.62109375 ) ( 246 0 -115 0.2460374683 0.62109375 ) )
+							( ( 246 0 -21 0 0.7415496111 ) ( 246 6 -21 0.0307546835 0.7415496111 ) ( 240 6 -21 0.0615093671 0.7415496111 ) ( 234 6 -21 0.0922640488 0.7415496111 ) ( 234 0 -21 0.1230187342 0.7415496111 ) ( 234 -6 -21 0.153773427 0.7415496111 ) ( 240 -6 -21 0.1845280975 0.7415496111 ) ( 246 -6 -21 0.2152827829 0.7415496111 ) ( 246 0 -21 0.2460374683 0.7415496111 ) )
+							( ( 246 0 73 0 0.8620054722 ) ( 246 6 73 0.0307546835 0.8620054722 ) ( 240 6 73 0.0615093671 0.8620054722 ) ( 234 6 73 0.0922640488 0.8620054722 ) ( 234 0 73 0.1230187342 0.8620054722 ) ( 234 -6 73 0.153773427 0.8620054722 ) ( 240 -6 73 0.1845280975 0.8620054722 ) ( 246 -6 73 0.2152827829 0.8620054722 ) ( 246 0 73 0.2460374683 0.8620054722 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_4" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 131 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0051257806 0 0 ) ( 0 0.0012814451 0.62109375 ) )
+					texBounds ( ( 0 0 ) ( 256 1024 ) )
+					material "models/mapobjects/gdf_base/texture2"
+					explicitSubdivisions( 0 0 )
+					controlPoints( 9 3 ) {
+						(
+							( ( 246 -240 -115 0 0.62109375 ) ( 246 -234 -115 0.0307546835 0.62109375 ) ( 240 -234 -115 0.0615093671 0.62109375 ) ( 234 -234 -115 0.0922640488 0.62109375 ) ( 234 -240 -115 0.1230187342 0.62109375 ) ( 234 -246 -115 0.153773427 0.62109375 ) ( 240 -246 -115 0.1845280975 0.62109375 ) ( 246 -246 -115 0.2152827829 0.62109375 ) ( 246 -240 -115 0.2460374683 0.62109375 ) )
+							( ( 246 -240 -33 0 0.7261722088 ) ( 246 -234 -33 0.0307546835 0.7261722088 ) ( 240 -234 -33 0.0615093671 0.7261722088 ) ( 234 -234 -33 0.0922640488 0.7261722088 ) ( 234 -240 -33 0.1230187342 0.7261722088 ) ( 234 -246 -33 0.153773427 0.7261722088 ) ( 240 -246 -33 0.1845280975 0.7261722088 ) ( 246 -246 -33 0.2152827829 0.7261722088 ) ( 246 -240 -33 0.2460374683 0.7261722088 ) )
+							( ( 246 -240 49 0 0.8312507272 ) ( 246 -234 49 0.0307546835 0.8312507272 ) ( 240 -234 49 0.0615093671 0.8312507272 ) ( 234 -234 49 0.0922640488 0.8312507272 ) ( 234 -240 49 0.1230187342 0.8312507272 ) ( 234 -246 49 0.153773427 0.8312507272 ) ( 240 -246 49 0.1845280975 0.8312507272 ) ( 246 -246 49 0.2152827829 0.8312507272 ) ( 246 -240 49 0.2460374683 0.8312507272 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_5" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 131 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0051257806 0 0 ) ( 0 0.0012814451 0.62109375 ) )
+					texBounds ( ( 0 0 ) ( 256 1024 ) )
+					material "models/mapobjects/gdf_base/texture2"
+					explicitSubdivisions( 0 0 )
+					controlPoints( 9 3 ) {
+						(
+							( ( 0 -246 -115 0 0.62109375 ) ( 6 -246 -115 0.0307546835 0.62109375 ) ( 6 -240 -115 0.0615093671 0.62109375 ) ( 6 -234 -115 0.0922640488 0.62109375 ) ( 0 -234 -115 0.1230187342 0.62109375 ) ( -6 -234 -115 0.153773427 0.62109375 ) ( -6 -240 -115 0.1845280975 0.62109375 ) ( -6 -246 -115 0.2152827829 0.62109375 ) ( 0 -246 -115 0.2460374683 0.62109375 ) )
+							( ( 0 -246 -33 0 0.7261722088 ) ( 6 -246 -33 0.0307546835 0.7261722088 ) ( 6 -240 -33 0.0615093671 0.7261722088 ) ( 6 -234 -33 0.0922640488 0.7261722088 ) ( 0 -234 -33 0.1230187342 0.7261722088 ) ( -6 -234 -33 0.153773427 0.7261722088 ) ( -6 -240 -33 0.1845280975 0.7261722088 ) ( -6 -246 -33 0.2152827829 0.7261722088 ) ( 0 -246 -33 0.2460374683 0.7261722088 ) )
+							( ( 0 -246 49 0 0.8312507272 ) ( 6 -246 49 0.0307546835 0.8312507272 ) ( 6 -240 49 0.0615093671 0.8312507272 ) ( 6 -234 49 0.0922640488 0.8312507272 ) ( 0 -234 49 0.1230187342 0.8312507272 ) ( -6 -234 49 0.153773427 0.8312507272 ) ( -6 -240 49 0.1845280975 0.8312507272 ) ( -6 -246 49 0.2152827829 0.8312507272 ) ( 0 -246 49 0.2460374683 0.8312507272 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_6" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 131 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0051257806 0 0 ) ( 0 0.0012814451 0.62109375 ) )
+					texBounds ( ( 0 0 ) ( 256 1024 ) )
+					material "models/mapobjects/gdf_base/texture2"
+					explicitSubdivisions( 0 0 )
+					controlPoints( 9 3 ) {
+						(
+							( ( -246 -240 -115 0 0.62109375 ) ( -246 -246 -115 0.0307546835 0.62109375 ) ( -240 -246 -115 0.0615093671 0.62109375 ) ( -234 -246 -115 0.0922640488 0.62109375 ) ( -234 -240 -115 0.1230187342 0.62109375 ) ( -234 -234 -115 0.153773427 0.62109375 ) ( -240 -234 -115 0.1845280975 0.62109375 ) ( -246 -234 -115 0.2152827829 0.62109375 ) ( -246 -240 -115 0.2460374683 0.62109375 ) )
+							( ( -246 -240 -33 0 0.7261722088 ) ( -246 -246 -33 0.0307546835 0.7261722088 ) ( -240 -246 -33 0.0615093671 0.7261722088 ) ( -234 -246 -33 0.0922640488 0.7261722088 ) ( -234 -240 -33 0.1230187342 0.7261722088 ) ( -234 -234 -33 0.153773427 0.7261722088 ) ( -240 -234 -33 0.1845280975 0.7261722088 ) ( -246 -234 -33 0.2152827829 0.7261722088 ) ( -246 -240 -33 0.2460374683 0.7261722088 ) )
+							( ( -246 -240 49 0 0.8312507272 ) ( -246 -246 49 0.0307546835 0.8312507272 ) ( -240 -246 49 0.0615093671 0.8312507272 ) ( -234 -246 49 0.0922640488 0.8312507272 ) ( -234 -240 49 0.1230187342 0.8312507272 ) ( -234 -234 49 0.153773427 0.8312507272 ) ( -240 -234 49 0.1845280975 0.8312507272 ) ( -246 -234 49 0.2152827829 0.8312507272 ) ( -246 -240 49 0.2460374683 0.8312507272 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_7" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 131 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0051257806 0 0 ) ( 0 0.0012814451 0.62109375 ) )
+					texBounds ( ( 0 0 ) ( 256 1024 ) )
+					material "models/mapobjects/gdf_base/texture2"
+					explicitSubdivisions( 0 0 )
+					controlPoints( 9 3 ) {
+						(
+							( ( 246 240 -115 0 0.62109375 ) ( 246 246 -115 0.0307546835 0.62109375 ) ( 240 246 -115 0.0615093671 0.62109375 ) ( 234 246 -115 0.0922640488 0.62109375 ) ( 234 240 -115 0.1230187342 0.62109375 ) ( 234 234 -115 0.153773427 0.62109375 ) ( 240 234 -115 0.1845280975 0.62109375 ) ( 246 234 -115 0.2152827829 0.62109375 ) ( 246 240 -115 0.2460374683 0.62109375 ) )
+							( ( 246 240 -33 0 0.7261722088 ) ( 246 246 -33 0.0307546835 0.7261722088 ) ( 240 246 -33 0.0615093671 0.7261722088 ) ( 234 246 -33 0.0922640488 0.7261722088 ) ( 234 240 -33 0.1230187342 0.7261722088 ) ( 234 234 -33 0.153773427 0.7261722088 ) ( 240 234 -33 0.1845280975 0.7261722088 ) ( 246 234 -33 0.2152827829 0.7261722088 ) ( 246 240 -33 0.2460374683 0.7261722088 ) )
+							( ( 246 240 49 0 0.8312507272 ) ( 246 246 49 0.0307546835 0.8312507272 ) ( 240 246 49 0.0615093671 0.8312507272 ) ( 234 246 49 0.0922640488 0.8312507272 ) ( 234 240 49 0.1230187342 0.8312507272 ) ( 234 234 49 0.153773427 0.8312507272 ) ( 240 234 49 0.1845280975 0.8312507272 ) ( 246 234 49 0.2152827829 0.8312507272 ) ( 246 240 49 0.2460374683 0.8312507272 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_8" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 131 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0051257806 0 0 ) ( 0 0.0012814451 0.62109375 ) )
+					texBounds ( ( 0 0 ) ( 256 1024 ) )
+					material "models/mapobjects/gdf_base/texture2"
+					explicitSubdivisions( 0 0 )
+					controlPoints( 9 3 ) {
+						(
+							( ( 0 246 -115 0 0.62109375 ) ( -6 246 -115 0.0307546835 0.62109375 ) ( -6 240 -115 0.0615093671 0.62109375 ) ( -6 234 -115 0.0922640488 0.62109375 ) ( 0 234 -115 0.1230187342 0.62109375 ) ( 6 234 -115 0.153773427 0.62109375 ) ( 6 240 -115 0.1845280975 0.62109375 ) ( 6 246 -115 0.2152827829 0.62109375 ) ( 0 246 -115 0.2460374683 0.62109375 ) )
+							( ( 0 246 -33 0 0.7261722088 ) ( -6 246 -33 0.0307546835 0.7261722088 ) ( -6 240 -33 0.0615093671 0.7261722088 ) ( -6 234 -33 0.0922640488 0.7261722088 ) ( 0 234 -33 0.1230187342 0.7261722088 ) ( 6 234 -33 0.153773427 0.7261722088 ) ( 6 240 -33 0.1845280975 0.7261722088 ) ( 6 246 -33 0.2152827829 0.7261722088 ) ( 0 246 -33 0.2460374683 0.7261722088 ) )
+							( ( 0 246 49 0 0.8312507272 ) ( -6 246 49 0.0307546835 0.8312507272 ) ( -6 240 49 0.0615093671 0.8312507272 ) ( -6 234 49 0.0922640488 0.8312507272 ) ( 0 234 49 0.1230187342 0.8312507272 ) ( 6 234 49 0.153773427 0.8312507272 ) ( 6 240 49 0.1845280975 0.8312507272 ) ( 6 246 49 0.2152827829 0.8312507272 ) ( 0 246 49 0.2460374683 0.8312507272 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_8" 
+				groups {
+					"canopy (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -240 0 131 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0051257806 0 0 ) ( 0 0.0012814451 0.62109375 ) )
+					texBounds ( ( 0 0 ) ( 256 1024 ) )
+					material "models/mapobjects/gdf_base/texture2"
+					explicitSubdivisions( 0 0 )
+					controlPoints( 9 3 ) {
+						(
+							( ( 0 246 -115 0 0.62109375 ) ( -6 246 -115 0.0307546835 0.62109375 ) ( -6 240 -115 0.0615093671 0.62109375 ) ( -6 234 -115 0.0922640488 0.62109375 ) ( 0 234 -115 0.1230187342 0.62109375 ) ( 6 234 -115 0.153773427 0.62109375 ) ( 6 240 -115 0.1845280975 0.62109375 ) ( 6 246 -115 0.2152827829 0.62109375 ) ( 0 246 -115 0.2460374683 0.62109375 ) )
+							( ( 0 246 -33 0 0.7261722088 ) ( -6 246 -33 0.0307546835 0.7261722088 ) ( -6 240 -33 0.0615093671 0.7261722088 ) ( -6 234 -33 0.0922640488 0.7261722088 ) ( 0 234 -33 0.1230187342 0.7261722088 ) ( 6 234 -33 0.153773427 0.7261722088 ) ( 6 240 -33 0.1845280975 0.7261722088 ) ( 6 246 -33 0.2152827829 0.7261722088 ) ( 0 246 -33 0.2460374683 0.7261722088 ) )
+							( ( 0 246 49 0 0.8312507272 ) ( -6 246 49 0.0307546835 0.8312507272 ) ( -6 240 49 0.0615093671 0.8312507272 ) ( -6 234 49 0.0922640488 0.8312507272 ) ( 0 234 49 0.1230187342 0.8312507272 ) ( 6 234 49 0.153773427 0.8312507272 ) ( 6 240 49 0.1845280975 0.8312507272 ) ( 6 246 49 0.2152827829 0.8312507272 ) ( 0 246 49 0.2460374683 0.8312507272 ) )
+						)
+					}
+				}
+			}
+		}
+	}
+}

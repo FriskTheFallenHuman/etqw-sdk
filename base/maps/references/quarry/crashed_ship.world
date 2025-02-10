@@ -1,0 +1,2572 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"editor_last_atmosphere"	"atmosphere://quarry"
+	}
+
+	meta {
+		sdLODGroup "Ship" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		2
+				"uniqueinstance"		1
+			}
+			levels {
+				"Ship (Level 01)"
+				"Ship (Level 02)"
+			}
+		}
+		sdLODGroup_Level "Ship (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		22000
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0.75
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		1
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "Ship (Level 02)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		10240
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0.75
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		1
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdGroupVisual "veh_clip" {
+			hidden
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdGroupVisual "animated" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			sdDictionary {
+				"merge_script_shipcell_1"	"ship_cell_1"
+				"merge_script_shipcell_2"	"ship_cell_2"
+				"merge_script_shipcell_3"	"ship_cell_3"
+			}
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 936 -264 )
+					}
+					
+					faces {
+						plane ( 0 0.2248595804 0.974391222 -11.3928794861 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -152 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -36 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 -0 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 860 1288 )
+					}
+					
+					faces {
+						plane ( -0.0000001166 -0.2095279843 0.9778026342 1500.5096435547 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -1704 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -212 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 -0 -40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 1 1531.9981689453 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 1044 -336 )
+					}
+					
+					faces {
+						plane ( 0 -0 -1 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0.6323764324 0.774661243 -3.7942495346 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.992587328 0.1215334609 -0 -115.8671264648 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9798040986 0.1999597549 0 -107.0185699463 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"veh_clip"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 64 -336 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -464 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 0 -1 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( -1 0 0 -544 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 1 0 0 -544 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 -1 0 -1024 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 1 0 -832 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"veh_clip"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 64 208 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -464 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 0 -1 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( -0.7719302177 0 0.6357073188 -369.0734863281 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0.7719302177 0 0.6357073188 -369.0734863281 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 -1 0 -1024 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 1 0 -832 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 144 868 -332 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -308 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -84 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -676 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 20 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 6 228 -220 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -122 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -122 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -36 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 4 624 -354 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -62 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -62 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -120 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -124 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -416 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 6 228 -220 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -324 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 -1 140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -122 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -122 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -36 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -724 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"veh_clip"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 992 -144 )
+					}
+					
+					faces {
+						plane ( 0 0.6401844621 0.7682212591 -565.4108276367 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0.0000000586 0.8762162924 -0.4819179773 -46.9621086121 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( -0.9048169255 0 -0.4258007705 -289.5401611328 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0.9048168659 0 -0.4258008599 -289.5401611328 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 -1 0 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 0.8741574287 0.4856425822 -402.5006713867 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0.8395701051 0 0.543251276 -523.8917236328 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( -0.8395701647 0 0.5432513356 -523.891784668 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 40 912 152 )
+					}
+					
+					faces {
+						plane ( -0.0000000526 0.1790359467 -0.9838425517 -126.5849914551 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 0 -136 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.0000441127 0.9284758568 -0.3713928461 -234.7050476074 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.270431757 -0.171222195 0.947390914 -95.7290039063 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.279632479 -0.1748340428 0.9440543652 -112.7272796631 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 112 1012 -40 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 0 -164 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -76 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 112 1012 -40 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -376.0006408691 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -164.0078125 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0.9805805683 -0.1961163878 -85.5066452026 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 1 56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 232 608 -384 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -152.0006866455 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.2840883434 0 -0.9587981105 -21.5888977051 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -368 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -240 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 312 560 -96 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -136 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -104 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9298117161 0 -0.3680357337 -146.7532653809 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -352 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0.9363291264 -0.3511235714 -324.9061889648 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 312 560 -96 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -116.0556259155 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -104 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -180 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 0 -352 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -368 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 312 560 -48 )
+					}
+					
+					faces {
+						plane ( -1 0 0 -144 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8471418619 -0 0.5313668251 -188.615234375 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -352 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.0000001235 0.8750339746 0.4840615094 -354.9287109375 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 -1 68 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 1 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 312 520 -48 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -255.9999389648 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9963466525 0.0854011178 0.0000496 -76.9814758301 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9059051871 -0.103532061 0.4106299579 -206.2759094238 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -872 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 312 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 312 528 -48 )
+					}
+					
+					faces {
+						plane ( -0.9963465929 0.0854011402 0 -76.2904663086 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7870604992 -0.0899498463 0.6102824211 -224.5174102783 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8449174166 -0.072421588 0.5299714804 -211.2663421631 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -880 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 68 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 1 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 320 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 312 560 -48 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -255.9999389648 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -104 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7051010728 0.0503643043 0.7073159814 -216.9324951172 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9108462334 -0.0000035426 0.4127460122 -174.8884735107 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -352 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0.9999998808 -0.0004211429 -263.8922729492 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -264.0001220703 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 312 560 -48 )
+					}
+					
+					faces {
+						plane ( -1 0 -0 -144 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7059951425 0 0.7082166076 -203.9031524658 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.0000390194 0.8750340939 0.4840613306 -354.9283447266 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 264.0001220703 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 316 308 248 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -310 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -100 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -516 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.3676099181 -0.0000000024 0.9299800396 10.7312870026 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.4077191651 0.0291227978 0.9126428366 10.062212944 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 25 173 283 )
+					}
+					
+					faces {
+						plane ( 0 -0 -1 -75 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -19.0061702728 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -523 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -35 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.4284181297 -0.0491375625 0.9022435546 -86.1474304199 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.367613703 -0.0000000165 0.9299784899 -63.712310791 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 140 324 292 )
+					}
+					
+					faces {
+						plane ( 0.1394685656 -0 0.9902265072 -100.1389389038 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9820199609 -0 0.1887770593 -26.738494873 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -134 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 268 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.0424316153 0.952596128 0.3012643754 -643.9379882813 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.0000008591 0.968277812 0.2498760968 -653.5562744141 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -4 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 140 -52 292 )
+					}
+					
+					faces {
+						plane ( 0.1394685358 -0 0.9902265072 -100.1389389038 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9820187092 -0 0.1887837946 -26.7390270233 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -134 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -644 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -4 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.0000010415 -0.9113712907 0.411585182 537.5327758789 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 88 784 224 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 -1 -192 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -82 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0.8944272399 0.4472136199 -221.8179626465 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -340 868 -332 )
+					}
+					
+					faces {
+						plane ( -0 -0 1 -308 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -84 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -224 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 -676 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 20 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -372 1012 -40 )
+					}
+					
+					faces {
+						plane ( -0 -0 1 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 -256 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -164 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 -0 -76 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -372 1012 -40 )
+					}
+					
+					faces {
+						plane ( 0 -0 -1 -376.0006408691 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -256 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 -164.0078125 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0.9805806875 -0.1961161196 -85.5074768066 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 1 56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -252 608 -384 )
+					}
+					
+					faces {
+						plane ( -0 -0 1 -152.0006866455 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.2840884626 -0 -0.9587981105 -12.5031261444 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -152 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -400 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 0 -240 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -172 560 -96 )
+					}
+					
+					faces {
+						plane ( -0 -0 1 -116.0556259155 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -308 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -352 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 -0 -368 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -172 560 -48 )
+					}
+					
+					faces {
+						plane ( 1 -0 -0 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8471418023 0.0000000375 0.5313669443 -297.0444335938 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -352 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.0000001841 0.875033915 0.4840615094 -354.9342346191 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 68 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 1 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -172 520 -48 )
+					}
+					
+					faces {
+						plane ( -0 -0 1 -255.9999389648 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9963466525 0.085401088 0.00004979 50.5505218506 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9059051871 -0.1035320759 0.4106299579 -322.2322387695 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -872 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 -0 312 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -172 528 -48 )
+					}
+					
+					faces {
+						plane ( 0.9963465929 0.0854011402 -0 51.241897583 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7870604396 -0.089949891 0.6102825999 -325.2555847168 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8449175954 -0.0724215955 0.5299711227 -319.415802002 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -880 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 68 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 1 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 -0 320 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -172 560 -48 )
+					}
+					
+					faces {
+						plane ( -0 -0 1 -255.9999389648 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.705101192 0.0503642894 0.7073159218 -307.1785583496 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9108461142 -0.000003563 0.412746191 -291.4783630371 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -352 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 -0 -263.9664306641 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -172 560 -48 )
+					}
+					
+					faces {
+						plane ( 1 -0 0 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7059951425 0.0000004885 0.7082166672 -294.2686462402 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.000039086 0.875033915 0.484061569 -354.9404907227 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 264.0001220703 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -168 308 248 )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -174 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 -100 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 0 -516 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.3676099181 0.0000000091 0.9299800396 -39.2694816589 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.4077191949 0.029122794 0.912642777 -45.3881721497 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -459 173 283 )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -75 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -465.0061645508 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 -523 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 0 -35 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.4284180701 -0.0491375551 0.9022435546 104.9268951416 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.3676136732 0.0000000275 0.9299784899 100.2442779541 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -344 324 292 )
+					}
+					
+					faces {
+						plane ( -0.139468506 -0 0.9902264476 -70.0140151978 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9820200205 -0.000000035 0.1887769103 185.3779144287 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 -350 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 268 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.0424311981 0.9525961876 0.3012643456 -634.7756347656 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.000001283 0.9682779908 0.2498755604 -653.5574951172 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -4 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -344 -52 292 )
+					}
+					
+					faces {
+						plane ( -0.1394686699 -0 0.9902265072 -70.0139770508 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.98201859 -0 0.1887839437 185.3775634766 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -350 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 -0 -644 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -4 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.0000013368 -0.9113712907 0.4115852714 537.5289916992 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -396 784 224 )
+					}
+					
+					faces {
+						plane ( -0 -0 1 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -192 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -402 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 240 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 -184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0.8944271803 0.4472135901 -221.8179473877 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 360 952 344 )
+					}
+					
+					faces {
+						plane ( -0 -1 -0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 1 136 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071545124 0.0000352105 0.7070589662 118.784362793 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071067691 -0 -0.7071067691 -209.303604126 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -328 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.5734731555 0.0000084051 -0.8192244172 -332.9353027344 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -192 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.1961160749 -0 0.9805807471 111.3955307007 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0.9230769277 0.3846153915 30.1538085938 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -180 952 344 )
+					}
+					
+					faces {
+						plane ( 0 -1 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 1 136 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071545124 0.0000352105 0.7070589662 -0.0138393417 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -192 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071067691 0 -0.7071067691 -328.0975341797 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -328 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.5734730363 0.0000083884 -0.8192244768 -236.5913391113 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.1961160153 0 0.9805806875 144.3430023193 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0.9230769277 0.3846153915 30.1538085938 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -400 1176 120 )
+					}
+					
+					faces {
+						plane ( 0 -0.0456476659 0.9989575744 -32.0535545349 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0.045647651 -0.998957634 -63.8460159302 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -352 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9486833215 0 0.3162277639 -10.1192932129 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -400 1176 120 )
+					}
+					
+					faces {
+						plane ( 0 0.3169245422 0.9484507442 -27.5538234711 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0.0008163449 -0.9999996424 -64.2865600586 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 -0 -40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9486833215 0 0.3162277639 -10.1192932129 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 411 1176 120 )
+					}
+					
+					faces {
+						plane ( -0 -0.045647651 0.9989575744 -32.054523468 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0.045647651 -0.998957634 -63.8465499878 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 -352 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 0 8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9486829638 -0.0000000986 0.3162288964 -10.121723175 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 411 1176 120 )
+					}
+					
+					faces {
+						plane ( -0 0.3169245422 0.9484508038 -27.5538215637 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0.0008163449 -0.9999996424 -64.2865600586 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 0 -40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 -8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9486833215 -0 0.3162277341 -10.1214551926 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -196 450 224 )
+					}
+					
+					faces {
+						plane ( -1 0 0 -36 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 374 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -654 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9535826445 0 0.3011313677 -33.1244506836 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0.3481864929 -0.9374251962 -201.4660644531 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0.216930449 0.9761870503 67.6822967529 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 200 450 224 )
+					}
+					
+					faces {
+						plane ( 1 -0 -0 -44 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 374 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 -0 -654 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9535826445 -0 0.3011312783 -40.7503662109 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.0000002658 0.3481865227 -0.9374253154 -201.4635620117 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0.2169305235 0.9761870503 67.6831817627 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 144 964 418 )
+					}
+					
+					faces {
+						plane ( 0 -0.0559123456 0.9984356761 -41.5828056335 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 -208 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 -0 -292 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0.1425298452 -0.9897905588 -4.0067620277 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9980064631 -0.0631120205 -0 -41.451675415 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9886142015 0.1504721344 0 -8.3477659225 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 274.7727355957 336 428.5283813477 )
+						rotation ( ( 0.6156615019 0 0.788010776 ) ( 0 1 0 ) ( -0.788010776 0 0.6156615019 ) )
+					}
+					
+					faces {
+						plane ( -0.0063625956 0 0.9999796748 224.3517456055 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.0057289577 -0.0010912301 0.9999830127 224.3955841064 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.0056354254 0 -0.9999840856 -280.4914550781 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.0062099635 0.0011828503 -0.999980092 -280.4273376465 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -191.9844512939 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9823386073 0.1871121228 -0 -68.4819793701 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.0854056776 -0.9963462949 -0.0000000233 -88.1334686279 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.1279789805 0.9917769432 0 -64.2410507202 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 535.6069946289 376 346.5680541992 )
+						rotation ( ( 0.6156615019 0 0.788010776 ) ( 0 1 0 ) ( -0.788010776 0 0.6156615019 ) )
+					}
+					
+					faces {
+						plane ( -0 0 1 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9823385477 -0.1871121079 0 -33.3059539795 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9486832619 0.3162277341 -0 -285.8698730469 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7175806761 -0.6964753866 0 -88.9800109863 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.4770918489 0.8788533807 0 -47.2069778442 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -757.2272949219 -32 444.5283813477 )
+						rotation ( ( 0.6156615019 0 0.788010776 ) ( 0 1 0 ) ( -0.788010776 0 0.6156615019 ) )
+					}
+					
+					faces {
+						plane ( 0.968736887 -0.0000003351 -0.2480905652 -164.0451660156 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9688932896 -0.0010912066 -0.2474766821 -163.8112487793 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9689170122 -0.0000001679 0.2473859489 107.6874084473 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9687739611 0.001182835 0.2479425073 107.923500061 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.2419228703 -0 -0.9702954292 -493.9382629395 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.2376400381 0.1871121526 0.9531612396 228.1399230957 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.0206684936 -0.9963462353 -0.0828669891 -113.9213027954 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.03096205 0.9917768836 -0.124177143 -102.8824234009 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -496.3930053711 8 362.5680541992 )
+						rotation ( ( 0.6156615019 0 0.788010776 ) ( 0 1 0 ) ( -0.788010776 0 0.6156615019 ) )
+					}
+					
+					faces {
+						plane ( 0.9702957273 0.0000000063 -0.2419218421 -7.4030461311 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9702957273 -0.0000000938 0.2419219017 -48.5969581604 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.2376491129 -0.1871120185 -0.9531589746 -14.429561615 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.2295074165 0.3162280321 0.9205032587 -304.1059265137 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.1735984981 -0.6964753866 0.6962653995 -102.7626647949 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.1154191494 0.8788534403 -0.4629202187 -38.0323104858 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -552 792 48 )
+					}
+					
+					faces {
+						plane ( 0.1483404487 -0 0.9889363647 0.3955751657 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.1483404487 -0 -0.9889363647 -32.0415382385 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -104 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.5734366775 -0.8192498088 0 -38.6749420166 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.287347883 0.9578263164 -0 -83.5314254761 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -84 452 444 )
+					}
+					
+					faces {
+						plane ( -0.5683392286 0.2321651727 0.789360404 -239.3191986084 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.5331957936 0.1470214128 0.8331187367 -208.9266204834 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0.282166332 -0.9593654871 -29.3488197327 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 0 -508 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 372 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -84 452 444 )
+					}
+					
+					faces {
+						plane ( -0.58430475 0 0.8115343451 -124.7840576172 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -180 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 0 -544 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 508 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -84 452 444 )
+					}
+					
+					faces {
+						plane ( -0.5351984501 -0.119459413 0.8362368345 -110.3682098389 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.3618035614 -0.2260905355 0.9044231772 -103.2883605957 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -372.0000305176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -76 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -256 616 496 )
+					}
+					
+					faces {
+						plane ( -0.8597239256 -0.0544102266 0.5078524947 34.6967124939 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8334888816 -0.0781394616 0.5469831228 35.8264389038 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8741572499 0 -0.4856429696 -149.1887512207 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 -0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071521282 -0.7070613503 -0.0000000562 -203.6931610107 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7070484757 0.707165122 -0.0000647398 -113.1000518799 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -432 480 324 )
+					}
+					
+					faces {
+						plane ( 0 0.2026125342 -0.9792590141 -287.5455932617 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -120 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -223.9917297363 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 -0 -8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.6274632812 -0.086722143 0.7738016248 60.5207939148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.5779762268 -0.1520635188 0.8017607331 54.5461654663 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -252 148 252 )
+					}
+					
+					faces {
+						plane ( -0.7514138818 -0.2475646734 0.6116281152 -47.7114944458 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -324 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.874156177 -0.485645026 0.0000072917 -0.0006773692 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071067691 0.7071067691 -0.0000000798 -118.7967147827 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -60 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -420 132 212 )
+					}
+					
+					faces {
+						plane ( -0.5788626075 -0.1366801858 0.8038884401 8.7181777954 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.4626308978 -0.3331210315 0.8215855956 18.9721603394 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9615239501 -0.2747211754 0.0000001131 -54.3824157715 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8741572499 0.48564291 -0.000000182 -154.6214141846 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.339656949 -0.940549314 0.0001972182 -9.0634412766 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.3397132158 -0.940529108 -0.0000108364 -9.077878952 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -124 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0.9999999404 -0.0000784368 -124.0109710693 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -338 -2 184 )
+					}
+					
+					faces {
+						plane ( -0.4534434378 -0.2792578936 0.846406579 -3.3243508339 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.0642716736 -0.3696873784 0.926930666 -64.0476303101 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -112 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8881004453 -0.4596494734 -0.0000696454 -59.0300445557 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9941473007 0.1080326959 0.0000001615 -149.6392364502 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.1712461114 -0.9852282405 0.000267479 -289.254119873 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.1712848246 -0.9852215052 0.0002101406 -289.251159668 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.3394055963 0.9406400919 -0.0000002404 -89.119934082 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.3395199776 0.9405988455 -0.0001791742 -89.1177139282 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -84 208 256 )
+					}
+					
+					faces {
+						plane ( -0.3481554091 -0.3481553495 0.870388329 -188.0038757324 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 -1 48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 -0 -168 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9103664756 -0.4138029516 0 -28.8006839752 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -84 208 256 )
+					}
+					
+					faces {
+						plane ( -0.355617404 -0.3506669104 0.8663538098 -187.4195556641 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 -1 48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.4613527656 -0.887216866 -0.0000001638 -198.8785247803 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9103664756 0.4138029516 0 28.8006839752 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -84 116 460 )
+					}
+					
+					faces {
+						plane ( -0.5683392286 0.2321651727 0.789360404 -239.3191986084 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.5331957936 0.1470214128 0.8331187367 -208.9266204834 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0.282166332 -0.9593654871 -29.3488197327 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 0 -508 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 372 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -84 116 460 )
+					}
+					
+					faces {
+						plane ( -0.58430475 0 0.8115343451 -124.7840576172 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -180 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 0 -544 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 508 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -84 116 460 )
+					}
+					
+					faces {
+						plane ( -0.5351984501 -0.119459413 0.8362368345 -110.3682098389 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.3618035614 -0.2260905355 0.9044231772 -103.2883605957 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -372.0000305176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -76 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -256 264 512 )
+					}
+					
+					faces {
+						plane ( -0.8597239256 -0.0544102266 0.5078524947 34.6967124939 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8334888816 -0.0781394616 0.5469831228 35.8264389038 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8741572499 0 -0.4856429696 -149.1887512207 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 -0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071521282 -0.7070613503 -0.0000000562 -203.6931610107 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7070484757 0.707165122 -0.0000647398 -113.1000518799 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -432 144 340 )
+					}
+					
+					faces {
+						plane ( 0 0.2026125342 -0.9792590141 -287.5455932617 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -120 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -223.9917297363 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 -0 -8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.6274632812 -0.086722143 0.7738016248 60.5207939148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.5779762268 -0.1520635188 0.8017607331 54.5461654663 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -252 -188 268 )
+					}
+					
+					faces {
+						plane ( -0.7514138818 -0.2475646734 0.6116281152 -47.7114944458 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -324 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.874156177 -0.485645026 0.0000072917 -0.0006773692 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071067691 0.7071067691 -0.0000000798 -118.7967147827 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -60 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -420 -204 228 )
+					}
+					
+					faces {
+						plane ( -0.5788626075 -0.1366801858 0.8038884401 8.7181777954 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.4626308978 -0.3331210315 0.8215855956 18.9721603394 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9615239501 -0.2747211754 0.0000001131 -54.3824157715 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8741572499 0.48564291 -0.000000182 -154.6214141846 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.339656949 -0.940549314 0.0001972182 -9.0634412766 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.3397132158 -0.940529108 -0.0000108364 -9.077878952 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -124 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0.9999999404 -0.0000784368 -124.0109710693 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -84 -128 272 )
+					}
+					
+					faces {
+						plane ( -0.3481554091 -0.3481553495 0.870388329 -188.0038757324 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 -1 48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 -0 -168 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9103664756 -0.4138029516 0 -28.8006839752 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -84 -128 272 )
+					}
+					
+					faces {
+						plane ( -0.355617404 -0.3506669104 0.8663538098 -187.4195556641 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 -1 48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.4613527656 -0.887216866 -0.0000001638 -198.8785247803 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9103664756 0.4138029516 0 28.8006839752 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -84 -268 460 )
+					}
+					
+					faces {
+						plane ( -0.5683392286 0.2321651727 0.789360404 -239.3191986084 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.5331957936 0.1470214128 0.8331187367 -208.9266204834 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0.282166332 -0.9593654871 -29.3488197327 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 0 -508 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 372 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -84 -268 460 )
+					}
+					
+					faces {
+						plane ( -0.58430475 0 0.8115343451 -124.7840576172 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -180 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 0 -544 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 508 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -84 -268 460 )
+					}
+					
+					faces {
+						plane ( -0.5351984501 -0.119459413 0.8362368345 -110.3682098389 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.3618035614 -0.2260905355 0.9044231772 -103.2883605957 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -372.0000305176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -76 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -256 -120 512 )
+					}
+					
+					faces {
+						plane ( -0.8597239256 -0.0544102266 0.5078524947 34.6967124939 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8334888816 -0.0781394616 0.5469831228 35.8264389038 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8741572499 0 -0.4856429696 -149.1887512207 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 -0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071521282 -0.7070613503 -0.0000000562 -203.6931610107 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7070484757 0.707165122 -0.0000647398 -113.1000518799 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -432 -240 340 )
+					}
+					
+					faces {
+						plane ( -0.0218753163 0.1011730656 -0.9946283102 -307.693145752 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -120 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.3969067931 0.9178588986 -0.0000000449 -157.9337463379 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.6139152646 -0.0979218259 0.7832747698 73.6239089966 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -224 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7608339787 -0.6489466429 0 -102.7573547363 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 524 452 444 )
+					}
+					
+					faces {
+						plane ( 0.5683925152 0.2324352413 0.7892426252 1.5801059008 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.5331959724 0.147021696 0.8331186175 17.1432857513 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.0000001464 -0.282166332 -0.9593654871 -29.3488807678 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 316 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -516 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 -0 -508 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 372 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 524 452 444 )
+					}
+					
+					faces {
+						plane ( 0.5843048692 -0 0.8115342259 122.9652709961 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -180 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 316 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -516 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 -0 -544 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 508 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 524 452 444 )
+					}
+					
+					faces {
+						plane ( 0.5351984501 -0.1194594353 0.8362368941 116.5568237305 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.3618036211 -0.2260905206 0.9044232368 50.1145935059 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 316 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -516 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 -0 -372 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 -76 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 352 616 496 )
+					}
+					
+					faces {
+						plane ( 0.8597239852 -0.0544102564 0.5078525543 103.476272583 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.833488822 -0.0781394541 0.5469831228 102.5027160645 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8741571903 -0 -0.4856429994 -219.1213531494 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -144 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071524262 -0.7070611119 -0.0000003238 -260.2605285645 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.707048595 0.7071648836 -0.0000645716 -56.5360717773 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 176 480 324 )
+					}
+					
+					faces {
+						plane ( -0 0.2026125342 -0.9792590141 -287.5455932617 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -352 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 152 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 -223.9917297363 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 0 -8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.6274634004 -0.0867221355 0.7738016248 -110.153427124 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.5779758692 -0.1520634741 0.8017609715 -102.6606903076 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 356 148 252 )
+					}
+					
+					faces {
+						plane ( 0.7514138818 -0.2475647181 0.6116281152 18.417093277 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 -1 -324 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8741561174 -0.4856449962 0.0000072111 76.9251861572 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071067691 0.7071067095 -0.0000000689 -56.5685310364 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 188 132 212 )
+					}
+					
+					faces {
+						plane ( 0.5788623691 -0.1366805583 0.8038885593 -134.835647583 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.4626309872 -0.3331211209 0.8215855956 -95.7484359741 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9615239501 -0.2747212946 0.0000005362 -292.8408813477 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8741573095 0.48564291 -0.000000204 62.171421051 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.339656949 -0.9405493736 0.0001971508 -93.2979660034 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.3397132158 -0.9405290484 -0.0000107384 -93.3285980225 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 -0 -124 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 270 -2 184 )
+					}
+					
+					faces {
+						plane ( 0.453443408 -0.279257834 0.8464065194 -41.4084091187 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.06427145 -0.3696874082 0.9269306064 -69.4441452026 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -112 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8881003857 -0.4596494734 -0.0000699889 -133.6302185059 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9941473007 0.1080325991 0.0000001952 -66.1299285889 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.1712456495 -0.9852283001 0.0002667481 -303.6398925781 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.1712851524 -0.9852214456 0.0002099711 -303.639465332 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.3394055963 0.9406400919 -0.0000002 -60.6100578308 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.3395198882 0.9405987859 -0.0001791173 -60.599861145 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 524 208 256 )
+					}
+					
+					faces {
+						plane ( 0.3481554091 -0.3481552899 0.8703882098 -40.3859977722 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 -1 48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -516 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 -0 -168 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.910366416 -0.4138029814 0.0000003858 357.1933288574 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 524 208 256 )
+					}
+					
+					faces {
+						plane ( 0.3556174934 -0.35066697 0.8663538098 -36.6388053894 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 -0 316 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.4613527656 -0.8872168064 -0 -3.2642490864 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9103664756 0.4138029218 -0.0000003859 -357.193359375 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 524 116 460 )
+					}
+					
+					faces {
+						plane ( 0.5683925152 0.2324352413 0.7892426252 1.5801059008 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.533196032 0.1470217705 0.8331185579 17.1432800293 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.0000001464 -0.282166332 -0.9593654871 -29.3488807678 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 316 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -516 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 -0 -508 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 372 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 524 116 460 )
+					}
+					
+					faces {
+						plane ( 0.5843048692 -0 0.8115342259 122.9652709961 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -180 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 316 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -516 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 -0 -544 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 508 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 524 116 460 )
+					}
+					
+					faces {
+						plane ( 0.5351984501 -0.1194594279 0.8362368941 116.5568237305 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.3618036211 -0.2260904908 0.9044231772 50.1145973206 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 316 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -516 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 -0 -372.0000305176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 -76 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 352 264 512 )
+					}
+					
+					faces {
+						plane ( 0.8597239852 -0.0544102564 0.5078525543 103.476272583 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8334888816 -0.0781394467 0.5469831228 102.5027160645 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8741571903 -0 -0.4856430292 -219.1213684082 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -144 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071522474 -0.7070612907 -0.000000162 -260.260559082 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.707048595 0.7071648836 -0.0000645716 -56.5360717773 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 176 144 340 )
+					}
+					
+					faces {
+						plane ( -0.5279341936 0 -0.8492853045 2.1113858223 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -448 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 152 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.3969066441 0.9178589582 -0.0000001945 -265.8923950195 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.629801929 -0 0.7767557502 -111.2633514404 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 176 144 340 )
+					}
+					
+					faces {
+						plane ( -0 0.2026125342 -0.9792590141 -287.5455932617 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -352 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 152 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 -223.9917297363 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 0 -8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.6274634004 -0.0867221355 0.7738016248 -110.153427124 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.5779758692 -0.1520634741 0.8017609715 -102.6606903076 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 356 -188 268 )
+					}
+					
+					faces {
+						plane ( 0.7514138818 -0.2475646436 0.6116281748 18.4170875549 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 -1 -324 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.874156177 -0.4856449366 0.000007248 76.925201416 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071067691 0.7071067095 -0.0000000689 -56.5685310364 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 188 -204 228 )
+					}
+					
+					faces {
+						plane ( 0.5788623691 -0.1366805583 0.8038885593 -134.835647583 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.4626309872 -0.3331211209 0.8215855956 -95.7484359741 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9615238309 -0.274721235 0.0000005362 -292.8408508301 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8741573095 0.4856429398 -0.00000017 62.171421051 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.3396570086 -0.9405493736 0.0001969568 -93.2979888916 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.3397130966 -0.940529108 -0.0000107869 -93.3285751343 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 -0 -124 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 524 -128 272 )
+					}
+					
+					faces {
+						plane ( 0.3481555581 -0.3481552303 0.8703882098 -40.3859367371 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 -1 48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -516 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 -0 -168 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.910366416 -0.4138029814 0.0000003858 357.1933288574 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 524 -128 272 )
+					}
+					
+					faces {
+						plane ( 0.3556174338 -0.35066697 0.8663538098 -36.6388244629 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 -0 316 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.4613527656 -0.8872168064 -0.0000003563 -3.2642319202 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9103664756 0.4138029218 -0.000000342 -357.193359375 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 524 -268 460 )
+					}
+					
+					faces {
+						plane ( 0.5683925152 0.2324352413 0.7892426252 1.5801059008 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.533196032 0.1470217705 0.8331185579 17.1432800293 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.0000001464 -0.282166332 -0.9593654871 -29.3488807678 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 316 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -516 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 -0 -508 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 372 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 524 -268 460 )
+					}
+					
+					faces {
+						plane ( 0.5843048692 -0 0.8115342259 122.9652709961 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -180 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 316 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -516 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 -0 -544 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 508 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 524 -268 460 )
+					}
+					
+					faces {
+						plane ( 0.5351984501 -0.1194594279 0.8362368941 116.5568237305 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.3618036211 -0.2260905206 0.9044232368 50.1146011353 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 316 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -516 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 -0 -372.0000305176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 -76 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 352 -120 512 )
+					}
+					
+					faces {
+						plane ( 0.8597239852 -0.054410249 0.5078525543 103.4762649536 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8334889412 -0.0781394467 0.5469831824 102.5027389526 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8741571903 -0 -0.4856429994 -219.1213531494 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -144 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071524262 -0.7070611119 -0.0000002159 -260.2605285645 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.707048595 0.7071650028 -0.0000646137 -56.5361022949 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 188 1088 112 )
+					}
+					
+					faces {
+						plane ( 0 0 1 52 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -20 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -172 1088 112 )
+					}
+					
+					faces {
+						plane ( 0 0 1 52 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 4 -68 36 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -172 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -452 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -152 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -164 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -572 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 -0 -276 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -172 -56 -96 )
+					}
+					
+					faces {
+						plane ( 0.9999997616 0.0008085357 0 -24.2181015015 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9990828633 0.0428178459 0 -247.0859069824 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -584 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 -1 -319.9993286133 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -264 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 1 136 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -172 -56 -96 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -116.0630187988 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9999995828 0.0008085176 0.000001695 -24.2169303894 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9963467121 -0.0854011402 0.0000015281 -284.3277587891 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.960724473 0.0411760882 -0.2744322717 -274.9214477539 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -584 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -264 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -136 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -172 560 -96 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -136 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9298121929 -0 -0.3680343926 -265.7712097168 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -352 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0.9363292456 -0.3511234522 -324.9044189453 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 312 -56 -96 )
+					}
+					
+					faces {
+						plane ( -0.9999997616 0.0008084637 0.0000002488 -144.2039489746 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9987523556 0.049937617 0 -117.0522155762 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -584 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -319.9993286133 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -264 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 0 1 136 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 312 -56 -96 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -116.0630187988 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9999995828 0.0008084815 0.0000029662 -144.2034759521 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9963467121 -0.0854011402 -0.0000046963 -156.7948150635 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9563288689 0.0478225462 -0.2883542776 -151.2954559326 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -584 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -264 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -136 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 184 556 -324 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -316 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -292 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -176 868 -332 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -308 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -84 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -676 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 20 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -296 104 336 )
+					}
+					
+					faces {
+						plane ( -0 0 1 368 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -504 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.99913311 -0.0416305661 0 -128.8910980225 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9987523556 0.0499376096 -0 -13.1835079193 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -216 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071068287 0.7071067095 0 -67.8822479248 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -432 496 324 )
+					}
+					
+					faces {
+						plane ( -1 -0 0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -120 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.3969068229 0.9178589582 0.0000001401 -157.9337005615 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.6298019886 0 0.7767558098 60.041103363 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 0 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.5195806623 0 -0.8544213772 -130.7033843994 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -432 144 340 )
+					}
+					
+					faces {
+						plane ( -1 0 0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -120 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.3969073296 0.9178586602 -0.0000000449 -157.9339752197 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.6298019886 0 0.7767558098 60.041103363 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.5547001958 0 -0.8320502639 -132.0186462402 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 176 -240 340 )
+					}
+					
+					faces {
+						plane ( 1 0 0 -448 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 0 152 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.3969091475 0.917857945 0.0000124762 -265.8905944824 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.6139194369 -0.0979214758 0.7832716107 -93.3581466675 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -224 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.760833919 -0.6489465833 0.0000001364 -309.7110900879 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.4961389303 0 -0.8682431579 -17.3648681641 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 176 496 324 )
+					}
+					
+					faces {
+						plane ( 1 0 0 -448 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 152 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.3969067633 0.917858839 -0.0000001945 -265.8924255371 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.629801929 -0 0.7767557502 -111.2633514404 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -0 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.4472135901 0 -0.8944271803 -32.1993713379 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 512 792 48 )
+					}
+					
+					faces {
+						plane ( -0.1483404487 -0 0.988936305 7.5159158707 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.1483404487 -0 -0.988936305 -39.1618766785 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -104 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.5734367371 -0.8192498684 -0 -66.1991271973 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.287347883 0.9578262568 -0 -69.7372360229 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 9 409 -220 )
+					}
+					
+					faces {
+						plane ( -0 0 1 66 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.4472135901 0 0.8944271803 33.5410194397 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.4472134709 -0 0.8944272399 35.3298873901 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0.4476598501 0.8942040205 20.9603672028 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.0000000174 0.447214067 0.8944270015 46.9573974609 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.2591284811 0.2120141238 0.9422857165 46.3604660034 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.2591287494 0.2120142281 0.9422855973 47.3969573975 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -358 352 -220 )
+					}
+					
+					faces {
+						plane ( 1 0 0 -268 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 242 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071068287 0.7071068287 0 -206.4752044678 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071068287 -0.7071068287 0 -212.1320495605 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 1 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -358 352 -220 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8262273669 0 -0.5633367896 -167.3450927734 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.636945188 0.636946559 -0.4342808723 -144.2972106934 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.63694489 -0.6369467974 -0.4342807531 -149.3927307129 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 -1 96 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 242 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -358 480 -220 )
+					}
+					
+					faces {
+						plane ( 1 0 0 -268 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 242 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071068287 0.7071068287 0 -207.8894042969 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071068287 -0.7071068287 0 -210.7178649902 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 1 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -358 480 -220 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8262273669 0 -0.5633368492 -167.3357086182 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.6369453669 0.6369464397 -0.4342808425 -145.5760192871 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.6369461417 -0.6369451284 -0.4342817366 -148.1187896729 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 -1 96 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 242 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -358 616 -220 )
+					}
+					
+					faces {
+						plane ( 1 0 0 -268 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 242 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071068287 -0.7071068287 0 -209.3036193848 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071068287 0.7071068287 0 -207.8894042969 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 1 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -358 616 -220 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8262273669 0 -0.5633367896 -167.3450927734 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.6369453073 -0.636946559 -0.4342808425 -146.8449859619 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.6369460821 0.6369454265 -0.4342814684 -145.5710296631 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 -1 96 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 242 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -358 748 -220 )
+					}
+					
+					faces {
+						plane ( 1 0 0 -262 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 242 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071068287 -0.7071068287 0 -202.2326049805 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071068287 0.7071068287 0 -199.4041137695 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 1 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -358 748 -220 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8262273073 0 -0.5633367896 -162.3994445801 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.636946857 -0.636944294 -0.4342818558 -140.4754943848 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.6369447112 0.6369472742 -0.4342805743 -137.9227905273 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 -1 96 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 242 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -358 892 -220 )
+					}
+					
+					faces {
+						plane ( 1 0 0 -270 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071068883 0.7071067095 0 -213.5462646484 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 -0 -0 242 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071068287 -0.7071068287 0 -210.7178344727 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 1 -40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -358 892 -220 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.9950372577 0 -0.0995037183 -264.678894043 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7053461075 0.7053450346 -0.070534952 -210.1929016113 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.705344677 -0.7053467035 -0.0705339387 -207.3717193604 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 242 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 1 0 -60 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -170 352 -220 )
+					}
+					
+					faces {
+						plane ( -1 -0 -0 272 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -298 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071067691 0.7071067691 -0 175.3624725342 ) matrix ( ( -0.0312499963 0 -0.265168041 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071067691 -0.7071067691 -0 169.7056274414 ) matrix ( ( -0.0312499963 0 0.265168041 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 1 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -170 352 -220 )
+					}
+					
+					faces {
+						plane ( -0 -0 1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8262273073 -0 -0.5633367896 278.8206176758 ) matrix ( ( -0.03125 0 0 ) ( 0 0.0312500037 -0.2112495601 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.6369454265 0.6369462013 -0.4342810214 199.6532440186 ) matrix ( ( -0.0312500037 0 -0.2651652098 ) ( 0 0.0312500037 -0.1151587516 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.6369450092 -0.6369470358 -0.4342804849 194.5573883057 ) matrix ( ( -0.03125 0 0.2651638985 ) ( 0 0.03125 -0.1151558161 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 -1 96 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 -298 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -170 480 -220 )
+					}
+					
+					faces {
+						plane ( -1 -0 -0 272 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -298 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071067691 0.7071067691 -0 173.9482727051 ) matrix ( ( -0.0312499963 0 -0.265168041 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071067691 -0.7071067691 -0 171.1198425293 ) matrix ( ( -0.0312499963 0 0.265168041 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 1 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -170 480 -220 )
+					}
+					
+					faces {
+						plane ( -0 -0 1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8262273073 -0 -0.5633367896 278.8335266113 ) matrix ( ( -0.03125 0 0 ) ( 0 0.0312500037 -0.2112495601 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.6369450688 0.636946559 -0.4342810512 198.3693237305 ) matrix ( ( -0.0312500037 0 -0.2651664317 ) ( 0 0.03125 -0.1151578948 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.6369461417 -0.6369450688 -0.4342817366 195.8321990967 ) matrix ( ( -0.03125 0 0.2651675344 ) ( 0 0.03125 -0.1151551753 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 -1 96 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 -298 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -170 616 -220 )
+					}
+					
+					faces {
+						plane ( -1 -0 -0 272 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -298 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071067691 -0.7071067691 -0 172.5340576172 ) matrix ( ( -0.0312499963 0 0.265168041 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071067691 0.7071067691 -0 173.9482727051 ) matrix ( ( -0.0312499963 0 -0.265168041 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 1 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -170 616 -220 )
+					}
+					
+					faces {
+						plane ( -0 -0 1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8262273073 -0 -0.5633367896 278.8206176758 ) matrix ( ( -0.03125 0 0 ) ( 0 0.0312500037 -0.2112495601 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.636945188 -0.636946857 -0.4342805147 197.1103057861 ) matrix ( ( -0.03125 0 0.2651653588 ) ( 0 0.0312499963 -0.115155831 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.6369461417 0.6369454265 -0.4342812002 198.3798675537 ) matrix ( ( -0.0312500037 0 -0.2651669979 ) ( 0 0.0312500037 -0.1151547283 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 -1 96 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 -298 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -170 748 -220 )
+					}
+					
+					faces {
+						plane ( -1 -0 -0 278 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -298 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071067095 -0.7071067095 -0 179.6051025391 ) matrix ( ( -0.0312499963 0 0.2651679516 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071067095 0.7071067095 -0 182.4335327148 ) matrix ( ( -0.0312499963 0 -0.2651679516 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 1 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -170 748 -220 )
+					}
+					
+					faces {
+						plane ( -0 -0 1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8262274265 -0 -0.5633368492 283.7698059082 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 -0.211250037 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.6369467378 -0.6369444132 -0.434281975 203.4759521484 ) matrix ( ( -0.03125 0 0.2651612163 ) ( 0 0.0312499944 -0.1151581183 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.6369456053 0.636946559 -0.4342800677 206.0274810791 ) matrix ( ( -0.0312500075 0 -0.2651614547 ) ( 0 0.0312500075 -0.1151581705 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 -1 96 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 -298 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -170 892 -220 )
+					}
+					
+					faces {
+						plane ( -1 0 -0 270 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071068287 0.7071068287 -0 168.2914276123 ) matrix ( ( -0.03125 0 -0.2651685476 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 0 -298 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7071068287 -0.7071068287 -0 171.1198577881 ) matrix ( ( -0.0312499963 0 0.265168041 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 1 -40 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -170 892 -220 )
+					}
+					
+					faces {
+						plane ( -0 -0 1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.9950371981 -0 -0.0995037183 272.6405944824 ) matrix ( ( -0.03125 0 0 ) ( 0 0.0312499963 -0.0373138897 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7053460479 0.705345273 -0.0705348179 170.6939239502 ) matrix ( ( -0.0312500037 0 -0.2651679516 ) ( 0 0.03125 -0.0187033787 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.7053442001 -0.7053470016 -0.0705341324 173.5142822266 ) matrix ( ( -0.0312499963 0 0.2651655376 ) ( 0 0.0312499963 -0.0187031478 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -0 -1 40 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 -0 -0 -298 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -60 ) matrix ( ( -0.03125 0 -0.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 1084 -144 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -312 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 0 -1 -272 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( -0.9438583851 0.3303504288 0 -451.3499755859 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0.9536277652 0.3009887636 -0 -462.1851196289 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 -1 0 -188 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 1 -0 -132 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -104 1120.5 -335.5 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -80.5 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -80.5 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.979804039 0.1999600083 0 8.2183561325 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.979804039 -0.1999600083 0 -10.1779642105 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -168.5 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 -0 -27.5 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 113 1135 -335.5 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -80.5 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -80.5 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9925863147 -0.1215411872 0 -7.3532414436 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.9925863147 0.1215411872 -0 5.3680701256 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -183 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 -0 -13 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 12 370 132 )
+					}
+					
+					faces {
+						plane ( 0 0 1 156 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -548 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -44 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -26 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.7071068287 0.7071068287 0 -35.3553466797 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.6246950626 0.7808687687 0 -41.5422058105 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -460 80 212 )
+					}
+					
+					faces {
+						plane ( 0 0 1 84 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0 0 -1 -212 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 0 -148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -224 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 -0 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -757.2272949219 -32 444.5283813477 )
+						rotation ( ( 0.6156615019 0 0.788010776 ) ( 0 1 0 ) ( -0.788010776 0 0.6156615019 ) )
+					}
+					
+					faces {
+						plane ( 0.968736887 -0.0000003351 -0.2480905652 -164.0451660156 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.9688932896 -0.0010912066 -0.2474766821 -163.8112487793 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.9689170122 -0.0000001679 0.2473859489 107.6874084473 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.9687739611 0.001182835 0.2479425073 107.923500061 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.2419228703 -0 -0.9702954292 -493.9382629395 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.2376400381 0.1871121526 0.9531612396 228.1399230957 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.0206684936 -0.9963462353 -0.0828669891 -113.9213027954 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.03096205 0.9917768836 -0.124177143 -102.8824234009 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -520 -148 244 )
+					}
+					
+					faces {
+						plane ( -0.6114475131 0 0.791285038 -90.9977798462 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.6114475131 0 -0.791285038 -189.8364715576 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.7905012369 -0 -0.6124604344 42.6300926208 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.7905012369 -0 0.6124604344 -98.2358016968 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -20 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -336 -115 247 )
+					}
+					
+					faces {
+						plane ( -0.6114475131 0 0.7912849784 -201.1302642822 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.6114475131 0 -0.7912849784 -79.7039794922 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.7905012369 -0 -0.6124604344 -104.6595153809 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.7905012369 -0 0.6124604344 49.0538063049 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -13 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -13 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -460 80 212 )
+					}
+					
+					faces {
+						plane ( -0 0 1 84 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -212 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 0 -148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -224 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 -0 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -460 80 212 )
+					}
+					
+					faces {
+						plane ( 0 -0.1113717705 0.9937788844 21.9316711426 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0 0 -1 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 -0 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -160 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.6422199011 0 0.7665205002 -24.5286560059 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -460 80 212 )
+					}
+					
+					faces {
+						plane ( 0 0 1 14 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0 0 -1 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -224 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 160 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.6422198415 0 0.7665205002 -24.5286560059 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "adam_model_static_1" 
+		groups {
+			"Ship (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/quarry/crashed_scarab.lwo"
+				"mergecm"	"1"
+				"expandAAS"	"0"
+			}
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_light_interior_2" {
+			sdDictionary {
+				"light_radius"	"284 488 492"
+				"light_origin"	"4 912 -120"
+				"noshadows"	"1"
+				"_color"	"0.3098 0.20392 0.12157 1"
+				"maxVisDist"	"2048"
+				"_overbright"	"1.00000"
+				"nospecular"	"1"
+				"nodiffuse"	"1"
+			}
+			sdTransform {
+				translation ( 4 464 -152 )
+			}
+			
+			classname "light"
+		}
+		sdPrimitiveEntity "jbrushwood_trigger_hurt_1" {
+			sdDictionary {
+				"dmg_damage"	"damage_painTrigger"
+				"on"	"1"
+			}
+			sdTransform {
+				translation ( 180 72 528 )
+			}
+			
+			classname "trigger_hurt"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 97 749 -175 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -212 ) matrix ( ( 0.03125 0 -31.15625 ) ( 0 0.03125 25.46875 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trighurt"
+						plane ( 0 0 -1 32 ) matrix ( ( 0.03125 0 -31.15625 ) ( 0 0.03125 -25.46875 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trighurt"
+						plane ( -1 0 0 -148 ) matrix ( ( 0.03125 0 31.15625 ) ( 0 0.03125 10.03125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trighurt"
+						plane ( 1 0 0 28 ) matrix ( ( 0.03125 0 -31.15625 ) ( 0 0.03125 10.03125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trighurt"
+						plane ( 0 -1 0 -64 ) matrix ( ( 0.03125 0 25.46875 ) ( 0 0.03125 10.03125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trighurt"
+						plane ( 0 1 0 -76 ) matrix ( ( 0.03125 0 -25.46875 ) ( 0 0.03125 10.03125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trighurt"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "jbrushwood_trigger_hurt_2" {
+			sdDictionary {
+				"dmg_damage"	"damage_painTrigger"
+				"on"	"1"
+			}
+			sdTransform {
+				translation ( -224 60 400 )
+			}
+			
+			classname "trigger_hurt"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 52 20 -128 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -425 ) matrix ( ( 0.03125 0 -8 ) ( 0 0.03125 39.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trighurt"
+						plane ( 0 0 -1 32 ) matrix ( ( 0.03125 0 -8 ) ( 0 0.03125 -39.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trighurt"
+						plane ( -1 0 0 -148 ) matrix ( ( 0.03125 0 8 ) ( 0 0.03125 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trighurt"
+						plane ( 1 0 0 -143 ) matrix ( ( 0.03125 0 -8 ) ( 0 0.03125 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trighurt"
+						plane ( 0 -1 -0 -144 ) matrix ( ( 0.03125 0 39.5 ) ( 0 0.03125 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trighurt"
+						plane ( 0 1 0 -87 ) matrix ( ( 0.03125 0 -39.5 ) ( 0 0.03125 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trighurt"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "ship_cell_1" {
+			sdDictionary {
+				"model"	"models/mapobjects/quarry/enercell/cell_slot01.lwo"
+				"dynamic"	"1"
+				"networkSync"	"1"
+				"hide"	"1"
+				"editor_unique"	"1"
+				"disableClip"	"1"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( 0 2 2 )
+			}
+			
+			classname "func_static"
+		}
+		sdPrimitiveEntity "ship_cell_2" {
+			sdDictionary {
+				"model"	"models/mapobjects/quarry/enercell/cell_slot02.lwo"
+				"dynamic"	"1"
+				"networkSync"	"1"
+				"hide"	"1"
+				"editor_unique"	"1"
+				"disableClip"	"1"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( 0 2 2 )
+			}
+			
+			classname "func_static"
+		}
+		sdPrimitiveEntity "ship_cell_3" {
+			sdDictionary {
+				"model"	"models/mapobjects/quarry/enercell/cell_slot03.lwo"
+				"dynamic"	"1"
+				"networkSync"	"1"
+				"hide"	"1"
+				"editor_unique"	"1"
+				"disableClip"	"1"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( 0 2 2 )
+			}
+			
+			classname "func_static"
+		}
+		sdPrimitiveEntity "adam_model_static_2" 
+		groups {
+			"Ship (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/quarry/crashed_scarab_details.lwo"
+				"mergecm"	"1"
+			}
+			classname "model_static"
+		}
+	}
+}

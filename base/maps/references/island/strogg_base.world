@@ -1,0 +1,3511 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"editor_last_atmosphere"	"atmosphere_canyon_01"
+	}
+
+	meta {
+		sdGroupVisual "trigger_hurts" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdLODGroup "strogg_base" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		5
+				"uniqueinstance"		1
+			}
+			levels {
+				"strogg_base (Level 1)"
+				"strogg_base (Level 2)"
+				"strogg_base (Level 3)"
+				"strogg_base (Level 4)"
+				"strogg_base (Level 5)"
+			}
+		}
+		sdLODGroup "min_vis" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		2
+				"uniqueinstance"		1
+			}
+			levels {
+				"min_vis (Level 01)"
+				"min_vis (Level 02)"
+			}
+		}
+		sdLODGroup_Level "strogg_base (Level 1)" {
+			hidden
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		16384
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "strogg_base (Level 2)" {
+			hidden
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		8192
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "strogg_base (Level 3)" {
+			hidden
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		7168
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0.75
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		"medium"
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "strogg_base (Level 4)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		8192
+				"minvisdist"		0
+				"visdistfalloff"		0.001
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		"medium"
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "strogg_base (Level 5)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		8192
+				"minvisdist"		0
+				"visdistfalloff"		0.001
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		"medium"
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "min_vis (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		50000
+				"minvisdist"		8100
+				"visdistfalloff"		0.001
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		"med"
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "min_vis (Level 02)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		50000
+				"minvisdist"		8100
+				"visdistfalloff"		0.001
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		"med"
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitivePatch "sdprimitivepatch_1" {
+					
+					sdTransform {
+						translation ( 9720 8496 1784 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 1 0 0 ) ( 0 1 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/sfx/basewallshield"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 708 464 -586 1 1 ) ( 708 464 -586 0.5 1 ) ( 264.0000610352 768 -612 0 1 ) )
+							( ( 708 464 -336 1 0.5 ) ( 708 464 -336 0.5 0.5 ) ( 264.0000610352 768 -386 0 0.5 ) )
+							( ( 708 464 -336 1 0 ) ( 708 464 -336 0.5 0 ) ( 264.0000610352 768 -386 0 0 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_2" {
+					
+					sdTransform {
+						translation ( 9272 8934 1752 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 1 0 0 ) ( 0 1 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/sfx/basewallshield"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 702 338 -580 1 1 ) ( 702 338 -580 0.5 1 ) ( 264.0000610352 768 -550 0 1 ) )
+							( ( 702 338 -354 1 0.5 ) ( 702 338 -354 0.5 0.5 ) ( 264.0000610352 768 -324 0 0.5 ) )
+							( ( 702 338 -354 1 0 ) ( 702 338 -354 0.5 0 ) ( 264.0000610352 768 -324 0 0 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_3" {
+					
+					sdTransform {
+						translation ( 8988 9322 1368 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 1 0 0 ) ( 0 1 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/sfx/basewallshield"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 540 390 -176 1 1 ) ( 540 390 -176 0.5 1 ) ( 236.0000610352 772 -120 0 1 ) )
+							( ( 540 390 64 1 0.5 ) ( 540 390 64 0.5 0.5 ) ( 236.0000610352 772 120 0 0.5 ) )
+							( ( 540 390 64 1 0 ) ( 540 390 64 0.5 0 ) ( 236.0000610352 772 120 0 0 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_4" {
+					
+					sdTransform {
+						translation ( 10458 8364 1720 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 1 0 0 ) ( 0 1 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/sfx/basewallshield"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 540 412 -450 1 1 ) ( 540 412 -450 0.5 1 ) ( -18.0000095367 590 -524 0 1 ) )
+							( ( 540 412 -164 1 0.5 ) ( 540 412 -164 0.5 0.5 ) ( -18.0000095367 590 -264 0 0.5 ) )
+							( ( 540 412 -164 1 0 ) ( 540 412 -164 0.5 0 ) ( -18.0000095367 590 -264 0 0 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_5" {
+					
+					sdTransform {
+						translation ( 9554 12152 1720 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 1 0 0 ) ( 0 1 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/sfx/basewallshield"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -52.0000534058 294 -466 1 1 ) ( -52.0000534058 294 -466 0.5 1 ) ( 292.0000610352 616 -364 0 1 ) )
+							( ( -52.0000534058 294 -210 1 0.5 ) ( -52.0000534058 294 -210 0.5 0.5 ) ( 292.0000610352 616 -108 0 0.5 ) )
+							( ( -52.0000534058 294 -210 1 0 ) ( -52.0000534058 294 -210 0.5 0 ) ( 292.0000610352 616 -108 0 0 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_6" {
+					
+					sdTransform {
+						translation ( 9942 12300 1720 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 1 0 0 ) ( 0 1 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/sfx/basewallshield"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -86.0000305176 476 -358 1 1 ) ( -86.0000305176 476 -358 0.5 1 ) ( 310.0000610352 732 -370 0 1 ) )
+							( ( -86.0000305176 476 -102 1 0.5 ) ( -86.0000305176 476 -102 0.5 0.5 ) ( 310.0000610352 732 -114 0 0.5 ) )
+							( ( -86.0000305176 476 -102 1 0 ) ( -86.0000305176 476 -102 0.5 0 ) ( 310.0000610352 732 -114 0 0 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_7" {
+					
+					sdTransform {
+						translation ( 10390 12514 1720 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 1 0 0 ) ( 0 1 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/sfx/basewallshield"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -126.0000457764 526 -376 1 1 ) ( -126.0000457764 526 -376 0.5 1 ) ( 318.0000610352 672 -324 0 1 ) )
+							( ( -126.0000457764 526 -120 1 0.5 ) ( -126.0000457764 526 -120 0.5 0.5 ) ( 318.0000610352 672 -68 0 0.5 ) )
+							( ( -126.0000457764 526 -120 1 0 ) ( -126.0000457764 526 -120 0.5 0 ) ( 318.0000610352 672 -68 0 0 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_8" {
+					
+					sdTransform {
+						translation ( 11712 12772 1720 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 1 0 0 ) ( 0 1 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/sfx/basewallshield"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -154.0000457764 484 -298 1 1 ) ( -154.0000457764 484 -298 0.5 1 ) ( 376.0000610352 362 -286 0 1 ) )
+							( ( -154.0000457764 484 -42 1 0.5 ) ( -154.0000457764 484 -42 0.5 0.5 ) ( 376.0000610352 362 -30 0 0.5 ) )
+							( ( -154.0000457764 484 -42 1 0 ) ( -154.0000457764 484 -42 0.5 0 ) ( 376.0000610352 362 -30 0 0 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_9" {
+					
+					sdTransform {
+						translation ( 13328 9794 1720 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 1 0 0 ) ( 0 1 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/sfx/basewallshield"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 130.0000305176 680 -406 1 1 ) ( 130.0000305176 680 -406 0.5 1 ) ( 1.9999642372 216 -394 0 1 ) )
+							( ( 130.0000305176 680 -150 1 0.5 ) ( 130.0000305176 680 -150 0.5 0.5 ) ( 1.9999642372 216 -138 0 0.5 ) )
+							( ( 130.0000305176 680 -150 1 0 ) ( 130.0000305176 680 -150 0.5 0 ) ( 1.9999642372 216 -138 0 0 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_10" {
+					
+					sdTransform {
+						translation ( 12312 12636 1720 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 1 0 0 ) ( 0 1 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/sfx/basewallshield"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -212.0000457764 492 -300 1 1 ) ( -212.0000457764 492 -300 0.5 1 ) ( 248.0000610352 234 -340 0 1 ) )
+							( ( -212.0000457764 492 -44 1 0.5 ) ( -212.0000457764 492 -44 0.5 0.5 ) ( 248.0000610352 234 -84 0 0.5 ) )
+							( ( -212.0000457764 492 -44 1 0 ) ( -212.0000457764 492 -44 0.5 0 ) ( 248.0000610352 234 -84 0 0 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_11" {
+					
+					sdTransform {
+						translation ( 12728 12408 1720 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 1 0 0 ) ( 0 1 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/sfx/basewallshield"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -156.0000457764 456 -354 1 1 ) ( -156.0000457764 456 -354 0.5 1 ) ( 178.0000610352 132 -352 0 1 ) )
+							( ( -156.0000457764 456 -98 1 0.5 ) ( -156.0000457764 456 -98 0.5 0.5 ) ( 178.0000610352 132 -96 0 0.5 ) )
+							( ( -156.0000457764 456 -98 1 0 ) ( -156.0000457764 456 -98 0.5 0 ) ( 178.0000610352 132 -96 0 0 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_12" {
+					
+					sdTransform {
+						translation ( 13640 10502 1720 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 1 0 0 ) ( 0 1 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/sfx/basewallshield"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -124.0000457764 546 -386 1 1 ) ( -124.0000457764 546 -386 0.5 1 ) ( -180.0000152588 -13.9999828339 -406 0 1 ) )
+							( ( -124.0000457764 546 -130 1 0.5 ) ( -124.0000457764 546 -130 0.5 0.5 ) ( -180.0000152588 -13.9999828339 -150 0 0.5 ) )
+							( ( -124.0000457764 546 -130 1 0 ) ( -124.0000457764 546 -130 0.5 0 ) ( -180.0000152588 -13.9999828339 -150 0 0 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_13" {
+					
+					sdTransform {
+						translation ( 13688 11132 1720 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 1 0 0 ) ( 0 1 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/sfx/basewallshield"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -234.0000457764 452 -390 1 1 ) ( -234.0000457764 452 -390 0.5 1 ) ( -172.0000152588 -68 -372 0 1 ) )
+							( ( -234.0000457764 452 -134 1 0.5 ) ( -234.0000457764 452 -134 0.5 0.5 ) ( -172.0000152588 -68 -116 0 0.5 ) )
+							( ( -234.0000457764 452 -134 1 0 ) ( -234.0000457764 452 -134 0.5 0 ) ( -172.0000152588 -68 -116 0 0 ) )
+						)
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 10264 11932 1232 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -4 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 -0 0 -528 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.7071068287 0.7071068287 0 -492.1463623047 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -492 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.7071068287 0.7071068287 0 -526.0874633789 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 -0 -0 -576 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.7071068287 -0.7071068287 -0 -610.9403076172 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -612 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.7071068287 -0.7071068287 0 -576.9991455078 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 10336 12020 1216 )
+					}
+					
+					faces {
+						plane ( 0 -0 1 -52 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 -0 0 -320 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.7071068287 0.7071068287 0 -243.2447509766 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -268 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.7071068287 0.7071068287 0 -379.0092468262 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 -0 -0 -512 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.7071068287 -0.7071068287 -0 -588.3128662109 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -564 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.7071068287 -0.7071068287 0 -452.5483703613 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "nkd_model_static_312" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/gate_generator_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9268 10285 1292 )
+				rotation ( ( -0.9238795042 -0.3826834857 0 ) ( 0.3826834857 -0.9238795042 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_314" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/gate_generator_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9062 11701 1220 )
+				rotation ( ( -0.9914448261 0.1305262595 0 ) ( -0.1305262595 -0.9914448261 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_315" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/gate_generator_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 11861 8783 1296 )
+				rotation ( ( 0.2588190734 -0.9659258127 0 ) ( 0.9659258127 0.2588190734 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_316" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/gate_generator_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12970 9670 1311 )
+				rotation ( ( 0.7933533192 -0.6087614298 0 ) ( 0.6087614298 0.7933533192 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_303" 
+		groups {
+			"strogg_base (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/large_container_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 10424 12704 1258 )
+				rotation ( ( 0.6156615019 0.7880107164 0 ) ( -0.7880107164 0.6156615019 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_308" 
+		groups {
+			"strogg_base (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/large_container_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12501 11306 1201 )
+				rotation ( ( 0.8480481505 0.5299192667 0 ) ( -0.5299192667 0.8480481505 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_247" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 11152 8720 1315 )
+				rotation ( ( -0.1305263937 -0.9914448261 0 ) ( 0.9914448261 -0.1305263937 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_249" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12946 9418 1328 )
+				rotation ( ( 0.7071067691 -0.7071067691 0 ) ( 0.7071067691 0.7071067691 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_250" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13130 9626 1345 )
+				rotation ( ( 0.7933533192 -0.6087614298 0 ) ( 0.6087614298 0.7933533192 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_251" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 11428 8720 1318 )
+				rotation ( ( 0.1305262446 -0.9914448261 0 ) ( 0.9914448261 0.1305262446 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_253" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13048 12448 1388 )
+				rotation ( ( 0.7071067691 0.7071067691 0 ) ( -0.7071067691 0.7071067691 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_254" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9064 10496 1238 )
+				rotation ( ( -0.9914448261 -0.1305262595 0 ) ( 0.1305262595 -0.9914448261 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_255" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9224 12112 1242 )
+				rotation ( ( -0.8660253882 0.5000000596 0 ) ( -0.5000000596 -0.8660253882 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_256" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9377 12338 1280 )
+				rotation ( ( -0.7933533192 0.6087614298 0 ) ( -0.6087614298 -0.7933533192 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_257" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 11400 13312 1437 )
+				rotation ( ( 0.1305262446 0.9914448261 0 ) ( -0.9914448261 0.1305262446 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_258" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 11128 13312 1435 )
+				rotation ( ( -0.1305262148 0.9914448857 0 ) ( -0.9914448857 -0.1305262148 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_259" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 10857 13257 1432 )
+				rotation ( ( -0.2588190436 0.9659258127 0 ) ( -0.9659258127 -0.2588190436 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_260" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13232 12248 1356 )
+				rotation ( ( 0.7933533192 0.6087614298 0 ) ( -0.6087614298 0.7933533192 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_261" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13368 12008 1349 )
+				rotation ( ( 0.9238795042 0.3826834559 0 ) ( -0.3826834559 0.9238795042 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_262" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13274 9858 1350 )
+				rotation ( ( 0.8660253882 -0.5 0 ) ( 0.5 0.8660253882 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_263" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13445 11742 1354 )
+				rotation ( ( 0.9781475067 0.2079116851 0 ) ( -0.2079116851 0.9781475067 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "torchy_model_static_1116" 
+		groups {
+			"strogg_base (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg/barricade01_straight.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 10808 10209 1233 )
+				rotation ( ( 0.7547095418 -0.6560590863 0 ) ( 0.6560590863 0.7547095418 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_273" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar02.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13395 11872 1342 )
+				rotation ( ( 0.9659258127 0.2588190436 0 ) ( -0.2588190436 0.9659258127 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_274" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13297 12127 1354 )
+				rotation ( ( 0.8660253882 0.5 0 ) ( -0.5 0.8660253882 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_276" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar02.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 10995 13269 1442 )
+				rotation ( ( -0.1650476307 0.9862856269 0 ) ( -0.9862856269 -0.1650476307 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_277" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 11264 13304 1450 )
+				rotation ( ( -0.0000000437 1 0 ) ( -1 -0.0000000437 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_281" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9312 12217 1272 )
+				rotation ( ( -0.7933533788 0.6087613702 0 ) ( -0.6087613702 -0.7933533788 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_282" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9105 10365 1259 )
+				rotation ( ( -0.9659258127 -0.258819133 0 ) ( 0.258819133 -0.9659258127 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_284" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13194 9746 1345 )
+				rotation ( ( 0.8660253882 -0.5 0 ) ( 0.5 0.8660253882 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_285" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13032 9527 1340 )
+				rotation ( ( 0.7489557266 -0.6626200676 0 ) ( 0.6626200676 0.7489557266 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_286" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13330 10006 1329 )
+				rotation ( ( 0.9659258127 -0.2588190436 0 ) ( 0.2588190436 0.9659258127 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_288" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13464 10480 1306 )
+				rotation ( ( 0.9659258127 -0.2588190436 0 ) ( 0.2588190436 0.9659258127 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_289" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 11002 8770 1268 )
+				rotation ( ( -0.2588190436 -0.9659258127 0 ) ( 0.9659258127 -0.2588190436 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_290" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13520 11056 1348 )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_291" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13459 11586 1316 )
+				rotation ( ( 0.9914448857 0.1305261999 0 ) ( -0.1305261999 0.9914448857 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_292" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12568 12872 1394 )
+				rotation ( ( 0.4999999106 0.8660254478 0 ) ( -0.8660254478 0.4999999106 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_293" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12096 13136 1423 )
+				rotation ( ( 0.382683605 0.9238794446 0 ) ( -0.9238794446 0.382683605 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_294" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 10256 13040 1354 )
+				rotation ( ( -0.4999999106 0.8660254478 0 ) ( -0.8660254478 -0.4999999106 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_295" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 10713 13192 1397 )
+				rotation ( ( -0.2588190436 0.9659258127 0 ) ( -0.9659258127 -0.2588190436 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_296" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 11552 13262 1430 )
+				rotation ( ( 0.1305259466 0.9914448857 0 ) ( -0.9914448857 0.1305259466 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_297" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9848 12776 1348 )
+				rotation ( ( -0.6087614894 0.7933532596 0 ) ( -0.7933532596 -0.6087614894 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_298" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9494 12444 1277 )
+				rotation ( ( -0.7071068287 0.7071067095 0 ) ( -0.7071067095 -0.7071068287 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_299" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 10432 8952 1182 )
+				rotation ( ( -0.3826833963 -0.9238795638 0 ) ( 0.9238795638 -0.3826833963 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_301" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9215 10096 1191 )
+				rotation ( ( -0.7933533192 -0.6087614298 0 ) ( 0.6087614298 -0.7933533192 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_302" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12915 12539 1369 )
+				rotation ( ( 0.7071067691 0.7071067691 0 ) ( -0.7071067691 0.7071067691 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "torchy_model_static_1300" 
+		groups {
+			"strogg_base (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg/barricade01_straight.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 10026 10476 1241 )
+				rotation ( ( 0.9876883626 -0.1564344615 0 ) ( 0.1564344615 0.9876883626 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "torchy_model_static_1301" 
+		groups {
+			"strogg_base (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg/barricade01_straight.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9663 10484 1233 )
+				rotation ( ( 0.9986295104 0.0523359589 0 ) ( -0.0523359589 0.9986295104 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_trigger_hurt_1" {
+			sdDictionary {
+				"requirement"	"team_gdf"
+				"requirement1"	"not_disguised"
+				"dmg_damage"	"damage_strogg_basewall"
+				"snd_pass"	"sounds/tools/forceshield/walkthrough"
+				"snd_fail"	"sounds/tools/forceshield/fry"
+			}
+			sdTransform {
+				translation ( 9388.982421875 9903.0029296875 1281.0014648438 )
+			}
+			
+			classname "trigger_hurt"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_11" 
+				groups {
+					"trigger_hurts"
+				}
+				{
+					
+					sdTransform {
+						translation ( -134.982421875 182.9970703125 118.9985351563 )
+					}
+					
+					faces {
+						plane ( 0.0295984931 -0.0444132574 0.9985746741 -51.0671806335 ) matrix ( ( 0.0625 0 1342.279296875 ) ( 0 0.0625 -681.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.0296128113 0.0444029644 -0.9985747337 -264.4825439453 ) matrix ( ( 0.0625 0 1342.279296875 ) ( 0 0.0625 829.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.809268713 -0.587438643 -0.0000000284 -5.4819498062 ) matrix ( ( 0.0625 0 132.779296875 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.8092670441 0.587440908 -0.0000000674 -8.9604463577 ) matrix ( ( 0.0625 0 1342.279296875 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.5546115041 -0.8321093917 -0.0000001607 -470.3554992676 ) matrix ( ( 0.0625 0 -17.9706687927 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.5545752645 0.8321335316 0 -16.0906391144 ) matrix ( ( 0.0625 0 1493.029296875 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "nkd_model_static_377" 
+		groups {
+			"strogg_base (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/large_container_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13214.1728515625 10593 1263.6535644531 )
+				rotation ( ( 0.980630815 0.1378186792 0.1391731054 ) ( -0.1391731054 0.9902680516 0 ) ( -0.1378186792 -0.0193691533 0.9902680516 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_378" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg/spike_c.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 11070 9806 1221 )
+				rotation ( ( 0.8480480909 -0.5299192667 0 ) ( 0.5299192667 0.8480480909 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_418" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 11290 8720 1340 )
+				rotation ( ( 0.0000000119 -1 0 ) ( 1 0.0000000119 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_420" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13127.8896484375 12335.0986328125 1378 )
+				rotation ( ( 0.725374341 0.6883546114 0 ) ( -0.6883546114 0.725374341 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_421" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 11559 8762 1314 )
+				rotation ( ( 0.2588190734 -0.9659258127 0 ) ( 0.9659258127 0.2588190734 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_427" 
+		groups {
+			"strogg_base (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/crate01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 11042 11911.919921875 1241.0461425781 )
+				rotation ( ( 0.9135454297 0.4062675536 0.0195293203 ) ( -0.4067366719 0.9124917984 0.0438635685 ) ( 0 -0.0480146557 0.9988466501 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_430" 
+		groups {
+			"strogg_base (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/crate01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9589.361328125 10399.2978515625 1248.7239990234 )
+				rotation ( ( -0.0123426393 0.9821442366 -0.187724188 ) ( -0.9992297888 -0.005121273 0.0389044397 ) ( 0.0372483805 0.188059777 0.9814509749 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_431" 
+		groups {
+			"strogg_base (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/crate01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 11176.16796875 12101.7958984375 1238.1027832031 )
+				rotation ( ( 0.9271550775 -0.3740375042 -0.0218933187 ) ( 0.3718703091 0.9257754087 -0.0682076961 ) ( 0.0457805395 0.0550976396 0.9974309206 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_432" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9137 10233 1216 )
+				rotation ( ( -0.9238795042 -0.3826834261 0 ) ( 0.3826834261 -0.9238795042 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_433" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9976 9264 1153 )
+				rotation ( ( -0.6087614298 -0.7933533192 0 ) ( 0.7933533192 -0.6087614298 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_434" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9528 9704 1172 )
+				rotation ( ( -0.7071068287 -0.7071067095 0 ) ( 0.7071067095 -0.7071068287 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_435" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12136 8904 1315 )
+				rotation ( ( 0.342020154 -0.9396926165 0 ) ( 0.9396926165 0.342020154 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_436" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9180 11988 1240 )
+				rotation ( ( -0.9914448261 0.1305263191 0 ) ( -0.1305263191 -0.9914448261 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_437" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 9079 11400 1246 )
+				rotation ( ( -0.9914448261 0.1305263191 0 ) ( -0.1305263191 -0.9914448261 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "torchy_model_static_1303" 
+		groups {
+			"strogg_base (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg/barricade01_straight.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 11450.4658203125 9602 1263.0256347656 )
+				rotation ( ( 0.7189015746 -0.6946583986 0.0251045953 ) ( 0.6942352653 0.719339788 0.0242432281 ) ( -0.0348994955 0 0.9993908405 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "torchy_model_static_1304" 
+		groups {
+			"strogg_base (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg/barricade01_straight.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 11053 9967 1246 )
+				rotation ( ( 0.694658339 -0.7193398476 0 ) ( 0.7193398476 0.694658339 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_438" 
+		groups {
+			"strogg_base (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/crate01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12690.6064453125 11336.2001953125 1206.0648193359 )
+				rotation ( ( 0.9135155678 0.4065274596 0.0149915023 ) ( -0.4067233801 0.9119817019 0.0535294004 ) ( 0.008089195 -0.0549973398 0.9984537959 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_439" 
+		groups {
+			"strogg_base (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/crate01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12581.0498046875 11637.119140625 1229.0106201172 )
+				rotation ( ( 0.9817011356 -0.1903172135 0.0064979214 ) ( 0.1904149055 0.9814628959 -0.0217404496 ) ( -0.0022398895 0.0225799251 0.9997425675 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_440" 
+		groups {
+			"strogg_base (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/crate01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12601.6787109375 11733.4013671875 1227.0406494141 )
+				rotation ( ( 0.9989153743 -0.0171174407 0.0433011577 ) ( 0.0177637488 0.9997357726 -0.0145857651 ) ( -0.0430400483 0.0153391361 0.9989556074 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "torchy_model_static_1309" 
+		groups {
+			"strogg_base (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg/barricade01_straight.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 10635 11189 1213 )
+				rotation ( ( 0.9945219159 -0.1045284644 0 ) ( 0.1045284644 0.9945219159 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_444" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12738.3623046875 9237.974609375 1316 )
+				rotation ( ( 0.6018149853 -0.7986354828 0 ) ( 0.7986354828 0.6018149853 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_445" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12838.6953125 9333.9453125 1332 )
+				rotation ( ( 0.6494480371 -0.7604060769 0 ) ( 0.7604060769 0.6494480371 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_446" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12512.271484375 9078.162109375 1312 )
+				rotation ( ( 0.544639051 -0.8386706114 0 ) ( 0.8386706114 0.544639051 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_447" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12619.0546875 9166.900390625 1324 )
+				rotation ( ( 0.5948228836 -0.8038570881 0 ) ( 0.8038570881 0.5948228836 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_448" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12268.1552734375 8946.9716796875 1312 )
+				rotation ( ( 0.4226182103 -0.9063077569 0 ) ( 0.9063077569 0.4226182103 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_449" 
+		groups {
+			"strogg_base (Level 4)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 12386.2490234375 9019.984375 1324 )
+				rotation ( ( 0.4771586657 -0.8788172603 0 ) ( 0.8788172603 0.4771586657 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_trigger_hurt_2" {
+			sdDictionary {
+				"requirement"	"team_gdf"
+				"requirement1"	"not_disguised"
+				"dmg_damage"	"damage_strogg_basewall"
+				"snd_pass"	"sounds/tools/forceshield/walkthrough"
+				"snd_fail"	"sounds/tools/forceshield/fry"
+			}
+			sdTransform {
+				translation ( 9755.9814453125 9487 1220.0017089844 )
+			}
+			
+			classname "trigger_hurt"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_12" 
+				groups {
+					"trigger_hurts"
+				}
+				{
+					
+					sdTransform {
+						translation ( -215.9814453125 201 139.9982910156 )
+					}
+					
+					faces {
+						plane ( 0.0295640416 -0.0246501919 0.9992589355 -53.3102302551 ) matrix ( ( 0.0625 0 1312.029296875 ) ( 0 0.0625 -670 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0 0 -1 -333.9996948242 ) matrix ( ( 0.0625 0 1312.029296875 ) ( 0 0.0625 818 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.7006800175 -0.7134757042 -0.0000051526 0.1279211342 ) matrix ( ( 0.0625 0 163.029296875 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.7006795406 0.7134761214 -0.0000005212 -15.7227115631 ) matrix ( ( 0.0625 0 1312.029296875 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.7677349448 -0.6407674551 0.0000009944 -606.1374511719 ) matrix ( ( 0.0625 0 -6.4706673622 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.7676992416 -0.6408103704 -0.0000014059 -606.1401367188 ) matrix ( ( 0.0625 0 -6.4706673622 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.7676537633 0.6408648491 -0.0000000295 -16.9169178009 ) matrix ( ( 0.0625 0 1481.529296875 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "nkd_trigger_hurt_4" {
+			sdDictionary {
+				"requirement"	"team_gdf"
+				"requirement1"	"not_disguised"
+				"dmg_damage"	"damage_strogg_basewall"
+				"snd_pass"	"sounds/tools/forceshield/walkthrough"
+				"snd_fail"	"sounds/tools/forceshield/fry"
+			}
+			sdTransform {
+				translation ( 10712.001953125 8869 1302.0012207031 )
+			}
+			
+			classname "trigger_hurt"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_18" 
+				groups {
+					"trigger_hurts"
+				}
+				{
+					
+					sdTransform {
+						translation ( 147.998046875 431 -66.0012207031 )
+					}
+					
+					faces {
+						plane ( -0.1359836012 0.0387107246 0.9899544716 -251.9183197021 ) matrix ( ( 0.0625 0 1472.529296875 ) ( 0 0.0625 -645.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0 0 -1 -160 ) matrix ( ( 0.0625 0 1472.529296875 ) ( 0 0.0625 793.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.9617795348 0.2738249004 0.0000032409 -311.4018249512 ) matrix ( ( 0.0625 0 2.5292949677 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.9617882371 0.2737942338 0.0000045009 -311.4161071777 ) matrix ( ( 0.0625 0 2.5292949677 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.9617753029 -0.273839891 0.0000068426 -262.7626647949 ) matrix ( ( 0.0625 0 1472.529296875 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.2994478941 -0.9541127086 0.0000150319 -462.8428344727 ) matrix ( ( 0.0625 0 18.0293254852 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.2994654179 -0.9541071057 -0.0000135091 -462.8422851563 ) matrix ( ( 0.0625 0 18.0293254852 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.2994650602 0.9541072845 -0.0000007519 448.2373657227 ) matrix ( ( 0.0625 0 1457.029296875 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "nkd_trigger_hurt_5" {
+			sdDictionary {
+				"requirement"	"team_gdf"
+				"requirement1"	"not_disguised"
+				"dmg_damage"	"damage_strogg_basewall"
+				"snd_pass"	"sounds/tools/forceshield/walkthrough"
+				"snd_fail"	"sounds/tools/forceshield/fry"
+			}
+			sdTransform {
+				translation ( 13371.9921875 10232.0029296875 1456.0002441406 )
+			}
+			
+			classname "trigger_hurt"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_22" 
+				groups {
+					"trigger_hurts"
+				}
+				{
+					
+					sdTransform {
+						translation ( -147.9921875 235.9970703125 15.9997558594 )
+					}
+					
+					faces {
+						plane ( 0.0194353815 0.0453620329 0.9987815619 -99.0390090942 ) matrix ( ( 0.0625 0 1426.779296875 ) ( 0 0.0625 -423.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0 0 -1 -152 ) matrix ( ( 0.0625 0 1426.779296875 ) ( 0 0.0625 571.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.9440355301 0.3298437297 0 209.9561920166 ) matrix ( ( 0.0625 0 48.2793159485 ) ( 0 0.0625 -15.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.9440355897 -0.3298436999 -0.0000000278 -225.1552886963 ) matrix ( ( 0.0625 0 1426.779296875 ) ( 0 0.0625 -15.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.3938682675 -0.9191669226 0.0000001142 -421.7665710449 ) matrix ( ( 0.0625 0 240.0293273926 ) ( 0 0.0625 -15.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.3939096928 0.9191491604 0.0000000071 -104.5138092041 ) matrix ( ( 0.0625 0 1235.029296875 ) ( 0 0.0625 -15.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "nkd_trigger_hurt_6" {
+			sdDictionary {
+				"requirement"	"team_gdf"
+				"requirement1"	"not_disguised"
+				"dmg_damage"	"damage_strogg_basewall"
+				"snd_pass"	"sounds/tools/forceshield/walkthrough"
+				"snd_fail"	"sounds/tools/forceshield/fry"
+			}
+			sdTransform {
+				translation ( 13487.998046875 10769 1443.9993896484 )
+			}
+			
+			classname "trigger_hurt"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_17" 
+				groups {
+					"trigger_hurts"
+				}
+				{
+					
+					sdTransform {
+						translation ( -89.998046875 191 -51.9993896484 )
+					}
+					
+					faces {
+						plane ( -0.0137208682 -0.0961441249 0.9952728748 -208.2158660889 ) matrix ( ( 0.0625 0 1426.779296875 ) ( 0 0.0625 -423.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.0059079072 -0.0413634852 -0.9991266727 -111.2780456543 ) matrix ( ( 0.0625 0 1426.779296875 ) ( 0 0.0625 571.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.9955733418 0.0939877033 -0.0000000676 100.4868927002 ) matrix ( ( 0.0625 0 48.2793159485 ) ( 0 0.0625 -15.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.9955733418 -0.0939877108 0.0000000257 -114.6160888672 ) matrix ( ( 0.0625 0 1426.779296875 ) ( 0 0.0625 -15.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.1413848549 -0.98995471 0.0000001159 -463.3018188477 ) matrix ( ( 0.0625 0 240.0293273926 ) ( 0 0.0625 -15.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.1414249092 0.989948988 0.0000000225 -110.5920410156 ) matrix ( ( 0.0625 0 1235.029296875 ) ( 0 0.0625 -15.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "nkd_trigger_hurt_7" {
+			sdDictionary {
+				"requirement"	"team_gdf"
+				"requirement1"	"not_disguised"
+				"dmg_damage"	"damage_strogg_basewall"
+				"snd_pass"	"sounds/tools/forceshield/walkthrough"
+				"snd_fail"	"sounds/tools/forceshield/fry"
+			}
+			sdTransform {
+				translation ( 13485.009765625 11310.0029296875 1462.0007324219 )
+			}
+			
+			classname "trigger_hurt"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_15" 
+				groups {
+					"trigger_hurts"
+				}
+				{
+					
+					sdTransform {
+						translation ( -231.009765625 83.9970703125 -74.0007324219 )
+					}
+					
+					faces {
+						plane ( -0.0125773456 0.1006908119 0.9948382378 -189.5918579102 ) matrix ( ( 0.0625 0 1506.529296875 ) ( 0 0.0625 -564 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.0029172292 -0.0233510211 -0.9997230768 -76.6144943237 ) matrix ( ( 0.0625 0 1506.529296875 ) ( 0 0.0625 712 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.12396577 0.9922865033 -0.0000000148 -142.9093780518 ) matrix ( ( 0.0625 0 -31.470697403 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.1239795014 -0.9922847748 0.0000001151 -366.885925293 ) matrix ( ( 0.0625 0 1506.529296875 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.9925860763 -0.1215438545 -0.0000001646 211.0322418213 ) matrix ( ( 0.0625 0 99.5293273926 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.9925863147 0.1215419918 0.0000003293 -227.1519775391 ) matrix ( ( 0.0625 0 1375.529296875 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "nkd_trigger_hurt_8" {
+			sdDictionary {
+				"requirement"	"team_gdf"
+				"requirement1"	"not_disguised"
+				"dmg_damage"	"damage_strogg_basewall"
+				"snd_pass"	"sounds/tools/forceshield/walkthrough"
+				"snd_fail"	"sounds/tools/forceshield/fry"
+			}
+			sdTransform {
+				translation ( 12732.99609375 12709.0048828125 1499.9990234375 )
+			}
+			
+			classname "trigger_hurt"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_13" 
+				groups {
+					"trigger_hurts"
+				}
+				{
+					
+					sdTransform {
+						translation ( -174.99609375 106.9951171875 -71.9990234375 )
+					}
+					
+					faces {
+						plane ( -0.0100466823 0.0083737439 0.9999144673 -202.326965332 ) matrix ( ( 0.0625 0 1506.529296875 ) ( 0 0.0625 -564 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.030122254 0.0251140632 -0.9992306828 -46.9991340637 ) matrix ( ( 0.0625 0 1506.529296875 ) ( 0 0.0625 712 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.7680684328 0.640367806 0.0000000084 -26.3815994263 ) matrix ( ( 0.0625 0 -31.470697403 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.767935276 -0.6405274272 0 -432.2305297852 ) matrix ( ( 0.0625 0 1506.529296875 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.6917182803 -0.7221674323 -0.000000083 35.993637085 ) matrix ( ( 0.0625 0 99.5293273926 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.6917176843 0.7221680284 0.0000000424 -51.5643119812 ) matrix ( ( 0.0625 0 1375.529296875 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "nkd_trigger_hurt_9" {
+			sdDictionary {
+				"requirement"	"team_gdf"
+				"requirement1"	"not_disguised"
+				"dmg_damage"	"damage_strogg_basewall"
+				"snd_pass"	"sounds/tools/forceshield/walkthrough"
+				"snd_fail"	"sounds/tools/forceshield/fry"
+			}
+			sdTransform {
+				translation ( 12328.9931640625 13000.0087890625 1528.0021972656 )
+			}
+			
+			classname "trigger_hurt"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_14" 
+				groups {
+					"trigger_hurts"
+				}
+				{
+					
+					sdTransform {
+						translation ( -162.9931640625 91.9912109375 -100.0021972656 )
+					}
+					
+					faces {
+						plane ( 0.0518701375 -0.0296627115 0.9982132316 -250.7545776367 ) matrix ( ( 0.0625 0 1506.529296875 ) ( 0 0.0625 -564 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.0647707731 0.0370428152 -0.99721241 -21.9350547791 ) matrix ( ( 0.0625 0 1506.529296875 ) ( 0 0.0625 712 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.8680641651 0.4964520037 -0.0000000383 -80.1341934204 ) matrix ( ( 0.0625 0 -31.470697403 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.8680468798 -0.4964822829 -0.0000001217 -454.4497680664 ) matrix ( ( 0.0625 0 1506.529296875 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.4900836945 -0.8716753721 -0.0000000248 -8.3597517014 ) matrix ( ( 0.0625 0 99.5293273926 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.4900835454 0.8716754913 -0.0000000482 -7.7481966019 ) matrix ( ( 0.0625 0 1375.529296875 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "nkd_trigger_hurt_10" {
+			sdDictionary {
+				"requirement"	"team_gdf"
+				"requirement1"	"not_disguised"
+				"dmg_damage"	"damage_strogg_basewall"
+				"snd_pass"	"sounds/tools/forceshield/walkthrough"
+				"snd_fail"	"sounds/tools/forceshield/fry"
+			}
+			sdTransform {
+				translation ( 11832.998046875 13196.00390625 1544.9938964844 )
+			}
+			
+			classname "trigger_hurt"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_16" 
+				groups {
+					"trigger_hurts"
+				}
+				{
+					
+					sdTransform {
+						translation ( -224.998046875 -80.00390625 -172.9938964844 )
+					}
+					
+					faces {
+						plane ( -0.0243836567 0.010448833 0.9996480942 -324.2290344238 ) matrix ( ( 0.0625 0 1506.529296875 ) ( 0 0.0625 -564 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.0243911631 -0.0104519967 -0.9996478558 12.3347225189 ) matrix ( ( 0.0625 0 1506.529296875 ) ( 0 0.0625 712 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.9191632867 0.3938766718 -0.0000000112 -88.5056686401 ) matrix ( ( 0.0625 0 -31.470697403 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.9191243052 -0.3939675987 -0.0000000036 -439.0816650391 ) matrix ( ( 0.0625 0 1506.529296875 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.2354934663 -0.971875906 0.0000000126 123.2284088135 ) matrix ( ( 0.0625 0 99.5293273926 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.2354933918 0.9718759656 -0.0000000119 -138.250793457 ) matrix ( ( 0.0625 0 1375.529296875 ) ( 0 0.0625 -15.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "nkd_trigger_hurt_11" {
+			sdDictionary {
+				"requirement"	"team_gdf"
+				"requirement1"	"not_disguised"
+				"dmg_damage"	"damage_strogg_basewall"
+				"snd_pass"	"sounds/tools/forceshield/walkthrough"
+				"snd_fail"	"sounds/tools/forceshield/fry"
+			}
+			sdTransform {
+				translation ( 10477.001953125 13112.994140625 1492.0004882813 )
+			}
+			
+			classname "trigger_hurt"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_21" 
+				groups {
+					"trigger_hurts"
+				}
+				{
+					
+					sdTransform {
+						translation ( 98.998046875 313.005859375 -12.0004882813 )
+					}
+					
+					faces {
+						plane ( -0.0733584911 -0.0244219899 0.9970065951 -186.3913269043 ) matrix ( ( 0.0625 0 1472.529296875 ) ( 0 0.0625 -645.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.0733584911 0.0244219899 -0.9970065951 -132.6507873535 ) matrix ( ( 0.0625 0 1472.529296875 ) ( 0 0.0625 793.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.9488027692 -0.3158690929 0 -424.9116210938 ) matrix ( ( 0.0625 0 2.5292949677 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.948800683 0.3158754408 0.0000000226 -39.3185005188 ) matrix ( ( 0.0625 0 1472.529296875 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.3316932619 -0.94338727 0 -268.7875366211 ) matrix ( ( 0.0625 0 18.0293254852 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.3316932619 0.94338727 -0.0000000158 256.109588623 ) matrix ( ( 0.0625 0 1457.029296875 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "nkd_trigger_hurt_12" {
+			sdDictionary {
+				"requirement"	"team_gdf"
+				"requirement1"	"not_disguised"
+				"dmg_damage"	"damage_strogg_basewall"
+				"snd_pass"	"sounds/tools/forceshield/walkthrough"
+				"snd_fail"	"sounds/tools/forceshield/fry"
+			}
+			sdTransform {
+				translation ( 10054.009765625 12904 1498.0012207031 )
+			}
+			
+			classname "trigger_hurt"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_19" 
+				groups {
+					"trigger_hurts"
+				}
+				{
+					
+					sdTransform {
+						translation ( 45.990234375 354 -34.0012207031 )
+					}
+					
+					faces {
+						plane ( -0.0130315889 -0.0104337661 0.9998606443 -174.2696990967 ) matrix ( ( 0.0625 0 1447.529296875 ) ( 0 0.0625 -665.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.0130316513 0.0104324371 -0.9998606443 -97.6930999756 ) matrix ( ( 0.0625 0 1447.529296875 ) ( 0 0.0625 813.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.5441182852 0.8390085101 0 265.6056518555 ) matrix ( ( 0.0625 0 27.5292930603 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.5441230536 -0.8390054107 -0.0000000941 -278.3647460938 ) matrix ( ( 0.0625 0 1447.529296875 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.781040132 -0.6244808435 -0.0000001139 -496.5692749023 ) matrix ( ( 0.0625 0 -2.2206730843 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.7809715271 0.6245666742 0 17.4305782318 ) matrix ( ( 0.0625 0 1477.279296875 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "nkd_trigger_hurt_13" {
+			sdDictionary {
+				"requirement"	"team_gdf"
+				"requirement1"	"not_disguised"
+				"dmg_damage"	"damage_strogg_basewall"
+				"snd_pass"	"sounds/tools/forceshield/walkthrough"
+				"snd_fail"	"sounds/tools/forceshield/fry"
+			}
+			sdTransform {
+				translation ( 9684.00390625 12610.009765625 1440.0041503906 )
+			}
+			
+			classname "trigger_hurt"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_20" 
+				groups {
+					"trigger_hurts"
+				}
+				{
+					
+					sdTransform {
+						translation ( -98.00390625 413.990234375 -32.0041503906 )
+					}
+					
+					faces {
+						plane ( -0.1594289094 -0.1274734288 0.978944838 -205.5291442871 ) matrix ( ( 0.0625 0 1416.779296875 ) ( 0 0.0625 -681.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.0809815452 0.0647624806 -0.9946093559 -112.4131851196 ) matrix ( ( 0.0625 0 1416.779296875 ) ( 0 0.0625 829.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.69621104 0.7178371549 -0.0000000721 359.0422363281 ) matrix ( ( 0.0625 0 58.2792930603 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.6962137222 -0.7178345323 -0.000000107 -371.7772521973 ) matrix ( ( 0.0625 0 1416.779296875 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.781001091 -0.6245296001 0 -412.211517334 ) matrix ( ( 0.0625 0 -17.9706726074 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.7809455395 0.6245990992 -0.0000001453 -48.1576423645 ) matrix ( ( 0.0625 0 1493.029296875 ) ( 0 0.0625 -8 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "nkd_model_static_536" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/gate_generator_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 9062 11701 1220 )
+				rotation ( ( -0.9914448261 0.1305262595 0 ) ( -0.1305262595 -0.9914448261 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_537" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 13048 12448 1388 )
+				rotation ( ( 0.7071067691 0.7071067691 0 ) ( -0.7071067691 0.7071067691 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_538" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 9224 12112 1242 )
+				rotation ( ( -0.8660253882 0.5000000596 0 ) ( -0.5000000596 -0.8660253882 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_539" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 9377 12338 1280 )
+				rotation ( ( -0.7933533192 0.6087614298 0 ) ( -0.6087614298 -0.7933533192 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_540" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 11400 13312 1437 )
+				rotation ( ( 0.1305262446 0.9914448261 0 ) ( -0.9914448261 0.1305262446 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_541" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 11128 13312 1435 )
+				rotation ( ( -0.1305262148 0.9914448857 0 ) ( -0.9914448857 -0.1305262148 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_542" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 10857 13257 1432 )
+				rotation ( ( -0.2588190436 0.9659258127 0 ) ( -0.9659258127 -0.2588190436 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_543" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 13232 12248 1356 )
+				rotation ( ( 0.7933533192 0.6087614298 0 ) ( -0.6087614298 0.7933533192 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_544" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 13368 12008 1349 )
+				rotation ( ( 0.9238795042 0.3826834559 0 ) ( -0.3826834559 0.9238795042 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_545" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 13445 11742 1354 )
+				rotation ( ( 0.9781475067 0.2079116851 0 ) ( -0.2079116851 0.9781475067 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_551" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 13297 12127 1354 )
+				rotation ( ( 0.8660253882 0.5 0 ) ( -0.5 0.8660253882 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_554" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 11264 13304 1450 )
+				rotation ( ( -0.0000000437 1 0 ) ( -1 -0.0000000437 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_557" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 9312 12217 1272 )
+				rotation ( ( -0.7933533788 0.6087613702 0 ) ( -0.6087613702 -0.7933533788 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_559" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 13520 11056 1348 )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_560" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 13459 11586 1316 )
+				rotation ( ( 0.9914448857 0.1305261999 0 ) ( -0.1305261999 0.9914448857 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_561" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 12568 12872 1394 )
+				rotation ( ( 0.4999999106 0.8660254478 0 ) ( -0.8660254478 0.4999999106 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_562" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 12096 13136 1423 )
+				rotation ( ( 0.382683605 0.9238794446 0 ) ( -0.9238794446 0.382683605 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_563" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 10256 13040 1354 )
+				rotation ( ( -0.4999999106 0.8660254478 0 ) ( -0.8660254478 -0.4999999106 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_564" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 10713 13192 1397 )
+				rotation ( ( -0.2588190436 0.9659258127 0 ) ( -0.9659258127 -0.2588190436 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_565" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 11552 13262 1430 )
+				rotation ( ( 0.1305259466 0.9914448857 0 ) ( -0.9914448857 0.1305259466 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_566" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 9848 12776 1348 )
+				rotation ( ( -0.6087614894 0.7933532596 0 ) ( -0.7933532596 -0.6087614894 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_567" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 9494 12444 1277 )
+				rotation ( ( -0.7071068287 0.7071067095 0 ) ( -0.7071067095 -0.7071068287 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_568" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 12915 12539 1369 )
+				rotation ( ( 0.7071067691 0.7071067691 0 ) ( -0.7071067691 0.7071067691 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_569" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 13127.8896484375 12335.0986328125 1378 )
+				rotation ( ( 0.725374341 0.6883546114 0 ) ( -0.6883546114 0.725374341 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_570" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 9180 11988 1240 )
+				rotation ( ( -0.9914448261 0.1305263191 0 ) ( -0.1305263191 -0.9914448261 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_571" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 9079 11400 1246 )
+				rotation ( ( -0.9914448261 0.1305263191 0 ) ( -0.1305263191 -0.9914448261 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_572" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/gate_generator_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 9268 10285 1292 )
+				rotation ( ( -0.9238795042 -0.3826834857 0 ) ( 0.3826834857 -0.9238795042 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_573" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/gate_generator_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 11861 8783 1296 )
+				rotation ( ( 0.2588190734 -0.9659258127 0 ) ( 0.9659258127 0.2588190734 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_574" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/gate_generator_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 12970 9670 1311 )
+				rotation ( ( 0.7933533192 -0.6087614298 0 ) ( 0.6087614298 0.7933533192 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_575" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 11152 8720 1315 )
+				rotation ( ( -0.1305263937 -0.9914448261 0 ) ( 0.9914448261 -0.1305263937 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_576" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 12946 9418 1328 )
+				rotation ( ( 0.7071067691 -0.7071067691 0 ) ( 0.7071067691 0.7071067691 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_577" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 13130 9626 1345 )
+				rotation ( ( 0.7933533192 -0.6087614298 0 ) ( 0.6087614298 0.7933533192 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_578" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 11428 8720 1318 )
+				rotation ( ( 0.1305262446 -0.9914448261 0 ) ( 0.9914448261 0.1305262446 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_579" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 9064 10496 1238 )
+				rotation ( ( -0.9914448261 -0.1305262595 0 ) ( 0.1305262595 -0.9914448261 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_580" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 13274 9858 1350 )
+				rotation ( ( 0.8660253882 -0.5 0 ) ( 0.5 0.8660253882 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_583" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 9105 10365 1259 )
+				rotation ( ( -0.9659258127 -0.258819133 0 ) ( 0.258819133 -0.9659258127 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_584" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 13194 9746 1345 )
+				rotation ( ( 0.8660253882 -0.5 0 ) ( 0.5 0.8660253882 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_585" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 13032 9527 1340 )
+				rotation ( ( 0.7489557266 -0.6626200676 0 ) ( 0.6626200676 0.7489557266 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_586" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 13330 10006 1329 )
+				rotation ( ( 0.9659258127 -0.2588190436 0 ) ( 0.2588190436 0.9659258127 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_587" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 13464 10480 1306 )
+				rotation ( ( 0.9659258127 -0.2588190436 0 ) ( 0.2588190436 0.9659258127 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_588" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 11002 8770 1268 )
+				rotation ( ( -0.2588190436 -0.9659258127 0 ) ( 0.9659258127 -0.2588190436 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_589" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 10432 8952 1182 )
+				rotation ( ( -0.3826833963 -0.9238795638 0 ) ( 0.9238795638 -0.3826833963 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_590" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 9215 10096 1191 )
+				rotation ( ( -0.7933533192 -0.6087614298 0 ) ( 0.6087614298 -0.7933533192 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_591" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg/spike_c_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 11070 9806 1221 )
+				rotation ( ( 0.8480480909 -0.5299192667 0 ) ( 0.5299192667 0.8480480909 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_592" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 11290 8720 1340 )
+				rotation ( ( 0.0000000119 -1 0 ) ( 1 0.0000000119 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_594" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 11559 8762 1314 )
+				rotation ( ( 0.2588190734 -0.9659258127 0 ) ( 0.9659258127 0.2588190734 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_595" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 9137 10233 1216 )
+				rotation ( ( -0.9238795042 -0.3826834261 0 ) ( 0.3826834261 -0.9238795042 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_596" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 9976 9264 1153 )
+				rotation ( ( -0.6087614298 -0.7933533192 0 ) ( 0.7933533192 -0.6087614298 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_597" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/fence_pillar_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 9528 9704 1172 )
+				rotation ( ( -0.7071068287 -0.7071067095 0 ) ( 0.7071067095 -0.7071068287 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_598" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 12136 8904 1315 )
+				rotation ( ( 0.342020154 -0.9396926165 0 ) ( 0.9396926165 0.342020154 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_602" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 12738.3623046875 9237.974609375 1316 )
+				rotation ( ( 0.6018149853 -0.7986354828 0 ) ( 0.7986354828 0.6018149853 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_603" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 12838.6953125 9333.9453125 1332 )
+				rotation ( ( 0.6494480371 -0.7604060769 0 ) ( 0.7604060769 0.6494480371 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_604" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 12512.271484375 9078.162109375 1312 )
+				rotation ( ( 0.544639051 -0.8386706114 0 ) ( 0.8386706114 0.544639051 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_605" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 12619.0546875 9166.900390625 1324 )
+				rotation ( ( 0.5948228836 -0.8038570881 0 ) ( 0.8038570881 0.5948228836 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_606" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_barricade_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 12268.1552734375 8946.9716796875 1312 )
+				rotation ( ( 0.4226182103 -0.9063077569 0 ) ( 0.9063077569 0.4226182103 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "nkd_model_static_607" 
+		groups {
+			"min_vis (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/wall_pillar01_minvis.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( 12386.2490234375 9019.984375 1324 )
+				rotation ( ( 0.4771586657 -0.8788172603 0 ) ( 0.8788172603 0.4771586657 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "bjames_model_static_3" 
+		groups {
+			"strogg_base (Level 5)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/hornet_landing_pad_lower_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( 10240 11872 1204 )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "bjames_model_static_4" 
+		groups {
+			"min_vis (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/hornet_landing_pad_lower_minvis.lwo"
+			}
+			sdTransform {
+				translation ( 10240 11872 1204 )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "brandon_james_func_aasobstacle_1" {
+			sdDictionary {
+				"start_on"	"1"
+				"team"	"0"
+			}
+			sdTransform {
+				translation ( 9390 9902 1260 )
+			}
+			
+			classname "func_aasobstacle"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 2 576 )
+					}
+					
+					faces {
+						plane ( -0.7846819758 -0.6198984981 -0 -15.0374622345 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.7854909301 0.6188732386 0 6.6104307175 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.8944326043 -0.4472026527 0 -218.2388763428 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.4471699595 0.8944489956 0 -253.120010376 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0 0 1 404 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 0 -1 -748 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "brandon_james_func_aasobstacle_3" {
+			sdDictionary {
+				"start_on"	"1"
+				"team"	"0"
+			}
+			sdTransform {
+				translation ( 9757.9990234375 9485.9990234375 1216 )
+			}
+			
+			classname "func_aasobstacle"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -7.9990234375 0.0009765625 0 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -180 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 0 -1 -180 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.6974437833 -0.7166394591 0 1.3180994987 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.7007080317 0.7134481668 -0 -8.4339790344 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.7071068287 -0.7071068287 0 -319.6122741699 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.8944271803 0.4472135901 0 -290.6888427734 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "brandon_james_func_aasobstacle_5" {
+			sdDictionary {
+				"team"	"0"
+				"start_on"	"1"
+			}
+			sdTransform {
+				translation ( 10208 9110 1214 )
+			}
+			
+			classname "func_aasobstacle"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -166 104 0 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -162 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 -0 -1 -162 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.5680727363 -0.8229782581 0 5.9280700684 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.5631097555 0.8263821006 -0 -11.9641904831 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.8944271803 -0.4472135901 0 -465.9965515137 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.7071051002 0.7071084976 0 -79.195930481 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "brandon_james_func_aasobstacle_7" {
+			sdDictionary {
+				"start_on"	"1"
+				"team"	"0"
+			}
+			sdTransform {
+				translation ( 10708 8870 1300 )
+			}
+			
+			classname "func_aasobstacle"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 2 -8 0 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -208 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 0 -1 -208 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.7071071267 0.7071064115 0 -263.0437927246 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 1 0 0 -294 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.2982749343 -0.954480052 0 1.7896276712 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.3020950854 0.9532777667 -0 -10.6471786499 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "brandon_james_func_aasobstacle_9" {
+			sdDictionary {
+				"team"	"0"
+				"start_on"	"1"
+			}
+			sdTransform {
+				translation ( 13395.998046875 10256 1434 )
+			}
+			
+			classname "func_aasobstacle"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 6.001953125 -64 0 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -146 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 0 -1 -146 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.9636338353 0.2672263384 0 -25.9938049316 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.9636338353 -0.2672263384 0 18.2847213745 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 -1 0 -184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 1 -0 -292 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "brandon_james_func_aasobstacle_11" {
+			sdDictionary {
+				"start_on"	"1"
+				"team"	"0"
+			}
+			sdTransform {
+				translation ( 13487.99609375 10770 1434 )
+			}
+			
+			classname "func_aasobstacle"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -27.99609375 -268 0 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -146 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 0 -1 -146 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.9952417612 0.0974362642 0 -2.2305469513 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.9952417612 -0.0974362642 0 -5.7348132133 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 -1 0 -18 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 1 -0 -554 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "brandon_james_func_aasobstacle_13" {
+			sdDictionary {
+				"team"	"0"
+				"start_on"	"1"
+			}
+			sdTransform {
+				translation ( 13484 11312 1450 )
+			}
+			
+			classname "func_aasobstacle"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 10 2 0 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -154 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 0 -1 -154 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.9922779202 -0.12403474 0 -14.139960289 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.9932034612 0.1163910255 -0 4.2055945396 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 -1 0 -258 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 1 0 -270 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "brandon_james_func_aasobstacle_15" {
+			sdDictionary {
+				"team"	"0"
+			}
+			sdTransform {
+				translation ( 12739.9921875 12700.994140625 1494 )
+			}
+			
+			classname "func_aasobstacle"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -11.9921875 5.005859375 0 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -130 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 -0 -1 -130 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.6966018081 -0.7174579501 0 -0.8940335512 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.6924450994 0.7214705944 -0 -8.9742832184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.708399117 -0.7058121562 0 -251.7416687012 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.8943389058 0.4473901391 0 -217.3605651855 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "brandon_james_func_aasobstacle_17" {
+			sdDictionary {
+				"team"	"0"
+				"start_on"	"1"
+			}
+			sdTransform {
+				translation ( 12327.9970703125 13000.001953125 1528 )
+			}
+			
+			classname "func_aasobstacle"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -1.9970703125 -4.001953125 0 )
+					}
+					
+					faces {
+						plane ( 0 -0 1 -148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 0 -1 -148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.9486835599 0.3162270784 0 -262.4703674316 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.8944272399 -0.4472136199 0 -271.9137573242 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.4824889004 -0.8759020567 0 -0.7868648171 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.4881528616 0.8727581501 -0 -9.9109096527 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "brandon_james_func_aasobstacle_19" {
+			sdDictionary {
+				"start_on"	"1"
+				"team"	"0"
+			}
+			sdTransform {
+				translation ( 11836 13193.99609375 1554 )
+			}
+			
+			classname "func_aasobstacle"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -2 2.00390625 0 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -134 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 0 -1 -134 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -1 0 0 -279.9970703125 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.9486826658 -0.3162296712 0 -267.5267333984 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.2314789295 -0.9728398919 0 -10.3296375275 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.2298394293 0.9732286334 -0 -1.8242263794 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "brandon_james_func_aasobstacle_21" {
+			sdDictionary {
+				"team"	"0"
+				"start_on"	"1"
+			}
+			sdTransform {
+				translation ( 10477.99609375 13113.9990234375 1510 )
+			}
+			
+			classname "func_aasobstacle"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -65.99609375 -67.9990234375 0 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -142 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 0 -1 -142 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.8320505023 -0.554700017 0 -130.9179382324 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.9486833215 0.3162277937 -0 -335.8329772949 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.3162286878 -0.9486830831 0 33.5201187134 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.3137505651 0.9495054483 0 -47.0459518433 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "brandon_james_func_aasobstacle_23" {
+			sdDictionary {
+				"start_on"	"1"
+				"team"	"0"
+			}
+			sdTransform {
+				translation ( 10055.998046875 12906 1494 )
+			}
+			
+			classname "func_aasobstacle"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0.001953125 -116 0 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -134 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 0 -1 -134 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.8320503235 -0.5547001958 0 -178.6134643555 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.8320503235 0.5547001958 -0 -307.3039245605 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.543251276 -0.8395701647 0 90.1797103882 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.543251276 0.8395701647 0 -104.6005630493 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "brandon_james_func_aasobstacle_25" {
+			sdDictionary {
+				"team"	"0"
+				"start_on"	"1"
+			}
+			sdTransform {
+				translation ( 9684 12611.998046875 1432 )
+			}
+			
+			classname "func_aasobstacle"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 72 -151.998046875 0 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -180 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 0 -1 -180 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.7071067691 -0.7071067691 0 -195.1614685059 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.8320503235 0.5547001958 -0 -254.0507354736 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0.6861376762 -0.7274716496 0 155.4473724365 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0.682025373 0.7313284874 0 -171.2787628174 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "brandon_james_func_aasobstacle_27" {
+			sdDictionary {
+				"start_on"	"1"
+				"team"	"0"
+			}
+			sdTransform {
+				translation ( 9068 11006 1364 )
+			}
+			
+			classname "func_aasobstacle"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -2 350 48 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -188 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -0 0 -1 -284 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( -1 0 -0 -2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 1 0 0 -6 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 -1 -0 -720 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+						plane ( 0 1 0 -20 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aasobstacle"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "nkd_trigger_hurt_14" {
+			sdDictionary {
+				"requirement"	"team_gdf"
+				"requirement1"	"not_disguised"
+				"dmg_damage"	"damage_strogg_basewall"
+				"snd_pass"	"sounds/tools/forceshield/walkthrough"
+				"snd_fail"	"sounds/tools/forceshield/fry"
+			}
+			sdTransform {
+				translation ( 10203.984375 9114.9990234375 1232.0015869141 )
+			}
+			
+			classname "trigger_hurt"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_12" 
+				groups {
+					"trigger_hurts"
+				}
+				{
+					
+					sdTransform {
+						translation ( -215.984375 133.0009765625 111.9984130859 )
+					}
+					
+					faces {
+						plane ( -0.0797840133 0.0666058213 0.9945843816 -55.4678840637 ) matrix ( ( 0.0625 0 1315.2204589844 ) ( 0 0.0625 -709.1317138672 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.0797640979 0.0666334257 0.9945842028 -55.46849823 ) matrix ( ( 0.0625 0 1315.2204589844 ) ( 0 0.0625 -709.1317138672 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.0797829106 -0.0666055307 -0.9945845604 -330.432800293 ) matrix ( ( 0.0625 0 1339.529296875 ) ( 0 0.0625 846 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.5606787205 -0.8280334473 -0.0000333098 3.1910953522 ) matrix ( ( 0.0625 0 123.7833099365 ) ( 0 0.0625 -9.0000019073 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.5606809258 0.8280320168 -0 -18.7471637726 ) matrix ( ( 0.0625 0 1351.2751464844 ) ( 0 0.0625 -9 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.7676677108 -0.6408481598 0.0000138272 -518.9829101563 ) matrix ( ( 0.0625 0 -3.2994432449 ) ( 0 0.0625 -9 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( 0.7674477696 -0.6411114335 0 -518.9622802734 ) matrix ( ( 0.0625 0 -3.2994432449 ) ( 0 0.0625 -9 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+						plane ( -0.7676541805 0.6408643126 0 -16.9169368744 ) matrix ( ( 0.0625 0 1478.3634033203 ) ( 0 0.0625 -9 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trighurt"
+					}
+				}
+			}
+		}
+		sdPrimitiveReference "nkd_reference_8" {
+			
+			sdTransform {
+				translation ( 9024 11008 1214 )
+				rotation ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/strogg_base/energy_gate.world"
+		}
+
+		sdPrimitiveReference "nkd_reference_10" {
+			
+			sdTransform {
+				translation ( 11928 8536 1256 )
+				rotation ( ( 0.2588190734 -0.9659258127 0 ) ( 0.9659258127 0.2588190734 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/island/island_strogg_deframp.world"
+		}
+
+		sdPrimitiveReference "nkd_reference_11" {
+			
+			sdTransform {
+				translation ( 8808 11736 1184 )
+				rotation ( ( -0.9914448261 0.1305262595 0 ) ( -0.1305262595 -0.9914448261 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/island/island_strogg_deframp.world"
+		}
+
+		sdPrimitiveReference "nkd_reference_38" {
+			
+			sdTransform {
+				translation ( 9094 11741 1644 )
+				rotation ( ( -0.1305262148 -0.9914448857 0 ) ( 0.9914448857 -0.1305262148 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/mapobjects_flag.world"
+		}
+
+		sdPrimitiveReference "nkd_reference_39" {
+			
+			sdTransform {
+				translation ( 11805 8799 1726 )
+				rotation ( ( 0.9659258127 0.2588190436 0 ) ( -0.2588190436 0.9659258127 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/mapobjects_flag.world"
+		}
+
+	}
+}

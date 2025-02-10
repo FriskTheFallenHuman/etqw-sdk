@@ -1,0 +1,522 @@
+// these are special blends used internally in megaGen,
+// don't use them for anything if you don't have a clue
+
+renderBinding blendParm_0 { vector { 0 } }
+renderBinding blendParm_1 { vector { 0 } }
+renderBinding blendParm_2 { vector { 0 } }
+renderBinding blendParm_3 { vector { 0 } }
+renderBinding blendParm_4 { vector { 0 } }
+renderBinding blendParm_5 { vector { 0 } }
+renderBinding blendParm_6 { vector { 0 } }
+renderBinding blendParm_7 { vector { 0 } }
+renderBinding blendParm_8 { vector { 0 } }
+
+template megagen/blends/parallelProjection {
+	text { <%
+		TEMP colorDest, colorSource;
+
+		TEX colorSource, fragment.texcoord[0], texture[0], 2D;
+		$ifdef uvTypeParallel
+			TEX colorSource.rgb, fragment.texcoord[2], texture[3], 2D;
+		$endif
+		TEX colorDest, fragment.texcoord[1], texture[1], 2D;
+
+		$ifdef projectionPattern
+			PARAM	consts = { 3.14159265358979323846, 0, 0, 0 };	# pi
+
+			TEMP colorProjectionPattern, _R0, _R1;
+			TEX colorProjectionPattern, fragment.texcoord[2], texture[4], 2D;
+
+			# modify alpha with pattern
+			ADD _R0.a, colorProjectionPattern.x, -0.5;
+			MUL _R1.a, colorSource.a, consts.x;
+			SIN _R1.a, _R1.a;
+			MUL _R0.a, _R1.a, _R0.a;
+			ADD_SAT colorSource.a, colorSource.a, _R0.a;
+			
+			# Increase contrast
+			ADD _R0.a, colorSource.a, -$blendParm_1.x;		# ramp start clamp
+			MUL _R1.a, $blendParm_1.y, consts.x;
+			MUL _R1.a, _R1.a, _R0.a;
+			COS _R1.a, _R1.a;
+			MAD _R1.a, _R1.a, -0.5, 0.5;
+			CMP _R1.a, _R0.a, 0, _R1;
+			ADD _R0.a, colorSource.a, -$blendParm_1.z;		# ramp end clamp
+			CMP colorSource.a, _R0.a, _R1.a, 1;
+		$endif
+
+		LRP result.color.rgb, colorSource.a, colorSource, colorDest;
+		
+		MOV result.color.a, 1;
+	%> }
+}
+
+renderProgram megagen/blends/parallelProjection {
+	program vertex arb { <%
+		OPTION ARB_position_invariant;
+		
+		MOV result.texcoord[0], vertex.texcoord[0];
+		MOV result.texcoord[1], vertex.texcoord[1];
+		MOV result.texcoord[2], vertex.texcoord[2];
+	%> }
+
+	program fragment arb { <%
+		$define uvTypeParallel
+		useTemplate megagen/blends/parallelProjection<>
+	%> }
+}
+
+renderProgram megagen/blends/parallelProjectionWithProjectionPattern {
+	program vertex reference megagen/blends/parallelProjection
+
+	program fragment arb { <%
+		$define uvTypeParallel
+		$define projectionPattern
+		useTemplate megagen/blends/parallelProjection<>
+	%> }
+}
+
+blend blendWithParallelProjection {
+	fragmentProgram {
+		program megagen/blends/parallelProjection
+	}
+}
+
+blend blendWithParallelProjectionAndProjectionPattern {
+	fragmentProgram {
+		program megagen/blends/parallelProjectionWithProjectionPattern
+		parm 0	0, 0, 0, 0
+		parm 1	0.5 - 0.5 * parm3, 1.0 / parm3, 0.5 + 0.5 * parm3, 0
+	}
+}
+
+template megagen/blends/addNormals {
+	text { <%
+		TEMP colorDest, colorSource, scalar, R0, R1;
+
+		PARAM	subOne = { -1, -1, -1, -1 };
+		PARAM	scaleTwo = { 2, 2, 2, 2 };
+
+		TEX colorSource, fragment.texcoord[0], texture[0], 2D;
+		$ifdef uvTypeParallel
+			TEX colorSource.rgb, fragment.texcoord[2], texture[3], 2D;
+		$endif
+		TEX colorDest, fragment.texcoord[1], texture[1], 2D;
+
+		$ifdef projectionPattern
+			PARAM	consts = { 3.14159265358979323846, 0, 0, 0 };	# pi
+
+			TEMP colorProjectionPattern, _R0, _R1;
+			TEX colorProjectionPattern, fragment.texcoord[2], texture[4], 2D;
+
+			# modify alpha with pattern
+			ADD _R0.a, colorProjectionPattern.x, -0.5;
+			MUL _R1.a, colorSource.a, consts.x;
+			SIN _R1.a, _R1.a;
+			MUL _R0.a, _R1.a, _R0.a;
+			ADD_SAT colorSource.a, colorSource.a, _R0.a;
+			
+			# Increase contrast
+			ADD _R0.a, colorSource.a, -$blendParm_1.x;		# ramp start clamp
+			MUL _R1.a, $blendParm_1.y, consts.x;
+			MUL _R1.a, _R1.a, _R0.a;
+			COS _R1.a, _R1.a;
+			MAD _R1.a, _R1.a, -0.5, 0.5;
+			CMP _R1.a, _R0.a, 0, _R1;
+			ADD _R0.a, colorSource.a, -$blendParm_1.z;		# ramp end clamp
+			CMP colorSource.a, _R0.a, _R1.a, 1;
+		$endif
+
+		#
+		# ADDNORMALS
+		#
+
+		MOV scalar.x, colorSource.a;
+		ADD scalar.y, 1, -scalar.x;
+
+		# Decode normals
+		MAD	colorDest, colorDest, scaleTwo, subOne;
+		MAD	colorSource, colorSource, scaleTwo, subOne;
+		
+		CMP colorSource.z, colorSource.z, -colorSource.z, colorSource.z;
+
+		# Flatten normals
+		RCP R0, colorSource.z;
+		MUL scalar.x, scalar, R0;
+		MUL colorSource.xy, scalar.x, colorSource;
+		MOV colorSource.z, 1;
+
+		RCP R1, colorDest.z;
+		MUL scalar.y, scalar, R1;
+		MUL colorDest.xy, scalar.y, colorDest;
+
+		# Add together
+		ADD colorSource.xy, colorSource, colorDest;
+
+		# Normalize
+		DP3	R1, colorSource, colorSource;
+		RSQ	R1, R1.x;
+		MUL	R1, R1.x, colorSource;
+
+		# Encode normals
+		MAD	result.color.rgb, R1, .5, .5;
+		MOV result.color.a, 1;
+	%> }
+}
+
+renderProgram megagen/blends/addNormals {
+	program vertex arb { <%
+		OPTION ARB_position_invariant;
+		
+		MOV result.texcoord[0], vertex.texcoord[0];
+		MOV result.texcoord[1], vertex.texcoord[1];
+	%> }
+
+	program fragment arb { <%
+		useTemplate megagen/blends/addNormals<>
+	%> }
+}
+
+renderProgram megagen/blends/addNormalsWithParallelProjection {
+	program vertex reference megagen/blends/addNormals
+
+	program fragment arb { <%
+		$define uvTypeParallel
+		useTemplate megagen/blends/addNormals<>
+	%> }
+}
+
+renderProgram megagen/blends/addNormalsWithParallelProjectionAndProjectionPattern {
+	program vertex reference megagen/blends/addNormals
+
+	program fragment arb { <%
+		$define uvTypeParallel
+		$define projectionPattern
+		useTemplate megagen/blends/addNormals<>
+	%> }
+}
+
+blend addNormals {
+	colorMod
+
+	fragmentProgram {
+		program megagen/blends/addNormals
+	}
+}
+
+blend addNormalsWithParallelProjection {
+	colorMod
+
+	fragmentProgram {
+		program megagen/blends/addNormalsWithParallelProjection
+	}
+}
+
+blend addNormalsWithParallelProjectionAndProjectionPattern {
+	colorMod
+
+	fragmentProgram {
+		program megagen/blends/addNormalsWithParallelProjectionAndProjectionPattern
+		parm 0	0, 0, 0, 0
+		parm 1	0.5 - 0.5 * parm3, 1.0 / parm3, 0.5 + 0.5 * parm3, 0
+	}
+}
+
+
+template megagen/blends/addNormalsWithHeightmaps {
+	text { <%
+		TEMP colorDest, colorSource, colorHeight, scalar, R0, R1;
+
+		PARAM	subOne = { -1, -1, -1, -1 };
+		PARAM	scaleTwo = { 2, 2, 2, 2 };
+
+		TEX colorSource, fragment.texcoord[0], texture[0], 2D;
+		$ifdef uvTypeParallel
+			TEX colorSource.rgb, fragment.texcoord[2], texture[3], 2D;
+		$endif
+		TEX colorDest, fragment.texcoord[1], texture[1], 2D;
+		TEX colorHeight, fragment.texcoord[1], texture[2], 2D;
+
+		$ifdef projectionPattern
+			PARAM	consts = { 3.14159265358979323846, 0, 0, 0 };	# pi
+
+			TEMP colorProjectionPattern, _R0, _R1;
+			TEX colorProjectionPattern, fragment.texcoord[2], texture[4], 2D;
+
+			# modify alpha with pattern
+			ADD _R0.a, colorProjectionPattern.x, -0.5;
+			MUL _R1.a, colorSource.a, consts.x;
+			SIN _R1.a, _R1.a;
+			MUL _R0.a, _R1.a, _R0.a;
+			ADD_SAT colorSource.a, colorSource.a, _R0.a;
+			
+			# Increase contrast
+			ADD _R0.a, colorSource.a, -$blendParm_1.x;		# ramp start clamp
+			MUL _R1.a, $blendParm_1.y, consts.x;
+			MUL _R1.a, _R1.a, _R0.a;
+			COS _R1.a, _R1.a;
+			MAD _R1.a, _R1.a, -0.5, 0.5;
+			CMP _R1.a, _R0.a, 0, _R1;
+			ADD _R0.a, colorSource.a, -$blendParm_1.z;		# ramp end clamp
+			CMP colorSource.a, _R0.a, _R1.a, 1;
+		$endif
+
+		#
+		# INTERSECT HEIGHTMAPS
+		#
+
+		ADD R0.x, colorHeight.r, -$blendParm_0.x;
+		ADD R0.y, colorHeight.r, -$blendParm_0.y;
+
+		ADD R0.z, colorHeight.r, -$blendParm_0.x;
+		MAD R0.z, R0.z, -$blendParm_0.z, 1;
+
+		CMP R0.z, R0.x, 1, R0.z;
+		CMP R0.z, R0.y, R0.z, 0;
+
+		MUL colorSource.a, R0.z, colorSource.a;
+
+		#
+		# ADDNORMALS
+		#
+
+		MOV scalar.x, colorSource.a;
+		ADD scalar.y, 1, -scalar.x;
+
+		# Decode normals
+		MAD	colorDest, colorDest, scaleTwo, subOne;
+		MAD	colorSource, colorSource, scaleTwo, subOne;
+		
+		CMP colorSource.z, colorSource.z, -colorSource.z, colorSource.z;
+
+		# Flatten normals
+		RCP R0, colorSource.z;
+		MUL scalar.x, scalar, R0;
+		MUL colorSource.xy, scalar.x, colorSource;
+		MOV colorSource.z, 1;
+
+		RCP R1, colorDest.z;
+		MUL scalar.y, scalar, R1;
+		MUL colorDest.xy, scalar.y, colorDest;
+
+		# Add together
+		ADD colorSource.xy, colorSource, colorDest;
+
+		# Normalize
+		DP3	R1, colorSource, colorSource;
+		RSQ	R1, R1.x;
+		MUL	R1, R1.x, colorSource;
+
+		# Encode normals
+		MAD	result.color.rgb, R1, .5, .5;
+		MOV result.color.a, 1;
+	%> }
+}
+
+// HeightMap based blending
+// parm[0].x: lower clip height (parm0 - 0.5 * parm1)
+// parm[0].y: upper clip height (parm0 + 0.5 * parm1)
+// parm[0].z: one over clip height distance
+
+renderProgram megagen/blends/addNormalsWithHeightmaps {
+	program vertex arb { <%
+		OPTION ARB_position_invariant;
+
+		MOV result.texcoord[0], vertex.texcoord[0];
+		MOV result.texcoord[1], vertex.texcoord[1];
+		MOV result.texcoord[2], vertex.texcoord[2];
+	%> }
+
+	program fragment arb { <%
+		useTemplate megagen/blends/addNormalsWithHeightmaps<>
+	%> }
+}
+
+renderProgram megagen/blends/addNormalsWithHeightMapsAndParallelProjection {
+	program vertex reference megagen/blends/addNormalsWithHeightmaps
+
+	program fragment arb { <%
+		$define uvTypeParallel
+		useTemplate megagen/blends/addNormalsWithHeightmaps<>
+	%> }
+}
+
+renderProgram megagen/blends/addNormalsWithHeightMapsAndParallelProjectionAndProjectionPattern {
+	program vertex reference megagen/blends/addNormalsWithHeightmaps
+
+	program fragment arb { <%
+		$define uvTypeParallel
+		$define projectionPattern
+		useTemplate megagen/blends/addNormalsWithHeightmaps<>
+	%> }
+}
+
+blend addNormalsWithHeightMaps {
+	heightMap
+
+	fragmentProgram {
+		program megagen/blends/addNormalsWithHeightmaps
+		parm 0		parm0 - 0.5 * parm1, parm0 + 0.5 * parm1, 1.0 / ( (parm0 + 0.5 * parm1) - (parm0 - 0.5 * parm1) ), 0
+	}
+}
+
+blend addNormalsWithHeightMapsAndParallelProjection {
+	heightMap
+
+	fragmentProgram {
+		program megagen/blends/addNormalsWithHeightMapsAndParallelProjection
+		parm 0	parm0 - 0.5 * parm1, parm0 + 0.5 * parm1, 1.0 / ( (parm0 + 0.5 * parm1) - (parm0 - 0.5 * parm1) ), 0
+	}
+}
+
+blend addNormalsWithHeightMapsAndParallelProjectionAndProjectionPattern {
+	heightMap
+
+	fragmentProgram {
+		program megagen/blends/addNormalsWithHeightMapsAndParallelProjectionAndProjectionPatternBlend
+		parm 0	parm0 - 0.5 * parm1, parm0 + 0.5 * parm1, 1.0 / ( (parm0 + 0.5 * parm1) - (parm0 - 0.5 * parm1) ), 0
+		parm 1	0.5 - 0.5 * parm3, 1.0 / parm3, 0.5 + 0.5 * parm3, 0
+	}
+}
+
+template megagen/blends/addHeightMaps {
+	text { <%
+		TEMP colorDest, colorSource, scalar;
+
+		TEX colorSource, fragment.texcoord[0], texture[0], 2D;
+		$ifdef uvTypeParallel
+			TEX colorSource.rgb, fragment.texcoord[2], texture[3], 2D;
+		$endif
+		TEX colorDest, fragment.texcoord[1], texture[1], 2D;
+
+		$ifdef projectionPattern
+			PARAM	consts = { 3.14159265358979323846, 0, 0, 0 };	# pi
+
+			TEMP colorProjectionPattern, _R0, _R1;
+			TEX colorProjectionPattern, fragment.texcoord[2], texture[4], 2D;
+
+			# modify alpha with pattern
+			ADD _R0.a, colorProjectionPattern.x, -0.5;
+			MUL _R1.a, colorSource.a, consts.x;
+			SIN _R1.a, _R1.a;
+			MUL _R0.a, _R1.a, _R0.a;
+			ADD_SAT colorSource.a, colorSource.a, _R0.a;
+			
+			# Increase contrast
+			ADD _R0.a, colorSource.a, -$blendParm_1.x;		# ramp start clamp
+			MUL _R1.a, $blendParm_1.y, consts.x;
+			MUL _R1.a, _R1.a, _R0.a;
+			COS _R1.a, _R1.a;
+			MAD _R1.a, _R1.a, -0.5, 0.5;
+			CMP _R1.a, _R0.a, 0, _R1;
+			ADD _R0.a, colorSource.a, -$blendParm_1.z;		# ramp end clamp
+			CMP colorSource.a, _R0.a, _R1.a, 1;
+		$endif
+
+		MOV scalar.x, colorSource.a;
+		ADD scalar.y, 1, -scalar.x;
+
+		MUL colorSource, scalar.x, colorSource;
+		MUL colorDest, scalar.y, colorDest;
+
+		ADD scalar.z, colorDest.r, -colorSource.r;
+
+		CMP result.color.rgb, scalar.z, colorSource, colorDest;
+		MOV result.color.a, 1;
+	%> }
+}
+
+renderProgram megagen/blends/addHeightMaps {
+	program vertex arb { <%
+		OPTION ARB_position_invariant;
+		
+		MOV result.texcoord[0], vertex.texcoord[0];
+		MOV result.texcoord[1], vertex.texcoord[1];
+		MOV result.texcoord[2], vertex.texcoord[2];
+	%> }
+
+	program fragment arb { <%
+		useTemplate megagen/blends/addHeightMaps<>
+	%> }
+}
+
+renderProgram megagen/blends/addHeightMapsWithParallelProjection {
+	program vertex reference megagen/blends/addHeightMaps
+
+	program fragment arb { <%
+		$define uvTypeParallel
+		useTemplate megagen/blends/addHeightMaps<>
+	%> }
+}
+
+renderProgram megagen/blends/addHeightMapsWithParallelProjectionAndProjectionPattern {
+	program vertex reference megagen/blends/addHeightMaps
+
+	program fragment arb { <%
+		$define uvTypeParallel
+		$define projectionPattern
+		useTemplate megagen/blends/addHeightMaps<>
+	%> }
+}
+
+blend addHeightMaps {
+	colorMod
+
+	fragmentProgram {
+		program megagen/blends/addHeightMaps
+	}
+}
+
+blend addHeightMapsWithParallelProjection {
+	colorMod
+
+	fragmentProgram {
+		program megagen/blends/addHeightMapsWithParallelProjection
+	}
+}
+
+blend addHeightMapsWithParallelProjectionAndProjectionPattern {
+	colorMod
+
+	fragmentProgram {
+		program megagen/blends/addHeightMapsWithParallelProjectionAndProjectionPattern
+		parm 0	0, 0, 0, 0
+		parm 1	0.5 - 0.5 * parm3, 1.0 / parm3, 0.5 + 0.5 * parm3, 0
+	}
+}
+
+renderProgram megagen/blends/combineDetailTextureMaps {
+	program vertex arb { <%
+		OPTION ARB_position_invariant;
+
+		MOV result.texcoord[0], vertex.texcoord[0];
+	%> }
+
+	program fragment arb { <%
+		TEMP redMask, blueMask, greenMask, alphaMask, R0, R1;
+
+		TEX redMask, fragment.texcoord[0], texture[0], 2D;
+		TEX blueMask, fragment.texcoord[0], texture[1], 2D;
+		TEX greenMask, fragment.texcoord[0], texture[2], 2D;
+		TEX alphaMask, fragment.texcoord[0], texture[3], 2D;
+
+		# Combine
+		MOV R0.r, redMask.r;
+		MOV R0.g, blueMask.r;
+		MOV R0.b, greenMask.r;
+		MOV R0.a, alphaMask.r;
+
+		# Normalize
+		DP4 R1, R0, R0;
+		RSQ R1, R1.x;
+		MUL result.color, R1.x, R0;
+	%> }
+}
+
+blend combineDTM {
+	colorMod
+
+	fragmentProgram {
+		program megagen/blends/combineDetailTextureMaps
+	}
+}

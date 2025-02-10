@@ -1,0 +1,42 @@
+sdWorldFile version 5 {
+
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+		}
+		sdPrimitiveEntity "z13_func_door_gdf_breakable_1" {
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/door_lowpoly.lwo"
+				"group"	"gdf_base_gates02"
+				"health"	"0"
+				"move_delta"	"0 224 0"
+				"speed"	"384"
+				"time"	"0.5"
+				"triggersize"	"512"
+				"networksync"	"1"
+				"object_name"	"maps/refinery/gdf_side_gate"
+				"maxVisDist"	"12000"
+			}
+			classname "func_door_gdf_breakable"
+		}
+		sdPrimitiveEntity "z13_func_door_gdf_breakable_2" {
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/door_lowpoly.lwo"
+				"group"	"gdf_base_gates02"
+				"health"	"0"
+				"move_delta"	"0 224 0"
+				"speed"	"384"
+				"time"	"0.5"
+				"triggersize"	"512"
+				"networksync"	"1"
+				"maxVisDist"	"12000"
+			}
+			sdTransform {
+				translation ( -0.0000047684 -0.0000305176 0 )
+				rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "func_door_gdf_slave"
+		}
+	}
+}

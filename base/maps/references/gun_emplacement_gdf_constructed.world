@@ -1,0 +1,69 @@
+sdWorldFile version 5 {
+
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+		}
+		sdPrimitiveEntity "gun_emplacement_bracket_all_01" {
+			sdDictionary {
+				"gun_entity"	"gun_emplacement_tower_gun_01"
+				"model"	"models/weapons/mount/wall_bracket.lwo"
+				"cm_model"	"models/weapons/mount/wall_bracket.lwo"
+			}
+			sdTransform {
+				translation ( 2 0 50 )
+			}
+			
+			classname "gun_emplacement_bracket_gdf"
+		}
+		sdPrimitiveEntity "gun_emplacement_tower_gun_01" {
+			sdDictionary {
+				"anim"	"base"
+				"def_automount"	"mountable_gdf_gpmg"
+			}
+			sdTransform {
+				translation ( 2 0 50 )
+			}
+			
+			classname "mountable_weapon_gdf"
+		}
+		sdPrimitiveEntity "gun_emplacement_bracket_base_01" {
+			sdDictionary {
+				"model"	"models/weapons/mount/wall_bracket.lwo"
+				"cm_model"	"models/weapons/mount/wall_bracket.lwo"
+			}
+			sdTransform {
+				translation ( 2 0 50 )
+			}
+			
+			classname "constructible_tower_gdf_base"
+		}
+		sdPrimitiveEntity "gun_emplacement_bracket_top_01" {
+			sdDictionary {
+				"model"	"models/weapons/mount/wall_bracket_buildstage.lwo"
+				"cm_model"	"models/weapons/mount/wall_bracket.lwo"
+			}
+			sdTransform {
+				translation ( 2 0 50 )
+			}
+			
+			classname "constructible_tower_gdf_top"
+		}
+		sdPrimitiveEntity "gun_emplacement_construction_01" {
+			sdDictionary {
+				"construction"	"gun_emplacement_bracket_top_01"
+				"start_constructed"	"1"
+				"multiple_stages"	"0"
+				"constructed"	"gun_emplacement_bracket_all_01"
+				"construction_remove"	"gun_emplacement_bracket_base_01"
+				"model"	"models/mapobjects/cmarker/gdf_gpmg_emplacement.lwo"
+				"cm_model"	"models/mapobjects/cmarker/gdf_gpmg_emplacement.lwo"
+			}
+			sdTransform {
+				translation ( 0 -9 0 )
+			}
+			
+			classname "constructible_materials_gun_gdf"
+		}
+	}
+}

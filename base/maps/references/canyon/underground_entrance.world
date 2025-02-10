@@ -1,0 +1,574 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"editor_last_atmosphere"	"atmosphere://canyon_newest"
+	}
+
+	meta {
+		sdLODGroup "detail" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		2
+				"uniqueinstance"		1
+			}
+			levels {
+				"detail (Level 01)"
+				"detail (Level 02)"
+			}
+		}
+		sdLODGroup_Level "detail (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		4096
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		"medium"
+				"noshadows"		0
+			}
+		}
+		sdLODGroup_Level "detail (Level 02)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		12000
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+			}
+		}
+		sdDetailGroup "main_entrance" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdDetailGroup "detail1" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"detail (Level 01)"
+				}
+				{
+					sdDictionary {
+						"expandAAS"	"0"
+					}
+					
+					sdTransform {
+						translation ( 77 -34.5 131.5 )
+					}
+					
+					faces {
+						plane ( 0 0 1 32.5 ) matrix ( ( -0.0148437498 0 0.2046875656 ) ( 0 0.0020141602 -0.0938110352 ) ) texBounds ( ( 174 1972 ) ( 193 2071 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0 0 -1 -56.5 ) matrix ( ( -0.0148437498 0 0.2046875656 ) ( 0 0.0020141602 0.2163696289 ) ) texBounds ( ( 174 1972 ) ( 193 2071 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( -1 0 0 -12 ) matrix ( ( 0.0148437498 0 0.204687506 ) ( 0 0.0020141602 0.2365112305 ) ) texBounds ( ( 174 1972 ) ( 193 2071 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 1 0 0 -12 ) matrix ( ( -0.0148437498 0 0.2046875656 ) ( 0 0.0020141602 0.2365112305 ) ) texBounds ( ( 174 1972 ) ( 193 2071 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0 -1 0 -2.5 ) matrix ( ( 0.0203450527 0 -1.2950845957 ) ( 0 0.0020141602 0.2360229492 ) ) texBounds ( ( 7 1973 ) ( 132 2072 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0 1 0 -2.5 ) matrix ( ( 0.03125 0 0.5 ) ( 0 0.03125 -15.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"detail (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 2 -38 192 )
+					}
+					
+					faces {
+						plane ( 0 0.4856429398 0.8741573095 -2.7196004391 ) matrix ( ( -0.0123820752 0 0.5048643947 ) ( 0 -0.0013754793 -0.0068613011 ) ) texBounds ( ( 50 1708 ) ( 218 1737 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0 -0.4472136199 -0.8944272399 -2.2360680103 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/nodrawsolid"
+						plane ( -1 -0 -0 -26 ) matrix ( ( -0.0129195871 0 0.8283722997 ) ( 0 -0.0014154627 -0.1015073359 ) ) texBounds ( ( 50 1708 ) ( 93 1737 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 1 -0 -0 -22 ) matrix ( ( -0.024036441 0 -0.669973135 ) ( 0 -0.0014154627 -0.1015073359 ) ) texBounds ( ( 50 1708 ) ( 130 1737 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0 -0.7071068287 0.7071068287 -9.8994960785 ) matrix ( ( -0.0123820752 0 0.5420106053 ) ( 0 -0.002502481 -0.0923350826 ) ) texBounds ( ( 50 1708 ) ( 218 1737 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0 0.9805807471 -0.1961161494 -1.5689291954 ) matrix ( ( -0.0123820752 0 0.5048643947 ) ( 0 -0.0027762156 -0.3283527195 ) ) texBounds ( ( 50 1708 ) ( 218 1737 ) ) "texturesheets/canyon/can_metal_wall_2"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"detail (Level 01)"
+					"detail1"
+				}
+				{
+					
+					sdTransform {
+						translation ( -1 -29 193 )
+					}
+					
+					faces {
+						plane ( 0 0.4472135901 0.8944271803 -2.2360680103 ) matrix ( ( -0.0218749996 0 0.5234375 ) ( 0 -0.0031660469 -0.203525722 ) ) texBounds ( ( 50 1708 ) ( 218 1737 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0 -0.4472135901 -0.8944271803 -2.2360680103 ) matrix ( ( -0.0218749996 0 0.5234374404 ) ( 0 -0.001583153 -0.0152343847 ) ) texBounds ( ( 50 1708 ) ( 218 1737 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( -1 0 0 -13 ) matrix ( ( -0.0210027341 0 1.0353688002 ) ( 0 -0.002023797 -0.2225600481 ) ) texBounds ( ( 50 1708 ) ( 93 1737 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 1 0 0 -17 ) matrix ( ( -0.0390748531 0 -1.055082798 ) ( 0 -0.002023797 -0.2225600481 ) ) texBounds ( ( 50 1708 ) ( 130 1737 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0 -0.6000000238 0.8000000119 -9 ) matrix ( ( -0.0218749996 0 0.5195311904 ) ( 0 -0.0028311501 -0.0763443559 ) ) texBounds ( ( 50 1708 ) ( 218 1737 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0 1 0 3 ) matrix ( ( 0.03125 0 0.375 ) ( 0 0.03125 -15.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"detail (Level 01)"
+				}
+				{
+					sdDictionary {
+						"expandAAS"	"0"
+					}
+					
+					sdTransform {
+						translation ( -66 -34.5 231.5 )
+					}
+					
+					faces {
+						plane ( 0 -0.7071067691 0.7071067691 -12.0208148956 ) matrix ( ( -0.0213451125 0 -0.7896332741 ) ( 0 -0.0023017775 0.2114261985 ) ) texBounds ( ( 82 905 ) ( 235 925 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0 -0.7071067691 -0.7071067691 -12.0208148956 ) matrix ( ( -0.023995813 0 -0.9274696112 ) ( 0 -0.0022442329 0.1708989143 ) ) texBounds ( ( 82 905 ) ( 254 924.5 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( -0.7071068287 -0.7071068287 0 -8.1317281723 ) matrix ( ( 0 0.0171248168 4.6186418533 ) ( -0.0023017796 0 0.4897460938 ) ) texBounds ( ( 82 905 ) ( 253 925 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0.7071068287 -0.7071068287 0 -8.1317281723 ) matrix ( ( 0 0.0172249619 4.6437778473 ) ( -0.0023017796 0 0.4213867188 ) ) texBounds ( ( 82 905 ) ( 254 925 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0 -1 0 -0.5 ) matrix ( ( 0.0154474434 0 1.8144528866 ) ( 0 0.0023378315 1.1476528645 ) ) texBounds ( ( 160 885 ) ( 247 1043 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0 1 -0 -2.5 ) matrix ( ( 0.03125 0 -3.6875 ) ( 0 0.03125 -15.9375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"detail1"
+				}
+				{
+					
+					sdTransform {
+						translation ( 1 -16 132 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -132 ) matrix ( ( 0 0.0119993752 2.1852054596 ) ( -0.0009432961 0 0.5854488611 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( -0 0 -1 28 ) matrix ( ( 0 0.0094339624 0.7924528122 ) ( -0.0014105904 0 0.5454101563 ) ) texBounds ( ( 0 931 ) ( 256 1035 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( -1 0 -0 -55 ) matrix ( ( 0.03125 0 -0.25 ) ( 0 0.03125 -15.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -53 ) matrix ( ( 0.03125 0 0.25 ) ( 0 0.03125 -15.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0119993752 0 2.1852054596 ) ( 0 0.0009432961 0.7485347986 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 1 0 -16 ) matrix ( ( 0.0119993752 0 2.569185257 ) ( 0 0.0009432961 0.7475582361 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					sdDictionary {
+						"_color"	"0.2549 0.27451 0.19608 1"
+						"_overbright"	"1.00000"
+						"maxVisDist"	"6500"
+					}
+					
+					sdTransform {
+						translation ( -30 4 40 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -122 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/nodraw"
+						plane ( -0 0 -1 -26 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/nodraw"
+						plane ( -1 0 -0 -26 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/nodraw"
+						plane ( 1 0 0 -86 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/nodraw"
+						plane ( 0 -1 -0 -4 ) matrix ( ( 0.0625 0 -64.5 ) ( 0 0.0625 0 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/editor/outsideportal"
+						plane ( 0 1 0 2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/nodraw"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"detail1"
+				}
+				{
+					
+					sdTransform {
+						translation ( -26.5 -46 8.5 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -7.5 ) matrix ( ( 0 0.0078124995 0.0078124995 ) ( -0.0009765624 0 0.728515625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant02"
+						plane ( 0 0 -1 -8.5 ) matrix ( ( -0.03125 0 0.0625 ) ( 0 0.03125 0.46875 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 -0 -27.5 ) matrix ( ( -0.03125 0 0.0625 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80.5 ) matrix ( ( -0.03125 0 0.0625 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -46 ) matrix ( ( 0.0119993752 0 2.7407796383 ) ( 0 0.0009432961 0.7475582361 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 -1 -0 28 ) matrix ( ( -0.03125 0 0.03125 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"detail1"
+				}
+				{
+					
+					sdTransform {
+						translation ( -26.5 -50 8.5 )
+					}
+					
+					faces {
+						plane ( 0 -0 1 -7.5 ) matrix ( ( 0 0.0078124995 0.0078124995 ) ( 0.0009765624 0 0.763671875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant02"
+						plane ( -0 -0 -1 -8.5 ) matrix ( ( -0.03125 0 0.0625 ) ( 0 0.03125 0.46875 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 -0 -27.5 ) matrix ( ( -0.03125 0 0.0625 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80.5 ) matrix ( ( -0.03125 0 0.0625 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0 -1 -0 14 ) matrix ( ( 0.0119993752 0 2.1972048283 ) ( 0 0.0009432961 0.7490230799 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 1 0 -32 ) matrix ( ( -0.03125 0 0.09375 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 66 6 206 )
+					}
+					
+					faces {
+						plane ( 0 -0 1 -58 ) matrix ( ( 0 -0.0119993752 2.185205698 ) ( -0.0009432961 0 0.5854488611 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 -0 -1 -206 ) matrix ( ( 0.03125 0 0.25 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -70 ) matrix ( ( 0.0119993715 0 2.6067590714 ) ( 0 0.0009432961 0.7490231395 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 -1 -0 -6 ) matrix ( ( 0.03125 0 0.25 ) ( 0 0.03125 -15.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -4 ) matrix ( ( 0.0119993752 0 2.487154007 ) ( 0 0.0009432961 0.7475582361 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( -0.7071067691 0.7071067691 0 -4.2426404953 ) matrix ( ( 0.0119993752 0 2.3608093262 ) ( 0 0.0009432961 0.7475582361 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -109.5 7 206.5 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -57.5 ) matrix ( ( 0 0.0119993752 2.1852054596 ) ( -0.0009432961 0 0.5854488611 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 0 -1 -206.5 ) matrix ( ( 0.03125 0 0.25 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 -0 -26.5 ) matrix ( ( -0.0119993733 0 2.5674922466 ) ( 0 0.0009432961 0.7490230799 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 -1 0 -7 ) matrix ( ( 0.03125 0 0.25 ) ( 0 0.03125 -15.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 -0 -3 ) matrix ( ( 0.0119993752 0 2.635591507 ) ( 0 0.0009432961 0.7475582361 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0.7071067691 0.7071067691 0 -34.2946777344 ) matrix ( ( 0.0119993752 0 2.752779007 ) ( 0 0.0009432961 0.7475582361 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"main_entrance"
+					"detail (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -79 -74 20 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -20 ) matrix ( ( 0.03125 0 0.25 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 -0 -29 ) matrix ( ( 0.03125 0 -0.25 ) ( 0 0.03125 -15.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -25 ) matrix ( ( -0.0119993752 0 2.2812004089 ) ( 0 0.0009432961 0.7475582361 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 -1 0 38 ) matrix ( ( 0.0119993752 0 2.1852054596 ) ( 0 0.0009432961 0.7490230799 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 -0.7071067095 0.7071067095 12.727935791 ) matrix ( ( 0.0119993752 0 2.1852054596 ) ( 0 0.0009432961 0.7139898539 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 1 0 -42 ) matrix ( ( 0.03125 0 0.25 ) ( 0 0.03125 -0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"main_entrance"
+					"detail (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 79 -74 20 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -20 ) matrix ( ( 0.03125 0 0.25 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -25 ) matrix ( ( 0.0119993752 0 2.2812004089 ) ( 0 0.0009432961 0.7475582361 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 1 0 0 -29 ) matrix ( ( 0.03125 0 0.25 ) ( 0 0.03125 -15.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 38 ) matrix ( ( 0.0119993752 0 2.1852054596 ) ( 0 0.0009432961 0.7490230799 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 -0.7071067095 0.7071067095 12.727935791 ) matrix ( ( 0.0119993752 0 2.1852054596 ) ( 0 0.0009432961 0.7137457132 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 1 0 -42 ) matrix ( ( 0.03125 0 0.25 ) ( 0 0.03125 -0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush_1" {
+					
+					sdTransform {
+						translation ( -242 -20 0 )
+					}
+					
+					faces {
+						plane ( -0.34615013 -0.8076836467 0.4773124456 -105.4722442627 ) matrix ( ( -0.0098954048 0 -0.7366214991 ) ( 0 0.0008572215 0.6618924141 ) ) texBounds ( ( 11 1024 ) ( 93.5 1491.5 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( -0 0 -1 0 ) matrix ( ( 0.03125 0 0.875 ) ( 0 -0.03125 0.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.9125093818 -0.4090559185 0 -135.3660430908 ) matrix ( ( 0.0119993752 0 2.2244729996 ) ( 0 0.0009432961 0.7485347986 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( -0.3939193189 -0.9191450477 0 -103.7320861816 ) matrix ( ( -0.0119993752 0 2.28896451 ) ( 0 0.0009432962 0.7490231395 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( -0.9125093818 0.4090559185 0 104.9071121216 ) matrix ( ( -0.0119993733 0 2.6067597866 ) ( 0 0.0009432961 0.7490230799 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0.3939193189 0.9191451073 0 -23.3725452423 ) matrix ( ( -0.0098954039 0 -0.8197780252 ) ( 0 0.0008572216 0.6700593233 ) ) texBounds ( ( 11 1024 ) ( 93.5 1491.5 ) ) "texturesheets/canyon/storage_bunker01"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -123 -33 132 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -132 ) matrix ( ( 0 0.0119993752 2.1852054596 ) ( -0.0009432961 0 0.5854488611 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 0 -1 -132 ) matrix ( ( 0.03125 0 0.25 ) ( 0 -0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -13 ) matrix ( ( -0.0119993733 0 2.5674922466 ) ( 0 0.0009432961 0.7490230799 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 1 0 0 -15 ) matrix ( ( 0.0119993752 0 2.1852054596 ) ( 0 0.0009432961 0.7485347986 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( -0.39397192 -0.9191225171 0 -11.5591135025 ) matrix ( ( 0.0119993752 0 2.2403507233 ) ( 0 0.0009432961 0.7485347986 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 1 0 -33 ) matrix ( ( 0.0119993752 0 2.1252086163 ) ( 0 0.0009432961 0.7485347986 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"main_entrance"
+				}
+				{
+					
+					sdTransform {
+						translation ( -160 -18 132 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -132 ) matrix ( ( 0 0.0119993752 2.1852054596 ) ( -0.0009432961 0 0.5854488611 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( -0 0 -1 -132 ) matrix ( ( 0.03125 0 0.25 ) ( 0 -0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 -0 0 -106 ) matrix ( ( -0.0119993752 0 2.2812004089 ) ( 0 0.0009432961 0.7475582361 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( -0 -1 -0 -14 ) matrix ( ( 0.0119993752 0 2.1852054596 ) ( 0 0.0009432961 0.7485347986 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( -0 1 0 -18 ) matrix ( ( -0.0119993752 0 2.569185257 ) ( 0 0.0009432961 0.7636715174 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( -1 0 -0 52 ) matrix ( ( 0.03125 0 0.25 ) ( 0 0.03125 -15.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"main_entrance"
+				}
+				{
+					
+					sdTransform {
+						translation ( 80 -18 132 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -132 ) matrix ( ( 0 -0.0119993752 2.185205698 ) ( -0.0009432961 0 0.5854488611 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 0 -1 -132 ) matrix ( ( 0.03125 0 0.25 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 -0 -26 ) matrix ( ( 0.0119993752 0 2.2812004089 ) ( 0 0.0009432961 0.7475582361 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 -1 -0 -14 ) matrix ( ( 0.0119993752 0 2.1852054596 ) ( 0 0.0009432961 0.7485347986 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 1 0 -18 ) matrix ( ( 0.0119993752 0 2.569185257 ) ( 0 0.0009432961 0.7636715174 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 1 0 0 -28 ) matrix ( ( 0.03125 0 0.25 ) ( 0 0.03125 -15.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush_1" {
+					
+					sdTransform {
+						translation ( 54 -20 0 )
+					}
+					
+					faces {
+						plane ( 0.3461500704 -0.8076836467 0.4773124754 -170.5465393066 ) matrix ( ( 0.0098954048 0 -0.7366210222 ) ( 0 0.0008572214 0.6618928313 ) ) texBounds ( ( 11 1024 ) ( 93.5 1491.5 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0.875 ) ( 0 0.03125 0.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.9125093222 -0.4090559185 -0 36.1836242676 ) matrix ( ( -0.0119993733 0 2.2244713306 ) ( 0 0.0009432961 0.7485347986 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0.3939195275 -0.9191449285 -0.0000001001 -177.7868652344 ) matrix ( ( 0.0119993752 0 2.28896451 ) ( 0 0.0009432963 0.7490231991 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0.9125093222 0.4090559483 -0.0000000474 -66.647895813 ) matrix ( ( 0.0119993715 0 2.6067578793 ) ( 0 0.0009432961 0.7490230799 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( -0.3939192891 0.9191450477 -0 50.6842803955 ) matrix ( ( 0.0098954029 0 -0.8197791576 ) ( 0 0.0008572216 0.6700593829 ) ) texBounds ( ( 11 1024 ) ( 93.5 1491.5 ) ) "texturesheets/canyon/storage_bunker01"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 173 -33 132 )
+					}
+					
+					faces {
+						plane ( -0 -0 1 -132 ) matrix ( ( 0 -0.0119993752 2.185205698 ) ( -0.0009432961 0 0.5854488611 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0 -0 -1 -132 ) matrix ( ( 0.03125 0 0.25 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 -0 0 37 ) matrix ( ( 0.0119993733 0 2.5674922466 ) ( 0 0.0009432961 0.7490230799 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( -1 -0 -0 -65 ) matrix ( ( -0.0119993752 0 2.1852054596 ) ( 0 0.0009432961 0.7485347986 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( 0.3939718604 -0.9191225171 -0 8.1415758133 ) matrix ( ( -0.0119993733 0 2.2403502464 ) ( 0 0.0009432961 0.7485347986 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+						plane ( -0 1 0 -33 ) matrix ( ( -0.0119993752 0 2.1252088547 ) ( 0 0.0009432961 0.7485347986 ) ) texBounds ( ( 0 1024 ) ( 390.5 1534 ) ) "texturesheets/canyon/storage_bunker01"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"detail (Level 01)"
+				}
+				{
+					sdDictionary {
+						"expandAAS"	"0"
+					}
+					
+					sdTransform {
+						translation ( 70 -34.5 231.5 )
+					}
+					
+					faces {
+						plane ( 0 -0.7071067691 0.7071067691 -12.0208148956 ) matrix ( ( -0.0213451125 0 2.113301754 ) ( 0 -0.0023017775 0.2114261985 ) ) texBounds ( ( 82 905 ) ( 235 925 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0 -0.7071067691 -0.7071067691 -12.0208148956 ) matrix ( ( -0.023995813 0 2.3359611034 ) ( 0 -0.0022442329 0.1708989143 ) ) texBounds ( ( 82 905 ) ( 254 924.5 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( -0.7071068287 -0.7071068287 0 -8.1317281723 ) matrix ( ( 0 0.0171248168 4.6186418533 ) ( -0.0023017796 0 0.7111006975 ) ) texBounds ( ( 82 905 ) ( 253 925 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0.7071068287 -0.7071068287 0 -8.1317281723 ) matrix ( ( 0 0.0172249619 4.6437778473 ) ( -0.0023017796 0 0.6427411437 ) ) texBounds ( ( 82 905 ) ( 254 925 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0 -1 0 -0.5 ) matrix ( ( 0.0154474434 0 -0.2863991261 ) ( 0 0.0023378315 1.1476528645 ) ) texBounds ( ( 160 885 ) ( 247 1043 ) ) "texturesheets/canyon/can_metal_wall_2"
+						plane ( 0 1 -0 -2.5 ) matrix ( ( 0.03125 0 0.5625 ) ( 0 0.03125 -15.9375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"detail (Level 01)"
+				}
+				{
+					sdDictionary {
+						"expandAAS"	"0"
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 77 -33 195.5 )
+					}
+					
+					allowThicken 1
+					allowCap 1
+					thickenAllEdges 0
+					useExplicitSubdivisions 1
+					texMatrix ( ( 0.0000000437 -1 0 ) ( 1 0.0000000437 0.5092773438 ) )
+					texBounds ( ( 0 1005 ) ( 1999 1009 ) )
+					material "texturesheets/canyon/can_metal_wall_2"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 9 3 ) {
+						(
+							( ( -1 0 -96.5 4.8803710938 0.5063476563 ) ( -1 -1 -96.5 4.8803710938 0.5073242188 ) ( 0 -1 -96.5 4.8803710938 0.5083007813 ) ( 1 -1 -96.5 4.8803710938 0.5092773438 ) ( 1 0 -96.5 4.8803710938 0.5102539063 ) ( 1 1 -96.5 4.8803710938 0.5112304688 ) ( 0 1 -96.5 4.8803710938 0.5122070313 ) ( -1 1 -96.5 4.8803710938 0.5131835938 ) ( -1 0 -96.5 4.8803710938 0.5141601563 ) )
+							( ( -1 0 -40 3.9042966366 0.5063476563 ) ( -1 -1 -40 3.9042966366 0.5073242188 ) ( 0 -1 -40 3.904296875 0.5083007813 ) ( 1 -1 -40 3.904296875 0.5092773438 ) ( 1 0 -40 3.904296875 0.5102539063 ) ( 1 1 -40 3.904296875 0.5112304688 ) ( 0 1 -40 3.904296875 0.5122070313 ) ( -1 1 -40 3.904296875 0.5131835938 ) ( -1 0 -40 3.904296875 0.5141601563 ) )
+							( ( -1 0 18.5 2.9282226563 0.5063476563 ) ( -1 -1 18.5 2.9282226563 0.5073242188 ) ( 0 -1 18.5 2.9282226563 0.5083007813 ) ( 1 -1 18.5 2.9282226563 0.5092773438 ) ( 1 0 18.5 2.9282226563 0.5102539063 ) ( 1 1 18.5 2.9282226563 0.5112304688 ) ( 0 1 18.5 2.9282226563 0.5122070313 ) ( -1 1 18.5 2.9282226563 0.5131835938 ) ( -1 0 18.5 2.9282228947 0.5141601563 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"detail (Level 01)"
+					"detail1"
+				}
+				{
+					sdDictionary {
+						"expandAAS"	"0"
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -19.4999961853 -33 173 )
+						rotation ( ( 0.0000000596 0 0.9999999404 ) ( 0 1 0 ) ( -0.9999999404 0 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 1
+					thickenAllEdges 0
+					useExplicitSubdivisions 1
+					texMatrix ( ( 0.0000000437 -1 0 ) ( 1 0.0000000437 0.5092773438 ) )
+					texBounds ( ( 0 1005 ) ( 923 1009 ) )
+					material "texturesheets/canyon/can_metal_wall_2"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 9 3 ) {
+						(
+							( ( -1 0 -96.5 2.2534179688 0.5063476563 ) ( -1 -1 -96.5 2.2534179688 0.5073242188 ) ( 0 -1 -96.5 2.2534179688 0.5083007813 ) ( 1 -1 -96.5 2.2534179688 0.5092773438 ) ( 1 0 -96.5 2.2534179688 0.5102539063 ) ( 1 1 -96.5 2.2534179688 0.5112304688 ) ( 0 1 -96.5 2.2534179688 0.5122070313 ) ( -1 1 -96.5 2.2534179688 0.5131835938 ) ( -1 0 -96.5 2.2534179688 0.5141601563 ) )
+							( ( -1 0 -64.5 1.8027342558 0.5063476563 ) ( -1 -1 -64.5 1.8027342558 0.5073242188 ) ( 0 -1 -64.5 1.802734375 0.5083007813 ) ( 1 -1 -64.5 1.802734375 0.5092773438 ) ( 1 0 -64.5 1.802734375 0.5102539063 ) ( 1 1 -64.5 1.802734375 0.5112304688 ) ( 0 1 -64.5 1.802734375 0.5122070313 ) ( -1 1 -64.5 1.802734375 0.5131835938 ) ( -1 0 -64.5 1.802734375 0.5141601563 ) )
+							( ( -1 0 -32.4999961853 1.3520507813 0.5063476563 ) ( -1 -1 -32.4999961853 1.3520507813 0.5073242188 ) ( 0 -1 -32.4999961853 1.3520507813 0.5083007813 ) ( 1 -1 -32.4999961853 1.3520507813 0.5092773438 ) ( 1 0 -32.4999961853 1.3520507813 0.5102539063 ) ( 1 1 -32.4999961853 1.3520507813 0.5112304688 ) ( 0 1 -32.4999961853 1.3520507813 0.5122070313 ) ( -1 1 -32.4999961853 1.3520507813 0.5131835938 ) ( -1 0 -32.4999961853 1.3520509005 0.5141601563 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"detail (Level 01)"
+				}
+				{
+					sdDictionary {
+						"expandAAS"	"0"
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 8.9999961853 -33 95.5 )
+						rotation ( ( -0.9999998808 0 0.0000001192 ) ( 0 1 0 ) ( -0.0000001192 0 -0.9999998808 ) )
+					}
+					
+					allowThicken 1
+					allowCap 1
+					thickenAllEdges 0
+					useExplicitSubdivisions 1
+					texMatrix ( ( 0.0000000437 -1 0 ) ( 1 0.0000000437 0.5092773438 ) )
+					texBounds ( ( 0 1005 ) ( 187 1009 ) )
+					material "texturesheets/canyon/can_metal_wall_2"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 9 3 ) {
+						(
+							( ( -1 0 -96.5 0.4565429688 0.5063476563 ) ( -1 -1 -96.5 0.4565429688 0.5073242188 ) ( 0 -1 -96.5 0.4565429688 0.5083007813 ) ( 1 -1 -96.5 0.4565429688 0.5092773438 ) ( 1 0 -96.5 0.4565429688 0.5102539063 ) ( 1 1 -96.5 0.4565429688 0.5112304688 ) ( 0 1 -96.5 0.4565429688 0.5122070313 ) ( -1 1 -96.5 0.4565429688 0.5131835938 ) ( -1 0 -96.5 0.4565429688 0.5141601563 ) )
+							( ( -1 0 -89 0.3652343452 0.5063476563 ) ( -1 -1 -89 0.3652343452 0.5073242188 ) ( 0 -1 -89 0.365234375 0.5083007813 ) ( 1 -1 -89 0.365234375 0.5092773438 ) ( 1 0 -89 0.365234375 0.5102539063 ) ( 1 1 -89 0.365234375 0.5112304688 ) ( 0 1 -89 0.365234375 0.5122070313 ) ( -1 1 -89 0.365234375 0.5131835938 ) ( -1 0 -89 0.365234375 0.5141601563 ) )
+							( ( -1 0 -81.4999923706 0.2739257813 0.5063476563 ) ( -1 -1 -81.4999923706 0.2739257813 0.5073242188 ) ( 0 -1 -81.4999923706 0.2739257813 0.5083007813 ) ( 1 -1 -81.4999923706 0.2739257813 0.5092773438 ) ( 1 0 -81.4999923706 0.2739257813 0.5102539063 ) ( 1 1 -81.4999923706 0.2739257813 0.5112304688 ) ( 0 1 -81.4999923706 0.2739257813 0.5122070313 ) ( -1 1 -81.4999923706 0.2739257813 0.5131835938 ) ( -1 0 -81.4999923706 0.2739258111 0.5141601563 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"detail (Level 01)"
+				}
+				{
+					sdDictionary {
+						"expandAAS"	"0"
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 8.9999961853 -33 80.5 )
+						rotation ( ( -0.9999998808 0 0.0000001192 ) ( 0 1 0 ) ( -0.0000001192 0 -0.9999998808 ) )
+					}
+					
+					allowThicken 1
+					allowCap 1
+					thickenAllEdges 0
+					useExplicitSubdivisions 1
+					texMatrix ( ( 0.0000000437 -1 0 ) ( 1 0.0000000437 0.5092773438 ) )
+					texBounds ( ( 0 1005 ) ( 90 1009 ) )
+					material "texturesheets/canyon/can_metal_wall_2"
+					explicitSubdivisions( 1 2 )
+					controlPoints( 9 3 ) {
+						(
+							( ( -1 0 -96.5 0.2197265625 0.5063476563 ) ( -1 -1 -96.5 0.2197265625 0.5073242188 ) ( 0 -1 -96.5 0.2197265625 0.5083007813 ) ( 1 -1 -96.5 0.2197265625 0.5092773438 ) ( 1 0 -96.5 0.2197265625 0.5102539063 ) ( 1 1 -96.5 0.2197265625 0.5112304688 ) ( 0 1 -96.5 0.2197265625 0.5122070313 ) ( -1 1 -96.5 0.2197265625 0.5131835938 ) ( -1 0 -96.5 0.2197265625 0.5141601563 ) )
+							( ( -0.9999994636 0 -93.5 0.1757812351 0.5063476563 ) ( -0.9999994636 -1 -93.5 0.1757812351 0.5073242188 ) ( 0.0000004172 -1 -92.5 0.17578125 0.5083007813 ) ( 1 -1 -91.5 0.17578125 0.5092773438 ) ( 1 0 -91.5 0.17578125 0.5102539063 ) ( 1 1 -91.5 0.17578125 0.5112304688 ) ( 0.0000004172 1 -92.5 0.17578125 0.5122070313 ) ( -0.9999994636 1 -93.5 0.17578125 0.5131835938 ) ( -0.9999994636 0 -93.5 0.17578125 0.5141601563 ) )
+							( ( -3.9999980927 0 -93.4999923706 0.1318359375 0.5063476563 ) ( -3.9999980927 -1 -93.4999923706 0.1318359375 0.5073242188 ) ( -3.9999978542 -1 -92.4999923706 0.1318359375 0.5083007813 ) ( -3.9999980927 -1 -91.4999923706 0.1318359375 0.5092773438 ) ( -3.9999980927 0 -91.4999923706 0.1318359375 0.5102539063 ) ( -3.9999980927 1 -91.4999923706 0.1318359375 0.5112304688 ) ( -3.9999978542 1 -92.4999923706 0.1318359375 0.5122070313 ) ( -3.9999980927 1 -93.4999923706 0.1318359375 0.5131835938 ) ( -3.9999980927 0 -93.4999923706 0.1318359524 0.5141601563 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"detail (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 19 -56 189 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 0.0078125 0 0.19140625 ) ( 0 0.0009765625 -0.8681640625 ) )
+					texBounds ( ( 0 0 ) ( 256 2048 ) )
+					material "texturesheets/canyon/can_metal_wall_1"
+					explicitSubdivisions( 1 1 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -43 19 0 0.00390625 -0.9734165072 ) ( -19 19 0 0.3203125 -0.9734165072 ) ( 5 19 0 0.63671875 -0.9734165072 ) )
+							( ( -43 13 3 0.00390625 -0.9799674749 ) ( -19 13 3 0.3203125 -0.9799674749 ) ( 5 13 3 0.63671875 -0.9799674749 ) )
+							( ( -43 7 6 0.00390625 -0.9865184426 ) ( -19 7 6 0.3203125 -0.9865184426 ) ( 5 7 6 0.63671875 -0.9865184426 ) )
+						)
+					}
+				}
+			}
+		}
+	}
+}

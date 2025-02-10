@@ -1,0 +1,1644 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"description"	"unnamed.world"
+		"editor_last_atmosphere"	"atmosphere://slipgate_desert01"
+	}
+
+	meta {
+		sdLODGroup "onestory01" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		2
+				"uniqueinstance"		1
+			}
+			levels {
+				"onestory01 (Level 01)"
+				"onestory01 (Level 02)"
+			}
+		}
+		sdLODGroup "decals" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"decals (Level 01)"
+			}
+		}
+		sdLODGroup_Level "onestory01 (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		10240
+				"minvisdist"		0
+				"visdistfalloff"		0.1
+				"shadowvisdistmult"		0.75
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		1
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "onestory01 (Level 02)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		4096
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		"med"
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "decals (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		4096
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		"med"
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_3" 
+				groups {
+					"onestory01 (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -320 0 -16 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -128 ) matrix ( ( 0 0.0055847168 1.6953125 ) ( -0.0022587143 0 0.7969543934 ) ) texBounds ( ( 136 1341 ) ( 319 1378 ) ) "textures2/metal/roof_stuff_2"
+						plane ( 0 0 -1 16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -10 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 64 ) matrix ( ( 0 0.0089285718 1 ) ( -0.002822876 0 -0.2490234375 ) ) texBounds ( ( 0 1448 ) ( 512 1633 ) ) "textures2/metal/roof_stuff_2"
+						plane ( 1 0 0 -128 ) matrix ( ( 0 -0.0089285718 0 ) ( 0.002822876 0 -0.2490234375 ) ) texBounds ( ( 0 1448 ) ( 512 1633 ) ) "textures2/metal/roof_stuff_2"
+						plane ( 0 -1 0 192 ) matrix ( ( 0.03125 0 10 ) ( 0 0.03125 -0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -224 ) matrix ( ( 0.004119873 0 -0.16796875 ) ( 0 0.0011596872 0.2504882813 ) ) texBounds ( ( 319 1744 ) ( 454 1953 ) ) "textures2/metal/roof_stuff_2"
+						plane ( 0 0.7071099877 0.7071099877 -231.9310455322 ) matrix ( ( 0.0055847173 0 -0.751953125 ) ( 0 0.0015249292 0.404622376 ) ) texBounds ( ( 164 1025 ) ( 347 1131 ) ) "textures2/metal/roof_stuff_2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_20" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.4902 0.42745 0.37647 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 0 -4 0 )
+					}
+					
+					faces {
+						plane ( 0.7071067691 0 0.7071067691 42.4264068604 ) matrix ( ( 0.03125 0 0.1249999925 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0 -0.7071067691 178.19090271 ) matrix ( ( 0.03125 0 0.1249999925 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 179.9999847412 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -187.9999847412 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -1 0 0 -191.9999847412 ) matrix ( ( 0.03125 0 -0.125 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 187.9999847412 ) matrix ( ( 0.0078125 0 0.03125 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_21" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.4902 0.42745 0.37647 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 0 -4 0 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -64 ) matrix ( ( 0.0078125 0 0.03125 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 0 -1 60 ) matrix ( ( 0.03125 0 0.125 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 179.9999847412 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -187.9999847412 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0.7071099877 0 0.7071099877 -178.19090271 ) matrix ( ( 0.03125 0 -0.1249999925 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071099877 0 0.7071099877 2.8284199238 ) matrix ( ( 0.03125 0 0.1249999925 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_22" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.4902 0.42745 0.37647 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 0 -4 0 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -128 ) matrix ( ( 0.03125 0 0.125 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 64 ) matrix ( ( 0.03125 0 0.125 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 179.9999847412 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -187.9999847412 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -1 0 0 -131.9999847412 ) matrix ( ( 0.0078125 0 -0.03125 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 1 0 0 123.9999771118 ) matrix ( ( 0.0078125 0 0.03125 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_23" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.4902 0.42745 0.37647 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 0 -4 0 )
+					}
+					
+					faces {
+						plane ( -0.7071067691 0 0.7071067691 -138.5929260254 ) matrix ( ( 0.03125 0 -0.1249999925 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071067691 0 -0.7071067691 -2.8284270763 ) matrix ( ( 0.03125 0 -0.1249999925 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -187.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 1 0 179.9999694824 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 64 ) matrix ( ( 0.03125 0 0.125 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -68 ) matrix ( ( 0.0078125 0 -0.03125 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_24" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.4902 0.42745 0.37647 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 0 -4 0 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -132 ) matrix ( ( 0.03125 0 0.125 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 128 ) matrix ( ( 0.0078125 0 0.03125 ) ( 0 0.0009765625 -0.97265625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 1 0 179.9999847412 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -187.9999847412 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0.7071067691 0 -0.7071067691 -42.4264068604 ) matrix ( ( 0.03125 0 -0.1249999925 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0 -0.7071067691 138.5929260254 ) matrix ( ( 0.03125 0 0.1249999925 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_43" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 -0 -191.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 1 0 183.9999694824 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 -0 131.9997711182 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -203.999786377 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -8 ) matrix ( ( 0 0.0104166651 -1.2499974966 ) ( -0.0015055338 0 0.2350260913 ) ) texBounds ( ( 0 1024 ) ( 256 1098 ) ) "texturesheets/slipgate/fort05_modern"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_53" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( -0 0 1 -264 ) matrix ( ( 0.0078125 0 -1.609375 ) ( 0 0.0009765625 -0.4453125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 0 -1 256 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071067691 -0.7071067691 0 90.5096664429 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071067691 0.7071067691 0 90.515625 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -319.9998474121 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 0.1328125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -1 0 0 311.9998474121 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 0.1328125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_54" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 0 1 -264 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 0.1328125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0 0 -1 256 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0.7071067691 -0 90.5096664429 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 -0.7071067691 0 90.515625 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -319.9999694824 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 0.1328125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 1 0 0 311.9999694824 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 0.1328125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_55" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( -0 0 1 -264 ) matrix ( ( 0 -0.0078125 0.015625 ) ( 0.0009765625 0 0.0390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0 -0 -1 256 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071067691 0.7071067691 0 -90.5096664429 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0.7071067691 -0 -90.515625 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -192 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 0.1328125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 1 -0 184 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 0.1328125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_19" 
+				groups {
+					"onestory01 (Level 02)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -128.0000915527 160 0 )
+						rotation ( ( -0.0000001788 0.9999998212 0 ) ( -0.9999998212 -0.0000001788 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -160 ) matrix ( ( 0 -0.011067708 -2.9166665077 ) ( 0.0021158855 0 0.3346354961 ) ) texBounds ( ( 320 1744 ) ( 456 1952 ) ) "textures2/metal/roof_stuff_2"
+						plane ( 0 0 -1 112 ) matrix ( ( 0 0.011067708 -2.9166665077 ) ( -0.0021158855 0 0.0638017356 ) ) texBounds ( ( 320 1744 ) ( 456 1952 ) ) "textures2/metal/roof_stuff_2"
+						plane ( -1 0 0 -248 ) matrix ( ( 0.0110677108 0 4.1666679382 ) ( 0 0.0021158855 0.4869791865 ) ) texBounds ( ( 184 1744 ) ( 320 1952 ) ) "textures2/metal/roof_stuff_2"
+						plane ( 1 0 0 200 ) matrix ( ( 0.0110677108 0 -3.1822926998 ) ( 0 0.0021158855 0.4869791865 ) ) texBounds ( ( 184 1744 ) ( 320 1952 ) ) "textures2/metal/roof_stuff_2"
+						plane ( 0 1 0 -216 ) matrix ( ( 0.0071614599 0 0.0416664481 ) ( 0 0.0017089844 0.68359375 ) ) texBounds ( ( 168 1208 ) ( 344 1376 ) ) "textures2/metal/roof_stuff_2"
+						plane ( 0 -1 0 192 ) matrix ( ( 0.0312500112 0 -4.9999980927 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_20" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.4902 0.42745 0.37647 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 500 -160 0 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0.7071067691 0 0.7071067691 42.4264068604 ) matrix ( ( 0.0312500075 0 -15.625 ) ( 0 0.03125 -3.5355305672 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0 -0.7071067691 178.19090271 ) matrix ( ( 0.0312500075 0 -15.625 ) ( 0 0.03125 3.5355305672 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 179.9999847412 ) matrix ( ( 0.0078125009 0 1.25 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 -1 0 -187.9999847412 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -191.9999847412 ) matrix ( ( 0.0312500037 0 15.625 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 187.9999847412 ) matrix ( ( 0.0078125009 0 -3.90625 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_21" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.4902 0.42745 0.37647 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 500 -160 0 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -64 ) matrix ( ( 0 0.0078125009 -3.90625 ) ( -0.0009765626 0 -0.875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 0 -1 60 ) matrix ( ( 0 -0.0312500037 -15.625 ) ( 0.0312500037 0 5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 179.9999847412 ) matrix ( ( 0.0078125009 0 1.25 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 -1 0 -187.9999847412 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071099877 0 0.7071099877 -178.19090271 ) matrix ( ( 0.0312500075 0 15.625 ) ( 0 0.0312500037 3.5355305672 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071099877 0 0.7071099877 2.8284199238 ) matrix ( ( 0.0312500075 0 -15.625 ) ( 0 0.0312500037 -3.5355305672 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_22" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.4902 0.42745 0.37647 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 500 -160 0 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -128 ) matrix ( ( 0 0.0312500037 -15.625 ) ( -0.0312500037 0 -5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 64 ) matrix ( ( 0 -0.0312500037 -15.625 ) ( 0.0312500037 0 5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 179.9999847412 ) matrix ( ( 0.0078125009 0 1.25 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 -1 0 -187.9999847412 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -131.9999847412 ) matrix ( ( 0.0078125009 0 3.90625 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 1 0 0 123.9999771118 ) matrix ( ( 0.0078125009 0 -3.90625 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_23" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.4902 0.42745 0.37647 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 500 -160 0 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0.7071067691 0 0.7071067691 -138.5929260254 ) matrix ( ( 0.0312500075 0 15.625 ) ( 0 0.03125 3.5355305672 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071067691 0 -0.7071067691 -2.8284270763 ) matrix ( ( 0.0312500075 0 15.625 ) ( 0 0.03125 -3.5355305672 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -187.9999694824 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 179.9999694824 ) matrix ( ( 0.0078125009 0 1.25 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 1 0 0 64 ) matrix ( ( 0.0312500037 0 -15.625 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -68 ) matrix ( ( 0.0078125009 0 3.90625 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_24" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.4902 0.42745 0.37647 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 500 -160 0 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -132 ) matrix ( ( 0 0.0312500037 -15.625 ) ( -0.0312500037 0 -5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 128 ) matrix ( ( 0 -0.0078125009 -3.90625 ) ( 0.0009765626 0 -0.81640625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 1 0 179.9999847412 ) matrix ( ( 0.0078125009 0 1.25 ) ( 0 0.0009765625 -0.71875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 -1 0 -187.9999847412 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071067691 0 -0.7071067691 -42.4264068604 ) matrix ( ( 0.0312500075 0 15.625 ) ( 0 0.03125 -3.5355305672 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0 -0.7071067691 138.5929260254 ) matrix ( ( 0.0312500075 0 -15.625 ) ( 0 0.03125 3.5355305672 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush_1" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.69412 0.69412 0.69412 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 0 1 -256 ) matrix ( ( -0.0076530506 0 1.5000021458 ) ( 0 -0.001953125 -0.1249999404 ) ) texBounds ( ( 0 1024 ) ( 768 1040 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 0 -1 240 ) matrix ( ( 0.0076530506 0 1.4999978542 ) ( 0 0.001953125 -0.1249999404 ) ) texBounds ( ( 0 1024 ) ( 768 1040 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0.7071099877 -0.7071099877 0 90.5096435547 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -323.9999694824 ) matrix ( ( 0.0076530445 0 0.5000010729 ) ( 0 0.0009765625 1.09375 ) ) texBounds ( ( -256 320 ) ( 512 352 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 1 0 0 319.9999694824 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071099877 0.7071099877 0 90.5096664429 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush_1" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.69412 0.69412 0.69412 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 0 1 -256 ) matrix ( ( 0.0076530483 0 1.500002265 ) ( 0 0.0019531101 -0.1249952912 ) ) texBounds ( ( 0 1024 ) ( 768 1040 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 -0 -1 240 ) matrix ( ( -0.0076530483 0 1.499997735 ) ( 0 -0.0019531101 -0.1249952912 ) ) texBounds ( ( 0 1024 ) ( 768 1040 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0.7071099281 0.7071098685 0 90.5096817017 ) matrix ( ( 0.0312500075 0 -0.000002116 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.9999998808 0.0000000685 0 -324 ) matrix ( ( 0.007653045 0 0.5000009537 ) ( 0 0.0009765625 1.09375 ) ) texBounds ( ( -256 320 ) ( 512 352 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0.9999998808 -0.0000000685 0 320 ) matrix ( ( 0.0312500075 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071098685 -0.7071099281 0 90.5096664429 ) matrix ( ( 0.0312500075 0 0.000002116 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush_1" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.69412 0.69412 0.69412 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 0 1 -256 ) matrix ( ( 0 0.0077162348 2.5 ) ( -0.0019568799 0 0.124279201 ) ) texBounds ( ( 0 1024 ) ( 1280 1040 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 -0 -1 240 ) matrix ( ( 0 0.0077162348 2.5 ) ( -0.0019568799 0 0.124279201 ) ) texBounds ( ( 0 1024 ) ( 1280 1040 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0.7071067095 0.7071066499 0.0000013487 -90.5101089478 ) matrix ( ( 0.0312500075 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.0000000685 -0.9999998808 0 -195.9998931885 ) matrix ( ( 0.0077160667 0 0.4999949932 ) ( 0 0.0009765625 1.09375 ) ) texBounds ( ( -512 320 ) ( 768 352 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0.0000000685 0.9999998808 0 191.9999237061 ) matrix ( ( 0.0312500075 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071039677 0.7071093917 0 -90.5082778931 ) matrix ( ( 0 -0.0078125 0 ) ( 0.0009765627 0 -0.9843751192 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush_1" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( -1 0 0 -312 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -312 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 248 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -256 ) matrix ( ( 0 0.0048076925 0.5 ) ( -0.0006793478 0 0.375 ) ) texBounds ( ( -256 1536 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 1 0 -184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"onestory01 (Level 02)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 124 -180 12 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -4 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 -0 8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 -0 -8 ) matrix ( ( 0.013888889 0 -1.8333332539 ) ( 0 0.0078125 2.0625 ) ) texBounds ( ( 0 0 ) ( 256 512 ) ) "textures/doors/door_street_2"
+						plane ( 0 1 0 4 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_30" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 1 0 0 -319.9999389648 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 -0.234375 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 0 1 -240 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -96.0000305176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -31.9999198914 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 132 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 168 1208 ) ( 344 1376 ) ) "textures/common/caulk"
+						plane ( -1 0 0 312 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 168 1208 ) ( 344 1376 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_80" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 1 -0 0 -319.9999389648 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 -0.234375 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0.7071431875 -0.7070703506 -0 90.5271453857 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0 0 1 -240 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 96.0000305176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 168 1208 ) ( 344 1376 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 312 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_82" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 1 0 0 -319.9999389648 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 -0.234375 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 -1 0 -96.0000305176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -31.9999198914 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -60 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 168 1208 ) ( 344 1376 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 312 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 1831 ) ( 274 1873 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_84" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 1 0 0 -319.9999389648 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 -0.234375 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0.7071099877 0.7071099877 0 90.5096664429 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -240 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 31.9999198914 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 168 1208 ) ( 344 1376 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 312 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 1832 ) ( 182 1856 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_85" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 0 -1 -0 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -319.9999389648 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0.7070689797 0.7071444988 0 90.4891662598 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071101069 -0.7071033716 0 90.5112762451 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0 0 1 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 312 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 1024 ) ( 1280 1040 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_115" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( -1 0 0 -320 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 -0.234375 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0.7071225643 -0.7070908546 0 90.5172729492 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0 0 1 -240 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0.7071067691 0 90.5096664429 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 2048 ) ( 512 2264 ) ) "textures/common/caulk"
+						plane ( 1 0 0 312 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_93" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -320 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0.7071226239 -0.7070909142 0 90.5172805786 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0 0 1 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0.7071067691 0 90.5096664429 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "textures/common/caulk"
+						plane ( 1 0 0 312 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_10" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.69412 0.69412 0.69412 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 -0 1 -256 ) matrix ( ( 0 -0.0115384618 -0.7384614944 ) ( 0.001953125 0 0.1250001192 ) ) texBounds ( ( 0 1024 ) ( 768 1040 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 0 -1 240 ) matrix ( ( 0 -0.0115384618 3.7384614944 ) ( 0.001953125 0 0.1250001192 ) ) texBounds ( ( 0 1024 ) ( 768 1040 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0.7071067691 -0.7071067691 0 -90.5097122192 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 -0 -195.9999389648 ) matrix ( ( 0.0115381014 0 -1.7384386063 ) ( 0 0.0009765625 1.09375 ) ) texBounds ( ( -256 320 ) ( 512 352 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 -1 0 191.9999389648 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071068287 -0.7071068287 0 -90.5096740723 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_11" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 -0 1 -264 ) matrix ( ( 0 -0.0078125 0.015625 ) ( 0.0009765625 0 -0.34375 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 0 -1 256 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071067691 -0.7071067691 0 -90.5096893311 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 -0 -191.9999694824 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 0.1328125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 -1 0 183.9999694824 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 0.1328125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0.7071080804 -0.7071053982 0 -90.5103530884 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -300 -64 136 )
+						rotation ( ( -0.0000001788 0.9999998212 0 ) ( -0.9999998212 -0.0000001788 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 1 0 -44 ) matrix ( ( 0.0312500149 0 10.0000009537 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0.3162277937 -0.9486833215 -36.6824226379 ) matrix ( ( 0.0312500075 0 10.0000038147 ) ( 0 0.0312500112 3.7947366238 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0.3162277937 0.9486833215 -36.6824188232 ) matrix ( ( 0.0312500075 0 10.0000038147 ) ( 0 0.0312500112 -3.7947375774 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.9486832619 0.3162277639 0 -36.6824188232 ) matrix ( ( 0.03125 0 2.7863941193 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.9486832619 0.3162277639 0 -36.6824035645 ) matrix ( ( 0.03125 0 10.3758611679 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.0000001788 -1.0000002384 0 19.9998474121 ) matrix ( ( 0.0312500261 0 0.0000019073 ) ( 0 0.03125 2.8284273148 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_94" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 1 0 -192 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 -0.234375 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0.7071099877 -0.7071099877 0 -90.5096664429 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071099877 -0.7071099877 0 -90.5096969604 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -240 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_95" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -192 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0.7071099877 -0.7071099877 0 -90.5096664429 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071099877 -0.7071099877 0 -90.5096969604 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_93" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -320 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0.7071099877 0.7071099877 0 90.5096435547 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 128 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 1 0 0 312 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_90" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 -0.234375 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0.7069166303 0.7072968483 0 -90.4184112549 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -240 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 -0 0 192.0001220703 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -0 -1 16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_34" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 -0.234375 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 0 1 -240 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -192.0001220703 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 64.0001220703 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 132 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_86" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 -0.234375 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 0 1 -239.994140625 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -131.9998779297 ) matrix ( ( 0 0.0089288047 2.1428608894 ) ( -0.0009765625 0 0.7553710938 ) ) texBounds ( ( 0 149 ) ( 512 181 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -1 0 0 -64.0001220703 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_42" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 -0.234375 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 0 1 -240 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 131.9998779297 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -203.9998779297 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 136 ) matrix ( ( 0 0.0089288047 2.1428608894 ) ( -0.0009765625 0 0.7553710938 ) ) texBounds ( ( 0 149 ) ( 512 181 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 1 0 184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_78" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 -0.234375 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0.7069166303 0.7072968483 0 -90.4184112549 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -240 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 203.9998779297 ) matrix ( ( 0 0.0089285718 2.1428570747 ) ( -0.0009765625 0 1.1147460938 ) ) texBounds ( ( 0 149 ) ( 512 181 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 0 -1 16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_79" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 0 -1 -0 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0.7069166303 0.7072969079 -0 -90.4183959961 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 -0 203.9998779297 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 0 1 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_91" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 -0 -1 -0 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -0.7069166303 0.7072969079 0 -90.4183959961 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -131.9998779297 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( 0 0 1 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_88" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					faces {
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0.015625 ) ( 0 0.0009765625 -0.234375 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/slipgate/fort05_modern"
+						plane ( -1 0 0 -192.0001220703 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 64.0001220703 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -60 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 184 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 256 1288 ) ( 432 1328 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -276 68 132 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -132 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -132 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 -0 -48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -600 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 -0 -264 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"onestory01 (Level 02)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -132 -180 4 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0 0 -1 60 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 -0 8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 -0 -8 ) matrix ( ( 0.0161830354 0 2.0691964626 ) ( 0 -0.0050048828 -0.2578125 ) ) texBounds ( ( 16 480 ) ( 248 644 ) ) "textures/doors/door_street_2"
+						plane ( 0 1 0 4 ) matrix ( ( 0.03125 0 -8 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"onestory01 (Level 02)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -196 -180 4 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 10 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0 0 -1 60 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -10 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 -0 8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 -0 -8 ) matrix ( ( 0.0161830354 0 3.1049106121 ) ( 0 -0.0050048828 -0.1171875 ) ) texBounds ( ( 16 408 ) ( 248 572 ) ) "textures/doors/door_street_2"
+						plane ( 0 1 0 4 ) matrix ( ( 0.03125 0 -10 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"onestory01 (Level 02)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 308 -100 4 )
+						rotation ( ( -0.0000001788 0.9999998212 0 ) ( -0.9999998212 -0.0000001788 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0 -0.0312500112 4.0000042915 ) ( 0.0312500037 0 7 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0 0 -1 60 ) matrix ( ( 0 0.0312500112 4.0000042915 ) ( -0.0312500112 0 -7.0000009537 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 -0 8 ) matrix ( ( 0.0312500112 0 -4.0000033379 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -64 ) matrix ( ( 0.0312500112 0 4.0000033379 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 -0 -8 ) matrix ( ( -0.0161830392 0 -0.5200895667 ) ( 0 -0.0050048828 -0.09375 ) ) texBounds ( ( 16 396 ) ( 248 560 ) ) "textures/doors/door_street_2"
+						plane ( 0 1 0 4 ) matrix ( ( 0.0312500112 0 -7.0000019073 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"onestory01 (Level 02)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 308 -36 4 )
+						rotation ( ( -0.0000001788 0.9999998212 0 ) ( -0.9999998212 -0.0000001788 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0 -0.0312500112 4.0000042915 ) ( 0.0312500037 0 5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0 0 -1 60 ) matrix ( ( 0 0.0312500112 4.0000042915 ) ( -0.0312500112 0 -5.0000004768 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 -0 8 ) matrix ( ( 0.0312500112 0 -4.0000033379 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -64 ) matrix ( ( 0.0312500112 0 4.0000033379 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 -0 -8 ) matrix ( ( 0.016183041 0 0.5156248808 ) ( 0 -0.0050048828 -0.2578125 ) ) texBounds ( ( 16 480 ) ( 248 644 ) ) "textures/doors/door_street_2"
+						plane ( 0 1 0 4 ) matrix ( ( 0.0312500112 0 -5.0000014305 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -203 -30 470 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -214 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0 0 -1 -206 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 0 -21 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -21 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -20 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -20 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -204 -28 508 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -243 200 132 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -554 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0 0 -1 -196 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -1 0 -0 -103 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 1 0 0 -569 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 -1 -0 -398 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 1 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.63529 0.63529 0.63529 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -121.6700744629 11.8832168579 168 )
+						rotation ( ( 0.9902680516 0.1391731054 0 ) ( -0.1391731054 0.9902680516 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.75 ) )
+					texBounds ( ( 0 512 ) ( 512 1024 ) )
+					material "texturesheets/slipgate/fort04_decals_offset"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -160 -156 88 0 0.75 ) ( 0 -156 88 0.5 0.75 ) ( 160 -156 88 1 0.75 ) )
+							( ( -160 -16 88 0 0.875 ) ( 0 -16 88 0.5 0.875 ) ( 160 -16 88 1 0.875 ) )
+							( ( -160 124 88 0 1 ) ( 0 124 88 0.5 1 ) ( 160 124 88 1 1 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.71765 0.71765 0.71765 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -344 199.9999847412 120 )
+						rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.375 ) )
+					texBounds ( ( 0 1264 ) ( 584 1760 ) )
+					material "texturesheets/slipgate/fort04_decals_offset"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -664 8.0000324249 -112 0 0.375 ) ( -23.9999847412 8.0000276566 -112 0.5703125 0.375 ) ( -23.9999847412 8.0000276566 -112 1.140625 0.375 ) )
+							( ( -664 8.0000324249 -112 0 0.49609375 ) ( -23.9999847412 8.0000276566 -112 0.5703125 0.49609375 ) ( -23.9999847412 8.0000276566 -112 1.140625 0.49609375 ) )
+							( ( -664 8.0000324249 120 0 0.6171875 ) ( -23.9999847412 8.0000276566 120 0.5703125 0.6171875 ) ( -23.9999847412 8.0000276566 120 1.140625 0.6171875 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.71765 0.71765 0.71765 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -984 39.9999847412 120 )
+						rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 -0.0000000874 0 ) ( -0.0000000874 1 0.3828125 ) )
+					texBounds ( ( 0 1264 ) ( 616 1760 ) )
+					material "texturesheets/slipgate/fort04_decals_offset"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -664 -151.9999542236 -112 1.203125 0.3828125 ) ( -663.9999389648 232.0000762939 -112 0.6015625596 0.3828125 ) ( -663.9999389648 232.0000762939 -112 0.0000000359 0.3828125 ) )
+							( ( -664 -151.9999542236 -112 1.203125 0.50390625 ) ( -663.9999389648 232.0000762939 -112 0.6015625 0.50390625 ) ( -663.9999389648 232.0000762939 -112 0 0.50390625 ) )
+							( ( -664 -151.9999542236 120 1.203125 0.625 ) ( -663.9999389648 232.0000762939 120 0.6015624404 0.625 ) ( -663.9999389648 232.0000762939 120 -0.0000000717 0.625 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.71765 0.71765 0.71765 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -327.9998168945 -855.9998168945 120 )
+						rotation ( ( 0.000000298 -0.999999702 0 ) ( 0.999999702 0.000000298 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0026855469 0 1.6875 ) ( 0 -0.0010439117 0.625538826 ) )
+					texBounds ( ( 0 1264 ) ( 528 1760 ) )
+					material "texturesheets/slipgate/fort04_decals_offset"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -664 8.0000324249 -112 0.8281250596 0.3750000298 ) ( -663.9999389648 136.0000762939 -112 1.171875 0.3750000298 ) ( -663.9999389648 136.0000762939 -112 1.171875 0.3750000298 ) )
+							( ( -664 8.0000324249 -112 0.8281250596 0.6171875596 ) ( -663.9999389648 136.0000762939 -112 1.171875 0.6171875596 ) ( -663.9999389648 136.0000762939 -112 1.171875 0.6171875596 ) )
+							( ( -664 8.0000324249 120 0.8281250596 0.6171875596 ) ( -663.9999389648 136.0000762939 120 1.171875 0.6171875596 ) ( -663.9999389648 136.0000762939 120 1.171875 0.6171875596 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.71765 0.71765 0.71765 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -199.9998168945 -855.9998168945 120 )
+						rotation ( ( 0.000000298 -0.999999702 0 ) ( 0.999999702 0.000000298 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0026855469 0 0.6875 ) ( 0 -0.0010439117 1.367726326 ) )
+					texBounds ( ( 0 1264 ) ( 528 1760 ) )
+					material "texturesheets/slipgate/fort04_decals_offset"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -664 8.0000324249 12 0.1718750596 1.505522728 ) ( -663.9999389648 136.0000762939 12 0.5156250596 1.505522728 ) ( -663.9999389648 136.0000762939 12 0.5156250596 1.505522728 ) )
+							( ( -664 8.0000324249 12 0.1718750596 1.505522728 ) ( -663.9999389648 136.0000762939 12 0.5156250596 1.505522728 ) ( -663.9999389648 136.0000762939 12 0.5156250596 1.505522728 ) )
+							( ( -664 8.0000324249 120 0.1718750596 1.618265152 ) ( -663.9999389648 136.0000762939 120 0.5156250596 1.618265152 ) ( -663.9999389648 136.0000762939 120 0.5156250596 1.618265152 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.71765 0.71765 0.71765 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -71.9998168945 -855.9998168945 120 )
+						rotation ( ( 0.000000298 -0.999999702 0 ) ( 0.999999702 0.000000298 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0026855469 0 1.6875 ) ( 0 -0.0010439117 0.625538826 ) )
+					texBounds ( ( 0 1264 ) ( 528 1760 ) )
+					material "texturesheets/slipgate/fort04_decals_offset"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -664 8.0000324249 -112 1.515625 0.3750000298 ) ( -663.9999389648 204.0000762939 -112 2.009765625 0.3750000298 ) ( -663.9999389648 204.0000762939 -112 2.009765625 0.3750000298 ) )
+							( ( -664 8.0000324249 -112 1.515625 0.6171875596 ) ( -663.9999389648 204.0000762939 -112 2.009765625 0.6171875596 ) ( -663.9999389648 204.0000762939 -112 2.009765625 0.6171875596 ) )
+							( ( -664 8.0000324249 120 1.515625 0.6171875596 ) ( -663.9999389648 204.0000762939 120 2.009765625 0.6171875596 ) ( -663.9999389648 204.0000762939 120 2.009765625 0.6171875596 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.71765 0.71765 0.71765 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 24.0001831055 -855.9998168945 120 )
+						rotation ( ( 0.000000298 -0.999999702 0 ) ( 0.999999702 0.000000298 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0026855469 0 0.6875 ) ( 0 -0.0010439117 1.367726326 ) )
+					texBounds ( ( 0 1264 ) ( 528 1760 ) )
+					material "texturesheets/slipgate/fort04_decals_offset"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -664 108.0000152588 16 1.0097655058 1.501347065 ) ( -663.9999389648 180.0000762939 16 1.267578125 1.501347065 ) ( -663.9999389648 180.0000762939 16 1.267578125 1.501347065 ) )
+							( ( -664 108.0000152588 16 1.0097655058 1.501347065 ) ( -663.9999389648 180.0000762939 16 1.267578125 1.501347065 ) ( -663.9999389648 180.0000762939 16 1.267578125 1.501347065 ) )
+							( ( -664 108.0000152588 120 1.0097655058 1.618265152 ) ( -663.9999389648 180.0000762939 120 1.267578125 1.618265152 ) ( -663.9999389648 180.0000762939 120 1.267578125 1.618265152 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.71765 0.71765 0.71765 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 120.0001831055 -855.9998168945 120 )
+						rotation ( ( 0.000000298 -0.999999702 0 ) ( 0.999999702 0.000000298 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0026855469 0 1.6875 ) ( 0 -0.0010439117 0.625538826 ) )
+					texBounds ( ( 0 1264 ) ( 528 1760 ) )
+					material "texturesheets/slipgate/fort04_decals_offset"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -664 84.0000152588 -112 2.267578125 0.3750000298 ) ( -663.9999389648 200.0000762939 -112 2.546875 0.3750000298 ) ( -663.9999389648 200.0000762939 -112 2.546875 0.3750000298 ) )
+							( ( -664 84.0000152588 -112 2.267578125 0.6171875596 ) ( -663.9999389648 200.0000762939 -112 2.546875 0.6171875596 ) ( -663.9999389648 200.0000762939 -112 2.546875 0.6171875596 ) )
+							( ( -664 84.0000152588 120 2.267578125 0.6171875596 ) ( -663.9999389648 200.0000762939 120 2.546875 0.6171875596 ) ( -663.9999389648 200.0000762939 120 2.546875 0.6171875596 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.71765 0.71765 0.71765 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 312 -128 120 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 -1 0.3828125 ) )
+					texBounds ( ( 0 1264 ) ( 180 1760 ) )
+					material "texturesheets/slipgate/fort04_decals_offset"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -319.9999389648 8.0000476837 120 0 0.625 ) ( -159.9999542236 7.9999785423 120 0.17578125 0.625 ) ( -159.9999542236 7.9999785423 120 0.3515625 0.625 ) )
+							( ( -319.9999389648 8.0000476837 -112 0 0.50390625 ) ( -159.9999542236 7.9999785423 -112 0.17578125 0.50390625 ) ( -159.9999542236 7.9999785423 -112 0.3515625 0.50390625 ) )
+							( ( -319.9999389648 8.0000476837 -112 0 0.3828125 ) ( -159.9999542236 7.9999785423 -112 0.17578125 0.3828125 ) ( -159.9999542236 7.9999785423 -112 0.3515625 0.3828125 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.71765 0.71765 0.71765 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 312 -272 136 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0026855469 0 0.609375 ) ( -0 -0.0010439117 1.3745622635 ) )
+					texBounds ( ( 0 1264 ) ( 528 1760 ) )
+					material "texturesheets/slipgate/fort04_decals_offset"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -303.9999389648 8.0000476837 104 0.3515623808 1.6251010895 ) ( -175.9999542236 7.999979496 104 0.3515623808 1.6251010895 ) ( -175.9999542236 7.999979496 104 0.6953122616 1.6251010895 ) )
+							( ( -303.9999389648 8.0000476837 -4 0.3515623808 1.5123586655 ) ( -175.9999542236 7.999979496 -4 0.3515623808 1.5123586655 ) ( -175.9999542236 7.999979496 -4 0.6953122616 1.5123586655 ) )
+							( ( -303.9999389648 8.0000476837 -4 0.3515623808 1.5123586655 ) ( -175.9999542236 7.999979496 -4 0.3515623808 1.5123586655 ) ( -175.9999542236 7.999979496 -4 0.6953122616 1.5123586655 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.71765 0.71765 0.71765 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 312 -336 120 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.002729936 0 -0.564453125 ) ( 0 -0.0011212386 0.633969903 ) )
+					texBounds ( ( 0 1264 ) ( 492 1760 ) )
+					material "texturesheets/slipgate/fort04_decals_offset"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -239.9999694824 8.0000133514 120 -0.3023792207 0.625 ) ( -143.9999542236 7.9999785423 120 -0.0839842856 0.625 ) ( -143.9999542236 7.9999785423 120 -0.0839842856 0.625 ) )
+							( ( -239.9999694824 8.0000133514 -112 -0.3023792207 0.625 ) ( -143.9999542236 7.9999785423 -112 -0.0839842856 0.625 ) ( -143.9999542236 7.9999785423 -112 -0.0839842856 0.625 ) )
+							( ( -239.9999694824 8.0000133514 -112 -0.3023792207 0.3828125 ) ( -143.9999542236 7.9999785423 -112 -0.0839842856 0.3828125 ) ( -143.9999542236 7.9999785423 -112 -0.0839842856 0.3828125 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.71765 0.71765 0.71765 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 312 -272 4 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0.359375 ) ( 0 -1 0.3828125 ) )
+					texBounds ( ( 184 1264 ) ( 384 1368 ) )
+					material "texturesheets/slipgate/fort04_decals_offset"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -303.9999389648 8.0000476837 56 0.359375 0.43359375 ) ( -175.9999542236 7.999979496 56 0.5546875 0.43359375 ) ( -175.9999542236 7.999979496 56 0.75 0.43359375 ) )
+							( ( -303.9999389648 8.0000476837 4 0.359375 0.408203125 ) ( -175.9999542236 7.999979496 4 0.5546875 0.408203125 ) ( -175.9999542236 7.999979496 4 0.75 0.408203125 ) )
+							( ( -303.9999389648 8.0000476837 4 0.359375 0.3828125 ) ( -175.9999542236 7.999979496 4 0.5546875 0.3828125 ) ( -175.9999542236 7.999979496 4 0.75 0.3828125 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.71765 0.71765 0.71765 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -368 -184.0000152588 4 )
+						rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0026855469 0 0.6875 ) ( 0 -0.0010439117 1.367726326 ) )
+					texBounds ( ( 0 1264 ) ( 528 1760 ) )
+					material "texturesheets/slipgate/fort04_decals_offset"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -303.9999389648 8.0000476837 56 0.5156247616 1.4303610325 ) ( -175.9999542236 7.999979496 56 0.1718747616 1.4303610325 ) ( -175.9999542236 7.999979496 56 0.1718747616 1.4303610325 ) )
+							( ( -303.9999389648 8.0000476837 4 0.5156247616 1.376077652 ) ( -175.9999542236 7.999979496 4 0.1718747616 1.376077652 ) ( -175.9999542236 7.999979496 4 0.1718747616 1.376077652 ) )
+							( ( -303.9999389648 8.0000476837 4 0.5156247616 1.376077652 ) ( -175.9999542236 7.999979496 4 0.1718747616 1.376077652 ) ( -175.9999542236 7.999979496 4 0.1718747616 1.376077652 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.66667 0.66667 0.66667 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -128 -184 96 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000000437 1 0.09375 ) ( -1 -0.0000000437 0.017578125 ) )
+					texBounds ( ( 24 2012 ) ( 236 2392 ) )
+					material "texturesheets/slipgate/fort05_modern"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -60 4 -32 0.0937500224 0.203125 ) ( 60 4 -32 0.09375 0.1103515625 ) ( 60 4 -32 0.09375 0.0175781306 ) )
+							( ( -60 4 32 0.5078125 0.203125 ) ( 60 4 32 0.5078125 0.1103515625 ) ( 60 4 32 0.5078125 0.017578125 ) )
+							( ( -60 4 32 0.921875 0.203125 ) ( 60 4 32 0.921875 0.110351555 ) ( 60 4 32 0.921875 0.017578125 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.66667 0.66667 0.66667 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 312 -32 96 )
+						rotation ( ( -0.0000001788 0.9999998212 0 ) ( -0.9999998212 -0.0000001788 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000000437 1 0.09375 ) ( -1 -0.0000000437 0.017578125 ) )
+					texBounds ( ( 24 2012 ) ( 236 2392 ) )
+					material "texturesheets/slipgate/fort05_modern"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -60 4 -32 0.0937500224 0.203125 ) ( 60 4 -32 0.09375 0.1103515625 ) ( 60 4 -32 0.09375 0.0175781306 ) )
+							( ( -60 4 32 0.5078125 0.203125 ) ( 60 4 32 0.5078125 0.1103515625 ) ( 60 4 32 0.5078125 0.017578125 ) )
+							( ( -60 4 32 0.921875 0.203125 ) ( 60 4 32 0.921875 0.110351555 ) ( 60 4 32 0.921875 0.017578125 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"onestory01 (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.66667 0.66667 0.66667 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 192 -184 96 )
+						rotation ( ( 0.9999997616 0.0000002384 0 ) ( -0.0000002384 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000000437 1 0.09375 ) ( -1 -0.0000000437 0.017578125 ) )
+					texBounds ( ( 24 2012 ) ( 236 2392 ) )
+					material "texturesheets/slipgate/fort05_modern"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -60 4 -88 0.0937500224 0.203125 ) ( 12.0000095367 4.0000114441 -88 0.09375 0.1103515625 ) ( 12.0000095367 4.0000114441 -88 0.09375 0.0175781306 ) )
+							( ( -60 4 40 0.5078125 0.203125 ) ( 12.0000095367 4.0000114441 40 0.5078125 0.1103515625 ) ( 12.0000095367 4.0000114441 40 0.5078125 0.017578125 ) )
+							( ( -60 4 40 0.921875 0.203125 ) ( 12.0000095367 4.0000114441 40 0.921875 0.110351555 ) ( 12.0000095367 4.0000114441 40 0.921875 0.017578125 ) )
+						)
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "model_static_48" 
+		groups {
+			"onestory01 (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/roof_objects/antena_medium_4.lwo"
+			}
+			sdTransform {
+				translation ( -204 -30 256 )
+			}
+			
+			classname "model_static"
+		}
+	}
+}

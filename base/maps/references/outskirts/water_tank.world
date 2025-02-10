@@ -1,0 +1,599 @@
+sdWorldFile version 5 {
+
+	meta {
+		sdLODGroup "tank" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"tank (Level 01)"
+			}
+		}
+		sdLODGroup_Level "tank (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		10240
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -35 141 11 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -1 ) matrix ( ( 0.015625 0 -7.5 ) ( 0 0.015625 24 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0 0 -1 -1 ) matrix ( ( 0.015625 0 -7.5 ) ( 0 0.015625 -24 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( -1 0 0 -3 ) matrix ( ( 0.015625 0 7.5 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0.7071067691 0 -0.7071067691 -1.4142135382 ) matrix ( ( 0.015625 0 -7.5 ) ( 0 0.015625 -17.1473388672 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0 -1 0 -291 ) matrix ( ( 0.015625 0 24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0 1 0 -1 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -33 -4 6 )
+					}
+					
+					faces {
+						plane ( -0.7071067691 0 0.7071067691 -3.535533905 ) matrix ( ( 0.015625 0 7.5 ) ( 0 0.015625 -17.1473388672 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0 0 -1 -6 ) matrix ( ( 0.015625 0 -7.5 ) ( 0 0.015625 -24 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( -1 0 0 -1 ) matrix ( ( 0.015625 0 7.5 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 1 0 0 -1 ) matrix ( ( 0.015625 0 -7.5 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0 -1 0 -146 ) matrix ( ( 0.015625 0 24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0 1 0 -146 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -31 -4 28 )
+					}
+					
+					faces {
+						plane ( 0 -1 0 -146 ) matrix ( ( 0.015625 0 24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( -0.9544799328 0 -0.2982749939 -11.4538574219 ) matrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0.5999999642 0 0.8000000119 -2.5999755859 ) matrix ( ( 0.015625 0 -7.5 ) ( 0 0.015625 19.0500049591 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0.7071067691 0 -0.7071067691 -6.3638916016 ) matrix ( ( 0.015625 0 -7.5 ) ( 0 0.015625 -17.1473388672 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 1 0 142 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -24 -4 22 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -10 ) matrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 1 0 0 -24 ) matrix ( ( 0.015625 0 -7.5 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 -1 0 -146 ) matrix ( ( 0.015625 0 24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( -0.7071067691 0 0.7071067691 -2.8282470703 ) matrix ( ( 0.015625 0 7.5 ) ( 0 0.015625 -17.1473388672 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0.2425356209 0 0.9701424837 -3.8805541992 ) matrix ( ( 0.015625 0 -7.5 ) ( 0 0.015625 23.222782135 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 1 0 142 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 41 -4 28 )
+					}
+					
+					faces {
+						plane ( 0 -1 0 -146 ) matrix ( ( 0.015625 0 24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0.9544798732 0 -0.2982754111 -1.9094052315 ) matrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( -0.599999249 0 0.8000005484 -8.600019455 ) matrix ( ( 0.015625 0 7.5 ) ( 0 0.015625 -19.350019455 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( -0.707105279 0 -0.7071082592 -13.4350166321 ) matrix ( ( 0.015625 0 7.5 ) ( 0 0.015625 16.7938232422 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 1 0 142 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 12 -4 22 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -10 ) matrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( -1 0 0 -12 ) matrix ( ( 0.015625 0 7.5 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 -1 0 -146 ) matrix ( ( 0.015625 0 24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0.7071064711 0 0.7071070671 -11.3136978149 ) matrix ( ( 0.015625 0 -7.5 ) ( 0 0.015625 16.793794632 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( -0.2425360531 0 0.9701423645 -0.9701479077 ) matrix ( ( 0.015625 0 7.5 ) ( 0 0.015625 -23.3440437317 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 1 0 142 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -31 284 28 )
+					}
+					
+					faces {
+						plane ( 0 -1 0 -146 ) matrix ( ( 0.015625 0 24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( -0.9544799328 0 -0.2982749939 -11.4538574219 ) matrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0.5999999642 0 0.8000000119 -2.5999755859 ) matrix ( ( 0.015625 0 -12 ) ( 0 0.015625 19.0500049591 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0.7071067691 0 -0.7071067691 -6.3638916016 ) matrix ( ( 0.015625 0 -12 ) ( 0 0.015625 -17.1473388672 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 1 0 142 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -24 284 22 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -10 ) matrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 1 0 0 -24 ) matrix ( ( 0.015625 0 -12 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 -1 0 -146 ) matrix ( ( 0.015625 0 24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( -0.7071067691 0 0.7071067691 -2.8282470703 ) matrix ( ( 0.015625 0 12 ) ( 0 0.015625 -17.1473388672 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0.2425356209 0 0.9701424837 -3.8805541992 ) matrix ( ( 0.015625 0 -12 ) ( 0 0.015625 23.222782135 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 1 0 142 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 41 284 28 )
+					}
+					
+					faces {
+						plane ( 0 -1 0 -146 ) matrix ( ( 0.015625 0 24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0.9544798732 0 -0.2982754111 -1.9094052315 ) matrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( -0.599999249 0 0.8000005484 -8.600019455 ) matrix ( ( 0.015625 0 12 ) ( 0 0.015625 -19.350019455 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( -0.707105279 0 -0.7071082592 -13.4350166321 ) matrix ( ( 0.015625 0 12 ) ( 0 0.015625 16.7938232422 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 1 0 142 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 12 284 22 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -10 ) matrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( -1 0 0 -12 ) matrix ( ( 0.015625 0 12 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 -1 0 -146 ) matrix ( ( 0.015625 0 24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0.7071064711 0 0.7071070671 -11.3136978149 ) matrix ( ( 0.015625 0 -12 ) ( 0 0.015625 16.793794632 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( -0.2425360531 0 0.9701423645 -0.9701479077 ) matrix ( ( 0.015625 0 12 ) ( 0 0.015625 -23.3440437317 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 1 0 142 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -31 146 28 )
+					}
+					
+					faces {
+						plane ( 0 -1 0 -146 ) matrix ( ( 0.015625 0 24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( -0.9544799328 0 -0.2982749939 -11.4538574219 ) matrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0.5999999642 0 0.8000000119 -2.5999755859 ) matrix ( ( 0.015625 0 -9.84375 ) ( 0 0.015625 19.0500049591 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0.7071067691 0 -0.7071067691 -6.3638916016 ) matrix ( ( 0.015625 0 -9.84375 ) ( 0 0.015625 -17.1473388672 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 1 0 142 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -24 146 22 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -10 ) matrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 1 0 0 -24 ) matrix ( ( 0.015625 0 -9.84375 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 -1 0 -146 ) matrix ( ( 0.015625 0 24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( -0.7071067691 0 0.7071067691 -2.8282470703 ) matrix ( ( 0.015625 0 9.84375 ) ( 0 0.015625 -17.1473388672 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0.2425356209 0 0.9701424837 -3.8805541992 ) matrix ( ( 0.015625 0 -9.84375 ) ( 0 0.015625 23.222782135 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 1 0 142 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 41 146 28 )
+					}
+					
+					faces {
+						plane ( 0 -1 0 -146 ) matrix ( ( 0.015625 0 24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0.9544798732 0 -0.2982754111 -1.9094052315 ) matrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( -0.599999249 0 0.8000005484 -8.600019455 ) matrix ( ( 0.015625 0 9.84375 ) ( 0 0.015625 -19.350019455 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( -0.707105279 0 -0.7071082592 -13.4350166321 ) matrix ( ( 0.015625 0 9.84375 ) ( 0 0.015625 16.7938232422 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 1 0 142 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 12 146 22 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -10 ) matrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( -1 0 0 -12 ) matrix ( ( 0.015625 0 9.84375 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 -1 0 -146 ) matrix ( ( 0.015625 0 24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0.7071064711 0 0.7071070671 -11.3136978149 ) matrix ( ( 0.015625 0 -9.84375 ) ( 0 0.015625 16.793794632 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( -0.2425360531 0 0.9701423645 -0.9701479077 ) matrix ( ( 0.015625 0 9.84375 ) ( 0 0.015625 -23.3440437317 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+						plane ( 0 1 0 142 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_lessspec"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 35 -149 11 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -1 ) matrix ( ( -0.015625 0 -7.625002861 ) ( 0 -0.0156250037 24.0000038147 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0 0 -1 -1 ) matrix ( ( -0.015625 0 -7.625002861 ) ( 0 -0.015625 -24 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( -1 0 0 -3 ) matrix ( ( 0.0156250037 0 7.6250009537 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0.7071067691 0 -0.7071067691 -1.4142135382 ) matrix ( ( 0.0156250037 0 -7.6250009537 ) ( 0 0.015625 -17.1473121643 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0 -1 0 -291 ) matrix ( ( 0.0156250037 0 24.0000076294 ) ( 0 0.0156250037 -0.2500000596 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0 1 0 -1 ) matrix ( ( 0.0156250037 0 -24.0000076294 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 33 -4 6 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0.7071067691 0 0.7071067691 -3.535533905 ) matrix ( ( 0.0156250037 0 7.6250009537 ) ( 0 0.0156250019 -17.1473121643 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0 0 -1 -6 ) matrix ( ( -0.015625 0 -7.625002861 ) ( 0 -0.015625 -24 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( -1 0 0 -1 ) matrix ( ( 0.0156250037 0 7.6250009537 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 1 0 0 -1 ) matrix ( ( 0.0156250037 0 -7.6250009537 ) ( 0 0.0156250019 -0.2500000298 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0 -1 0 -146 ) matrix ( ( 0.0156250037 0 24.0000076294 ) ( 0 0.0156250037 -0.2500000596 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+						plane ( 0 1 0 -146 ) matrix ( ( 0.0156250037 0 -24.0000076294 ) ( 0 0.015625 -0.25 ) ) texBounds ( ( 0 0 ) ( 128 128 ) ) "textures/base_trim/strim_rusty_noshadows"
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 -4 76.0000076294 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.00390625 -0.0000000014 0 ) ( 0.0000000007 -0.03125 0 ) )
+					texBounds ( ( 0 0 ) ( 512 256 ) )
+					material "textures/pipes/interiorpipe_thin02"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( -64 -156 -0.0000076294 2.4999995232 -46 ) ( -60 -156 60.0000076294 2.4999995232 -46.125 ) ( 0 -156 64.0000076294 2.4999995232 -48 ) ( 60 -156 60.0000076294 2.4999995232 -49.875 ) ( 64 -156 -0.0000076294 2.4999995232 -50 ) )
+							( ( -64 -79 -0.0000076294 2.1992182732 -46 ) ( -60 -79 60.0000076294 2.1992182732 -46.125 ) ( 0 -79 64.0000076294 2.1992182732 -48 ) ( 60 -79 60.0000076294 2.1992182732 -49.875 ) ( 64 -79 -0.0000076294 2.1992182732 -50 ) )
+							( ( -64 164 -0.0000076294 1.2499995232 -46 ) ( -60 164 60.0000076294 1.2499995232 -46.125 ) ( 0 164 64.0000076294 1.2499995232 -48 ) ( 60 164 60.0000076294 1.249999404 -49.875 ) ( 64 164 -0.0000076294 1.249999404 -50 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 -4 76 )
+						rotation ( ( -0.9999998808 0 0.0000001192 ) ( 0 1 0 ) ( -0.0000001192 0 -0.9999998808 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.00390625 -0.0000000014 0 ) ( 0.0000000007 -0.03125 0 ) )
+					texBounds ( ( 0 0 ) ( 512 256 ) )
+					material "textures/pipes/interiorpipe_thin02"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( -64 -156 -0.0000076294 2.5000004768 50 ) ( -60 -156 60.0000076294 2.5000004768 49.875 ) ( 0 -156 64.0000076294 2.5000004768 48 ) ( 60 -156 60.0000076294 2.5000004768 46.125 ) ( 64 -156 -0.0000076294 2.5000004768 46 ) )
+							( ( -64 -79 -0.0000076294 2.1992192268 50 ) ( -60 -79 60.0000076294 2.1992192268 49.875 ) ( 0 -79 64.0000076294 2.1992192268 48 ) ( 60 -79 60.0000076294 2.1992192268 46.125 ) ( 64 -79 -0.0000076294 2.1992192268 46 ) )
+							( ( -64 164 -0.0000076294 1.250000596 50 ) ( -60 164 60.0000076294 1.250000596 49.875 ) ( 0 164 64.0000076294 1.2500004768 48 ) ( 60 164 60.0000076294 1.2500004768 46.125 ) ( 64 164 -0.0000076294 1.2500004768 46 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 -324 76.0000076294 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/base_trim/strim_rusty_noshadows"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( -60 160 -0.0000076294 -0.9375 -0.0756878257 ) ( -56 160 56.0000076294 -0.875 -0.8791590929 ) ( 0 160 60.0000076294 0 -0.936549902 ) ( 56 160 56.0000076294 0.875 -0.8791590929 ) ( 60 160 -0.0000076294 0.9375 -0.0756878257 ) )
+							( ( -64 164 -0.0000076294 -1 -0.1004375219 ) ( -60 164 60.0000076294 -0.9375 -0.9612995386 ) ( 0 164 64.0000076294 0 -1.0186904669 ) ( 60 164 60.0000076294 0.9375 -0.9612995386 ) ( 64 164 -0.0000076294 1 -0.1004375219 ) )
+							( ( -64 164 -0.0000076294 -1 -0.1004375219 ) ( -60 164 60.0000076294 -0.9375 -0.9612995386 ) ( 0 164 64.0000076294 0 -1.0186904669 ) ( 60 164 60.0000076294 0.9375 -0.9612995386 ) ( 64 164 -0.0000076294 1 -0.1004375219 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 72 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.00390625 -0.0000000014 0 ) ( 0.0000000007 -0.03125 0 ) )
+					texBounds ( ( 0 0 ) ( 512 256 ) )
+					material "textures/pipes/interiorpipe_thin02"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 0 164 64.0000076294 -6 4.7500009537 ) ( 0 164 64.0000076294 -6 4.7500009537 ) ( 0 164 64.0000076294 -6 4.7500009537 ) )
+							( ( -56 164 60.0000076294 -6.21875 4.6250009537 ) ( 0 164 64.0000076294 -6 4.7500009537 ) ( 56 164 60.0000076294 -5.78125 4.6250009537 ) )
+							( ( -60 164 3.9999923706 -6.234375 2.8750009537 ) ( 0 164 3.9999923706 -6 2.8750007153 ) ( 60 164 3.9999923706 -5.765625 2.8750007153 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 -324 4.0000076294 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/base_trim/strim_rusty_noshadows"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( -64 164 71.9999923706 -1 -2.0804126263 ) ( -60 164 11.9999771118 -0.9375 -1.2195506096 ) ( 0 164 7.9999771118 0 -1.1621598005 ) ( 60 164 11.9999771118 0.9375 -1.2195506096 ) ( 64 164 71.9999923706 1 -2.0804126263 ) )
+							( ( -64 164 71.9999923706 -1 -2.0804126263 ) ( -60 164 11.9999771118 -0.9375 -1.2195506096 ) ( 0 164 7.9999771118 0 -1.1621598005 ) ( 60 164 11.9999771118 0.9375 -1.2195506096 ) ( 64 164 71.9999923706 1 -2.0804126263 ) )
+							( ( -60 160 71.9999923706 -0.9375 -2.1051623821 ) ( -56 160 15.9999771118 -0.875 -1.3016910553 ) ( 0 160 11.9999771118 0 -1.2443003654 ) ( 56 160 15.9999771118 0.875 -1.3016910553 ) ( 60 160 71.9999923706 0.9375 -2.1051623821 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.00390625 -0.0000000014 0 ) ( 0.0000000007 -0.03125 0 ) )
+					texBounds ( ( 0 0 ) ( 512 256 ) )
+					material "textures/pipes/interiorpipe_thin02"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -59.9999809265 163.9999847412 76 -6.234375 2.8750009537 ) ( 0.000011234 163.9999847412 76 -6 2.8750007153 ) ( 60.0000038147 163.9999847412 76 -5.765625 2.8750007153 ) )
+							( ( -55.9999809265 163.9999847412 20 -6.21875 4.6250009537 ) ( 0.000011234 163.9999847412 16 -6 4.7500009537 ) ( 56.0000038147 163.9999847412 20 -5.78125 4.6250009537 ) )
+							( ( 0.000011234 163.9999847412 16 -6 4.7500009537 ) ( 0.000011234 163.9999847412 16 -6 4.7500009537 ) ( 0.000011234 163.9999847412 16 -6 4.7500009537 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 324 76.0000076294 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/base_trim/strim_rusty_noshadows"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( -60 160 -0.0000076294 -0.9375000596 -0.0756875873 ) ( -56 160 56.0000076294 -0.8750000596 -0.8791588545 ) ( 0 160 60.0000076294 -0.0000001713 -0.9365496635 ) ( 56 160 56.0000076294 0.874999702 -0.8791588545 ) ( 60 160 -0.0000076294 0.937499702 -0.0756875873 ) )
+							( ( -64 164 -0.0000076294 -1 -0.1004372835 ) ( -60 164 60.0000076294 -0.9375000596 -0.9612993002 ) ( 0 164 64.0000076294 -0.0000001755 -1.0186902285 ) ( 60 164 60.0000076294 0.937499702 -0.9612993002 ) ( 64 164 -0.0000076294 0.999999702 -0.1004372835 ) )
+							( ( -64 164 -0.0000076294 -1 -0.1004372835 ) ( -60 164 60.0000076294 -0.9375000596 -0.9612993002 ) ( 0 164 64.0000076294 -0.0000001755 -1.0186902285 ) ( 60 164 60.0000076294 0.937499702 -0.9612993002 ) ( 64 164 -0.0000076294 0.999999702 -0.1004372835 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 72 )
+						rotation ( ( 0.9999997616 0.000000137 0 ) ( -0.000000137 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.00390625 -0.0000000014 0 ) ( 0.0000000007 -0.03125 0 ) )
+					texBounds ( ( 0 0 ) ( 512 256 ) )
+					material "textures/pipes/interiorpipe_thin02"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 0 164 64.0000076294 -6 4.7500009537 ) ( 0 164 64.0000076294 -6 4.7500009537 ) ( 0 164 64.0000076294 -6 4.7500009537 ) )
+							( ( -56 164 60.0000076294 -6.21875 4.6250009537 ) ( 0 164 64.0000076294 -6 4.7500009537 ) ( 56 164 60.0000076294 -5.78125 4.6250009537 ) )
+							( ( -60 164 3.9999923706 -6.234375 2.8750009537 ) ( 0 164 3.9999923706 -6 2.8750007153 ) ( 60 164 3.9999923706 -5.765625 2.8750007153 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 324 4.0000076294 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) )
+					texBounds ( ( 0 0 ) ( 128 128 ) )
+					material "textures/base_trim/strim_rusty_noshadows"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( -64 164 71.9999923706 -1 -2.0804128647 ) ( -60 164 11.9999771118 -0.9375000596 -1.219550848 ) ( 0 164 7.9999771118 -0.0000001755 -1.1621600389 ) ( 60 164 11.9999771118 0.937499702 -1.219550848 ) ( 64 164 71.9999923706 0.999999702 -2.0804128647 ) )
+							( ( -64 164 71.9999923706 -1 -2.0804128647 ) ( -60 164 11.9999771118 -0.9375000596 -1.219550848 ) ( 0 164 7.9999771118 -0.0000001755 -1.1621600389 ) ( 60 164 11.9999771118 0.937499702 -1.219550848 ) ( 64 164 71.9999923706 0.999999702 -2.0804128647 ) )
+							( ( -60 160 71.9999923706 -0.9375000596 -2.1051626205 ) ( -56 160 15.9999771118 -0.8750000596 -1.3016912937 ) ( 0 160 11.9999771118 -0.0000001713 -1.2443006039 ) ( 56 160 15.9999771118 0.874999702 -1.3016912937 ) ( 60 160 71.9999923706 0.937499702 -2.1051626205 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"tank (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						rotation ( ( 0.9999997616 0.000000137 0 ) ( -0.000000137 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.00390625 -0.0000000014 0 ) ( 0.0000000007 -0.03125 0 ) )
+					texBounds ( ( 0 0 ) ( 512 256 ) )
+					material "textures/pipes/interiorpipe_thin02"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -59.9999809265 163.9999847412 76 -6.234375 2.8750009537 ) ( 0.000011234 163.9999847412 76 -6 2.8750007153 ) ( 60.0000038147 163.9999847412 76 -5.765625 2.8750007153 ) )
+							( ( -55.9999809265 163.9999847412 20 -6.21875 4.6250009537 ) ( 0.000011234 163.9999847412 16 -6 4.7500009537 ) ( 56.0000038147 163.9999847412 20 -5.78125 4.6250009537 ) )
+							( ( 0.000011234 163.9999847412 16 -6 4.7500009537 ) ( 0.000011234 163.9999847412 16 -6 4.7500009537 ) ( 0.000011234 163.9999847412 16 -6 4.7500009537 ) )
+						)
+					}
+				}
+			}
+		}
+	}
+}

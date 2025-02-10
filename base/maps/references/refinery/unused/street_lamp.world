@@ -1,0 +1,355 @@
+sdWorldFile version 5 {
+
+	meta {
+		sdLODGroup "street_lamp" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"street_lamp (Level 01)"
+			}
+		}
+		sdLODGroup_Level "street_lamp (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		16384
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"street_lamp (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 50 254 )
+					}
+					
+					faces {
+						plane ( 0 0 1 238 ) matrix ( ( 0 -0.005859375 0.078125 ) ( 0.0012817383 0 0.3427734375 ) ) texBounds ( ( 2 1514 ) ( 38 1850 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0 0 -1 -254 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -12 ) matrix ( ( 0 0.0146484375 0.2421875 ) ( -0.0013671875 0 0.3427734375 ) ) texBounds ( ( 2 1514 ) ( 62 1850 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 1 0 0 -12 ) matrix ( ( 0 0.0146484375 0.2421875 ) ( -0.0013671875 0 0.3427734375 ) ) texBounds ( ( 2 1514 ) ( 62 1850 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0 -1 0 -114 ) matrix ( ( 0 0.0146484375 0.2421875 ) ( -0.0013671875 0 0.3427734375 ) ) texBounds ( ( 2 1514 ) ( 62 1850 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0 1 0 -14 ) matrix ( ( 0 0.0146484375 0.2421875 ) ( -0.0013671875 0 0.3427734375 ) ) texBounds ( ( 2 1514 ) ( 62 1850 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( -0.7071067691 0.7071067691 0 -15.5563468933 ) matrix ( ( 0 0.0146484375 0.2421875 ) ( -0.0013671875 0 0.3427734375 ) ) texBounds ( ( 2 1514 ) ( 62 1850 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0.7071067691 0.7071067691 0 -15.556350708 ) matrix ( ( 0 0.0146484375 0.2421875 ) ( -0.0013671875 0 0.3427734375 ) ) texBounds ( ( 2 1514 ) ( 62 1850 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0.7071067691 -0.7071067691 0 -86.2670288086 ) matrix ( ( 0 0.0146484375 0.2421875 ) ( -0.0013671875 0 0.3427734375 ) ) texBounds ( ( 2 1514 ) ( 62 1850 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( -0.7071067691 -0.7071067691 0 -86.2670288086 ) matrix ( ( 0 0.0146484375 0.2421875 ) ( -0.0013671875 0 0.3427734375 ) ) texBounds ( ( 2 1514 ) ( 62 1850 ) ) "texturesheets/refinery/warehouse_detail"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"street_lamp (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -82.4999923706 0 508.5 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -3.5 ) matrix ( ( 0.012500002 0 0.40625 ) ( 0 0.0018503292 0.5548930764 ) ) texBounds ( ( 88 1264 ) ( 120 1336 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0 0 -1 -4.5 ) matrix ( ( 0.0085937511 0 0.38671875 ) ( 0 0.0050781257 0.0216796398 ) ) texBounds ( ( 88 1182 ) ( 110 1338 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 1 0 0 -14.5 ) matrix ( ( 0 0.0156250019 8.3125019073 ) ( -0.002343751 0 0.4109375477 ) ) texBounds ( ( 88 1216 ) ( 104 1240 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0.4472135901 0 0.8944271803 -7.8262376785 ) matrix ( ( -0.012500002 0 0.40625 ) ( 0 -0.0024020257 0.0667970777 ) ) texBounds ( ( 88 1216 ) ( 120 1238 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0.5547001958 0 -0.8320503235 -10.1232786179 ) matrix ( ( 0 0.0260015111 9.7403640747 ) ( -0.0017857149 0 0.4099330604 ) ) texBounds ( ( 88 1224 ) ( 112 1256 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( -1 0 0 -8.5 ) matrix ( ( -0.0125000039 0 0.4062501192 ) ( 0 -0.0024020257 0.0667970628 ) ) texBounds ( ( 88 1216 ) ( 120 1238 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( -0.51449579 0 -0.8574929237 -5.6594538689 ) matrix ( ( -0.0133965965 0 0.4062674642 ) ( 0 -0.0033495757 -0.2432204336 ) ) texBounds ( ( 88 1232 ) ( 120 1272 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( -0.3162277937 0.9486833215 -0.0000000198 -5.5315160751 ) matrix ( ( 0 0.0156250019 8.3437509537 ) ( -0.0027059535 0 0.1663150191 ) ) texBounds ( ( 88 1264 ) ( 120 1336 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0 1 0 -5 ) matrix ( ( 0 0.0156250037 8.3437519073 ) ( -0.0027059535 0 0.1663150787 ) ) texBounds ( ( 88 1264 ) ( 120 1336 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0.6000001431 0.7999998927 -0.0000000477 -10.3000011444 ) matrix ( ( 0 0.015625 8.3437519073 ) ( -0.0027059535 0 0.1663151085 ) ) texBounds ( ( 88 1264 ) ( 120 1336 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0.4472135901 -0.8944271803 0 -9.1678781509 ) matrix ( ( 0 0.0156250019 8.3437509537 ) ( -0.0027043275 0 0.6343148947 ) ) texBounds ( ( 88 1264 ) ( 120 1336 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0 -1 0 -5 ) matrix ( ( 0 0.015625 8.3437519073 ) ( -0.0027043275 0 0.6343150735 ) ) texBounds ( ( 88 1264 ) ( 120 1336 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( -0.3162277937 -0.9486833215 -0.0000000198 -5.5339860916 ) matrix ( ( 0 0.0156250019 8.3437509537 ) ( -0.0027043272 0 0.6030649543 ) ) texBounds ( ( 88 1264 ) ( 120 1336 ) ) "texturesheets/refinery/warehouse_detail"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"street_lamp (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -71 0 509.5 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -2.5 ) matrix ( ( 0.012500002 0 0.40625 ) ( 0 0.0017989313 0.5149568319 ) ) texBounds ( ( 88 1264 ) ( 120 1334 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0 0 -1 -2.5 ) matrix ( ( 0.015625 0 0.3906250596 ) ( 0 0.0044921883 0.084570244 ) ) texBounds ( ( 88 1240 ) ( 112 1286 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( -1 0 0 -4 ) matrix ( ( 0.0312500075 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -3 ) matrix ( ( 0.0312500075 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.4472135901 0 0.8944271803 -3.1304950714 ) matrix ( ( -0.020833334 0 0.4062499106 ) ( 0 -0.0013101869 0.0048855282 ) ) texBounds ( ( 88 1264 ) ( 120 1270 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( -0.4472135901 0 -0.8944271803 -3.1304950714 ) matrix ( ( -0.010416667 0 0.3749999702 ) ( 0 -0.0052407836 -0.4585930109 ) ) texBounds ( ( 88 1216 ) ( 104 1240 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0 1 0 -3 ) matrix ( ( 0 0.0069451164 3.9100513458 ) ( -0.0009501692 0 0.3270693421 ) ) texBounds ( ( 88 1264 ) ( 120 1336 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0 -1 0 -3 ) matrix ( ( 0 0.0250000041 13.1437520981 ) ( -0.0015625005 0 0.5257814527 ) ) texBounds ( ( 88 1208 ) ( 120 1224 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( -0.7071067691 -0.7071067691 0 -3.535533905 ) matrix ( ( -0.0303835105 0 1.8906261921 ) ( 0 -0.0015625 -0.3820312619 ) ) texBounds ( ( 88 1208 ) ( 110 1224 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( -0.7071067691 0.7071068287 0.0000000169 -3.535533905 ) matrix ( ( 0 0.0069451155 3.910050869 ) ( -0.0009501689 0 0.3544130027 ) ) texBounds ( ( 88 1264 ) ( 120 1336 ) ) "texturesheets/refinery/warehouse_detail"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"street_lamp (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -57.5 0 509.5 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0.0525588319 0 0.9986178279 -0.9985665083 ) matrix ( ( -0.015625 0 0.3593748808 ) ( 0 -0.0018477716 0.244712472 ) ) texBounds ( ( 88 1264 ) ( 96 1336 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0.0525588319 0 -0.9986178279 -1.9972099066 ) matrix ( ( -0.015625 0 0.359375 ) ( 0 -0.0018477716 0.2450038195 ) ) texBounds ( ( 88 1264 ) ( 96 1336 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( -1 0 0 -9.5 ) matrix ( ( 0.0312500075 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -9.5 ) matrix ( ( 0.0312500075 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -1 ) matrix ( ( 0 0.0069451164 3.9100513458 ) ( -0.0009501692 0 0.4208192825 ) ) texBounds ( ( 88 1264 ) ( 120 1336 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0 1 0 -1 ) matrix ( ( 0 0.0069451164 3.9100513458 ) ( -0.0009501692 0 0.3544130921 ) ) texBounds ( ( 88 1264 ) ( 120 1336 ) ) "texturesheets/refinery/warehouse_detail"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"street_lamp (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -38.5 0 508.5 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0.1240347326 0 0.9922778606 -0.3100868464 ) matrix ( ( -0.0312500075 0 0.3749999404 ) ( 0 -0.0024225549 0.1493388414 ) ) texBounds ( ( 88 1232 ) ( 104 1272 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0.1240347326 0 -0.9922778606 -2.6667468548 ) matrix ( ( -0.0312500075 0 0.3750001192 ) ( 0 -0.0024225549 0.1502403021 ) ) texBounds ( ( 88 1232 ) ( 104 1272 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( -1 0 0 1.5 ) matrix ( ( 0.0312500075 0 0 ) ( 0 0.03125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -9.5 ) matrix ( ( 0.0312500075 0 0 ) ( 0 0.03125 -0.03125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -1 ) matrix ( ( 0 0.0069451164 3.9100513458 ) ( -0.0009501692 0 0.4208192825 ) ) texBounds ( ( 88 1264 ) ( 120 1336 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0 1 0 -1 ) matrix ( ( 0 0.0069451164 3.9100513458 ) ( -0.0009501692 0 0.3544130921 ) ) texBounds ( ( 88 1264 ) ( 120 1336 ) ) "texturesheets/refinery/warehouse_detail"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"street_lamp (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -30.5 0 507.5 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0.2849703133 0 0.9585363269 1.2706272602 ) matrix ( ( -0.0156250037 0 0.3593749702 ) ( 0 -0.0014167564 0.1581485122 ) ) texBounds ( ( 88 1304 ) ( 96 1416 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0.3757051229 0 -0.9267392755 -4.9594063759 ) matrix ( ( -0.0156250019 0 0.3593750596 ) ( 0 -0.001369758 0.1067920923 ) ) texBounds ( ( 88 1304 ) ( 96 1416 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( -1 0 0 -27.5 ) matrix ( ( 0.0312500075 0 0 ) ( 0 0.03125 -0.0625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -9.5 ) matrix ( ( 0.0312500075 0 0 ) ( 0 0.03125 -0.0625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -1 ) matrix ( ( 0 0.0069451164 3.8788013458 ) ( -0.0009501692 0 0.4208192825 ) ) texBounds ( ( 88 1264 ) ( 120 1336 ) ) "texturesheets/refinery/warehouse_detail"
+						plane ( 0 1 0 -1 ) matrix ( ( 0 0.0069451164 3.8788013458 ) ( -0.0009501692 0 0.3544130921 ) ) texBounds ( ( 88 1264 ) ( 120 1336 ) ) "texturesheets/refinery/warehouse_detail"
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"street_lamp (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 273.5 )
+					}
+					
+					allowThicken 1
+					allowCap 1
+					thickenAllEdges 0
+					useExplicitSubdivisions 1
+					texMatrix ( ( -1 -0.0000000874 0.4765625 ) ( 0.0000000874 -1 0.3354492188 ) )
+					texBounds ( ( 122 1361 ) ( 182 1698 ) )
+					material "texturesheets/refinery/warehouse_detail"
+					explicitSubdivisions( 2 1 )
+					controlPoints( 9 3 ) {
+						(
+							( ( -4 0 -17.5 0.7109375 0.4999999702 ) ( -4 -4 -17.5 0.681640625 0.5 ) ( 0 -4 -17.5 0.65234375 0.5 ) ( 4 -4 -17.5 0.623046875 0.5 ) ( 4 0 -17.5 0.59375 0.5 ) ( 4 4 -17.5 0.564453125 0.5 ) ( 0 4 -17.5 0.53515625 0.5 ) ( -4 4 -17.5 0.505859375 0.5 ) ( -4 0 -17.5 0.4765625 0.5000000596 ) )
+							( ( -4 0 0 0.7109375 0.4177245796 ) ( -4 -4 0 0.681640625 0.4177245796 ) ( 0 -4 0 0.65234375 0.4177246094 ) ( 4 -4 0 0.623046875 0.4177246094 ) ( 4 0 0 0.59375 0.4177246094 ) ( 4 4 0 0.564453125 0.4177246094 ) ( 0 4 0 0.53515625 0.4177246094 ) ( -4 4 0 0.505859375 0.4177246392 ) ( -4 0 0 0.4765625 0.4177246392 ) )
+							( ( -4 0 223.5 0.7109375 0.3354491889 ) ( -4 -4 223.5 0.681640625 0.3354491889 ) ( 0 -4 223.5 0.65234375 0.3354492188 ) ( 4 -4 223.5 0.623046875 0.3354492188 ) ( 4 0 223.5 0.59375 0.3354492188 ) ( 4 4 223.5 0.564453125 0.3354492188 ) ( 0 4 223.5 0.53515625 0.3354492188 ) ( -4 4 223.5 0.505859375 0.3354492486 ) ( -4 0 223.5 0.4765625 0.3354492486 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"street_lamp (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 -132.5 )
+					}
+					
+					allowThicken 1
+					allowCap 1
+					thickenAllEdges 0
+					useExplicitSubdivisions 1
+					texMatrix ( ( -1 -0.0000000874 0.0078125 ) ( 0.0000000874 -1 0.4443359375 ) )
+					texBounds ( ( 2 1138 ) ( 83 1250 ) )
+					material "texturesheets/refinery/warehouse_detail"
+					explicitSubdivisions( 2 1 )
+					controlPoints( 9 3 ) {
+						(
+							( ( -5 0 148.5 0.32421875 0.4990234375 ) ( -5 -5 148.5 0.2846679688 0.4990234375 ) ( 0 -5 148.5 0.2451171875 0.4990234375 ) ( 5 -5 148.5 0.2055664063 0.4990234375 ) ( 5 0 148.5 0.166015625 0.4990234375 ) ( 5 5 148.5 0.1264648438 0.4990234375 ) ( 0 5 148.5 0.0869140625 0.4990234375 ) ( -5 5 148.5 0.0473632813 0.4990234375 ) ( -5 0 148.5 0.0078125 0.4990234375 ) )
+							( ( -5 0 148.5 0.32421875 0.4716796875 ) ( -5 -5 148.5 0.2846679688 0.4716796875 ) ( 0 -5 148.5 0.2451171875 0.4716796875 ) ( 5 -5 148.5 0.2055664063 0.4716796875 ) ( 5 0 148.5 0.166015625 0.4716796875 ) ( 5 5 148.5 0.1264648438 0.4716796875 ) ( 0 5 148.5 0.0869140625 0.4716796875 ) ( -5 5 148.5 0.0473632813 0.4716796875 ) ( -5 0 148.5 0.0078125 0.4716796875 ) )
+							( ( -5 0 183.5 0.32421875 0.4443359375 ) ( -5 -5 183.5 0.2846679688 0.4443359375 ) ( 0 -5 183.5 0.2451171875 0.4443359375 ) ( 5 -5 183.5 0.2055664063 0.4443359375 ) ( 5 0 183.5 0.166015625 0.4443359375 ) ( 5 5 183.5 0.1264648438 0.4443359375 ) ( 0 5 183.5 0.0869140625 0.4443359375 ) ( -5 5 183.5 0.0473632813 0.4443359375 ) ( -5 0 183.5 0.0078125 0.4443359375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"street_lamp (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 72.5 )
+					}
+					
+					allowThicken 1
+					allowCap 1
+					thickenAllEdges 0
+					useExplicitSubdivisions 1
+					texMatrix ( ( -1 -0.0000000874 0.4765625 ) ( 0.0000000874 -1 0.3354492188 ) )
+					texBounds ( ( 122 1361 ) ( 182 1698 ) )
+					material "texturesheets/refinery/warehouse_detail"
+					explicitSubdivisions( 2 1 )
+					controlPoints( 9 3 ) {
+						(
+							( ( -4 0 -17.5 0.7109375 0.4999999702 ) ( -4 -4 -17.5 0.681640625 0.5 ) ( 0 -4 -17.5 0.65234375 0.5 ) ( 4 -4 -17.5 0.623046875 0.5 ) ( 4 0 -17.5 0.59375 0.5 ) ( 4 4 -17.5 0.564453125 0.5 ) ( 0 4 -17.5 0.53515625 0.5 ) ( -4 4 -17.5 0.505859375 0.5 ) ( -4 0 -17.5 0.4765625 0.5000000596 ) )
+							( ( -4 0 0 0.7109375 0.4177245796 ) ( -4 -4 0 0.681640625 0.4177245796 ) ( 0 -4 0 0.65234375 0.4177246094 ) ( 4 -4 0 0.623046875 0.4177246094 ) ( 4 0 0 0.59375 0.4177246094 ) ( 4 4 0 0.564453125 0.4177246094 ) ( 0 4 0 0.53515625 0.4177246094 ) ( -4 4 0 0.505859375 0.4177246392 ) ( -4 0 0 0.4765625 0.4177246392 ) )
+							( ( -4 0 183.5 0.7109375 0.3354491889 ) ( -4 -4 183.5 0.681640625 0.3354491889 ) ( 0 -4 183.5 0.65234375 0.3354492188 ) ( 4 -4 183.5 0.623046875 0.3354492188 ) ( 4 0 183.5 0.59375 0.3354492188 ) ( 4 4 183.5 0.564453125 0.3354492188 ) ( 0 4 183.5 0.53515625 0.3354492188 ) ( -4 4 183.5 0.505859375 0.3354492486 ) ( -4 0 183.5 0.4765625 0.3354492486 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"street_lamp (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 -97.5 )
+					}
+					
+					allowThicken 1
+					allowCap 1
+					thickenAllEdges 0
+					useExplicitSubdivisions 1
+					texMatrix ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0.4321289063 ) )
+					texBounds ( ( 0 1163 ) ( 79 1187 ) )
+					material "texturesheets/refinery/warehouse_detail"
+					explicitSubdivisions( 2 1 )
+					controlPoints( 9 3 ) {
+						(
+							( ( -5 0 148.5 0.30859375 0.4438476563 ) ( -5 -5 148.5 0.2700195313 0.4438476563 ) ( 0 -5 148.5 0.2314453125 0.4438476563 ) ( 5 -5 148.5 0.1928710938 0.4438476563 ) ( 5 0 148.5 0.154296875 0.4438476563 ) ( 5 5 148.5 0.1157226563 0.4438476563 ) ( 0 5 148.5 0.0771484375 0.4438476563 ) ( -5 5 148.5 0.0385742188 0.4438476563 ) ( -5 0 148.5 0 0.4438476563 ) )
+							( ( -5 0 148.5 0.30859375 0.4379882813 ) ( -5 -5 148.5 0.2700195313 0.4379882813 ) ( 0 -5 148.5 0.2314453125 0.4379882813 ) ( 5 -5 148.5 0.1928710938 0.4379882813 ) ( 5 0 148.5 0.154296875 0.4379882813 ) ( 5 5 148.5 0.1157226563 0.4379882813 ) ( 0 5 148.5 0.0771484375 0.4379882813 ) ( -5 5 148.5 0.0385742188 0.4379882813 ) ( -5 0 148.5 0 0.4379882813 ) )
+							( ( -4 0 152.5 0.30859375 0.4321289063 ) ( -4 -4 152.5 0.2700195313 0.4321289063 ) ( 0 -4 152.5 0.2314453125 0.4321289063 ) ( 4 -4 152.5 0.1928710938 0.4321289063 ) ( 4 0 152.5 0.154296875 0.4321289063 ) ( 4 4 152.5 0.1157226563 0.4321289063 ) ( 0 4 152.5 0.0771484375 0.4321289063 ) ( -4 4 152.5 0.0385742188 0.4321289063 ) ( -4 0 152.5 0 0.4321289063 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"street_lamp (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 347.5 )
+					}
+					
+					allowThicken 1
+					allowCap 1
+					thickenAllEdges 0
+					useExplicitSubdivisions 1
+					texMatrix ( ( -1 -0.0000000874 0.0078125 ) ( 0.0000000874 -1 0.4755859375 ) )
+					texBounds ( ( 2 1074 ) ( 83 1122 ) )
+					material "texturesheets/refinery/warehouse_detail"
+					explicitSubdivisions( 2 1 )
+					controlPoints( 9 3 ) {
+						(
+							( ( -5 0 153.5 0.32421875 0.4990234375 ) ( -5 -5 153.5 0.2846679688 0.4990234375 ) ( 0 -5 153.5 0.2451171875 0.4990234375 ) ( 5 -5 153.5 0.2055664063 0.4990234375 ) ( 5 0 153.5 0.166015625 0.4990234375 ) ( 5 5 153.5 0.1264648438 0.4990234375 ) ( 0 5 153.5 0.0869140625 0.4990234375 ) ( -5 5 153.5 0.0473632813 0.4990234375 ) ( -5 0 153.5 0.0078125 0.4990234375 ) )
+							( ( -5 0 164.5 0.32421875 0.4873046875 ) ( -5 -5 164.5 0.2846679688 0.4873046875 ) ( 0 -5 164.5 0.2451171875 0.4873046875 ) ( 5 -5 164.5 0.2055664063 0.4873046875 ) ( 5 0 164.5 0.166015625 0.4873046875 ) ( 5 5 164.5 0.1264648438 0.4873046875 ) ( 0 5 164.5 0.0869140625 0.4873046875 ) ( -5 5 164.5 0.0473632813 0.4873046875 ) ( -5 0 164.5 0.0078125 0.4873046875 ) )
+							( ( -5 0 164.5 0.32421875 0.4755859375 ) ( -5 -5 164.5 0.2846679688 0.4755859375 ) ( 0 -5 164.5 0.2451171875 0.4755859375 ) ( 5 -5 164.5 0.2055664063 0.4755859375 ) ( 5 0 164.5 0.166015625 0.4755859375 ) ( 5 5 164.5 0.1264648438 0.4755859375 ) ( 0 5 164.5 0.0869140625 0.4755859375 ) ( -5 5 164.5 0.0473632813 0.4755859375 ) ( -5 0 164.5 0.0078125 0.4755859375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"street_lamp (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 382.5 )
+					}
+					
+					allowThicken 1
+					allowCap 1
+					thickenAllEdges 0
+					useExplicitSubdivisions 1
+					texMatrix ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0.4321289063 ) )
+					texBounds ( ( 0 1163 ) ( 79 1187 ) )
+					material "texturesheets/refinery/warehouse_detail"
+					explicitSubdivisions( 2 1 )
+					controlPoints( 9 3 ) {
+						(
+							( ( -4 0 114.5 0.30859375 0.4321289063 ) ( -4 -4 114.5 0.2700195313 0.4321289063 ) ( 0 -4 114.5 0.2314453125 0.4321289063 ) ( 4 -4 114.5 0.1928710938 0.4321289063 ) ( 4 0 114.5 0.154296875 0.4321289063 ) ( 4 4 114.5 0.1157226563 0.4321289063 ) ( 0 4 114.5 0.0771484375 0.4321289063 ) ( -4 4 114.5 0.0385742188 0.4321289063 ) ( -4 0 114.5 0 0.4321289063 ) )
+							( ( -5 0 118.5 0.30859375 0.4379882813 ) ( -5 -5 118.5 0.2700195313 0.4379882813 ) ( 0 -5 118.5 0.2314453125 0.4379882813 ) ( 5 -5 118.5 0.1928710938 0.4379882813 ) ( 5 0 118.5 0.154296875 0.4379882813 ) ( 5 5 118.5 0.1157226563 0.4379882813 ) ( 0 5 118.5 0.0771484375 0.4379882813 ) ( -5 5 118.5 0.0385742188 0.4379882813 ) ( -5 0 118.5 0 0.4379882813 ) )
+							( ( -5 0 118.5 0.30859375 0.4438476563 ) ( -5 -5 118.5 0.2700195313 0.4438476563 ) ( 0 -5 118.5 0.2314453125 0.4438476563 ) ( 5 -5 118.5 0.1928710938 0.4438476563 ) ( 5 0 118.5 0.154296875 0.4438476563 ) ( 5 5 118.5 0.1157226563 0.4438476563 ) ( 0 5 118.5 0.0771484375 0.4438476563 ) ( -5 5 118.5 0.0385742188 0.4438476563 ) ( -5 0 118.5 0 0.4438476563 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"street_lamp (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 0 347.5 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 0.0078125 0 0.0078125 ) ( 0 0.0009765625 0.7392578125 ) )
+					texBounds ( ( 2 1514 ) ( 38 1850 ) )
+					material "texturesheets/refinery/warehouse_detail"
+					explicitSubdivisions( 2 2 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -5 0 164.5 0.0078125 0.734375 ) ( -5 -5 164.5 -0.03125 0.734375 ) ( 0 -5 164.5 -0.03125 0.7392578125 ) )
+							( ( -5 5 164.5 0.046875 0.734375 ) ( 0 0 164.5 0.0078125 0.7392578125 ) ( 5 -5 164.5 -0.03125 0.744140625 ) )
+							( ( 0 5 164.5 0.046875 0.7392578125 ) ( 5 5 164.5 0.046875 0.744140625 ) ( 5 0 164.5 0.0078125 0.744140625 ) )
+						)
+					}
+				}
+			}
+		}
+	}
+}

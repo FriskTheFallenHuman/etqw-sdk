@@ -1,0 +1,49 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"description"	"maps/unnamed.world"
+	}
+
+	meta {
+		sdLODGroup "hornet_landing_pad" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"hornet_landing_pad (Level 1)"
+			}
+		}
+		sdLODGroup_Level "hornet_landing_pad (Level 1)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		12000
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+		}
+		sdPrimitiveEntity "nkd_model_static_1" 
+		groups {
+			"hornet_landing_pad (Level 1)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/hornet_landing_pad_snow.lwo"
+				"mergecm"	"1"
+			}
+			classname "model_static"
+		}
+	}
+}

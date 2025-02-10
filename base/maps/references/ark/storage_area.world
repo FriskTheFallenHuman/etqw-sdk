@@ -1,0 +1,356 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"description"	"unnamed.world"
+		"editor_last_atmosphere"	"nkd_atmosphere_2"
+	}
+
+	meta {
+		sdLODGroup "storage_area" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		3
+				"uniqueinstance"		1
+			}
+			levels {
+				"storage_area (Level 1)"
+				"storage_area (Level 2)"
+				"storage_area (Level 3)"
+			}
+		}
+		sdLODGroup_Level "storage_area (Level 1)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		8192
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+			}
+		}
+		sdLODGroup_Level "storage_area (Level 2)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		8192
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+			}
+		}
+		sdLODGroup_Level "storage_area (Level 3)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		2048
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_1" 
+				groups {
+					"storage_area (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 210 -148 72 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -56 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 256 128 ) ) "textures/metal/metal_railing2"
+						plane ( 0 0 -1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -2 ) matrix ( ( 0.0162418801 0 2.9374783039 ) ( 0 0.002232143 0.2857142985 ) ) texBounds ( ( 120 2048 ) ( 1384 2560 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 1 0 0 -2 ) matrix ( ( 0.0162418801 0 2.9374783039 ) ( 0 0.002232143 0.2857142985 ) ) texBounds ( ( 120 2048 ) ( 1384 2560 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 0 1 0 -172 ) matrix ( ( 0.0162418801 0 2.9374783039 ) ( 0 0.002232143 0.2857142985 ) ) texBounds ( ( 120 2048 ) ( 1384 2560 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( -0.7071099877 -0.7071099877 0 -4.2424302101 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_2" 
+				groups {
+					"storage_area (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 4 -154 72 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -56 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 256 128 ) ) "textures/metal/metal_railing2"
+						plane ( 0 0 -1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -4 ) matrix ( ( 0.0162418801 0 2.9374783039 ) ( 0 0.002232143 0.2857142985 ) ) texBounds ( ( 120 2048 ) ( 1384 2560 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 0 -1 0 -2 ) matrix ( ( 0.0162418801 0 2.9374783039 ) ( 0 0.002232143 0.2857142985 ) ) texBounds ( ( 120 2048 ) ( 1384 2560 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 0 1 0 -2 ) matrix ( ( 0.0162418801 0 2.9374783039 ) ( 0 0.002232143 0.2857142985 ) ) texBounds ( ( 120 2048 ) ( 1384 2560 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 0.7071099877 0.7071099877 0 -145.6640625 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_3" 
+				groups {
+					"storage_area (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -130 -154 72 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -56 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 256 128 ) ) "textures/metal/metal_railing2"
+						plane ( 0 0 -1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -58 ) matrix ( ( 0.0162418801 0 2.9374783039 ) ( 0 0.002232143 0.2857142985 ) ) texBounds ( ( 120 2048 ) ( 1384 2560 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 0 -1 0 -2 ) matrix ( ( 0.0162418801 0 2.9374783039 ) ( 0 0.002232143 0.2857142985 ) ) texBounds ( ( 120 2048 ) ( 1384 2560 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 0 1 0 -2 ) matrix ( ( 0.0162418801 0 2.9374783039 ) ( 0 0.002232143 0.2857142985 ) ) texBounds ( ( 120 2048 ) ( 1384 2560 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( -0.7071099877 0.7071099877 0 -39.5986289978 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_4" 
+				groups {
+					"storage_area (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 192 -156 -4 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -20 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 256 128 ) ) "textures/metal/metal_railing2"
+						plane ( 0 -1 0 -8 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( -0.7071099877 -0.7071099877 0 -14.1425800323 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 4 ) matrix ( ( -0.03125 0 0.125 ) ( 0 0.03125 0.0000014305 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -196.001953125 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 0 1 0 -3.9990200996 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_5" 
+				groups {
+					"storage_area (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -188 148 -4 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -20 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 256 128 ) ) "textures/metal/metal_railing2"
+						plane ( 1 0 0 -8 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 0.7071099877 -0.7071099877 0 -214.9599609375 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 4 ) matrix ( ( 0.03125 0 0.625 ) ( 0 -0.03125 0.1250014305 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071099877 0.7071099877 0 -5.6572299004 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -4 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_6" 
+				groups {
+					"storage_area (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 192 -156 -4 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -20 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 256 128 ) ) "textures/metal/metal_railing2"
+						plane ( 0 -1 0 -8 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 0.7071099877 -0.7071099877 0 -268.7001953125 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 4 ) matrix ( ( -0.03125 0 0.125 ) ( 0 0.03125 0.0000014305 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 260.001953125 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 0 1 0 -3.9990200996 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_7" 
+				groups {
+					"storage_area (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 212 -148 -4 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -20 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 256 128 ) ) "textures/metal/metal_railing2"
+						plane ( 1 0 0 -8 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 0 0 -1 4 ) matrix ( ( -0.03125 0 0.375 ) ( 0 0.03125 0.6250014305 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071099877 0.7071099877 0 -5.6572299004 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -176.0010070801 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( -1 0 0 -3.9980499744 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_8" 
+				groups {
+					"storage_area (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -168 156 -4 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -20 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 256 128 ) ) "textures/metal/metal_railing2"
+						plane ( 0 -1 0 -8 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( -0.7071099877 -0.7071099877 0 -14.1425800323 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071099877 -0.7071099877 0 -268.7001953125 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 4 ) matrix ( ( 0.03125 0 0.875 ) ( 0 -0.03125 0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -4 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_9" 
+				groups {
+					"storage_area (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 212 -148 -4 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -20 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 256 128 ) ) "textures/metal/metal_railing2"
+						plane ( 1 0 0 -8 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 0.7071099877 -0.7071099877 0 -214.9599609375 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 4 ) matrix ( ( -0.03125 0 0.375 ) ( 0 0.03125 0.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 240.0009765625 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( -1 0 0 -3.9980499744 ) matrix ( ( 0.0178578142 0 -1.2143657207 ) ( 0 0.001953125 0.5 ) ) texBounds ( ( 0 1088 ) ( 512 1152 ) ) "texturesheets/ark/wall_ark_2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_10" 
+				groups {
+					"storage_area (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 212 104 72 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -56 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 256 128 ) ) "textures/metal/metal_railing2"
+						plane ( 0 0 -1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -4 ) matrix ( ( 0.0113370894 0 8.974609375 ) ( 0 0.002232143 0.2946428657 ) ) texBounds ( ( -3976 2048 ) ( 256 2560 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 0 -1 0 -8 ) matrix ( ( 0.0162418801 0 2.9374783039 ) ( 0 0.002232143 0.2857142985 ) ) texBounds ( ( 120 2048 ) ( 1384 2560 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( -0.7071099877 0.7071099877 0 -36.76953125 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0 ) matrix ( ( 0.0162418801 0 2.9374783039 ) ( 0 0.002232143 0.2857142985 ) ) texBounds ( ( 120 2048 ) ( 1384 2560 ) ) "texturesheets/ark/wall_ark_2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_11" 
+				groups {
+					"storage_area (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -54 156 72 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -56 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 256 128 ) ) "textures/metal/metal_railing2"
+						plane ( 0 0 -1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -4 ) matrix ( ( 0.0162418801 0 2.9374783039 ) ( 0 0.002232143 0.2857142985 ) ) texBounds ( ( 120 2048 ) ( 1384 2560 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 0.7071099877 -0.7071099877 0 -188.0908203125 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071099877 -0.7071099877 0 -94.751953125 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 0 ) matrix ( ( 0.0162418801 0 2.9374783039 ) ( 0 0.002232143 0.2857142985 ) ) texBounds ( ( 120 2048 ) ( 1384 2560 ) ) "texturesheets/ark/wall_ark_2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_12" 
+				groups {
+					"storage_area (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -188 150 72 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -56 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.015625 0 ) ) texBounds ( ( 0 0 ) ( 256 128 ) ) "textures/metal/metal_railing2"
+						plane ( 0 0 -1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -4 ) matrix ( ( 0.0162418801 0 2.9374783039 ) ( 0 0.002232143 0.2857142985 ) ) texBounds ( ( 120 2048 ) ( 1384 2560 ) ) "texturesheets/ark/wall_ark_2"
+						plane ( 0.7071099877 -0.7071099877 0 -216.3740234375 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071099877 0.7071099877 0 -4.2429199219 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 0 ) matrix ( ( 0.0162418801 0 2.9374783039 ) ( 0 0.002232143 0.2857142985 ) ) texBounds ( ( 120 2048 ) ( 1384 2560 ) ) "texturesheets/ark/wall_ark_2"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "model_static_1" 
+		groups {
+			"storage_area (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/slipgate/barrel_green.lwo"
+			}
+			sdTransform {
+				translation ( -23.0355224609 -14.0343017578 0 )
+				rotation ( ( -0.9999999404 0.0000000484 0 ) ( -0.0000000484 -0.9999999404 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "model_static_2" 
+		groups {
+			"storage_area (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/slipgate/barrel_yellow.lwo"
+			}
+			sdTransform {
+				translation ( 25.9644775391 -5.0343017578 0 )
+				rotation ( ( -0.9999999404 0.0000000484 0 ) ( -0.0000000484 -0.9999999404 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "model_static_3" 
+		groups {
+			"storage_area (Level 3)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/slipgate/barrel_yellow.lwo"
+			}
+			sdTransform {
+				translation ( 41.9644775391 -53.0343017578 0 )
+				rotation ( ( -0.9999999404 0.0000000484 0 ) ( -0.0000000484 -0.9999999404 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+	}
+}

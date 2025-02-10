@@ -1,0 +1,4982 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"editor_last_atmosphere"	"atmosphere://outskirts_rainy"
+	}
+
+	meta {
+		sdLODGroup "base" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		3
+				"uniqueinstance"		1
+			}
+			levels {
+				"base (Level 01)"
+				"base (Level 02)"
+				"base (Level 03)"
+			}
+		}
+		sdLODGroup "gdf_base_mindist" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"gdf_base_mindist (Level 01)"
+			}
+		}
+		sdLODGroup_Level "base (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		6800
+				"minvisdist"		0
+				"visdistfalloff"		0.001
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		1
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "base (Level 02)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		12000
+				"minvisdist"		0
+				"visdistfalloff"		0.1
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "gdf_base_mindist (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		12000
+				"minvisdist"		6790
+				"visdistfalloff"		0.001
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		1
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "base (Level 03)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		2048
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -1872 -250 450 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -66 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -100 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -100 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -226 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -230 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -0 -1 56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -1872 -250 450 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -66 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -1 -0 -220 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 212 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -94 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 86 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -1872 -250 450 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -66 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -1 -0 -0 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -94 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 86 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -1872 -250 450 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -66 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -1 -0 216 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -226 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -94 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 86 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -1872 -250 450 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -66 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -1 -0 -220 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 212 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -94 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 -0 -0 86 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -1872 -250 450 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -66 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -1 -0 -0 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -94 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 -0 -0 86 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -1872 -250 450 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -66 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -1 -0 216 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -226 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -94 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 -0 -0 86 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 1012 2048 498 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0 0 -1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -1 0 -0 -48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.9941444993 -0.1080591902 0 -347.6047973633 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.0204039142 -0.999791801 0 -44.9702262878 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.0099497559 0.9999504685 0 -43.5202331543 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 1414 2044 498 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -114 ) matrix ( ( 0.03125 0 0.125 ) ( 0 0.03125 -12.5625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -114 ) matrix ( ( 0.03125 0 0.125 ) ( 0 0.03125 12.5625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.9941444397 0.1080593169 0 -52.4735450745 ) matrix ( ( 0.03125 0 -0.125 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.8900430799 -0.4558763802 0 -286.4641113281 ) matrix ( ( 0.03125 0 -1.2332254648 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.32560426 -0.9455062151 0 -64.2692337036 ) matrix ( ( 0.03125 0 -12.5624380112 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.3230196536 0.9463922977 -0 -26.1363182068 ) matrix ( ( 0.03125 0 12.563123703 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 1748 1930 498 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -114 ) matrix ( ( 0.03125 0 3.6875 ) ( 0 0.03125 -23 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.8077904582 -0.5894696712 0 -271.8100891113 ) matrix ( ( 0.03125 0 3.6875 ) ( 0 0.03125 -23 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -114 ) matrix ( ( 0.03125 0 3.6875 ) ( 0 0.03125 23 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.8900431395 0.4558764994 0 -62.7802467346 ) matrix ( ( 0.03125 0 -2.5387716293 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.4934794605 -0.8697574735 0 -77.4637527466 ) matrix ( ( 0.03125 0 -23.5911216736 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.4961389303 0.8682430983 -0 -14.3881082535 ) matrix ( ( 0.03125 0 23.591835022 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 2042 1762 498 )
+					}
+					
+					faces {
+						plane ( 0 -0 1 -114 ) matrix ( ( 0.03125 0 8.9375 ) ( 0 0.03125 -32.1875 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.7719290853 -0.6357085705 -0.000019692 -587.2987060547 ) matrix ( ( 0.03125 0 2.5126490593 ) ( 0 0.03125 -23 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -114 ) matrix ( ( 0.03125 0 8.9375 ) ( 0 0.03125 32.1875 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.8077904582 0.5894697309 0 -64.7099685669 ) matrix ( ( 0.03125 0 -3.0231332779 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.6117995977 -0.7910128236 0.0000024352 -86.133934021 ) matrix ( ( 0.03125 0 -34.1727905273 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.6160615087 0.7876980901 -0.0000029636 -5.0882759094 ) matrix ( ( 0.03125 0 34.173538208 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 2556 1360 498 )
+					}
+					
+					faces {
+						plane ( 0 -0 1 -114 ) matrix ( ( 0.03125 0 21.5 ) ( 0 0.03125 -48.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.485640198 -0.8741587996 -0.0000265211 -269.8229980469 ) matrix ( ( 0.03125 0 1.9989401102 ) ( 0 0.03125 -22.9996109009 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -114 ) matrix ( ( 0.03125 0 21.5 ) ( 0 0.03125 48.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.7719296217 0.635708034 0.0000000972 -65.0228347778 ) matrix ( ( 0.03125 0 -3.7026429176 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.8248174191 -0.5653991699 0.0000121156 -99.3508911133 ) matrix ( ( 0.03125 0 -54.5641670227 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.7935140729 0.6085518003 -0.000010618 11.3107662201 ) matrix ( ( 0.03125 0 54.5652122498 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 2760 1094 498 )
+					}
+					
+					faces {
+						plane ( -0 -0 1 -114 ) matrix ( ( 0.03125 0 29.8125 ) ( 0 0.03125 -54.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 -1 0 -315.9918212891 ) matrix ( ( 0.03125 0 0.4630614519 ) ( 0 0.03125 -22.9993457794 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 -0 -1 -114 ) matrix ( ( 0.03125 0 29.8125 ) ( 0 0.03125 54.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.4856480062 0.8741544485 0.0000048883 -61.7725906372 ) matrix ( ( 0.03125 0 -6.0666661263 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -1 0 0 -137.9963378906 ) matrix ( ( 0.03125 0 -65.0248947144 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.9999380112 -0.0111350799 -0.00005302 48.4801864624 ) matrix ( ( 0.03125 0 65.0407943726 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.9999383092 -0.0111096352 -0.0000128398 48.4836654663 ) matrix ( ( 0.03125 0 65.0407943726 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 2756 734 498 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -114 ) matrix ( ( 0.03125 0 41.0625 ) ( 0 0.03125 -54.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.5206051469 -0.853797555 0.000027873 -448.3413696289 ) matrix ( ( 0.03125 0 0.5880614519 ) ( 0 0.03125 -22.9993457794 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 -0 -1 -114 ) matrix ( ( 0.03125 0 41.0625 ) ( 0 0.03125 54.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 1 0 -44.0018310547 ) matrix ( ( 0.03125 0 -11.6394796371 ) ( 0 0.03125 0.0000469451 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.9712100029 0.2382248789 0 -140.6209259033 ) matrix ( ( 0.03125 0 -76.2748947144 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.9750068188 -0.2221749723 -0.0000522015 56.5695457458 ) matrix ( ( 0.03125 0 76.2914810181 ) ( 0 0.03125 -0.0000066271 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 2648 260 498 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -114 ) matrix ( ( 0.03125 0 55.875 ) ( 0 0.03125 -51.125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.7169932723 -0.6970801353 0.0000129744 -335.6575622559 ) matrix ( ( 0.03125 0 -4.2418346405 ) ( 0 0.03125 -22.9997329712 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 -0 -1 -114 ) matrix ( ( 0.03125 0 55.875 ) ( 0 0.03125 51.125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.5206199288 0.8537885547 -0.0000278738 -12.5821809769 ) matrix ( ( 0.03125 0 -15.0144805908 ) ( 0 0.03125 0.0000469451 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.7509518266 0.6603569984 0.0000007955 -159.6958465576 ) matrix ( ( 0.03125 0 -91.4649887085 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.7617546916 -0.6478655934 -0.0000552277 65.064453125 ) matrix ( ( 0.03125 0 91.4835891724 ) ( 0 0.03125 -0.0000065963 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.7617611289 -0.6478580236 -0.0000407844 65.0660934448 ) matrix ( ( 0.03125 0 91.4835891724 ) ( 0 0.03125 -0.0000065963 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 1224 -906 498 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -114 ) matrix ( ( 0.03125 0 92.3125 ) ( 0 0.03125 -6.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -1 0 0 -333.9859313965 ) matrix ( ( 0.03125 0 0.652788043 ) ( 0 0.03125 -23.0004825592 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 -0 -1 -114 ) matrix ( ( 0.03125 0 92.3125 ) ( 0 0.03125 6.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.7625236511 0.6469603777 -0.0000346895 -497.8591003418 ) matrix ( ( 0.03125 0 -34.0379867554 ) ( 0 0.03125 -0.0014659759 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.5443162918 0.8388801217 0.0000190742 -66.0489807129 ) matrix ( ( 0.03125 0 -148.2137145996 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.5443111658 0.8388834596 -0.0000035605 -66.0493927002 ) matrix ( ( 0.03125 0 -148.2137145996 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.5635813475 -0.8260605335 -0.0000721684 -31.4774074554 ) matrix ( ( 0.03125 0 148.0700836182 ) ( 0 0.03125 -0.0005749711 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.5635866523 -0.8260569572 -0.0000462385 -31.477640152 ) matrix ( ( 0.03125 0 148.0700836182 ) ( 0 0.03125 -0.0005749711 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -987 2029 498 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -1 0 0 -53 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 1 0 0 -347 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 -1 -0 -45 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 1 0 -45 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -1387 2029 498 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.9831299782 -0.1829079092 0 14.198225975 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 1 0 0 -347 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.1379100233 -0.9904447794 0 -92.4247970581 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.1430905461 0.9897096157 0 5.1154866219 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -1719 1981 498 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.7808688283 -0.6246950626 0 -54.5033493042 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.9831299782 0.1829079092 -0 -349.376953125 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.5751784444 -0.8180279732 0 -242.328918457 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.5520988107 0.833778739 0 154.0582427979 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -2015 1785 498 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.648945868 -0.7608346343 0 -75.8799743652 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.7808682323 0.6246957779 -0 -299.0765380859 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.7008225322 -0.7133356333 0 -300.2655334473 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.7011407018 0.7130230069 0 211.2105407715 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -2255 1549 498 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.4648328424 -0.8853984475 0 -152.0446777344 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.6489456296 0.7608348131 -0 -259.4242858887 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.8357054591 -0.5491778851 0 -353.9583129883 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.8337796926 0.552097261 0 264.4784545898 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -2451 1253 498 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.2425343394 -0.9701428413 0 -225.3108520508 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.4648326635 0.8853985667 -0 -201.1444702148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.949878931 -0.3126178682 0 -404.6628417969 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.9486836195 0.3162267804 0 314.9654846191 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -2555 937 498 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0 0 -1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 -1 0 -318.9896240234 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.242534399 0.9701427817 -0 -106.4764633179 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.9899501801 -0.1414168924 0 -422.2875366211 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.9896020293 0.1438328773 0 331.8824768066 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -2539 -251 498 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -114 ) matrix ( ( -0.03125 0 12.375 ) ( 0 0.03125 -0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -114 ) matrix ( ( -0.03125 0 12.375 ) ( 0 0.03125 0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 1 -0 -28.9896240234 ) matrix ( ( -0.03125 0 -0.5 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.0957136154 -0.9954088926 0 -381.5322875977 ) matrix ( ( -0.0312499925 0 3.4864416122 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.9309386015 0.3651757836 -0 -365.2798156738 ) matrix ( ( -0.0312499963 0 12.1799201965 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.9375661016 -0.3478070796 0 273.5436706543 ) matrix ( ( -0.0312499963 0 -12.174405098 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -2397 -613 498 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -114 ) matrix ( ( -0.03125 0 1.0625 ) ( 0 0.03125 -4.9375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -114 ) matrix ( ( -0.03125 0 1.0625 ) ( 0 0.03125 4.9375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.0957114324 0.9954091311 0 7.6094312668 ) matrix ( ( -0.03125 0 -4.9375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.6860077381 -0.7275942564 0 -542.1635742188 ) matrix ( ( -0.0312499925 0 6.8208069801 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.7671294212 0.6414923668 -0 -310.8776550293 ) matrix ( ( -0.0312499963 0 0.0282126814 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.7840413451 -0.6207085252 0 228.9705047607 ) matrix ( ( -0.0312499963 0 -0.0247952603 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -2177 -893 498 )
+					}
+					
+					faces {
+						plane ( 0 -0 1 -114 ) matrix ( ( -0.03125 0 -7.6875 ) ( 0 0.03125 -11.8125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -114 ) matrix ( ( -0.03125 0 -7.6875 ) ( 0 0.03125 11.8125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.6860072613 0.7275946736 0 187.5261993408 ) matrix ( ( -0.03125 0 -10.9434576035 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.9138072133 -0.4061482549 0 -627.9957275391 ) matrix ( ( -0.0312499925 0 7.116648674 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.3517636955 0.9360888004 -0 -196.9479522705 ) matrix ( ( -0.0312499963 0 -11.0944318771 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.3815499246 -0.9243482351 0 118.9022521973 ) matrix ( ( -0.0312499963 0 11.1030187607 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -1833 -1035 498 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -114 ) matrix ( ( -0.03125 0 -12.125 ) ( 0 0.03125 -22.5625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -114 ) matrix ( ( -0.03125 0 -12.125 ) ( 0 0.03125 22.5625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.9138067961 0.4061491489 0 255.979019165 ) matrix ( ( -0.03125 0 -15.7209386826 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 1 0 0 -643.0065917969 ) matrix ( ( -0.0312499925 0 7.4277210236 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0.1370398998 0.9905655384 -0 -144.5745391846 ) matrix ( ( -0.0312499963 0 -22.7183570862 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0.1383056939 -0.9903896451 0 50.3003540039 ) matrix ( ( -0.0312499963 0 22.7328777313 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -753 -1045 498 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -130 ) matrix ( ( -0.03125 0 -12.4375 ) ( 0 0.03125 -56.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -114 ) matrix ( ( -0.03125 0 -12.4375 ) ( 0 0.03125 56.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -1 0 0 297.0088195801 ) matrix ( ( -0.03125 0 -29.1429157257 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 1 0 0 -643.0065917969 ) matrix ( ( -0.0312499925 0 7.1152210236 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 1 0 -85.9946899414 ) matrix ( ( -0.0312499963 0 -56.1927337646 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 -1 -0 -46.0122070313 ) matrix ( ( -0.0312499963 0 56.2017822266 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 2676 810 498 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.994505465 0 0.104684785 -39.7818527222 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.994505465 0 0.104684785 -15.9122924805 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -34 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -38 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 2668 988 496 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -112 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -20 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -20 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 -0 -132 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.9946183562 0 0.1036060825 -9.9462890625 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1224 -1144 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 31 120 1.0000001192 0.2499999702 ) ( 88 31 120 1 0.1249999702 ) ( 88 31 120 0.9999998808 -0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1554 -1138 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 291 124 -0.0000001788 0.1484375447 ) ( 64 291 124 0 0.2763672471 ) ( 64 291 124 0.000000149 0.4042969346 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1224 -1144 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 31 120 1.0000001192 0.2499999702 ) ( 88 31 120 1 0.1249999702 ) ( 88 31 120 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1554 -1138 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 291 124 -0.0000001788 0.1484375447 ) ( 64 291 124 0 0.2763672471 ) ( 64 291 124 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1865 -1026 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 274 69 -0.0000001788 0.1484375447 ) ( 64 274 69 0 0.2763672471 ) ( 64 274 69 0.000000149 0.4042969346 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1865 -1026 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 274 69 -0.0000001788 0.1484375447 ) ( 64 274 69 0 0.2763672471 ) ( 64 274 69 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2082 -771 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 194 -34.9999694824 -0.0000001788 0.1484375447 ) ( 64 194 -34.9999694824 0 0.2763672471 ) ( 64 194 -34.9999694824 0.000000149 0.4042969346 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2082 -771 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 194 -34.9999694824 -0.0000001788 0.1484375447 ) ( 64 194 -34.9999694824 0 0.2763672471 ) ( 64 194 -34.9999694824 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2238.7504882813 -463.7382202148 528 )
+						rotation ( ( -0.0000000083 -0.000000059 0.9999999404 ) ( 0.9902677536 -0.1391728818 0 ) ( 0.1391728669 0.990267694 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 156 -58.9999694824 -0.0000001788 0.1484375447 ) ( 64 156 -58.9999694824 0 0.2763672471 ) ( 64 156 -58.9999694824 0.000000149 0.4042969346 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2238.7504882813 -463.7382202148 528 )
+						rotation ( ( -0.0000000083 -0.000000059 0.9999999404 ) ( 0.9902677536 -0.1391728818 0 ) ( 0.1391728669 0.990267694 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 156 -58.9999694824 -0.0000001788 0.1484375447 ) ( 64 156 -58.9999694824 0 0.2763672471 ) ( 64 156 -58.9999694824 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2193.1586914063 773.667175293 528 )
+						rotation ( ( 0.0000000083 -0.000000059 0.9999999404 ) ( 0.9902677536 0.1391732246 0 ) ( -0.1391732097 0.990267694 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -25.999994278 -77.9999694824 -0.0000001788 0.1484375447 ) ( 64 -25.999994278 -77.9999694824 0 0.2763672471 ) ( 64 -25.999994278 -77.9999694824 0.000000149 0.4042969346 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2193.1586914063 773.667175293 528 )
+						rotation ( ( 0.0000000083 -0.000000059 0.9999999404 ) ( 0.9902677536 0.1391732246 0 ) ( -0.1391732097 0.990267694 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 -25.999994278 -77.9999694824 -0.0000001788 0.1484375447 ) ( 64 -25.999994278 -77.9999694824 0 0.2763672471 ) ( 64 -25.999994278 -77.9999694824 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2088.8920898438 1097.7790527344 528 )
+						rotation ( ( 0.0000000062 -0.0000000593 0.9999999404 ) ( 0.9945216179 0.1045286059 0 ) ( -0.1045285985 0.9945215583 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -65.9999923706 -64.9999694824 -0.0000001788 0.1484375447 ) ( 64 -65.9999923706 -64.9999694824 0 0.2763672471 ) ( 64 -65.9999923706 -64.9999694824 0.000000149 0.4042969346 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2088.8920898438 1097.7790527344 528 )
+						rotation ( ( 0.0000000062 -0.0000000593 0.9999999404 ) ( 0.9945216179 0.1045286059 0 ) ( -0.1045285985 0.9945215583 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 -65.9999923706 -64.9999694824 -0.0000001788 0.1484375447 ) ( 64 -65.9999923706 -64.9999694824 0 0.2763672471 ) ( 64 -65.9999923706 -64.9999694824 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1917 1382 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -106.9999923706 -40.9999694824 -0.0000001788 0.1484375447 ) ( 64 -106.9999923706 -40.9999694824 0 0.2763672471 ) ( 64 -106.9999923706 -40.9999694824 0.000000149 0.4042969346 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1917 1382 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 -106.9999923706 -40.9999694824 -0.0000001788 0.1484375447 ) ( 64 -106.9999923706 -40.9999694824 0 0.2763672471 ) ( 64 -106.9999923706 -40.9999694824 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1674 1618 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -145.9999847412 -4.9999709129 -0.0000001788 0.1484375447 ) ( 64 -145.9999847412 -4.9999709129 0 0.2763672471 ) ( 64 -145.9999847412 -4.9999709129 0.000000149 0.4042969346 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1674 1618 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 -145.9999847412 -4.9999709129 -0.0000001788 0.1484375447 ) ( 64 -145.9999847412 -4.9999709129 0 0.2763672471 ) ( 64 -145.9999847412 -4.9999709129 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1401 1806 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1401 1806 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 64 40 168 1 0.2763671279 ) ( 64 40 168 1.0000002384 0.4042968452 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 64 40 168 0.5 0.2763671875 ) ( 64 40 168 0.5000001788 0.404296875 ) )
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1113 1964 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+							( ( -136 77 54 0.499999851 0.1484375 ) ( 64 77 54 0.5 0.2763671875 ) ( 64 77 54 0.5000001788 0.404296875 ) )
+							( ( -136 77 54 0.9999998808 0.1484374553 ) ( 64 77 54 1 0.2763671279 ) ( 64 77 54 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1113 1964 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 77 54 0.9999998808 0.1484374553 ) ( 64 77 54 1 0.2763671279 ) ( 64 77 54 1.0000002384 0.4042968452 ) )
+							( ( -136 77 54 0.499999851 0.1484375 ) ( 64 77 54 0.5 0.2763671875 ) ( 64 77 54 0.5000001788 0.404296875 ) )
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1211 2013 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+							( ( -136 77 28 0.499999851 0.1484375 ) ( 64 77 28 0.5 0.2763671875 ) ( 64 77 28 0.5000001788 0.404296875 ) )
+							( ( -136 77 28 0.9999998808 0.1484374553 ) ( 64 77 28 1 0.2763671279 ) ( 64 77 28 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1211 2013 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 77 28 0.9999998808 0.1484374553 ) ( 64 77 28 1 0.2763671279 ) ( 64 77 28 1.0000002384 0.4042968452 ) )
+							( ( -136 77 28 0.499999851 0.1484375 ) ( 64 77 28 0.5 0.2763671875 ) ( 64 77 28 0.5000001788 0.404296875 ) )
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1537 2002 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+							( ( -136 68 -45.9999885559 0.499999851 0.1484375 ) ( 64 68 -45.9999885559 0.5 0.2763671875 ) ( 64 68 -45.9999885559 0.5000001788 0.404296875 ) )
+							( ( -136 68 -45.9999885559 0.9999998808 0.1484374553 ) ( 64 68 -45.9999885559 1 0.2763671279 ) ( 64 68 -45.9999885559 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1537 2002 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 68 -45.9999885559 0.9999998808 0.1484374553 ) ( 64 68 -45.9999885559 1 0.2763671279 ) ( 64 68 -45.9999885559 1.0000002384 0.4042968452 ) )
+							( ( -136 68 -45.9999885559 0.499999851 0.1484375 ) ( 64 68 -45.9999885559 0.5 0.2763671875 ) ( 64 68 -45.9999885559 0.5000001788 0.404296875 ) )
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1849 1896 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+							( ( -136 49 -90.9999847412 0.499999851 0.1484375 ) ( 64 49 -90.9999847412 0.5 0.2763671875 ) ( 64 49 -90.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 49 -90.9999847412 0.9999998808 0.1484374553 ) ( 64 49 -90.9999847412 1 0.2763671279 ) ( 64 49 -90.9999847412 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1849 1896 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 49 -90.9999847412 0.9999998808 0.1484374553 ) ( 64 49 -90.9999847412 1 0.2763671279 ) ( 64 49 -90.9999847412 1.0000002384 0.4042968452 ) )
+							( ( -136 49 -90.9999847412 0.499999851 0.1484375 ) ( 64 49 -90.9999847412 0.5 0.2763671875 ) ( 64 49 -90.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2133 1732 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+							( ( -136 29 -124.9999847412 0.499999851 0.1484375 ) ( 64 29 -124.9999847412 0.5 0.2763671875 ) ( 64 29 -124.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 29 -124.9999847412 0.9999998808 0.1484374553 ) ( 64 29 -124.9999847412 1 0.2763671279 ) ( 64 29 -124.9999847412 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2133 1732 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 29 -124.9999847412 0.9999998808 0.1484374553 ) ( 64 29 -124.9999847412 1 0.2763671279 ) ( 64 29 -124.9999847412 1.0000002384 0.4042968452 ) )
+							( ( -136 29 -124.9999847412 0.499999851 0.1484375 ) ( 64 29 -124.9999847412 0.5 0.2763671875 ) ( 64 29 -124.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2395 1534 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+							( ( -136 25 -127.9999847412 0.499999851 0.1484375 ) ( 64 25 -127.9999847412 0.5 0.2763671875 ) ( 64 25 -127.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 25 -127.9999847412 0.9999998808 0.1484374553 ) ( 64 25 -127.9999847412 1 0.2763671279 ) ( 64 25 -127.9999847412 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2395 1534 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 25 -127.9999847412 0.9999998808 0.1484374553 ) ( 64 25 -127.9999847412 1 0.2763671279 ) ( 64 25 -127.9999847412 1.0000002384 0.4042968452 ) )
+							( ( -136 25 -127.9999847412 0.499999851 0.1484375 ) ( 64 25 -127.9999847412 0.5 0.2763671875 ) ( 64 25 -127.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2656 1345 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+							( ( -136 -21.9999961853 -173.9999847412 0.499999851 0.1484375 ) ( 64 -21.9999961853 -173.9999847412 0.5 0.2763671875 ) ( 64 -21.9999961853 -173.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -21.9999961853 -173.9999847412 0.9999998808 0.1484374553 ) ( 64 -21.9999961853 -173.9999847412 1 0.2763671279 ) ( 64 -21.9999961853 -173.9999847412 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2656 1345 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -21.9999961853 -173.9999847412 0.9999998808 0.1484374553 ) ( 64 -21.9999961853 -173.9999847412 1 0.2763671279 ) ( 64 -21.9999961853 -173.9999847412 1.0000002384 0.4042968452 ) )
+							( ( -136 -21.9999961853 -173.9999847412 0.499999851 0.1484375 ) ( 64 -21.9999961853 -173.9999847412 0.5 0.2763671875 ) ( 64 -21.9999961853 -173.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2833 1073 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.499999851 0.1484375 ) ( 64 -173.9999847412 -224.9999847412 0.5 0.2763671875 ) ( 64 -173.9999847412 -224.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.9999998808 0.1484374553 ) ( 64 -173.9999847412 -224.9999847412 1 0.2763671279 ) ( 64 -173.9999847412 -224.9999847412 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2833 1073 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -173.9999847412 -224.9999847412 0.9999998808 0.1484374553 ) ( 64 -173.9999847412 -224.9999847412 1 0.2763671279 ) ( 64 -173.9999847412 -224.9999847412 1.0000002384 0.4042968452 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.499999851 0.1484375 ) ( 64 -173.9999847412 -224.9999847412 0.5 0.2763671875 ) ( 64 -173.9999847412 -224.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1575 -533 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -16.0000419617 -117.9999542236 -0.0000001788 0.1484375447 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0 0.2763672471 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0.000000149 0.4042969346 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.499999851 0.1484375 ) ( 7 -173.9999847412 -224.9999847412 0.5 0.2763671875 ) ( 7 -173.9999847412 -224.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.9999998808 0.1484374553 ) ( 7 -173.9999847412 -224.9999847412 1 0.2763671279 ) ( 7 -173.9999847412 -224.9999847412 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1575 -533 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -173.9999847412 -224.9999847412 0.9999998808 0.1484374553 ) ( 7 -173.9999847412 -224.9999847412 1 0.2763671279 ) ( 7 -173.9999847412 -224.9999847412 1.0000002384 0.4042968452 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.499999851 0.1484375 ) ( 7 -173.9999847412 -224.9999847412 0.5 0.2763671875 ) ( 7 -173.9999847412 -224.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -16.0000419617 -117.9999542236 -0.0000001788 0.1484375447 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0 0.2763672471 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2566 365 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -49.000038147 -80.9999542236 -0.0000001788 0.1484375447 ) ( 6.9999995232 -49.000038147 -80.9999542236 0 0.2763672471 ) ( 6.9999995232 -49.000038147 -80.9999542236 0.000000149 0.4042969346 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.499999851 0.1484375 ) ( 7 -173.9999847412 -224.9999847412 0.5 0.2763671875 ) ( 7 -173.9999847412 -224.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.9999998808 0.1484374553 ) ( 7 -173.9999847412 -224.9999847412 1 0.2763671279 ) ( 7 -173.9999847412 -224.9999847412 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2566 365 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -173.9999847412 -224.9999847412 0.9999998808 0.1484374553 ) ( 7 -173.9999847412 -224.9999847412 1 0.2763671279 ) ( 7 -173.9999847412 -224.9999847412 1.0000002384 0.4042968452 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.499999851 0.1484375 ) ( 7 -173.9999847412 -224.9999847412 0.5 0.2763671875 ) ( 7 -173.9999847412 -224.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -49.000038147 -80.9999542236 -0.0000001788 0.1484375447 ) ( 6.9999995232 -49.000038147 -80.9999542236 0 0.2763672471 ) ( 6.9999995232 -49.000038147 -80.9999542236 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1551 -1085 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 31 111 1.0000001192 0.2499999702 ) ( 88 31 111 1 0.1249999702 ) ( 88 31 111 0.9999998808 -0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1551 -1085 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 31 111 1.0000001192 0.2499999702 ) ( 88 31 111 1 0.1249999702 ) ( 88 31 111 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1856 -941 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 15 84 1.0000001192 0.2499999702 ) ( 88 15 84 1 0.1249999702 ) ( 88 15 84 0.9999998808 -0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1856 -941 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 15 84 1.0000001192 0.2499999702 ) ( 88 15 84 1 0.1249999702 ) ( 88 15 84 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2055 -673 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 4.9999995232 74 1.0000001192 0.2499999702 ) ( 88 4.9999995232 74 1 0.1249999702 ) ( 88 4.9999995232 74 0.9999998808 -0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2055 -673 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 4.9999995232 74 1.0000001192 0.2499999702 ) ( 88 4.9999995232 74 1 0.1249999702 ) ( 88 4.9999995232 74 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2180.8598632813 -360.7931518555 512 )
+						rotation ( ( -0.0000000083 -0.000000059 0.9999999404 ) ( 0.9902677536 -0.1391728818 0 ) ( 0.1391728669 0.990267694 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -5.9999980927 67 1.0000001192 0.2499999702 ) ( 88 -5.9999980927 67 1 0.1249999702 ) ( 88 -5.9999980927 67 0.9999998808 -0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2180.8598632813 -360.7931518555 512 )
+						rotation ( ( -0.0000000083 -0.000000059 0.9999999404 ) ( 0.9902677536 -0.1391728818 0 ) ( 0.1391728669 0.990267694 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -5.9999980927 67 1.0000001192 0.2499999702 ) ( 88 -5.9999980927 67 1 0.1249999702 ) ( 88 -5.9999980927 67 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2160.5278320313 570.2286376953 512 )
+						rotation ( ( 0.0000000083 -0.000000059 0.9999999404 ) ( 0.9902677536 0.1391732246 0 ) ( -0.1391732097 0.990267694 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -42.9999961853 62 1.0000001192 0.2499999702 ) ( 88 -42.9999961853 62 1 0.1249999702 ) ( 88 -42.9999961853 62 0.9999998808 -0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2160.5278320313 570.2286376953 512 )
+						rotation ( ( 0.0000000083 -0.000000059 0.9999999404 ) ( 0.9902677536 0.1391732246 0 ) ( -0.1391732097 0.990267694 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -42.9999961853 62 1.0000001192 0.2499999702 ) ( 88 -42.9999961853 62 1 0.1249999702 ) ( 88 -42.9999961853 62 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2106.7189941406 895.8532714844 512 )
+						rotation ( ( 0.0000000062 -0.0000000593 0.9999999404 ) ( 0.9945216179 0.1045286059 0 ) ( -0.1045285985 0.9945215583 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -51.9999961853 65 1.0000001192 0.2499999702 ) ( 88 -51.9999961853 65 1 0.1249999702 ) ( 88 -51.9999961853 65 0.9999998808 -0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -2106.7189941406 895.8532714844 512 )
+						rotation ( ( 0.0000000062 -0.0000000593 0.9999999404 ) ( 0.9945216179 0.1045286059 0 ) ( -0.1045285985 0.9945215583 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -51.9999961853 65 1.0000001192 0.2499999702 ) ( 88 -51.9999961853 65 1 0.1249999702 ) ( 88 -51.9999961853 65 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1993 1211 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -60.9999961853 68 1.0000001192 0.2499999702 ) ( 88 -60.9999961853 68 1 0.1249999702 ) ( 88 -60.9999961853 68 0.9999998808 -0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1993 1211 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -60.9999961853 68 1.0000001192 0.2499999702 ) ( 88 -60.9999961853 68 1 0.1249999702 ) ( 88 -60.9999961853 68 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1792 1488 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -72.9999923706 76 1.0000001192 0.2499999702 ) ( 88 -72.9999923706 76 1 0.1249999702 ) ( 88 -72.9999923706 76 0.9999998808 -0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1792 1488 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -72.9999923706 76 1.0000001192 0.2499999702 ) ( 88 -72.9999923706 76 1 0.1249999702 ) ( 88 -72.9999923706 76 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1549 1711 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -78.9999923706 82 1.0000001192 0.2499999702 ) ( 88 -78.9999923706 82 1 0.1249999702 ) ( 88 -78.9999923706 82 0.9999998808 -0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1549 1711 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -78.9999923706 82 1.0000001192 0.2499999702 ) ( 88 -78.9999923706 82 1 0.1249999702 ) ( 88 -78.9999923706 82 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1262 1870 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -1262 1870 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -33 120 0.0000001192 0.2500000298 ) ( 88 -33 120 0 0.1250000298 ) ( 88 -33 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -33 120 0.5000001192 0.25 ) ( 88 -33 120 0.5 0.125 ) ( 88 -33 120 0.4999998808 0 ) )
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -938 1912 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+							( ( -128 -33 112 0.5000001192 0.25 ) ( 88 -33 112 0.5 0.125 ) ( 88 -33 112 0.4999998808 0 ) )
+							( ( -128 -33 112 0.0000001192 0.2500000298 ) ( 88 -33 112 0 0.1250000298 ) ( 88 -33 112 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -938 1912 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -33 112 0.0000001192 0.2500000298 ) ( 88 -33 112 0 0.1250000298 ) ( 88 -33 112 -0.0000001192 0.0000000298 ) )
+							( ( -128 -33 112 0.5000001192 0.25 ) ( 88 -33 112 0.5 0.125 ) ( 88 -33 112 0.4999998808 0 ) )
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1053 1934 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+							( ( -128 -27 107 0.5000001192 0.25 ) ( 88 -27 107 0.5 0.125 ) ( 88 -27 107 0.4999998808 0 ) )
+							( ( -128 -27 107 0.0000001192 0.2500000298 ) ( 88 -27 107 0 0.1250000298 ) ( 88 -27 107 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1053 1934 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -27 107 0.0000001192 0.2500000298 ) ( 88 -27 107 0 0.1250000298 ) ( 88 -27 107 -0.0000001192 0.0000000298 ) )
+							( ( -128 -27 107 0.5000001192 0.25 ) ( 88 -27 107 0.5 0.125 ) ( 88 -27 107 0.4999998808 0 ) )
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1385 1934 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+							( ( -128 -28 98 0.5000001192 0.25 ) ( 88 -28 98 0.5 0.125 ) ( 88 -28 98 0.4999998808 0 ) )
+							( ( -128 -28 98 0.0000001192 0.2500000298 ) ( 88 -28 98 0 0.1250000298 ) ( 88 -28 98 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1385 1934 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -28 98 0.0000001192 0.2500000298 ) ( 88 -28 98 0 0.1250000298 ) ( 88 -28 98 -0.0000001192 0.0000000298 ) )
+							( ( -128 -28 98 0.5000001192 0.25 ) ( 88 -28 98 0.5 0.125 ) ( 88 -28 98 0.4999998808 0 ) )
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1701 1846 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+							( ( -128 -32 83 0.5000001192 0.25 ) ( 88 -32 83 0.5 0.125 ) ( 88 -32 83 0.4999998808 0 ) )
+							( ( -128 -32 83 0.0000001192 0.2500000298 ) ( 88 -32 83 0 0.1250000298 ) ( 88 -32 83 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1701 1846 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -32 83 0.0000001192 0.2500000298 ) ( 88 -32 83 0 0.1250000298 ) ( 88 -32 83 -0.0000001192 0.0000000298 ) )
+							( ( -128 -32 83 0.5000001192 0.25 ) ( 88 -32 83 0.5 0.125 ) ( 88 -32 83 0.4999998808 0 ) )
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1995 1695 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+							( ( -128 -39 71 0.5000001192 0.25 ) ( 88 -39 71 0.5 0.125 ) ( 88 -39 71 0.4999998808 0 ) )
+							( ( -128 -39 71 0.0000001192 0.2500000298 ) ( 88 -39 71 0 0.1250000298 ) ( 88 -39 71 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1995 1695 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -39 71 0.0000001192 0.2500000298 ) ( 88 -39 71 0 0.1250000298 ) ( 88 -39 71 -0.0000001192 0.0000000298 ) )
+							( ( -128 -39 71 0.5000001192 0.25 ) ( 88 -39 71 0.5 0.125 ) ( 88 -39 71 0.4999998808 0 ) )
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2258 1498 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+							( ( -128 -40 69 0.5000001192 0.25 ) ( 88 -40 69 0.5 0.125 ) ( 88 -40 69 0.4999998808 0 ) )
+							( ( -128 -40 69 0.0000001192 0.2500000298 ) ( 88 -40 69 0 0.1250000298 ) ( 88 -40 69 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2258 1498 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -40 69 0.0000001192 0.2500000298 ) ( 88 -40 69 0 0.1250000298 ) ( 88 -40 69 -0.0000001192 0.0000000298 ) )
+							( ( -128 -40 69 0.5000001192 0.25 ) ( 88 -40 69 0.5 0.125 ) ( 88 -40 69 0.4999998808 0 ) )
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2515 1296 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+							( ( -128 -40 69 0.5000001192 0.25 ) ( 88 -40 69 0.5 0.125 ) ( 88 -40 69 0.4999998808 0 ) )
+							( ( -128 -40 69 0.0000001192 0.2500000298 ) ( 88 -40 69 0 0.1250000298 ) ( 88 -40 69 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2515 1296 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -40 69 0.0000001192 0.2500000298 ) ( 88 -40 69 0 0.1250000298 ) ( 88 -40 69 -0.0000001192 0.0000000298 ) )
+							( ( -128 -40 69 0.5000001192 0.25 ) ( 88 -40 69 0.5 0.125 ) ( 88 -40 69 0.4999998808 0 ) )
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2717.1640625 1055.5360107422 512 )
+						rotation ( ( -0.0000000021 -0.0000000596 0.9999999404 ) ( 0.9993905425 -0.034899313 0 ) ( 0.034899313 0.9993904829 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+							( ( -128 -64 49 0.5000001192 0.25 ) ( 88 -64 49 0.5 0.125 ) ( 88 -64 49 0.4999998808 0 ) )
+							( ( -128 -64 49 0.0000001192 0.2500000298 ) ( 88 -64 49 0 0.1250000298 ) ( 88 -64 49 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2717.1640625 1055.5360107422 512 )
+						rotation ( ( -0.0000000021 -0.0000000596 0.9999999404 ) ( 0.9993905425 -0.034899313 0 ) ( 0.034899313 0.9993904829 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -64 49 0.0000001192 0.2500000298 ) ( 88 -64 49 0 0.1250000298 ) ( 88 -64 49 -0.0000001192 0.0000000298 ) )
+							( ( -128 -64 49 0.5000001192 0.25 ) ( 88 -64 49 0.5 0.125 ) ( 88 -64 49 0.4999998808 0 ) )
+							( ( -128 -90.9999923706 107 1.0000001192 0.2499999702 ) ( 88 -90.9999923706 107 1 0.1249999702 ) ( 88 -90.9999923706 107 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2750 738 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -91 107 1.0000001192 0.2499999702 ) ( 88 -91 107 1 0.1249999702 ) ( 88 -91 107 0.9999998808 -0.0000000298 ) )
+							( ( -128 -91 43 0.5000001192 0.25 ) ( 88 -91 43 0.5 0.125 ) ( 88 -91 43 0.4999998808 0 ) )
+							( ( -128 -91 43 0.0000001192 0.2500000298 ) ( 88 -91 43 0 0.1250000298 ) ( 88 -91 43 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2750 738 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -91 43 0.0000001192 0.2500000298 ) ( 88 -91 43 0 0.1250000298 ) ( 88 -91 43 -0.0000001192 0.0000000298 ) )
+							( ( -128 -91 43 0.5000001192 0.25 ) ( 88 -91 43 0.5 0.125 ) ( 88 -91 43 0.4999998808 0 ) )
+							( ( -128 -91 107 1.0000001192 0.2499999702 ) ( 88 -91 107 1 0.1249999702 ) ( 88 -91 107 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2651 232 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -91 107 1.0000001192 0.2499999702 ) ( 88 -91 107 1 0.1249999702 ) ( 88 -91 107 0.9999998808 -0.0000000298 ) )
+							( ( -128 -130 56 0.5000001192 0.25 ) ( 88 -130 56 0.5 0.125 ) ( 88 -130 56 0.4999998808 0 ) )
+							( ( -128 -130 56 0.0000001192 0.2500000298 ) ( 88 -130 56 0 0.1250000298 ) ( 88 -130 56 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2651 232 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -130 56 0.0000001192 0.2500000298 ) ( 88 -130 56 0 0.1250000298 ) ( 88 -130 56 -0.0000001192 0.0000000298 ) )
+							( ( -128 -130 56 0.5000001192 0.25 ) ( 88 -130 56 0.5 0.125 ) ( 88 -130 56 0.4999998808 0 ) )
+							( ( -128 -91 107 1.0000001192 0.2499999702 ) ( 88 -91 107 1 0.1249999702 ) ( 88 -91 107 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2481 31 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -91 107 1.0000001192 0.2499999702 ) ( 88 -91 107 1 0.1249999702 ) ( 88 -91 107 0.9999998808 -0.0000000298 ) )
+							( ( -128 -133 62 0.5000001192 0.25 ) ( 88 -133 62 0.5 0.125 ) ( 88 -133 62 0.4999998808 0 ) )
+							( ( -128 -133 62 0.0000001192 0.2500000298 ) ( 88 -133 62 0 0.1250000298 ) ( 88 -133 62 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2481 31 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -133 62 0.0000001192 0.2500000298 ) ( 88 -133 62 0 0.1250000298 ) ( 88 -133 62 -0.0000001192 0.0000000298 ) )
+							( ( -128 -133 62 0.5000001192 0.25 ) ( 88 -133 62 0.5 0.125 ) ( 88 -133 62 0.4999998808 0 ) )
+							( ( -128 -91 107 1.0000001192 0.2499999702 ) ( 88 -91 107 1 0.1249999702 ) ( 88 -91 107 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1699 -713 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -81 99 1.0000001192 0.2499999702 ) ( 88 -81 99 1 0.1249999702 ) ( 88 -81 99 0.9999998808 -0.0000000298 ) )
+							( ( -128 -133 62 0.5000001192 0.25 ) ( 88 -133 62 0.5 0.125 ) ( 88 -133 62 0.4999998808 0 ) )
+							( ( -128 -133 62 0.0000001192 0.2500000298 ) ( 88 -133 62 0 0.1250000298 ) ( 88 -133 62 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1699 -713 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -133 62 0.0000001192 0.2500000298 ) ( 88 -133 62 0 0.1250000298 ) ( 88 -133 62 -0.0000001192 0.0000000298 ) )
+							( ( -128 -133 62 0.5000001192 0.25 ) ( 88 -133 62 0.5 0.125 ) ( 88 -133 62 0.4999998808 0 ) )
+							( ( -128 -81 99 1.0000001192 0.2499999702 ) ( 88 -81 99 1 0.1249999702 ) ( 88 -81 99 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1479 -864 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -81 99 1.0000001192 0.2499999702 ) ( 88 -81 99 1 0.1249999702 ) ( 88 -81 99 0.9999998808 -0.0000000298 ) )
+							( ( -128 -133 62 0.5000001192 0.25 ) ( 88 -133 62 0.5 0.125 ) ( 88 -133 62 0.4999998808 0 ) )
+							( ( -128 -133 62 0.0000001192 0.2500000298 ) ( 88 -133 62 0 0.1250000298 ) ( 88 -133 62 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1479 -864 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -133 62 0.0000001192 0.2500000298 ) ( 88 -133 62 0 0.1250000298 ) ( 88 -133 62 -0.0000001192 0.0000000298 ) )
+							( ( -128 -133 62 0.5000001192 0.25 ) ( 88 -133 62 0.5 0.125 ) ( 88 -133 62 0.4999998808 0 ) )
+							( ( -128 -81 99 1.0000001192 0.2499999702 ) ( 88 -81 99 1 0.1249999702 ) ( 88 -81 99 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1050.6793212891 -1116.1209716797 512 )
+						rotation ( ( 0.0000000124 -0.0000000583 0.9999999404 ) ( 0.9781473279 0.2079118043 0 ) ( -0.2079117894 0.9781472683 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -69 72 1.0000001192 0.2499999702 ) ( 88 -69 72 1 0.1249999702 ) ( 88 -69 72 0.9999998808 -0.0000000298 ) )
+							( ( -128 -133 62.8316497803 0.5000001192 0.25 ) ( 88 -133 62.8316497803 0.5 0.125 ) ( 88 -133 62.8316497803 0.4999998808 0 ) )
+							( ( -128 -133 62.8316497803 0.0000001192 0.2500000298 ) ( 88 -133 62.8316497803 0 0.1250000298 ) ( 88 -133 62.8316497803 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1050.6793212891 -1116.1209716797 512 )
+						rotation ( ( 0.0000000124 -0.0000000583 0.9999999404 ) ( 0.9781473279 0.2079118043 0 ) ( -0.2079117894 0.9781472683 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -133 62.8316497803 0.0000001192 0.2500000298 ) ( 88 -133 62.8316497803 0 0.1250000298 ) ( 88 -133 62.8316497803 -0.0000001192 0.0000000298 ) )
+							( ( -128 -133 62.8316497803 0.5000001192 0.25 ) ( 88 -133 62.8316497803 0.5 0.125 ) ( 88 -133 62.8316497803 0.4999998808 0 ) )
+							( ( -128 -69 72 1.0000001192 0.2499999702 ) ( 88 -69 72 1 0.1249999702 ) ( 88 -69 72 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -50 -1080 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -69 62 1.0000001192 0.2499999702 ) ( 88 -69 62 1 0.1249999702 ) ( 88 -69 62 0.9999998808 -0.0000000298 ) )
+							( ( -128 -133 62 0.5000001192 0.25 ) ( 88 -133 62 0.5 0.125 ) ( 88 -133 62 0.4999998808 0 ) )
+							( ( -128 -133 62 0.0000001192 0.2500000298 ) ( 88 -133 62 0 0.1250000298 ) ( 88 -133 62 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -50 -1080 512 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -133 62 0.0000001192 0.2500000298 ) ( 88 -133 62 0 0.1250000298 ) ( 88 -133 62 -0.0000001192 0.0000000298 ) )
+							( ( -128 -133 62 0.5000001192 0.25 ) ( 88 -133 62 0.5 0.125 ) ( 88 -133 62 0.4999998808 0 ) )
+							( ( -128 -69 62 1.0000001192 0.2499999702 ) ( 88 -69 62 1 0.1249999702 ) ( 88 -69 62 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -791.8674926758 1982.1263427734 528 )
+						rotation ( ( -0.0000000062 -0.0000000593 0.9999999404 ) ( 0.9945215583 -0.1045282707 0 ) ( 0.1045282632 0.9945214987 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+							( ( -136 77 54 0.499999851 0.1484375 ) ( 64 77 54 0.5 0.2763671875 ) ( 64 77 54 0.5000001788 0.404296875 ) )
+							( ( -136 77 54 0.9999998808 0.1484374553 ) ( 64 77 54 1 0.2763671279 ) ( 64 77 54 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -791.8674926758 1982.1263427734 528 )
+						rotation ( ( -0.0000000062 -0.0000000593 0.9999999404 ) ( 0.9945215583 -0.1045282707 0 ) ( 0.1045282632 0.9945214987 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 77 54 0.9999998808 0.1484374553 ) ( 64 77 54 1 0.2763671279 ) ( 64 77 54 1.0000002384 0.4042968452 ) )
+							( ( -136 77 54 0.499999851 0.1484375 ) ( 64 77 54 0.5 0.2763671875 ) ( 64 77 54 0.5000001788 0.404296875 ) )
+							( ( -136 -174.9999847412 28.0000247955 -0.0000001788 0.1484375447 ) ( 64 -174.9999847412 28.0000247955 0 0.2763672471 ) ( 64 -174.9999847412 28.0000247955 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1357 -683 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -16.0000419617 -117.9999542236 -0.0000001788 0.1484375447 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0 0.2763672471 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0.000000149 0.4042969346 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.499999851 0.1484375 ) ( 7 -173.9999847412 -224.9999847412 0.5 0.2763671875 ) ( 7 -173.9999847412 -224.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.9999998808 0.1484374553 ) ( 7 -173.9999847412 -224.9999847412 1 0.2763671279 ) ( 7 -173.9999847412 -224.9999847412 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1357 -683 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -173.9999847412 -224.9999847412 0.9999998808 0.1484374553 ) ( 7 -173.9999847412 -224.9999847412 1 0.2763671279 ) ( 7 -173.9999847412 -224.9999847412 1.0000002384 0.4042968452 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.499999851 0.1484375 ) ( 7 -173.9999847412 -224.9999847412 0.5 0.2763671875 ) ( 7 -173.9999847412 -224.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -16.0000419617 -117.9999542236 -0.0000001788 0.1484375447 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0 0.2763672471 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1143 -831 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -16.0000419617 -117.9999542236 -0.0000001788 0.1484375447 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0 0.2763672471 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0.000000149 0.4042969346 ) )
+							( ( -136 -173.9999847412 -216.9999847412 0.499999851 0.1484375 ) ( 7 -173.9999847412 -216.9999847412 0.5 0.2763671875 ) ( 7 -173.9999847412 -216.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -173.9999847412 -216.9999847412 0.9999998808 0.1484374553 ) ( 7 -173.9999847412 -216.9999847412 1 0.2763671279 ) ( 7 -173.9999847412 -216.9999847412 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 1143 -831 528 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -173.9999847412 -216.9999847412 0.9999998808 0.1484374553 ) ( 7 -173.9999847412 -216.9999847412 1 0.2763671279 ) ( 7 -173.9999847412 -216.9999847412 1.0000002384 0.4042968452 ) )
+							( ( -136 -173.9999847412 -216.9999847412 0.499999851 0.1484375 ) ( 7 -173.9999847412 -216.9999847412 0.5 0.2763671875 ) ( 7 -173.9999847412 -216.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -16.0000419617 -117.9999542236 -0.0000001788 0.1484375447 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0 0.2763672471 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2582.3159179688 884.8835449219 528 )
+						rotation ( ( 0.0000000414 -0.0000000429 0.9999999404 ) ( 0.7193395495 0.6946582794 0 ) ( -0.6946582198 0.7193395495 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -16.0000419617 -117.9999542236 -0.0000001788 0.1484375447 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0 0.2763672471 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0.000000149 0.4042969346 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.499999851 0.1484375 ) ( 7 -173.9999847412 -224.9999847412 0.5 0.2763671875 ) ( 7 -173.9999847412 -224.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.9999998808 0.1484374553 ) ( 7 -173.9999847412 -224.9999847412 1 0.2763671279 ) ( 7 -173.9999847412 -224.9999847412 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2582.3159179688 884.8835449219 528 )
+						rotation ( ( 0.0000000414 -0.0000000429 0.9999999404 ) ( 0.7193395495 0.6946582794 0 ) ( -0.6946582198 0.7193395495 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -173.9999847412 -224.9999847412 0.9999998808 0.1484374553 ) ( 7 -173.9999847412 -224.9999847412 1 0.2763671279 ) ( 7 -173.9999847412 -224.9999847412 1.0000002384 0.4042968452 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.499999851 0.1484375 ) ( 7 -173.9999847412 -224.9999847412 0.5 0.2763671875 ) ( 7 -173.9999847412 -224.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -16.0000419617 -117.9999542236 -0.0000001788 0.1484375447 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0 0.2763672471 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2743.1911621094 580.0948486328 512 )
+						rotation ( ( 0.0000000414 -0.0000000429 0.9999999404 ) ( 0.7193395495 0.6946582794 0 ) ( -0.6946582198 0.7193395495 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -81 99 1.0000001192 0.2499999702 ) ( 88 -81 99 1 0.1249999702 ) ( 88 -81 99 0.9999998808 -0.0000000298 ) )
+							( ( -128 -133 62 0.5000001192 0.25 ) ( 88 -133 62 0.5 0.125 ) ( 88 -133 62 0.4999998808 0 ) )
+							( ( -128 -133 62 0.0000001192 0.2500000298 ) ( 88 -133 62 0 0.1250000298 ) ( 88 -133 62 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2743.1911621094 580.0948486328 512 )
+						rotation ( ( 0.0000000414 -0.0000000429 0.9999999404 ) ( 0.7193395495 0.6946582794 0 ) ( -0.6946582198 0.7193395495 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -133 62 0.0000001192 0.2500000298 ) ( 88 -133 62 0 0.1250000298 ) ( 88 -133 62 -0.0000001192 0.0000000298 ) )
+							( ( -128 -133 62 0.5000001192 0.25 ) ( 88 -133 62 0.5 0.125 ) ( 88 -133 62 0.4999998808 0 ) )
+							( ( -128 -81 99 1.0000001192 0.2499999702 ) ( 88 -81 99 1 0.1249999702 ) ( 88 -81 99 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2529.6984863281 625.5469970703 528 )
+						rotation ( ( 0.0000000414 -0.0000000429 0.9999999404 ) ( 0.7193395495 0.6946582794 0 ) ( -0.6946582198 0.7193395495 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -16.0000419617 -117.9999542236 -0.0000001788 0.1484375447 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0 0.2763672471 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0.000000149 0.4042969346 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.499999851 0.1484375 ) ( 7 -173.9999847412 -224.9999847412 0.5 0.2763671875 ) ( 7 -173.9999847412 -224.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.9999998808 0.1484374553 ) ( 7 -173.9999847412 -224.9999847412 1 0.2763671279 ) ( 7 -173.9999847412 -224.9999847412 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"gdf_base_mindist (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 2529.6984863281 625.5469970703 528 )
+						rotation ( ( 0.0000000414 -0.0000000429 0.9999999404 ) ( 0.7193395495 0.6946582794 0 ) ( -0.6946582198 0.7193395495 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -173.9999847412 -224.9999847412 0.9999998808 0.1484374553 ) ( 7 -173.9999847412 -224.9999847412 1 0.2763671279 ) ( 7 -173.9999847412 -224.9999847412 1.0000002384 0.4042968452 ) )
+							( ( -136 -173.9999847412 -224.9999847412 0.499999851 0.1484375 ) ( 7 -173.9999847412 -224.9999847412 0.5 0.2763671875 ) ( 7 -173.9999847412 -224.9999847412 0.5000001788 0.404296875 ) )
+							( ( -136 -16.0000419617 -117.9999542236 -0.0000001788 0.1484375447 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0 0.2763672471 ) ( 6.9999995232 -16.0000419617 -117.9999542236 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "z13_model_static_116" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -1382.3056640625 -957.060546875 384 )
+				rotation ( ( -0.173648119 -0.9848076701 0 ) ( 0.9848076701 -0.173648119 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_117" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -1225 -1024 384 )
+				rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_118" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -1552 -971 384 )
+				rotation ( ( -0.173648119 -0.9848076701 0 ) ( 0.9848076701 -0.173648119 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_119" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -1694.4375 -875.3173828125 384 )
+				rotation ( ( -0.3907310367 -0.9205048084 0 ) ( 0.9205048084 -0.3907310367 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_120" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -1865 -839 384 )
+				rotation ( ( -0.6293203235 -0.7771459818 0 ) ( 0.7771459818 -0.6293203235 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_121" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -1936.8056640625 -682.591796875 384 )
+				rotation ( ( -0.7986353636 -0.6018149853 0 ) ( 0.6018149853 -0.7986353636 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_122" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -2072 -578 384 )
+				rotation ( ( -0.8191519976 -0.57357651 0 ) ( 0.57357651 -0.8191519976 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_123" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -2101.1589355469 -412.491027832 384 )
+				rotation ( ( -0.945518434 -0.3255681396 0 ) ( 0.3255681396 -0.945518434 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_124" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -2194.0812988281 -268.0505371094 384 )
+				rotation ( ( -0.9563046694 -0.2923718393 0 ) ( 0.2923718393 -0.9563046694 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_126" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -151 -1026 384 )
+				rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_132" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_01b_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 1481.48828125 -706.55859375 384 )
+				rotation ( ( 0.5591930151 -0.8290375471 0 ) ( 0.8290375471 0.5591930151 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_133" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 1374.240234375 -788.0419921875 384 )
+				rotation ( ( 0.5735764503 -0.8191520572 0 ) ( 0.8191520572 0.5735764503 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_134" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 1595.501953125 -637.52734375 384 )
+				rotation ( ( 0.5735764503 -0.8191520572 0 ) ( 0.8191520572 0.5735764503 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_135" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 2371.9228515625 110.697265625 384 )
+				rotation ( ( 0.7071067095 -0.7071067095 0 ) ( 0.7071067095 0.7071067095 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_136" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_01b_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 2456.5478515625 210.439453125 384 )
+				rotation ( ( 0.7547096014 -0.6560590267 0 ) ( 0.6560590267 0.7547096014 0 ) ( -0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_137" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 2544.955078125 309.6904296875 384 )
+				rotation ( ( 0.7771459222 -0.6293203235 0 ) ( 0.6293203235 0.7771459222 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_139" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 937.59765625 -1072.0383300781 384 )
+				rotation ( ( 0.3583679199 -0.9335802197 0 ) ( 0.9335802197 0.3583679199 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_140" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/shelter.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -1840 -280 384 )
+				rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_155" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -2215.5734863281 655.1195068359 384 )
+				rotation ( ( -0.9993907809 0.0348993912 0 ) ( -0.0348993912 -0.9993907809 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_156" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -2157.4780273438 814.2860107422 384 )
+				rotation ( ( -0.9925461411 0.121869348 0 ) ( -0.121869348 -0.9925461411 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_157" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -2163.28515625 984.2106323242 384 )
+				rotation ( ( -0.9702957869 0.2419217527 0 ) ( -0.2419217527 -0.9702957869 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_158" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -2073.3674316406 1135.8211669922 384 )
+				rotation ( ( -0.9455184937 0.3255681098 0 ) ( -0.3255681098 -0.9455184937 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_159" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -2045.3427734375 1308.3544921875 384 )
+				rotation ( ( -0.8660254478 0.499999851 0 ) ( -0.499999851 -0.8660254478 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_160" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -1921.32421875 1425.6171875 384 )
+				rotation ( ( -0.8191519976 0.5735763311 0 ) ( -0.5735763311 -0.8191519976 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_161" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -1849.271484375 1589.921875 384 )
+				rotation ( ( -0.7431449294 0.6691304445 0 ) ( -0.6691304445 -0.7431449294 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_162" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -1703.45703125 1673.5087890625 384 )
+				rotation ( ( -0.6819983721 0.7313537002 0 ) ( -0.7313537002 -0.6819983721 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_163" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -1608.7216796875 1816.58203125 384 )
+				rotation ( ( -0.6156616211 0.7880106568 0 ) ( -0.7880106568 -0.6156616211 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_164" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -1449.451171875 1874.3896484375 384 )
+				rotation ( ( -0.544639051 0.8386704922 0 ) ( -0.8386704922 -0.544639051 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_165" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -1324.8798828125 1989.7841796875 384 )
+				rotation ( ( -0.1908091903 0.9816271067 0 ) ( -0.9816271067 -0.1908091903 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_166" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -1157.724609375 1969.9833984375 384 )
+				rotation ( ( -0.1045285165 0.9945217967 0 ) ( -0.9945217967 -0.1045285165 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_167" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -1000.7353515625 2029.970703125 384 )
+				rotation ( ( -0.0871559456 0.9961946607 0 ) ( -0.9961946607 -0.0871559456 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_174" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 2623.70703125 974.67578125 384 )
+				rotation ( ( 0.9999998808 0.0000001043 0 ) ( -0.0000001043 0.9999998808 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_175" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 2665.970703125 812.7353515625 384 )
+				rotation ( ( 0.9999999404 0.0000000779 0 ) ( -0.0000000779 0.9999999404 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_177" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 999.2646484375 2047.970703125 384 )
+				rotation ( ( -0.0000000437 1 0 ) ( -1 -0.0000000437 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_178" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 1161.32421875 2005.70703125 384 )
+				rotation ( ( -0.0000000671 0.9999998808 0 ) ( -0.9999998808 -0.0000000671 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_179" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 1325.259765625 2042.943359375 384 )
+				rotation ( ( 0.1045284197 0.9945219159 0 ) ( -0.9945219159 0.1045284197 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_180" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 1473.181640625 1959.7373046875 384 )
+				rotation ( ( 0.2923716009 0.9563046694 0 ) ( -0.9563046694 0.2923716009 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_181" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 1642.6328125 1947.2255859375 384 )
+				rotation ( ( 0.4067366123 0.9135454893 0 ) ( -0.9135454893 0.4067366123 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_182" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 1769.630859375 1833.76953125 384 )
+				rotation ( ( 0.4694714546 0.8829475045 0 ) ( -0.8829475045 0.4694714546 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_183" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 1933.5810546875 1789.1552734375 384 )
+				rotation ( ( 0.5735763907 0.8191520572 0 ) ( -0.8191520572 0.5735763907 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_184" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 2039.0537109375 1655.4169921875 384 )
+				rotation ( ( 0.6018149853 0.7986353636 0 ) ( -0.7986353636 0.6018149853 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_185" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 2196.0380859375 1590.7060546875 384 )
+				rotation ( ( 0.6156615019 0.7880107164 0 ) ( -0.7880107164 0.6156615019 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_186" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 2297.9658203125 1456.4638671875 384 )
+				rotation ( ( 0.6156614423 0.7880105972 0 ) ( -0.7880105972 0.6156614423 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_187" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 2451.796875 1393.0234375 384 )
+				rotation ( ( 0.6293204427 0.7771459818 0 ) ( -0.7771459818 0.6293204427 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_188" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 2529.9267578125 1251.00390625 384 )
+				rotation ( ( 0.7986354828 0.6018148661 0 ) ( -0.6018148661 0.7986354828 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_189" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 2648.67578125 1138.4649658203 384 )
+				rotation ( ( 0.9335805774 0.3583678901 0 ) ( -0.3583678901 0.9335805774 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_195" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -835.7216796875 1992.7520751953 384 )
+				rotation ( ( -0.0000000554 0.9999998808 0 ) ( -0.9999998808 -0.0000000554 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_196" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -674.7353515625 2031.970703125 384 )
+				rotation ( ( -0.0000000437 1 0 ) ( -1 -0.0000000437 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_198" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_01b_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 1263.48828125 -852.55859375 384 )
+				rotation ( ( 0.5591930151 -0.8290375471 0 ) ( 0.8290375471 0.5591930151 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_199" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_01b_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 1047.8916015625 -996.3383178711 384 )
+				rotation ( ( 0.5299193859 -0.8480480909 0 ) ( 0.8480480909 0.5299193859 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_200" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 1162.1026611328 -934.0751342773 384 )
+				rotation ( ( 0.5735763907 -0.8191518784 0 ) ( 0.8191518784 0.5735763907 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_201" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_01b_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 2635.6130371094 695.0772094727 384 )
+				rotation ( ( 0.9781476855 -0.2079116702 0 ) ( 0.2079116702 0.9781476855 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_202" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 2615.068359375 561.9622192383 384 )
+				rotation ( ( 0.9816272855 -0.1908090562 0 ) ( 0.1908090562 0.9816272855 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_204" 
+		groups {
+			"base (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_01b_lowpoly.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 2580.2170410156 438.6180419922 384 )
+				rotation ( ( 0.9781476855 -0.2079116702 0 ) ( 0.2079116702 0.9781476855 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveReference "sdprimitivereference_5" {
+			
+			sdTransform {
+				translation ( -688 -1024 384 )
+				rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/gdf_base_gates02.world"
+		}
+
+		sdPrimitiveReference "sdprimitivereference_6" {
+			
+			sdTransform {
+				translation ( 1986 -264 384 )
+				rotation ( ( 0.6946582794 -0.7193398476 0 ) ( 0.7193398476 0.6946582794 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/gdf_base_gates.world"
+		}
+
+		sdPrimitiveReference "draska_reference_1" {
+			
+			sdTransform {
+				translation ( 293 1592 450 )
+				rotation ( ( -0.0000001788 0.9999998212 0 ) ( -0.9999998212 -0.0000001788 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/factory_building06.world"
+		}
+
+		sdPrimitiveReference "draska_reference_2" {
+			
+			sdTransform {
+				translation ( 1161.3199462891 2005.7099609375 384 )
+				rotation ( ( -0.0000000437 1 0 ) ( -1 -0.0000000437 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_3" {
+			
+			sdTransform {
+				translation ( 999.2600097656 2047.9699707031 384 )
+				rotation ( ( -0.0000000437 1 0 ) ( -1 -0.0000000437 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_4" {
+			
+			sdTransform {
+				translation ( 1325.2600097656 2042.9399414063 384 )
+				rotation ( ( 0.1045284197 0.9945219159 0 ) ( -0.9945219159 0.1045284197 0 ) ( 0 -0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_5" {
+			
+			sdTransform {
+				translation ( 1642.6300048828 1947.2299804688 384 )
+				rotation ( ( 0.4067366123 0.9135454893 0 ) ( -0.9135454893 0.4067366123 0 ) ( 0 -0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_6" {
+			
+			sdTransform {
+				translation ( 1933.5799560547 1789.1600341797 384 )
+				rotation ( ( 0.5735764503 0.8191520572 0 ) ( -0.8191520572 0.5735764503 0 ) ( 0 -0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_7" {
+			
+			sdTransform {
+				translation ( 2196.0400390625 1590.7099609375 384 )
+				rotation ( ( 0.6156615019 0.7880107164 0 ) ( -0.7880107164 0.6156615019 0 ) ( 0 -0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_8" {
+			
+			sdTransform {
+				translation ( 2451.8000488281 1393.0200195313 384 )
+				rotation ( ( 0.6293204427 0.7771459222 0 ) ( -0.7771459222 0.6293204427 0 ) ( 0 -0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_9" {
+			
+			sdTransform {
+				translation ( 1473.1800537109 1959.7399902344 384 )
+				rotation ( ( 0.2923717797 0.956304729 0 ) ( -0.956304729 0.2923717797 0 ) ( 0 -0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_10" {
+			
+			sdTransform {
+				translation ( 1769.6300048828 1833.7700195313 384 )
+				rotation ( ( 0.4694716036 0.8829475641 0 ) ( -0.8829475641 0.4694716036 0 ) ( 0 -0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_11" {
+			
+			sdTransform {
+				translation ( 2039.0500488281 1655.4200439453 384 )
+				rotation ( ( 0.6018150449 0.7986355424 0 ) ( -0.7986355424 0.6018150449 0 ) ( 0 -0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_12" {
+			
+			sdTransform {
+				translation ( 2297.9699707031 1456.4599609375 384 )
+				rotation ( ( 0.6156615019 0.7880107164 0 ) ( -0.7880107164 0.6156615019 0 ) ( 0 -0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_13" {
+			
+			sdTransform {
+				translation ( 2648.6799316406 1138.4599609375 384 )
+				rotation ( ( 0.9335803986 0.3583679497 0 ) ( -0.3583679497 0.9335803986 0 ) ( 0 -0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_15" {
+			
+			sdTransform {
+				translation ( 2615.0700683594 561.9600219727 384 )
+				rotation ( ( 0.9816271663 -0.1908089966 0 ) ( 0.1908089966 0.9816271663 0 ) ( -0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_16" {
+			
+			sdTransform {
+				translation ( 2544.9599609375 309.6900024414 384 )
+				rotation ( ( 0.7771459222 -0.6293203831 0 ) ( 0.6293203831 0.7771459222 0 ) ( -0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_17" {
+			
+			sdTransform {
+				translation ( 2371.919921875 110.6999969482 384 )
+				rotation ( ( 0.7071067691 -0.7071067691 0 ) ( 0.7071067691 0.7071067691 0 ) ( -0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_18" {
+			
+			sdTransform {
+				translation ( 2529.9299316406 1251 384 )
+				rotation ( ( 0.7986355424 0.6018149853 0 ) ( -0.6018149853 0.7986355424 0 ) ( 0 -0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_21" {
+			
+			sdTransform {
+				translation ( 1595.5 -637.5300292969 384 )
+				rotation ( ( 0.5735764503 -0.8191520572 0 ) ( 0.8191520572 0.5735764503 0 ) ( -0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_22" {
+			
+			sdTransform {
+				translation ( 1374.2399902344 -788.0399780273 384 )
+				rotation ( ( 0.5735764503 -0.8191520572 0 ) ( 0.8191520572 0.5735764503 0 ) ( -0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_23" {
+			
+			sdTransform {
+				translation ( 1162.0999755859 -934.0800170898 384 )
+				rotation ( ( 0.5735764503 -0.8191520572 0 ) ( 0.8191520572 0.5735764503 0 ) ( -0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_24" {
+			
+			sdTransform {
+				translation ( 937.5999755859 -1072.0400390625 384 )
+				rotation ( ( 0.3583679795 -0.9335803986 0 ) ( 0.9335803986 0.3583679795 0 ) ( -0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_25" {
+			
+			sdTransform {
+				translation ( -835.7199707031 1992.75 384 )
+				rotation ( ( -0.0000000437 1 0 ) ( -1 -0.0000000437 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_26" {
+			
+			sdTransform {
+				translation ( -1000.7399902344 2029.9699707031 384 )
+				rotation ( ( -0.0871557668 0.9961947203 0 ) ( -0.9961947203 -0.0871557668 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_27" {
+			
+			sdTransform {
+				translation ( -674.7399902344 2031.9699707031 384 )
+				rotation ( ( -0.0000000437 1 0 ) ( -1 -0.0000000437 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_28" {
+			
+			sdTransform {
+				translation ( -1324.8800048828 1989.7800292969 384 )
+				rotation ( ( -0.1908090264 0.9816271663 0 ) ( -0.9816271663 -0.1908090264 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_29" {
+			
+			sdTransform {
+				translation ( -1608.7199707031 1816.5799560547 384 )
+				rotation ( ( -0.6156614423 0.788010776 0 ) ( -0.788010776 -0.6156614423 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_30" {
+			
+			sdTransform {
+				translation ( -1849.2700195313 1589.9200439453 384 )
+				rotation ( ( -0.7431448102 0.6691306233 0 ) ( -0.6691306233 -0.7431448102 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_31" {
+			
+			sdTransform {
+				translation ( -2045.3399658203 1308.3499755859 384 )
+				rotation ( ( -0.8660253882 0.5000000596 0 ) ( -0.5000000596 -0.8660253882 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_32" {
+			
+			sdTransform {
+				translation ( -2163.2900390625 984.2100219727 384 )
+				rotation ( ( -0.9702957273 0.241921857 0 ) ( -0.241921857 -0.9702957273 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_33" {
+			
+			sdTransform {
+				translation ( -2215.5700683594 655.1199951172 384 )
+				rotation ( ( -0.9993908405 0.0348994508 0 ) ( -0.0348994508 -0.9993908405 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_34" {
+			
+			sdTransform {
+				translation ( -1157.7199707031 1969.9799804688 384 )
+				rotation ( ( -0.1045285091 0.9945219159 0 ) ( -0.9945219159 -0.1045285091 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_35" {
+			
+			sdTransform {
+				translation ( -1449.4499511719 1874.3900146484 384 )
+				rotation ( ( -0.544639051 0.8386705518 0 ) ( -0.8386705518 -0.544639051 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_36" {
+			
+			sdTransform {
+				translation ( -1703.4599609375 1673.5100097656 384 )
+				rotation ( ( -0.6819983125 0.7313537002 0 ) ( -0.7313537002 -0.6819983125 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_37" {
+			
+			sdTransform {
+				translation ( -1921.3199462891 1425.6199951172 384 )
+				rotation ( ( -0.8191520572 0.5735764503 0 ) ( -0.5735764503 -0.8191520572 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_38" {
+			
+			sdTransform {
+				translation ( -2073.3701171875 1135.8199462891 384 )
+				rotation ( ( -0.9455186129 0.3255681098 0 ) ( -0.3255681098 -0.9455186129 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_39" {
+			
+			sdTransform {
+				translation ( -2157.4799804688 814.2899780273 384 )
+				rotation ( ( -0.9925461411 0.1218692809 0 ) ( -0.1218692809 -0.9925461411 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_40" {
+			
+			sdTransform {
+				translation ( -2194.080078125 -268.049987793 384 )
+				rotation ( ( -0.956304729 -0.2923718393 0 ) ( 0.2923718393 -0.956304729 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_41" {
+			
+			sdTransform {
+				translation ( -2101.1599121094 -412.4899902344 384 )
+				rotation ( ( -0.9455186129 -0.3255681098 0 ) ( 0.3255681098 -0.9455186129 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_42" {
+			
+			sdTransform {
+				translation ( -2072 -578 384 )
+				rotation ( ( -0.8191520572 -0.5735764503 0 ) ( 0.5735764503 -0.8191520572 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_43" {
+			
+			sdTransform {
+				translation ( -1865 -839 384 )
+				rotation ( ( -0.6293203235 -0.7771460414 0 ) ( 0.7771460414 -0.6293203235 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_44" {
+			
+			sdTransform {
+				translation ( -1552 -971 384 )
+				rotation ( ( -0.1736481935 -0.9848077297 0 ) ( 0.9848077297 -0.1736481935 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_45" {
+			
+			sdTransform {
+				translation ( -1225 -1024 384 )
+				rotation ( ( -0.0000000437 -1 0 ) ( 1 -0.0000000437 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_46" {
+			
+			sdTransform {
+				translation ( -1936.8100585938 -682.5900268555 384 )
+				rotation ( ( -0.7986354828 -0.6018151045 0 ) ( 0.6018151045 -0.7986354828 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_47" {
+			
+			sdTransform {
+				translation ( -1694.4399414063 -875.3200073242 384 )
+				rotation ( ( -0.3907311559 -0.920504868 0 ) ( 0.920504868 -0.3907311559 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_48" {
+			
+			sdTransform {
+				translation ( -1382.3100585938 -957.0599975586 384 )
+				rotation ( ( -0.1736481935 -0.9848077297 0 ) ( 0.9848077297 -0.1736481935 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_02c_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_49" {
+			
+			sdTransform {
+				translation ( -151 -1026 384 )
+				rotation ( ( -0.0000000437 -1 0 ) ( 1 -0.0000000437 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_support_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_50" {
+			
+			sdTransform {
+				translation ( 1481.4899902344 -706.5599975586 384 )
+				rotation ( ( 0.5591928959 -0.8290375471 0 ) ( 0.8290375471 0.5591928959 0 ) ( -0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_01b_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_51" {
+			
+			sdTransform {
+				translation ( 1263.4899902344 -852.5599975586 384 )
+				rotation ( ( 0.5591928959 -0.8290375471 0 ) ( 0.8290375471 0.5591928959 0 ) ( -0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_01b_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_52" {
+			
+			sdTransform {
+				translation ( 1047.8900146484 -996.3400268555 384 )
+				rotation ( ( 0.5299192667 -0.8480480909 0 ) ( 0.8480480909 0.5299192667 0 ) ( -0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_01b_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_53" {
+			
+			sdTransform {
+				translation ( 2456.5500488281 210.4400024414 384 )
+				rotation ( ( 0.7547096014 -0.6560590267 0 ) ( 0.6560590267 0.7547096014 0 ) ( -0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_01b_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_54" {
+			
+			sdTransform {
+				translation ( 2580.2199707031 438.6199951172 384 )
+				rotation ( ( 0.9781476259 -0.2079117 0 ) ( 0.2079117 0.9781476259 0 ) ( -0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_01b_lowpoly.world"
+		}
+
+		sdPrimitiveReference "draska_reference_55" {
+			
+			sdTransform {
+				translation ( 2635.6101074219 695.0800170898 384 )
+				rotation ( ( 0.9781476259 -0.2079117 0 ) ( 0.2079117 0.9781476259 0 ) ( -0 0 1 ) )
+			}
+			url	"filesystem://maps/references/outskirts/aas_wall_defence_01b_lowpoly.world"
+		}
+
+	}
+}

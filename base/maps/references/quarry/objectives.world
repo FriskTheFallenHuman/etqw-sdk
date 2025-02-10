@@ -1,0 +1,694 @@
+sdWorldFile version 5 {
+
+	meta {
+		sdGroupVisual "aassolidplayer" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdLODGroup "jamming_array" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		0
+			}
+			levels {
+				"jamming_array (Level 01)"
+			}
+		}
+		sdLODGroup_Level "jamming_array (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		10000
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		0
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		"med"
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			sdDictionary {
+				"merge_script_obj1_marker"	"info_objective_1"
+				"merge_script_obj2_marker"	"info_objective_2"
+				"merge_script_obj1_arrow1"	"info_objective_1_progress_1"
+				"merge_script_obj1_arrow2"	"info_objective_1_progress_2"
+				"merge_script_obj2_arrow2"	"info_objective_2_progress_2"
+				"merge_script_obj2_arrow1"	"info_objective_2_progress_1"
+				"merge_script_beacon"	"beacon"
+				"merge_script_jammer"	"jammer"
+				"merge_script_generator_destroyed"	"generator_destroyed"
+				"merge_script_jammer_effects_idle"	"jammer_tower_effects_idle_1"
+				"merge_script_jammer_effects_shutdown"	"jammer_tower_effects_shutdown_1"
+				"merge_script_final_objective_trigger"	"carryable_trigger"
+				"merge_script_ship_fire1"	"func_fx_ship_fire1"
+				"merge_script_ship_fire2"	"func_fx_ship_fire2"
+				"merge_script_ship_sparks_1"	"torchy_misc_particle_trigger_ship_sparks_1"
+				"merge_script_ship_sparks_2"	"torchy_misc_particle_trigger_ship_sparks_2"
+				"merge_script_ship_sparks_3"	"torchy_misc_particle_trigger_ship_sparks_3"
+				"merge_script_ship_explode_1"	"torchy_misc_particle_trigger_ship_explode_1"
+				"merge_script_ship_explode_2"	"torchy_misc_particle_trigger_ship_explode_2"
+				"merge_script_ship_explode_3"	"torchy_misc_particle_trigger_ship_explode_3"
+				"merge_script_ship_explode_4"	"torchy_misc_particle_trigger_ship_explode_4"
+				"merge_script_ship_explode_5"	"torchy_misc_particle_trigger_ship_explode_5"
+				"merge_script_ship_explode_6"	"torchy_misc_particle_trigger_ship_explode_6"
+				"merge_script_ship_explode_final"	"torchy_misc_particle_trigger_ship_explode_final"
+				"merge_script_ship_smoke"	"torchy_misc_particle_trigger_ship_smoke"
+				"merge_script_ship_blowout"	"torchy_misc_particle_trigger_ship_blowout"
+				"merge_script_ship_light"	"torchy_misc_particle_trigger_ship_light"
+				"merge_script_placement_camera_a"	"placement_camera_a"
+				"merge_script_placement_camera_b"	"placement_camera_b"
+			}
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( 1219 9218 4212 )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -1140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 -0 -63 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -61 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -62 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -66 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 438 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( 1027 9218 4212 )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -1140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -129 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -36 ) matrix ( ( 0.03125 0 6 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -40 ) matrix ( ( 0.03125 0 -6 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.8667780161 0 -0.4986942112 -600.5346679688 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -31 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9615239501 0 0.2747211158 273.4848632813 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( 1216 9413 4212 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -1140 ) matrix ( ( 0 -0.0312500037 250.0624847412 ) ( 0.0312500037 0 -332.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -129 ) matrix ( ( 0.0312500037 0 250.0625 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -36 ) matrix ( ( 0.0312500037 0 332.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -40 ) matrix ( ( 0.0312500037 0 -332.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.8667780161 0 -0.4986942112 -600.5346679688 ) matrix ( ( 0.0312500037 0 250.0624847412 ) ( 0 0.03125 -168.6989593506 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -31 ) matrix ( ( 0.0312500037 0 -250.0625 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9615239501 0 0.2747211158 273.4848632813 ) matrix ( ( 0.0312500037 0 -250.0625 ) ( 0 0.03125 -95.627784729 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( 1409 9222 4212 )
+						rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -1140 ) matrix ( ( -0.0312500037 0 576.2500610352 ) ( 0 -0.0312500037 -82.1249923706 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -129 ) matrix ( ( 0.0312500075 0 576.2500610352 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -36 ) matrix ( ( 0.0312500075 0 82.1249694824 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -40 ) matrix ( ( 0.0312500075 0 -82.1249694824 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.8667780161 0 -0.4986942112 -600.5346679688 ) matrix ( ( 0.0312500075 0 576.2500610352 ) ( 0 0.03125 -43.9631004333 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -31 ) matrix ( ( 0.0312500075 0 -576.2500610352 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9615239501 0 0.2747211158 273.4848632813 ) matrix ( ( 0.0312500075 0 -576.2500610352 ) ( 0 0.0312500037 -26.9131546021 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( 1220 9027 4212 )
+						rotation ( ( -0.0000001788 0.9999998212 0 ) ( -0.9999998212 -0.0000001788 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -1140 ) matrix ( ( 0 0.0312500037 326.1875610352 ) ( -0.0312500037 0 244.0000610352 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -129 ) matrix ( ( 0.0312500112 0 326.1875 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -36 ) matrix ( ( 0.0312500112 0 -244.0001068115 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -40 ) matrix ( ( 0.0312500112 0 244.0001068115 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.8667780161 0 -0.4986942112 -600.5346679688 ) matrix ( ( 0.0312500075 0 326.1875305176 ) ( 0 0.0312499981 118.6735992432 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -31 ) matrix ( ( 0.0312500112 0 -326.1875 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9615239501 0 0.2747211158 273.4848632813 ) matrix ( ( 0.0312500112 0 -326.1875 ) ( 0 0.0312500075 62.6803016663 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aassolidplayer"
+				}
+				{
+					
+					sdTransform {
+						translation ( 1219 9218 4212 )
+					}
+					
+					faces {
+						plane ( -0.9997181892 0 0.0237363279 -52.5857391357 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.9997181892 -0 0.0237363279 -50.5862998962 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.9996840954 0.0251317602 -50.9727020264 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0.9996840954 0.0251319092 -54.9713745117 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -438 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 52 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 1218 9219 4212 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -1128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/dynamicobstacle"
+						plane ( 0 0 -1 -52 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/dynamicobstacle"
+						plane ( -1 0 -0 -54 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/dynamicobstacle"
+						plane ( 1 0 0 -54 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/dynamicobstacle"
+						plane ( 0 -1 -0 -55 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/dynamicobstacle"
+						plane ( 0 1 0 -57 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/dynamicobstacle"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "info_objective_1_progress_1" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/progress_right_up"
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+			}
+			sdTransform {
+				translation ( 16 10408 6002 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_1_progress_2" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/progress_right_up"
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+			}
+			sdTransform {
+				translation ( 56 7816 6002 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_1" {
+			sdDictionary {
+				"objective_index"	"0"
+				"mtr_icon_number"	"hud/objectives/marker_01"
+				"mtr_icon"	"hud/objectives/destruction"
+				"icon_size_cm"	"24"
+				"icon_offset_cm"	"8 8 0"
+				"icon_size_number_cm"	"24"
+				"text_objective_gdf"	"maps/quarry/gdf_destroy_jammer"
+				"text_objective_strogg"	"maps/quarry/strogg_destroy_jammer"
+				"text_short_objective_gdf"	"maps/quarry/gdf_destroy_jammer_short"
+				"text_short_objective_strogg"	"maps/quarry/strogg_destroy_jammer_short"
+				"mtr_objective_world_icon_strogg"	"hud/icons/missionsystem/obj_destroy"
+				"mtr_objective_world_icon_gdf"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_strogg"	"hud/icons/missionsystem/obj_destroy"
+				"mtr_objective_strogg_desat"	"hud/icons/missionsystem/obj_destroy_desat"
+				"mtr_objective_gdf"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_gdf_desat"	"hud/icons/missionsystem/obj_defend_desat"
+			}
+			sdTransform {
+				translation ( 536 9200 3454 )
+				rotation ( ( -0.4694715738 0.8829475641 0 ) ( -0.8829475641 -0.4694715738 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "jamming_array" 
+		groups {
+			"jamming_array (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/structures/edf/jamming_tower/jamming_tower.lwo"
+				"mergecm"	"1"
+				"imposter"	"imposters/structures/edf/jamming_tower/jamming_tower_imp"
+			}
+			sdTransform {
+				translation ( 1218 9220 3086 )
+				rotation ( ( -0.9999998808 -0.0000000684 0 ) ( 0.0000000684 -0.9999998808 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "info_objective_2" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/data"
+				"mtr_icon_number"	"hud/objectives/marker_02"
+				"icon_size_cm"	"24"
+				"objective_index"	"1"
+				"icon_size_number_cm"	"24"
+				"icon_offset_cm"	"8 8 0"
+				"text_objective_gdf"	"maps/quarry/gdf_crashed_ship"
+				"text_objective_strogg"	"maps/quarry/strogg_crashed_ship"
+				"text_short_objective_gdf"	"maps/quarry/gdf_crashed_ship_short"
+				"text_short_objective_strogg"	"maps/quarry/strogg_crashed_ship_short"
+				"mtr_objective_world_icon_gdf"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_world_icon_strogg"	"hud/icons/missionsystem/obj_goal"
+				"mtr_objective_strogg"	"hud/icons/missionsystem/obj_goal"
+				"mtr_objective_strogg_desat"	"hud/icons/missionsystem/obj_goal_desat"
+				"mtr_objective_gdf"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_gdf_desat"	"hud/icons/missionsystem/obj_defend_desat"
+			}
+			sdTransform {
+				translation ( 8155.546875 -4620.3115234375 1032 )
+				rotation ( ( 0.9902680516 0.1391731054 0 ) ( -0.1391731054 0.9902680516 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "carryable_trigger" {
+			sdDictionary {
+				"scriptobject"	"quarry_final_objective_trigger"
+				"option_wants_touch"	"1"
+				"objective_index"	"1"
+				"editor_unique"	"1"
+				"snd_third_strogg"	"sounds/vo/strogg/nexus/maps/quarry/autodestructor/third"
+				"snd_third_gdf"	"sounds/vo/gdf/highcommand/maps/quarry/autodestructor/third"
+				"snd_twothird_strogg"	"sounds/vo/strogg/nexus/maps/quarry/autodestructor/twothirds"
+				"snd_twothird_gdf"	"sounds/vo/gdf/highcommand/maps/quarry/autodestructor/twothirds"
+				"task_deliver"	"item_deliver_strogg_quarry"
+				"task_defend_long"	"gdf_defend_long"
+				"task_defend_medium"	"gdf_defend_medium"
+				"task_defend_short"	"gdf_defend_short"
+				"screen_name"	"maps/quarry/console"
+				"task_name"	"maps/quarry/console"
+				"prof_capture" "pro_battlesense_item_delivered"
+			}
+			sdTransform {
+				translation ( 8186.2783203125 -4727.7041015625 1064 )
+			}
+			
+			classname "misc_scripted"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 178.9463806152 -65.5802001953 1044 )
+						rotation ( ( 0.990267992 0.1391731203 0 ) ( -0.1391731203 0.990267992 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 892 ) matrix ( ( 0.0309458803 -0.0043491595 618.2138061523 ) ( 0.0043491591 0.0309458803 -446.8981323242 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 0 -1 -1196 ) matrix ( ( 0.0309458803 0.0043491595 618.2138061523 ) ( -0.00434916 0.0309458785 446.8981018066 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( -1 0 0 -371.6885986328 ) matrix ( ( 0.03125 0 -618.2138061523 ) ( 0 0.03125 17 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 1 0 0 -35.5328598022 ) matrix ( ( 0.03125 0 618.2138061523 ) ( 0 0.03125 17 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 -1 0 -59.7109413147 ) matrix ( ( 0.03125 0 -446.8981323242 ) ( 0 0.03125 17 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 1 0 -239.4040374756 ) matrix ( ( 0.03125 0 446.8981323242 ) ( 0 0.03125 17 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "info_objective_2_progress_1" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/progress_right_up"
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+			}
+			sdTransform {
+				translation ( 6928 -3968 1066 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_2_progress_2" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/progress_right_up"
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+			}
+			sdTransform {
+				translation ( 9456 -4272 1066 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "jammer" {
+			sdDictionary {
+				"model"	"models/structures/edf/jamming_tower/generator.lwo"
+				"object_name"	"maps/ark/jammer"
+				"objective_index"	"0"
+				"task_name"	"maps/ark/jammer"
+				"maxVisDist"	"12000"
+				"health"	"1"
+				"snd_destroyed_gdf"	"sounds/vo/gdf/highcommand/objectives/jamtower/destroyed/short"
+				"snd_destroyed_strogg"	"sounds/vo/strogg/nexus/objectives/jamtower/destroyed/short"
+				"snd_planted_strogg"	"sounds/vo/strogg/nexus/objectives/jamtower/planted"
+				"snd_planted_gdf"	"sounds/vo/gdf/highcommand/objectives/jamtower/planted"
+				"snd_disarmed_gdf"	"sounds/vo/gdf/highcommand/objectives/jamtower/disarmed"
+				"snd_disarmed_strogg"	"sounds/vo/strogg/nexus/objectives/jamtower/disarmed"
+				"snd_intro_strogg"	"sounds/vo/strogg/nexus/objectives/jamtower/destroy/long"
+				"snd_intro_gdf"	"sounds/vo/gdf/highcommand/objectives/jamtower/defend/long"
+				"snd_reminder_gdf"	"sounds/vo/gdf/highcommand/objectives/jamtower/defend"
+				"snd_reminder_strogg"	"sounds/vo/strogg/nexus/objectives/jamtower/destroy"
+				"snd_defend_strogg"	"sounds/vo/strogg/nexus/objectives/jamtower/defendexpl"
+				"snd_defend_gdf"	"sounds/vo/gdf/highcommand/objectives/jamtower/disarm"
+				"editor_unique"	"1"
+				"dmg_splash_damage"	"damage_objective_explosion"
+			}
+			sdTransform {
+				translation ( 536 9200 3086 )
+				rotation ( ( 0.8829475641 0.469471544 0 ) ( -0.469471544 0.8829475641 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "gameplay/destructible/gdf"
+		}
+		sdPrimitiveEntity "jammer_trigger" {
+			sdDictionary {
+				"target"	"jammer"
+				"editor_unique"	"1"
+			}
+			sdTransform {
+				translation ( 11168 2848 492 )
+			}
+			
+			classname "gameplay_destructible_trigger"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_4" {
+					
+					sdTransform {
+						translation ( -10717.6591796875 6342.6967773438 2648 )
+						rotation ( ( -0.4694715738 0.8829475641 0 ) ( -0.8829475641 -0.4694715738 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -96 ) matrix ( ( -0.0146709867 -0.0275921114 172.2624969482 ) ( -0.0275921114 0.0146709867 -148.0161895752 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 0 -1 -56 ) matrix ( ( -0.0146709867 0.0275921114 172.2624969482 ) ( 0.0275921114 0.0146709867 148.016204834 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( -1 0 0 -248 ) matrix ( ( 0.0312500037 0 -172.262512207 ) ( 0 -0.0312500037 -83.6250076294 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 -1 0 -150 ) matrix ( ( 0.0312500037 0 148.0162200928 ) ( 0 -0.0312500037 -83.6250076294 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 1 0 10 ) matrix ( ( 0.0312500037 0 -148.0162200928 ) ( 0 -0.0312500037 -83.6250076294 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 1 0 0 134 ) matrix ( ( 0.0312500037 0 172.262512207 ) ( 0 -0.0312500037 -84.3750076294 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_6" {
+					
+					sdTransform {
+						translation ( -10717.6591796875 6342.6967773438 2648 )
+						rotation ( ( -0.4694715738 0.8829475641 0 ) ( -0.8829475641 -0.4694715738 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -96 ) matrix ( ( -0.0146709867 -0.0275921114 172.2624969482 ) ( -0.0275921114 0.0146709867 -148.0161895752 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 0 -1 -56 ) matrix ( ( -0.0146709867 0.0275921114 172.2624969482 ) ( 0.0275921114 0.0146709867 148.016204834 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 -1 0 -192 ) matrix ( ( 0.0312500037 0 148.0162200928 ) ( 0 -0.0312500037 -83.6250076294 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 1 0 -32 ) matrix ( ( 0.0312500037 0 -148.0162200928 ) ( 0 -0.0312500037 -83.6250076294 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( -1 0 0 -134 ) matrix ( ( 0.0312500037 0 -172.262512207 ) ( 0 -0.0312500037 -84.3750076294 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 1 0 0 -70 ) matrix ( ( 0.0312500037 0 172.262512207 ) ( 0 -0.0312500037 -84.3750076294 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_7" {
+					
+					sdTransform {
+						translation ( -10717.6591796875 6342.6967773438 2648 )
+						rotation ( ( -0.4694715738 0.8829475641 0 ) ( -0.8829475641 -0.4694715738 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -96 ) matrix ( ( -0.0146709867 -0.0275921114 172.2624969482 ) ( -0.0275921114 0.0146709867 -148.0161895752 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 0 -1 -56 ) matrix ( ( -0.0146709867 0.0275921114 172.2624969482 ) ( 0.0275921114 0.0146709867 148.016204834 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 1 0 0 -184 ) matrix ( ( 0.0312500037 0 172.262512207 ) ( 0 -0.0312500037 -83.6250076294 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 -1 0 -150 ) matrix ( ( 0.0312500037 0 148.0162200928 ) ( 0 -0.0312500037 -83.6250076294 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 1 0 10 ) matrix ( ( 0.0312500037 0 -148.0162200928 ) ( 0 -0.0312500037 -83.6250076294 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( -1 0 0 70 ) matrix ( ( 0.0312500037 0 -172.262512207 ) ( 0 -0.0312500037 -84.3750076294 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "generator_destroyed" {
+			sdDictionary {
+				"model"	"models/structures/edf/jamming_tower/generator_destr.lwo"
+				"maxVisDist"	"12000"
+				"networkSync"	"1"
+				"dynamic"	"1"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( 536 9200 3086 )
+				rotation ( ( 0.8829475641 0.469471544 0 ) ( -0.469471544 0.8829475641 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "func_static"
+		}
+		sdPrimitiveEntity "jammer_tower_effects_idle_1" {
+			sdTransform {
+				translation ( 1218 9220 5198 )
+			}
+			
+			classname "jammer_tower_effects_idle"
+		}
+		sdPrimitiveEntity "jammer_tower_effects_shutdown_1" {
+			sdTransform {
+				translation ( 1218 9220 5198 )
+			}
+			
+			classname "jammer_tower_effects_shutdown"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_ship_smoke" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/quarry/ship_smoke"
+				"maxVisDist"	"10240"
+			}
+			sdTransform {
+				translation ( 8172.9462890625 -4687.9033203125 1963 )
+				rotation ( ( -0.9852764606 -0.1709690094 -0.0000106421 ) ( -0.0006794311 0.0038532447 0.9999923706 ) ( -0.1709676683 0.9852689505 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_ship_sparks1" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/quarry/ship_sparks"
+				"maxVisDist"	"4096"
+			}
+			sdTransform {
+				translation ( 8271.9013671875 -4514.0502929688 1154 )
+				rotation ( ( 0.1364791542 -0.9906429052 -0.0000106421 ) ( -0.003874609 -0.0005445406 0.9999923706 ) ( -0.9906353951 -0.1364780664 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_ship_sparks_3" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/quarry/ship_sparks"
+				"maxVisDist"	"4096"
+			}
+			sdTransform {
+				translation ( 8233.9013671875 -4273.0502929688 1265 )
+				rotation ( ( 0.1364791542 -0.9906429052 -0.0000106421 ) ( -0.003874609 -0.0005445406 0.9999923706 ) ( -0.9906353951 -0.1364780664 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_ship_sparks_2" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/quarry/ship_sparks"
+				"maxVisDist"	"4096"
+			}
+			sdTransform {
+				translation ( 8008.099609375 -4443.9516601563 1203 )
+				rotation ( ( -0.1191689745 0.9928739071 -0.0000106421 ) ( 0.0038835225 0.0004768352 0.9999923706 ) ( 0.9928663969 0.1191680133 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_ship_explode_1" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/quarry/ship_explode1"
+			}
+			sdTransform {
+				translation ( 7959.9462890625 -5137.9033203125 1579 )
+				rotation ( ( -0.9852764606 -0.1709690094 -0.0000106421 ) ( -0.0006794311 0.0038532447 0.9999923706 ) ( -0.1709676683 0.9852689505 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_ship_explode_2" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/quarry/ship_explode2"
+			}
+			sdTransform {
+				translation ( 8421.9462890625 -5053.9033203125 1668 )
+				rotation ( ( -0.9852764606 -0.1709690094 -0.0000106421 ) ( -0.0006794311 0.0038532447 0.9999923706 ) ( -0.1709676683 0.9852689505 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_ship_blowout" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/quarry/ship_blowout"
+				"maxVisDist"	"10240"
+			}
+			sdTransform {
+				translation ( 8116.9462890625 -4299.9052734375 1121.0201416016 )
+				rotation ( ( -0.9852764606 -0.1672227383 -0.0355943888 ) ( -0.0006794311 -0.2043607235 0.9788954258 ) ( -0.1709676683 0.9645068645 0.2012381852 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_ship_explode_3" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/quarry/ship_explode2"
+			}
+			sdTransform {
+				translation ( 7926.9462890625 -4335.9033203125 1699 )
+				rotation ( ( -0.9852764606 -0.1709690094 -0.0000106421 ) ( -0.0006794311 0.0038532447 0.9999923706 ) ( -0.1709676683 0.9852689505 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_ship_explode_4" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/quarry/ship_explode1"
+			}
+			sdTransform {
+				translation ( 8177.9462890625 -4234.9033203125 1863 )
+				rotation ( ( -0.9852764606 -0.1709690094 -0.0000106421 ) ( -0.0006794311 0.0038532447 0.9999923706 ) ( -0.1709676683 0.9852689505 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_ship_explode_5" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/quarry/ship_explode2"
+			}
+			sdTransform {
+				translation ( 8371.9462890625 -4084.9033203125 1462 )
+				rotation ( ( -0.9852764606 -0.1709690094 -0.0000106421 ) ( -0.0006794311 0.0038532447 0.9999923706 ) ( -0.1709676683 0.9852689505 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_ship_explode_6" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/quarry/ship_explode1"
+			}
+			sdTransform {
+				translation ( 8087.9462890625 -4105.9033203125 1548 )
+				rotation ( ( -0.9852764606 -0.1709690094 -0.0000106421 ) ( -0.0006794311 0.0038532447 0.9999923706 ) ( -0.1709676683 0.9852689505 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_ship_explode_final" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/quarry/ship_explode3"
+			}
+			sdTransform {
+				translation ( 8082.9462890625 -4058.9033203125 1577 )
+				rotation ( ( -0.9852764606 -0.1709690094 -0.0000106421 ) ( -0.0006794311 0.0038532447 0.9999923706 ) ( -0.1709676683 0.9852689505 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_ship_light" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/quarry/ship_light"
+			}
+			sdTransform {
+				translation ( 8155.6943359375 -4612.1684570313 1092.9732666016 )
+				rotation ( ( 0.1618748605 -0.9643149376 -0.2095074952 ) ( 0.0253176112 -0.2081792951 0.9777629375 ) ( -0.986486733 -0.1635794789 -0.0092848418 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "func_fx_ship_fire1" {
+			sdDictionary {
+				"fx"	"effects/mapobjects/crashedship/fire2"
+				"loop"	"1"
+				"start_on"	"1"
+				"maxVisDist"	"18000"
+			}
+			sdTransform {
+				translation ( 7996 -5135 1602 )
+				rotation ( ( -0.0000001027 0.9999995828 -0.0000002384 ) ( -0.9999998212 -0.0000001027 0 ) ( 0 0.0000002384 0.9999997616 ) )
+			}
+			
+			classname "func_fx"
+		}
+		sdPrimitiveEntity "func_fx_ship_fire2" {
+			sdDictionary {
+				"fx"	"effects/mapobjects/crashedship/fire"
+				"loop"	"1"
+				"start_on"	"1"
+				"maxVisDist"	"18000"
+			}
+			sdTransform {
+				translation ( 8332 -4336 1686 )
+				rotation ( ( -0.0000001027 0.9999995828 -0.0000002384 ) ( -0.9999998212 -0.0000001027 0 ) ( 0 0.0000002384 0.9999997616 ) )
+			}
+			
+			classname "func_fx"
+		}
+		sdPrimitiveEntity "placement_camera_a" {
+			sdTransform {
+				translation ( 7002.9125976563 -2987.6877441406 2039.2122802734 )
+				rotation ( ( 0.7852379084 -0.5517886877 -0.2809461355 ) ( 0.6096302271 0.7683874369 0.19476071 ) ( 0.1084087342 -0.3242067397 0.9397539496 ) )
+			}
+			
+			classname "placement_camera"
+		}
+		sdPrimitiveEntity "placement_camera_b" {
+			sdTransform {
+				translation ( 7062.1049804688 -5729.7856445313 2226.8879394531 )
+				rotation ( ( 0.1797457188 0.9489530325 -0.2591902912 ) ( -0.9611885548 0.2254847586 0.1589755714 ) ( 0.2093038112 0.2205555588 0.9526526928 ) )
+			}
+			
+			classname "placement_camera"
+		}
+		sdPrimitiveReference "wils_reference" {
+			
+			sdTransform {
+				translation ( 536 9200 3086 )
+				rotation ( ( 0.8829475641 0.4694715738 0 ) ( -0.4694715738 0.8829475641 0 ) ( 0 -0 1 ) )
+			}
+			url	"filesystem://maps/references/generator_aas.world"
+		}
+
+	}
+}

@@ -1,0 +1,1600 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"editor_last_atmosphere"	"cubemap://ark_facility_entrance"
+	}
+
+	meta {
+		sdLODGroup "tower" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"tower (Level 1)"
+			}
+		}
+		sdLODGroup_Level "tower (Level 1)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		22000
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		1
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			sdDictionary {
+				"merge_script_obj1_marker"	"info_objective_1"
+				"merge_script_obj1_arrow1"	"info_objective_1_progress_1"
+				"merge_script_obj1_arrow2"	"info_objective_1_progress_2"
+				"merge_script_obj2_marker"	"info_objective_2"
+				"merge_script_obj2_arrow1"	"info_objective_2_progress_1"
+				"merge_script_obj2_arrow2"	"info_objective_2_progress_2"
+				"merge_script_obj2_arrow3"	"info_objective_2_progress_3"
+				"merge_script_obj3_marker"	"info_objective_3"
+				"merge_script_obj3_arrow1"	"info_objective_3_progress_1"
+				"merge_script_obj3_arrow2"	"info_objective_3_progress_2"
+				"merge_script_biodome_entrance"	"biodomes_main_entrance"
+				"merge_script_lab_equipment"	"dna_equipment"
+				"merge_script_zappor_caller"	"zappor_caller"
+				"merge_script_jammer"	"jammer"
+				"merge_script_generator_destroyed"	"generator_destroyed"
+				"merge_script_jammer_effects_idle"	"jammer_tower_effects_idle_1"
+				"merge_script_jammer_effects_shutdown"	"jammer_tower_effects_shutdown_1"
+				"merge_script_biodome_melted_door"	"biodome_melted_door"
+				"merge_script_entrance_smoke"	"torchy_misc_particle_trigger_entrance_smoke"
+				"merge_script_tube_water_2"	"torchy_misc_particle_trigger_tube_water_2"
+				"merge_script_tube_water_3"	"torchy_misc_particle_trigger_tube_water_3"
+				"merge_script_tube_water_4"	"torchy_misc_particle_trigger_tube_water_4"
+				"merge_script_tube_water_5"	"torchy_misc_particle_trigger_tube_water_5"
+				"merge_script_tube_water_1"	"torchy_misc_particle_trigger_tube_water_1"
+				"merge_script_tube_water_floor_1"	"torchy_misc_particle_trigger_tube_water_floor_1"
+				"merge_script_tube_water_floor_2"	"torchy_misc_particle_trigger_tube_water_floor_2"
+				"merge_script_tube_water_floor_3"	"torchy_misc_particle_trigger_tube_water_floor_3"
+				"merge_script_tube_water_floor_4"	"torchy_misc_particle_trigger_tube_water_floor_4"
+				"merge_script_tube_water_floor_5"	"torchy_misc_particle_trigger_tube_water_floor_5"
+				"merge_script_tube_glass_1"	"torchy_misc_particle_trigger_tube_glass_1"
+				"merge_script_tube_glass_2"	"torchy_misc_particle_trigger_tube_glass_2"
+				"merge_script_tube_glass_3"	"torchy_misc_particle_trigger_tube_glass_3"
+				"merge_script_tube_glass_4"	"torchy_misc_particle_trigger_tube_glass_4"
+				"merge_script_labequipment_destroyed"	"labequipment_destroyed"
+				"merge_script_noplant_dna_equipment"	"trigger_noplant_dna_equipment"
+				"merge_script_noplant_generator"	"trigger_noplant_generator"
+				"merge_script_dna_tube_strogg_1"	"dna_tube_strogg_1"
+				"merge_script_dna_tube_strogg_2"	"dna_tube_strogg_2"
+				"merge_script_placement_camera_a"	"placement_camera_a"
+				"merge_script_placement_camera_b"	"placement_camera_b"
+				"merge_script_biodome_melted_door_side"	"biodome_melted_door_side"
+				"merge_script_biodomedoorexplosion"	"biodomedoorexplosion"
+				"merge_script_dna_tubelight01"	"dna_tubelight01"
+				"merge_script_dna_tubelight02"	"dna_tubelight02"
+				"merge_script_dna_tubelight03"	"dna_tubelight03"
+				"merge_script_dna_tubelight04"	"dna_tubelight04"
+				"merge_script_dnatubelight_fixture"	"dnatubelight_fixture"
+			}
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 13195 786 1524 )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -1140 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 -0 -63 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -61 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -62 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -66 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 438 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 13195 786 1524 )
+					}
+					
+					faces {
+						plane ( -0.9997181892 0 0.0237363279 -52.5857391357 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.9997181892 -0 0.0237363279 -50.5862998962 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.9996840954 0.0251317602 -50.9727020264 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0.9996840954 0.0251319092 -54.9713745117 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 0 1 -994 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -438 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 13003 786 1524 )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -1140 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -129 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -36 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -40 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.8667780161 0 -0.4986942112 -600.5346679688 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -31 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9615239501 0 0.2747211158 273.4848632813 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 13192 981 1524 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -1140 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -129 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -36 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -40 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.8667780161 0 -0.4986942112 -600.5346679688 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -31 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9615239501 0 0.2747211158 273.4848632813 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 13385 790 1524 )
+						rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -1140 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -129 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -36 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -40 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.8667780161 0 -0.4986942112 -600.5346679688 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -31 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9615239501 0 0.2747211158 273.4848632813 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 13196 595 1524 )
+						rotation ( ( -0.0000001788 0.9999998212 0 ) ( -0.9999998212 -0.0000001788 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -1140 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -129 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -36 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -40 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.8667780161 0 -0.4986942112 -600.5346679688 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -31 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9615239501 0 0.2747211158 273.4848632813 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 5238.353515625 3469.0698242188 364 )
+						rotation ( ( -0.6427876949 0.7660444379 0 ) ( -0.7660444379 -0.6427876949 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -64 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 8 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -1 -0 -88 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -0 1 -80 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.7071068287 -0.7071068287 -0 -186.6762084961 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.4472135603 0 0.8944271207 -42.9323730469 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 5079.0161132813 3335.3698730469 364 )
+						rotation ( ( -0.6427876949 0.7660444379 0 ) ( -0.7660444379 -0.6427876949 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 -0 -1 -64 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -120 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 -0 40 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 -80 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.7071068883 0.7071067691 0 -96.1665420532 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.4472136199 -0 0.8944272399 -42.9323768616 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 5120.2924804688 3547.5402832031 364 )
+						rotation ( ( -0.6427876949 0.7660444379 0 ) ( -0.7660444379 -0.6427876949 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -216 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -104 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 -0 -256 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -48 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -48 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -64 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.7071068287 0.7071068287 -181.0192871094 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0.7071068287 0.7071068287 -181.0192871094 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 5120.2924804688 3547.5402832031 364 )
+						rotation ( ( -0.6427876949 0.7660444379 0 ) ( -0.7660444379 -0.6427876949 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -216 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0 -1 48 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -200 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -48 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -48 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.9486833215 0 0.3162277937 -212.5048828125 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 64 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.7071067691 0.7071067691 -181.0194091797 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0.7071067691 0.7071067691 -181.0192871094 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 5189.3266601563 3427.9313964844 364 )
+						rotation ( ( -0.6427876949 0.7660444379 0 ) ( -0.7660444379 -0.6427876949 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -224 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -64 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 -0 -256 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -96 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -48 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 64 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0.7071068287 0.7071068287 -164.0485839844 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.7071068287 0.7071068287 -197.9899902344 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.7071067095 0 0.7071067095 -107.48046875 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 5614.2612304688 3774.0505371094 348 )
+						rotation ( ( -0.6427876949 0.7660444379 0 ) ( -0.7660444379 -0.6427876949 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -40 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 0 -1 -88 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -708 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 340 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.5547001958 0 0.8320503235 -184.1606445313 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -344 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.6401844025 0.7682212591 217.6627197266 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0.6401844025 0.7682212591 -453.2504882813 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.7071067095 0.7071067095 0 -670.3369140625 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.7071067095 -0.7071067095 0 70.7106933594 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.3864939809 0.3864939809 0.8374035954 -359.6970214844 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.4082483053 -0.4082483053 0.8164966106 47.3568115234 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9998726845 -0.0159583557 -0.0000001349 -239.5251312256 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.6957325339 -0.718300879 0 158.4248046875 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.7016516328 0.7125201821 0 -594.1960449219 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -4388 8200 504 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -184 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -64 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 -0 -52 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -60 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -144 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -108 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -4384 8318 564 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -16 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -10 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.8944272399 0.4472136199 0 -13.4165039063 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3162277639 0.9486832619 0 -9.486328125 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.3162277639 0.9486832619 0 -9.4868164063 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.8944272399 0.4472136199 0 -13.4163970947 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -4384 8058 564 )
+						rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -16 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -10 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.8944272399 0.4472136199 0 -13.4165039063 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3162277639 0.9486832619 0 -9.486328125 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.3162277639 0.9486832619 0 -9.4868164063 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.8944272399 0.4472136199 0 -13.4163970947 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -4456 8092 564 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3713906705 -0.9284766912 0 -23.7690429688 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9191450477 -0.3939192891 0 -13.1306762695 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9284766912 0.3713906705 0 -16.3413085938 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5547001958 0.8320502639 0 -24.4072265625 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3162277639 0.9486832619 0 -29.09375 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -4456 8180 564 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3713906705 -0.9284766912 0 -23.7690429688 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9191450477 -0.3939192891 0 -13.1306762695 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9284766912 0.3713906705 0 -16.3413085938 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5547001958 0.8320502639 0 -24.4072265625 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3162277639 0.9486832619 0 -29.09375 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -4456 8272 564 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3713906705 -0.9284766912 0 -23.7690429688 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9191450477 -0.3939192891 0 -13.1306762695 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9284766912 0.3713906705 0 -16.3413085938 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5547001958 0.8320502639 0 -24.4072265625 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3162277639 0.9486832619 0 -29.09375 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -4312 8276 564 )
+						rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3713906705 -0.9284766912 0 -23.7690429688 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9191450477 -0.3939192891 0 -13.1306762695 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9284766912 0.3713906705 0 -16.3413085938 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5547001958 0.8320502639 0 -24.4072265625 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3162277639 0.9486832619 0 -29.09375 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -4312 8188 564 )
+						rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3713906705 -0.9284766912 0 -23.7690429688 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9191450477 -0.3939192891 0 -13.1306762695 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9284766912 0.3713906705 0 -16.3413085938 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5547001958 0.8320502639 0 -24.4072265625 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3162277639 0.9486832619 0 -29.09375 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -4312 8096 564 )
+						rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3713906705 -0.9284766912 0 -23.7690429688 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9191450477 -0.3939192891 0 -13.1306762695 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9284766912 0.3713906705 0 -16.3413085938 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5547001958 0.8320502639 0 -24.4072265625 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3162277639 0.9486832619 0 -29.09375 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -4132 8184 564 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -20 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -20 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -4168 8180 564 )
+						rotation ( ( 0.9999997616 0.0000002384 0 ) ( -0.0000002384 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3713906705 -0.9284766912 0 -23.7690429688 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9191450477 -0.3939192891 0 -13.1306762695 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9284766912 0.3713906705 0 -16.3413085938 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5547001958 0.8320502639 0 -24.4072265625 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3162277639 0.9486832619 0 -29.09375 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -4168 8092 564 )
+						rotation ( ( 0.9999997616 0.0000002384 0 ) ( -0.0000002384 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3713906705 -0.9284766912 0 -23.7690429688 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9191450477 -0.3939192891 0 -13.1306762695 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9284766912 0.3713906705 0 -16.3413085938 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5547001958 0.8320502639 0 -24.4072265625 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3162277639 0.9486832619 0 -29.09375 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -4168 8272 564 )
+						rotation ( ( 0.9999997616 0.0000002384 0 ) ( -0.0000002384 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -124 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3713906705 -0.9284766912 0 -23.7690429688 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9191450477 -0.3939192891 0 -13.1306762695 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9284766912 0.3713906705 0 -16.3413085938 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.5547001958 0.8320502639 0 -24.4072265625 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.3162277639 0.9486832619 0 -29.09375 ) matrix ( ( 0.03125 0 -154.625 ) ( 0 0.03125 -724.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 12608 720 450 )
+					}
+					
+					faces {
+						plane ( 0 0 1 38 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 -724.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 0 -1 -49 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 724.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 -0 -161 ) matrix ( ( 0.03125 0 154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -163 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -66 ) matrix ( ( 0.03125 0 -724.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -66 ) matrix ( ( 0.03125 0 724.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 12497 775 447 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -49 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 -724.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -35 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 724.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 -0 -14 ) matrix ( ( 0.03125 0 154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -14 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -119 ) matrix ( ( 0.03125 0 -724.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -8 ) matrix ( ( 0.03125 0 724.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0.8000003099 0.5999996662 -20.1999950409 ) matrix ( ( 0.03125 0 724.28125 ) ( 0 0.03125 -74.8498687744 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0.8831157684 -0.469155252 -8.4723920822 ) matrix ( ( 0.03125 0 724.28125 ) ( 0 0.03125 92.1890487671 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.8598547578 -0.5105387568 -103.8543319702 ) matrix ( ( 0.03125 0 -724.28125 ) ( 0 0.03125 -59.6927108765 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0.4856422842 0.874157548 -32.1495895386 ) matrix ( ( 0.03125 0 724.28125 ) ( 0 0.03125 -124.2214660645 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.7808651924 0.6246996522 -107.2909393311 ) matrix ( ( 0.03125 0 -724.28125 ) ( 0 0.03125 113.9391708374 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.5010262728 0.8654321432 -86.4964828491 ) matrix ( ( 0.03125 0 -724.28125 ) ( 0 0.03125 144.8882751465 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 12609 725.5 428 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -35 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 -724.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0 0 -1 21 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 724.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 -0 -95 ) matrix ( ( 0.03125 0 154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -96 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 -0 -45.5 ) matrix ( ( 0.03125 0 -724.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -34.5 ) matrix ( ( 0.03125 0 724.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 12691 720 3909 )
+						rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -1 0 0 -65.9999847412 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -228.9999694824 ) matrix ( ( 0.03125 0 154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 3418 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 -724.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.0000006281 0.5432274342 0.8395856023 2861.5495605469 ) matrix ( ( 0.03125 0 -724.2813720703 ) ( 0 0.03125 141.8359832764 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.0000000228 0.9847835898 0.1737853885 564.3970947266 ) matrix ( ( 0.03125 0 -724.28125 ) ( 0 0.03125 48.8228034973 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 0.0000078672 ) matrix ( ( 0.03125 0 724.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -3446 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 724.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 12691 755 3909 )
+						rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -1 0 0 -65.9999847412 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -228.9999389648 ) matrix ( ( 0.03125 0 154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 3418 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 -724.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.0000000694 -0.5646713376 0.8253158331 2832.7836914063 ) matrix ( ( 0.03125 0 724.28125 ) ( 0 0.03125 -114.9119949341 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.000000129 -0.9912278652 0.1321637332 455.4362182617 ) matrix ( ( 0.03125 0 724.28125 ) ( 0 0.03125 1.697480917 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -34.9999694824 ) matrix ( ( 0.03125 0 -724.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -3446 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 724.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 12747 741 437 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -26 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 -724.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 0 -1 -25 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 724.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 -0 -12 ) matrix ( ( 0.03125 0 154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -10 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -56 ) matrix ( ( 0.03125 0 -724.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -14 ) matrix ( ( 0.03125 0 724.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 12472 741 437 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -26 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 -715.6875 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 0 -1 -25 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 715.6875 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 -0 -10 ) matrix ( ( 0.03125 0 154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -11 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -56 ) matrix ( ( 0.03125 0 -715.6875 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -14 ) matrix ( ( 0.03125 0 715.6875 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 12609 775 447 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -49 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 -727.78125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -35 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 727.78125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 -0 -14 ) matrix ( ( 0.03125 0 154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -14 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -119 ) matrix ( ( 0.03125 0 -727.78125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -8 ) matrix ( ( 0.03125 0 727.78125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0.8000003099 0.5999996662 -20.1999950409 ) matrix ( ( 0.03125 0 727.78125 ) ( 0 0.03125 -74.8498687744 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0.8831157684 -0.469155252 -8.4723920822 ) matrix ( ( 0.03125 0 727.78125 ) ( 0 0.03125 92.1890487671 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.8598547578 -0.5105387568 -103.8543319702 ) matrix ( ( 0.03125 0 -727.78125 ) ( 0 0.03125 -59.6927108765 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0.4856422842 0.874157548 -32.1495895386 ) matrix ( ( 0.03125 0 727.78125 ) ( 0 0.03125 -124.2214660645 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.7808651924 0.6246996522 -107.2909393311 ) matrix ( ( 0.03125 0 -727.78125 ) ( 0 0.03125 113.9391708374 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.5010262728 0.8654321432 -86.4964828491 ) matrix ( ( 0.03125 0 -727.78125 ) ( 0 0.03125 144.8882751465 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 12721 775 447 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -49 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 -731.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -35 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 731.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 -0 -14 ) matrix ( ( 0.03125 0 154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -14 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -119 ) matrix ( ( 0.03125 0 -731.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -8 ) matrix ( ( 0.03125 0 731.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0.8000003099 0.5999996662 -20.1999950409 ) matrix ( ( 0.03125 0 731.28125 ) ( 0 0.03125 -74.8498687744 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0.8831157684 -0.469155252 -8.4723920822 ) matrix ( ( 0.03125 0 731.28125 ) ( 0 0.03125 92.1890487671 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.8598547578 -0.5105387568 -103.8543319702 ) matrix ( ( 0.03125 0 -731.28125 ) ( 0 0.03125 -59.6927108765 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0.4856422842 0.874157548 -32.1495895386 ) matrix ( ( 0.03125 0 731.28125 ) ( 0 0.03125 -124.2214660645 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.7808651924 0.6246996522 -107.2909393311 ) matrix ( ( 0.03125 0 -731.28125 ) ( 0 0.03125 113.9391708374 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.5010262728 0.8654321432 -86.4964828491 ) matrix ( ( 0.03125 0 -731.28125 ) ( 0 0.03125 144.8882751465 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 12505 774 456 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -7 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 -724.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -7 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 724.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 -0 -25 ) matrix ( ( 0.03125 0 154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -9 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 -0 -123 ) matrix ( ( 0.03125 0 -724.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -15 ) matrix ( ( 0.03125 0 724.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 12617 774 456 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -7 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 -727.78125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -7 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 727.78125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 -0 -25 ) matrix ( ( 0.03125 0 154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -9 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 -0 -123 ) matrix ( ( 0.03125 0 -727.78125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -15 ) matrix ( ( 0.03125 0 727.78125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 12729 774 456 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -7 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 -731.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -7 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 731.28125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 -0 -25 ) matrix ( ( 0.03125 0 154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -9 ) matrix ( ( 0.03125 0 -154.5 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 -0 -123 ) matrix ( ( 0.03125 0 -731.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -15 ) matrix ( ( 0.03125 0 731.28125 ) ( 0 0.03125 22.3125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "info_objective_1_progress_1" {
+			sdDictionary {
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+				"mtr_icon"	"hud/objectives/progress_left_up"
+				"start_off"	"0"
+				"start_team"	"strogg"
+			}
+			sdTransform {
+				translation ( 12856 -2304 6528 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_1_progress_2" {
+			sdDictionary {
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+				"mtr_icon"	"hud/objectives/progress_left_up"
+				"start_off"	"0"
+				"start_team"	"strogg"
+			}
+			sdTransform {
+				translation ( 9136 -2312 6528 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_2_progress_1" {
+			sdDictionary {
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+				"mtr_icon"	"hud/objectives/progress_left_up"
+				"start_off"	"1"
+				"start_team"	"strogg"
+			}
+			sdTransform {
+				translation ( 7160 -224 6528 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_2_progress_2" {
+			sdDictionary {
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+				"mtr_icon"	"hud/objectives/progress_left_up"
+				"start_off"	"1"
+				"start_team"	"strogg"
+			}
+			sdTransform {
+				translation ( 7768 4944 6528 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_2_progress_3" {
+			sdDictionary {
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+				"mtr_icon"	"hud/objectives/progress_left_up"
+				"start_off"	"1"
+				"start_team"	"strogg"
+			}
+			sdTransform {
+				translation ( 5088 -7296 6528 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_3" {
+			sdDictionary {
+				"objective_index"	"2"
+				"mtr_icon_number"	"hud/objectives/marker_03"
+				"mtr_icon"	"hud/objectives/destruction"
+				"icon_size_cm"	"24"
+				"icon_offset_cm"	"8 8 0"
+				"icon_size_number_cm"	"24"
+				"mtr_objective_gdf"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_gdf_desat"	"hud/icons/missionsystem/obj_defend_desat"
+				"mtr_objective_strogg"	"hud/icons/missionsystem/obj_destroy"
+				"mtr_objective_strogg_desat"	"hud/icons/missionsystem/obj_destroy_desat"
+				"text_objective_gdf"	"maps/ark/gdf_research_lab"
+				"text_objective_strogg"	"maps/ark/strogg_research_lab"
+				"text_short_objective_gdf"	"maps/ark/gdf_research_lab_short"
+				"text_short_objective_strogg"	"maps/ark/strogg_research_lab_short"
+				"mtr_objective_world_icon_strogg"	"hud/icons/missionsystem/obj_destroy"
+				"mtr_objective_world_icon_gdf"	"hud/icons/missionsystem/obj_defend"
+			}
+			sdTransform {
+				translation ( -4256 8132 6272 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_3_progress_1" {
+			sdDictionary {
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+				"mtr_icon"	"hud/objectives/progress_left_up"
+				"start_off"	"1"
+				"start_team"	"strogg"
+			}
+			sdTransform {
+				translation ( 5819 6396 6528 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_3_progress_2" {
+			sdDictionary {
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+				"mtr_icon"	"hud/objectives/progress_left_up"
+				"start_off"	"1"
+				"start_team"	"strogg"
+			}
+			sdTransform {
+				translation ( 1923 -44 6528 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "dna_equipment" {
+			sdDictionary {
+				"model"	"models/mapobjects/ark/dna_research_equipment.lwo"
+				"dmg_splash_damage"	"damage_objective_explosion"
+				"objective_index"	"2"
+				"object_name"	"maps/ark/research_lab"
+				"maxVisDist"	"3500"
+				"task_name"	"maps/ark/research_lab"
+				"health"	"1"
+				"snd_reminder_strogg"	"sounds/vo/strogg/nexus/maps/ark/bioscanner/destroy"
+				"snd_planted_strogg"	"sounds/vo/strogg/nexus/maps/ark/bioscanner/planted"
+				"snd_disarmed_strogg"	"sounds/vo/strogg/nexus/maps/ark/bioscanner/disarmed"
+				"snd_destroyed_strogg"	"sounds/vo/strogg/nexus/maps/ark/stroggwin"
+				"snd_intro_gdf"	"sounds/vo/gdf/highcommand/maps/ark/bioscanner/defend/long"
+				"snd_destroyed_gdf"	"sounds/vo/gdf/highcommand/maps/ark/gdflose"
+				"snd_disarmed_gdf"	"sounds/vo/gdf/highcommand/maps/ark/bioscanner/disarmed"
+				"snd_planted_gdf"	"sounds/vo/gdf/highcommand/maps/ark/bioscanner/planted"
+				"snd_reminder_gdf"	"sounds/vo/gdf/highcommand/maps/ark/bioscanner/defend"
+				"snd_defend_gdf"	"sounds/vo/gdf/highcommand/maps/ark/bioscanner/disarm"
+				"snd_defend_strogg"	"sounds/vo/strogg/nexus/maps/ark/bioscanner/defendexpl"
+				"snd_intro_strogg"	"sounds/vo/strogg/nexus/maps/ark/bioscanner/destroy/long"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( -4576 8176 448 )
+			}
+			
+			classname "gameplay/destructible/gdf"
+		}
+		sdPrimitiveEntity "dna_equipment_trigger" {
+			sdDictionary {
+				"target"	"dna_equipment"
+			}
+			sdTransform {
+				translation ( -10288 7072 776 )
+			}
+			
+			classname "gameplay_destructible_trigger"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_2" {
+					
+					sdTransform {
+						translation ( 5748 1080 -256 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -64 ) matrix ( ( 0.0625 0 0.5 ) ( 0 0.0625 0.25 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trigger"
+						plane ( 0 0 -1 -72 ) matrix ( ( 0.0625 0 0.5 ) ( 0 0.0625 0.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trigger"
+						plane ( -1 0 0 64 ) matrix ( ( 0.0625 0 0.4999389648 ) ( 0 0.0625 0.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trigger"
+						plane ( 0 -1 0 -106 ) matrix ( ( 0.0625 0 0.25 ) ( 0 0.0625 0.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trigger"
+						plane ( 0 1 0 -178 ) matrix ( ( 0.0625 0 0.75 ) ( 0 0.0625 0.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trigger"
+						plane ( 1 0 0 -246 ) matrix ( ( 0.0625 0 0.5 ) ( 0 0.0625 0.25 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trigger"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_3" {
+					
+					sdTransform {
+						translation ( 5748 1080 -256 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -64 ) matrix ( ( 0.0625 0 0.5 ) ( 0 0.0625 0.25 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trigger"
+						plane ( 0 0 -1 -72 ) matrix ( ( 0.0625 0 0.5 ) ( 0 0.0625 0.75 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trigger"
+						plane ( 1 0 0 -428 ) matrix ( ( 0.0625 0 0.5 ) ( 0 0.0625 0.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trigger"
+						plane ( 0 -1 0 -94 ) matrix ( ( 0.0625 0 0.25 ) ( 0 0.0625 0.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trigger"
+						plane ( 0 1 0 -158 ) matrix ( ( 0.0625 0 0.75 ) ( 0 0.0625 0.5 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trigger"
+						plane ( -1 0 0 352 ) matrix ( ( 0.0625 0 0.5 ) ( 0 0.0625 0.25 ) ) texBounds ( ( 0 0 ) ( 32 32 ) ) "textures/common/trigger"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "jammer_trigger" {
+			sdDictionary {
+				"target"	"jammer"
+			}
+			sdTransform {
+				translation ( 11168 2848 492 )
+			}
+			
+			classname "gameplay_destructible_trigger"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_4" {
+					
+					sdTransform {
+						translation ( 1472 -2048 -52 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 0 -1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( -1 0 0 -248 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 -1 0 -150 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 1 0 10 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 1 0 0 134 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_6" {
+					
+					sdTransform {
+						translation ( 1472 -2048 -52 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 0 -1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 -1 0 -192 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 1 0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( -1 0 0 -134 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 1 0 0 -70 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_7" {
+					
+					sdTransform {
+						translation ( 1472 -2048 -52 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 0 -1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 1 0 0 -184 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 -1 0 -150 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 1 0 10 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( -1 0 0 70 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "zappor_caller" {
+			sdDictionary {
+				"target"	"zappor_beacon_1"
+				"objective_index"	"1"
+				"maxVisDist"	"16384"
+			}
+			sdTransform {
+				translation ( 5165.16796875 3492.4099121094 323 )
+				rotation ( ( -0.6427876353 0.7660444975 0 ) ( -0.7660444975 -0.6427876353 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "gameplay/construction/mining_laser/caller"
+		}
+		sdPrimitiveEntity "zappor_beacon_1" {
+			sdDictionary {
+				"target"	"biodomes_main_entrance"
+				"target_secondary"	"biodomes_side_entrance"
+			}
+			sdTransform {
+				translation ( 624 9112 640 )
+				rotation ( ( 0.8191520572 0.5735763907 0 ) ( -0.5735763907 0.8191520572 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "gameplay/construction/mining_laser/beacon"
+		}
+		sdPrimitiveEntity "biodomes_main_entrance" {
+			sdDictionary {
+				"lip"	"132"
+				"movedir"	"-1"
+				"show_status"	"0"
+				"object_name"	"maps/ark/bio_main"
+				"time"	"1"
+				"pickable"	"0"
+				"health"	"1"
+				"objective_index"	"1"
+				"no_touch"	"1"
+				"maxVisDist"	"32768"
+				"collection_zappor"	"zappor"
+				"DELETE_crosshair_icon"	"hud/objectives/firesupport"
+				"scriptobject"	"destructible_objective_strategic"
+			}
+			sdTransform {
+				translation ( 624.9914550781 9120.02734375 746 )
+			}
+			
+			classname "gameplay/destructible/gdf"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_7" {
+					
+					sdTransform {
+						translation ( -3115.9597167969 -2108.9516601563 -644 )
+						rotation ( ( 0.2923717201 -0.9563047886 0 ) ( 0.9563047886 0.2923717201 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0.9510564804 -0.3090170324 0 45.9249687195 ) matrix ( ( 0.0022175205 0 13.2349796295 ) ( 0 0.0022522523 3.1801800728 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/doors/biodome_door_melting"
+						plane ( 0.9510564804 0.3090170324 0 -73.4546966553 ) matrix ( ( 0.0022175445 0 -12.2355766296 ) ( 0 0.0022522523 3.1801800728 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/doors/biodome_door_melting"
+						plane ( 0 0 -1 422 ) matrix ( ( 0.002838087 0 20.6046733856 ) ( 0 0.0022522523 2.1801800728 ) ) texBounds ( ( 256 512 ) ( 296 1024 ) ) "textures/doors/biodome_door_melting"
+						plane ( 0 0 1 -866 ) matrix ( ( 0.002838087 0 20.6046733856 ) ( 0 0.0022522523 2.1801800728 ) ) texBounds ( ( 256 512 ) ( 296 1024 ) ) "textures/doors/biodome_door_melting"
+						plane ( -0.316228658 0.9486829638 0 -3986.9992675781 ) matrix ( ( 0.0028376342 0 -19.5136165619 ) ( 0 0.0022522523 2.1801800728 ) ) texBounds ( ( 256 512 ) ( 296 1024 ) ) "textures/doors/biodome_door_melting"
+						plane ( 0.3162275851 -0.9486833811 0 3536.0576171875 ) matrix ( ( 0.002838087 0 20.6046733856 ) ( 0 0.0022522523 2.1801800728 ) ) texBounds ( ( 256 512 ) ( 296 1024 ) ) "textures/doors/biodome_door_melting"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "info_objective_1" {
+			sdDictionary {
+				"objective_index"	"0"
+				"mtr_icon_number"	"hud/objectives/marker_01"
+				"mtr_icon"	"hud/objectives/destruction"
+				"icon_size_cm"	"24"
+				"icon_offset_cm"	"8 8 0"
+				"icon_size_number_cm"	"24"
+				"mtr_objective_gdf"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_gdf_desat"	"hud/icons/missionsystem/obj_defend_desat"
+				"mtr_objective_strogg"	"hud/icons/missionsystem/obj_destroy"
+				"mtr_objective_strogg_desat"	"hud/icons/missionsystem/obj_destroy_desat"
+				"text_objective_gdf"	"maps/ark/gdf_jammer"
+				"text_objective_strogg"	"maps/ark/strogg_jammer"
+				"text_short_objective_gdf"	"maps/ark/gdf_jammer_short"
+				"text_short_objective_strogg"	"maps/ark/strogg_jammer_short"
+				"mtr_objective_world_icon_strogg"	"hud/icons/missionsystem/obj_destroy"
+				"mtr_objective_world_icon_gdf"	"hud/icons/missionsystem/obj_defend"
+			}
+			sdTransform {
+				translation ( 12608 720 6528 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_2" {
+			sdDictionary {
+				"objective_index"	"1"
+				"mtr_icon_number"	"hud/objectives/marker_02"
+				"mtr_icon"	"hud/objectives/construction"
+				"icon_size_cm"	"24"
+				"icon_offset_cm"	"8 8 0"
+				"icon_size_number_cm"	"24"
+				"mtr_objective_gdf"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_gdf_desat"	"hud/icons/missionsystem/obj_defend_desat"
+				"mtr_objective_strogg"	"hud/icons/missionsystem/obj_build"
+				"mtr_objective_strogg_desat"	"hud/icons/missionsystem/obj_build_desat"
+				"text_objective_gdf"	"maps/ark/gdf_laser_zapper"
+				"text_objective_strogg"	"maps/ark/strogg_laser_zapper"
+				"text_short_objective_gdf"	"maps/ark/strogg_laser_zapper_short"
+				"text_short_objective_strogg"	"maps/ark/gdf_laser_zapper_short"
+				"mtr_objective_world_icon_strogg"	"hud/icons/missionsystem/obj_build"
+				"mtr_objective_world_icon_gdf"	"hud/icons/missionsystem/obj_defend"
+			}
+			sdTransform {
+				translation ( 5164.7387695313 3491.9885253906 6520 )
+				rotation ( ( 0.9961947203 0.0871557444 0 ) ( -0.0871557444 0.9961947203 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "jammer" {
+			sdDictionary {
+				"model"	"models/structures/edf/jamming_tower/generator.lwo"
+				"dmg_splash_damage"	"damage_objective_explosion"
+				"object_name"	"maps/ark/jammer"
+				"objective_index"	"0"
+				"task_name"	"maps/ark/jammer"
+				"maxVisDist"	"6500"
+				"health"	"1"
+				"snd_destroyed_strogg"	"sounds/vo/strogg/nexus/objectives/jamtower/destroyed/long"
+				"snd_destroyed_gdf"	"sounds/vo/gdf/highcommand/objectives/jamtower/destroyed/long"
+				"snd_disarmed_strogg"	"sounds/vo/strogg/nexus/objectives/jamtower/disarmed"
+				"snd_disarmed_gdf"	"sounds/vo/gdf/highcommand/objectives/jamtower/disarmed"
+				"snd_planted_gdf"	"sounds/vo/gdf/highcommand/objectives/jamtower/planted"
+				"snd_planted_strogg"	"sounds/vo/strogg/nexus/objectives/jamtower/planted"
+				"snd_defend_strogg"	"sounds/vo/strogg/nexus/objectives/jamtower/defendexpl"
+				"snd_defend_gdf"	"sounds/vo/gdf/highcommand/objectives/jamtower/disarm"
+				"snd_intro_gdf"	"sounds/vo/gdf/highcommand/objectives/jamtower/defend/long"
+				"snd_intro_strogg"	"sounds/vo/strogg/nexus/objectives/jamtower/destroy/long"
+				"snd_reminder_strogg"	"sounds/vo/strogg/nexus/objectives/jamtower/destroy"
+				"snd_reminder_gdf"	"sounds/vo/gdf/highcommand/objectives/jamtower/defend"
+			}
+			sdTransform {
+				translation ( 12608 720 403 )
+				rotation ( ( -0.0000000437 -1 0 ) ( 1 -0.0000000437 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "gameplay/destructible/gdf"
+		}
+		sdPrimitiveEntity "torchy_model_static_3" 
+		groups {
+			"tower (Level 1)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/structures/edf/jamming_tower/jamming_tower.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 13194 788 384 )
+				rotation ( ( -0.9999998808 -0.0000000684 0 ) ( 0.0000000684 -0.9999998808 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "biodomes_side_entrance" {
+			sdDictionary {
+				"lip"	"132"
+				"movedir"	"-1"
+				"show_status"	"0"
+				"object_name"	"maps/ark/bio_side"
+				"time"	"1"
+				"pickable"	"0"
+				"health"	"1"
+				"no_touch"	"1"
+				"maxVisDist"	"32768"
+				"collection_zappor"	"zappor"
+				"DELETE_crosshair_icon"	"hud/objectives/firesupport"
+				"scriptobject"	"destructible_objective_strategic"
+			}
+			sdTransform {
+				translation ( -731.9672851563 13420.001953125 738 )
+			}
+			
+			classname "gameplay/destructible/gdf"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_14" {
+					
+					sdTransform {
+						translation ( 1356.9587402344 -4299.974609375 8 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -238 ) matrix ( ( 0.002838087 0 20.6046733856 ) ( 0 0.0022522523 2.1801800728 ) ) texBounds ( ( 256 512 ) ( 296 1024 ) ) "textures/doors/biodome_door_melting"
+						plane ( 0 0 1 -222 ) matrix ( ( 0.002838087 0 20.6046733856 ) ( 0 0.0022522523 2.1801800728 ) ) texBounds ( ( 256 512 ) ( 296 1024 ) ) "textures/doors/biodome_door_melting"
+						plane ( -0.0000024438 1 0.0000001608 -4311.9770507813 ) matrix ( ( 0.0023042089 0 -1.1911722422 ) ( 0 0.0021739129 3.1043477058 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/doors/biodome_door_melting"
+						plane ( 0 -1 0 4287.9731445313 ) matrix ( ( 0.0023042089 0 2.1912479401 ) ( 0 0.0021739129 3.1043477058 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/doors/biodome_door_melting"
+						plane ( 1 0 0 1141.9792480469 ) matrix ( ( 0.0032546786 0 -43.1387290955 ) ( 0 0.0021739129 2.1043477058 ) ) texBounds ( ( 256 512 ) ( 296 1024 ) ) "textures/doors/biodome_door_melting"
+						plane ( -1 0 0 -1575.9676513672 ) matrix ( ( 0.0032546786 0 44.2168540955 ) ( 0 0.0021739129 2.1043477058 ) ) texBounds ( ( 256 512 ) ( 296 1024 ) ) "textures/doors/biodome_door_melting"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "generator_destroyed" {
+			sdDictionary {
+				"model"	"models/structures/edf/jamming_tower/generator_destr.lwo"
+				"dynamic"	"1"
+				"maxVisDist"	"6500"
+				"networkSync"	"1"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( 12608 720 403 )
+				rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "func_static"
+		}
+		sdPrimitiveEntity "jammer_tower_effects_idle_1" {
+			sdTransform {
+				translation ( 13194 788 2502 )
+			}
+			
+			classname "jammer_tower_effects_idle"
+		}
+		sdPrimitiveEntity "jammer_tower_effects_shutdown_1" {
+			sdTransform {
+				translation ( 13194 788 2502 )
+			}
+			
+			classname "jammer_tower_effects_shutdown"
+		}
+		sdPrimitiveEntity "biodome_melted_door" {
+			sdDictionary {
+				"model"	"models/mapobjects/ark/biodome_door_melted.lwo"
+				"maxVisDist"	"16384"
+				"networkSync"	"1"
+				"dynamic"	"1"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( 617 9115 524 )
+			}
+			
+			classname "func_static"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_entrance_smoke" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/ark/entrance_smoke"
+			}
+			sdTransform {
+				translation ( 575.2208862305 9199.556640625 643 )
+				rotation ( ( -0.5276108384 0.849486351 -0.0000106421 ) ( 0.0033181473 0.0020734088 0.9999923706 ) ( 0.8494798541 0.5276067853 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_tube_water_1" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/ark/tube_water"
+			}
+			sdTransform {
+				translation ( -4429.986328125 8095.0185546875 522 )
+				rotation ( ( 0.9998916388 0.014732942 -0.0000106421 ) ( 0.000068286 -0.0039120922 0.9999923706 ) ( 0.0147328107 -0.9998839498 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_tube_water_2" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/ark/tube_water"
+			}
+			sdTransform {
+				translation ( -4430.986328125 8183.0185546875 522 )
+				rotation ( ( 0.9998916388 0.014732942 -0.0000106421 ) ( 0.000068286 -0.0039120922 0.9999923706 ) ( 0.0147328107 -0.9998839498 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_tube_water_3" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/ark/tube_water"
+			}
+			sdTransform {
+				translation ( -4428.986328125 8272.0185546875 522 )
+				rotation ( ( 0.9998916388 0.014732942 -0.0000106421 ) ( 0.000068286 -0.0039120922 0.9999923706 ) ( 0.0147328107 -0.9998839498 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_tube_water_4" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/ark/tube_water"
+			}
+			sdTransform {
+				translation ( -4337.0141601563 8182.9814453125 522 )
+				rotation ( ( -0.9999964237 0.0027198694 -0.0000106421 ) ( 0 0.0039126878 0.9999923706 ) ( 0.0027198663 0.9999887347 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_tube_water_5" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/ark/tube_water"
+			}
+			sdTransform {
+				translation ( -4141.9858398438 8095.0190429688 522 )
+				rotation ( ( 0.9999963641 -0.0027198794 -0.0000106421 ) ( -0 -0.0039126878 0.9999923706 ) ( -0.0027198757 -0.9999886751 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_tube_glass_1" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/ark/tube_glass"
+			}
+			sdTransform {
+				translation ( -4336.0141601563 8093.9809570313 522 )
+				rotation ( ( -0.9999963641 0.0027197921 -0.0000106421 ) ( -0.0000000003 0.0039126878 0.9999923706 ) ( 0.0027197883 0.9999886751 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_tube_glass_2" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/ark/tube_glass"
+			}
+			sdTransform {
+				translation ( -4337.0141601563 8271.98046875 522 )
+				rotation ( ( -0.9999963641 0.0027197921 -0.0000106421 ) ( -0.0000000003 0.0039126878 0.9999923706 ) ( 0.0027197883 0.9999886751 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_tube_glass_3" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/ark/tube_glass"
+			}
+			sdTransform {
+				translation ( -4141.9858398438 8184.01953125 522 )
+				rotation ( ( 0.9999963641 -0.0027197048 -0.0000106421 ) ( 0.0000000006 -0.0039126878 0.9999923706 ) ( -0.002719701 -0.9999886751 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_tube_glass_4" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/ark/tube_glass"
+			}
+			sdTransform {
+				translation ( -4140.9858398438 8273.01953125 522 )
+				rotation ( ( 0.9999963641 -0.0027197048 -0.0000106421 ) ( 0.0000000006 -0.0039126878 0.9999923706 ) ( -0.002719701 -0.9999886751 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_tube_water_floor_1" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/ark/tube_water_floor"
+			}
+			sdTransform {
+				translation ( -4488.9892578125 8094.0205078125 457 )
+				rotation ( ( 0.9881103039 0.1537475884 -0.0000106421 ) ( 0.0006120795 -0.0038645163 0.9999923706 ) ( 0.1537463814 -0.9881027341 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_tube_water_floor_2" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/ark/tube_water_floor"
+			}
+			sdTransform {
+				translation ( -4488.986328125 8183.0185546875 457 )
+				rotation ( ( 0.9998916388 0.014732942 -0.0000106421 ) ( 0.000068286 -0.0039120922 0.9999923706 ) ( 0.0147328107 -0.9998839498 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_tube_water_floor_3" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/ark/tube_water_floor"
+			}
+			sdTransform {
+				translation ( -4487.9833984375 8274.015625 457 )
+				rotation ( ( 0.987259388 -0.1591202319 -0.0000106421 ) ( -0.000612079 -0.0038645163 0.9999923706 ) ( -0.1591190249 -0.9872517586 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_tube_water_floor_4" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/ark/tube_water_floor"
+			}
+			sdTransform {
+				translation ( -4279.0092773438 8192.978515625 457 )
+				rotation ( ( -0.9709502459 -0.2392821014 -0.0000106421 ) ( -0.0009465654 0.0037964645 0.9999923706 ) ( -0.2392802536 0.9709427953 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_tube_water_floor_5" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/ark/tube_water_floor"
+			}
+			sdTransform {
+				translation ( -4202.9926757813 8091.0219726563 457 )
+				rotation ( ( 0.9464006424 0.3229955733 -0.0000106421 ) ( 0.0012738475 -0.003699519 0.9999923706 ) ( 0.3229930699 -0.9463933706 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "labequipment_destroyed" {
+			sdDictionary {
+				"model"	"models/mapobjects/ark/dna_research_equipment_destroyed.lwo"
+				"dynamic"	"1"
+				"networkSync"	"1"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( -4576 8176 448 )
+			}
+			
+			classname "func_static"
+		}
+		sdPrimitiveEntity "trigger_noplant_generator" {
+			sdDictionary {
+				"team"	"gdf"
+			}
+			sdTransform {
+				translation ( 12608 720 492 )
+			}
+			
+			classname "trigger_noplant"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 16 -32 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigmulti"
+						plane ( 0 0 -1 -76 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigmulti"
+						plane ( -1 0 -0 -280 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigmulti"
+						plane ( 1 0 0 -280 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigmulti"
+						plane ( 0 -1 -0 -192 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigmulti"
+						plane ( 0 1 0 -160 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigmulti"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "trigger_noplant_dna_equipment" {
+			sdDictionary {
+				"team"	"gdf"
+			}
+			sdTransform {
+				translation ( -4288 8192 548 )
+			}
+			
+			classname "trigger_noplant"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 0 -32 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -132 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigmulti"
+						plane ( 0 0 -1 -68 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigmulti"
+						plane ( -1 0 0 -264 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigmulti"
+						plane ( 1 0 0 -264 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigmulti"
+						plane ( 0 -1 0 -216 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigmulti"
+						plane ( 0 1 0 -216 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigmulti"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "dna_tube_strogg_2" {
+			sdDictionary {
+				"anim"	"idle"
+				"maxVisDist"	"2048"
+				"frame"	"1"
+			}
+			sdTransform {
+				translation ( -4424 8272 488 )
+				rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "env_strogg_test_subject"
+		}
+		sdPrimitiveEntity "dna_tube_strogg_1" {
+			sdDictionary {
+				"anim"	"idle"
+				"maxVisDist"	"2048"
+				"frame"	"85"
+			}
+			sdTransform {
+				translation ( -4424 8096 488 )
+				rotation ( ( -0.9999998808 -0.0000001192 0 ) ( 0.0000001192 -0.9999998808 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "env_strogg_test_subject_a"
+		}
+		sdPrimitiveEntity "placement_camera_a" {
+			sdTransform {
+				translation ( -4567.5620117188 8554.56640625 568.5833129883 )
+				rotation ( ( 0.5565571785 -0.8269966245 -0.0795030221 ) ( 0.8296226859 0.5583244562 0 ) ( 0.0443884805 -0.065957509 0.9968346357 ) )
+			}
+			
+			classname "placement_camera"
+		}
+		sdPrimitiveEntity "placement_camera_b" {
+			sdTransform {
+				translation ( -4684.658203125 7996.3178710938 482.2540893555 )
+				rotation ( ( 0.60716784 0.7824739814 0.1381360143 ) ( -0.7900480032 0.6130449772 0 ) ( -0.0846835896 -0.1091340855 0.9904132485 ) )
+			}
+			
+			classname "placement_camera"
+		}
+		sdPrimitiveEntity "biodome_melted_door_side" {
+			sdDictionary {
+				"model"	"models/mapobjects/ark/biodome_door_melted.lwo"
+				"maxVisDist"	"16384"
+				"networkSync"	"1"
+				"dynamic"	"1"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( -738.7945556641 13420.556640625 524 )
+				rotation ( ( 0.8191520572 -0.5735763907 0 ) ( 0.5735763907 0.8191520572 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "func_static"
+		}
+		sdPrimitiveEntity "biodomedoorexplosion" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/structures/strogg_mining_laser_explosion"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( -736.3628540039 13369.328125 747.1745605469 )
+				rotation ( ( 0.0000000346 0.1045285538 0.9945218563 ) ( 1 0.0000000828 -0.0000000435 ) ( -0.0000000869 0.9945218563 -0.1045285538 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "dna_tubelight01" {
+			sdDictionary {
+				"light_radius"	"112 72 56"
+				"light_origin"	"-1856 -2576 8"
+				"_color"	"0.63137 0.84314 0.72157 1"
+				"light_center"	"0 0 -32"
+				"_overbright"	"2.450000"
+				"noshadows"	"1"
+				"drawSpec"	"high"
+				"noscriptobject"	"0"
+				"dynamic"	"1"
+			}
+			sdTransform {
+				translation ( -4416 8096 512 )
+			}
+			
+			classname "light_interior"
+		}
+		sdPrimitiveEntity "dna_tubelight02" {
+			sdDictionary {
+				"light_radius"	"112 72 56"
+				"light_origin"	"-1856 -2576 8"
+				"_color"	"0.63137 0.84314 0.72157 1"
+				"light_center"	"0 0 -32"
+				"_overbright"	"2.450000"
+				"noshadows"	"1"
+				"drawSpec"	"high"
+				"noscriptobject"	"0"
+				"dynamic"	"1"
+			}
+			sdTransform {
+				translation ( -4416 8272 512 )
+			}
+			
+			classname "light_interior"
+		}
+		sdPrimitiveEntity "dna_tubelight04" {
+			sdDictionary {
+				"light_radius"	"112 72 56"
+				"light_origin"	"-1856 -2576 8"
+				"_color"	"0.63137 0.84314 0.72157 1"
+				"light_center"	"0 0 -32"
+				"_overbright"	"2.450000"
+				"noshadows"	"1"
+				"drawSpec"	"high"
+				"noscriptobject"	"0"
+				"dynamic"	"1"
+			}
+			sdTransform {
+				translation ( -4128 8272 512 )
+			}
+			
+			classname "light_interior"
+		}
+		sdPrimitiveEntity "dna_tubelight03" {
+			sdDictionary {
+				"light_radius"	"112 72 56"
+				"light_origin"	"-1856 -2576 8"
+				"_color"	"0.63137 0.84314 0.72157 1"
+				"light_center"	"0 0 -32"
+				"_overbright"	"2.450000"
+				"noshadows"	"1"
+				"drawSpec"	"high"
+				"noscriptobject"	"0"
+				"dynamic"	"1"
+			}
+			sdTransform {
+				translation ( -4352 8184 512 )
+			}
+			
+			classname "light_interior"
+		}
+	}
+}

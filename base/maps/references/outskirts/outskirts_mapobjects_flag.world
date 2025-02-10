@@ -1,0 +1,42 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"editor_last_atmosphere"	"atmosphere://outskirts_rainy"
+	}
+
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+		}
+		sdPrimitiveEntity "nkd_mapobjects_flag_1" {
+			sdDictionary {
+				"maxVisDist"	"5120"
+				"anim"	"base"
+			}
+			classname "mapobjects_flag"
+		}
+		sdPrimitiveEntity "brandon_james_bot_dynamic_obstacle_1" {
+			sdTransform {
+				translation ( 47 0 23 )
+			}
+			
+			classname "bot_dynamic_obstacle"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_2" {
+					
+					sdTransform {
+						translation ( 0 0 189 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -230 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/dynamicobstacle"
+						plane ( -1 0 0 -21 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/dynamicobstacle"
+						plane ( 1 0 0 -21 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/dynamicobstacle"
+						plane ( 0 -1 0 -20 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/dynamicobstacle"
+						plane ( 0 1 0 -20 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/dynamicobstacle"
+						plane ( 0 0 1 -716 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/dynamicobstacle"
+					}
+				}
+			}
+		}
+	}
+}

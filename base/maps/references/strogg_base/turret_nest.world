@@ -1,0 +1,154 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"description"	"maps/unnamed.world"
+	}
+
+	meta {
+		sdLODGroup "nest" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		0
+			}
+			levels {
+				"nest (Level 1)"
+			}
+		}
+		sdLODGroup_Level "nest (Level 1)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		8192
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+			}
+		}
+		sdGroupVisual "aas" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aas"
+				}
+				{
+					
+					sdTransform {
+						translation ( 10 244 20 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -44 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.7999999523 -0.5999999642 0 -86.3999938965 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -34.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -34.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -34.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 -0 -8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -34.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aas"
+				}
+				{
+					
+					sdTransform {
+						translation ( -244 -2 22 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -42 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -42 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.4472135901 -0.8944271803 0 -87.6538619995 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.4472135901 0.8944271803 -0 -87.6538619995 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aas"
+				}
+				{
+					
+					sdTransform {
+						translation ( -160 160 22 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -42 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -42 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.4472135901 -0.8944271803 0 -94.8092803955 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.8000000119 0.6000000238 -0 -100 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.7071067691 -0.7071067691 0 5.6568541527 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.7164711952 0.6976166964 0 -24.0583496094 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aas"
+				}
+				{
+					
+					sdTransform {
+						translation ( 14 -243 20 )
+						rotation ( ( -0.9999996424 -0.0000003576 0 ) ( 0.0000003576 -0.9999996424 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 -0 1 -44 ) matrix ( ( -0.0312500112 0 0.0312500112 ) ( 0 0.0312500112 -0.0000014901 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0 -1 -40 ) matrix ( ( -0.0312500112 0 0.0312464945 ) ( 0 0.0312500075 -0.000001356 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.8000001907 -0.5999997854 0.0000000727 -89.6062698364 ) matrix ( ( -0.0312499944 0 -0.0249968581 ) ( 0 0.03125 -34.5000038147 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 -0 -0 -110 ) matrix ( ( -0.0312500224 0 0.0312467441 ) ( 0 0.03125 -34.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -1 -0 -8 ) matrix ( ( -0.0312500224 0 -0.0000010133 ) ( 0 0.03125 -34.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 1 0 -8 ) matrix ( ( -0.0312500224 0 0.0000010133 ) ( 0 0.03125 -34.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aas"
+				}
+				{
+					
+					sdTransform {
+						translation ( -156 -172 22 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -42 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -42 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.7047057152 -0.7094996572 0 -19.4057712555 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.6945053935 0.7194876075 -0 0.8793740869 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.8000000119 -0.6000000238 0 -89 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.4472135901 0.8944271803 0 -103.7535552979 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "nkd_model_static_1" 
+		groups {
+			"nest (Level 1)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/turret_nest.lwo"
+				"mergecm"	"1"
+			}
+			classname "model_static"
+		}
+	}
+}

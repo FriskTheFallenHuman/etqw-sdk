@@ -1,0 +1,204 @@
+
+customTool expand {
+	title "Expand"		// title as it appears in the drop-down
+	
+	// internal:// - goes to the map compiler
+	// console:// - passed to the console
+	// external:// - a new process is created
+	command "internal://compile %options%"	
+	
+	// %options% is filled with the options in this order
+	optionOrder {
+		"Type"
+		"Parallelism"
+		"Full Rebuild"
+	}
+	
+	// default values, if none have been saved yet
+	default "Type"					"Player"
+	default "Parallelism"			"Single Threaded"
+	default "Full Rebuild"			"false"
+
+	// "Display name" "value added to the command"
+	choice "Type" {
+		"Player"					"-aasPlayer"
+		"Vehicle"					"-aasVehicle"
+		"All Types"					"-aasAllTypes"
+	}
+
+	// "Display name" "value added to the command"
+	choice "Parallelism" {
+		"Single Threaded" 			"-expandST"
+//		"Multi-Threaded" 			"-expandMT"
+//		"Multiple Processes"		"-expandMP"
+		"Incredibuild" 				"-expandXG"
+	}
+
+	// "Display name" "value added to the command"
+	check "Full Rebuild" {
+		"false"						""
+		"true"						"-rebuild"
+	}
+
+	// %preoutput% will be emitted to the command line before the user literal value 
+	// %postoutput% will be emitted to the command line after the user literal value 	
+	//literal "Cell Size" {
+	//	"%preoutput%"				"-cellSize"
+	//}
+}
+
+customTool expand_campos {
+	title "Expand CamPos"
+	
+	command "internal://compile %options%"	
+	
+	optionOrder {
+		"Type"
+		"Parallelism"
+		"Full Rebuild"
+		"Texturing"
+	}
+	
+	default "Type"					"Player"
+	default "Parallelism"			"Single Threaded"
+	default "Full Rebuild"			"false"
+	default "Texturing"				"Colored Triangles"
+
+	choice "Type" {
+		"Player"					"-aasPlayer"
+		"Vehicle"					"-aasVehicle"
+	}
+
+	choice "Parallelism" {
+		"Single Threaded" 			"-expandCamST"
+//		"Multi-Threaded" 			"-expandCamMT"
+//		"Multiple Processes"		"-expandCamMP"
+		"Incredibuild" 				"-expandCamXG"
+	}
+
+	check "Full Rebuild" {
+		"false"						""
+		"true"						"-rebuild"
+	}
+
+	choice "Texturing" {
+		"Colored Triangles" 		"-coloredTris"
+		"Flat Shaded" 				"-flatShade"
+		"Flat Shaded Wire"			"-flatShadeWire"
+	}
+}
+
+customTool expand_and_aas {
+	title "Expand + AAS"
+	command "internal://compile %options%"
+	
+	optionOrder {
+		"Type"
+		"Expand Parallelism"
+		"AAS Parallelism"
+		"Full Rebuild"
+		"Debug Models"
+	}
+	
+	default "Type"					"Player"
+	default "Expand Parallelism"	 "Single Threaded"	
+	default "AAS Parallelism"		"Single Threaded"
+	default "Full Rebuild" 			"false"
+	default "Debug Models"			"false"
+
+	choice "Type" {
+		"Player"					"-aasPlayer"
+		"Vehicle"					"-aasVehicle"
+		"All Types"					"-aasAllTypes"
+	}
+
+	choice "Expand Parallelism" "Expand" {
+		"Single Threaded" 			"-expandST"
+//		"Multi-Threaded" 			"-expandMT"
+//		"Multiple Processes"		"-expandMP"
+		"Incredibuild" 				"-expandXG"
+	}
+
+	check "Full Rebuild" "Expand" {
+		"false"						""
+		"true"						"-rebuild"
+	}
+
+	choice "AAS Parallelism" "AAS" {
+		"Single Threaded" 			"-aasST"
+//		"Multi-Threaded" 			"-aasMT"
+//		"Multiple Processes"		"-aasMP"
+		"Incredibuild" 				"-aasXG"
+	}
+
+	check "Debug Models" "AAS" {
+		"false"						""
+		"true"						"-aasDebugModels"
+	}
+}
+
+customTool aas {
+	title "AAS"
+	command "internal://compile %options%"
+	
+	optionOrder {
+		"Type"
+		"Parallelism"
+		"Debug Models"
+	}
+	
+	default "Type"					"Player"
+	default "Parallelism"			"Single Threaded"
+	default "Debug Models"			"false"
+
+	choice "Type" {
+		"Player"					"-aasPlayer"
+		"Vehicle"					"-aasVehicle"
+		"All Types"					"-aasAllTypes"
+	}
+	
+	choice "Parallelism" {
+		"Single Threaded" 			"-aasST"
+//		"Multi-Threaded" 			"-aasMT"
+//		"Multiple Processes"		"-aasMP"
+		"Incredibuild" 				"-aasXG"
+	}
+
+	check "Debug Models" {
+		"false"						""
+		"true"						"aasDebugModels"
+	}
+}
+
+customTool aas_reach {
+	title "AAS Reach"
+	command "internal://compile %options%"
+	
+	optionOrder {
+		"Type"
+		"Parallelism"
+		"Debug Models"
+	}
+	
+	default "Type"					"Player"
+	default "Parallelism"			"Single Threaded"
+	default "Debug Models"			"false"
+
+	choice "Type" {
+		"Player"					"-aasPlayer"
+		"Vehicle"					"-aasVehicle"
+		"All Types"					"-aasAllTypes"
+	}
+	
+	choice "Parallelism" {
+		"Single Threaded" 			"-aasReachST"
+//		"Multi-Threaded" 			"-aasReachMT"
+//		"Multiple Processes"		"-aasReachMP"
+		"Incredibuild" 				"-aasReachXG"
+	}
+
+	check "Debug Models" {
+		"false"						""
+		"true"						"-aasDebugModels"
+	}
+}

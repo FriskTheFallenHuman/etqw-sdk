@@ -1,0 +1,2078 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"description"	"maps/unnamed.world"
+		"editor_last_atmosphere"	"atmosphere://refinery01"
+	}
+
+	meta {
+		sdLODGroup "hut" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		3
+				"uniqueinstance"		1
+			}
+			levels {
+				"hut (Level 01)"
+				"hut (Level 02)"
+				"hut (Level 03)"
+			}
+		}
+		sdLODGroup "core" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"core (Level 01)"
+			}
+		}
+		sdLODGroup_Level "hut (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		12800
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "hut (Level 02)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		8192
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		"medium"
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "hut (Level 03)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		3072
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		"medium"
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "core (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		8192
+				"minvisdist"		0
+				"visdistfalloff"		0.05
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdDetailGroup "detail_1" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdDetailGroup "base_detail" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"base_detail"
+					"core (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"1 0.86275 0.78039 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 4 -96 224 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 8 ) matrix ( ( 0 -0.0083912034 0.5460069776 ) ( -0.0011549729 0 1.1359299421 ) ) texBounds ( ( -4 -4 ) ( 692 488 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0 0 -1 -224 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -212 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 3.9999978542 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0 -1 0 -196 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -176 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"base_detail"
+					"core (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 4 -84 224 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -16 ) matrix ( ( 0 -0.0102719925 0.6779513359 ) ( -0.0014648419 0 1.7324216366 ) ) texBounds ( ( 0 -1116 ) ( 852 -1080 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0 0 -1 -224 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.9999999404 -0.0000000385 0 -211.9999694824 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 1 0 0 199.9999847412 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0.7071067691 -0.7071067691 0 2.8284163475 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071054578 0.70710814 -0 16.9700260162 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"base_detail"
+					"core (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 136 0 224 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -16 ) matrix ( ( -0.0143453665 0 0.9181034565 ) ( 0 0.0014648439 1.365234375 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0 0 -1 -88 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( -1 0 0 44 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 1 0 0 -56 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0 1 0 -72 ) matrix ( ( -0.0143453665 0 0.9181034565 ) ( 0 0.0014648439 1.365234375 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0 -1 0 0 ) matrix ( ( -0.0143453665 0 0.9181034565 ) ( 0 0.0014648439 1.365234375 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 136 0 120 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -120 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 44 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -52 ) matrix ( ( 0.0033637153 0 0 ) ( 0 0.0009191177 1 ) ) texBounds ( ( 0 256 ) ( 124 512 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 1 0 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 0 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"base_detail"
+					"core (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 4 -96 224 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 1 -16 ) matrix ( ( 0 -0.0102719907 0.6779514551 ) ( -0.0014648419 0 1.4238283634 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0 0 -1 -224 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -4.0000009537 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 1 0 0 -8 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( -0.707105875 -0.7071077228 0 -141.4215393066 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 -0 -99.9999923706 ) matrix ( ( 0 -0.0102719907 0.6779514551 ) ( -0.0014648419 0 1.4238283634 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"base_detail"
+					"core (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 4 -96 224 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 1 -16 ) matrix ( ( 0 -0.0102719907 0.6779514551 ) ( -0.0014648419 0 1.4238283634 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0 0 -1 -224 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -4.0000009537 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 1 0 0 -8 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( -0.7071059346 0.7071076632 0 -127.2793807983 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 139.9999847412 ) matrix ( ( 0 -0.0102719907 0.6779514551 ) ( -0.0014648419 0 1.4238283634 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"base_detail"
+					"core (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 4 -96 224 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -224 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -4.0000009537 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 1 0 0 -8 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( -0.0000000342 -1.0000001192 0 100 ) matrix ( ( 0 -0.0102719907 0.6779514551 ) ( -0.0014648419 0 1.4238283634 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0.0000000342 1.0000001192 0 -140 ) matrix ( ( 0 -0.0102719907 0.6779514551 ) ( -0.0014648419 0 1.4238283634 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0 0 1 152 ) matrix ( ( 0 -0.0102719907 0.6779514551 ) ( -0.0014648419 0 1.4238283634 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"base_detail"
+					"core (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 4 -96 224 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -16 ) matrix ( ( 0 -0.0102719907 0.6779514551 ) ( -0.0014648419 0 1.4238283634 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( -1 0 0 -4.0000009537 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 1 0 0 -8 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( -0.0000000342 -1.0000001192 0 100 ) matrix ( ( 0 -0.0102719907 0.6779514551 ) ( -0.0014648419 0 1.4238283634 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0.0000000342 1.0000001192 0 -140 ) matrix ( ( 0 -0.0102719907 0.6779514551 ) ( -0.0014648419 0 1.4238283634 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0 0 -1 -88 ) matrix ( ( 0 -0.0102719907 0.6779514551 ) ( -0.0014648419 0 1.4238283634 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 4 -96 224 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -1 0 0 -4.0000009537 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -4 ) matrix ( ( 0.004296876 0 -0.4312499762 ) ( 0 0.0009765625 0.3203125 ) ) texBounds ( ( 8 1664 ) ( 96 1792 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( -0.0000000342 -1.0000001192 0 100 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.0000000342 1.0000001192 0 -140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -152 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 88 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -96 -168 156 )
+					}
+					
+					faces {
+						plane ( 0 -0.4691552222 0.8831157088 -7.0649256706 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -156 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 0 -172 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 58 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -230 -40 99 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -99 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -99 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 0 -38 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -38 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -8 10 98 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -118 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -98 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 -0 -196 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -200 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 -0 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -118 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -198 12 308 )
+					}
+					
+					faces {
+						plane ( 0 0 1 68 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0 0 -1 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 0 -6 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -6 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -116 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -116 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 186 12 308 )
+					}
+					
+					faces {
+						plane ( 0 0 1 68 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0 0 -1 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 0 -6 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -6 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -116 ) matrix ( ( 0.03125 0 -12 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -116 ) matrix ( ( 0.03125 0 12 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 64 -98 308 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 68 ) matrix ( ( 0 0.0312500037 -1.625 ) ( -0.0312500037 0 -9.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0 0 -1 -92 ) matrix ( ( 0 -0.0312500037 -1.625 ) ( 0.0312500037 0 9.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 0 -6 ) matrix ( ( 0.0312500037 0 1.625 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -6 ) matrix ( ( 0.0312500037 0 -1.625 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 -0 -256 ) matrix ( ( 0.0312500037 0 -9.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -116 ) matrix ( ( 0.0312500037 0 9.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 64 122 308 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 68 ) matrix ( ( 0 0.0312500037 -1.625 ) ( -0.0312500037 0 -2.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0 0 -1 -92 ) matrix ( ( 0 -0.0312500037 -1.625 ) ( 0.0312500037 0 2.375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 0 -6 ) matrix ( ( 0.0312500037 0 1.625 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -6 ) matrix ( ( 0.0312500037 0 -1.625 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 -0 -256 ) matrix ( ( 0.0312500037 0 -2.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -116 ) matrix ( ( 0.0312500037 0 2.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"base_detail"
+					"core (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 136 0 224 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -16 ) matrix ( ( -0.0143453665 0 0.9181034565 ) ( 0 0.0014648439 1.365234375 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0 0 -1 -224 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 44 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 1 0 0 -56 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0 1 0 0 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( -0.7071068287 -0.7071068287 0 -33.9411239624 ) matrix ( ( -0.0143453665 0 0.9181034565 ) ( 0 0.0014648439 1.365234375 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"base_detail"
+					"core (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 136 0 224 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -16 ) matrix ( ( -0.0143453665 0 0.9181034565 ) ( 0 0.0014648439 1.365234375 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0 0 -1 -224 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 44 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 1 0 0 -56 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0 -1 0 72 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( -0.7071068287 0.7071068287 0 -50.9116897583 ) matrix ( ( -0.0143453665 0 0.9181034565 ) ( 0 0.0014648439 1.365234375 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"base_detail"
+					"core (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -196 24 224 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -16 ) matrix ( ( -0.0143453684 0 0.9181034565 ) ( 0 0.0014648419 1.8574215174 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 0 0 -1 -224 ) matrix ( ( -0.03125 0 0.749999404 ) ( 0 -0.0312500037 1.8750001192 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 -0 -3.9999985695 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( 1 0 0 -8 ) matrix ( ( 0.0092592593 0 0.4444444776 ) ( 0 -0.0011393229 1.50390625 ) ) texBounds ( ( 0 -1032 ) ( 512 -472 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( -0.7071069479 -0.7071068883 0 -67.8822784424 ) matrix ( ( -0.0143453684 0 0.9181034565 ) ( 0 0.0014648419 1.8574215174 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+						plane ( -0.7071068883 0.7071069479 0 -84.8528518677 ) matrix ( ( -0.0143453684 0 0.9181034565 ) ( 0 0.0014648419 1.8574215174 ) ) texBounds ( ( 0 -1144 ) ( 852 -1108 ) ) "texturesheets/refinery/shanty_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -318 -166 72 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 5.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -55 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 54 ) matrix ( ( -0.0038967349 -0.0002724862 1.21484375 ) ( -0.0000534541 0.0007644297 1.7568359375 ) ) texBounds ( ( 0 -1288 ) ( 248 -1040 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 1 0 -62 ) matrix ( ( -0.002559524 -0.0001789791 0.6600893736 ) ( -0.0001161071 0.001660409 1.7806522846 ) ) texBounds ( ( -8 -1288 ) ( 0 -1040 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 0 1 -1 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 5.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -0.9985021353 -0.0547124483 14.033741951 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 5.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -318 -166 72 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 5.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -55 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 54 ) matrix ( ( -0.0038967349 -0.0002724862 0.90234375 ) ( -0.0000534541 0.0007644297 1.7568359375 ) ) texBounds ( ( 0 -1288 ) ( 248 -1040 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 -1 0 -62 ) matrix ( ( -0.03125 0 -5.625 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -1 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 5.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0.9985021353 0.0547124483 -14.033741951 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 5.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -318 -166 72 )
+					}
+					
+					faces {
+						plane ( 1 0 0 -55 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 54 ) matrix ( ( -0.00390625 0 0.90234375 ) ( 0 0.0009460449 1.75 ) ) texBounds ( ( 0 -1288 ) ( 248 -1040 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 -1 0 -62 ) matrix ( ( -0.03125 0 -5.625 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -62 ) matrix ( ( -0.00390625 0 0.90234375 ) ( 0 0.0009460449 1.75 ) ) texBounds ( ( 0 -1288 ) ( 248 -1040 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 0 1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -5.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 1 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 5.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -318 -166 72 )
+					}
+					
+					faces {
+						plane ( 0 -0.4808325469 0.876812458 -78.913230896 ) matrix ( ( -0.03125 0 -5.625 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -55 ) matrix ( ( -0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 54 ) matrix ( ( -0.00390625 0 0.90625 ) ( 0 0.0010052848 1.8786764145 ) ) texBounds ( ( 8 -1396 ) ( 256 -1256 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 1 0 -62 ) matrix ( ( -0.00390625 0 0.90625 ) ( 0 0.0010052848 1.8786764145 ) ) texBounds ( ( 8 -1396 ) ( 256 -1256 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 0 -1 56 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 5.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -212 -166 72 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -72 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -7.5625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 53 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -54 ) matrix ( ( 0.00390625 0 0.71875 ) ( 0 0.0009460449 1.75 ) ) texBounds ( ( 0 -1288 ) ( 248 -1040 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 -1 0 -62 ) matrix ( ( 0.015625 0 2.46875 ) ( 0 0.000869751 1.75 ) ) texBounds ( ( -8 -1308 ) ( 0 -1080 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 1 0 -62 ) matrix ( ( 0.03125 0 -7.5625 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 7.5625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -212 -166 72 )
+					}
+					
+					faces {
+						plane ( 0 -0.4808326066 0.8768123984 -78.9131164551 ) matrix ( ( 0.03125 0 7.5625 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 53 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -54 ) matrix ( ( 0.00390625 0 0.90625 ) ( 0 0.0010052848 1.8786764145 ) ) texBounds ( ( 8 -1396 ) ( 256 -1256 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 1 0 -62 ) matrix ( ( 0.03125 0 -7.5625 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -7.5625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -229 18 36 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -34 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -35 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -33 ) matrix ( ( -0.00268243 -0.0001875735 0.4586118758 ) ( -0.0001228447 0.0017567623 1.7464929819 ) ) texBounds ( ( 261 -1282 ) ( 269 -1034 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 1 0 0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 1 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 -0 -2 ) matrix ( ( -0.0070377826 -0.0004921294 2.3461346626 ) ( -0.0001312318 0.001876704 1.7831984758 ) ) texBounds ( ( 261 -1282 ) ( 509 -1034 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"detail_1"
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -316 -118 194 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -72 ) matrix ( ( 0.03125 0 -1.5 ) ( 0 -0.03125 5.5625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -53.9996528625 ) matrix ( ( -0.03125 0 1.5 ) ( 0 0.03125 3.8125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 53.0001106262 ) matrix ( ( -0.0004349339 0.0062198536 1.7589985132 ) ( 0.0017145948 0.0001198958 1.5556278229 ) ) texBounds ( ( 267 -1289 ) ( 493 -1169 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 0 1 -1 ) matrix ( ( -0.0004349339 0.0062198536 1.7589985132 ) ( 0.0017145948 0.0001198958 1.5556278229 ) ) texBounds ( ( 267 -1289 ) ( 493 -1169 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 -1 0 12 ) matrix ( ( 0.03125 0 -0.0625 ) ( 0 -0.03125 1.9002782106 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -45 ) matrix ( ( 0.03125 0 -1.5 ) ( 0 -0.03125 5.5625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -316 -118 194 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -72 ) matrix ( ( 0.03125 0 -1.5 ) ( 0 -0.03125 5.5625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.9995920658 0.0285597742 0 -54.2065200806 ) matrix ( ( -0.03125 0 1.5 ) ( 0 0.03125 3.8125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.9995920658 -0.0285597742 0 53.2067337036 ) matrix ( ( -0.0038967349 -0.0002724862 0.994557023 ) ( -0.0000534541 0.0007644297 1.8475295305 ) ) texBounds ( ( 0 -1288 ) ( 248 -1040 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 1 0 -78 ) matrix ( ( -0.03125 0 5.5625 ) ( 0 0.03125 3.8125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -1 ) matrix ( ( -0.0038967349 -0.0002724862 0.994557023 ) ( -0.0000534541 0.0007644297 1.8475295305 ) ) texBounds ( ( 0 -1288 ) ( 248 -1040 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 -1 0 43 ) matrix ( ( -0.002559447 -0.0001789737 -0.7340316772 ) ( -0.0001161071 0.0016604094 1.9195923805 ) ) texBounds ( ( -20 -1283 ) ( -12 -1035 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"detail_1"
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -320 -54 194 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -72 ) matrix ( ( 0.03125 0 -3.5 ) ( 0 -0.03125 5.6875 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.998052597 -0.062378142 -0.0000066758 -54.0200767517 ) matrix ( ( 0.0077972636 0 0.4401744604 ) ( 0 0.0009498069 1.8658747673 ) ) texBounds ( ( 0 -1394 ) ( 256 -1252 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( -0.998052597 0.062378142 0.0000133515 53.0220184326 ) matrix ( ( -0.0044857482 -0.0003136734 0.2211026251 ) ( -0.0001091353 0.0015607111 1.9309494495 ) ) texBounds ( ( 3 -1285 ) ( 162 -1066 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 1 -0 -78 ) matrix ( ( -0.0044857482 -0.0003136734 0.2211026251 ) ( -0.0001091353 0.0015607111 1.9309494495 ) ) texBounds ( ( 3 -1285 ) ( 162 -1066 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( -0 0 1 -1 ) matrix ( ( -0.0038967349 -0.0002724862 0.994557023 ) ( -0.0000534541 0.0007644297 1.8475295305 ) ) texBounds ( ( 0 -1288 ) ( 248 -1040 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+						plane ( 0 -1 0 13.9998531342 ) matrix ( ( -0.0015998959 -0.0001118754 -0.4317629933 ) ( -0.0001025298 0.0014662474 1.8860867023 ) ) texBounds ( ( 3 -1285 ) ( 8 -1066 ) ) "texturesheets/refinery/refinery_signsdoors01b"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -210 -104 376 )
+					}
+					
+					faces {
+						plane ( 0 0 1 136 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -0 0 -1 -376 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -1 0 0 -58 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 1 0 0 -58 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 -1 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 1 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -6 14 120 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -120 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 0 -1 -120 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( -1 0 0 -198 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 1 0 0 -198 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 -1 0 -118 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+						plane ( 0 1 0 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidvehicle_noareas"
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 03)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 186 36 188 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0036458333 0 -0.3656250238 ) ( 0 0.0010091147 1.25 ) )
+					texBounds ( ( 216 -16 ) ( 440 480 ) )
+					material "texturesheets/refinery/refinery_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 6 -36 -52 -0.3656250238 1.1127604246 ) ( 6 0 -52 -0.2343750298 1.1127604246 ) ( 6 36 -52 -0.1031250358 1.1127604246 ) )
+							( ( 6 -36 0 -0.3656250238 1.0602865219 ) ( 6 0 0 -0.2343750298 1.0602865219 ) ( 6 36 0 -0.1031250358 1.0602865219 ) )
+							( ( 6 -36 52 -0.3656250238 1.0078125 ) ( 6 0 52 -0.2343750298 1.0078125 ) ( 6 36 52 -0.1031250358 1.0078125 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 03)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 186 -52 120 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0036458333 0 -0.3656250238 ) ( 0 0.0010091147 1.25 ) )
+					texBounds ( ( 216 -16 ) ( 440 480 ) )
+					material "texturesheets/refinery/refinery_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 6 -52 -120 -0.7156250477 1.25 ) ( 6 0 -120 -0.5552083254 1.25 ) ( 6 52 -120 -0.3656250238 1.25 ) )
+							( ( 6 -52 0 -0.7156250477 1.12890625 ) ( 6 0 0 -0.5552083254 1.12890625 ) ( 6 52 0 -0.3656250238 1.12890625 ) )
+							( ( 6 -52 120 -0.7156250477 1.0078125 ) ( 6 0 120 -0.5552083254 1.0078125 ) ( 6 52 120 -0.3656250238 1.0078125 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 03)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 186 116 120 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0036458333 0 -0.3656250238 ) ( 0 0.0010091147 1.25 ) )
+					texBounds ( ( 216 -16 ) ( 440 480 ) )
+					material "texturesheets/refinery/refinery_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 6 -44 -120 -0.1031250358 1.25 ) ( 6 -12 -120 0.0135416389 1.25 ) ( 6 12 -120 0.0718749762 1.25 ) )
+							( ( 6 -44 0 -0.1031250358 1.12890625 ) ( 6 -12 0 0.0135416389 1.12890625 ) ( 6 12 0 0.0718749762 1.12890625 ) )
+							( ( 6 -44 120 -0.1031250358 1.0078125 ) ( 6 -12 120 0.0135416389 1.0078125 ) ( 6 12 120 0.0718749762 1.0078125 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 03)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 132 -98 120 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0036458333 0 -0.3656250238 ) ( 0 0.0010091147 1.25 ) )
+					texBounds ( ( 216 -16 ) ( 440 480 ) )
+					material "texturesheets/refinery/refinery_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 5.9999933243 -328 -120 -1.0802083015 1.25 ) ( 5.9999966621 -116 -120 -0.3072916567 1.25 ) ( 6 60 -120 0.3052083254 1.25 ) )
+							( ( 5.9999933243 -328 0 -1.0802083015 1.12890625 ) ( 5.9999966621 -116 0 -0.3072916567 1.12890625 ) ( 6 60 0 0.3052083254 1.12890625 ) )
+							( ( 5.9999933243 -328 120 -1.0802083015 1.0078125 ) ( 5.9999966621 -116 120 -0.3072916567 1.0078125 ) ( 6 60 120 0.3052083254 1.0078125 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 03)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -143.9999694824 121.9999923706 120 )
+						rotation ( ( -0.0000001027 0.9999998212 0 ) ( -0.9999998212 -0.0000001027 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0036458333 0 -0.3656250238 ) ( 0 0.0010091147 1.25 ) )
+					texBounds ( ( 216 -16 ) ( 440 480 ) )
+					material "texturesheets/refinery/refinery_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 5.9999923706 -336 -120 -1.0364582539 1.25 ) ( 5.9999966621 -116 -120 -0.2635417283 1.25 ) ( 6.0000009537 60 -120 0.3489581943 1.25 ) )
+							( ( 5.9999923706 -336 0 -1.0364582539 1.12890625 ) ( 5.9999966621 -116 0 -0.2635417283 1.12890625 ) ( 6.0000009537 60 0 0.3489581943 1.12890625 ) )
+							( ( 5.9999923706 -336 120 -1.0364582539 1.0078125 ) ( 5.9999966621 -116 120 -0.2635417283 1.0078125 ) ( 6.0000009537 60 120 0.3489581943 1.0078125 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 03)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -197.9999847412 -43.9999084473 120 )
+						rotation ( ( -0.9999996424 -0.0000002054 0 ) ( 0.0000002054 -0.9999996424 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0036458333 0 -0.3656250238 ) ( 0 0.0010091147 1.25 ) )
+					texBounds ( ( 216 -16 ) ( 440 480 ) )
+					material "texturesheets/refinery/refinery_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 6.0000238419 -172 -120 -0.8031251431 1.25 ) ( 5.9999966621 -116 -120 -0.6281251907 1.25 ) ( 6 52 -120 -0.0156254172 1.25 ) )
+							( ( 6.0000238419 -172 0 -0.8031251431 1.12890625 ) ( 5.9999966621 -116 0 -0.6281251907 1.12890625 ) ( 6 52 0 -0.0156254172 1.12890625 ) )
+							( ( 6.0000238419 -172 120 -0.8031251431 1.0078125 ) ( 5.9999966621 -116 120 -0.6281251907 1.0078125 ) ( 6 52 120 -0.0156254172 1.0078125 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 9 -172 159 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.5 ) )
+					texBounds ( ( 0 -1024 ) ( 7 -768 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 5 ) {
+						(
+							( ( -68 60 38 0 0.5 ) ( -68.2450332642 60.0140533447 37.5643844604 0.0068359375 0.5 ) ( -68.4900665283 60.0281066895 37.1287689209 0.013671875 0.5 ) )
+							( ( -68 -2 36 0 0.53125 ) ( -68.2451019287 -2.0069351196 35.5642547607 0.0068359375 0.53125 ) ( -68.4902114868 -2.0138702393 35.1285095215 0.013671875 0.53125 ) )
+							( ( -68 -2 36 0 0.5625 ) ( -68.2451248169 -1.9964370728 35.5642242432 0.0068359375 0.5625 ) ( -68.4902496338 -1.9928741455 35.1284484863 0.013671875 0.5625 ) )
+							( ( -68 -52 38 0 0.59375 ) ( -68.2449798584 -52.0174179077 37.5644760132 0.0068359375 0.59375 ) ( -68.4899673462 -52.0348358154 37.1289520264 0.013671875 0.59375 ) )
+							( ( -68 -52 38 0 0.625 ) ( -68.2449798584 -52.0174179077 37.5644760132 0.0068359375 0.625 ) ( -68.4899673462 -52.0348358154 37.1289520264 0.013671875 0.625 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -204 -40 180 )
+						rotation ( ( -0.0000000596 -0 0.9999999404 ) ( 0.0000001192 -0.9999998808 0 ) ( 0.9999998212 0.0000001192 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.4990234375 ) )
+					texBounds ( ( 0 -1022 ) ( 8 -766 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 16 -64 0 0 0.4990234375 ) ( 16 -64 0 0.00390625 0.4990234375 ) ( 18 0 0 0.0078125 0.4990234375 ) ( 18 0 0 0.01171875 0.4990234375 ) ( 16 64 0 0.015625 0.4990234375 ) )
+							( ( 15.5002441406 -63.9843826294 0 0 0.5615234375 ) ( 15.5002441406 -63.9843826294 0 0.00390625 0.5615234375 ) ( 17.5000267029 0.0052080508 0 0.0078125 0.5615234375 ) ( 17.5000267029 -0.0052080508 0 0.01171875 0.5615234375 ) ( 15.5002441406 63.9843826294 0 0.015625 0.5615234375 ) )
+							( ( 15.0004882813 -63.9687652588 0 0 0.6240234375 ) ( 15.0004882813 -63.9687652588 0 0.00390625 0.6240234375 ) ( 17.0000534058 0.0104161017 0 0.0078125 0.6240234375 ) ( 17.0000534058 -0.0104161017 0 0.01171875 0.6240234375 ) ( 15.0004882813 63.9687652588 0 0.015625 0.6240234375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -260 5.0000038147 131 )
+						rotation ( ( 0.0000000596 0.9999998808 0.0000000596 ) ( 0 0.0000000596 -0.9999999404 ) ( -0.9999999404 0.0000000596 0 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.4990234375 ) )
+					texBounds ( ( 0 -1022 ) ( 8 -766 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 15.9999885559 63.9999961853 -63.9999961853 0 0.6240234375 ) ( 15.9999885559 63.9999961853 -63.9999961853 0.00390625 0.6240234375 ) ( 17.9999961853 0.0000010729 -63.9999961853 0.0078125 0.6240234375 ) ( 17.9999961853 0.0000010729 -63.9999961853 0.01171875 0.6240234375 ) ( 16.0000038147 -63.9999809265 -63.9999961853 0.015625 0.6240234375 ) )
+							( ( 15.5002326965 63.9843711853 -63.9999961853 0 0.5615234375 ) ( 15.5002326965 63.9843711853 -63.9999961853 0.00390625 0.5615234375 ) ( 17.5000228882 0.0052042897 -63.9999961853 0.0078125 0.5615234375 ) ( 17.5000228882 -0.0052022035 -63.9999961853 0.01171875 0.5615234375 ) ( 15.5002479553 -63.9843559265 -63.9999961853 0.015625 0.5615234375 ) )
+							( ( 15.0004768372 63.9687461853 -63.9999961853 0 0.4990234375 ) ( 15.0004768372 63.9687461853 -63.9999961853 0.00390625 0.4990234375 ) ( 17.0000495911 0.0104227653 -63.9999961853 0.0078125 0.4990234375 ) ( 17.0000495911 -0.0104207387 -63.9999961853 0.01171875 0.4990234375 ) ( 15.0004920959 -63.9687461853 -63.9999961853 0.015625 0.4990234375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -201.0000305176 185.9999694824 1 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0.00390625 ) ( 0 1 0.5 ) )
+					texBounds ( ( 2 -1024 ) ( 9 -769 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 415 39 0 0.00390625 0.5 ) ( 414.5010375977 39.0322265625 -0.0009765625 0.0107421875 0.5 ) ( 414.0020751953 39.0644493103 -0.001953125 0.017578125 0.5 ) )
+							( ( 415 43 64 0.00390625 0.5622558594 ) ( 414.5010070801 43.0317077637 63.9994812012 0.0107421875 0.5622558594 ) ( 414.0020141602 43.0634155273 63.9989624023 0.017578125 0.5622558594 ) )
+							( ( 415 43 128 0.00390625 0.6245117188 ) ( 414.5009765625 43.0311889648 128 0.0107421875 0.6245117188 ) ( 414.001953125 43.0623779297 128 0.017578125 0.6245117188 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 03)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -201 -222 65 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0.005859375 ) ( 0 1 0.3764648438 ) )
+					texBounds ( ( 3 -771 ) ( 256 -520 ) )
+					material "texturesheets/refinery/refinery_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 8 -64 -60 0.005859375 0.3764648438 ) ( 8 -64 -60 0.1293945313 0.3764648438 ) ( 4 0 -64 0.2529296875 0.3764648438 ) ( 4 0 -64 0.3764648438 0.3764648438 ) ( 7 39 -64 0.5 0.3764648438 ) )
+							( ( 8 -68 0 0.005859375 0.4377441406 ) ( 8 -68 0 0.1293945313 0.4377441406 ) ( 4 0 0 0.2529296875 0.4377441406 ) ( 4 0 0 0.3764648438 0.4377441406 ) ( 7 43 0 0.5 0.4377441406 ) )
+							( ( 8 -64 64 0.005859375 0.4990234375 ) ( 8 -64 64 0.1293945313 0.4990234375 ) ( 4 0 60 0.2529296875 0.4990234375 ) ( 4 0 60 0.3764648438 0.4990234375 ) ( 7 43 64 0.5 0.4990234375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 03)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -201 -222 65 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0.505859375 ) ( 0 1 0.3740234375 ) )
+					texBounds ( ( 259 -766 ) ( 512 -509 ) )
+					material "texturesheets/refinery/refinery_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 7.0019397736 -64.0621337891 64.0038833618 0.505859375 0.3740234375 ) ( 7.0018367767 -64.060546875 64.0018386841 0.6293945313 0.3740234375 ) ( 3.0001914501 -0.0195260607 60.0012969971 0.7529296875 0.3740234375 ) ( 3.0002169609 0.0208288152 60 0.8764648438 0.3740234375 ) ( 6.001947403 43.0623779297 64 1 0.3740234375 ) )
+							( ( 7.0017256737 -68.0587234497 -0.0001223359 0.505859375 0.4367675781 ) ( 7.0018348694 -68.0605545044 -0.0000730879 0.6293945313 0.4367675781 ) ( 3.0001921654 -0.0196068846 -0.0000408465 0.7529296875 0.4367675781 ) ( 3.0002589226 0.0227393303 -0.0006508498 0.8764648438 0.4367675781 ) ( 6.0020132065 43.0634155273 -0.001039354 1 0.4367675781 ) )
+							( ( 7.0019721985 -64.0626373291 -60.0041770935 0.505859375 0.4995117188 ) ( 7.0018367767 -64.060546875 -60.0019569397 0.6293945313 0.4995117188 ) ( 3.0001688004 -0.0183132514 -64.0013961792 0.7529296875 0.4995117188 ) ( 3.0002477169 0.0222126227 -64.0013885498 0.8764648438 0.4995117188 ) ( 6.0020809174 39.0644493103 -64.001953125 1 0.4995117188 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -201.0000305176 185.9999694824 1 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0.00390625 ) ( 0 1 0.5 ) )
+					texBounds ( ( 2 -1024 ) ( 9 -769 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 416 -64 128 0.00390625 0.5 ) ( 416 -64 128 0.0073242188 0.5 ) ( 412 0 124 0.0107421875 0.5 ) ( 412 0 124 0.0141601563 0.5 ) ( 415 43 128 0.017578125 0.5 ) )
+							( ( 415.5009765625 -64.0310668945 128.0019378662 0.00390625 0.5622558594 ) ( 415.5009155273 -64.0302734375 128.0009155273 0.0073242188 0.5622558594 ) ( 411.5000915527 -0.0097630303 124.0006484985 0.0107421875 0.5622558594 ) ( 411.5001220703 0.0104144076 124 0.0141601563 0.5622558594 ) ( 414.5009765625 43.0311889648 128 0.017578125 0.5622558594 ) )
+							( ( 415.001953125 -64.0621337891 128.0038757324 0.00390625 0.6245117188 ) ( 415.0018310547 -64.060546875 128.0018310547 0.0073242188 0.6245117188 ) ( 411.0001831055 -0.0195260607 124.0012969971 0.0107421875 0.6245117188 ) ( 411.000213623 0.0208288152 124 0.0141601563 0.6245117188 ) ( 414.001953125 43.0623779297 128 0.017578125 0.6245117188 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -201.0000305176 185.9999694824 1 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0.00390625 ) ( 0 1 0.5 ) )
+					texBounds ( ( 2 -1024 ) ( 9 -769 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 415.0019836426 -64.0626373291 3.9958229065 0.00390625 0.5 ) ( 415.0018310547 -64.060546875 3.9980430603 0.0073242188 0.5 ) ( 411.0001831055 -0.0183132514 -0.0013961792 0.0107421875 0.5 ) ( 411.0002441406 0.0222126227 -0.0013885498 0.0141601563 0.5 ) ( 414.0020751953 39.0644493103 -0.001953125 0.017578125 0.5 ) )
+							( ( 415.5009765625 -64.0313186646 3.9979114532 0.00390625 0.5622558594 ) ( 415.5009155273 -64.0302734375 3.9990215302 0.0073242188 0.5622558594 ) ( 411.5000915527 -0.0091566257 -0.0006980896 0.0107421875 0.5622558594 ) ( 411.5001220703 0.0111063113 -0.0006942749 0.0141601563 0.5622558594 ) ( 414.5010375977 39.0322265625 -0.0009765625 0.017578125 0.5622558594 ) )
+							( ( 416 -64 4 0.00390625 0.6245117188 ) ( 416 -64 4 0.0073242188 0.6245117188 ) ( 412 0 0 0.0107421875 0.6245117188 ) ( 412 0 0 0.0141601563 0.6245117188 ) ( 415 39 0 0.017578125 0.6245117188 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -201.0000305176 185.9999694824 1 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0.00390625 ) ( 0 1 0.5 ) )
+					texBounds ( ( 2 -1024 ) ( 9 -769 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 416 -64 128 0.00390625 0.5 ) ( 415.5009765625 -64.0310668945 128.0019378662 0.0107421875 0.5 ) ( 415.001953125 -64.0621337891 128.0038757324 0.017578125 0.5 ) )
+							( ( 416 -68 64 0.00390625 0.5622558594 ) ( 415.5008544922 -68.0293579102 63.9999389648 0.0107421875 0.5622558594 ) ( 415.001739502 -68.0587234497 63.9998779297 0.017578125 0.5622558594 ) )
+							( ( 416 -64 4 0.00390625 0.6245117188 ) ( 415.5009765625 -64.0313186646 3.9979114532 0.0107421875 0.6245117188 ) ( 415.0019836426 -64.0626373291 3.9958229065 0.017578125 0.6245117188 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -201 -222 65 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.6240234375 ) )
+					texBounds ( ( 0 -1278 ) ( 257 -1021 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 7.0019397736 -64.0621337891 64.0038833618 0 0.6240234375 ) ( 7.0018367767 -64.060546875 64.0018386841 0.1254882813 0.6240234375 ) ( 3.0001914501 -0.0195260607 60.0012969971 0.2509765625 0.6240234375 ) ( 3.0002169609 0.0208288152 60 0.3764648438 0.6240234375 ) ( 6.001947403 43.0623779297 64 0.501953125 0.6240234375 ) )
+							( ( 7.0017256737 -68.0587234497 -0.0001223359 0 0.6867675781 ) ( 7.0018348694 -68.0605545044 -0.0000730879 0.1254882813 0.6867675781 ) ( 3.0001921654 -0.0196068846 -0.0000408465 0.2509765625 0.6867675781 ) ( 3.0002589226 0.0227393303 -0.0006508498 0.3764648438 0.6867675781 ) ( 6.0020132065 43.0634155273 -0.001039354 0.501953125 0.6867675781 ) )
+							( ( 7.0019721985 -64.0626373291 -60.0041770935 0 0.7495117188 ) ( 7.0018367767 -64.060546875 -60.0019569397 0.1254882813 0.7495117188 ) ( 3.0001688004 -0.0183132514 -64.0013961792 0.2509765625 0.7495117188 ) ( 3.0002477169 0.0222126227 -64.0013885498 0.3764648438 0.7495117188 ) ( 6.0020809174 39.0644493103 -64.001953125 0.501953125 0.7495117188 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -201 -222 65 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.6240234375 ) )
+					texBounds ( ( 0 -1278 ) ( 257 -1019 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 8 -64 -60 0 0.6240234375 ) ( 8 -64 -60 0.1254882813 0.6240234375 ) ( 4 0 -64 0.2509765625 0.6240234375 ) ( 4 0 -64 0.3764648438 0.6240234375 ) ( 7 39 -64 0.501953125 0.6240234375 ) )
+							( ( 8 -68 0 0 0.6872558594 ) ( 8 -68 0 0.1254882813 0.6872558594 ) ( 4 0 0 0.2509765625 0.6872558594 ) ( 4 0 0 0.3764648438 0.6872558594 ) ( 7 43 0 0.501953125 0.6872558594 ) )
+							( ( 8 -64 64 0 0.7504882813 ) ( 8 -64 64 0.1254882813 0.7504882813 ) ( 4 0 60 0.2509765625 0.7504882813 ) ( 4 0 60 0.3764648438 0.7504882813 ) ( 7 43 64 0.501953125 0.7504882813 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 03)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -67.0000152588 -168 163 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.001953125 0 0.248046875 ) ( 0 0.0004882813 0.3120117188 ) )
+					texBounds ( ( 15 -1025 ) ( 164 -811 ) )
+					material "texturesheets/refinery/refinery_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 5 ) {
+						(
+							( ( -64 -200 34 0.0564746559 0.5003322363 ) ( -64 -200 34 0.0564746559 0.5003322363 ) ( 0 -200 -2 0.053893894 0.5361741781 ) ( 0 -200 -2 0.053893894 0.5361741781 ) ( 64 -200 -34 0.051313132 0.5710918903 ) )
+							( ( -64 -200 34 0.0564746559 0.5003322363 ) ( -64 -200 34 0.0564746559 0.5003322363 ) ( 0 -200 -2 0.053893894 0.5361741781 ) ( 0 -200 -2 0.053893894 0.5361741781 ) ( 64 -200 -34 0.051313132 0.5710918903 ) )
+							( ( -64 -150 32 0.154110074 0.5012384057 ) ( -64 -150 32 0.154110074 0.5012384057 ) ( 0 -150 -4 0.1515293121 0.5370804071 ) ( 0 -150 -4 0.1515293121 0.5370804071 ) ( 64 -150 -36 0.1489485502 0.5719980597 ) )
+							( ( -64 -150 32 0.154110074 0.5012384057 ) ( -64 -150 32 0.154110074 0.5012384057 ) ( 0 -150 -4 0.1515293121 0.5370804071 ) ( 0 -150 -4 0.1515293121 0.5370804071 ) ( 64 -150 -36 0.1489485502 0.5719980597 ) )
+							( ( -64 -88 34 0.2751780152 0.501326859 ) ( -64 -88 34 0.2751780152 0.501326859 ) ( 0 -88 -2 0.2725972533 0.5371688604 ) ( 0 -88 -2 0.2725972533 0.5371688604 ) ( 64 -88 -34 0.2700164914 0.572086513 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -215 -172 159 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.5 ) )
+					texBounds ( ( 0 -1024 ) ( 7 -768 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( -68.4899673462 -52.0348358154 37.1289520264 0 0.5 ) ( -68.4899673462 -52.0348358154 37.1289520264 0.0034179688 0.5 ) ( -4.4613947868 -52.0354614258 1.1135139465 0.0068359375 0.5 ) ( -4.4757437706 -52.03515625 1.121118784 0.0102539063 0.5 ) ( 59.5530738831 -52.0357513428 -30.8938560486 0.013671875 0.5 ) )
+							( ( -68.2449798584 -52.0174179077 37.5644760132 0 0.5625 ) ( -68.2449798584 -52.0174179077 37.5644760132 0.0034179688 0.5625 ) ( -4.2306976318 -52.0177307129 1.5567569733 0.0068359375 0.5625 ) ( -4.2378721237 -52.017578125 1.560559392 0.0102539063 0.5625 ) ( 59.7765350342 -52.0178756714 -30.4469280243 0.013671875 0.5625 ) )
+							( ( -68 -52 38 0 0.625 ) ( -68 -52 38 0.0034179688 0.625 ) ( -4 -52 2 0.0068359375 0.625 ) ( -4 -52 2 0.0102539063 0.625 ) ( 60 -52 -30 0.013671875 0.625 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -215 -172 159 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.5 ) )
+					texBounds ( ( 0 -1024 ) ( 7 -768 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 5 ) {
+						(
+							( ( 60 -52 -30 0 0.5 ) ( 59.7765350342 -52.0178756714 -30.4469280243 0.0068359375 0.5 ) ( 59.5530738831 -52.0357513428 -30.8938560486 0.013671875 0.5 ) )
+							( ( 60 -52 -30 0 0.53125 ) ( 59.7765350342 -52.0178756714 -30.4469280243 0.0068359375 0.53125 ) ( 59.5530738831 -52.0357513428 -30.8938560486 0.013671875 0.53125 ) )
+							( ( 60 -2 -32 0 0.5625 ) ( 59.7764167786 -2.0071182251 -32.4471664429 0.0068359375 0.5625 ) ( 59.5528335571 -2.0142364502 -32.8943367004 0.013671875 0.5625 ) )
+							( ( 60 -2 -32 0 0.59375 ) ( 59.7763977051 -1.99634552 -32.4472007751 0.0068359375 0.59375 ) ( 59.5527992249 -1.99269104 -32.8944015503 0.013671875 0.59375 ) )
+							( ( 60 60 -30 0 0.625 ) ( 59.7764854431 60.0144195557 -30.4470272064 0.0068359375 0.625 ) ( 59.5529708862 60.0288391113 -30.8940544128 0.013671875 0.625 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -67.0000152588 -168 163 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.0038344823 -0.0006874852 0.25 ) ( 0.000186337 0.0008842012 -0.3090820313 ) )
+					texBounds ( ( 128 -1280 ) ( 192 -776 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 5 ) {
+						(
+							( ( -64.4900665283 -87.9718933105 33.1287689209 -0.0015317798 -0.3773464561 ) ( -64.4900665283 -87.9718933105 33.1287689209 -0.0015317798 -0.3773464561 ) ( -0.4758464992 -87.9716415405 -2.8790712357 0.018641606 -0.3132048845 ) ( -0.4614960253 -87.9713973999 -2.8866810799 0.0186454207 -0.313190788 ) ( 63.5529708862 -87.9711608887 -34.8940544128 0.0407794118 -0.2515704632 ) )
+							( ( -64.4902114868 -150.0138702393 31.1285076141 0.2344417423 -0.3755500019 ) ( -64.4902496338 -149.9928741455 31.128446579 0.2343615144 -0.3755501807 ) ( -0.4688747525 -150.0035552979 -4.8832573891 0.254578948 -0.3114014268 ) ( -0.4688736498 -150.0032806396 -4.8832592964 0.2545779347 -0.3114014268 ) ( 63.5527992249 -149.99269104 -36.8944015503 0.2766748071 -0.249774158 ) )
+							( ( -64.4902496338 -149.9928741455 31.128446579 0.2343615144 -0.3755501807 ) ( -64.4902114868 -150.0138702393 31.1285076141 0.2344417423 -0.3755500019 ) ( -0.4688736498 -150.0032806396 -4.8832592964 0.2545779347 -0.3114014268 ) ( -0.4688747525 -150.0035552979 -4.8832573891 0.254578948 -0.3114014268 ) ( 63.5528335571 -150.0142364502 -36.8943367004 0.2767571211 -0.2497739792 ) )
+							( ( -64.4899673462 -200.0348358154 33.1289520264 0.4264648557 -0.376378715 ) ( -64.4899673462 -200.0348358154 33.1289520264 0.4264648557 -0.376378715 ) ( -0.4757437408 -200.03515625 -2.878881216 0.4466403723 -0.3122371137 ) ( -0.4613946378 -200.0354614258 -2.8864860535 0.4466462433 -0.3122230172 ) ( 63.5530738831 -200.0357513428 -34.8938560486 0.4687823057 -0.2506026924 ) )
+							( ( -64.4899673462 -200.0348358154 33.1289520264 0.4264648557 -0.376378715 ) ( -64.4899673462 -200.0348358154 33.1289520264 0.4264648557 -0.376378715 ) ( -0.4613946378 -200.0354614258 -2.8864860535 0.4466462433 -0.3122230172 ) ( -0.4757437408 -200.03515625 -2.878881216 0.4466403723 -0.3122371137 ) ( 63.5530738831 -200.0357513428 -34.8938560486 0.4687823057 -0.2506026924 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -67.0000152588 -168 163 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.00390625 0 0.25 ) ( 0 0.0008650807 -0.3447265625 ) )
+					texBounds ( ( 128 -1280 ) ( 192 -776 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 5 ) {
+						(
+							( ( -64 -200 34 0.0524024367 -0.3777970076 ) ( -64 -200 34 0.0524024367 -0.3777970076 ) ( 0 -200 -2 0.0472409129 -0.3142962754 ) ( 0 -200 -2 0.0472409129 -0.3142962754 ) ( 64 -200 -34 0.0420793891 -0.2524332702 ) )
+							( ( -64 -200 34 0.0524024367 -0.3777970076 ) ( -64 -200 34 0.0524024367 -0.3777970076 ) ( 0 -200 -2 0.0472409129 -0.3142962754 ) ( 0 -200 -2 0.0472409129 -0.3142962754 ) ( 64 -200 -34 0.0420793891 -0.2524332702 ) )
+							( ( -64 -150 32 0.2476732731 -0.3761914968 ) ( -64 -150 32 0.2476732731 -0.3761914968 ) ( 0 -150 -4 0.2425117493 -0.3126908243 ) ( 0 -150 -4 0.2425117493 -0.3126908243 ) ( 64 -150 -36 0.2373502254 -0.2508277595 ) )
+							( ( -64 -150 32 0.2476732731 -0.3761914968 ) ( -64 -150 32 0.2476732731 -0.3761914968 ) ( 0 -150 -4 0.2425117493 -0.3126908243 ) ( 0 -150 -4 0.2425117493 -0.3126908243 ) ( 64 -150 -36 0.2373502254 -0.2508277595 ) )
+							( ( -64 -88 34 0.4898091555 -0.3760347962 ) ( -64 -88 34 0.4898091555 -0.3760347962 ) ( 0 -88 -2 0.4846476316 -0.3125341535 ) ( 0 -88 -2 0.4846476316 -0.3125341535 ) ( 64 -88 -34 0.4794861078 -0.2506710291 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 03)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -270 -40 65 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0.505859375 ) ( 0 1 0.3740234375 ) )
+					texBounds ( ( 259 -766 ) ( 512 -509 ) )
+					material "texturesheets/refinery/refinery_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 7.0019397736 -64.0621337891 64.0038833618 0.505859375 0.3740234375 ) ( 7.0018367767 -64.060546875 64.0018386841 0.6293945313 0.3740234375 ) ( 3.0001914501 -0.0195260607 60.0012969971 0.7529296875 0.3740234375 ) ( 3.0002169609 0.0208288152 60 0.8764648438 0.3740234375 ) ( 7.001947403 64.0623779297 64 1 0.3740234375 ) )
+							( ( 7.0017256737 -68.0587234497 -0.0001223359 0.505859375 0.4367675781 ) ( 7.0018348694 -68.0605545044 -0.0000730879 0.6293945313 0.4367675781 ) ( 3.0001921654 -0.0196068846 -0.0000408465 0.7529296875 0.4367675781 ) ( 3.0002589226 0.0227393303 -0.0006508498 0.8764648438 0.4367675781 ) ( 7.0020132065 64.0634155273 -0.001039354 1 0.4367675781 ) )
+							( ( 7.0019721985 -64.0626373291 -60.0041770935 0.505859375 0.4995117188 ) ( 7.0018367767 -64.060546875 -60.0019569397 0.6293945313 0.4995117188 ) ( 3.0001688004 -0.0183132514 -64.0013961792 0.7529296875 0.4995117188 ) ( 3.0002477169 0.0222126227 -64.0013885498 0.8764648438 0.4995117188 ) ( 7.0020809174 60.0644493103 -64.001953125 1 0.4995117188 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -678 -40 1 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0.00390625 ) ( 0 1 0.5 ) )
+					texBounds ( ( 2 -1024 ) ( 9 -769 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 416 -64 128 0.00390625 0.5 ) ( 416 -64 128 0.0073242188 0.5 ) ( 412 0 124 0.0107421875 0.5 ) ( 412 0 124 0.0141601563 0.5 ) ( 416 64 128 0.017578125 0.5 ) )
+							( ( 415.5009765625 -64.0310668945 128.0019378662 0.00390625 0.5622558594 ) ( 415.5009155273 -64.0302734375 128.0009155273 0.0073242188 0.5622558594 ) ( 411.5000915527 -0.0097630303 124.0006484985 0.0107421875 0.5622558594 ) ( 411.5001220703 0.0104144076 124 0.0141601563 0.5622558594 ) ( 415.5009765625 64.0311889648 128 0.017578125 0.5622558594 ) )
+							( ( 415.001953125 -64.0621337891 128.0038757324 0.00390625 0.6245117188 ) ( 415.0018310547 -64.060546875 128.0018310547 0.0073242188 0.6245117188 ) ( 411.0001831055 -0.0195260607 124.0012969971 0.0107421875 0.6245117188 ) ( 411.000213623 0.0208288152 124 0.0141601563 0.6245117188 ) ( 415.001953125 64.0623779297 128 0.017578125 0.6245117188 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -678 -40 1 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0.00390625 ) ( 0 1 0.5 ) )
+					texBounds ( ( 2 -1024 ) ( 9 -769 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 415.0019836426 -64.0626373291 3.9958229065 0.00390625 0.5 ) ( 415.0018310547 -64.060546875 3.9980430603 0.0073242188 0.5 ) ( 411.0001831055 -0.0183132514 -0.0013961792 0.0107421875 0.5 ) ( 411.0002441406 0.0222126227 -0.0013885498 0.0141601563 0.5 ) ( 415.0020751953 60.0644493103 -0.001953125 0.017578125 0.5 ) )
+							( ( 415.5009765625 -64.0313186646 3.9979114532 0.00390625 0.5622558594 ) ( 415.5009155273 -64.0302734375 3.9990215302 0.0073242188 0.5622558594 ) ( 411.5000915527 -0.0091566257 -0.0006980896 0.0107421875 0.5622558594 ) ( 411.5001220703 0.0111063113 -0.0006942749 0.0141601563 0.5622558594 ) ( 415.5010375977 60.0322265625 -0.0009765625 0.017578125 0.5622558594 ) )
+							( ( 416 -64 4 0.00390625 0.6245117188 ) ( 416 -64 4 0.0073242188 0.6245117188 ) ( 412 0 0 0.0107421875 0.6245117188 ) ( 412 0 0 0.0141601563 0.6245117188 ) ( 416 60 0 0.017578125 0.6245117188 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -678 -40 1 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0.00390625 ) ( 0 1 0.5 ) )
+					texBounds ( ( 2 -1024 ) ( 9 -769 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 416 60 0 0.00390625 0.5 ) ( 415.5010375977 60.0322265625 -0.0009765625 0.0107421875 0.5 ) ( 415.0020751953 60.0644493103 -0.001953125 0.017578125 0.5 ) )
+							( ( 416 64 64 0.00390625 0.5622558594 ) ( 415.5010070801 64.0317077637 63.9994812012 0.0107421875 0.5622558594 ) ( 415.0020141602 64.0634155273 63.9989624023 0.017578125 0.5622558594 ) )
+							( ( 416 64 128 0.00390625 0.6245117188 ) ( 415.5009765625 64.0311889648 128 0.0107421875 0.6245117188 ) ( 415.001953125 64.0623779297 128 0.017578125 0.6245117188 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -270 -40 65 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.6240234375 ) )
+					texBounds ( ( 0 -1278 ) ( 257 -1021 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 7.0019397736 -64.0621337891 64.0038833618 0 0.6240234375 ) ( 7.0018367767 -64.060546875 64.0018386841 0.1254882813 0.6240234375 ) ( 3.0001914501 -0.0195260607 60.0012969971 0.2509765625 0.6240234375 ) ( 3.0002169609 0.0208288152 60 0.3764648438 0.6240234375 ) ( 7.001947403 64.0623779297 64 0.501953125 0.6240234375 ) )
+							( ( 7.0017256737 -68.0587234497 -0.0001223359 0 0.6867675781 ) ( 7.0018348694 -68.0605545044 -0.0000730879 0.1254882813 0.6867675781 ) ( 3.0001921654 -0.0196068846 -0.0000408465 0.2509765625 0.6867675781 ) ( 3.0002589226 0.0227393303 -0.0006508498 0.3764648438 0.6867675781 ) ( 7.0020132065 64.0634155273 -0.001039354 0.501953125 0.6867675781 ) )
+							( ( 7.0019721985 -64.0626373291 -60.0041770935 0 0.7495117188 ) ( 7.0018367767 -64.060546875 -60.0019569397 0.1254882813 0.7495117188 ) ( 3.0001688004 -0.0183132514 -64.0013961792 0.2509765625 0.7495117188 ) ( 3.0002477169 0.0222126227 -64.0013885498 0.3764648438 0.7495117188 ) ( 7.0020809174 60.0644493103 -64.001953125 0.501953125 0.7495117188 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 03)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -228 13 131 )
+						rotation ( ( 0.0000000596 0.9999998808 0.0000000596 ) ( 0 0.0000000596 -0.9999999404 ) ( -0.9999999404 0.0000000596 0 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 0.0000000874 0.48828125 ) ( -0.0000000874 -1 0.5380859375 ) )
+					texBounds ( ( -262 -1102 ) ( -41 -1025 ) )
+					material "texturesheets/refinery/refinery_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 7.9999895096 63.9999961853 33.9999961853 0.48828125 0.5004882813 ) ( 7.9999895096 63.9999961853 33.9999961853 0.3803710938 0.5004882813 ) ( 9.999997139 0.000000596 33.9999961853 0.2724609375 0.5004882813 ) ( 9.999997139 0.000000596 33.9999961853 0.1645507813 0.5004882813 ) ( 8.0000047684 -63.9999809265 33.9999961853 0.056640625 0.5004882216 ) )
+							( ( 7.9999895096 63.9999961853 -31.9999980927 0.48828125 0.5192871094 ) ( 7.9999895096 63.9999961853 -31.9999980927 0.3803710938 0.5192871094 ) ( 9.999997139 0.000000596 -31.9999980927 0.2724609375 0.5192871094 ) ( 9.999997139 0.000000596 -31.9999980927 0.1645507813 0.5192871094 ) ( 8.0000047684 -63.9999809265 -31.9999980927 0.056640625 0.5192870498 ) )
+							( ( 7.9999895096 63.9999961853 -31.9999980927 0.48828125 0.5380859375 ) ( 7.9999895096 63.9999961853 -31.9999980927 0.3803710938 0.5380859375 ) ( 9.999997139 0.000000596 -31.9999980927 0.2724609375 0.5380859375 ) ( 9.999997139 0.000000596 -31.9999980927 0.1645507813 0.5380859375 ) ( 8.0000047684 -63.9999809265 -31.9999980927 0.056640625 0.5380858779 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -260 5.0000038147 131 )
+						rotation ( ( 0.0000000596 0.9999998808 0.0000000596 ) ( 0 0.0000000596 -0.9999999404 ) ( -0.9999999404 0.0000000596 0 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.4990234375 ) )
+					texBounds ( ( 0 -1022 ) ( 8 -766 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 15.0004768372 63.9687461853 0.0000008941 0 0.6240234375 ) ( 15.0004768372 63.9687461853 0.0000008941 0.00390625 0.6240234375 ) ( 17.0000495911 -0.0104207387 0.0000010133 0.0078125 0.6240234375 ) ( 17.0000495911 0.0104227653 0.0000010133 0.01171875 0.6240234375 ) ( 15.0004920959 -63.9687461853 0.0000008941 0.015625 0.6240234375 ) )
+							( ( 15.5002326965 63.9843711853 0.0000009239 0 0.5615234375 ) ( 15.5002326965 63.9843711853 0.0000009239 0.00390625 0.5615234375 ) ( 17.5000228882 -0.0052022035 0.0000010431 0.0078125 0.5615234375 ) ( 17.5000228882 0.0052042897 0.0000010431 0.01171875 0.5615234375 ) ( 15.5002479553 -63.9843559265 0.0000009239 0.015625 0.5615234375 ) )
+							( ( 15.9999885559 63.9999961853 0.0000009537 0 0.4990234375 ) ( 15.9999885559 63.9999961853 0.0000009537 0.00390625 0.4990234375 ) ( 17.9999961853 0.0000010729 0.0000010729 0.0078125 0.4990234375 ) ( 17.9999961853 0.0000010729 0.0000010729 0.01171875 0.4990234375 ) ( 16.0000038147 -63.9999809265 0.0000009537 0.015625 0.4990234375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -260 5.0000038147 131 )
+						rotation ( ( 0.0000000596 0.9999998808 0.0000000596 ) ( 0 0.0000000596 -0.9999999404 ) ( -0.9999999404 0.0000000596 0 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.4990234375 ) )
+					texBounds ( ( 0 -1022 ) ( 8 -766 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 16.0000038147 -63.9999809265 2.0000009537 0 0.6240234375 ) ( 15.5002479553 -63.9843559265 2.0000007153 0.0078125 0.6240234375 ) ( 15.0004920959 -63.9687461853 2.0000007153 0.015625 0.6240234375 ) )
+							( ( 16.0000038147 -63.9999809265 -63.9999961853 0 0.5615234375 ) ( 15.5002479553 -63.9843559265 -63.9999961853 0.0078125 0.5615234375 ) ( 15.0004920959 -63.9687461853 -63.9999961853 0.015625 0.5615234375 ) )
+							( ( 16.0000038147 -63.9999809265 -63.9999961853 0 0.4990234375 ) ( 15.5002479553 -63.9843559265 -63.9999961853 0.0078125 0.4990234375 ) ( 15.0004920959 -63.9687461853 -63.9999961853 0.015625 0.4990234375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -260 5.0000038147 131 )
+						rotation ( ( 0.0000000596 0.9999998808 0.0000000596 ) ( 0 0.0000000596 -0.9999999404 ) ( -0.9999999404 0.0000000596 0 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.4990234375 ) )
+					texBounds ( ( 0 -1022 ) ( 8 -766 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 15.9999885559 63.9999961853 -63.9999961853 0 0.6240234375 ) ( 15.5002326965 63.9843711853 -63.9999961853 0.0078125 0.6240234375 ) ( 15.0004768372 63.9687461853 -63.9999961853 0.015625 0.6240234375 ) )
+							( ( 15.9999885559 63.9999961853 -63.9999961853 0 0.5615234375 ) ( 15.5002326965 63.9843711853 -63.9999961853 0.0078125 0.5615234375 ) ( 15.0004768372 63.9687461853 -63.9999961853 0.015625 0.5615234375 ) )
+							( ( 15.9999885559 63.9999961853 2.0000009537 0 0.4990234375 ) ( 15.5002326965 63.9843711853 2.0000007153 0.0078125 0.4990234375 ) ( 15.0004768372 63.9687461853 2.0000007153 0.015625 0.4990234375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -228 13 131 )
+						rotation ( ( 0.0000000596 0.9999998808 0.0000000596 ) ( 0 0.0000000596 -0.9999999404 ) ( -0.9999999404 0.0000000596 0 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.6806640625 ) )
+					texBounds ( ( 0 -1394 ) ( 256 -1252 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 7.9999895096 63.9999961853 33.9999961853 0 0.75 ) ( 7.9999895096 63.9999961853 33.9999961853 0.125 0.75 ) ( 9.999997139 0.000000596 33.9999961853 0.25 0.75 ) ( 9.999997139 0.000000596 33.9999961853 0.375 0.75 ) ( 8.0000047684 -63.9999809265 33.9999961853 0.5 0.75 ) )
+							( ( 7.9999895096 63.9999961853 -31.9999980927 0 0.7153320313 ) ( 7.9999895096 63.9999961853 -31.9999980927 0.125 0.7153320313 ) ( 9.999997139 0.000000596 -31.9999980927 0.25 0.7153320313 ) ( 9.999997139 0.000000596 -31.9999980927 0.375 0.7153320313 ) ( 8.0000047684 -63.9999809265 -31.9999980927 0.5 0.7153320313 ) )
+							( ( 7.9999895096 63.9999961853 -31.9999980927 0 0.6806640625 ) ( 7.9999895096 63.9999961853 -31.9999980927 0.125 0.6806640625 ) ( 9.999997139 0.000000596 -31.9999980927 0.25 0.6806640625 ) ( 9.999997139 0.000000596 -31.9999980927 0.375 0.6806640625 ) ( 8.0000047684 -63.9999809265 -31.9999980927 0.5 0.6806640625 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 03)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -236 -40 188 )
+						rotation ( ( -0.0000000596 -0 0.9999999404 ) ( 0.0000001192 -0.9999998808 0 ) ( 0.9999998212 0.0000001192 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 0.0000000874 0.48828125 ) ( -0.0000000874 -1 0.5380859375 ) )
+					texBounds ( ( -262 -1102 ) ( -41 -1025 ) )
+					material "texturesheets/refinery/refinery_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 8 -64 -32 0.48828125 0.5380859375 ) ( 8 -64 -32 0.3803710938 0.5380859375 ) ( 10 0 -32 0.2724609375 0.5380859375 ) ( 10 0 -32 0.1645507813 0.5380859375 ) ( 8 64 -32 0.056640625 0.5380858779 ) )
+							( ( 8 -64 -32 0.48828125 0.5192871094 ) ( 8 -64 -32 0.3803710938 0.5192871094 ) ( 10 0 -32 0.2724609375 0.5192871094 ) ( 10 0 -32 0.1645507813 0.5192871094 ) ( 8 64 -32 0.056640625 0.5192870498 ) )
+							( ( 8 -64 32 0.48828125 0.5004882813 ) ( 8 -64 32 0.3803710938 0.5004882813 ) ( 10 0 32 0.2724609375 0.5004882813 ) ( 10 0 32 0.1645507813 0.5004882813 ) ( 8 64 32 0.056640625 0.5004882216 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -204 -40 180 )
+						rotation ( ( -0.0000000596 -0 0.9999999404 ) ( 0.0000001192 -0.9999998808 0 ) ( 0.9999998212 0.0000001192 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.4990234375 ) )
+					texBounds ( ( 0 -1022 ) ( 8 -766 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 15.0004882813 -63.9687652588 -64 0 0.4990234375 ) ( 15.0004882813 -63.9687652588 -64 0.00390625 0.4990234375 ) ( 17.0000534058 -0.0104161017 -64 0.0078125 0.4990234375 ) ( 17.0000534058 0.0104161017 -64 0.01171875 0.4990234375 ) ( 15.0004882813 63.9687652588 -64 0.015625 0.4990234375 ) )
+							( ( 15.5002441406 -63.9843826294 -64 0 0.5615234375 ) ( 15.5002441406 -63.9843826294 -64 0.00390625 0.5615234375 ) ( 17.5000267029 -0.0052080508 -64 0.0078125 0.5615234375 ) ( 17.5000267029 0.0052080508 -64 0.01171875 0.5615234375 ) ( 15.5002441406 63.9843826294 -64 0.015625 0.5615234375 ) )
+							( ( 16 -64 -64 0 0.6240234375 ) ( 16 -64 -64 0.00390625 0.6240234375 ) ( 18 0 -64 0.0078125 0.6240234375 ) ( 18 0 -64 0.01171875 0.6240234375 ) ( 16 64 -64 0.015625 0.6240234375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -204 -40 180 )
+						rotation ( ( -0.0000000596 -0 0.9999999404 ) ( 0.0000001192 -0.9999998808 0 ) ( 0.9999998212 0.0000001192 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.4990234375 ) )
+					texBounds ( ( 0 -1022 ) ( 8 -766 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 16 64 -64 0 0.4990234375 ) ( 15.5002441406 63.9843826294 -64 0.0078125 0.4990234375 ) ( 15.0004882813 63.9687652588 -64 0.015625 0.4990234375 ) )
+							( ( 16 64 -64 0 0.5615234375 ) ( 15.5002441406 63.9843826294 -64 0.0078125 0.5615234375 ) ( 15.0004882813 63.9687652588 -64 0.015625 0.5615234375 ) )
+							( ( 16 64 0 0 0.6240234375 ) ( 15.5002441406 63.9843826294 0 0.0078125 0.6240234375 ) ( 15.0004882813 63.9687652588 0 0.015625 0.6240234375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -204 -40 180 )
+						rotation ( ( -0.0000000596 -0 0.9999999404 ) ( 0.0000001192 -0.9999998808 0 ) ( 0.9999998212 0.0000001192 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.4990234375 ) )
+					texBounds ( ( 0 -1022 ) ( 8 -766 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 16 -64 0 0 0.4990234375 ) ( 15.5002441406 -63.9843826294 0 0.0078125 0.4990234375 ) ( 15.0004882813 -63.9687652588 0 0.015625 0.4990234375 ) )
+							( ( 16 -64 -64 0 0.5615234375 ) ( 15.5002441406 -63.9843826294 -64 0.0078125 0.5615234375 ) ( 15.0004882813 -63.9687652588 -64 0.015625 0.5615234375 ) )
+							( ( 16 -64 -64 0 0.6240234375 ) ( 15.5002441406 -63.9843826294 -64 0.0078125 0.6240234375 ) ( 15.0004882813 -63.9687652588 -64 0.015625 0.6240234375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -236 -40 188 )
+						rotation ( ( -0.0000000596 -0 0.9999999404 ) ( 0.0000001192 -0.9999998808 0 ) ( 0.9999998212 0.0000001192 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.6806640625 ) )
+					texBounds ( ( 0 -1394 ) ( 256 -1252 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 7.0004878044 -63.9687652588 32 0 0.6806640625 ) ( 7.0004878044 -63.9687652588 32 0.125 0.6806640625 ) ( 9.0000543594 0.0104161017 32 0.25 0.6806640625 ) ( 9.0000543594 -0.0104161017 32 0.375 0.6806640625 ) ( 7.0004878044 63.9687652588 32 0.5 0.6806640625 ) )
+							( ( 7.0004878044 -63.9687652588 -32 0 0.7153320313 ) ( 7.0004878044 -63.9687652588 -32 0.125 0.7153320313 ) ( 9.0000543594 0.0104161017 -32 0.25 0.7153320313 ) ( 9.0000543594 -0.0104161017 -32 0.375 0.7153320313 ) ( 7.0004878044 63.9687652588 -32 0.5 0.7153320313 ) )
+							( ( 7.0004878044 -63.9687652588 -32 0 0.75 ) ( 7.0004878044 -63.9687652588 -32 0.125 0.75 ) ( 9.0000543594 -0.0104161017 -32 0.25 0.75 ) ( 9.0000543594 0.0104161017 -32 0.375 0.75 ) ( 7.0004878044 63.9687652588 -32 0.5 0.75 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -236 -40 188 )
+						rotation ( ( -0.0000000596 -0 0.9999999404 ) ( 0.0000001192 -0.9999998808 0 ) ( 0.9999998212 0.0000001192 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.6806640625 ) )
+					texBounds ( ( 0 -1394 ) ( 256 -1252 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 8 -64 -32 0 0.6806640625 ) ( 8 -64 -32 0.125 0.6806640625 ) ( 10 0 -32 0.25 0.6806640625 ) ( 10 0 -32 0.375 0.6806640625 ) ( 8 64 -32 0.5 0.6806640625 ) )
+							( ( 8 -64 -32 0 0.7153320313 ) ( 8 -64 -32 0.125 0.7153320313 ) ( 10 0 -32 0.25 0.7153320313 ) ( 10 0 -32 0.375 0.7153320313 ) ( 8 64 -32 0.5 0.7153320313 ) )
+							( ( 8 -64 32 0 0.75 ) ( 8 -64 32 0.125 0.75 ) ( 10 0 32 0.25 0.75 ) ( 10 0 32 0.375 0.75 ) ( 8 64 32 0.5 0.75 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -215 -172 159 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.5 ) )
+					texBounds ( ( 0 -1024 ) ( 7 -768 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 5 ) {
+						(
+							( ( -68 60 38 0 0.5 ) ( -68.2450332642 60.0140533447 37.5643844604 0.0068359375 0.5 ) ( -68.4900665283 60.0281066895 37.1287689209 0.013671875 0.5 ) )
+							( ( -68 -2 36 0 0.53125 ) ( -68.2451019287 -2.0069351196 35.5642547607 0.0068359375 0.53125 ) ( -68.4902114868 -2.0138702393 35.1285095215 0.013671875 0.53125 ) )
+							( ( -68 -2 36 0 0.5625 ) ( -68.2451248169 -1.9964370728 35.5642242432 0.0068359375 0.5625 ) ( -68.4902496338 -1.9928741455 35.1284484863 0.013671875 0.5625 ) )
+							( ( -68 -52 38 0 0.59375 ) ( -68.2449798584 -52.0174179077 37.5644760132 0.0068359375 0.59375 ) ( -68.4899673462 -52.0348358154 37.1289520264 0.013671875 0.59375 ) )
+							( ( -68 -52 38 0 0.625 ) ( -68.2449798584 -52.0174179077 37.5644760132 0.0068359375 0.625 ) ( -68.4899673462 -52.0348358154 37.1289520264 0.013671875 0.625 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"2 2 2 1"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -269 -40 65 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.6240234375 ) )
+					texBounds ( ( 0 -1278 ) ( 257 -1021 ) )
+					material "texturesheets/refinery/refinery_signsdoors01b"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 5 3 ) {
+						(
+							( ( 7.0019721985 -64.0626373291 -60.0041770935 0 0.7495117188 ) ( 7.0018367767 -64.060546875 -60.0019569397 0.1254882813 0.7495117188 ) ( 3.0001688004 -0.0183132514 -64.0013961792 0.2509765625 0.7495117188 ) ( 3.0002477169 0.0222126227 -64.0013885498 0.3764648438 0.7495117188 ) ( 7.0020809174 60.0644493103 -64.001953125 0.501953125 0.7495117188 ) )
+							( ( 7.0017256737 -68.0587234497 -0.0001223359 0 0.6867675781 ) ( 7.0018348694 -68.0605545044 -0.0000730879 0.1254882813 0.6867675781 ) ( 3.0001921654 -0.0196068846 -0.0000408465 0.2509765625 0.6867675781 ) ( 3.0002589226 0.0227393303 -0.0006508498 0.3764648438 0.6867675781 ) ( 7.0020132065 64.0634155273 -0.001039354 0.501953125 0.6867675781 ) )
+							( ( 7.0019397736 -64.0621337891 64.0038833618 0 0.6240234375 ) ( 7.0018367767 -64.060546875 64.0018386841 0.1254882813 0.6240234375 ) ( 3.0001914501 -0.0195260607 60.0012969971 0.2509765625 0.6240234375 ) ( 3.0002169609 0.0208288152 60 0.3764648438 0.6240234375 ) ( 7.001947403 64.0623779297 64 0.501953125 0.6240234375 ) )
+						)
+					}
+				}
+			}
+		}
+	}
+}

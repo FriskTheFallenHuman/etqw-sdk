@@ -1,0 +1,1112 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"editor_last_atmosphere"	"atmosphere://sewer"
+	}
+
+	meta {
+		sdLODGroup "flood_way_hut" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		2
+				"uniqueinstance"		1
+			}
+			levels {
+				"flood_way_hut (Level 01)"
+				"flood_way_hut (Level 02)"
+			}
+		}
+		sdLODGroup "flood_way_hut_decals" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"flood_way_hut_decals (Level 01)"
+			}
+		}
+		sdLODGroup_Level "flood_way_hut (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		10240
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+			}
+		}
+		sdLODGroup_Level "flood_way_hut (Level 02)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		4096
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+			}
+		}
+		sdLODGroup_Level "flood_way_hut_decals (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		2048
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+			}
+		}
+		sdGroupVisual "aasbrushes" {
+			hidden
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdDetailGroup "floodway_hut_detail" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_1" 
+				groups {
+					"flood_way_hut (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.80784 0.80784 0.80784 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 102 32 327 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -304 ) matrix ( ( 0 0.0106209172 1.7524507046 ) ( -0.0116090262 0 -0.2454133034 ) ) texBounds ( ( 0 1024 ) ( 1664 2082 ) ) "texturesheets/sewer/pipe_2"
+						plane ( -1 0 0 -32.9999961853 ) matrix ( ( 0.00390625 0 0 ) ( 0 0.00390625 -0.0625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 1 0 0 -144.9999694824 ) matrix ( ( 0.00390625 0 0 ) ( 0 0.00390625 -0.0625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 1 0 -38.9999923706 ) matrix ( ( 0.00390625 0 0 ) ( 0 0.00390625 -0.0625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 -1 0 -266.9999694824 ) matrix ( ( 0.00390625 0 0 ) ( 0 0.00390625 -0.0625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 0 1 303 ) matrix ( ( 0 0.0106209172 1.7524507046 ) ( -0.0116090262 0 -0.2454133034 ) ) texBounds ( ( 0 1024 ) ( 1664 2082 ) ) "texturesheets/sewer/pipe_2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_2" 
+				groups {
+					"flood_way_hut (Level 02)"
+					"floodway_hut_detail"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 102 32 326 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -326 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -27.9999961853 ) matrix ( ( 0.00390625 0 0 ) ( 0 0.00390625 -0.0625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 1 0 0 -139.9999694824 ) matrix ( ( 0.00390625 0 0 ) ( 0 0.00390625 -0.0625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 1 0 -33.9999923706 ) matrix ( ( 0.00390625 0 0 ) ( 0 0.00390625 -0.0625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 -1 0 -261.9999694824 ) matrix ( ( 0.00390625 0 0 ) ( 0 0.00390625 -0.0625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 0 1 303 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_4" 
+				groups {
+					"flood_way_hut (Level 01)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -160 -24 188 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -4 ) matrix ( ( 0 -0.0078124986 -0.187500447 ) ( -0.0078124986 0 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 0 0 -1 -4 ) matrix ( ( 0 -0.0078124986 -0.187500447 ) ( -0.0078124986 0 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( -0.9701455235 0.0000000236 0.2425234467 -90.2234649658 ) matrix ( ( 0 0.0078124986 2.0948345661 ) ( -0.0078124986 0 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( -0.9701464176 0.0000000237 -0.2425199449 -90.2235412598 ) matrix ( ( 0 -0.0042215618 -0.195312947 ) ( -0.0078124986 0 0.328125 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 0.9701386094 -0.0000000237 0.2425512969 -90.2229537964 ) matrix ( ( 0 0.0078124986 2.0948345661 ) ( -0.0078124986 0 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 0.9701455235 -0.0000000237 -0.2425234318 -90.2234725952 ) matrix ( ( 0 -0.0078124986 -0.195312947 ) ( -0.0078124986 0 0.2890625 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 0 0.9701424837 -0.2425356209 -295.8934326172 ) matrix ( ( 0 0.0078124958 -0.195312947 ) ( 0.0078124958 0 0.2890625 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 0 0.9701424837 0.2425356209 -295.8934326172 ) matrix ( ( 0 -0.0078124953 2.0948345661 ) ( 0.0078124953 0 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( -0.0000000298 -0.9701424837 0.2425356209 -8.7312812805 ) matrix ( ( 0 0.0078124986 2.0948345661 ) ( -0.0078124986 0 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( -0.0000000352 -0.9701425433 -0.2425354123 -8.7312812805 ) matrix ( ( 0 -0.0078124986 -0.195312947 ) ( -0.0078124986 0 0.2890625 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_5" 
+				groups {
+					"flood_way_hut (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 102 -80 22 )
+						rotation ( ( -0.0000001027 0.9999998212 0 ) ( -0.9999998212 -0.0000001027 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -162 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -265.9999389648 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 0 -1 0 261.9999389648 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 0.7071067691 -0.7071067691 0 86.2669830322 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071067691 -0.7071067691 0 165.4629669189 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_6" 
+				groups {
+					"flood_way_hut (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 102 -80 22 )
+						rotation ( ( -0.0000001027 0.9999998212 0 ) ( -0.9999998212 -0.0000001027 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -162 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -31.9999675751 ) matrix ( ( -0.0078125 0 -0.187499404 ) ( 0 0.0078125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 1 0 0 27.9999980927 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 0.7071067691 0.7071067691 0 -165.4629669189 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 -0.7071067691 0 -4.2426338196 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_7" 
+				groups {
+					"flood_way_hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.81961 0.81961 0.81961 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -165.5 -55.5 80 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -1 0 0 -57.4999847412 ) matrix ( ( 0 0.0073529412 1.2187497616 ) ( -0.0125000002 0 -1.6999992132 ) ) texBounds ( ( 112 512 ) ( 624 544 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 1 0 0 -4.5000100136 ) matrix ( ( 0 -0.0073529412 0.203125 ) ( 0.0125000002 0 -1.6999992132 ) ) texBounds ( ( 104 512 ) ( 616 544 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 1 0 -307.4999694824 ) matrix ( ( -0.0161290336 0 0.0322579741 ) ( 0 -0.0078125 -1.0625 ) ) texBounds ( ( 0 512 ) ( 512 520 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 -1 0 301.4999694824 ) matrix ( ( -0.0161290336 0 0.0322579741 ) ( 0 -0.0078125 -1.0625 ) ) texBounds ( ( 0 512 ) ( 512 520 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 0 -1 56 ) matrix ( ( -0.0161290336 0 0.0322579741 ) ( 0 -0.013020833 -1.7083325386 ) ) texBounds ( ( 0 480 ) ( 512 520 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 0 1 -58 ) matrix ( ( 0 -0.0073529412 0.203125 ) ( 0.0125000002 0 -1.6999992132 ) ) texBounds ( ( 104 512 ) ( 616 544 ) ) "texturesheets/sewer/pipe_2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_8" 
+				groups {
+					"flood_way_hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.81961 0.81961 0.81961 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -156 40 80 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -100 ) matrix ( ( 0 -0.0073529412 0.203125 ) ( 0.0125000002 0 -1.6999992132 ) ) texBounds ( ( 104 512 ) ( 616 544 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 1 0 -296.9999694824 ) matrix ( ( 0 0.0073529412 0.9999998212 ) ( -0.01171875 0 -0.6562498212 ) ) texBounds ( ( 0 512 ) ( 512 536 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 -1 0 291.9999694824 ) matrix ( ( 0 0.0073529412 1.0156247616 ) ( -0.01171875 0 0.7031248212 ) ) texBounds ( ( 8 512 ) ( 520 536 ) ) "texturesheets/sewer/pipe_2"
+						plane ( -1 0 0 96 ) matrix ( ( 0 0.0073529412 1.2187497616 ) ( -0.0125000002 0 -1.6999992132 ) ) texBounds ( ( 112 512 ) ( 624 544 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 0 1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_9" 
+				groups {
+					"flood_way_hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.81961 0.81961 0.81961 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -156 98 80 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -100 ) matrix ( ( 0 -0.0073529412 0.203125 ) ( 0.0125000002 0 -1.6999992132 ) ) texBounds ( ( 104 512 ) ( 616 544 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 1 0 -296.9999694824 ) matrix ( ( 0 -0.0073529412 0 ) ( 0.01171875 0 0.0234373212 ) ) texBounds ( ( 0 512 ) ( 512 536 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 -1 0 291.9999694824 ) matrix ( ( 0 -0.0073529412 0.0156250075 ) ( 0.01171875 0 0.0234376788 ) ) texBounds ( ( 8 512 ) ( 520 536 ) ) "texturesheets/sewer/pipe_2"
+						plane ( -1 0 0 96 ) matrix ( ( 0 0.0073529412 1.2187497616 ) ( -0.0125000002 0 -1.6999992132 ) ) texBounds ( ( 112 512 ) ( 624 544 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 0 1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_10" 
+				groups {
+					"flood_way_hut (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -126 32 22 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -162 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -265.9999694824 ) matrix ( ( -0.0078125 0 -1.3437496424 ) ( 0 0.0078125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 0 -1 0 261.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( -0.7071067691 -0.7071067691 0 165.4629669189 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -30.0000076294 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_11" 
+				groups {
+					"flood_way_hut (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -126 32 22 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -162 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -265.9999694824 ) matrix ( ( -0.0078125 0 -1.3437496424 ) ( 0 0.0078125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 0 -1 0 261.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 0.7071067691 -0.7071067691 0 86.2670059204 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_12" 
+				groups {
+					"flood_way_hut (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -126 32 -2 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -186 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -265.9999694824 ) matrix ( ( -0.0078125 0 -1.3437496424 ) ( 0 0.0078125 0.15625 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 0 -1 0 261.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.15625 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 1 0 0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 30.0000076294 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 140 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_15" 
+				groups {
+					"flood_way_hut (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -126 32 22 )
+						rotation ( ( 0.0000001712 -0.999999702 0 ) ( 0.999999702 0.0000001712 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -162 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -31.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 1 0 0 27.9999980927 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 0.7071069479 -0.7071065903 -0.0000000084 -4.2425336838 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -126.0038757324 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_16" 
+				groups {
+					"flood_way_hut (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -126 32 22 )
+						rotation ( ( 0.0000001712 -0.999999702 0 ) ( 0.999999702 0.0000001712 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -162 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -31.9999446869 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 1 0 0 27.9999580383 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 0.7071069479 0.7071065903 0.0000000084 -165.4629058838 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 198.0038452148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_17" 
+				groups {
+					"flood_way_hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.81961 0.81961 0.81961 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -126 32 22 )
+						rotation ( ( 0.0000001712 -0.999999702 0 ) ( 0.999999702 0.0000001712 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -1 0 0 -33.9999656677 ) matrix ( ( -0.0138888974 0 1.0625531673 ) ( 0 -0.0078125 -1.0625 ) ) texBounds ( ( 32 512 ) ( 544 520 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 1 0 0 27.9999580383 ) matrix ( ( -0.0138888974 0 1.0625531673 ) ( 0 -0.0078125 -1.0625 ) ) texBounds ( ( 32 512 ) ( 544 520 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 1 0 -198.0038452148 ) matrix ( ( 0 -0.0089285718 -0.1674107313 ) ( 0.0093750143 0 -0.5625007153 ) ) texBounds ( ( 24 512 ) ( 536 536 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 -1 0 126.0038757324 ) matrix ( ( 0 0.0089285718 0.8705357313 ) ( -0.0093750143 0 -0.5625007153 ) ) texBounds ( ( 24 512 ) ( 536 536 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 0 -1 114 ) matrix ( ( 0 -0.0138888974 0.0624468327 ) ( 0.0130208004 0 -0.7187476754 ) ) texBounds ( ( 32 480 ) ( 544 520 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 0 1 -116 ) matrix ( ( 0 -0.0138888974 0.9844281673 ) ( 0.0130208004 0 -0.6874976754 ) ) texBounds ( ( -8 464 ) ( 504 504 ) ) "texturesheets/sewer/pipe_2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_18" 
+				groups {
+					"flood_way_hut (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -126 32 22 )
+						rotation ( ( 0.0000001712 -0.999999702 0 ) ( 0.999999702 0.0000001712 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -162 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -31.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 1 0 0 27.9999580383 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.34375 ) ) texBounds ( ( 0 0 ) ( 256 256 ) ) "texturesheets/sewer/corrugated_generic"
+						plane ( 0 1 0 -198.0038452148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 126.0038757324 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 116 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_19" 
+				groups {
+					"flood_way_hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.81961 0.81961 0.81961 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -126 32 22 )
+						rotation ( ( 0.0000001712 -0.999999702 0 ) ( 0.999999702 0.0000001712 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -32.9999542236 ) matrix ( ( 0 0.0089285718 1.2611607313 ) ( -0.01171875 0 -0.7969193459 ) ) texBounds ( ( 24 512 ) ( 536 536 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 1 0 0 27.9999599457 ) matrix ( ( 0 -0.0089285718 0.0513392687 ) ( 0.01171875 0 -0.7969193459 ) ) texBounds ( ( 136 512 ) ( 648 536 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 -1 0 194.0038452148 ) matrix ( ( 0 0.0089285718 0.8705357313 ) ( -0.0093750143 0 -0.5625007153 ) ) texBounds ( ( 24 512 ) ( 536 536 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 1 0 -198.0038452148 ) matrix ( ( 0 -0.0089285718 -0.1674107313 ) ( 0.0093750143 0 -0.5625007153 ) ) texBounds ( ( 24 512 ) ( 536 536 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 0 1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_20" 
+				groups {
+					"flood_way_hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.81961 0.81961 0.81961 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -126 32 22 )
+						rotation ( ( 0.0000001712 -0.999999702 0 ) ( 0.999999702 0.0000001712 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -32.9999656677 ) matrix ( ( 0 -0.0089285718 -0.1674107313 ) ( 0.0117187947 0 0.0469198823 ) ) texBounds ( ( 24 512 ) ( 536 536 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 1 0 0 27.9999713898 ) matrix ( ( 0 0.0089285718 1.4799107313 ) ( -0.0117187947 0 0.0469198823 ) ) texBounds ( ( 136 512 ) ( 648 536 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 1 0 -130.0038604736 ) matrix ( ( 0 -0.0089285718 -0.1674107313 ) ( 0.0093750143 0 -0.5625007153 ) ) texBounds ( ( 24 512 ) ( 536 536 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 -1 0 126.0038757324 ) matrix ( ( 0 0.0089285718 0.8705357313 ) ( -0.0093750143 0 -0.5625007153 ) ) texBounds ( ( 24 512 ) ( 536 536 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 0 1 -114 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_26" 
+				groups {
+					"flood_way_hut (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -136 68 94 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -70 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 0 -1 50 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( -1 0 0 2.0000088215 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 1 0 0 -4.0000081062 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 1 0 -257.9999694824 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 -1 0 237.9999847412 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_27" 
+				groups {
+					"flood_way_hut (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -136 70 152 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -10 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 1 0 0 -4.0000081062 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 1 0 -255.9999847412 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 -1 0 239.9999847412 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( -0.4472135901 0.0000000133 0.8944271803 -7.1554169655 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( -0.8944326639 0.0000000333 0.4472026527 -3.5776765347 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( -1 0 0 -1.9999910593 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_28" 
+				groups {
+					"flood_way_hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.75294 0.75294 0.75294 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 144 -88 94 )
+						rotation ( ( -0.9999996424 -0.0000002054 0 ) ( 0.0000002054 -0.9999996424 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -70 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 0 -1 50 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 1 0 0 -309.9998779297 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( -1 0 0 307.9998779297 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 -1 0 -10.0000591278 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 1 0 -9.9999322891 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_29" 
+				groups {
+					"flood_way_hut (Level 02)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.75294 0.75294 0.75294 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 146 -88 152 )
+						rotation ( ( -0.9999996424 -0.0000002054 0 ) ( 0.0000002054 -0.9999996424 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -10 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( -1 0 0 311.9998779297 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 -1 0 -8.0000610352 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0 1 0 -7.9999318123 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0.4472245276 0 0.8944217563 -148.4782104492 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 0.8944217563 0 0.4472245276 -286.2149047852 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+						plane ( 1 0 0 -317.9998779297 ) matrix ( ( 0.0117760953 0 -0.04296875 ) ( 0 0.0119074853 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "texturesheets/sewer/pipe_2"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aasbrushes"
+				}
+				{
+					
+					sdTransform {
+						translation ( -140 52 968 )
+					}
+					
+					faces {
+						plane ( 0 0 1 944 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 0 -1 -976 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -36 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -292 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -176 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -24 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aasbrushes"
+				}
+				{
+					
+					sdTransform {
+						translation ( -12 68 40 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -152 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -16 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -164 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -8 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -8 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -16 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aasbrushes"
+				}
+				{
+					
+					sdTransform {
+						translation ( -12 68 152 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -40 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -16 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -8 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 4.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -8 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 4.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 -0 -0 16 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 3.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 3.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aasbrushes"
+				}
+				{
+					
+					sdTransform {
+						translation ( -12 68 40 )
+					}
+					
+					faces {
+						plane ( 0 -0 1 -152 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -16 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -164 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -8 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -8 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 -0 -0 80 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aasbrushes"
+				}
+				{
+					
+					sdTransform {
+						translation ( -168 56 108 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -84 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -84 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -8 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -8 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -180 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -20 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aasbrushes"
+				}
+				{
+					
+					sdTransform {
+						translation ( -148 -118 108 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -84 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -84 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -28 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -300 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -6 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -10 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aasbrushes"
+				}
+				{
+					
+					sdTransform {
+						translation ( 144 -102 108 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -84 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -84 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -8 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -8 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -22 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -46 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aasbrushes"
+				}
+				{
+					
+					sdTransform {
+						translation ( 144 -102 108 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -84 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -84 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -8 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -8 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -178 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -1 -0 100 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"aasbrushes"
+				}
+				{
+					
+					sdTransform {
+						translation ( 144 -102 108 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -84 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -8 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -8 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -100 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -1 -0 46 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 -0 -1 28 ) matrix ( ( 0.03125 0 45.375 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 70 -24 188 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -4 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -4 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -238 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -74 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -92 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -138 -24 12 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -12 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -12 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -26 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -278 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 -0 -88 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -88 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"flood_way_hut_decals (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -11.9999694824 -113.9999847412 104 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0.884765625 ) )
+					texBounds ( ( 0 236 ) ( 512 380 ) )
+					material "texturesheets/sewer/sewer_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -151 2 -80 1 0.955078125 ) ( 0 2 -80 0.5000000596 0.955078125 ) ( 151 2 -80 0.0000000298 0.955078125 ) )
+							( ( -151 2 0 1 0.919921875 ) ( 0 2 0 0.5 0.919921875 ) ( 151 2 0 0 0.919921875 ) )
+							( ( -151 2 80 1 0.884765625 ) ( 0 2 80 0.4999999702 0.884765625 ) ( 151 2 80 -0.0000000596 0.884765625 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"flood_way_hut_decals (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -165.9999847412 38.9999694824 104 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0.884765625 ) )
+					texBounds ( ( 0 236 ) ( 512 380 ) )
+					material "texturesheets/sewer/sewer_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -25 2 -80 1 0.955078125 ) ( 62.9999961853 2 -80 0.5000000596 0.955078125 ) ( 151 2 -80 0.0000000298 0.955078125 ) )
+							( ( -25 2 0 1 0.919921875 ) ( 62.9999961853 2 0 0.5 0.919921875 ) ( 151 2 0 0 0.919921875 ) )
+							( ( -25 2 80 1 0.884765625 ) ( 62.9999961853 2 80 0.4999999702 0.884765625 ) ( 151 2 80 -0.0000000596 0.884765625 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"flood_way_hut_decals (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -13.0000305176 65.9999847412 104 )
+						rotation ( ( -0.9999998808 -0.0000000684 0 ) ( 0.0000000684 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0.884765625 ) )
+					texBounds ( ( 0 236 ) ( 512 358 ) )
+					material "texturesheets/sewer/sewer_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -13 2 -80 1 0.9443359375 ) ( 68.9999923706 2 -80 0.5000000596 0.9443359375 ) ( 151 2 -80 0.0000000298 0.9443359375 ) )
+							( ( -13 2 0 1 0.9145507813 ) ( 68.9999923706 2 0 0.5 0.9145507813 ) ( 151 2 0 0 0.9145507813 ) )
+							( ( -13 2 80 1 0.884765625 ) ( 68.9999923706 2 80 0.4999999702 0.884765625 ) ( 151 2 80 -0.0000000596 0.884765625 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"flood_way_hut_decals (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 222.9999694824 65.9999847412 104 )
+						rotation ( ( -0.9999998808 -0.0000000684 0 ) ( 0.0000000684 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0.884765625 ) )
+					texBounds ( ( 0 236 ) ( 512 366 ) )
+					material "texturesheets/sewer/sewer_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 82.9999923706 2 -80 1 0.9482421875 ) ( 116.9999923706 2 -80 0.5000000596 0.9482421875 ) ( 151 2 -80 0.0000000298 0.9482421875 ) )
+							( ( 82.9999923706 2 0 1 0.9165039063 ) ( 116.9999923706 2 0 0.5 0.9165039063 ) ( 151 2 0 0 0.9165039063 ) )
+							( ( 82.9999923706 2 80 1 0.884765625 ) ( 116.9999923706 2 80 0.4999999702 0.884765625 ) ( 151 2 80 -0.0000000596 0.884765625 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"flood_way_hut_decals (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 142 -86.999961853 104 )
+						rotation ( ( -0.0000001026 0.9999998212 0 ) ( -0.9999998212 -0.0000001026 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0.884765625 ) )
+					texBounds ( ( 0 236 ) ( 512 366 ) )
+					material "texturesheets/sewer/sewer_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 88.9999923706 2 -80 1 0.9482421875 ) ( 119.9999923706 2 -80 0.5000000596 0.9482421875 ) ( 151 2 -80 0.0000000298 0.9482421875 ) )
+							( ( 88.9999923706 2 0 1 0.9165039063 ) ( 119.9999923706 2 0 0.5 0.9165039063 ) ( 151 2 0 0 0.9165039063 ) )
+							( ( 88.9999923706 2 80 1 0.884765625 ) ( 119.9999923706 2 80 0.4999999702 0.884765625 ) ( 151 2 80 -0.0000000596 0.884765625 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"flood_way_hut_decals (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 142 -200.9999694824 104 )
+						rotation ( ( -0.0000001026 0.9999998212 0 ) ( -0.9999998212 -0.0000001026 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0.884765625 ) )
+					texBounds ( ( 0 236 ) ( 512 366 ) )
+					material "texturesheets/sewer/sewer_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 88.9999923706 2 -80 1 0.9482421875 ) ( 114.9999923706 2 -80 0.5000000596 0.9482421875 ) ( 141 2 -80 0.0000000298 0.9482421875 ) )
+							( ( 88.9999923706 2 0 1 0.9165039063 ) ( 114.9999923706 2 0 0.5 0.9165039063 ) ( 141 2 0 0 0.9165039063 ) )
+							( ( 88.9999923706 2 80 1 0.884765625 ) ( 114.9999923706 2 80 0.4999999702 0.884765625 ) ( 141 2 80 -0.0000000596 0.884765625 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"flood_way_hut_decals (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -11.9999694824 -109.9999847412 104 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0.884765625 ) )
+					texBounds ( ( 0 236 ) ( 512 380 ) )
+					material "texturesheets/sewer/sewer_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -148 2 80 1 0.884765625 ) ( 0 2 80 0.4999999702 0.884765625 ) ( 148 2 80 -0.0000000596 0.884765625 ) )
+							( ( -148 2 0 1 0.919921875 ) ( 0 2 0 0.5 0.919921875 ) ( 148 2 0 0 0.919921875 ) )
+							( ( -148 2 -80 1 0.955078125 ) ( 0 2 -80 0.5000000596 0.955078125 ) ( 148 2 -80 0.0000000298 0.955078125 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"flood_way_hut_decals (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -13.0000305176 61.9999847412 104 )
+						rotation ( ( -0.9999998808 -0.0000000684 0 ) ( 0.0000000684 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0.884765625 ) )
+					texBounds ( ( 0 236 ) ( 512 358 ) )
+					material "texturesheets/sewer/sewer_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -13 2 80 1 0.884765625 ) ( 68.9999923706 2 80 0.4999999702 0.884765625 ) ( 147 2 80 -0.0000000596 0.884765625 ) )
+							( ( -13 2 0 1 0.9145507813 ) ( 68.9999923706 2 0 0.5 0.9145507813 ) ( 147 2 0 0 0.9145507813 ) )
+							( ( -13 2 -80 1 0.9443359375 ) ( 68.9999923706 2 -80 0.5000000596 0.9443359375 ) ( 147 2 -80 0.0000000298 0.9443359375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"flood_way_hut_decals (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 222.9999694824 61.9999847412 104 )
+						rotation ( ( -0.9999998808 -0.0000000684 0 ) ( 0.0000000684 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0.884765625 ) )
+					texBounds ( ( 0 236 ) ( 512 366 ) )
+					material "texturesheets/sewer/sewer_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 86.9999923706 1.9999995232 80 1 0.884765625 ) ( 116.9999923706 2 80 0.4999999702 0.884765625 ) ( 151 2 80 -0.0000000596 0.884765625 ) )
+							( ( 86.9999923706 1.9999995232 0 1 0.9165039063 ) ( 116.9999923706 2 0 0.5 0.9165039063 ) ( 151 2 0 0 0.9165039063 ) )
+							( ( 86.9999923706 1.9999995232 -80 1 0.9482421875 ) ( 116.9999923706 2 -80 0.5000000596 0.9482421875 ) ( 151 2 -80 0.0000000298 0.9482421875 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"flood_way_hut_decals (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 138 -86.999961853 104 )
+						rotation ( ( -0.0000001026 0.9999998212 0 ) ( -0.9999998212 -0.0000001026 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0.884765625 ) )
+					texBounds ( ( 0 236 ) ( 512 366 ) )
+					material "texturesheets/sewer/sewer_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 88.9999923706 2 80 1 0.884765625 ) ( 119.9999923706 2 80 0.4999999702 0.884765625 ) ( 147 2.0000004768 80 -0.0000000596 0.884765625 ) )
+							( ( 88.9999923706 2 0 1 0.9165039063 ) ( 119.9999923706 2 0 0.5 0.9165039063 ) ( 147 2.0000004768 0 0 0.9165039063 ) )
+							( ( 88.9999923706 2 -80 1 0.9482421875 ) ( 119.9999923706 2 -80 0.5000000596 0.9482421875 ) ( 147 2.0000004768 -80 0.0000000298 0.9482421875 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"flood_way_hut_decals (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 138 -200.9999694824 104 )
+						rotation ( ( -0.0000001026 0.9999998212 0 ) ( -0.9999998212 -0.0000001026 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0.884765625 ) )
+					texBounds ( ( 0 236 ) ( 512 366 ) )
+					material "texturesheets/sewer/sewer_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( 92.9999923706 1.9999996424 80 1 0.884765625 ) ( 114.9999923706 2 80 0.4999999702 0.884765625 ) ( 141 2 80 -0.0000000596 0.884765625 ) )
+							( ( 92.9999923706 1.9999996424 0 1 0.9165039063 ) ( 114.9999923706 2 0 0.5 0.9165039063 ) ( 141 2 0 0 0.9165039063 ) )
+							( ( 92.9999923706 1.9999996424 -80 1 0.9482421875 ) ( 114.9999923706 2 -80 0.5000000596 0.9482421875 ) ( 141 2 -80 0.0000000298 0.9482421875 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"flood_way_hut_decals (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -161.9999847412 38.9999694824 104 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0.884765625 ) )
+					texBounds ( ( 0 236 ) ( 512 380 ) )
+					material "texturesheets/sewer/sewer_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -21 2 80 1 0.884765625 ) ( 62.9999961853 2 80 0.4999999702 0.884765625 ) ( 147 2 80 -0.0000000596 0.884765625 ) )
+							( ( -21 2 0 1 0.919921875 ) ( 62.9999961853 2 0 0.5 0.919921875 ) ( 147 2 0 0 0.919921875 ) )
+							( ( -21 2 -80 1 0.955078125 ) ( 62.9999961853 2 -80 0.5000000596 0.955078125 ) ( 147 2 -80 0.0000000298 0.955078125 ) )
+						)
+					}
+				}
+			}
+		}
+	}
+}

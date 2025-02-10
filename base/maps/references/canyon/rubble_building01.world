@@ -1,0 +1,742 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"description"	"unnamed.world"
+		"editor_last_atmosphere"	"atmosphere://canyon01"
+	}
+
+	meta {
+		sdLODGroup "rubble_building" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		3
+				"uniqueinstance"		1
+			}
+			levels {
+				"rubble_building (Level 01)"
+				"rubble_building (Level 02)"
+				"rubble_building (Level 03)"
+			}
+		}
+		sdLODGroup_Level "rubble_building (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		16384
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		1
+				"drawspec"		""
+				"shadowspec"		"medium"
+				"noshadows"		0
+			}
+		}
+		sdLODGroup_Level "rubble_building (Level 02)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		16384
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		1
+				"drawspec"		""
+				"shadowspec"		"medium"
+				"noshadows"		0
+			}
+		}
+		sdLODGroup_Level "rubble_building (Level 03)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		8192
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		1
+				"drawspec"		""
+				"shadowspec"		"medium"
+				"noshadows"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_1" 
+				groups {
+					"rubble_building (Level 03)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 1 -40 ) matrix ( ( 0.0078125 0 -0.1875 ) ( 0 0.0009765625 -0.4296875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0 -1 -8 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.1067899987 0.9942799807 0 -48.7639389038 ) matrix ( ( 0.0102579203 0 -2.4560716152 ) ( 0 0.0006510417 0.9947916865 ) ) texBounds ( ( 0 64 ) ( 160 128 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0.4257600009 -0.9048399925 0 -220.8392944336 ) matrix ( ( 0.0102579203 0 -2.6748216152 ) ( 0 0.0006510417 0.9947916865 ) ) texBounds ( ( 0 64 ) ( 160 128 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -0.9937700033 -0.1114500016 0 318.0158691406 ) matrix ( ( 0.0102579203 0 -2.6748216152 ) ( 0 0.0006510417 0.9947916865 ) ) texBounds ( ( 0 64 ) ( 160 128 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0.9894199967 0.1450500041 0 -371.90625 ) matrix ( ( 0.0102579203 0 -2.4560716152 ) ( 0 0.0006510417 0.9947916865 ) ) texBounds ( ( 0 64 ) ( 160 128 ) ) "texturesheets/canyon/destroyed_buildings01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_2" 
+				groups {
+					"rubble_building (Level 03)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 1 -40 ) matrix ( ( 0 -0.0078125 0 ) ( 0.0009765625 0 -0.3203125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0 -1 8 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.9899500012 0.1414200068 0 -125.5821609497 ) matrix ( ( -0.0044193352 0 0.8649899364 ) ( 0 -0.0004882813 -0.00390625 ) ) texBounds ( ( 0 2048 ) ( 64 2080 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0.9191499949 0.3939200044 0 110.2974090576 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0.076700002 -0.9970499873 0 -163.8236999512 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -0.1104300022 0.9938799739 0 103.3639068604 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_4" 
+				groups {
+					"rubble_building (Level 03)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -24 -32 0 )
+					}
+					
+					faces {
+						plane ( -0.2756400108 0 0.9612600207 -118.2549209595 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.51953125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0.2756402493 0.0000000405 -0.9612608552 93.7327041626 ) matrix ( ( 0.03125 0 1 ) ( 0 -0.03125 0.7209456563 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.9383718967 0.2169405818 0.2690629959 297.4659118652 ) matrix ( ( 0.0075180507 0.0015980102 -0.9658910036 ) ( -0.0001770969 0.0008331756 0.1311680079 ) ) texBounds ( ( 0 2032 ) ( 152 2040 ) ) "texturesheets/canyon/restaurant01"
+						plane ( -0.8835399747 0.3939099908 -0.2533499897 -459.5114440918 ) matrix ( ( 0.0120312842 0 -0.6724039316 ) ( 0 0.0006873097 0.0818876177 ) ) texBounds ( ( 0 2048 ) ( 192 2080 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0 1 0 -176.000793457 ) matrix ( ( 0.0154051799 0.0032744717 -5.8444180489 ) ( -0.0001647953 0.000775301 0.0776862726 ) ) texBounds ( ( 0 2048 ) ( 352 2080 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0.494509995 -0.8575299978 0.1418000013 258.1791381836 ) matrix ( ( 0.0152711319 0 5.0686311722 ) ( 0 0.0005858123 0.0340406969 ) ) texBounds ( ( 0 2048 ) ( 192 2080 ) ) "texturesheets/canyon/restaurant01"
+						plane ( -0.4298900068 -0.8944299817 -0.1232699975 -93.2461395264 ) matrix ( ( 0.0082775317 0 3.9542512894 ) ( 0 0.0004142934 0.0118525447 ) ) texBounds ( ( 0 2048 ) ( 192 2080 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_9" 
+				groups {
+					"rubble_building (Level 02)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 1 -8 ) matrix ( ( 0 0.0078125 0 ) ( -0.0009765625 0 -0.3203125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.4472135901 -0.8944271803 0 57.2433395386 ) matrix ( ( -0.0139762228 0 2.1751027107 ) ( 0 -0.0019531249 1 ) ) texBounds ( ( 0 0 ) ( 96 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( -1 0 0 -64 ) matrix ( ( -0.0139762228 0 2.1751027107 ) ( 0 -0.0019531249 1 ) ) texBounds ( ( 0 0 ) ( 96 32 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_10" 
+				groups {
+					"rubble_building (Level 02)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 1 -8 ) matrix ( ( 0 0.0078125 0 ) ( -0.0009765625 0 -0.3203125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -192 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.2425400019 -0.9701399803 0 108.655960083 ) matrix ( ( -0.0139762228 0 2.1751027107 ) ( 0 -0.0019531249 1 ) ) texBounds ( ( 0 0 ) ( 96 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 1 0 0 64 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_11" 
+				groups {
+					"rubble_building (Level 02)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 1 -8 ) matrix ( ( 0 -0.0078125 0 ) ( 0.0009765625 0 -0.3203125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 128 ) matrix ( ( -0.0139762228 0 2.1751027107 ) ( 0 -0.0019531249 1 ) ) texBounds ( ( 0 0 ) ( 96 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( -1 0 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.2425400019 0.9701399803 0 108.6559677124 ) matrix ( ( -0.0139762228 0 2.1751027107 ) ( 0 -0.0019531249 1 ) ) texBounds ( ( 0 0 ) ( 96 32 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_12" 
+				groups {
+					"rubble_building (Level 02)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 1 -8 ) matrix ( ( 0 -0.0078125 0 ) ( 0.0009765625 0 -0.3203125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -192 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.2425400019 0.9701399803 0 170.7450714111 ) matrix ( ( -0.0139762228 0 2.1751027107 ) ( 0 -0.0019531249 1 ) ) texBounds ( ( 0 0 ) ( 96 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 1 0 0 128 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_15" 
+				groups {
+					"rubble_building (Level 02)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 1 -8 ) matrix ( ( 0 0.0078125 0 ) ( -0.0009765625 0 -0.3203125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -304 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 192 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.8000000119 -0.6000000238 0 192 ) matrix ( ( -0.0139762228 0 2.1751027107 ) ( 0 -0.0019531249 1 ) ) texBounds ( ( 0 0 ) ( 96 32 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_17" 
+				groups {
+					"rubble_building (Level 02)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 1 -8 ) matrix ( ( 0 -0.0078125 0 ) ( 0.0009765625 0 -0.3203125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -304 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 192 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.9363300204 0.3511199951 0 224.7190093994 ) matrix ( ( -0.0139762228 0 2.1751027107 ) ( 0 -0.0019531249 1 ) ) texBounds ( ( 0 0 ) ( 96 32 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_18" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 1 0 0 -319.9999389648 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -1 0 0 303.9999389648 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0.4961400032 0.8682399988 -156.7799072266 ) matrix ( ( 0 0.0089796213 -0.5779770017 ) ( -0.0009765625 0 0.703125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0 -1 0 120 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_19" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -319.9999389648 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -0.7071099877 0.7071099877 0 90.5096664429 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -80 ) matrix ( ( -0.0089796213 0 -0.5779770017 ) ( 0 -0.0009765624 1.3125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0 -1 0 176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_20" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -192 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 -1 0 176 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 1 0 0 -304 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 256 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.1643999964 0 0.9863899946 -28.9342193604 ) matrix ( ( 0 0.0073150811 1.3321934938 ) ( -0.0009765625 0 0.828125 ) ) texBounds ( ( -64 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_21" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -192 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 -1 0 176 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -1 0 0 192 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -256 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.4472100139 0 0.8944299817 -178.8854370117 ) matrix ( ( 0 -0.0073150806 1.3321934938 ) ( 0.0009765624 0 2.828125 ) ) texBounds ( ( -64 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_22" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -192 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0.7071099877 -0.7071099877 0 -90.5096969604 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -80 ) matrix ( ( 0 -0.0073150806 1.3321934938 ) ( 0.0009765624 0 2.828125 ) ) texBounds ( ( -64 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( -1 0 0 304 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_23" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -192 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 -1 0 176 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -1 0 0 64 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -192 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.3511199951 0 0.9363300204 -29.9625301361 ) matrix ( ( 0 0.0073150811 1.3321934938 ) ( -0.0009765625 0 0.828125 ) ) texBounds ( ( -64 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_24" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -320 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 1 0 0 304 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0.3511234522 0.936329186 -127.3407669067 ) matrix ( ( 0 -0.0089796213 -0.5779770017 ) ( 0.0009765624 0 0.703125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0 1 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 64 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_25" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -320 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 1 0 0 304 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0.1543768793 0.9880120158 -120.5355377197 ) matrix ( ( 0 -0.0089796213 -0.5779770017 ) ( 0.0009765624 0 0.703125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0 -1 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_26" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -320 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 1 0 0 304 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0.0000004765 -0.0356916003 0.9993628263 -134.1933288574 ) matrix ( ( 0 0.0089796213 -0.5779770017 ) ( -0.0009765624 0 0.703125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0 -1 0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 64 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_27" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -320 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 1 0 0 304 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0.7071099877 0.7071099877 0 90.5096435547 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -88 ) matrix ( ( -0.0089796213 0 -0.5779770017 ) ( 0 -0.0009765624 0.703125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0 -1 0 128 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_28" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0.4228900075 0 0.9061800241 48.8130607605 ) matrix ( ( 0 -0.0073150806 1.3321934938 ) ( 0.0009765624 0 0.828125 ) ) texBounds ( ( -64 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -304 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 184 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 176 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 1 0 -192 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_29" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -192 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -0.7071099877 -0.7071099877 0 -90.5096664429 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -88 ) matrix ( ( 0 -0.0073150806 1.3321934938 ) ( 0.0009765624 0 0.828125 ) ) texBounds ( ( -64 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 1 0 0 304 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_30" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -192 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 -1 0 176 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -0.0963200033 0 0.9953500032 -49.574848175 ) matrix ( ( 0 0.0073150811 1.3321934938 ) ( -0.0009765625 0 0.828125 ) ) texBounds ( ( -64 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( -1 0 0 -184 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_40" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -319.9999389648 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -0.7071099877 -0.7071099877 0 90.5096130371 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -72 ) matrix ( ( -0.0089796213 0 -0.5779770017 ) ( 0 -0.0009765624 1.3125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0 1 0 176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_41" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 1 0 175.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 1 0 0 -304 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 240 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.3511199951 0 0.9363300204 39.3258285522 ) matrix ( ( 0 -0.0078124991 3.875 ) ( 0.0009765624 0 -0.171875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_42" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 1 0 175.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -1 0 0 199.9998779297 ) matrix ( ( 0 -0.0078124991 3.875 ) ( 0.0009765624 0 -0.171875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 1 0 0 -240 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.422881037 -0.0000002161 0.9061852098 57.99634552 ) matrix ( ( 0 -0.0078124991 3.875 ) ( 0.0009765624 0 -0.171875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_43" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0.7071099877 0.7071099877 0 -90.5095901489 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -72 ) matrix ( ( 0 0.0078124995 0 ) ( -0.0009765624 0 -0.171875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant01"
+						plane ( -1 0 0 304 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_45" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 1 0 175.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -1 0 0 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.1240300015 0 0.9922800064 -63.5057792664 ) matrix ( ( 0 -0.0078124991 3.875 ) ( 0.0009765624 0 -0.171875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_46" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -192 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 1 0 176 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -1 0 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.1240347326 0 0.9922778606 -63.5057830811 ) matrix ( ( 0 -0.0078124991 3.875 ) ( 0.0009765624 0 -0.171875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_49" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -320 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0.7071099877 -0.7071099877 0 90.5096664429 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -128 ) matrix ( ( -0.0089796213 0 -0.5779770017 ) ( 0 -0.0009765624 0.703125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0 1 0 176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_50" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -0.7071099877 0.7071099877 0 -90.5097732544 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 304 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -128 ) matrix ( ( 0 0.0078124995 0 ) ( -0.0009765624 0 -0.171875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_51" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 1 0 175.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0.316232115 0 0.9486818314 -25.296710968 ) matrix ( ( 0 0.0078124995 0 ) ( -0.0009765624 0 -0.171875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 1 0 0 256 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -304 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7999945283 0.0000020981 0.600007236 152.0013885498 ) matrix ( ( 0 0.0078124995 0 ) ( -0.0009765624 0 -0.171875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_52" 
+				groups {
+					"rubble_building (Level 02)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -199.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 1 0 175.9999694824 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 119.9997711182 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 1 0 0 -199.999786377 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0 1 -8 ) matrix ( ( 0 -0.0078125 0 ) ( 0.0009765625 0 -0.3125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_53" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -192 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 1 0 176 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -1 0 0 -192 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 64 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -56 ) matrix ( ( 0 0.0078124995 0 ) ( -0.0009765624 0 -0.171875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_54" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -319.9999389648 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -1 0 0 303.9999389648 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 -1 0 -96.0000305176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -31.9999198914 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 1 -56 ) matrix ( ( -0.0089796213 0 -0.5779770017 ) ( 0 -0.0009765624 1.3125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_58" 
+				groups {
+					"rubble_building (Level 02)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 1 -8 ) matrix ( ( 0 0.0078125 0 ) ( -0.0009765625 0 -0.3203125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -304 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_59" 
+				groups {
+					"rubble_building (Level 02)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 1 -8 ) matrix ( ( 0 0.0078125 0 ) ( -0.0009765625 0 -0.3203125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071099877 -0.7071099877 0 45.2548408508 ) matrix ( ( -0.0139762228 0 2.1751027107 ) ( 0 -0.0019531249 1 ) ) texBounds ( ( 0 0 ) ( 96 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 1 0 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_60" 
+				groups {
+					"rubble_building (Level 02)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 1 -8 ) matrix ( ( 0 -0.0078125 0 ) ( 0.0009765625 0 -0.3203125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -304 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 -0.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 64 ) matrix ( ( -0.0139762228 0 2.1751027107 ) ( 0 -0.0019531249 1 ) ) texBounds ( ( 0 0 ) ( 96 32 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_61" 
+				groups {
+					"rubble_building (Level 02)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 1 -8 ) matrix ( ( 0 -0.0078125 0 ) ( 0.0009765625 0 -0.3203125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.6000113487 0.7999914885 0 102.396697998 ) matrix ( ( -0.0139762228 0 2.1751027107 ) ( 0 -0.0019531249 1 ) ) texBounds ( ( 0 0 ) ( 96 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 1 0 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 7.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_48" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 1 0 175.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 1 0 0 192.0001220703 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -256 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.3713631928 0.0000003542 0.9284876585 13.363193512 ) matrix ( ( 0 0.0078124995 0 ) ( -0.0009765624 0 -0.171875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0.5546661615 0.000000529 0.8320729733 59.9021186829 ) matrix ( ( 0 0.0078124995 0 ) ( -0.0009765624 0 -0.171875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_44" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -191.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 1 0 175.9999694824 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0.9284781218 0 0.3713870347 -118.845085144 ) matrix ( ( 0 0.0078124995 0 ) ( -0.0009765624 0 -0.171875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant01"
+						plane ( -1 0 0 64 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.5546962023 0.0000001984 0.8320529461 -95.4084320068 ) matrix ( ( 0 0.0078124995 0 ) ( -0.0009765624 0 -0.171875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 1 0 0 -120 ) matrix ( ( 0 0.0078124995 0 ) ( -0.0009765624 0 -0.171875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_39" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -320 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -1 0 0 304 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 1 0 96 ) matrix ( ( 0 0.0089796213 -0.5779770017 ) ( -0.0009765625 0 0.703125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0 -1 0 -176 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.0000004341 -0.413813144 0.9103618264 -138.3796691895 ) matrix ( ( 0 0.0089796213 -0.5779770017 ) ( -0.0009765625 0 1.3125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( -0.0000004524 0.3162347078 0.9486809969 -45.5369110107 ) matrix ( ( 0 0.0089796213 -0.5779770017 ) ( -0.0009765625 0 0.703125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_37" 
+				groups {
+					"rubble_building (Level 01)"
+				}
+				{
+					
+					faces {
+						plane ( 0 0 -1 0 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -320 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 0 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( -1 0 0 304 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.5 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 -1 0 32 ) matrix ( ( 0 0.0089796213 -0.5779770017 ) ( -0.0009765625 0 1.3125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0 1 0 -120 ) matrix ( ( 0 0.0089796213 -0.5779770017 ) ( -0.0009765625 0 0.703125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0 -0.1240347326 0.9922778606 -152.8107910156 ) matrix ( ( 0 0.0089796213 -0.5779770017 ) ( -0.0009765625 0 1.3125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( -0.0000003542 -0.9284766912 0.3713906705 -14.8547935486 ) matrix ( ( 0 0.0089796213 -0.5779770017 ) ( -0.0009765625 0 1.3125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+						plane ( 0 0.8944271803 0.4472135901 -175.307723999 ) matrix ( ( 0 0.0089796213 -0.5779770017 ) ( -0.0009765625 0 0.703125 ) ) texBounds ( ( 0 0 ) ( 192 32 ) ) "texturesheets/canyon/restaurant01"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_6" 
+				groups {
+					"rubble_building (Level 03)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 8.1048126221 -0.5149993896 )
+					}
+					
+					faces {
+						plane ( 0 -0.2756400108 0.9612600207 -84.3580627441 ) matrix ( ( 0.0073413546 -0.0026720345 0.25 ) ( 0.0003340043 0.0009176693 0.80078125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0.2756400108 -0.9612600207 44.3580589294 ) matrix ( ( 0.03125 0 0 ) ( 0 -0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.9701399803 -0.2331400067 -0.0668499991 -263.4889831543 ) matrix ( ( 0.0013566284 -0.0076938211 0.25 ) ( 0.0009617276 0.0001695785 1.6796875 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 1 0 0 128 ) matrix ( ( 0.0026720343 0.0073413546 0.25 ) ( -0.0009176693 0.0003340043 0.75 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0.4061399996 -0.8784099817 -0.2518799901 -180.4814605713 ) matrix ( ( 0.0026720343 0.0073413546 0.25 ) ( -0.0009176693 0.0003340043 0.453125 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+						plane ( 0 0.9612600207 0.2756400108 190.3928833008 ) matrix ( ( 0.0061848206 0 -0.791656971 ) ( 0 0.0003906576 0.0318877026 ) ) texBounds ( ( 0 2048 ) ( 152 2080 ) ) "texturesheets/canyon/restaurant01"
+						plane ( -0.8426962495 -0.5383892655 0 -313.2585449219 ) matrix ( ( 0.0013566284 -0.0076938211 0.25 ) ( 0.0009617276 0.0001695785 0.8515625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/canyon/destroyed_buildings01"
+					}
+				}
+			}
+		}
+	}
+}

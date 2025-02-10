@@ -1,0 +1,33 @@
+roadTemplate arctic_paved_road {
+	{
+		diffuse image sdTextureTGA_Properties {
+			name "textures/megagen/arctic/road_01_d.tga"
+		}
+		local image sdTextureTGA_Properties {
+			name "textures/megagen/arctic/road_01_local.tga"
+		}
+		distribution image sdTextureTGA_Properties {
+			name "textures/megagen/arctic/road_01_mask.tga"
+		}
+		offset ( -1 1 )
+		surfaceType "pavement"
+		detailtexture "textures/detail/arctic_gravel.tga"
+		}
+}
+
+roadTemplate arctic_mud_road {
+	{
+		diffuse image sdTextureTGA_Properties {
+			name "textures/megagen/arctic/road_02_d.tga"
+		}
+		local image sdTextureTGA_Properties {
+			name "textures/megagen/arctic/road_02_local.tga"
+		}
+		distribution image sdTextureTGA_Properties {
+			name "textures/megagen/arctic/road_02_mask.tga"
+		}
+		offset ( -1 1 )
+		surfaceType "mud"
+		detailtexture "textures/detail/arctic_dirt.tga"
+		}
+}

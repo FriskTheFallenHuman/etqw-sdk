@@ -1,0 +1,36 @@
+// Road templates for terrain_mesh_sdk
+// Only use the detailtextures referenced from the .sft
+
+roadTemplate sdk_main_road {
+	{
+		diffuse image sdTextureTGA_Properties {
+			name "textures/megagen/temperate/road_01_d.tga"
+		}
+		local image sdTextureTGA_Properties {
+			name "textures/megagen/temperate/road_01_local.tga"
+		}
+		distribution image sdTextureTGA_Properties {
+			name "textures/megagen/temperate/road_01_mask.tga"
+		}
+		offset ( -1 1 )
+		surfaceType "pavement"
+		detailtexture "textures/detail/temperate_gravel.tga"
+		}
+}
+
+roadTemplate sdk_dirt_road {
+	{
+		diffuse image sdTextureTGA_Properties {
+			name "textures/megagen/temperate/road_02_d.tga"
+		}
+		local image sdTextureTGA_Properties {
+			name "textures/megagen/temperate/road_02_local.tga"
+		}
+		distribution image sdTextureTGA_Properties {
+			name "textures/megagen/temperate/road_02_mask.tga"
+		}
+		offset ( -1 1 )
+		surfaceType "dirt"		
+		detailtexture "textures/detail/temperate_dirt.tga"
+	}
+}

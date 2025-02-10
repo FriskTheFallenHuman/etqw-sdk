@@ -1,0 +1,58 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"editor_last_atmosphere"	"atmosphere_outskirts"
+	}
+
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			sdDictionary {
+				"merge_script_obj4_marker"	"info_objective_navmodule"
+			}
+			classname "worldspawn"
+		}
+		sdPrimitiveEntity "console" {
+			sdDictionary {
+				"editor_unique"	"1"
+				"model"	"models/mapobjects/com/modconsole6.lwo"
+				"task_name"	"maps/outskirts/console_task"
+				"item_name"	"databrain"
+				"objective_index"	"3"
+				"screen_name"	"maps/outskirts/console"
+				"gui"	"guis/items/data_obj"
+				"use_objective_gui"	"1"
+			}
+			sdTransform {
+				translation ( 0 0 64 )
+				rotation ( ( -0.0000001027 0.9999998212 0 ) ( -0.9999998212 -0.0000001027 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "item_capturepoint_use"
+		}
+		sdPrimitiveEntity "info_objective_navmodule" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/data"
+				"icon_size_cm"	"24"
+				"objective_index"	"3"
+				"mtr_icon_number"	"hud/objectives/marker_04"
+				"icon_size_number_cm"	"24"
+				"icon_offset_cm"	"8 8 0"
+				"mtr_objective_gdf"	"hud/icons/missionsystem/obj_goal"
+				"mtr_objective_gdf_desat"	"hud/icons/missionsystem/obj_goal_desat"
+				"mtr_objective_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_strogg_desat"	"hud/icons/missionsystem/obj_defend_desat"
+				"text_objective_gdf"	"maps/outskirts/gdf_navmodule"
+				"text_objective_strogg"	"maps/outskirts/strogg_navmodule"
+				"text_short_objective_gdf"	"maps/outskirts/gdf_navmodule_short"
+				"text_short_objective_strogg"	"maps/outskirts/strogg_navmodule_short"
+				"mtr_objective_world_icon_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_world_icon_gdf"	"hud/icons/missionsystem/obj_goal"
+				"editor_unique"	"1"
+			}
+			sdTransform {
+				translation ( 6 0 500 )
+			}
+			
+			classname "info_objective"
+		}
+	}
+}

@@ -1,0 +1,43 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"description"	"maps/unnamed.world"
+	}
+
+	meta {
+		sdLODGroup "nest" {
+			state 0
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		0
+			}
+			levels {
+				"nest (Level 1)"
+			}
+		}
+		sdLODGroup_Level "nest (Level 1)" {
+			state 0
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		8192
+				"inlinecollisionmodel"		1
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+		}
+		sdPrimitiveEntity "nkd_model_static_1" 
+		groups {
+			"nest (Level 1)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/strogg_base/turret_nest_snow.lwo"
+				"mergecm"	"1"
+			}
+			classname "model_static"
+		}
+	}
+}

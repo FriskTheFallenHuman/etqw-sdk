@@ -1,0 +1,19 @@
+
+menu compilemenu {
+	"&1 - Normal compile"	"compile "
+	"&2 - Only Entities"	"compile -onlyents"
+	"&3 - Only Bot Entities"	"compile -onlybotents"
+	"&4 - Only CM"	"compile -onlyCM"
+	"&5 - Leak test"	"compile -leaktest"
+	"&6 - Prelight ShadowOpt 2"	"compile -prelight -shadowopt 2"
+	"SUBMENU_Debug"	"compileMenu_Debug"
+}
+
+menu compilemenu_debug {
+	"&1 - No leaks"	"compile -noflood"
+	"&2 - No leaks -Verbose"	"compile -noflood -v"
+	"&3 - ShadowOpt 2"	"compile -shadowOpt 2"
+	"&4 - Debug Surface"	"compile -debugSurfaces"
+	"&5 - No Optimize"	"compile -noOpt"
+	"&6 - Validate Models"	"compile -validateModels"
+}

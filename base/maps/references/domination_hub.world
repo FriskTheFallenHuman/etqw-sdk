@@ -1,0 +1,95 @@
+sdWorldFile version 5 {
+
+	meta {
+		sdLODGroup "dom_hub" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		0
+			}
+			levels {
+				"dom_hub (Level 01)"
+			}
+		}
+		sdLODGroup_Level "dom_hub (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		20000
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+		}
+		sdPrimitiveEntity "deployable_basedefence_strogg_1" {
+			sdDictionary {
+				"anim"	"base"
+			}
+			sdTransform {
+				translation ( -211.3233032227 -641.0032348633 458 )
+				rotation ( ( -0.275637418 -0.9612616301 0 ) ( 0.9612616301 -0.275637418 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "deployable_basedefence_strogg"
+		}
+		sdPrimitiveEntity "deployable_basedefence_strogg_2" {
+			sdDictionary {
+				"anim"	"base"
+			}
+			sdTransform {
+				translation ( 547.1649780273 396.058380127 466 )
+				rotation ( ( 0.7986354828 0.6018149853 0 ) ( -0.6018149853 0.7986354828 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "deployable_basedefence_strogg"
+		}
+		sdPrimitiveEntity "deployable_basedefence_strogg_3" {
+			sdDictionary {
+				"anim"	"base"
+			}
+			sdTransform {
+				translation ( -674.8350219727 2.058380127 464 )
+				rotation ( ( -1 -0.0000000874 0 ) ( 0.0000000874 -1 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "deployable_basedefence_strogg"
+		}
+		sdPrimitiveEntity "zombie_model_static_1" 
+		groups {
+			"dom_hub (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/structures/strogg/domination_hub/domination_hub.lwo"
+			}
+			classname "model_static"
+		}
+		sdPrimitiveEntity "wils_deployable_shield_generator_domihub_2" {
+			sdTransform {
+				translation ( -427 -310 1560 )
+			}
+			
+			classname "deployable_shield_generator_domihub"
+		}
+		sdPrimitiveReference "nkd_reference_1" {
+			
+			url	"filesystem://maps/references/domination_hub_aasclip.world"
+		}
+
+	}
+}

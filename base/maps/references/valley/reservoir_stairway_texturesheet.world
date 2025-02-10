@@ -1,0 +1,2114 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"description"	"maps/unnamed.world"
+		"editor_last_atmosphere"	"atmosphere://valley01"
+	}
+
+	meta {
+		sdLODGroup "reservoir_stairway" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		2
+				"uniqueinstance"		1
+			}
+			levels {
+				"reservoir_stairway (Level 1)"
+				"reservoir_stairway (Level 2)"
+			}
+		}
+		sdLODGroup_Level "reservoir_stairway (Level 1)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		16000
+				"minvisdist"		0
+				"visdistfalloff"		0.05
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+			}
+		}
+		sdLODGroup_Level "reservoir_stairway (Level 2)" {
+			propertyTable {
+				"color"		( 0 1 0 )
+				"maxvisdist"		4096
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		"med"
+				"noshadows"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_1" {
+					
+					sdTransform {
+						translation ( -416 -24 -608 )
+					}
+					
+					faces {
+						plane ( 0 -0.4472135901 0.8944271803 -418.5842285156 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.0000001706 0.4472136199 -0.8944271803 411.4499511719 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -360 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -264 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_3" {
+					
+					sdTransform {
+						translation ( 168 544 -288 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0.000000028 -0.4472136199 0.8944271803 -418.5849609375 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.0000000573 0.4472136497 -0.8944271803 411.4505004883 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.0000001907 0.0010852808 -0.999999404 280.4055786133 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -7.9999732971 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_5" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -448 320 -32 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -32 ) matrix ( ( -0.0048453435 0 2.2482204437 ) ( 0 -0.000579834 -0.1049804688 ) ) texBounds ( ( 0 1883 ) ( 258 1902 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0 -1 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 112 ) matrix ( ( 0.0051757824 0 -0.9937503338 ) ( 0 0.0006103516 0.9609375 ) ) texBounds ( ( 0 80 ) ( 424 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 1 0 0 -128 ) matrix ( ( 0.0051757824 0 -0.9937503338 ) ( 0 0.0006103516 0.9609375 ) ) texBounds ( ( 0 80 ) ( 424 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 -1 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0.7071067691 0 -181.0165710449 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_8" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -544 544 -36 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -28 ) matrix ( ( 0.00390625 0 -2 ) ( 0 0.0004882813 1.25 ) ) texBounds ( ( 0 64 ) ( 64 128 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0 -1 -28 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -32 ) matrix ( ( 0.0051757824 0 -0.9937503338 ) ( 0 0.0006103516 0.9609375 ) ) texBounds ( ( 0 80 ) ( 424 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 1 0 0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -32 ) matrix ( ( 0.0051757824 0 -0.9937503338 ) ( 0 0.0006103516 0.9609375 ) ) texBounds ( ( 0 80 ) ( 424 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 1 0 -32 ) matrix ( ( 0.0051757824 0 -0.9937503338 ) ( 0 0.0006103516 0.9609375 ) ) texBounds ( ( 0 80 ) ( 424 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_10" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -624 320 -32 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -32 ) matrix ( ( -0.0055135093 0 3.5286459923 ) ( 0 -0.000579834 -0.20703125 ) ) texBounds ( ( 0 1883 ) ( 542 1902 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0 -1 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 112 ) matrix ( ( 0.0051757824 0 -0.9937503338 ) ( 0 0.0006103516 0.9609375 ) ) texBounds ( ( 0 80 ) ( 424 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 1 0 0 -128 ) matrix ( ( 0.0051757824 0 -0.9937503338 ) ( 0 0.0006103516 0.9609375 ) ) texBounds ( ( 0 80 ) ( 424 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 -1 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0.7071067691 0 -305.470123291 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_11" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -448 752 -32 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -32 ) matrix ( ( 0 -0.0052083316 1.9999991655 ) ( 0.0005798318 0 -0.2812485993 ) ) texBounds ( ( 0 1883 ) ( 256 1902 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0 -1 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 112 ) matrix ( ( 0.0051757824 0 -0.9937503338 ) ( 0 0.0006103516 0.9609375 ) ) texBounds ( ( 0 80 ) ( 424 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 1 0 0 -127.9999923706 ) matrix ( ( 0.0051757824 0 -0.9937503338 ) ( 0 0.0006103516 0.9609375 ) ) texBounds ( ( 0 80 ) ( 424 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 1 0 -255.9999694824 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 -0.7071067691 0 -124.4507827759 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_15" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 256 576 216 )
+					}
+					
+					faces {
+						plane ( 0 0 1 32 ) matrix ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/concrete/concrete10"
+						plane ( 0 0 -1 -88 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -64 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -128 ) matrix ( ( 0.0052083316 0 -0.9999991655 ) ( 0 0.0006103516 1.078125 ) ) texBounds ( ( 0 80 ) ( 256 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 -1 0 -112 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_16" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -384 396 24 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 32 ) matrix ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/concrete/concrete10"
+						plane ( 0 0 -1 -88 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 88.0000228882 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -47.9999923706 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -111.9999847412 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -140.0001373291 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_88" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -80 336 -32 )
+						rotation ( ( -0.0000001027 0.9999998212 0 ) ( -0.9999998212 -0.0000001027 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -32 ) matrix ( ( 0 -0.0052083316 1.9999991655 ) ( 0.0005798329 0 -0.1791987121 ) ) texBounds ( ( 0 1883 ) ( 256 1902 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0 -1 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 112 ) matrix ( ( 0.0051757824 0 -0.9937503338 ) ( 0 0.0006103516 0.9609375 ) ) texBounds ( ( 0 80 ) ( 424 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 1 0 0 -127.9999923706 ) matrix ( ( 0.0051757824 0 -0.9937503338 ) ( 0 0.0006103516 0.9609375 ) ) texBounds ( ( 0 80 ) ( 424 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -0.0000001027 -1.0000002384 0 111.9999694824 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071068883 0.7071070075 0 -90.5097808838 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_94" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -448 383.9998779297 96 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 -0.4472135901 0.8944271803 28.6216697693 ) matrix ( ( 0 -0.0043782401 2.1303124428 ) ( 0.0005798318 0 0.2753898799 ) ) texBounds ( ( 0 1883 ) ( 802 1902 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472135901 -0.8944271803 -85.8650054932 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 112 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -768 ) matrix ( ( 0.0048828125 0 1.6406247616 ) ( 0 0.0006103516 0.765625 ) ) texBounds ( ( 0 80 ) ( 20 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0.0000000342 1.0000001192 0 128.0000610352 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_95" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -624 383.9998779297 96 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 -0.4472135901 0.8944271803 28.6216697693 ) matrix ( ( 0 -0.0043782401 2.1303124428 ) ( 0.0005798318 0 0.3774402738 ) ) texBounds ( ( 0 1883 ) ( 802 1902 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472135901 -0.8944271803 -85.8650054932 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 112 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -768 ) matrix ( ( 0.0048828125 0 1.6406247616 ) ( 0 0.0006103516 0.765625 ) ) texBounds ( ( 0 80 ) ( 20 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0.0000000342 1.0000001192 0 128.0000610352 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_98" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 575.9998779297 576 416 )
+						rotation ( ( 0.0000001711 -0.999999702 0 ) ( 0.999999702 0.0000001711 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 -0.4472135901 0.8944271803 28.6216697693 ) matrix ( ( 0 -0.0072970693 1.2531244755 ) ( 0.0005798318 0 0.3496083319 ) ) texBounds ( ( 0 1883 ) ( 802 1902 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472135901 -0.8944271803 -85.8650054932 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 112 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -768 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.0000001711 1.0000003576 0 384.0002441406 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_100" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 575.9998779297 752 416 )
+						rotation ( ( 0.0000001711 -0.999999702 0 ) ( 0.999999702 0.0000001711 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 -0.4472135901 0.8944271803 28.6216697693 ) matrix ( ( 0 -0.0072970693 1.2531244755 ) ( 0.0005798318 0 0.4516587257 ) ) texBounds ( ( 0 1883 ) ( 802 1902 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472135901 -0.8944271803 -85.8650054932 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 112 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -768 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.0000001711 1.0000003576 0 384.0002441406 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_129" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -176 544 128 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.21875 ) ( 0 0.0006713861 0.2285155058 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.1176757813 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_130" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -160 544 136 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.90625 ) ( 0 0.0006713861 0.2177733332 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.1289062351 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_131" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -144 544 144 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.625 ) ( 0 0.0006713861 0.2070311606 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 5.05859375 ) ( 0 0.0014038059 0.140136674 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_132" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -128 544 152 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.625 ) ( 0 0.0006713858 0.1962889284 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.1513671279 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_133" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -112 544 160 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.21875 ) ( 0 0.0006713858 0.1855467558 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 5.05859375 ) ( 0 0.0014038059 0.1625975668 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_134" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -96 544 168 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.46875 ) ( 0 0.0006713858 0.1748045832 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.1738280207 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_135" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -80 544 176 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.625 ) ( 0 0.0006713858 0.1640624106 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.1850584745 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_136" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -64 544 184 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -4.0625 ) ( 0 0.0006713859 0.1533202529 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.1962889135 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_137" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -48 544 192 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.625 ) ( 0 0.0006713859 0.1425780654 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 5.05859375 ) ( 0 0.0014038059 0.2075193524 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_138" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -16 544 208.0009765625 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128.0009765625 ) matrix ( ( 0.0078125019 0 -3.6562509537 ) ( 0 0.000671387 0.1210937575 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80.0000305176 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -79.9999694824 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125019 0 4.8750009537 ) ( 0 0.0014038086 0.2299804688 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472135901 -0.8944271803 -114.4875488281 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_139" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -32 544 200 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.46875 ) ( 0 0.0006713859 0.1318359077 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.2187498063 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_140" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 0 544 216 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.46875 ) ( 0 0.0006713858 0.1103515476 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.2412106991 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_141" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 16 544 224 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.625 ) ( 0 0.0006713858 0.099609375 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 5.05859375 ) ( 0 0.0014038059 0.2524411678 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_142" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 32 544 232 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -4.0625 ) ( 0 0.0006713858 0.0888672024 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.263671577 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_143" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 48 544 240 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.21875 ) ( 0 0.0006713858 0.0781250298 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.2749020457 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_144" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 64 544 248 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.625 ) ( 0 0.0006713858 0.0673828572 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.2861324847 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_145" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 80 544 256 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.625 ) ( 0 0.0006713858 0.0566406809 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.2973629236 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_146" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 96 544 264 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -4.0625 ) ( 0 0.0006713858 0.0458985083 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 5.05859375 ) ( 0 0.0014038059 0.3085933924 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_147" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 112 544 272 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.21875 ) ( 0 0.0006713858 0.0351563394 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.3198238611 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_148" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 128 544 280 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.625 ) ( 0 0.0006713861 0.024414137 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.3310542703 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_149" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 143.9999847412 544 288 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.625 ) ( 0 0.0006713861 0.0136719644 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 5.05859375 ) ( 0 0.0014038059 0.342284739 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_150" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 160 544 296 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.21875 ) ( 0 0.0006713861 0.0029297844 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.3535152078 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_151" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 176 544 304 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.625 ) ( 0 0.0006713861 -0.0078123957 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 4.875 ) ( 0 0.0014038059 0.3647456169 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_152" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 192 544 312 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0.0078125 0 -3.625 ) ( 0 0.0006713861 -0.0107420832 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 5.05859375 ) ( 0 0.0014038059 0.3759760857 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_163" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 320 336 160 )
+						rotation ( ( -0.0000001027 0.9999998212 0 ) ( -0.9999998212 -0.0000001027 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -32 ) matrix ( ( 0 -0.0052083316 1.9999991655 ) ( 0.0005798329 0 -0.1791987121 ) ) texBounds ( ( 0 1883 ) ( 256 1902 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0 -1 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 112 ) matrix ( ( 0.0052083316 0 -0.9999991655 ) ( 0 0.0006103516 1.078125 ) ) texBounds ( ( 0 80 ) ( 256 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 1 0 0 -128 ) matrix ( ( 0.0052083316 0 -0.9999991655 ) ( 0 0.0006103516 1.078125 ) ) texBounds ( ( 0 80 ) ( 256 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 -1 0 -64 ) matrix ( ( 0.0052083316 0 -0.9999991655 ) ( 0 0.0006103516 1.078125 ) ) texBounds ( ( 0 80 ) ( 256 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0.0000001027 1.0000002384 0 -128.0001525879 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_165" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 320 512 160 )
+						rotation ( ( -0.0000001027 0.9999998212 0 ) ( -0.9999998212 -0.0000001027 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -32 ) matrix ( ( 0 -0.0052083316 1.9999991655 ) ( 0.0005798318 0 -0.2812485993 ) ) texBounds ( ( 0 1883 ) ( 256 1902 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0 -1 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 112 ) matrix ( ( 0.0052083316 0 -0.9999991655 ) ( 0 0.0006103516 1.078125 ) ) texBounds ( ( 0 80 ) ( 256 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 1 0 0 -128 ) matrix ( ( 0.0052083316 0 -0.9999991655 ) ( 0 0.0006103516 1.078125 ) ) texBounds ( ( 0 80 ) ( 256 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 -1 0 -64 ) matrix ( ( 0.0052083316 0 -0.9999991655 ) ( 0 0.0006103516 1.078125 ) ) texBounds ( ( 0 80 ) ( 256 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0.0000001027 1.0000002384 0 -128.0001525879 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_7" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -384 448 24 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 32 ) matrix ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/concrete/concrete10"
+						plane ( 0 0 -1 -88 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -47.9999923706 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -111.9999847412 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -140.0001373291 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071068287 0.7071068287 0 -45.2548065186 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_91" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -224 448 24 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 32 ) matrix ( ( 0.00390625 0 0 ) ( 0 0.00390625 0 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/concrete/concrete10"
+						plane ( 0 0 -1 -88 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -175.9999694824 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -31.9999923706 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 15.9998607635 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071068287 -0.7071068287 0 -67.8822937012 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_129" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -111.9999084473 -64 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125019 -2.2187504768 ) ( 0.0006713865 0 0.1855468005 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.1518550515 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_130" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -95.9999084473 -56 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125 -2.90625 ) ( 0.0006713865 0 0.174804613 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.140624553 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_131" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -79.9999084473 -48 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713865 0 0.1640624851 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 4.0585956573 ) ( 0 0.0014038067 -0.129394114 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_132" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -64 -40 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713862 0 0.153320238 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.1181636602 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_133" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -48 -32 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125019 -2.2187504768 ) ( 0.0006713862 0 0.1425780505 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 4.0585956573 ) ( 0 0.0014038067 -0.1069332212 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_134" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -32 -24 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125 -2.46875 ) ( 0.0006713862 0 0.131835863 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.0957027674 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_135" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -16 -16 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713862 0 0.121093668 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.0844723135 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_136" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 0 -8 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125037 -3.0625007153 ) ( 0.0006713863 0 0.1103515625 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.0732418746 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_137" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 16 0 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713863 0 0.099609375 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 4.0585956573 ) ( 0 0.0014038067 -0.0620114356 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_138" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 48 16.0009765625 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128.0009765625 ) matrix ( ( 0 -0.0078125028 -2.6562507153 ) ( 0.0006713874 0 0.0781249851 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80.0000305176 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -79.9999694824 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125084 0 3.8750030994 ) ( 0 0.0014038094 -0.039550785 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472135901 -0.8944271803 -114.4875488281 ) matrix ( ( 0.03125 0 4 ) ( 0 0.0312500149 -0.8944321871 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_139" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 32 8 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125 -2.46875 ) ( 0.0006713863 0 0.0888672322 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.0507809818 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_140" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 64 24 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125 -2.46875 ) ( 0.0006713862 0 0.0673827603 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.028320089 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_141" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 80 32 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713862 0 0.0566406101 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 4.0585956573 ) ( 0 0.0014038067 -0.0170895159 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_142" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 96 40 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125037 -3.0625007153 ) ( 0.0006713862 0 0.0458984487 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.0058590919 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_143" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 112 48 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125019 -2.2187504768 ) ( 0.0006713862 0 0.0351563059 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 0.005371362 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_144" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 128 56 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713862 0 0.0244141072 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 0.0166017562 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_145" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 144 64 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713862 0 0.0136719625 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 0.0278322101 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_146" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 160 72 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125037 -3.0625007153 ) ( 0.0006713862 0 0.0029297885 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 4.0585956573 ) ( 0 0.0014038067 0.0390626639 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_147" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 176 80 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125019 -2.2187504768 ) ( 0.0006713862 0 -0.0078123664 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 0.0502931178 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_148" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 192 88 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713865 0 -0.0185545254 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 0.061523512 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_149" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 207.9998779297 96 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713865 0 -0.0292967055 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 4.0585956573 ) ( 0 0.0014038067 0.0727539659 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_150" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 223.9999389648 104 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125019 -2.2187504768 ) ( 0.0006713865 0 -0.0400388576 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 0.0839844197 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_151" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 239.9999389648 112 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713865 0 -0.0507810414 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 0.0952148139 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_152" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -416 255.9999389648 120 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125037 -3.0625007153 ) ( 0.0006713865 0 -0.0615231991 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 -2.0000066757 ) ( 0 0.03125 -6 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 4.0585956573 ) ( 0 0.0014038067 0.1064452678 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -0.8944313526 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_137" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -368 -192 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713863 0 0.3574218154 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 4.0585956573 ) ( 0 0.0014038067 -0.3315424323 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -14.3108463287 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_138" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -336 -175.9990234375 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128.0009765625 ) matrix ( ( 0 -0.0078125028 -2.6562507153 ) ( 0.0006713874 0 0.3359376192 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80.0000305176 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -79.9999694824 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125084 0 3.8750030994 ) ( 0 0.0014038094 -0.3090820909 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472135901 -0.8944271803 -114.4875488281 ) matrix ( ( 0.03125 0 4 ) ( 0 0.0312500149 -14.3108453751 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_139" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -352 -184 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125 -2.46875 ) ( 0.0006713863 0 0.3466796875 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.3203119636 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -14.3108463287 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_140" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -320 -168 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125 -2.46875 ) ( 0.0006713862 0 0.3251951337 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.2978510261 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -14.3108463287 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_141" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -304 -160 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713862 0 0.314452976 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 4.0585956573 ) ( 0 0.0014038067 -0.2866204381 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -14.3108463287 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_142" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -288 -152 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125037 -3.0625007153 ) ( 0.0006713862 0 0.3037108183 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.275390029 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -14.3108463287 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_143" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -272 -144 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125019 -2.2187504768 ) ( 0.0006713862 0 0.2929686606 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.2641595602 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -14.3108463287 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_144" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -256 -136 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713862 0 0.2822264433 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.2529291511 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -14.3108463287 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_145" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -240 -128 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713862 0 0.2714842856 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.2416986972 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -14.3108463287 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_146" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -224 -120 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125037 -3.0625007153 ) ( 0.0006713862 0 0.2607421279 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 4.0585956573 ) ( 0 0.0014038067 -0.2304682285 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -14.3108463287 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_147" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -208 -112 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125019 -2.2187504768 ) ( 0.0006713862 0 0.2499999702 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.2192377746 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -14.3108463287 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_148" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -192 -104 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713865 0 0.2392579466 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.2080073804 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -14.3108463287 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_149" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -176.0001220703 -96 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713865 0 0.2285157591 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 4.0585956573 ) ( 0 0.0014038067 -0.1967769265 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -14.3108463287 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_150" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -160.0000610352 -88 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125019 -2.2187504768 ) ( 0.0006713865 0 0.2177736014 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.1855464727 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -14.3108463287 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_151" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -144.0000610352 -80 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125028 -2.6250004768 ) ( 0.0006713865 0 0.2070314139 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 3.8750019073 ) ( 0 0.0014038067 -0.1743160784 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -14.3108463287 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_152" 
+				groups {
+					"reservoir_stairway (Level 2)"
+				}
+				{
+					sdDictionary {
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -416 -128.0000610352 -72 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 128 ) matrix ( ( 0 -0.0078125037 -3.0625007153 ) ( 0.0006713865 0 0.1962892562 ) ) texBounds ( ( 0 1844 ) ( 320 1866 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( -1 0 0 -80 ) matrix ( ( 0.0312500261 0 -9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.0312500261 0 9.9999990463 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125065 0 4.0585956573 ) ( 0 0.0014038067 -0.1630856246 ) ) texBounds ( ( 0 1807 ) ( 320 1830 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472136199 -0.8944272399 -114.4866943359 ) matrix ( ( 0.0312500186 0 4.0000014305 ) ( 0 0.0312500186 -14.3108463287 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_95" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.61569 0.61569 0.61569 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -608 383.9998779297 88 )
+						rotation ( ( 0.9999997616 0.0000001369 0 ) ( -0.0000001369 0.9999997616 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 -0.4472135901 0.8944271803 28.6216697693 ) matrix ( ( 0 0.0021836609 0.4921873212 ) ( -0.0007568358 0 -0.1253905594 ) ) texBounds ( ( 0 1784 ) ( 400 2032 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472135901 -0.8944271803 -85.8650054932 ) matrix ( ( 0.03125 0 0.4999999404 ) ( 0 0.03125 -0.1118033677 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 112 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 -0 0 -272 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -768 ) matrix ( ( 0.0048828125 0 1.5624997616 ) ( 0 0.0006103516 0.7607421875 ) ) texBounds ( ( 0 80 ) ( 20 160 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0.0000000342 1.0000001192 0 128.0000610352 ) matrix ( ( 0.03125 0 0.5 ) ( 0 0.03125 -0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_100" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.61569 0.61569 0.61569 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 575.9998779297 592 408 )
+						rotation ( ( 0.0000001711 -0.999999702 0 ) ( 0.999999702 0.0000001711 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 -0.4472135901 0.8944271803 28.6216697693 ) matrix ( ( 0 0.0042217448 1.0723956823 ) ( -0.0007568361 0 -0.2222656012 ) ) texBounds ( ( 0 1784 ) ( 464 2032 ) ) "texturesheets/valley/valley_wall_4_shadows"
+						plane ( 0 0.4472135901 -0.8944271803 -85.8650054932 ) matrix ( ( 0.03125 0 4.9999995232 ) ( 0 0.03125 -0.1118033677 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 -0 -31.9999675751 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -768 ) matrix ( ( 0.03125 0 -5 ) ( 0 0.03125 -0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.0000001711 1.0000003576 0 384.0002441406 ) matrix ( ( 0.03125 0 5 ) ( 0 0.03125 -0.25 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -128 556 -36 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.9609375 ) )
+					texBounds ( ( 0 80 ) ( 732 160 ) )
+					material "texturesheets/valley/valley_wall_4_shadows"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -64 84 36 0 0.9609375 ) ( 320 84 228 1.4296875 0.9609375 ) ( 320 84 228 2.859375 0.9609375 ) )
+							( ( -64 84 -28 0 0.98046875 ) ( 320 84 164 1.4296875 0.98046875 ) ( 320 84 164 2.859375 0.98046875 ) )
+							( ( -64 84 -28 0 1 ) ( 320 84 164 1.4296875 1 ) ( 320 84 164 2.859375 1 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -128 364 -36 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.9609375 ) )
+					texBounds ( ( 0 80 ) ( 732 160 ) )
+					material "texturesheets/valley/valley_wall_4_shadows"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -64 84 -28 0 1 ) ( 320 84 164 1.4296875 1 ) ( 320 84 164 2.859375 1 ) )
+							( ( -64 84 -28 0 0.98046875 ) ( 320 84 164 1.4296875 0.98046875 ) ( 320 84 164 2.859375 0.98046875 ) )
+							( ( -64 84 36 0 0.9609375 ) ( 320 84 228 1.4296875 0.9609375 ) ( 320 84 228 2.859375 0.9609375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -428 -64 -228 )
+						rotation ( ( -0.0000001027 0.9999998212 0 ) ( -0.9999998212 -0.0000001027 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.9609375 ) )
+					texBounds ( ( 0 80 ) ( 1168 160 ) )
+					material "texturesheets/valley/valley_wall_4_shadows"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -320 84 -92 0 0.9609375 ) ( 320 84 228 2.28125 0.9609375 ) ( 320 84 228 4.5625 0.9609375 ) )
+							( ( -320 84 -156 0 0.98046875 ) ( 320 84 164 2.28125 0.98046875 ) ( 320 84 164 4.5625 0.98046875 ) )
+							( ( -320 84 -156 0 1 ) ( 320 84 164 2.28125 1 ) ( 320 84 164 4.5625 1 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -236 -64 -228 )
+						rotation ( ( -0.0000001027 0.9999998212 0 ) ( -0.9999998212 -0.0000001027 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.9609375 ) )
+					texBounds ( ( 0 80 ) ( 1168 160 ) )
+					material "texturesheets/valley/valley_wall_4_shadows"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -320 84 -156 0 1 ) ( 320 84 164 2.28125 1 ) ( 320 84 164 4.5625 1 ) )
+							( ( -320 84 -156 0 0.98046875 ) ( 320 84 164 2.28125 0.98046875 ) ( 320 84 164 4.5625 0.98046875 ) )
+							( ( -320 84 -92 0 0.9609375 ) ( 320 84 228 2.28125 0.9609375 ) ( 320 84 228 4.5625 0.9609375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -412 -64 -228 )
+						rotation ( ( -0.0000001027 0.9999998212 0 ) ( -0.9999998212 -0.0000001027 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.9609375 ) )
+					texBounds ( ( 0 80 ) ( 1168 160 ) )
+					material "texturesheets/valley/valley_wall_4_shadows"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -320 84 -156 0 1 ) ( 320 84 164 2.28125 1 ) ( 320 84 164 4.5625 1 ) )
+							( ( -320 84 -156 0 0.98046875 ) ( 320 84 164 2.28125 0.98046875 ) ( 320 84 164 4.5625 0.98046875 ) )
+							( ( -320 84 -92 0 0.9609375 ) ( 320 84 228 2.28125 0.9609375 ) ( 320 84 228 4.5625 0.9609375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -252 -64 -228 )
+						rotation ( ( -0.0000001027 0.9999998212 0 ) ( -0.9999998212 -0.0000001027 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.9609375 ) )
+					texBounds ( ( 0 80 ) ( 1168 160 ) )
+					material "texturesheets/valley/valley_wall_4_shadows"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -320 84 -92 0 0.9609375 ) ( 320 84 228 2.28125 0.9609375 ) ( 320 84 228 4.5625 0.9609375 ) )
+							( ( -320 84 -156 0 0.98046875 ) ( 320 84 164 2.28125 0.98046875 ) ( 320 84 164 4.5625 0.98046875 ) )
+							( ( -320 84 -156 0 1 ) ( 320 84 164 2.28125 1 ) ( 320 84 164 4.5625 1 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -128 540 -36 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.9609375 ) )
+					texBounds ( ( 0 80 ) ( 732 160 ) )
+					material "texturesheets/valley/valley_wall_4_shadows"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -64 84 -28 0 1 ) ( 320 84 164 1.4296875 1 ) ( 320 84 164 2.859375 1 ) )
+							( ( -64 84 -28 0 0.98046875 ) ( 320 84 164 1.4296875 0.98046875 ) ( 320 84 164 2.859375 0.98046875 ) )
+							( ( -64 84 36 0 0.9609375 ) ( 320 84 228 1.4296875 0.9609375 ) ( 320 84 228 2.859375 0.9609375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"reservoir_stairway (Level 1)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -128 380 -36 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 1 0 0 ) ( 0 1 0.9609375 ) )
+					texBounds ( ( 0 80 ) ( 732 160 ) )
+					material "texturesheets/valley/valley_wall_4_shadows"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -64 84 36 0 0.9609375 ) ( 320 84 228 1.4296875 0.9609375 ) ( 320 84 228 2.859375 0.9609375 ) )
+							( ( -64 84 -28 0 0.98046875 ) ( 320 84 164 1.4296875 0.98046875 ) ( 320 84 164 2.859375 0.98046875 ) )
+							( ( -64 84 -28 0 1 ) ( 320 84 164 1.4296875 1 ) ( 320 84 164 2.859375 1 ) )
+						)
+					}
+				}
+			}
+		}
+	}
+}

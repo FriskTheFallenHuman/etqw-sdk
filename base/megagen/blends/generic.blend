@@ -1,0 +1,275 @@
+blend blend {
+	blend {
+		GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+blend add {
+	colorMod
+
+	blend {
+		GL_ONE, GL_ONE
+	}
+}
+
+renderProgram megagen/blends/multiply {
+	program vertex arb { <%
+		OPTION ARB_position_invariant;
+		
+		MOV result.texcoord[0], vertex.texcoord[0];
+		MOV result.texcoord[1], vertex.texcoord[1];
+	%> }
+
+	program fragment arb { <%
+		TEMP colorDest, colorSource, R0;
+
+		TEX colorSource, fragment.texcoord[0], texture[0], 2D;
+		TEX colorDest, fragment.texcoord[1], texture[1], 2D;
+
+		MUL colorSource.rgb, colorSource, $blendParm_0.x;
+
+		MUL_SAT R0, colorSource, colorDest;
+
+		LRP result.color.rgb, colorSource.a, R0, colorDest;
+		MOV result.color.a, 1;
+	%> }
+}
+
+// Multiply ( dest * ( source * 1.6 ) )
+blend multiply_s16 {
+	colorMod
+
+	fragmentProgram {
+		program megagen/blends/multiply
+		parm 0		1.6, 0, 0, 0
+	}
+}
+
+// Multiply ( dest * source )
+blend multiply {
+	colorMod
+
+	fragmentProgram {
+		program megagen/blends/multiply
+		parm 0		1, 0, 0, 0
+	}
+}
+
+// HeightMap based blending
+// parm[0].x: lower clip height (parm0 - 0.5 * parm1)
+// parm[0].y: upper clip height (parm0 + 0.5 * parm1)
+// parm[0].z: one over clip height distance
+
+template megagen/blends/heightMap {
+	text { <%
+		TEMP colorDest, colorSource, colorHeight, R0;
+
+		TEX colorSource, fragment.texcoord[0], texture[0], 2D;
+		$ifdef uvTypeParallel
+			TEX colorSource.rgb, fragment.texcoord[2], texture[3], 2D;
+		$endif
+		TEX colorDest, fragment.texcoord[1], texture[1], 2D;
+		TEX colorHeight, fragment.texcoord[1], texture[2], 2D;
+
+		#
+		# INTERSECT HEIGHTMAPS
+		#
+
+		ADD R0.x, colorHeight.r, -$blendParm_0.x;
+		ADD R0.y, colorHeight.r, -$blendParm_0.y;
+
+		ADD R0.z, colorHeight.r, -$blendParm_0.x;
+		MAD R0.z, R0.z, -$blendParm_0.z, 1;
+
+		CMP R0.z, R0.x, 1, R0.z;
+		CMP R0.z, R0.y, R0.z, 0;
+
+		MUL R0.z, R0.z, colorSource.a;
+
+		LRP result.color.rgb, R0.z, colorSource, colorDest;
+
+		MOV result.color.a, 1;
+	%> }
+}
+
+renderProgram megagen/blends/heightMap {
+	program vertex arb { <%
+		OPTION ARB_position_invariant;
+		
+		MOV result.texcoord[0], vertex.texcoord[0];
+		MOV result.texcoord[1], vertex.texcoord[1];
+		MOV result.texcoord[2], vertex.texcoord[2];
+	%> }
+
+	program fragment arb { <%
+		useTemplate megagen/blends/heightMap<>
+	%> }
+}
+
+renderProgram megagen/blends/heightMapWithParallelProjection {
+	program vertex reference megagen/blends/heightMap
+
+	program fragment arb { <%
+		$define uvTypeParallel
+		useTemplate megagen/blends/heightMap<>
+	%> }
+}
+
+blend heightMap {
+	heightMap
+
+	fragmentProgram {
+		program megagen/blends/heightMap
+		parm 0		parm0 - 0.5 * parm1, parm0 + 0.5 * parm1, 1.0 / ( (parm0 + 0.5 * parm1) - (parm0 - 0.5 * parm1) ), 0
+	}
+}
+
+blend heightMapWithParallelProjection {
+	heightMap
+
+	fragmentProgram {
+		program megagen/blends/heightMapWithParallelProjection
+		parm 0		parm0 - 0.5 * parm1, parm0 + 0.5 * parm1, 1.0 / ( (parm0 + 0.5 * parm1) - (parm0 - 0.5 * parm1) ), 0
+	}
+}
+
+renderProgram megagen/blends/perturbateNormals {
+	program vertex arb { <%
+		OPTION ARB_position_invariant;
+
+		MOV result.texcoord[0], vertex.texcoord[0];
+		MOV result.texcoord[1], vertex.texcoord[1];
+	%> }
+
+	program fragment arb { <%
+		TEMP colorDest, colorSource, scalar;
+		TEMP R0, R1, R2, R3;
+
+		PARAM	subOne = { -1, -1, -1, -1 };
+		PARAM	scaleTwo = { 2, 2, 2, 2 };
+		PARAM	zeroIsh = { 0.0000000001, 0, 0, 0 };
+
+		TEX colorSource, fragment.texcoord[0], texture[0], 2D;
+		TEX colorDest, fragment.texcoord[1], texture[1], 2D;
+
+		MOV scalar.x, colorSource.a;
+		ADD scalar.y, 1, -scalar.x;
+
+		# Decode normals
+		MAD	colorSource, colorSource, scaleTwo, subOne;
+		MAD	colorDest, colorDest, scaleTwo, subOne;
+		
+		CMP colorSource.z, colorSource.z, -colorSource.z, colorSource.z;
+
+		MOV R3, zeroIsh;
+		MAD R3, R3, 0.0000000001, colorSource;	# ARGH ATI drivers strike again
+
+		# Base matrix creation
+		SWZ R0, colorSource, z, y, -x, 0;
+		DP3	R1, R0, R0;
+		RSQ	R1, R1.x;
+		MUL	R0, R1.x, R0;
+		#XPD R1, colorSource, R0;			# this is how it should be done
+		XPD R1, R3, R0;						# and this is the crappy workaround
+
+		# Transpose
+		MOV R2.x, R0.z;
+		MOV R2.y, R1.z;
+		MOV R2.z, colorSource.z;
+
+		MOV R1.w, R0.y;
+		#MOV R1.y, R1.y;
+		MOV R1.z, colorSource.y;
+
+		#MOV R0.x, R0.x;
+		MOV R0.y, R1.x;
+		MOV R0.z, colorSource.x;
+
+		MOV R1.x, R1.w;
+
+		# Dot
+		DP3 R0.x, colorDest, R0;
+		DP3 R0.y, colorDest, R1;
+		DP3 R0.z, colorDest, R2;
+
+		# Normalize
+		DP3	R1, R0, R0;
+		RSQ	R1, R1.x;
+		MUL	R0, R1.x, R0;
+
+		# Encode normals
+		#MAD	result.color.rgb, R0, .5, .5;
+		#MOV result.color.a, 1;
+
+		MOV colorSource, R0;
+		
+		CMP colorSource.z, colorSource.z, -colorSource.z, colorSource.z;
+
+		#
+		# ADDNORMALS
+		#
+
+		# Flatten normals
+		RCP R0, colorSource.z;
+		MUL scalar.x, scalar, R0;
+		MUL colorSource.xy, scalar.x, colorSource;
+		MOV colorSource.z, 1;
+
+		RCP R1, colorDest.z;
+		MUL scalar.y, scalar, R1;
+		MUL colorDest.xy, scalar.y, colorDest;
+
+		# Add together
+		ADD colorSource.xy, colorSource, colorDest;
+
+		# Normalize
+		DP3	R1, colorSource, colorSource;
+		RSQ	R1, R1.x;
+		MUL	R1, R1.x, colorSource;
+
+		# Encode normals
+		MAD	result.color.rgb, R1, .5, .5;
+		MOV result.color.a, 1;
+	%> }
+}
+
+blend perturbateNormals {
+	colorMod
+	normalMod
+
+	fragmentProgram {
+		program megagen/blends/perturbateNormals
+	}
+}
+
+/*
+renderProgram megagen/blends/blendWithGlobalMask {
+	program vertex arb { <%
+		OPTION ARB_position_invariant;
+		
+		MOV result.texcoord[0], vertex.texcoord[0];
+		MOV result.texcoord[1], vertex.texcoord[1];
+	%> }
+
+	program fragment arb { <%
+		TEMP colorDest, colorSource, colorGlobalMask, R0;
+
+		TEX colorSource, fragment.texcoord[0], texture[0], 2D;
+		TEX colorDest, fragment.texcoord[1], texture[1], 2D;
+		TEX colorGlobalMask, fragment.texcoord[2], texture[3], 2D;
+		
+		# multiply alpha with mask
+		MUL R0.x, colorGlobalMask.r, colorSource.a;
+		
+		# do the standard GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA blend
+		LRP result.color.rgb, R0.x, colorSource, colorDest;
+		MOV result.color.a, 1;
+	%> }
+}
+
+blend blendWithGlobalMask {
+	fragmentProgram {
+		program megagen/blends/blendWithGlobalMask
+	}
+}
+*/

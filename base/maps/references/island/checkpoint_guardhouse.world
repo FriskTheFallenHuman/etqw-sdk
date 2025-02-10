@@ -1,0 +1,1679 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"editor_last_atmosphere"	"atmosphere://island_dramatic2"
+	}
+
+	meta {
+		sdLODGroup "models" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"models (Level 01)"
+			}
+		}
+		sdLODGroup "decals" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"decals (Level 01)"
+			}
+		}
+		sdLODGroup "railing" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"railing (Level 01)"
+			}
+		}
+		sdLODGroup "structure" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		2
+				"uniqueinstance"		1
+			}
+			levels {
+				"structure (Level 01)"
+				"structure (Level 02)"
+			}
+		}
+		sdLODGroup_Level "models (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		1024
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		"med"
+				"noshadows"		0
+			}
+		}
+		sdLODGroup_Level "decals (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		2048
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		"med"
+				"shadowspec"		""
+				"noshadows"		0
+			}
+		}
+		sdLODGroup_Level "railing (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		4096
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		"med"
+				"noshadows"		0
+			}
+		}
+		sdLODGroup_Level "structure (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		16384
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0.6
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		1
+				"drawspec"		""
+				"shadowspec"		"med"
+				"noshadows"		0
+			}
+		}
+		sdLODGroup_Level "structure (Level 02)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		6500
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		"med"
+				"noshadows"		0
+			}
+		}
+		sdGroupVisual "AAS Solid" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdDetailGroup "decals01" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdDetailGroup "railings01" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdDetailGroup "railings02" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdDetailGroup "structure01" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdDetailGroup "structure02" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdDetailGroup "structure03" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdDetailGroup "structure04" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdDetailGroup "structure05" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 104 168 12 )
+					}
+					
+					faces {
+						plane ( 0.4472135901 0 0.8944271803 -7.1554174423 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -12 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -54 220 33 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -1 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 0 -1.999997139 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -1.9999972582 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.7071067691 -0.7071067691 0 -55.1543197632 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.0000000342 1.0000001192 0 -70.0000152588 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -132 142 33 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -1 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 0 -2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.7071067691 0.7071067691 0 -55.1543273926 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -70 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -116 4 124 )
+					}
+					
+					faces {
+						plane ( 0 -0.2425355613 0.9701425433 -63.05809021 ) matrix ( ( 0.03125 0 -86 ) ( 0 0.03125 -78.0964813232 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 0 0 -1 -124 ) matrix ( ( 0.03125 0 77 ) ( 0 0.03125 86 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( -1 0 0 -20 ) matrix ( ( 0.03125 0 -77 ) ( 0 0.03125 -14 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 1 0 0 -252 ) matrix ( ( 0.03125 0 77 ) ( 0 0.03125 -14 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 0 -1 0 -108 ) matrix ( ( 0.03125 0 -86 ) ( 0 0.03125 -14 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 0 1 0 -100 ) matrix ( ( 0.03125 0 86 ) ( 0 0.03125 -14 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"AAS Solid"
+				}
+				{
+					
+					sdTransform {
+						translation ( 103 1 100 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -60 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 0 -1 -68 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 -0 -11 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -15 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -91 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -89 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"AAS Solid"
+				}
+				{
+					
+					sdTransform {
+						translation ( -58 221 96 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -64 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 -0 -102 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -317 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 66 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 125 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -0.2425356209 0.9701424837 -142.8534851074 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"AAS Solid"
+				}
+				{
+					
+					sdTransform {
+						translation ( -58 221 96 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -64 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 -0 -72 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -74 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -3 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -3 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 16 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"AAS Solid"
+				}
+				{
+					
+					sdTransform {
+						translation ( -58 221 96 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -64 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 -0 -102 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 -0 -125 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -3 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 72 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 1 16 ) matrix ( ( 0.0312500037 0 -12.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_8" 
+				groups {
+					"structure (Level 02)"
+					"structure01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.48235 0.48235 0.48235 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -16 112 -14 )
+					}
+					
+					faces {
+						plane ( 0 -0.2425356209 0.9701424837 -223.1327667236 ) matrix ( ( -0.0036764706 0 0.5000000596 ) ( 0 0.0005830186 0.4635957479 ) ) texBounds ( ( 0 1281 ) ( 256 1537 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 0.2425356209 -0.9701424837 219.2521972656 ) matrix ( ( -0.0036764706 0 0.5000007749 ) ( 0 0.000583018 0.4630299211 ) ) texBounds ( ( 0 1281 ) ( 256 1537 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 -120 ) matrix ( ( -0.0035672642 -0.0008894187 -0.4294487238 ) ( -0.0001771889 0.0007106658 1.2998558283 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 1 0 0 -152 ) matrix ( ( 0.0035672642 -0.0008894187 -0.4294487238 ) ( 0.0001771889 0.0007106658 1.2998558283 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 -216 ) matrix ( ( 0.0036764706 0 0.5000007749 ) ( 0 0.0007324219 0.2841796875 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 8 ) matrix ( ( 0.0036764706 0 0.5000000596 ) ( 0 0.0007324219 0.322265625 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_1150" 
+				groups {
+					"railing (Level 01)"
+					"railings02"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.59608 0.59608 0.59608 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -130 -391.9995117188 52.5 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -24.5 ) matrix ( ( -0.03125 0 29.6250305176 ) ( 0 0.0312500224 77.6563034058 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -20.5 ) matrix ( ( -0.0312500224 0 29.6249046326 ) ( 0 0.0312500186 -77.6563415527 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071056962 0.707107842 -0.0000000019 -330.9264221191 ) matrix ( ( 0 0.0111111123 12.555557251 ) ( 0.0013812159 0 0.0102316067 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -0.7071081996 0.7071053386 0 -333.753326416 ) matrix ( ( 0 0.0111111123 12.555557251 ) ( 0.0013810666 0 0.1586910486 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -0.7071064115 -0.7071071863 -0.0000000037 328.0976257324 ) matrix ( ( 0 0.0111111123 12.555557251 ) ( 0.0013812159 0 0.4165258408 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0.7071075439 -0.7071060538 -0.0000000019 330.9253234863 ) matrix ( ( 0 -0.0111111123 11.3444442749 ) ( -0.0013810366 0 0.1586915255 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_1150" 
+				groups {
+					"railing (Level 01)"
+					"railings02"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.59608 0.59608 0.59608 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -130 -320 52.5 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -24.5 ) matrix ( ( -0.03125 0 31.8750305176 ) ( 0 0.0312500224 77.6563034058 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -20.5 ) matrix ( ( -0.0312500186 0 31.8749065399 ) ( 0 0.0312500186 -77.6563415527 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071056962 0.707107842 -0.0000000019 -330.9264221191 ) matrix ( ( 0 0.0111111123 12.555557251 ) ( 0.0013812159 0 -0.0600884929 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -0.7071081996 0.7071053386 0 -333.753326416 ) matrix ( ( 0 0.0111111123 12.555557251 ) ( 0.0013810666 0 0.2290035188 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -0.7071064115 -0.7071071863 -0.0000000037 328.0976257324 ) matrix ( ( 0 0.0111111123 12.555557251 ) ( 0.0013812159 0 0.4868458807 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0.7071075439 -0.7071060538 -0.0000000019 330.9253234863 ) matrix ( ( 0 -0.0111111123 11.3444442749 ) ( -0.0013810366 0 0.2290024757 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_1162" 
+				groups {
+					"railing (Level 01)"
+					"railings01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.59608 0.59608 0.59608 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -2168.9995117188 -611.9995117188 -1012 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -1091 ) matrix ( ( 0.0105960574 0 63.8729934692 ) ( 0 -0.0009768013 0.0844467133 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 1 0 0 -2039.0040283203 ) matrix ( ( 0.0105960583 0 63.8729972839 ) ( 0 -0.001953125 0.0610351563 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 2035.0053710938 ) matrix ( ( 0.0105960583 0 -70.5697021484 ) ( 0 -0.001953125 0.0610351563 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 0 -1 1089 ) matrix ( ( -0.0105960574 0 -70.569694519 ) ( 0 0.0009768013 0.0844467133 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 683.9998168945 ) matrix ( ( 0.0105960583 0 -72.77368927 ) ( 0 -0.0019531252 0.0610351563 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0.7071067691 0.7071067691 0 -2028.6878662109 ) matrix ( ( 0 -0.0105960583 64.8054580688 ) ( -0.0009768013 0 -0.0548718162 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_1161" 
+				groups {
+					"railing (Level 01)"
+					"railings01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.59608 0.59608 0.59608 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -2168.9995117188 -611.9995117188 -1012 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -1066 ) matrix ( ( 0.0212484784 0 131.4005279541 ) ( 0 -0.0019540794 -0.0445480645 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 1 0 0 -2038.0040283203 ) matrix ( ( 0.0212484803 0 130.6114807129 ) ( 0 -0.0019531252 0.1098632887 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 2036.0053710938 ) matrix ( ( 0.0212484803 0 -138.1150512695 ) ( 0 -0.001953125 0.1098632887 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 0 -1 1064 ) matrix ( ( -0.0212484784 0 -138.1150360107 ) ( 0 0.0019540794 -0.0445480645 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -831.9906005859 ) matrix ( ( -0.0312500037 0 -233.5312652588 ) ( 0 0.03125 -30.5000019073 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 687.9998168945 ) matrix ( ( 0 -0.0212484803 133.3128967285 ) ( -0.0019540794 0 -0.0445480347 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_1150" 
+				groups {
+					"railing (Level 01)"
+					"railings02"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.59608 0.59608 0.59608 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -130 -248 52.5 )
+						rotation ( ( 0.9999995232 0.0000002738 0 ) ( -0.0000002738 0.9999995232 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -24.5 ) matrix ( ( -0.03125 0 34.1250305176 ) ( 0 0.0312500224 77.6563034058 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -20.5 ) matrix ( ( -0.0312500224 0 34.1249084473 ) ( 0 0.0312500186 -77.6563415527 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071056962 0.707107842 -0.0000000019 -330.9264221191 ) matrix ( ( 0 0.0111111123 12.555557251 ) ( 0.0013812159 0 -0.1304085553 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -0.7071081996 0.7071053386 0 -333.753326416 ) matrix ( ( 0 0.0111111123 12.555557251 ) ( 0.0013810666 0 0.2993159592 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -0.7071064115 -0.7071071863 -0.0000000037 328.0976257324 ) matrix ( ( 0 0.0111111123 12.555557251 ) ( 0.0013812159 0 0.5571659207 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0.7071075439 -0.7071060538 -0.0000000019 330.9253234863 ) matrix ( ( 0 -0.0111111123 11.3444442749 ) ( -0.0013810366 0 0.299313426 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_1150" 
+				groups {
+					"railing (Level 01)"
+					"railings02"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.59608 0.59608 0.59608 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 480 230 52.5 )
+						rotation ( ( -0.0000002396 0.9999995828 0 ) ( -0.9999995828 -0.0000002396 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -24.5 ) matrix ( ( 0 0.03125 26.8750305176 ) ( -0.0312500224 0 80.4063110352 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -20.5 ) matrix ( ( 0 -0.0312500186 26.8749027252 ) ( 0.0312500149 0 -80.4063491821 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071069479 0.7071065903 -0.000000015 -339.4106140137 ) matrix ( ( 0 0.0111111114 12.5555562973 ) ( -0.0013812155 0 0.0102322698 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0.7071069479 0.7071065903 -0.000000015 -325.2689819336 ) matrix ( ( 0 0.0111111114 12.5555562973 ) ( -0.0013810664 0 -0.0131836347 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0.7071067691 -0.7071067691 0 336.5822753906 ) matrix ( ( 0 0.0111111114 12.5555562973 ) ( -0.0013812155 0 0.4165254235 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -0.7071071267 -0.7071064711 0 322.4404907227 ) matrix ( ( 0 -0.0111111114 11.3444433212 ) ( 0.0013810366 0 -0.013179481 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_1150" 
+				groups {
+					"railing (Level 01)"
+					"railings02"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.59608 0.59608 0.59608 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 408 230 52.5 )
+						rotation ( ( -0.0000002396 0.9999995828 0 ) ( -0.9999995828 -0.0000002396 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -24.5 ) matrix ( ( 0 0.03125 29.1250305176 ) ( -0.0312500224 0 80.4063110352 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -20.5 ) matrix ( ( 0 -0.0312500186 29.1249027252 ) ( 0.0312500149 0 -80.4063491821 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -0.7071069479 0.7071065903 -0.000000015 -339.4106140137 ) matrix ( ( 0 0.0111111114 12.5555562973 ) ( -0.0013812155 0 -0.0600878 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0.7071069479 0.7071065903 -0.000000015 -325.2689819336 ) matrix ( ( 0 0.0111111114 12.5555562973 ) ( -0.0013810664 0 0.0571288094 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0.7071067691 -0.7071067691 0 336.5822753906 ) matrix ( ( 0 0.0111111114 12.5555562973 ) ( -0.0013812155 0 0.4868454337 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -0.7071071267 -0.7071064711 0 322.4404907227 ) matrix ( ( 0 -0.0111111114 11.3444433212 ) ( 0.0013810366 0 0.0571314432 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_1162" 
+				groups {
+					"railing (Level 01)"
+					"railings01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.59608 0.59608 0.59608 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 700 -1808.9995117188 -1012 )
+						rotation ( ( -0.0000002396 0.9999995828 0 ) ( -0.9999995828 -0.0000002396 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -1091 ) matrix ( ( 0 -0.0105960574 64.8054504395 ) ( 0.000976801 0 -0.0015117377 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 2026.9954833984 ) matrix ( ( -0.0105960574 0 64.8054504395 ) ( 0 -0.001953125 0.0610351563 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 1 0 0 -2030.994140625 ) matrix ( ( -0.0105960574 0 -71.5021514893 ) ( 0 -0.001953125 0.0610351563 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 0 -1 1089 ) matrix ( ( 0 -0.0105960574 -71.5021514893 ) ( 0.000976801 0 -0.0015117377 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 684.0004272461 ) matrix ( ( -0.0105960574 0 -71.8412246704 ) ( 0 -0.001953125 0.0610351563 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -0.7071069479 0.7071073055 0 846.4071655273 ) matrix ( ( 0 -0.0105960574 64.8054504395 ) ( 0.000976801 0 -0.0548718683 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_1161" 
+				groups {
+					"railing (Level 01)"
+					"railings01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.59608 0.59608 0.59608 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( 700 -1808.9995117188 -1012 )
+						rotation ( ( -0.0000002396 0.9999995828 0 ) ( -0.9999995828 -0.0000002396 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -1066 ) matrix ( ( 0 -0.0212484784 133.2703857422 ) ( 0.0019540791 0 -0.2165069878 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 2027.9954833984 ) matrix ( ( -0.0212484784 0 132.4813232422 ) ( 0 -0.001953125 0.1098632813 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 1 0 0 -2029.994140625 ) matrix ( ( -0.0212484784 0 -139.9849090576 ) ( 0 -0.001953125 0.1098632813 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 0 -1 1064 ) matrix ( ( 0 -0.0212484784 -139.9849090576 ) ( 0.0019540791 0 -0.2165069878 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -831.9913330078 ) matrix ( ( 0.03125 0 -230.78125 ) ( 0 0.03125 -30.5 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 688.0004272461 ) matrix ( ( 0 -0.0212484784 133.3128814697 ) ( 0.0019540791 0 -0.2165069878 ) ) texBounds ( ( 0 1615 ) ( 256 1623 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_79" 
+				groups {
+					"structure (Level 02)"
+					"structure03"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.63137 0.56078 0.54118 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -64 288 -192 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -208 ) matrix ( ( -0.0042613638 0 4.7499995232 ) ( 0 0.0004882813 0.2299804389 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 160 ) matrix ( ( 0.03125 0 33 ) ( 0 0.03125 -62 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -176 ) matrix ( ( -0.0075757578 0 -3.36363554 ) ( 0 0.0009765625 0.1166992188 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 64 ) matrix ( ( -0.0075757578 0 -5.2836184502 ) ( 0 0.0009765625 0.1245117188 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 -176 ) matrix ( ( 0.03125 0 -37 ) ( 0 0.03125 -62 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 192 ) matrix ( ( 0.00390625 0 11.588388443 ) ( 0 0.00390625 9.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_79" 
+				groups {
+					"structure (Level 02)"
+					"structure03"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.63137 0.56078 0.54118 1"
+						"_overbright"	"1.00000"
+						"compiler_cm_override_add"	"2048"
+						"compiler_cm_override_remove"	"1"
+					}
+					
+					sdTransform {
+						translation ( -80 288 -192 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -216 ) matrix ( ( -0.0042613638 0 4.7499995232 ) ( 0 0.0004882813 0.2377929389 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 160 ) matrix ( ( 0.03125 0 33 ) ( 0 0.03125 -62 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -176 ) matrix ( ( -0.0075757578 0 -3.36363554 ) ( 0 0.0009765625 0.1166992188 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 64 ) matrix ( ( -0.0075757578 0 -5.2836184502 ) ( 0 0.0009765625 0.1245117188 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 -176 ) matrix ( ( 0.03125 0 -36.5 ) ( 0 0.03125 -62 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 192 ) matrix ( ( 0.00390625 0 11.588388443 ) ( 0 0.00390625 9.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_61" 
+				groups {
+					"structure (Level 02)"
+					"structure02"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.63137 0.56078 0.54118 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -48 -48 -160 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -192 ) matrix ( ( -0.0042613638 0 3.9999992847 ) ( 0 0.0004882813 0.3374023438 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 0 -1 160 ) matrix ( ( 0.00390625 0 11.588388443 ) ( 0 0.00390625 9.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -112 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 160 ) matrix ( ( 0.03125 0 -14 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -272 ) matrix ( ( -0.0075757578 0 -5.2836184502 ) ( 0 0.0009765625 0.1245117188 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 1 0 0 -128 ) matrix ( ( -0.0075757578 0 -4.6969690323 ) ( 0 0.0009765625 0.1245117188 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_61" 
+				groups {
+					"structure (Level 02)"
+					"structure01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.63137 0.56078 0.54118 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 144 -48 -160 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -192 ) matrix ( ( -0.0042613638 0 3.9999992847 ) ( 0 0.0004882813 0.2436523438 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 0 -1 160 ) matrix ( ( 0.00390625 0 11.588388443 ) ( 0 0.00390625 10.3125 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -112 ) matrix ( ( 0.00390625 0 11.588388443 ) ( 0 0.00390625 7.8125 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -208 ) matrix ( ( 0.03125 0 -14 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -160 ) matrix ( ( -0.0075757578 0 -6.7381625175 ) ( 0 0.0009765625 0.1245117188 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 1 0 0 0 ) matrix ( ( -0.0075757578 0 -4.6969690323 ) ( 0 0.0009765625 0.1245117188 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_61" 
+				groups {
+					"structure (Level 02)"
+					"structure01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.63137 0.56078 0.54118 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -48 -48 -160 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -192 ) matrix ( ( -0.0042613638 0 3.9999992847 ) ( 0 0.0004882813 0.3374023438 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 0 -1 160 ) matrix ( ( 0.00390625 0 11.588388443 ) ( 0 0.00390625 9.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -112 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -208 ) matrix ( ( 0.03125 0 -14 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -160 ) matrix ( ( 0.00390625 0 13.338388443 ) ( 0 0.00390625 7.8125 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -80 ) matrix ( ( 0.00390625 0 11.588388443 ) ( 0 0.00390625 7.8125 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_81" 
+				groups {
+					"structure (Level 02)"
+					"structure01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.52157 0.52157 0.52157 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -18 -96 82 )
+						rotation ( ( 0 -0.9999999404 -0.0000000342 ) ( -0.0000001788 0.0000000342 -0.9999997616 ) ( 0.9999998212 0 -0.0000001788 ) )
+					}
+					
+					faces {
+						plane ( -0.0000000632 -0.7071067095 -0.7071068287 -8.4852781296 ) matrix ( ( 0.00390625 0 -9.020986557 ) ( 0 0.00390625 6.4630737305 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0.0000002384 ) matrix ( ( -0.0087890625 0 -18.09375 ) ( 0 -0.0007324219 0.1069336012 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 -7.9999995232 ) matrix ( ( 0.0087890625 0 -18.09375 ) ( 0 -0.0007324219 0.1069336012 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 0.000001669 ) matrix ( ( 0 -0.0070312503 10.2583389282 ) ( 0.0003662109 0 0.200683549 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -2.0000016689 ) matrix ( ( 0.00390625 0 11.666513443 ) ( 0 0.00390625 10.8125 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0.0000000211 -0.7071068287 0.7071067095 -33.9411277771 ) matrix ( ( 0.00390625 0 11.666513443 ) ( 0 0.00390625 -8.5629482269 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_81" 
+				groups {
+					"structure (Level 02)"
+					"structure01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.52157 0.52157 0.52157 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -30 -96 134 )
+						rotation ( ( -0.0000000342 -0.9999999404 0 ) ( -0.9999998212 0.0000000342 0.0000001192 ) ( -0.0000001192 0 -0.9999998808 ) )
+					}
+					
+					faces {
+						plane ( -0.0000000263 -0.7071068883 0.7071067095 -36.7695465088 ) matrix ( ( 0.00390625 0 11.666513443 ) ( 0 0.00390625 6.4630727768 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0.0000000843 -0.7071067691 -0.7071067691 -8.4852800369 ) matrix ( ( 0.00390625 0 11.666513443 ) ( 0 0.00390625 -8.5629491806 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0.0000002384 ) matrix ( ( 0 -0.0082720593 -4.2775764465 ) ( 0.0007324219 0 0.1889648438 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 -7.9999995232 ) matrix ( ( 0 -0.0082720593 -4.2775764465 ) ( -0.0007324219 0 0.1889648438 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 0.0000019073 ) matrix ( ( 0 -0.0070312503 -5.7166666985 ) ( 0.0003662109 0 0.200683549 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -2.0000009537 ) matrix ( ( 0.00390625 0 -9.020986557 ) ( 0 0.00390625 -1.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_81" 
+				groups {
+					"structure (Level 02)"
+					"structure01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.52157 0.52157 0.52157 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 18 -96 146 )
+						rotation ( ( 0 -0.9999999404 0.0000000342 ) ( 0.0000000596 0.0000000342 0.9999998808 ) ( -0.9999999404 0 0.0000000596 ) )
+					}
+					
+					faces {
+						plane ( -0.0000000211 -0.7071068287 -0.7071067095 -8.4852790833 ) matrix ( ( 0.00390625 0 11.666513443 ) ( 0 0.00390625 6.4630737305 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0.0000002384 ) matrix ( ( -0.0087890625 0 -18.09375 ) ( 0 -0.0007324219 0.0600586012 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 -7.9999995232 ) matrix ( ( 0.0087890625 0 -18.09375 ) ( 0 -0.0007324219 0.0600586012 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 0.0000008345 ) matrix ( ( 0 -0.0070312503 -27.9916763306 ) ( 0.0003662109 0 0.200683549 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -2.0000002384 ) matrix ( ( 0.00390625 0 11.666513443 ) ( 0 0.00390625 -10.4375 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -0.0000000211 -0.7071068883 0.7071067095 -33.9411201477 ) matrix ( ( 0.00390625 0 -9.020986557 ) ( 0 0.00390625 -8.5629491806 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_81" 
+				groups {
+					"structure (Level 02)"
+					"structure01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.52157 0.52157 0.52157 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 30 -96 94 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0.0000000263 -0.7071067691 0.7071067691 -36.7695503235 ) matrix ( ( 0.00390625 0 -9.020986557 ) ( 0 0.00390625 6.4630737305 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -0.0000000263 -0.7071067691 -0.7071067691 -8.4852809906 ) matrix ( ( 0.00390625 0 -9.020986557 ) ( 0 0.00390625 -8.5629491806 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0.0000002384 ) matrix ( ( 0 -0.0082720593 -4.0588264465 ) ( 0.0007324219 0 0.1450195313 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 -7.9999995232 ) matrix ( ( 0 -0.0082720593 -4.0588264465 ) ( -0.0007324219 0 0.1450195313 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 0.0000007153 ) matrix ( ( 0 -0.0070312503 -5.7166666985 ) ( 0.0003662109 0 0.1333007962 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -1.9999996424 ) matrix ( ( 0.00390625 0 11.666513443 ) ( 0 0.00390625 -1.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_81" 
+				groups {
+					"structure (Level 02)"
+					"structure01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.52157 0.52157 0.52157 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -94 88 130 )
+						rotation ( ( -0.0000000342 -0.9999999404 0 ) ( -0.9999998212 0.0000000342 0.0000001192 ) ( -0.0000001192 0 -0.9999998808 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -98.0000076294 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 10.6612863541 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 -0.7071067095 -0.7071067691 -8.4852809906 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -8.3972206116 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0.0000002384 ) matrix ( ( 0 -0.0082720593 -4.2444877625 ) ( 0.0007324219 0 0.2358398438 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 -7.9999995232 ) matrix ( ( 0 -0.0082720593 -4.2444877625 ) ( -0.0007324219 0 0.2358398438 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 0.0000019073 ) matrix ( ( 0 -0.0070312503 -5.6885409355 ) ( 0.0003662109 0 0.1333007365 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -2.0000009537 ) matrix ( ( 0 -0.0070312503 -5.6885409355 ) ( 0.0003662109 0 0.2006835938 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_81" 
+				groups {
+					"structure (Level 02)"
+					"structure01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.52157 0.52157 0.52157 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -46 88 142 )
+						rotation ( ( 0 -0.9999999404 0.0000000342 ) ( 0.0000000596 0.0000000342 0.9999998808 ) ( -0.9999999404 0 0.0000000596 ) )
+					}
+					
+					faces {
+						plane ( 0 -0.7071068287 -0.7071066499 -8.4852809906 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 6.2752485275 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0.0000002384 ) matrix ( ( -0.0087890625 0 -18.65625 ) ( 0 -0.0007324219 0.0629882887 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 -7.9999995232 ) matrix ( ( 0.0087890625 0 -18.65625 ) ( 0 -0.0007324219 0.0629882887 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 0.0000008345 ) matrix ( ( 0 -0.0070312503 -27.5416717529 ) ( 0.0003662109 0 0.1333007365 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -2.0000002384 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -10.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 -0.7071068287 0.7071066499 -33.941116333 ) matrix ( ( 0.00390625 0 -8.302236557 ) ( 0 0.00390625 -8.3972215652 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_81" 
+				groups {
+					"structure (Level 02)"
+					"structure01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.52157 0.52157 0.52157 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -34 88 90 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 -0.7071068287 0.7071067095 -36.7695541382 ) matrix ( ( 0.00390625 0 -8.302236557 ) ( 0 0.00390625 6.2752475739 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -58 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 11.1916160583 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0.0000000684 ) matrix ( ( 0 -0.0082720593 -4.0257377625 ) ( 0.0007324219 0 0.1918945313 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 -7.9999995232 ) matrix ( ( 0 -0.0082720593 -4.0257377625 ) ( -0.0007324219 0 0.1918945313 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 0.0000002384 ) matrix ( ( 0 -0.0070312503 -5.6885409355 ) ( 0.0003662109 0 0.2006835938 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -1.9999996424 ) matrix ( ( 0 -0.0070312503 -5.6885409355 ) ( 0.0003662109 0 0.1333007365 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_81" 
+				groups {
+					"structure (Level 02)"
+					"structure01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.52157 0.52157 0.52157 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 14 88 82 )
+						rotation ( ( 0 -0.9999999404 -0.0000000342 ) ( -0.0000001788 0.0000000342 -0.9999997616 ) ( 0.9999998212 0 -0.0000001788 ) )
+					}
+					
+					faces {
+						plane ( -0.0000000632 -0.7071067095 -0.7071068287 -8.4852781296 ) matrix ( ( 0.00390625 0 -8.302236557 ) ( 0 0.00390625 6.5514616966 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0.0000002384 ) matrix ( ( -0.0087890625 0 -17.8125 ) ( 0 -0.0007324219 0.1069336012 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 -7.9999995232 ) matrix ( ( 0.0087890625 0 -17.8125 ) ( 0 -0.0007324219 0.1069336012 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 0.000001669 ) matrix ( ( 0 -0.0070312503 10.4833374023 ) ( 0.0003662109 0 0.1333007365 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -2.0000016689 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 10.9375 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0.0000000211 -0.7071068287 0.7071067095 -33.9411277771 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -8.6513366699 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_81" 
+				groups {
+					"structure (Level 02)"
+					"structure01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.52157 0.52157 0.52157 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 2 88 134 )
+						rotation ( ( -0.0000000342 -0.9999999404 0 ) ( -0.9999998212 0.0000000342 0.0000001192 ) ( -0.0000001192 0 -0.9999998808 ) )
+					}
+					
+					faces {
+						plane ( -0.0000000263 -0.7071068883 0.7071067095 -36.7695465088 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 6.5514612198 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0.0000000843 -0.7071067691 -0.7071067691 -8.4852800369 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -8.6513376236 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0.0000002384 ) matrix ( ( 0 -0.0082720593 -4.2775764465 ) ( 0.0007324219 0 0.1655273438 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 -7.9999995232 ) matrix ( ( 0 -0.0082720593 -4.2775764465 ) ( -0.0007324219 0 0.1655273438 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 0.0000019073 ) matrix ( ( 0 -0.0070312503 -5.7166666985 ) ( 0.0003662109 0 0.1333007365 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -2.0000009537 ) matrix ( ( 0.00390625 0 -8.302236557 ) ( 0 0.00390625 -1.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_81" 
+				groups {
+					"structure (Level 02)"
+					"structure01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.52157 0.52157 0.52157 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 50 88 146 )
+						rotation ( ( 0 -0.9999999404 0.0000000342 ) ( 0.0000000596 0.0000000342 0.9999998808 ) ( -0.9999999404 0 0.0000000596 ) )
+					}
+					
+					faces {
+						plane ( -0.0000000211 -0.7071068287 -0.7071067095 -8.4852790833 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 6.5514621735 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0.0000002384 ) matrix ( ( -0.0087890625 0 -17.8125 ) ( 0 -0.0007324219 0.0600586012 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 -7.9999995232 ) matrix ( ( 0.0087890625 0 -17.8125 ) ( 0 -0.0007324219 0.0600586012 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 0.0000008345 ) matrix ( ( 0 -0.0070312503 -28.2166748047 ) ( 0.0003662109 0 0.1333007365 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -2.0000002384 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -0.0000000211 -0.7071068883 0.7071067095 -33.9411201477 ) matrix ( ( 0.00390625 0 -8.302236557 ) ( 0 0.00390625 -8.6513376236 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush_1" 
+				groups {
+					"structure (Level 01)"
+					"structure04"
+				}
+				{
+					
+					sdTransform {
+						translation ( 2752 -2464 -448 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 608 ) matrix ( ( -0.0052084988 0 0.5000157356 ) ( 0 0.0005040322 0.4370113015 ) ) texBounds ( ( 0 1281 ) ( 256 1537 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 -2876 ) matrix ( ( -0.0098209046 0 24.2612075806 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 1 0 0 2628 ) matrix ( ( -0.0098209046 0 -24.1362075806 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -2560 ) matrix ( ( -0.0098209046 0 -26.9646224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -0.2425306141 0.970143795 -15.5334472656 ) matrix ( ( -0.0040322579 0 0.5 ) ( 0 0.0006316217 0.7132465839 ) ) texBounds ( ( 0 773 ) ( 256 1029 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_44" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( -64 94 112 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -80 ) matrix ( ( 0.00390625 0 10.939950943 ) ( 0 0.00390625 9.6875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -0.7071067691 -0.7071067691 0 -41.0121917725 ) matrix ( ( 0.00390625 0 -12.6103982925 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 -1 -0 -6 ) matrix ( ( -0.0065789474 0 36.4078826904 ) ( 0 0.0008544922 0.6518554688 ) ) texBounds ( ( 0 783 ) ( 256 797 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -2 ) matrix ( ( -0.0065789474 0 0.1973666549 ) ( 0 0.0008544922 0.6518554688 ) ) texBounds ( ( 0 783 ) ( 256 797 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 1 0 0 32 ) matrix ( ( 0.00390625 0 10.939950943 ) ( 0 0.00390625 -1.8387135267 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 0 1 72 ) matrix ( ( 0.00390625 0 10.939950943 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_46" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( -122 66 312 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -280 ) matrix ( ( 0.00390625 0 10.955575943 ) ( 0 0.00390625 9.6796875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -2 ) matrix ( ( -0.0065789474 0 34.4999961853 ) ( 0 0.0008544922 0.6518554688 ) ) texBounds ( ( 0 783 ) ( 256 797 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 1 0 0 -6 ) matrix ( ( -0.0065789474 0 2.1052632332 ) ( 0 0.0008544922 0.6518554688 ) ) texBounds ( ( 0 783 ) ( 256 797 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0.7071067691 -0.7071067691 0 -113.1370849609 ) matrix ( ( 0.00390625 0 0.9848362207 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0.7071067691 0 -19.7989902496 ) matrix ( ( 0.00390625 0 15.2927007675 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 0 1 272 ) matrix ( ( 0.00390625 0 10.955575943 ) ( 0 0.00390625 -10.5546875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_47" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( -120 64 312 )
+					}
+					
+					faces {
+						plane ( 0 0 1 152 ) matrix ( ( 0.00390625 0 10.963388443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -4 ) matrix ( ( -0.0098209046 0 24.2612075806 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 1 0 0 -4 ) matrix ( ( -0.0098209046 0 -24.1362075806 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0.7071067691 -0.7071067691 0 -110.3086547852 ) matrix ( ( 0.00390625 0 0.9848362207 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0.7071067691 0 -19.7989902496 ) matrix ( ( 0.00390625 0 15.3037490845 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -272 ) matrix ( ( -0.0042613638 0 4.6818189621 ) ( 0 0.0004882813 2.9897460938 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_48" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( -120 -92 112 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -80 ) matrix ( ( 0.00390625 0 10.979013443 ) ( 0 0.00390625 9.6875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0.7071067691 0 -169.7056274414 ) matrix ( ( 0.00390625 0 15.7613162994 ) ( 0 0.00390625 -1.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -0.7071067691 0.7071067691 0 0 ) matrix ( ( 0.00390625 0 1.6808925867 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 -1 -0 -4 ) matrix ( ( -0.0065789474 0 36.4078826904 ) ( 0 0.0008544922 0.6518554688 ) ) texBounds ( ( 0 783 ) ( 256 797 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -4 ) matrix ( ( -0.0065789474 0 0.1973666549 ) ( 0 0.0008544922 0.6518554688 ) ) texBounds ( ( 0 783 ) ( 256 797 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 0 1 72 ) matrix ( ( 0.00390625 0 10.979013443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_54" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( 120 64 312 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -280 ) matrix ( ( 0.00390625 0 10.963388443 ) ( 0 0.00390625 9.6875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -1 0 -0 -4 ) matrix ( ( -0.0065789474 0 34.5131530762 ) ( 0 0.0008544922 0.6518554688 ) ) texBounds ( ( 0 783 ) ( 256 797 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 1 0 0 -4 ) matrix ( ( -0.0065789474 0 2.0921053886 ) ( 0 0.0008544922 0.6518554688 ) ) texBounds ( ( 0 783 ) ( 256 797 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -0.7071067691 -0.7071067691 0 -110.3086547852 ) matrix ( ( 0.00390625 0 -12.6269721985 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -0.7071067691 0.7071067691 0 -19.7989902496 ) matrix ( ( 0.00390625 0 1.6919411421 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 0 1 272 ) matrix ( ( 0.00390625 0 10.963388443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_55" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( 120 64 312 )
+					}
+					
+					faces {
+						plane ( 0 0 1 152 ) matrix ( ( 0.00390625 0 10.963388443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -4 ) matrix ( ( -0.0098209046 0 24.2612075806 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 1 0 0 -4 ) matrix ( ( -0.0098209046 0 -24.1362075806 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -0.7071067691 -0.7071067691 0 -110.3086547852 ) matrix ( ( 0.00390625 0 -12.6269721985 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -0.7071067691 0.7071067691 0 -19.7989902496 ) matrix ( ( 0.00390625 0 1.6919411421 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -272 ) matrix ( ( -0.0042613638 0 4.6818189621 ) ( 0 0.0004882813 2.9897460938 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_56" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( -64 92 112 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -80 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 9.6875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 -0.7071067691 0 -130.1076507568 ) matrix ( ( 0.00390625 0 0.9737879038 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 -1 -0 -4 ) matrix ( ( -0.0065789474 0 36.4078826904 ) ( 0 0.0008544922 0.6518554688 ) ) texBounds ( ( 0 783 ) ( 256 797 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -4 ) matrix ( ( -0.0065789474 0 0.1973666549 ) ( 0 0.0008544922 0.6518554688 ) ) texBounds ( ( 0 783 ) ( 256 797 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 32 ) matrix ( ( 0.00390625 0 -8.302236557 ) ( 0 0.00390625 -1.8387135267 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 0 1 72 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_81" 
+				groups {
+					"structure (Level 02)"
+					"structure01"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.52157 0.52157 0.52157 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 62 88 94 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( -0.0000000263 -0.7071067691 0.7071067691 -36.7695503235 ) matrix ( ( 0.00390625 0 -8.302236557 ) ( 0 0.00390625 6.5514616966 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -0.0000000263 -0.7071067691 -0.7071067691 -8.4852809906 ) matrix ( ( 0.00390625 0 -8.302236557 ) ( 0 0.00390625 -8.6513376236 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0.0000002384 ) matrix ( ( 0 -0.0082720593 -4.0588264465 ) ( 0.0007324219 0 0.1215820313 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 -7.9999995232 ) matrix ( ( 0 -0.0082720593 -4.0588264465 ) ( -0.0007324219 0 0.1215820313 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 -1 0 0.0000007153 ) matrix ( ( 0 -0.0070312503 -5.7166666985 ) ( 0.0003662109 0 0.2006835938 ) ) texBounds ( ( 0 1709 ) ( 256 1715 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -1.9999996424 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -1.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_92" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( -96 -92 112 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -48 ) matrix ( ( 0.00390625 0 11.666513443 ) ( 0 0.00390625 -10.4375 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -4 ) matrix ( ( -0.0098209046 0 27.0896224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -4 ) matrix ( ( -0.0098209046 0 -26.9646224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 0 -1 36 ) matrix ( ( 0.00390625 0 11.666513443 ) ( 0 0.00390625 10.8125 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0.1293391883 0 -0.9916004539 19.1421966553 ) matrix ( ( 0.00390625 0 11.666513443 ) ( 0 0.00390625 -10.4375 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -0.1293391883 0 -0.9916004539 43.9753265381 ) matrix ( ( 0.00390625 0 11.666513443 ) ( 0 0.00390625 -10.4375 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_91" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( -96 -92 112 )
+					}
+					
+					faces {
+						plane ( 0 -1 0 -4 ) matrix ( ( -0.0098209046 0 27.0896224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -4 ) matrix ( ( -0.0098209046 0 -26.9646224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 0 -1 -72 ) matrix ( ( -0.0042613638 0 4.6818189621 ) ( 0 0.0004882813 2.9897460938 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 0 1 32 ) matrix ( ( 0.00390625 0 11.666513443 ) ( 0 0.00390625 -10.4375 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -0.3987261355 0 0.9170700908 54.8647155762 ) matrix ( ( -0.0098209046 0 27.0896224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0.3987261355 0 0.9170700908 -21.6907043457 ) matrix ( ( -0.0098209046 0 27.0896224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_49" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( -120 -92 112 )
+					}
+					
+					faces {
+						plane ( 1 0 0 -88 ) matrix ( ( 0.00390625 0 10.979013443 ) ( 0 0.00390625 -1.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -0.7071067691 0.7071067691 0 0 ) matrix ( ( 0.00390625 0 1.6808925867 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -4 ) matrix ( ( -0.0098209046 0 27.0896224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -4 ) matrix ( ( -0.0098209046 0 -26.9646224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0.1293391883 0 0.9916004539 -47.079460144 ) matrix ( ( 0.00390625 0 10.979013443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0.3987261355 0 -0.9170700908 -64.4341430664 ) matrix ( ( 0.00390625 0 10.979013443 ) ( 0 0.00390625 -1.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_53" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( 40 -92 112 )
+					}
+					
+					faces {
+						plane ( -1 0 0 -8 ) matrix ( ( 0.00390625 0 -8.270986557 ) ( 0 0.00390625 -1.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0.7071067691 0 -56.5685424805 ) matrix ( ( 0.00390625 0 15.3147964478 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -4 ) matrix ( ( -0.0098209046 0 27.0896224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -4 ) matrix ( ( -0.0098209046 0 -26.9646224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -0.1293391883 0 0.9916004539 -36.7323303223 ) matrix ( ( 0.00390625 0 10.979013443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -0.3987260759 0 -0.9170700312 -32.5360565186 ) matrix ( ( 0.00390625 0 -8.270986557 ) ( 0 0.00390625 -1.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_90" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( -64 92 112 )
+					}
+					
+					faces {
+						plane ( 0.7071067691 -0.7071067691 0 -130.1076507568 ) matrix ( ( 0.00390625 0 0.9737879038 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -4 ) matrix ( ( -0.0098209046 0 27.0896224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -4 ) matrix ( ( -0.0098209046 0 -26.9646224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 128 ) matrix ( ( 0.00390625 0 -8.270986557 ) ( 0 0.00390625 -1.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -0.1961161494 0 0.9805807471 -10.1980438232 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -0.5547002554 0 -0.8320503235 44.3760223389 ) matrix ( ( 0.00390625 0 0.9737879038 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_91" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( -64 92 112 )
+					}
+					
+					faces {
+						plane ( 0 -1 0 -4 ) matrix ( ( -0.0098209046 0 27.0896224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -4 ) matrix ( ( -0.0098209046 0 -26.9646224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 0 -1 -72 ) matrix ( ( -0.0042613638 0 4.6818189621 ) ( 0 0.0004882813 2.9897460938 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -0.7808688283 0 0.6246950626 69.9658508301 ) matrix ( ( 0.00390625 0 -8.270986557 ) ( 0 0.00390625 -1.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 0 1 32 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0.5547002554 -0 0.8320503235 -44.3760223389 ) matrix ( ( -0.0098209046 0 27.0896224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_17" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( -64 92 112 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -48 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 32 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 10.6612863541 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -32 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -4 ) matrix ( ( -0.0098209046 0 27.0896224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -4 ) matrix ( ( -0.0098209046 0 -26.9646224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -0.4961389303 0 -0.8682430983 11.907333374 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_45" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( -64 92 112 )
+					}
+					
+					faces {
+						plane ( -0.7071067691 -0.7071067691 0 -39.5979804993 ) matrix ( ( 0.00390625 0 -12.6159229279 ) ( 0 0.00390625 -2.1875 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -4 ) matrix ( ( -0.0098209046 0 27.0896224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -4 ) matrix ( ( -0.0098209046 0 -26.9646224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 1 0 0 32 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -1.8387135267 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -72 ) matrix ( ( -0.0042613638 0 4.6818189621 ) ( 0 0.0004882813 2.9897460938 ) ) texBounds ( ( 0 1857 ) ( 256 1921 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0.4961389303 0 0.8682430983 -11.907333374 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_92" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( -64 92 112 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -48 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -4 ) matrix ( ( -0.0098209046 0 27.0896224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -4 ) matrix ( ( -0.0098209046 0 -26.9646224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 0 -1 36 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 10.9375 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0.1961161494 0 -0.9805807471 10.1980438232 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( -0.3511234522 0 -0.936329186 56.1797561646 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_87" 
+				groups {
+					"structure (Level 01)"
+					"structure05"
+				}
+				{
+					
+					sdTransform {
+						translation ( -64 92 112 )
+					}
+					
+					faces {
+						plane ( 0 -1 0 -4 ) matrix ( ( -0.0098209046 0 27.0896224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( 0 1 0 -4 ) matrix ( ( -0.0098209046 0 -26.9646224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+						plane ( -1 0 0 32 ) matrix ( ( 0.00390625 0 -8.302236557 ) ( 0 0.00390625 -1.8387135267 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -64 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -1.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0.3511234522 0 0.936329186 -56.1797561646 ) matrix ( ( 0.00390625 0 10.947763443 ) ( 0 0.00390625 -10.5625 ) ) texBounds ( ( 0 0 ) ( 512 512 ) ) "textures/common/caulk"
+						plane ( 0.7808688283 0 -0.6246950626 -69.9658508301 ) matrix ( ( -0.0098209046 0 27.0896224976 ) ( 0 0.0006009616 1.6412643194 ) ) texBounds ( ( 0 769 ) ( 256 1025 ) ) "texturesheets/island/exterior_buildings1"
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_219" 
+				groups {
+					"decals (Level 01)"
+					"decals01"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 188.5 -8 -8 )
+						rotation ( ( 0.0000000596 0.0000000684 -0.9999998212 ) ( -0.0000000507 -0.9999996424 -0.0000000684 ) ( -0.999999702 0.0000000507 -0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000000437 1 0 ) ( -1 -0.0000000437 0 ) )
+					texBounds ( ( 0 2048 ) ( 512 2560 ) )
+					material "texturesheets/island/island_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -167.9999084473 87.9999542236 63.9999656677 0.0000000298 0.25 ) ( -79.9999923706 87.999961853 63.9999732971 0 0.125 ) ( -40.0000038147 87.9999694824 63.9999732971 0 0.0000000075 ) )
+							( ( -191.9999084473 -8.0000076294 63.9999694824 0.5 0.25 ) ( -103.9999847412 -8.0000009537 63.9999732971 0.5 0.125 ) ( -39.9999656677 -7.9999966621 63.9999771118 0.4999999702 0 ) )
+							( ( -215.9997711182 -103.9997329712 63.9999732971 1 0.25 ) ( -127.9999694824 -103.9997253418 63.9999771118 1 0.1249999925 ) ( -39.9999580383 -103.9997177124 63.9999847412 1 0 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+					"decals01"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 82 -100.25 95 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000000437 1 0 ) ( -1 -0.0000000437 0.75 ) )
+					texBounds ( ( 0 512 ) ( 256 768 ) )
+					material "texturesheets/island/island_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -52 4 -55 0.0000000149 0.875 ) ( -6 4 -55 0 0.8125 ) ( 40 4 -55 0 0.75 ) )
+							( ( -52 4 4 0.25 0.875 ) ( -6 4 4 0.25 0.8125 ) ( 40 4 4 0.2499999851 0.75 ) )
+							( ( -52 4 63 0.5 0.875 ) ( -6 4 63 0.5 0.8125 ) ( 40 4 63 0.5 0.75 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+					"decals01"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 128.25 6 95 )
+						rotation ( ( -0.0000001027 0.9999998212 0 ) ( -0.9999998212 -0.0000001027 0 ) ( 0 0 1 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000000437 1 0 ) ( -1 -0.0000000437 0.75 ) )
+					texBounds ( ( 0 512 ) ( 256 768 ) )
+					material "texturesheets/island/island_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -52 4 -55 0.0000000149 0.875 ) ( -6 4 -55 0 0.8125 ) ( 40 4 -55 0 0.75 ) )
+							( ( -52 4 4 0.25 0.875 ) ( -6 4 4 0.25 0.8125 ) ( 40 4 4 0.2499999851 0.75 ) )
+							( ( -52 4 63 0.5 0.875 ) ( -6 4 63 0.5 0.8125 ) ( 40 4 63 0.5 0.75 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+					"decals01"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( 22 91.75 147 )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 0.0000000874 0 ) ( 0.0000000874 1 0.5 ) )
+					texBounds ( ( 0 1024 ) ( 512 1277 ) )
+					material "texturesheets/island/island_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -146 4.5 61 1 0.5 ) ( -22 4.5 61 0.4999999702 0.5 ) ( 102 4.5 61 -0.0000000596 0.5 ) )
+							( ( -146 4.5 31 1 0.5617675781 ) ( -22 4.5 31 0.5 0.5617675781 ) ( 102 4.5 31 0 0.5617675781 ) )
+							( ( -146 4.5 1 1 0.6235351563 ) ( -22 4.5 1 0.5000000596 0.6235351563 ) ( 102 4.5 1 0.0000000298 0.6235351563 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_219" 
+				groups {
+					"decals (Level 01)"
+					"decals01"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -188.5 8 -8 )
+						rotation ( ( -0.0000000596 -0.0000000684 -0.9999998212 ) ( 0.0000001192 0.9999997616 -0.0000000684 ) ( 0.9999998212 -0.0000001192 -0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000000437 1 0 ) ( -1 -0.0000000437 0 ) )
+					texBounds ( ( 0 2048 ) ( 512 2560 ) )
+					material "texturesheets/island/island_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -215.9998779297 87.9998168945 64.0000076294 0.0000000298 0.25 ) ( -128 87.9998168945 64.0000076294 0 0.125 ) ( -40 87.9998168945 64.0000076294 0 0.0000000075 ) )
+							( ( -191.9999694824 -8.0000181198 64 0.5 0.25 ) ( -104 -8.0000181198 64 0.5 0.125 ) ( -39.9999923706 -8.0000896454 64 0.4999999702 0 ) )
+							( ( -167.9999694824 -103.9999847412 63.9999961853 1 0.25 ) ( -79.9999847412 -103.9999694824 63.9999961853 1 0.1249999925 ) ( -39.9999923706 -103.9999694824 63.9999961853 1 0 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_217" 
+				groups {
+					"decals (Level 01)"
+					"decals01"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -40 -8 97 )
+						rotation ( ( -0.9999998808 -0.0000000684 0 ) ( -0.0000000684 0.9999997616 -0.0000001192 ) ( 0 -0.0000001192 -0.9999998808 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000000437 1 0.5 ) ( -1 -0.0000000437 0.75 ) )
+					texBounds ( ( 256 512 ) ( 512 768 ) )
+					material "texturesheets/island/island_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -151.9998931885 87.9998168945 64.0000076294 0.5 0.875 ) ( -40.0000076294 87.9998168945 64.0000076294 0.5 0.8125 ) ( 71.9999694824 87.9998168945 64.0000076294 0.5 0.75 ) )
+							( ( -151.9999694824 7.9999675751 64 0.75 0.875 ) ( -40.0000076294 7.9999675751 64 0.75 0.8125 ) ( 71.9999847412 7.9999065399 64 0.75 0.75 ) )
+							( ( -151.9999694824 -71.9999923706 63.9999961853 1 0.875 ) ( -39.9999923706 -71.9999694824 63.9999961853 1 0.8125 ) ( 71.9999847412 -71.9999694824 63.9999961853 1 0.75 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"decals (Level 01)"
+					"decals01"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -22 -195 100.25 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0 -0.0000000596 -0.9999999404 ) ( 0.0000000685 -0.9999998212 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -1 0.0000000874 0 ) ( 0.0000000874 1 0.625 ) )
+					texBounds ( ( 0 768 ) ( 512 1022 ) )
+					material "texturesheets/island/island_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -162 67.9999923706 -110.9999923706 1 0.625 ) ( -14.0000009537 67.9999923706 -110.9999923706 0.4999999702 0.625 ) ( 134 67.9999923706 -110.9999923706 -0.0000000596 0.625 ) )
+							( ( -162 67.9999923706 -24.999994278 1 0.6870117188 ) ( -14.0000009537 67.9999923706 -24.999994278 0.5 0.6870117188 ) ( 134 67.9999923706 -24.999994278 0 0.6870117188 ) )
+							( ( -162 67.9999923706 60.9999923706 1 0.7490234375 ) ( -14.0000009537 67.9999923706 60.9999923706 0.5000000596 0.7490234375 ) ( 134 67.9999923706 60.9999923706 0.0000000298 0.7490234375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_219" 
+				groups {
+					"decals (Level 01)"
+					"decals01"
+				}
+				{
+					sdDictionary {
+						"compiler_solid"	"0"
+					}
+					
+					sdTransform {
+						translation ( -56 136 96.25 )
+						rotation ( ( -0.9999998808 -0.0000000684 0 ) ( -0.0000000684 0.9999997616 -0.0000001192 ) ( 0 -0.0000001192 -0.9999998808 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000000437 1 0 ) ( -1 -0.0000000437 0.75 ) )
+					texBounds ( ( 0 512 ) ( 256 768 ) )
+					material "texturesheets/island/island_decals"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -135.9998931885 87.9998168945 64.0000076294 0.0000000149 0.875 ) ( -32.0000076294 87.9998168945 64.0000076294 0 0.8125 ) ( 71.9999694824 87.9998168945 64.0000076294 0 0.75 ) )
+							( ( -135.9999694824 27.9999485016 64 0.25 0.875 ) ( -32.0000076294 27.9999485016 64 0.25 0.8125 ) ( 71.9999847412 27.9999046326 64 0.2499999851 0.75 ) )
+							( ( -135.9999694824 -32 63.9999961853 0.5 0.875 ) ( -31.9999923706 -31.9999885559 63.9999961853 0.5 0.8125 ) ( 71.9999847412 -31.9999885559 63.9999961853 0.5 0.75 ) )
+						)
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "z13_func_static_5" 
+		groups {
+			"models (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/island/island_objects/shelf01_nv.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 101 40 32 )
+				rotation ( ( 0.0000001711 -0.999999702 0 ) ( 0.999999702 0.0000001711 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_func_static_6" 
+		groups {
+			"models (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/island/island_objects/shelf01_nv.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 101 -40 32 )
+				rotation ( ( 0.0000001711 -0.999999702 0 ) ( 0.999999702 0.0000001711 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "adam_model_static_64" 
+		groups {
+			"models (Level 01)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/island/island_objects/vent02nv.lwo"
+				"noclipmodel"	"1"
+			}
+			sdTransform {
+				translation ( -124 47 120 )
+				rotation ( ( 0.0000002491 -0.9999996424 0 ) ( 0.9999996424 0.0000002491 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "torchy_info_envbound_1" {
+			sdDictionary {
+				"env_name"	"env/island/hut"
+			}
+			sdTransform {
+				translation ( 0 0 96 )
+			}
+			
+			classname "info_envbound"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 0 84 )
+					}
+					
+					faces {
+						plane ( 0 0 1 20 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( -0 0 -1 -148 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( -1 0 0 -116 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 1 0 0 -116 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 -1 0 -88 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 1 0 -88 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+					}
+				}
+			}
+		}
+	}
+}

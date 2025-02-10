@@ -1,0 +1,51 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"description"	"maps/unnamed.world"
+		"editor_last_atmosphere"	"area22_01"
+	}
+
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+		}
+		sdPrimitiveEntity "guard_tower_construction" {
+			sdDictionary {
+				"construction"	"guard_tower_top"
+				"start_constructed"	"0"
+				"multiple_stages"	"0"
+				"constructed"	"guard_tower"
+				"construction_remove"	"guard_tower_base"
+				"construct_count"	"40"
+			}
+			sdTransform {
+				translation ( -249.1611328125 159.7001953125 1.375 )
+				rotation ( ( -0.9138351679 -0.4060854018 0.0000000499 ) ( 0.4060854018 -0.9138351679 0.0000000166 ) ( 0.0000000389 0.0000000355 1 ) )
+			}
+			
+			classname "constructible_materials_gdf"
+		}
+		sdPrimitiveEntity "guard_tower" {
+			sdDictionary {
+				"gun_entity"	"guard_tower_gun"
+			}
+			classname "constructible_tower_gdf_all"
+		}
+		sdPrimitiveEntity "guard_tower_gun" {
+			sdDictionary {
+				"anim"	"base"
+				"def_automount"	"mountable_gdf_gpmg"
+			}
+			sdTransform {
+				translation ( 119 0 552 )
+			}
+			
+			classname "mountable_weapon_gdf"
+		}
+		sdPrimitiveEntity "guard_tower_base" {
+			classname "constructible_tower_gdf_base"
+		}
+		sdPrimitiveEntity "guard_tower_top" {
+			classname "constructible_tower_gdf_top"
+		}
+	}
+}

@@ -1,0 +1,704 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"editor_last_atmosphere"	"atmosphere://sewer"
+	}
+
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			sdDictionary {
+				"merge_script_objective1"	"info_objective_1"
+				"merge_script_objective1_arrow1"	"info_objective_1_progress_1"
+				"merge_script_objective1_arrow2"	"info_objective_1_progress_2"
+				"merge_script_objective2a"	"info_objective_2a"
+				"merge_script_objective2b"	"info_objective_2b"
+				"merge_script_objective3"	"info_objective_3"
+				"merge_script_objective2_arrow1"	"info_objective_2_progress_1"
+				"merge_script_objective2_arrow2"	"info_objective_2_progress_2"
+				"merge_script_door_a"	"sewer_grate_a"
+				"merge_script_door_b"	"sewer_grate_b"
+				"merge_script_jammer_materials"	"jamming_tower_materials"
+				"merge_script_door_dual_proxy"	"sewer_grate_dual_proxy"
+				"merge_script_final_objective"	"hackable_controls"
+				"merge_script_emp_charge"	"torchy_misc_particle_trigger_emp_charge"
+				"merge_script_emp_fire"	"torchy_misc_particle_trigger_emp_fire"
+				"merge_script_shield_down_1"	"torchy_misc_particle_trigger_shield_down_1"
+				"merge_script_shield_down_2"	"torchy_misc_particle_trigger_shield_down_2"
+				"merge_script_shield_down_3"	"torchy_misc_particle_trigger_shield_down_3"
+				"merge_script_shield_down_4"	"torchy_misc_particle_trigger_shield_down_4"
+				"merge_script_sewer_door_1"	"torchy_misc_particle_trigger_sewer_door_1"
+				"merge_script_sewer_door_1_water"	"torchy_misc_particle_trigger_sewer_door_1_water"
+				"merge_script_sewer_door_2"	"torchy_misc_particle_trigger_sewer_door_2"
+				"merge_script_sewer_door_smoke_2"	"torchy_misc_particle_trigger_sewer_door_smoke_2"
+				"merge_script_sewer_door_smoke_1"	"torchy_misc_particle_trigger_sewer_door_smoke_1"
+				"merge_script_sewer_door_maintenance"	"torchy_misc_particle_trigger_sewer_door_maintenance"
+				"merge_script_sewer_door_overflow_hatch"	"torchy_misc_particle_trigger_sewer_door_overflow_hatch"
+				"merge_script_flood"	"torchy_misc_particle_trigger_flood"
+				"merge_script_placement_camera_a"	"placement_camera_a"
+				"merge_script_placement_camera_b"	"placement_camera_b"
+				"merge_script_door_a_destroyed"	"sewer_grate_a_destroyed"
+				"merge_script_door_b_destroyed"	"sewer_grate_b_destroyed"
+			}
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 6490 9932 930 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -16 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -4 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+						plane ( 0 0 -1 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 4 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+						plane ( -0.9863939285 0 -0.1643989831 -36.8253746033 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -8.5487470627 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+						plane ( 0.9863939285 0 0.1643989831 23.0152168274 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -8.5487470627 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+						plane ( 0 -1 0 -32 ) matrix ( ( 0.03125 0 -4 ) ( 0 0.03125 -8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+						plane ( 0 1 0 -40 ) matrix ( ( 0.03125 0 4 ) ( 0 0.03125 -8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 6476 9936 908 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 4 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+						plane ( -1 0 0 -18 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+						plane ( 0 -1 0 -40 ) matrix ( ( 0.03125 0 -4 ) ( 0 0.03125 -8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+						plane ( 0 1 0 -40 ) matrix ( ( 0.03125 0 4 ) ( 0 0.03125 -8 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+						plane ( 0 0 1 10 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -4 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+						plane ( 0.6757246256 0 0.7371541262 10.0747070313 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -8.3544130325 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+						plane ( 0.9701424837 0 0.2425356209 -11.6416015625 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -8.7312822342 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+						plane ( 0.7999999523 0 -0.5999999642 -41.599609375 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -4 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+						plane ( -0.5734623671 0 -0.8192319274 -34.7353515625 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -7.8646268845 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+						plane ( -0.8574929237 0 -0.5144957304 -27.7827148438 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -8.9179267883 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/full_clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 1580 -252 1024 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -144 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.8436614871 0 0.5368754864 -56.7554931641 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.8436614871 0 0.5368754864 -56.7554321289 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0.8436614871 0.5368754864 -56.7553710938 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0.8436614871 0.5368754864 -56.7554016113 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 1584 -244 1024 )
+						rotation ( ( 0.0000000596 -0.9999999404 0 ) ( 0.9999999404 0.0000000596 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -144 ) matrix ( ( 0 0.0312500037 -57.2500038147 ) ( -0.0312500037 0 41.4999961853 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0 -1 -144 ) matrix ( ( 0 -0.0312500037 -57.2500038147 ) ( 0.0312500037 0 -41.4999961853 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -44 ) matrix ( ( 0.0312500037 0 57.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -60 ) matrix ( ( 0.0312500037 0 -57.25 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -152 ) matrix ( ( 0.0312500037 0 41.5 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -144 ) matrix ( ( 0.0312500037 0 -41.5 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0.0000000545 -0.9138115048 0.4061384499 -109.657409668 ) matrix ( ( 0 0.0312500037 -57.2500038147 ) ( -0.0312500037 0 41.4999961853 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0.0000000545 0.9138115048 0.4061384499 -102.3469238281 ) matrix ( ( 0 0.0312500037 -57.2500038147 ) ( -0.0312500037 0 41.4999961853 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 1572 -248 1024 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -144 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -44 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -60 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -1 0 -152 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 -0.9138115644 0.4061384797 -109.657409668 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 1572 -248 1024 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -144 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -1 0 -0 -44 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 1 0 0 -60 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 1 0 -144 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( 0 0.9138115644 0.4061384797 -102.3468933105 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+						plane ( -0 -1 -0 48 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip_metal"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "jamming_tower" {
+			sdDictionary {
+				"model"	"models/structures/edf/emp_disruptor/emp_disruptor_top.lwo"
+				"team"	"gdf"
+				"cm_model"	"models/structures/edf/emp_disruptor/emp_disruptor_top.lwo"
+				"object_name"	"maps/sewer/emp_disruptor"
+			}
+			sdTransform {
+				translation ( 1578 -252 888 )
+				rotation ( ( -0.0000000437 1 0 ) ( -1 -0.0000000437 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "constructible_emp_disruptor_gdf"
+		}
+		sdPrimitiveEntity "jamming_tower_materials" {
+			sdDictionary {
+				"construction"	"jamming_tower"
+				"start_constructed"	"0"
+				"multiple_stages"	"0"
+				"objective_index"	"0"
+				"task_name"	"maps/sewer/emp_disruptor"
+				"snd_intro_strogg"	"sounds/vo/strogg/nexus/objectives/empdisruptor/stop/long"
+				"snd_intro_gdf"	"sounds/vo/gdf/highcommand/objectives/empdisruptor/construct/long"
+				"snd_reminder_strogg"	"sounds/vo/strogg/nexus/objectives/empdisruptor/stop"
+				"snd_reminder_gdf"	"sounds/vo/gdf/highcommand/objectives/empdisruptor/construct"
+				"snd_constructing_strogg"	"sounds/vo/strogg/nexus/objectives/empdisruptor/constructing"
+				"snd_constructing_gdf"	"sounds/vo/gdf/highcommand/objectives/empdisruptor/constructing"
+				"snd_finished_strogg"	"sounds/vo/strogg/nexus/objectives/empdisruptor/constructed"
+				"snd_finished_gdf"	"sounds/vo/gdf/highcommand/objectives/empdisruptor/constructed"
+				"object_name"	"maps/sewer/emp_disruptor"
+				"progress_message"	"maps/sewer/obj_construct_emp_disruptor"
+				"construct_count"	"150"
+				"constructed_message"	"maps/sewer/obj_constructed"
+			}
+			sdTransform {
+				translation ( 1404.3482666016 -404.8497009277 888 )
+				rotation ( ( 0.7313537002 0.6819984317 0 ) ( -0.6819984317 0.7313537002 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "constructible_materials_gdf"
+		}
+		sdPrimitiveEntity "info_objective_1" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/construction"
+				"mtr_icon_number"	"hud/objectives/marker_01"
+				"icon_size_cm"	"24"
+				"objective_index"	"0"
+				"icon_size_number_cm"	"24"
+				"icon_offset_cm"	"8 8 0"
+				"text_objective_gdf"	"maps/sewer/obj_short_1_gdf"
+				"text_objective_strogg"	"maps/sewer/obj_short_1_strogg"
+				"text_short_objective_strogg"	"maps/sewer/obj_short_1_strogg"
+				"text_short_objective_gdf"	"maps/sewer/obj_short_1_gdf"
+				"mtr_objective_world_icon_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_world_icon_gdf"	"hud/icons/missionsystem/obj_build"
+				"mtr_objective_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_strogg_desat"	"hud/icons/missionsystem/obj_defend_desat"
+				"mtr_objective_gdf"	"hud/icons/missionsystem/obj_build"
+				"mtr_objective_gdf_desat"	"hud/icons/missionsystem/obj_build_desat"
+			}
+			sdTransform {
+				translation ( 1415 -399 1056 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_1_progress_1" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/progress_right_up"
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+			}
+			sdTransform {
+				translation ( -2563 259 1216 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_1_progress_2" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/progress_left_up"
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+			}
+			sdTransform {
+				translation ( 5962 -4626 1216 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "sewer_grate_a" {
+			sdDictionary {
+				"objective_index"	"1"
+				"object_name"	"maps/sewer/sewer_grate_a"
+				"health"	"1"
+				"progress_message"	"maps/sewer/south_grate_progress"
+				"destroy_message"	"maps/sewer/south_grate_destroy"
+				"disarm_message"	"maps/sewer/south_grate_disarm"
+				"model"	"models/mapobjects/sewer/sewer_grate.lwo"
+				"task_name"	"maps/sewer/sewer_grates"
+				"editor_unique"	"1"
+				"snd_planted_gdf"	"sounds/vo/gdf/highcommand/maps/sewer/southgrate/planted/long"
+				"snd_planted_strogg"	"sounds/vo/strogg/nexus/maps/sewer/southgrate/planted/long"
+				"snd_disarmed_strogg"	"sounds/vo/strogg/nexus/maps/sewer/southgrate/disarmed"
+				"snd_disarmed_gdf"	"sounds/vo/gdf/highcommand/maps/sewer/southgrate/disarmed"
+				"snd_destroyed_gdf"	"sounds/vo/gdf/highcommand/maps/sewer/southgrate/destroyed"
+				"snd_destroyed_strogg"	"sounds/vo/strogg/nexus/maps/sewer/southgrate/destroyed"
+				"dmg_splash_damage"	"damage_objective_explosion"
+			}
+			sdTransform {
+				translation ( 3812 9312 1160 )
+				rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "gameplay/destructible/strogg"
+		}
+		sdPrimitiveEntity "sewer_grate_trigger_a" {
+			sdDictionary {
+				"editor_unique"	"1"
+				"target"	"sewer_grate_a"
+			}
+			sdTransform {
+				translation ( -544 5808 1120 )
+			}
+			
+			classname "gameplay_destructible_trigger"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_1" {
+					
+					sdTransform {
+						translation ( 4355 3487 -370 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -562 ) matrix ( ( 0.03125 0 -108.96875 ) ( 0 0.03125 -136.09375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 0 -1 258 ) matrix ( ( 0.03125 0 -108.96875 ) ( 0 0.03125 136.09375 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( -1 0 0 -19 ) matrix ( ( 0.03125 0 108.96875 ) ( 0 0.03125 -11.5625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 1 0 0 -29 ) matrix ( ( 0.03125 0 -108.96875 ) ( 0 0.03125 -11.5625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 -1 0 -126 ) matrix ( ( 0.03125 0 -136.09375 ) ( 0 0.03125 -11.5625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 1 0 -161 ) matrix ( ( 0.03125 0 136.09375 ) ( 0 0.03125 -11.5625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "sewer_grate_b" {
+			sdDictionary {
+				"objective_index"	"3"
+				"object_name"	"maps/sewer/sewer_grate_b"
+				"health"	"1"
+				"crosshair_icon"	"hud/objectives/destruction"
+				"progress_message"	"maps/sewer/north_grate_progress"
+				"destroy_message"	"maps/sewer/north_grate_destroy"
+				"disarm_message"	"maps/sewer/north_grate_disarm"
+				"model"	"models/mapobjects/sewer/sewer_grate.lwo"
+				"task_name"	"maps/sewer/sewer_grates"
+				"editor_unique"	"1"
+				"snd_destroyed_strogg"	"sounds/vo/strogg/nexus/maps/sewer/northgrate/destroyed"
+				"snd_destroyed_gdf"	"sounds/vo/gdf/highcommand/maps/sewer/northgrate/destroyed"
+				"snd_disarmed_gdf"	"sounds/vo/gdf/highcommand/maps/sewer/northgrate/disarmed"
+				"snd_planted_gdf"	"sounds/vo/gdf/highcommand/maps/sewer/northgrate/planted/long"
+				"snd_disarmed_strogg"	"sounds/vo/strogg/nexus/maps/sewer/northgrate/disarmed"
+				"snd_planted_strogg"	"sounds/vo/strogg/nexus/maps/sewer/northgrate/planted/long"
+				"dmg_splash_damage"	"damage_objective_explosion"
+			}
+			sdTransform {
+				translation ( 3812 10848 1280 )
+				rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "gameplay/destructible/strogg"
+		}
+		sdPrimitiveEntity "sewer_grate_trigger_b" {
+			sdDictionary {
+				"target"	"sewer_grate_b"
+				"editor_unique"	"1"
+			}
+			sdTransform {
+				translation ( -544 5808 1120 )
+			}
+			
+			classname "gameplay_destructible_trigger"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_1" {
+					
+					sdTransform {
+						translation ( 4348 5056 120 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -160 ) matrix ( ( 0 0.03125 62.6249847412 ) ( -0.03125 0 356.5000305176 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 0 -1 -144 ) matrix ( ( 0 -0.0312500037 62.6249923706 ) ( 0.03125 0 -356.5000305176 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( -1 0 0 -128 ) matrix ( ( 0.0312500037 0 -62.625 ) ( 0 0.0312500037 3.7499997616 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 1 0 0 -160 ) matrix ( ( 0.0312500037 0 62.625 ) ( 0 0.03125 3.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 -1 0 -12 ) matrix ( ( 0.0312500037 0 356.5000305176 ) ( 0 0.03125 3.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 1 0 -36 ) matrix ( ( 0.0312500037 0 -356.5000305176 ) ( 0 0.0312500037 3.7499997616 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "info_objective_2a" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/destruction"
+				"mtr_icon_number"	"hud/objectives/marker_02"
+				"icon_size_cm"	"24"
+				"objective_index"	"1"
+				"icon_size_number_cm"	"24"
+				"icon_offset_cm"	"8 8 0"
+				"text_objective_gdf"	"maps/sewer/obj_short_2_gdf"
+				"text_objective_strogg"	"maps/sewer/obj_short_2_strogg"
+				"text_short_objective_strogg"	"maps/sewer/obj_short_2_strogg"
+				"text_short_objective_gdf"	"maps/sewer/obj_short_2_gdf"
+				"mtr_objective_world_icon_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_world_icon_gdf"	"hud/icons/missionsystem/obj_destroy"
+				"mtr_objective_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_strogg_desat"	"hud/icons/missionsystem/obj_defend_desat"
+				"mtr_objective_gdf"	"hud/icons/missionsystem/obj_destroy"
+				"mtr_objective_gdf_desat"	"hud/icons/missionsystem/obj_destroy_desat"
+			}
+			sdTransform {
+				translation ( 3815 9312 1136 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_2b" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/destruction"
+				"mtr_icon_number"	"hud/objectives/marker_02"
+				"icon_size_cm"	"24"
+				"objective_index"	"1"
+				"icon_size_number_cm"	"24"
+				"icon_offset_cm"	"8 8 0"
+				"text_objective_gdf"	"maps/sewer/obj_short_2_gdf"
+				"text_objective_strogg"	"maps/sewer/obj_short_2_strogg"
+				"text_short_objective_strogg"	"maps/sewer/obj_short_2_strogg"
+				"text_short_objective_gdf"	"maps/sewer/obj_short_2_gdf"
+				"mtr_objective_world_icon_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_world_icon_gdf"	"hud/icons/missionsystem/obj_destroy"
+				"mtr_objective_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_strogg_desat"	"hud/icons/missionsystem/obj_defend_desat"
+				"mtr_objective_gdf"	"hud/icons/missionsystem/obj_destroy"
+				"mtr_objective_gdf_desat"	"hud/icons/missionsystem/obj_destroy_desat"
+			}
+			sdTransform {
+				translation ( 3815 10848 1256 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_3" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/hack"
+				"mtr_icon_number"	"hud/objectives/marker_03"
+				"icon_size_cm"	"24"
+				"objective_index"	"2"
+				"icon_size_number_cm"	"24"
+				"icon_offset_cm"	"8 8 0"
+				"text_objective_gdf"	"maps/sewer/obj_short_3_gdf"
+				"text_objective_strogg"	"maps/sewer/obj_short_3_strogg"
+				"text_short_objective_strogg"	"maps/sewer/obj_short_3_strogg"
+				"text_short_objective_gdf"	"maps/sewer/obj_short_3_gdf"
+				"mtr_objective_world_icon_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_world_icon_gdf"	"hud/icons/missionsystem/obj_hack"
+				"mtr_objective_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_strogg_desat"	"hud/icons/missionsystem/obj_defend_desat"
+				"mtr_objective_gdf"	"hud/icons/missionsystem/obj_hack"
+				"mtr_objective_gdf_desat"	"hud/icons/missionsystem/obj_hack_desat"
+			}
+			sdTransform {
+				translation ( 6472 9936 1144 )
+				rotation ( ( 0.0000001712 -0.999999702 0 ) ( 0.999999702 0.0000001712 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_2_progress_1" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/progress_right_up"
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+			}
+			sdTransform {
+				translation ( -2886 4588 1216 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_2_progress_2" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/progress_left_up"
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+			}
+			sdTransform {
+				translation ( 877 7296 1216 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "z13_model_static_1" {
+			sdDictionary {
+				"model"	"models/structures/edf/emp_disruptor/emp_disruptor_base.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( 1578 -252 888 )
+				rotation ( ( -0.0000000437 1 0 ) ( -1 -0.0000000437 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "hackable_controls" {
+			sdDictionary {
+				"model"	"models/mapobjects/sewer/console.lwo"
+				"hack_count"	"180"
+				"object_name"	"maps/sewer/sewer_controls"
+				"objective_index"	"2"
+				"task_name"	"maps/sewer/sewer_controls"
+				"cm_model"	"models/mapobjects/sewer/console.lwo"
+				"snd_intro_strogg"	"sounds/vo/strogg/nexus/maps/sewer/grates/fail"
+				"snd_intro_gdf"	"sounds/vo/gdf/highcommand/maps/sewer/grates/success"
+				"snd_reminder_gdf"	"sounds/vo/gdf/highcommand/maps/sewer/controls/hack"
+				"snd_reminder_strogg"	"sounds/vo/strogg/nexus/maps/sewer/controls/defend"
+				"snd_finished_strogg"	"sounds/vo/strogg/nexus/maps/sewer/controls/hacked"
+				"snd_finished_gdf"	"sounds/vo/gdf/highcommand/maps/sewer/controls/hacked"
+				"snd_hacking_gdf"	"sounds/vo/gdf/highcommand/maps/sewer/controls/hacking"
+				"snd_hacking_strogg"	"sounds/vo/strogg/nexus/maps/sewer/controls/hacking"
+				"gui"	"guis/items/sewer_obj"
+			}
+			sdTransform {
+				translation ( 6520 10000 1064 )
+			}
+			
+			classname "gameplay/hackable/strogg"
+		}
+		sdPrimitiveEntity "sewer_grate_dual_proxy" {
+			sdDictionary {
+				"target1"	"sewer_grate_a"
+				"target2"	"sewer_grate_b"
+				"editor_unique"	"1"
+				"snd_intro_gdf"	"sounds/vo/gdf/highcommand/maps/sewer/grates/destroy/long"
+				"snd_intro_strogg"	"sounds/vo/strogg/nexus/maps/sewer/grates/defend/long"
+				"snd_reminder_strogg"	"sounds/vo/strogg/nexus/maps/sewer/grates/defend"
+				"snd_reminder_gdf"	"sounds/vo/gdf/highcommand/maps/sewer/grates/destroy"
+				"task_name"	"maps/sewer/sewer_grates"
+				"objective_index"	"1"
+			}
+			sdTransform {
+				translation ( 3816 10048 1728 )
+			}
+			
+			classname "gameplay/destructible/dualproxy/strogg"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_emp_charge" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/sewer/emp_charge"
+			}
+			sdTransform {
+				translation ( 1577.7449951172 -252.0980834961 1637 )
+				rotation ( ( -0.9998916388 -0.0147330537 -0.0000106421 ) ( -0.0000682864 0.0039120917 0.9999923706 ) ( -0.0147329038 0.9998840094 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_emp_fire" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/sewer/emp_fire"
+			}
+			sdTransform {
+				translation ( 1577.7449951172 -252.0980834961 1639 )
+				rotation ( ( -0.9998916388 -0.0147330537 -0.0000106421 ) ( -0.0000682864 0.0039120917 0.9999923706 ) ( -0.0147329038 0.9998840094 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_shield_down_1" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/sewer/shield_down"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( 3507.0981445313 3639.7451171875 1143 )
+				rotation ( ( 0.014732874 -0.9998915792 -0.0000106421 ) ( -0.0039120917 -0.0000682857 0.9999923706 ) ( -0.9998839498 -0.0147327241 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_shield_down_2" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/sewer/shield_down"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( 2797.9018554688 3730.2548828125 1143 )
+				rotation ( ( -0.0147324847 0.9998915792 -0.0000106421 ) ( 0.0039120917 0.0000682842 0.9999923706 ) ( 0.9998839498 0.0147323348 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_shield_down_3" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/sewer/shield_down"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( 274.0981445313 3887.7451171875 790 )
+				rotation ( ( 0.014732874 -0.9998915792 -0.0000106421 ) ( -0.0039120917 -0.0000682857 0.9999923706 ) ( -0.9998839498 -0.0147327241 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_shield_down_4" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/sewer/shield_down"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( -276.0981445313 3888.2548828125 790 )
+				rotation ( ( -0.0147324847 0.9998915792 -0.0000106421 ) ( 0.0039120917 0.0000682842 0.9999923706 ) ( 0.9998839498 0.0147323348 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_sewer_door_2" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/sewer/door_blowout_2"
+			}
+			sdTransform {
+				translation ( 3790.0981445313 10847.7451171875 1263 )
+				rotation ( ( 0.014732874 -0.9998915792 -0.0000106421 ) ( -0.0039120917 -0.0000682857 0.9999923706 ) ( -0.9998839498 -0.0147327241 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_sewer_door_smoke_2" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/sewer/door_smoke"
+			}
+			sdTransform {
+				translation ( 3806.0981445313 10847.7451171875 1263 )
+				rotation ( ( 0.014732874 -0.9998915792 -0.0000106421 ) ( -0.0039120917 -0.0000682857 0.9999923706 ) ( -0.9998839498 -0.0147327241 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_sewer_door_1" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/sewer/door_blowout_1"
+			}
+			sdTransform {
+				translation ( 3789.0981445313 9311.7451171875 1145 )
+				rotation ( ( 0.014732874 -0.9998915792 -0.0000106421 ) ( -0.0039120917 -0.0000682857 0.9999923706 ) ( -0.9998839498 -0.0147327241 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_sewer_door_smoke_1" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/sewer/door_smoke"
+			}
+			sdTransform {
+				translation ( 3805.0981445313 9311.7451171875 1145 )
+				rotation ( ( 0.014732874 -0.9998915792 -0.0000106421 ) ( -0.0039120917 -0.0000682857 0.9999923706 ) ( -0.9998839498 -0.0147327241 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_sewer_door_1_water" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/sewer/door_blowout_1_water"
+			}
+			sdTransform {
+				translation ( 3568.0981445313 9310.7451171875 964 )
+				rotation ( ( 0.014732874 -0.9998915792 -0.0000106421 ) ( -0.0039120917 -0.0000682857 0.9999923706 ) ( -0.9998839498 -0.0147327241 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_sewer_door_overflow_hatch" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/sewer/door_smoke_overflow_hatch"
+			}
+			sdTransform {
+				translation ( 4396.0981445313 9731.7451171875 1483 )
+				rotation ( ( 0.014732874 -0.9998915792 -0.0000106421 ) ( -0.0039120917 -0.0000682857 0.9999923706 ) ( -0.9998839498 -0.0147327241 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_sewer_door_maintenance" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/sewer/door_smoke_maintenance"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( 6515.0981445313 10847.7451171875 1145 )
+				rotation ( ( 0.014732874 -0.9998915792 -0.0000106421 ) ( -0.0039120917 -0.0000682857 0.9999923706 ) ( -0.9998839498 -0.0147327241 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_flood" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/sewer/flood"
+			}
+			sdTransform {
+				translation ( 4883.0981445313 10093.7451171875 1145 )
+				rotation ( ( 0.014732874 -0.9998915792 -0.0000106421 ) ( -0.0039120917 -0.0000682857 0.9999923706 ) ( -0.9998839498 -0.0147327241 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "placement_camera_a" {
+			sdTransform {
+				translation ( 4496.8618164063 10415.033203125 1287.2574462891 )
+				rotation ( ( 0.6066849828 -0.5858689547 -0.537299633 ) ( 0.6946583986 0.719339788 0 ) ( 0.3865010142 -0.373239696 0.8433914185 ) )
+			}
+			
+			classname "placement_camera"
+		}
+		sdPrimitiveEntity "placement_camera_b" {
+			sdTransform {
+				translation ( 4401.474609375 9707.0048828125 1200.4522705078 )
+				rotation ( ( 0.5213394761 0.818339169 -0.2419219017 ) ( -0.8433914781 0.5372995734 0 ) ( 0.1299845278 0.2040348649 0.9702957273 ) )
+			}
+			
+			classname "placement_camera"
+		}
+		sdPrimitiveEntity "sewer_grate_a_destroyed" {
+			sdDictionary {
+				"model"	"models/mapobjects/sewer/sewer_grate_destroyed.lwo"
+				"dynamic"	"1"
+				"networkSync"	"1"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( 3812 9312 1160 )
+				rotation ( ( 0.000000298 -0.999999702 0 ) ( 0.999999702 0.000000298 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "func_static"
+		}
+		sdPrimitiveEntity "sewer_grate_b_destroyed" {
+			sdDictionary {
+				"model"	"models/mapobjects/sewer/sewer_grate_destroyed.lwo"
+				"dynamic"	"1"
+				"networkSync"	"1"
+				"noscriptobject"	"0"
+			}
+			sdTransform {
+				translation ( 3812 10848 1280 )
+				rotation ( ( 0.000000298 -0.999999702 0 ) ( 0.999999702 0.000000298 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "func_static"
+		}
+	}
+}

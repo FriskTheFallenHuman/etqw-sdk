@@ -1,0 +1,405 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"description"	"maps/unnamed.world"
+		"editor_last_atmosphere"	"atmosphere://valley01"
+	}
+
+	meta {
+		sdLODGroup "New Group" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		2
+				"uniqueinstance"		1
+			}
+			levels {
+				"New Group (Level 1)"
+				"New Group (Level 02)"
+			}
+		}
+		sdLODGroup_Level "New Group (Level 1)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		2048
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "New Group (Level 02)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		40960
+				"minvisdist"		0
+				"visdistfalloff"		0.05
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_4" {
+					
+					sdTransform {
+						translation ( 0 -48 4 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -4 ) matrix ( ( 0.03125 0 0.5 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.7071068287 0 0.7071068287 -42.426410675 ) matrix ( ( 0.03125 0 0.5 ) ( 0 0.03125 0.875 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.7071068287 0 0.7071068287 -42.426410675 ) matrix ( ( 0.03125 0 0.5 ) ( 0 0.03125 0.875 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -12 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.875 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -0.5547001958 0.8320503235 -3.3282012939 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.1787378788 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_7" 
+				groups {
+					"New Group (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -77 68.0000076294 132 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -131.9921264648 ) matrix ( ( 0 0.0078125 0 ) ( -0.0009765625 0 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 0 -1 -132 ) matrix ( ( 0.125 0 0.5625 ) ( 0 0.125 0.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( -0.9363304377 0.3511201143 -0.0000000068 -20.1391296387 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( -0.3939193189 -0.9191450477 -0.0000000028 -106.6208267212 ) matrix ( ( 0.125 0 0.8750019073 ) ( 0 0.125 0.5 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0.8843740225 0.4667789042 -0.0000000064 73.3125991821 ) matrix ( ( -0.125 0 0.5625 ) ( 0 0.125 0.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_8" 
+				groups {
+					"New Group (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 211.0000152588 68.0000076294 132 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -131.9921264648 ) matrix ( ( 0 0.0078125 0 ) ( -0.0009765625 0 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 0 -1 -132 ) matrix ( ( -0.125 0 0.5625 ) ( 0 0.125 0.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0.9363297224 0.3511219919 0.0000000203 105.3307113647 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0.3939193189 -0.9191450477 0.0000000152 -53.8284454346 ) matrix ( ( -0.125 0 0.8750019073 ) ( 0 0.125 0.5 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( -0.8843753338 0.4667764604 -0.0000000646 -45.1996841431 ) matrix ( ( -0.125 0 0.5625 ) ( 0 0.125 0.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_11" 
+				groups {
+					"New Group (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 -40 8 )
+					}
+					
+					faces {
+						plane ( 0 0 1 0 ) matrix ( ( 0 -0.010416667 0.5 ) ( 0.0011800131 0 0.0883789063 ) ) texBounds ( ( 0 1983 ) ( 256 2012 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 0 -1 -8 ) matrix ( ( 0.125 0 0 ) ( 0 0.125 0 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -48 ) matrix ( ( 0.010416667 0 0.5 ) ( 0 0.0036621094 0.0615234375 ) ) texBounds ( ( 0 1982 ) ( 256 2042 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 1 0 0 -48 ) matrix ( ( 0.010416667 0 0.5 ) ( 0 0.0036621094 0.0615234375 ) ) texBounds ( ( 0 1982 ) ( 256 2042 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 -1 0 -8 ) matrix ( ( 0.010416667 0 0.5 ) ( 0 0.0036621094 0.0615234375 ) ) texBounds ( ( 0 1982 ) ( 256 2042 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 1 0 -4 ) matrix ( ( 0.125 0 0.0000038147 ) ( 0 0.125 0 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_12" 
+				groups {
+					"New Group (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 -20 8 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -8 ) matrix ( ( 0 -0.010416667 0.5 ) ( 0.0008273654 0 0.0615234375 ) ) texBounds ( ( 0 1983 ) ( 256 2044 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 0 -1 -8 ) matrix ( ( 0.125 0 0 ) ( 0 0.125 0 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -48 ) matrix ( ( 0.125 0 0.0000038147 ) ( 0 0.125 0 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -48 ) matrix ( ( 0.125 0 0 ) ( 0 0.125 0 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.010416667 0 0.5 ) ( 0 0.001953125 0.03125 ) ) texBounds ( ( 0 2048 ) ( 256 2112 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 1 0 -20 ) matrix ( ( 0.125 0 0.0000038147 ) ( 0 0.125 0 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_13" 
+				groups {
+					"New Group (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 48 -20 204 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -60 ) matrix ( ( 0 0.0078125 0 ) ( -0.0009765625 0 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 0 -1 -60 ) matrix ( ( 0 0.0107014971 0.509765625 ) ( -0.0006781684 0 0.2016601563 ) ) texBounds ( ( -1 1635 ) ( 262 1685 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( -1 0 0 -96 ) matrix ( ( 0.125 0 0.0000038147 ) ( 0 0.125 0.5 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 1 0 0 0 ) matrix ( ( 0.125 0 0 ) ( 0 0.125 0.5 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 1 0 -20 ) matrix ( ( 0.0053228699 0 21.9205989838 ) ( 0 0.0015487671 0.7375488281 ) ) texBounds ( ( 0 1148 ) ( 740 1554 ) ) "texturesheets/valley/valley08_shadow"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_22" 
+				groups {
+					"New Group (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -76.5 -20 132 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -132 ) matrix ( ( 0 0.0078125 0 ) ( -0.0009765625 0 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( -0.8843847513 -0.466758579 0.0000000064 -32.6748275757 ) matrix ( ( 0.125 0 0.0000038147 ) ( 0 0.125 0.5 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -28.5 ) matrix ( ( 0 -0.006875 -0.443906188 ) ( 0.0006781684 0 0.2260742188 ) ) texBounds ( ( -1 1635 ) ( 351 1685 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 1 0 -20 ) matrix ( ( 0.0053228699 0 21.9205989838 ) ( 0 0.0015487671 0.7375488281 ) ) texBounds ( ( 0 1148 ) ( 740 1554 ) ) "texturesheets/valley/valley08_shadow"
+						plane ( 0 0 -1 -68 ) matrix ( ( -0.125 0 0.5625 ) ( 0 0.125 0.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_24" 
+				groups {
+					"New Group (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 77.5 -20 132 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -132 ) matrix ( ( 0 0.0078125 0 ) ( -0.0009765625 0 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0.8843847513 -0.466758579 0.0000000064 -31.795627594 ) matrix ( ( -0.125 0 0.0000038147 ) ( 0 0.125 0.5 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -29.5 ) matrix ( ( 0 -0.006875 -0.443906188 ) ( 0.0006781684 0 0.2016601563 ) ) texBounds ( ( -1 1635 ) ( 351 1685 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 1 0 -20 ) matrix ( ( 0.0053228699 0 21.9205989838 ) ( 0 0.0015487671 0.7375488281 ) ) texBounds ( ( 0 1148 ) ( 740 1554 ) ) "texturesheets/valley/valley08_shadow"
+						plane ( 0 0 -1 -68 ) matrix ( ( -0.125 0 0.5625 ) ( 0 0.125 0.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_26" 
+				groups {
+					"New Group (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -76.5 -20 132 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -131.9873046875 ) matrix ( ( 0.125 0 0 ) ( 0 0.125 0.5625 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( -0.8843847513 -0.466758579 0.0000000064 -32.6748275757 ) matrix ( ( 0.125 0 0.0000038147 ) ( 0 0.125 0.5 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -28.5 ) matrix ( ( 0 -0.006875 -0.443906188 ) ( 0.0006781684 0 0.2260742188 ) ) texBounds ( ( -1 1635 ) ( 351 1685 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0175432581 0 1.8420764208 ) ( 0 0.0019233705 0.0615478568 ) ) texBounds ( ( 0 2048 ) ( 256 2174 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 1 0 -20 ) matrix ( ( 0.0054328744 0 -24.0946674347 ) ( 0 0.0006713867 0.6582241058 ) ) texBounds ( ( 0 740 ) ( 236 762 ) ) "texturesheets/valley/valley08_shadow"
+						plane ( 0 0 1 100 ) matrix ( ( 0.125 0 0 ) ( 0 0.125 0.5625 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_27" 
+				groups {
+					"New Group (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -76.5 -20 132 )
+					}
+					
+					faces {
+						plane ( -0.8843847513 -0.466758579 0.0000000064 -32.6748275757 ) matrix ( ( 0.125 0 0.0000038147 ) ( 0 0.125 0.5 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 1 0 0 -28.5 ) matrix ( ( 0 -0.006875 -0.443906188 ) ( 0.0006781684 0 0.2260742188 ) ) texBounds ( ( -1 1635 ) ( 351 1685 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 1 0 -20 ) matrix ( ( 0.0053228699 0 21.9205989838 ) ( 0 0.0015487671 0.7375488281 ) ) texBounds ( ( 0 1148 ) ( 740 1554 ) ) "texturesheets/valley/valley08_shadow"
+						plane ( 0 0 1 68 ) matrix ( ( -0.125 0 0.5625 ) ( 0 0.125 0.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -100 ) matrix ( ( 0.125 0 0 ) ( 0 0.125 0.5625 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_28" 
+				groups {
+					"New Group (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 77.5 -20 132 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -131.9873046875 ) matrix ( ( -0.125 0 0 ) ( 0 0.125 0.5625 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0.8843847513 -0.466758579 0.0000000064 -31.795627594 ) matrix ( ( -0.125 0 0.0000038147 ) ( 0 0.125 0.5 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -29.5 ) matrix ( ( 0 -0.006875 -0.443906188 ) ( 0.0006781684 0 0.2016601563 ) ) texBounds ( ( -1 1635 ) ( 351 1685 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0175432581 0 1.8420764208 ) ( 0 0.0019233705 0.0615478568 ) ) texBounds ( ( 0 2048 ) ( 256 2174 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 1 0 -20 ) matrix ( ( 0.0054328744 0 -24.0946674347 ) ( 0 0.0006713867 0.6582241058 ) ) texBounds ( ( 0 740 ) ( 236 762 ) ) "texturesheets/valley/valley08_shadow"
+						plane ( 0 0 1 100 ) matrix ( ( -0.125 0 0 ) ( 0 0.125 0.5625 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_29" 
+				groups {
+					"New Group (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 77.5 -20 132 )
+					}
+					
+					faces {
+						plane ( 0.8843847513 -0.466758579 0.0000000064 -31.795627594 ) matrix ( ( -0.125 0 0.0000038147 ) ( 0 0.125 0.5 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -29.5 ) matrix ( ( 0 -0.006875 -0.443906188 ) ( 0.0006781684 0 0.2016601563 ) ) texBounds ( ( -1 1635 ) ( 351 1685 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 -1 0 -16 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0 1 0 -20 ) matrix ( ( 0.0053228699 0 21.9205989838 ) ( 0 0.0015487671 0.7375488281 ) ) texBounds ( ( 0 1148 ) ( 740 1554 ) ) "texturesheets/valley/valley08_shadow"
+						plane ( 0 0 1 68 ) matrix ( ( -0.125 0 0.5625 ) ( 0 0.125 0.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -100 ) matrix ( ( -0.125 0 0 ) ( 0 0.125 0.5625 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_9" 
+				groups {
+					"New Group (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 159.0000152588 -48 132 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -132 ) matrix ( ( -0.125 0 0.5625 ) ( 0 0.125 0.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0.9125093222 0.4090558589 0.0000000693 13.8960361481 ) matrix ( ( 0.0175432581 0 1.8420764208 ) ( 0 0.0019233705 0.0615478568 ) ) texBounds ( ( 0 2048 ) ( 256 2174 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( -0.9125093222 -0.4090559185 0.0000000328 -44.3724250793 ) matrix ( ( 0.0175432581 0 1.8420764208 ) ( 0 0.0019233705 0.0615478568 ) ) texBounds ( ( 0 2048 ) ( 256 2174 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0.3939192891 -0.9191450477 0 -94.8052978516 ) matrix ( ( 0.0175432581 0 1.8420764208 ) ( 0 0.0019233705 0.0615478568 ) ) texBounds ( ( 0 2048 ) ( 256 2174 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( -0.3939193487 0.9191449881 -0.000000009 -32.2972793579 ) matrix ( ( -0.125 0 0.1250019073 ) ( 0 0.125 0.5 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 0 1 100 ) matrix ( ( -0.125 0 0.5625 ) ( 0 0.125 0.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_14" 
+				groups {
+					"New Group (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -128.9999847412 -48 132 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -132 ) matrix ( ( 0.125 0 0.5625 ) ( 0 0.125 0.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( -0.9125093222 0.4090559185 0.0000000118 -13.4790554047 ) matrix ( ( 0.0175432581 0 1.8420764208 ) ( 0 0.0019233705 0.0615478568 ) ) texBounds ( ( 0 2048 ) ( 256 2174 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0.9125093222 -0.4090559185 0.0000000199 -16.9953632355 ) matrix ( ( 0.0175432581 0 1.8420764208 ) ( 0 0.0019233705 0.0615478568 ) ) texBounds ( ( 0 2048 ) ( 256 2174 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( -0.3939193785 -0.9191449881 0.0000000235 -106.6208190918 ) matrix ( ( 0.0175432581 0 1.8420764208 ) ( 0 0.0019233705 0.0615478568 ) ) texBounds ( ( 0 2048 ) ( 256 2174 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0.3939192295 0.9191450477 0.0000000081 -20.4817504883 ) matrix ( ( 0.125 0 0.1250019073 ) ( 0 0.125 0.5 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 0 1 100 ) matrix ( ( -0.125 0 0.5625 ) ( 0 0.125 0.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_9" 
+				groups {
+					"New Group (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 159.0000152588 -48 132 )
+					}
+					
+					faces {
+						plane ( 0.3454697728 -0.8060950041 0.4804804027 -35.086643219 ) matrix ( ( 0.0086322362 0 -0.7106365561 ) ( 0 0.0008601561 0.1874023378 ) ) texBounds ( ( 0 2009 ) ( 72 2475 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0.9125093222 0.4090558589 0.0000000693 13.8960361481 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( -0.9125093222 -0.4090559185 0.0000000328 -44.3724250793 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( -0.3939193487 0.9191449881 -0.000000009 -32.2972793579 ) matrix ( ( -0.125 0 0.1250019073 ) ( 0 0.125 0.5 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -100 ) matrix ( ( -0.125 0 0.5625 ) ( 0 0.125 0.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_14" 
+				groups {
+					"New Group (Level 02)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -128.9999847412 -48 132 )
+					}
+					
+					faces {
+						plane ( -0.3454696834 -0.8060950637 0.4804804027 -45.4552154541 ) matrix ( ( 0.0086327577 0 0.9919445515 ) ( 0 0.0008601561 0.1874155402 ) ) texBounds ( ( 0 2009 ) ( 72 2475 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( -0.9125093222 0.4090559185 0.0000000118 -13.4790554047 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0.9125093222 -0.4090559185 0.0000000199 -16.9953632355 ) matrix ( ( 0.0078125 0 0 ) ( 0 0.0009765625 -0.72265625 ) ) texBounds ( ( 0 0 ) ( 256 2048 ) ) "texturesheets/valley/valley_wall_7_shadows"
+						plane ( 0.3939192295 0.9191450477 0.0000000081 -20.4817504883 ) matrix ( ( 0.125 0 0.1250019073 ) ( 0 0.125 0.5 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -100 ) matrix ( ( -0.125 0 0.5625 ) ( 0 0.125 0.125 ) ) texBounds ( ( 0 0 ) ( 16 16 ) ) "textures/common/caulk"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -76 -38 84 )
+					}
+					
+					faces {
+						plane ( 0 -0 -1 -84 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.1787378788 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.1787378788 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.1787378788 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 -0 -31.9994888306 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.1787378788 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.5547000766 -0.8320503831 0.0000000102 -13.8631658554 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.1787378788 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.0000000194 -0.8944271803 0.4472135901 -10.7331256866 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0.1787378788 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "torchy_model_static_4" 
+		groups {
+			"New Group (Level 1)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/valley/wall_light1a.lwo"
+			}
+			sdTransform {
+				translation ( 0 -36 187 )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "torchy_model_static_5" 
+		groups {
+			"New Group (Level 1)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/valley/vent01.lwo"
+			}
+			sdTransform {
+				translation ( -76 -36 84 )
+			}
+			
+			classname "model_static"
+		}
+	}
+}

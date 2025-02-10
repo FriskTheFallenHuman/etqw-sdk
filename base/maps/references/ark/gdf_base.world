@@ -1,0 +1,1752 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"editor_last_atmosphere"	"atmosphere://ark_clear"
+	}
+
+	meta {
+		sdLODGroup "ark_gdf_base" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		3
+				"uniqueinstance"		1
+			}
+			levels {
+				"ark_gdf_base (Level 01)"
+				"ark_gdf_base (Level 02)"
+				"ark_gdf_base (Level 03)"
+			}
+		}
+		sdLODGroup "ark_gdf_base_min" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"ark_gdf_base_min (Level 01)"
+			}
+		}
+		sdLODGroup_Level "ark_gdf_base (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		6800
+				"minvisdist"		0
+				"visdistfalloff"		0.001
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "ark_gdf_base (Level 02)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		5500
+				"minvisdist"		0
+				"visdistfalloff"		0.001
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		"med"
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "ark_gdf_base_min (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		64384
+				"minvisdist"		5465
+				"visdistfalloff"		0.001
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		1
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+		sdLODGroup_Level "ark_gdf_base (Level 03)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		24000
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		1
+				"drawspec"		""
+				"shadowspec"		"med"
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -1174 -1962 431 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 31.0000152588 101 1.0000001192 0.2499999702 ) ( 88 31.0000152588 101 1 0.1249999702 ) ( 88 31.0000152588 101 0.9999998808 -0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -1175 -2031 440 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 293 141.9999694824 -0.0000001788 0.1484375447 ) ( 69.9999847412 292 141.9999694824 0 0.2763672471 ) ( 69.9999847412 292 141.9999694824 0.000000149 0.4042969346 ) )
+							( ( -136 39.9999961853 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 39.9999961853 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -1174 -1962 431 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 31.0000152588 101 1.0000001192 0.2499999702 ) ( 88 31.0000152588 101 1 0.1249999702 ) ( 88 31.0000152588 101 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -1175 -2031 440 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 39.9999961853 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+							( ( -136 39.9999961853 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 293 141.9999694824 -0.0000001788 0.1484375447 ) ( 69.9999847412 292 141.9999694824 0 0.2763672471 ) ( 69.9999847412 292 141.9999694824 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -1479 -1896 440 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 267 57 -0.0000001788 0.1484375447 ) ( 70 266 57 0 0.2763672471 ) ( 70 266 57 0.000000149 0.4042969346 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -1479 -1896 440 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 40 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+							( ( -136 40 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 267 57 -0.0000001788 0.1484375447 ) ( 70 266 57 0 0.2763672471 ) ( 70 266 57 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -1760 -1719 440 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 254 34 -0.0000001788 0.1484375447 ) ( 70 254 34 0 0.2763672471 ) ( 70 254 34 0.000000149 0.4042969346 ) )
+							( ( -136 39 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 39 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -1760 -1719 440 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 39 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+							( ( -136 39 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 254 34 -0.0000001788 0.1484375447 ) ( 70 254 34 0 0.2763672471 ) ( 70 254 34 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2038 -1529 440 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 242 15 -0.0000001788 0.1484375447 ) ( 70 242 15 0 0.2763672471 ) ( 70 242 15 0.000000149 0.4042969346 ) )
+							( ( -136 39 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 39 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2038 -1529 440 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 39 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+							( ( -136 39 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 242 15 -0.0000001788 0.1484375447 ) ( 70 242 15 0 0.2763672471 ) ( 70 242 15 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2280 -1299 440 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 216 -14.9999837875 -0.0000001788 0.1484375447 ) ( 70 216 -14.9999837875 0 0.2763672471 ) ( 70 216 -14.9999837875 0.000000149 0.4042969346 ) )
+							( ( -136 39 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 39 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2280 -1299 440 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 39 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+							( ( -136 39 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 216 -14.9999837875 -0.0000001788 0.1484375447 ) ( 70 216 -14.9999837875 0 0.2763672471 ) ( 70 216 -14.9999837875 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2469 -1027 440 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 174 -47.9999732971 -0.0000001788 0.1484375447 ) ( 70 174 -47.9999732971 0 0.2763672471 ) ( 70 174 -47.9999732971 0.000000149 0.4042969346 ) )
+							( ( -136 39 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 39 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2469 -1027 440 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 39 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+							( ( -136 39 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 174 -47.9999732971 -0.0000001788 0.1484375447 ) ( 70 174 -47.9999732971 0 0.2763672471 ) ( 70 174 -47.9999732971 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2606 -723 440 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 143 -63.9999694824 -0.0000001788 0.1484375447 ) ( 70 143 -63.9999694824 0 0.2763672471 ) ( 70 143 -63.9999694824 0.000000149 0.4042969346 ) )
+							( ( -136 39 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 39 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2606 -723 440 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 39 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+							( ( -136 39 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 143 -63.9999694824 -0.0000001788 0.1484375447 ) ( 70 143 -63.9999694824 0 0.2763672471 ) ( 70 143 -63.9999694824 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2721 -402 404 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 131 -69.9999694824 -0.0000001788 0.1484375447 ) ( 70 131 -69.9999694824 0 0.2763672471 ) ( 70 131 -69.9999694824 0.000000149 0.4042969346 ) )
+							( ( -136 39 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 39 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2721 -402 404 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 39 168 0.9999998808 0.1484374553 ) ( 70 39 168 1 0.2763671279 ) ( 70 39 168 1.0000002384 0.4042968452 ) )
+							( ( -136 39 168 0.499999851 0.1484375 ) ( 70 39 168 0.5 0.2763671875 ) ( 70 39 168 0.5000001788 0.404296875 ) )
+							( ( -136 131 -69.9999694824 -0.0000001788 0.1484375447 ) ( 70 131 -69.9999694824 0 0.2763672471 ) ( 70 131 -69.9999694824 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 2198 339 144 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 131 -69.9999694824 -0.0000001788 0.1484375447 ) ( 70 131 -69.9999694824 0 0.2763672471 ) ( 70 131 -69.9999694824 0.000000149 0.4042969346 ) )
+							( ( -136 157.9999694824 182 0.499999851 0.1484375 ) ( 70 157.9999694824 182 0.5 0.2763671875 ) ( 70 157.9999694824 182 0.5000001788 0.404296875 ) )
+							( ( -136 157.9999694824 182 0.9999998808 0.1484374553 ) ( 70 157.9999694824 182 1 0.2763671279 ) ( 70 157.9999694824 182 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 2198 339 144 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 157.9999694824 182 0.9999998808 0.1484374553 ) ( 70 157.9999694824 182 1 0.2763671279 ) ( 70 157.9999694824 182 1.0000002384 0.4042968452 ) )
+							( ( -136 157.9999694824 182 0.499999851 0.1484375 ) ( 70 157.9999694824 182 0.5 0.2763671875 ) ( 70 157.9999694824 182 0.5000001788 0.404296875 ) )
+							( ( -136 131 -69.9999694824 -0.0000001788 0.1484375447 ) ( 70 131 -69.9999694824 0 0.2763672471 ) ( 70 131 -69.9999694824 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 2104 -178 200 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 119 -68.9999694824 -0.0000001788 0.1484375447 ) ( 70 119 -68.9999694824 0 0.2763672471 ) ( 70 119 -68.9999694824 0.000000149 0.4042969346 ) )
+							( ( -136 157.9999694824 182 0.499999851 0.1484375 ) ( 70 157.9999694824 182 0.5 0.2763671875 ) ( 70 157.9999694824 182 0.5000001788 0.404296875 ) )
+							( ( -136 157.9999694824 182 0.9999998808 0.1484374553 ) ( 70 157.9999694824 182 1 0.2763671279 ) ( 70 157.9999694824 182 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 2104 -178 200 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 157.9999694824 182 0.9999998808 0.1484374553 ) ( 70 157.9999694824 182 1 0.2763671279 ) ( 70 157.9999694824 182 1.0000002384 0.4042968452 ) )
+							( ( -136 157.9999694824 182 0.499999851 0.1484375 ) ( 70 157.9999694824 182 0.5 0.2763671875 ) ( 70 157.9999694824 182 0.5000001788 0.404296875 ) )
+							( ( -136 119 -68.9999694824 -0.0000001788 0.1484375447 ) ( 70 119 -68.9999694824 0 0.2763672471 ) ( 70 119 -68.9999694824 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 1570 -1406 201 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -75.9999465942 82.0000228882 -0.0000001788 0.1484375447 ) ( 70 -75.9999465942 82.0000228882 0 0.2763672471 ) ( 70 -75.9999465942 82.0000228882 0.000000149 0.4042969346 ) )
+							( ( -136 157.9999694824 182 0.499999851 0.1484375 ) ( 70 157.9999694824 182 0.5 0.2763671875 ) ( 70 157.9999694824 182 0.5000001788 0.404296875 ) )
+							( ( -136 157.9999694824 182 0.9999998808 0.1484374553 ) ( 70 157.9999694824 182 1 0.2763671279 ) ( 70 157.9999694824 182 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 1570 -1406 201 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 157.9999694824 182 0.9999998808 0.1484374553 ) ( 70 157.9999694824 182 1 0.2763671279 ) ( 70 157.9999694824 182 1.0000002384 0.4042968452 ) )
+							( ( -136 157.9999694824 182 0.499999851 0.1484375 ) ( 70 157.9999694824 182 0.5 0.2763671875 ) ( 70 157.9999694824 182 0.5000001788 0.404296875 ) )
+							( ( -136 -75.9999465942 82.0000228882 -0.0000001788 0.1484375447 ) ( 70 -75.9999465942 82.0000228882 0 0.2763672471 ) ( 70 -75.9999465942 82.0000228882 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 1926 2022 145 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -75.9999465942 82.0000228882 -0.0000001788 0.1484375447 ) ( 70 -75.9999465942 82.0000228882 0 0.2763672471 ) ( 70 -75.9999465942 82.0000228882 0.000000149 0.4042969346 ) )
+							( ( -136 -237.9999084473 277 0.499999851 0.1484375 ) ( 70 -237.9999084473 277 0.5 0.2763671875 ) ( 70 -237.9999084473 277 0.5000001788 0.404296875 ) )
+							( ( -136 -237.9999084473 277 0.9999998808 0.1484374553 ) ( 70 -237.9999084473 277 1 0.2763671279 ) ( 70 -237.9999084473 277 1.0000002384 0.4042968452 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 1926 2022 145 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( 0.000000306 -1 0 ) ( 1 0.000000306 0.1484375 ) )
+					texBounds ( ( 0 1744 ) ( 256 2268 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -136 -237.9999084473 277 0.9999998808 0.1484374553 ) ( 70 -237.9999084473 277 1 0.2763671279 ) ( 70 -237.9999084473 277 1.0000002384 0.4042968452 ) )
+							( ( -136 -237.9999084473 277 0.499999851 0.1484375 ) ( 70 -237.9999084473 277 0.5 0.2763671875 ) ( 70 -237.9999084473 277 0.5000001788 0.404296875 ) )
+							( ( -136 -75.9999465942 82.0000228882 -0.0000001788 0.1484375447 ) ( 70 -75.9999465942 82.0000228882 0 0.2763672471 ) ( 70 -75.9999465942 82.0000228882 0.000000149 0.4042969346 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -1467 -1809 431 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 23.0000152588 87 1.0000001192 0.2499999702 ) ( 88 23.0000152588 87 1 0.1249999702 ) ( 88 23.0000152588 87 0.9999998808 -0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -1467 -1809 431 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 23.0000152588 87 1.0000001192 0.2499999702 ) ( 88 23.0000152588 87 1 0.1249999702 ) ( 88 23.0000152588 87 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -1757 -1642 431 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 21.0000152588 87 1.0000001192 0.2499999702 ) ( 88 21.0000152588 87 1 0.1249999702 ) ( 88 21.0000152588 87 0.9999998808 -0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -1757 -1642 431 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 21.0000152588 87 1.0000001192 0.2499999702 ) ( 88 21.0000152588 87 1 0.1249999702 ) ( 88 21.0000152588 87 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2025 -1441 431 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 16.0000152588 79 1.0000001192 0.2499999702 ) ( 88 16.0000152588 79 1 0.1249999702 ) ( 88 16.0000152588 79 0.9999998808 -0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2025 -1441 431 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 16.0000152588 79 1.0000001192 0.2499999702 ) ( 88 16.0000152588 79 1 0.1249999702 ) ( 88 16.0000152588 79 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2259 -1202 431 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 14.0000152588 76 1.0000001192 0.2499999702 ) ( 88 14.0000152588 76 1 0.1249999702 ) ( 88 14.0000152588 76 0.9999998808 -0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2259 -1202 431 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 14.0000152588 76 1.0000001192 0.2499999702 ) ( 88 14.0000152588 76 1 0.1249999702 ) ( 88 14.0000152588 76 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2434 -918 431 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 0.0000180083 66 1.0000001192 0.2499999702 ) ( 88 0.0000180083 66 1 0.1249999702 ) ( 88 0.0000180083 66 0.9999998808 -0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2434 -918 431 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 0.0000180083 66 1.0000001192 0.2499999702 ) ( 88 0.0000180083 66 1 0.1249999702 ) ( 88 0.0000180083 66 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2555 -604 415 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -2.9999816418 63 1.0000001192 0.2499999702 ) ( 88 -2.9999816418 63 1 0.1249999702 ) ( 88 -2.9999816418 63 0.9999998808 -0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -2555 -604 415 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 -2.9999816418 63 1.0000001192 0.2499999702 ) ( 88 -2.9999816418 63 1 0.1249999702 ) ( 88 -2.9999816418 63 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 1815 -1286 191 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -74.9999694824 71 1.0000001192 0.2499999702 ) ( 88 -74.9999694824 71 1 0.1249999702 ) ( 88 -74.9999694824 71 0.9999998808 -0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 1815 -1286 191 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -31.9999847412 120 0.0000001192 0.2500000298 ) ( 88 -31.9999847412 120 0 0.1250000298 ) ( 88 -31.9999847412 120 -0.0000001192 0.0000000298 ) )
+							( ( -128 -31.9999847412 120 0.5000001192 0.25 ) ( 88 -31.9999847412 120 0.5 0.125 ) ( 88 -31.9999847412 120 0.4999998808 0 ) )
+							( ( -128 -74.9999694824 71 1.0000001192 0.2499999702 ) ( 88 -74.9999694824 71 1 0.1249999702 ) ( 88 -74.9999694824 71 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 2429 461 139 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -74.9999694824 71 1.0000001192 0.2499999702 ) ( 88 -74.9999694824 71 1 0.1249999702 ) ( 88 -74.9999694824 71 0.9999998808 -0.0000000298 ) )
+							( ( -128 -78.9999847412 135 0.5000001192 0.25 ) ( 88 -78.9999847412 135 0.5 0.125 ) ( 88 -78.9999847412 135 0.4999998808 0 ) )
+							( ( -128 -78.9999847412 135 0.0000001192 0.2500000298 ) ( 88 -78.9999847412 135 0 0.1250000298 ) ( 88 -78.9999847412 135 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 2429 461 139 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -78.9999847412 135 0.0000001192 0.2500000298 ) ( 88 -78.9999847412 135 0 0.1250000298 ) ( 88 -78.9999847412 135 -0.0000001192 0.0000000298 ) )
+							( ( -128 -78.9999847412 135 0.5000001192 0.25 ) ( 88 -78.9999847412 135 0.5 0.125 ) ( 88 -78.9999847412 135 0.4999998808 0 ) )
+							( ( -128 -74.9999694824 71 1.0000001192 0.2499999702 ) ( 88 -74.9999694824 71 1 0.1249999702 ) ( 88 -74.9999694824 71 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 2350 961 139 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -74.9999694824 71 1.0000001192 0.2499999702 ) ( 88 -74.9999694824 71 1 0.1249999702 ) ( 88 -74.9999694824 71 0.9999998808 -0.0000000298 ) )
+							( ( -128 -94.9999847412 133 0.5000001192 0.25 ) ( 88 -94.9999847412 133 0.5 0.125 ) ( 88 -94.9999847412 133 0.4999998808 0 ) )
+							( ( -128 -94.9999847412 133 0.0000001192 0.2500000298 ) ( 88 -94.9999847412 133 0 0.1250000298 ) ( 88 -94.9999847412 133 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 2350 961 139 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -94.9999847412 133 0.0000001192 0.2500000298 ) ( 88 -94.9999847412 133 0 0.1250000298 ) ( 88 -94.9999847412 133 -0.0000001192 0.0000000298 ) )
+							( ( -128 -94.9999847412 133 0.5000001192 0.25 ) ( 88 -94.9999847412 133 0.5 0.125 ) ( 88 -94.9999847412 133 0.4999998808 0 ) )
+							( ( -128 -74.9999694824 71 1.0000001192 0.2499999702 ) ( 88 -74.9999694824 71 1 0.1249999702 ) ( 88 -74.9999694824 71 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 1952 1960 135 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -74.9999694824 71 1.0000001192 0.2499999702 ) ( 88 -74.9999694824 71 1 0.1249999702 ) ( 88 -74.9999694824 71 0.9999998808 -0.0000000298 ) )
+							( ( -128 -94.9999847412 133 0.5000001192 0.25 ) ( 88 -94.9999847412 133 0.5 0.125 ) ( 88 -94.9999847412 133 0.4999998808 0 ) )
+							( ( -128 -94.9999847412 133 0.0000001192 0.2500000298 ) ( 88 -94.9999847412 133 0 0.1250000298 ) ( 88 -94.9999847412 133 -0.0000001192 0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdPrimitivePatch" 
+				groups {
+					"ark_gdf_base_min (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 1952 1960 135 )
+						rotation ( ( 0 -0.0000000596 0.9999999404 ) ( 0.999999702 0.0000001711 0 ) ( -0.0000001711 0.9999996424 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 0
+					texMatrix ( ( -0.0000002186 1 0 ) ( -1 -0.0000002186 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2560 ) )
+					material "models/mapobjects/gdf_base/gdf_base_sheeted"
+					explicitSubdivisions( 3 3 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -128 -94.9999847412 133 0.0000001192 0.2500000298 ) ( 88 -94.9999847412 133 0 0.1250000298 ) ( 88 -94.9999847412 133 -0.0000001192 0.0000000298 ) )
+							( ( -128 -94.9999847412 133 0.5000001192 0.25 ) ( 88 -94.9999847412 133 0.5 0.125 ) ( 88 -94.9999847412 133 0.4999998808 0 ) )
+							( ( -128 -74.9999694824 71 1.0000001192 0.2499999702 ) ( 88 -74.9999694824 71 1 0.1249999702 ) ( 88 -74.9999694824 71 0.9999998808 -0.0000000298 ) )
+						)
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -888 -1888 768 )
+					}
+					
+					faces {
+						plane ( -0 0 -1 -512 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.9943888783 0.1057866737 0.0000123404 -4.8804121017 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.9945055842 -0.1046839952 -0.0000148888 -7.1245856285 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.0831086338 -0.9965405464 0.0000634003 -29.5384292603 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -65 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 1 257 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "z13_model_static_1" 
+		groups {
+			"ark_gdf_base (Level 03)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/pillbox.lwo"
+			}
+			sdTransform {
+				translation ( 2313.8630371094 818.61328125 8 )
+				rotation ( ( 0.9945219159 0.1045284644 0 ) ( -0.1045284644 0.9945219159 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_2" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( 2271 1065 8 )
+				rotation ( ( 0.9271838665 0.3746065795 0 ) ( -0.3746065795 0.9271838665 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_3" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( 1874 2065 8 )
+				rotation ( ( 0.9271838665 0.3746065795 0 ) ( -0.3746065795 0.9271838665 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_4" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( 2359 565 8 )
+				rotation ( ( 0.9975640774 0.0697564781 0 ) ( -0.0697564781 0.9975640774 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_5" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( 1598.0032958984 -1241.9411621094 64 )
+				rotation ( ( 0.3907311261 -0.9205049276 0 ) ( 0.9205049276 0.3907311261 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_7" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( 1767 -1195 64 )
+				rotation ( ( 0.7660444379 -0.6427876353 0 ) ( 0.6427876353 0.7660444379 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_14" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( -1176 -1857 303 )
+				rotation ( ( -0.3420200348 -0.9396926165 0 ) ( 0.9396926165 -0.3420200348 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_15" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( -1310.8671875 -1751.9750976563 303 )
+				rotation ( ( -0.4383711219 -0.8987938762 0 ) ( 0.8987938762 -0.4383711219 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_16" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( -1474 -1709 303 )
+				rotation ( ( -0.4999999106 -0.8660254478 0 ) ( 0.8660254478 -0.4999999106 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_17" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( -1595.4580078125 -1588.2199707031 303 )
+				rotation ( ( -0.5299192667 -0.8480479121 0 ) ( 0.8480479121 -0.5299192667 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_18" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( -1759 -1534 303 )
+				rotation ( ( -0.5735763311 -0.8191520572 0 ) ( 0.8191520572 -0.5735763311 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_19" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( -1876.1381835938 -1409.4560546875 303 )
+				rotation ( ( -0.6018150449 -0.7986353636 0 ) ( 0.7986353636 -0.6018150449 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_20" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( -2033 -1341 303 )
+				rotation ( ( -0.6946582794 -0.7193398476 0 ) ( 0.7193398476 -0.6946582794 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_21" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( -2126.619140625 -1197.9473876953 303 )
+				rotation ( ( -0.719339788 -0.6946582794 0 ) ( 0.6946582794 -0.719339788 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_22" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( -2271 -1108 303 )
+				rotation ( ( -0.7313536406 -0.6819983721 0 ) ( 0.6819983721 -0.7313536406 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_23" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( -2333.0366210938 -948.5091552734 303 )
+				rotation ( ( -0.8480480909 -0.5299192071 0 ) ( 0.5299192071 -0.8480480909 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_24" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( -2459 -830 303 )
+				rotation ( ( -0.8660253882 -0.5 0 ) ( 0.5 -0.8660253882 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_25" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( -2482.8767089844 -656.8008422852 303 )
+				rotation ( ( -0.9135454297 -0.4067365825 0 ) ( 0.4067365825 -0.9135454297 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_26" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_support_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( -2579 -517 279 )
+				rotation ( ( -0.8660253882 -0.5 0 ) ( 0.5 -0.8660253882 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_27" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( -1005.2835693359 -1841.3795166016 303 )
+				rotation ( ( -0.1045284867 -0.9945217967 0 ) ( 0.9945217967 -0.1045284867 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_28" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( -2603.0998535156 -340.8743896484 267 )
+				rotation ( ( -0.9335804582 -0.3583679199 0 ) ( 0.3583679199 -0.9335804582 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_29" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( 2207.8693847656 -116.7158660889 64 )
+				rotation ( ( 0.9876883626 -0.1564345062 0 ) ( 0.1564345062 0.9876883626 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_30" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( 2308.1376953125 398.3494262695 8 )
+				rotation ( ( 0.9945219755 -0.1045285016 0 ) ( 0.1045285016 0.9945219755 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "z13_model_static_31" 
+		groups {
+			"ark_gdf_base (Level 02)"
+		}
+		{
+			sdDictionary {
+				"model"	"models/mapobjects/gdf_base/wall_defence_02c_lowpoly.lwo"
+			}
+			sdTransform {
+				translation ( 1742.2626953125 2179.0974121094 8 )
+				rotation ( ( 0.7660445571 0.6427875757 0 ) ( -0.6427875757 0.7660445571 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveReference "z13_reference_1" {
+			
+			sdTransform {
+				translation ( 2071 1565 7 )
+				rotation ( ( 0.9271838665 0.3746065795 0 ) ( -0.3746065795 0.9271838665 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/ark/gdf_base_gates.world"
+		}
+
+		sdPrimitiveReference "z13_reference_2" {
+			
+			sdTransform {
+				translation ( 2019.1014404297 -713.2642211914 64 )
+				rotation ( ( 0.898794055 -0.4383711517 0 ) ( 0.4383711517 0.898794055 0 ) ( 0 0 1 ) )
+			}
+			url	"filesystem://maps/references/ark/gdf_base_gates02.world"
+		}
+
+	}
+}

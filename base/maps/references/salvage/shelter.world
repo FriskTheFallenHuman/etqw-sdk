@@ -1,0 +1,359 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"editor_last_atmosphere"	"atmosphere://salvage"
+	}
+
+	meta {
+		sdLODGroup "shelter" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"shelter (Level 01)"
+			}
+		}
+		sdLODGroup_Level "shelter (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		8192
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		1
+				"drawspec"		""
+				"shadowspec"		"med"
+				"noshadows"		0
+			}
+		}
+		sdDetailGroup "details_1" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdDetailGroup "details_2" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"shelter (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 4 64 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -68 ) matrix ( ( 0 -0.0078125 0 ) ( 0.0009765625 0 -0.40625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_3"
+						plane ( 0 0 -1 64 ) matrix ( ( 0 -0.0078125 0 ) ( 0.0009765625 0 -0.40625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_3"
+						plane ( -1 0 0 -224 ) matrix ( ( -0.0078125 0 0 ) ( 0 -0.0009765625 -1.28125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_3"
+						plane ( 1 0 0 -224 ) matrix ( ( -0.0078125 0 0 ) ( 0 -0.0009765625 -1.28125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_3"
+						plane ( 0 -1 0 -100 ) matrix ( ( -0.0078125 0 0 ) ( 0 -0.0009765625 -1.28125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_3"
+						plane ( 0 1 0 -92 ) matrix ( ( -0.0078125 0 0 ) ( 0 -0.0009765625 -1.28125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_3"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"shelter (Level 01)"
+					"details_1"
+				}
+				{
+					
+					sdTransform {
+						translation ( -96 -80 126 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -2 ) matrix ( ( 0.03125 0 -183 ) ( 0 0.03125 -63 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -2 ) matrix ( ( 0.03125 0 -183 ) ( 0 0.03125 63 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -48 ) matrix ( ( -0.0078125093 0 -1.2500014305 ) ( 0 0.0009765639 0.1230468452 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 1 0 0 -48 ) matrix ( ( -0.0078125093 0 -1.2500014305 ) ( 0 0.0009765639 0.1230468452 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 -1 0 -8 ) matrix ( ( 0.03125 0 -63 ) ( 0 0.03125 -120.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -8 ) matrix ( ( -0.0078125093 0 -1.2500014305 ) ( 0 0.0009765639 0.1230468452 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"shelter (Level 01)"
+					"details_2"
+				}
+				{
+					
+					sdTransform {
+						translation ( -96 -80 122 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -2 ) matrix ( ( 0.03125 0 -183 ) ( 0 0.03125 -63 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -2 ) matrix ( ( 0 0.0078125009 1.2031254768 ) ( 0.0009765627 0 1.9619145393 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( -1 0 0 -48 ) matrix ( ( -0.0078125093 0 -1.2500014305 ) ( 0 0.0009765639 0.1230468452 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 1 0 0 -48 ) matrix ( ( -0.0078125093 0 -1.2500014305 ) ( 0 0.0009765639 0.1230468452 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 -0.7071068287 -0.7071068287 -4.2426409721 ) matrix ( ( 0.0078125084 0 -1.4375011921 ) ( 0 -0.0009765638 -0.1787112355 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 0.7071068287 -0.7071068287 -4.2426409721 ) matrix ( ( 0 0.0078125009 1.2031254768 ) ( 0.0009765627 0 1.9667973518 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"shelter (Level 01)"
+					"details_1"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 86 126 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -2 ) matrix ( ( -0.03125 0 -191 ) ( 0 0.03125 -69 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -2 ) matrix ( ( 0 0.0078125009 1.2031254768 ) ( -0.0009765627 0 1.9667973518 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( -0.7071067691 -0.7071067691 0 -151.3208465576 ) matrix ( ( -0.0312500037 0 183.8478088379 ) ( 0 0.0312500037 -120.6250076294 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 -0.7071067691 0 -151.3208465576 ) matrix ( ( -0.0312500037 0 -86.2668533325 ) ( 0 0.0312500037 -120.6250076294 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -6 ) matrix ( ( -0.0078125084 0 -1.4375011921 ) ( 0 -0.0009765638 -0.166015923 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 -1 0 2 ) matrix ( ( 0.0078125093 0 -1.2500014305 ) ( 0 0.0009765639 0.0761718377 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"shelter (Level 01)"
+					"details_2"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 -90 126 )
+					}
+					
+					faces {
+						plane ( 0 0 1 2 ) matrix ( ( 0.03125 0 -191 ) ( 0 0.03125 -75.8125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -126 ) matrix ( ( 0.03125 0 -191 ) ( 0 0.03125 75.8125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -2 ) matrix ( ( 0 0.0078125065 -0.0859376118 ) ( -0.0009765635 0 0.0449217632 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 1 0 0 -2 ) matrix ( ( 0 0.0078125084 0.1015624031 ) ( -0.0009765638 0 -0.1347659528 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 -1 0 -2 ) matrix ( ( 0 -0.0078125 -0.1484370381 ) ( 0.0009765626 0 1.8789063692 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 1 0 -2 ) matrix ( ( 0 -0.0078125 -0.1484370381 ) ( -0.0009765626 0 1.8789063692 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"shelter (Level 01)"
+					"details_2"
+				}
+				{
+					
+					sdTransform {
+						translation ( -218 -90 126 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 2 ) matrix ( ( -0.0312500075 0 -196.625 ) ( 0 -0.03125 -82.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -126 ) matrix ( ( -0.03125 0 -196.625 ) ( 0 -0.0312500037 82.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -2 ) matrix ( ( 0 0.0078125075 -0.0859376267 ) ( -0.0009765638 0 -0.1308597028 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 1 0 0 -2 ) matrix ( ( 0 0.0078125093 0.101562418 ) ( -0.000976564 0 0.0410155542 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 -1 0 -2 ) matrix ( ( 0 -0.0078125009 -0.1484370679 ) ( 0.0009765628 0 1.6660161018 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 1 0 -2 ) matrix ( ( 0 -0.0078125 -0.1484370679 ) ( -0.0009765628 0 1.6660161018 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"shelter (Level 01)"
+					"details_2"
+				}
+				{
+					
+					sdTransform {
+						translation ( 218 -90 126 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 2 ) matrix ( ( 0 0.0312500037 -200.625 ) ( -0.0312500037 0 -78.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -126 ) matrix ( ( 0 -0.03125 -200.625 ) ( 0.0312500037 0 78.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -2 ) matrix ( ( 0 0.0078125075 -0.0859376192 ) ( -0.0009765637 0 -0.255859822 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 1 0 0 -2 ) matrix ( ( 0 0.0078125093 0.1015624106 ) ( -0.0009765639 0 0.1660156995 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 -1 0 -2 ) matrix ( ( 0 -0.0078125 -0.148437053 ) ( 0.0009765627 0 1.7910159826 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 1 0 -2 ) matrix ( ( 0 -0.0078125 -0.148437053 ) ( -0.0009765627 0 1.7910159826 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"shelter (Level 01)"
+					"details_2"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 90 126 )
+					}
+					
+					faces {
+						plane ( 0 0 1 2 ) matrix ( ( 0.03125 0 -196.625 ) ( 0 0.03125 -75.8125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -126 ) matrix ( ( 0.03125 0 -196.625 ) ( 0 0.03125 75.8125 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -2 ) matrix ( ( 0 0.0078125065 -0.0859376118 ) ( -0.0009765635 0 -0.130859673 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 1 0 0 -2 ) matrix ( ( 0 0.0078125084 0.1015624031 ) ( -0.0009765638 0 0.0410155132 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 -1 0 -2 ) matrix ( ( 0 -0.0078125 -0.1484370381 ) ( 0.0009765626 0 1.8789063692 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 1 0 -2 ) matrix ( ( 0 -0.0078125 -0.1484370381 ) ( -0.0009765626 0 1.8789063692 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"shelter (Level 01)"
+					"details_2"
+				}
+				{
+					
+					sdTransform {
+						translation ( -218 90 126 )
+						rotation ( ( -0.9999998808 -0.0000000685 0 ) ( 0.0000000685 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 2 ) matrix ( ( -0.0312500075 0 -191 ) ( 0 -0.03125 -82.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -126 ) matrix ( ( -0.03125 0 -191 ) ( 0 -0.0312500037 82.625 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -2 ) matrix ( ( 0 0.0078125075 -0.0859376267 ) ( -0.0009765638 0 0.0449217744 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 1 0 0 -2 ) matrix ( ( 0 0.0078125093 0.101562418 ) ( -0.000976564 0 -0.1347659379 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 -1 0 -2 ) matrix ( ( 0 -0.0078125009 -0.1484370679 ) ( 0.0009765628 0 1.6660161018 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 1 0 -2 ) matrix ( ( 0 -0.0078125 -0.1484370679 ) ( -0.0009765628 0 1.6660161018 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"shelter (Level 01)"
+					"details_2"
+				}
+				{
+					
+					sdTransform {
+						translation ( 218 90 126 )
+						rotation ( ( 0.0000000342 -0.9999999404 0 ) ( 0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 2 ) matrix ( ( 0 0.0312500037 -200.625 ) ( -0.0312500037 0 -73 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -126 ) matrix ( ( 0 -0.03125 -200.625 ) ( 0.0312500037 0 73 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -2 ) matrix ( ( 0 0.0078125075 -0.0859376192 ) ( -0.0009765637 0 -0.255859822 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 1 0 0 -2 ) matrix ( ( 0 0.0078125093 0.1015624106 ) ( -0.0009765639 0 0.1660156995 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 -1 0 -2 ) matrix ( ( 0 -0.0078125 -0.148437053 ) ( 0.0009765627 0 1.9667972326 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 1 0 -2 ) matrix ( ( 0 -0.0078125 -0.148437053 ) ( -0.0009765627 0 1.9667972326 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"shelter (Level 01)"
+					"details_1"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 -94 126 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -2 ) matrix ( ( 0.03125 0 -191 ) ( 0 0.03125 -69 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -2 ) matrix ( ( 0 0.0078125009 1.2031254768 ) ( 0.0009765627 0 1.9667973518 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( -0.7071067691 0.7071067691 0 -156.9777069092 ) matrix ( ( 0.0312500075 0 183.8478240967 ) ( 0 0.0312500075 -120.6250152588 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0.7071067691 0 -156.9777069092 ) matrix ( ( 0.0312500075 0 -86.2668991089 ) ( 0 0.0312500075 -120.6250152588 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 2 ) matrix ( ( 0.0078125084 0 -1.4375011921 ) ( 0 -0.0009765638 -0.166015923 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 1 0 -6 ) matrix ( ( -0.0078125093 0 -1.2500014305 ) ( 0 0.0009765639 0.0761718377 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"shelter (Level 01)"
+					"details_1"
+				}
+				{
+					
+					sdTransform {
+						translation ( 222 -128 126 )
+						rotation ( ( -0.0000001027 0.9999998212 0 ) ( -0.9999998212 -0.0000001027 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -2 ) matrix ( ( 0 -0.0312500037 -187 ) ( 0.0312500037 0 -65 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -2 ) matrix ( ( -0.0078125037 0 0.7031254768 ) ( 0 0.0009765627 2.0917973518 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( -0.7071067691 0.7071067691 -0.0000000421 23.9532413483 ) matrix ( ( 0.0312500186 0 178.1908721924 ) ( 0 0.0312500075 -120.6250152588 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0.7071067691 0 -156.9777069092 ) matrix ( ( 0.0312500186 0 -86.2668991089 ) ( 0 0.0312500075 -120.6250152588 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 2 ) matrix ( ( 0.0078125112 0 -0.9375010729 ) ( 0 -0.0009765641 -0.1660159677 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 1 0 -6 ) matrix ( ( -0.0078125121 0 -0.7500013113 ) ( 0 0.0009765641 0.0761718601 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"shelter (Level 01)"
+					"details_1"
+				}
+				{
+					
+					sdTransform {
+						translation ( -222.0000152588 128 126 )
+						rotation ( ( 0.0000001712 -0.999999702 0 ) ( 0.999999702 0.0000001712 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -2 ) matrix ( ( 0 0.0312500112 -187 ) ( -0.0312500112 0 -65 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -2 ) matrix ( ( 0.0078125047 0 0.7031254768 ) ( 0 -0.0009765627 2.0917973518 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( -0.7071067691 0.7071067691 -0.0000000421 23.9532413483 ) matrix ( ( 0.0312500261 0 178.1908569336 ) ( 0 0.0312500075 -120.6250152588 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0.7071067691 0.7071067691 0 -156.9777069092 ) matrix ( ( 0.0312500261 0 -86.2668914795 ) ( 0 0.0312500075 -120.6250152588 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 -1 0 2 ) matrix ( ( 0.007812513 0 -0.9375010729 ) ( 0 -0.0009765644 -0.1660159975 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 1 0 -6 ) matrix ( ( -0.007812514 0 -0.7500013113 ) ( 0 0.0009765644 0.076171875 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"shelter (Level 01)"
+					"details_1"
+				}
+				{
+					
+					sdTransform {
+						translation ( 96 -80 126 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -2 ) matrix ( ( 0.03125 0 -183 ) ( 0 0.03125 -69 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -2 ) matrix ( ( 0.03125 0 -183 ) ( 0 0.03125 69 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -48 ) matrix ( ( -0.0078125093 0 -1.2500014305 ) ( 0 0.0009765639 0.1230468452 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 1 0 0 -48 ) matrix ( ( -0.0078125093 0 -1.2500014305 ) ( 0 0.0009765639 0.1230468452 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 -1 0 -8 ) matrix ( ( 0.03125 0 -69 ) ( 0 0.03125 -120.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 1 0 -8 ) matrix ( ( -0.0078125093 0 -2.0000019073 ) ( 0 0.0009765639 0.1230468452 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" 
+				groups {
+					"shelter (Level 01)"
+					"details_1"
+				}
+				{
+					
+					sdTransform {
+						translation ( 96 -80 122 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -2 ) matrix ( ( 0.03125 0 -183 ) ( 0 0.03125 -69 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( 0 0 -1 -2 ) matrix ( ( 0 0.0078125009 1.9531254768 ) ( 0.0009765627 0 1.9619145393 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( -1 0 0 -48 ) matrix ( ( -0.0078125093 0 -1.2500014305 ) ( 0 0.0009765639 0.1230468452 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 1 0 0 -48 ) matrix ( ( -0.0078125093 0 -1.2500014305 ) ( 0 0.0009765639 0.1230468452 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 -0.7071068287 -0.7071068287 -4.2426409721 ) matrix ( ( 0.0078125084 0 -2.1875014305 ) ( 0 -0.0009765638 -0.1787112355 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+						plane ( 0 0.7071068287 -0.7071068287 -4.2426409721 ) matrix ( ( 0 0.0078125009 1.2031254768 ) ( 0.0009765627 0 2.1542973518 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/salvage/salvage_outdoor_1"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,626 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"editor_last_atmosphere"	"cubemap://area22_interior_tunnel01"
+	}
+
+	meta {
+		sdGroupVisual "blocks" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdLODGroup "gui" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"gui (Level 01)"
+			}
+		}
+		sdLODGroup_Level "gui (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		4096
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			sdDictionary {
+				"merge_script_obj1_marker"	"info_objective_1"
+				"merge_script_obj1_arrow1"	"info_objective_1_progress_1"
+				"merge_script_obj1_arrow2"	"info_objective_1_progress_2"
+				"merge_script_obj2_marker"	"info_objective_2"
+				"merge_script_obj2_arrow1"	"info_objective_2_progress_1"
+				"merge_script_obj2_arrow2"	"info_objective_2_progress_2"
+				"merge_script_obj3_marker"	"info_objective_3"
+				"merge_script_obj3_arrow1"	"info_objective_3_progress_1"
+				"merge_script_obj3_arrow2"	"info_objective_3_progress_2"
+				"merge_script_generator_materials"	"generator_materials"
+				"merge_script_vault_doors"	"storage_room_door"
+				"merge_script_keycard"	"datadisc"
+				"merge_script_final"	"torchy_misc_particle_trigger_final"
+				"merge_script_vault_sparks2"	"torchy_misc_particle_trigger_vault_sparks2"
+				"merge_script_vault_sparks1"	"torchy_misc_particle_trigger_vault_sparks1"
+				"merge_script_vault_steam"	"torchy_misc_particle_trigger_vault_steam"
+				"merge_script_vault_light"	"torchy_misc_particle_trigger_vault_light"
+				"merge_script_vault_blowout"	"torchy_misc_particle_trigger_vault_blowout"
+				"merge_script_placement_camera_a"	"placement_camera_a"
+				"merge_script_placement_camera_b"	"placement_camera_b"
+			}
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -9920 3598 502 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -28 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -34 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 -0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -34 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 -0 -96 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 78 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -9920 3598 502 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -42 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -34 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 -0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -34 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.7070990801 0 0.7071145177 -43.840637207 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.7071067691 0 0.7071067691 -42.4264068604 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 -0 -78 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.0000001349 -0.7071068287 0.7071067691 -74.9533157349 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -9920 3598 502 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -36 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -34 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 -0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -34 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -98 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.7070988417 0 0.7071146965 -43.8406333923 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.7071067691 0 0.7071067691 -42.4264068604 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 -0 4 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -9920 3594 502 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -34 ) matrix ( ( 0.03125 0 0.125 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -1 0 -0 -32 ) matrix ( ( 0.03125 0 -0.125 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 1 0 0 -34 ) matrix ( ( 0.03125 0 0.125 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.7070989609 0 0.7071146965 -43.840637207 ) matrix ( ( 0.03125 0 0.1249999925 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.7071067691 0 0.7071067691 -42.4264068604 ) matrix ( ( 0.03125 0 -0.1249999925 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0 -1 -0 2 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 0 -8 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0.7071068287 0.7071068287 -31.112701416 ) matrix ( ( 0.03125 0 0.125 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 9309 9050.5 2391 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 4 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -55 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -4 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9792604446 -0.202605024 0 -26.0096378326 ) matrix ( ( 0.03125 0 0.8104201555 ) ( 0 0.03125 -1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.9832822084 0.182088241 -0 -26.0206413269 ) matrix ( ( 0.03125 0 -0.7283529639 ) ( 0 0.03125 -1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.2333323658 -0.9723971486 0 -31.0571308136 ) matrix ( ( 0.03125 0 3.8895878792 ) ( 0 0.03125 -1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.1520572007 0.9883717299 0 -25.963766098 ) matrix ( ( 0.03125 0 -3.9534871578 ) ( 0 0.03125 -1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 9302.5 9008 2391.5 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -55.5 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 4 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -55.5 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -4 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -12.5 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -37.5 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.2694876194 -0.9630038738 0 -8.1911382675 ) matrix ( ( 0.03125 0 3.8520159721 ) ( 0 0.03125 -1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.2333730161 0.9723872542 0 -8.7514858246 ) matrix ( ( 0.03125 0 -3.8895494938 ) ( 0 0.03125 -1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 9313.5 8968.5 2391.5 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -55.5 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 4 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -55.5 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 -4 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.9824838638 0.1863477677 0 -29.510471344 ) matrix ( ( 0.03125 0 -0.7453910112 ) ( 0 0.03125 -1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.9783496857 -0.206958577 0 -21.6840209961 ) matrix ( ( 0.03125 0 0.827834487 ) ( 0 0.03125 -1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0.1579930633 -0.9874402881 0 -28.655538559 ) matrix ( ( 0.03125 0 3.9497609138 ) ( 0 0.03125 -1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0.2696454823 0.9629597068 -0 -26.8863449097 ) matrix ( ( 0.03125 0 -3.8518388271 ) ( 0 0.03125 -1 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					sdDictionary {
+						"expandAAS"	"0"
+					}
+					
+					sdTransform {
+						translation ( 9302 9038 2392 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -112 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -54 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.9817792773 -0.1900249273 0 -17.0991744995 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.9905076027 0.137458086 -0 -31.8094482422 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -1 0 -28 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.1579905152 0.9874405861 0 -37.3647537231 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					sdDictionary {
+						"expandAAS"	"0"
+					}
+					
+					sdTransform {
+						translation ( 9302 9072 2394 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -110 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -0 -1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.7808688283 0.624695003 0 -18.7408504486 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.0475651883 0.9988681674 -0 -9.2334356308 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.1579905301 -0.9874407053 0 3.7917721272 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					sdDictionary {
+						"expandAAS"	"0"
+					}
+					
+					sdTransform {
+						translation ( 9302 8934 2392 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -112 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 0 -1 -54 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.9880120158 0.1543768644 0 -23.5887699127 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.9904922843 -0.1375683695 0 -25.2026023865 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 1 -0 -76 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.1643989831 -0.9863939881 0 8.2199478149 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					sdDictionary {
+						"expandAAS"	"0"
+					}
+					
+					sdTransform {
+						translation ( 9304 8934 2394 )
+					}
+					
+					faces {
+						plane ( 0 0 -1 -56 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( -0.7808688283 -0.6246949434 -0.0000367592 -11.245349884 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.0499376096 -0.9987523556 0.0000102495 2.797722578 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0.1643989831 0.9863939285 0.0000000009 -7.8911519051 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+						plane ( 0 -0 1 -110 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/clip"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "info_objective_1" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/construction"
+				"mtr_icon_number"	"hud/objectives/marker_01"
+				"icon_size_cm"	"24"
+				"objective_index"	"0"
+				"icon_size_number_cm"	"24"
+				"icon_offset_cm"	"8 8 0"
+				"text_objective_gdf"	"maps/island/obj_short_1_gdf"
+				"text_objective_strogg"	"maps/island/obj_short_1_strogg"
+				"text_short_objective_gdf"	"maps/island/obj_short_1_gdf"
+				"text_short_objective_strogg"	"maps/island/obj_short_1_strogg"
+				"mtr_objective_world_icon_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_world_icon_gdf"	"hud/icons/missionsystem/obj_build"
+				"mtr_objective_gdf"	"hud/icons/missionsystem/obj_build"
+				"mtr_objective_gdf_desat"	"hud/icons/missionsystem/obj_build_desat"
+				"mtr_objective_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_strogg_desat"	"hud/icons/missionsystem/obj_defend_desat"
+			}
+			sdTransform {
+				translation ( -9925 3627 6344 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_1_progress_1" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/progress_left_up"
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+			}
+			sdTransform {
+				translation ( -5256 528 6208 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_1_progress_2" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/progress_right_up"
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+			}
+			sdTransform {
+				translation ( -9288 528 6208 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_2" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/destruction"
+				"mtr_icon_number"	"hud/objectives/marker_02"
+				"icon_size_cm"	"24"
+				"objective_index"	"1"
+				"icon_size_number_cm"	"24"
+				"icon_offset_cm"	"8 8 0"
+				"text_objective_gdf"	"maps/island/obj_short_2_gdf"
+				"text_objective_strogg"	"maps/island/obj_short_2_strogg"
+				"text_short_objective_gdf"	"maps/island/obj_short_2_gdf"
+				"text_short_objective_strogg"	"maps/island/obj_short_2_strogg"
+				"mtr_objective_world_icon_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_world_icon_gdf"	"hud/icons/missionsystem/obj_destroy"
+				"mtr_objective_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_strogg_desat"	"hud/icons/missionsystem/obj_defend_desat"
+				"mtr_objective_gdf"	"hud/icons/missionsystem/obj_destroy"
+				"mtr_objective_gdf_desat"	"hud/icons/missionsystem/obj_destroy_desat"
+			}
+			sdTransform {
+				translation ( 4740 9272 6392 )
+				rotation ( ( 0.0000000342 0.9999999404 0 ) ( -0.9999999404 0.0000000342 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_2_progress_1" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/progress_right_up"
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+			}
+			sdTransform {
+				translation ( 1440 7448 6208 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_2_progress_2" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/progress_left_up"
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+			}
+			sdTransform {
+				translation ( 4272 7424 6208 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_3" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/data"
+				"mtr_icon_number"	"hud/objectives/marker_03"
+				"icon_size_cm"	"24"
+				"objective_index"	"2"
+				"icon_size_number_cm"	"24"
+				"icon_offset_cm"	"8 8 0"
+				"text_objective_gdf"	"maps/island/obj_short_3_gdf"
+				"text_objective_strogg"	"maps/island/obj_short_3_strogg"
+				"text_short_objective_gdf"	"maps/island/obj_short_3_gdf"
+				"text_short_objective_strogg"	"maps/island/obj_short_3_strogg"
+				"mtr_objective_world_icon_gdf"	"hud/icons/missionsystem/obj_goal"
+				"mtr_objective_world_icon_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_strogg"	"hud/icons/missionsystem/obj_defend"
+				"mtr_objective_strogg_desat"	"hud/icons/missionsystem/obj_defend_desat"
+				"mtr_objective_gdf"	"hud/icons/missionsystem/obj_goal"
+				"mtr_objective_gdf_desat"	"hud/icons/missionsystem/obj_goal_desat"
+			}
+			sdTransform {
+				translation ( 9244 9012 6232 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_3_progress_1" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/progress_right_up"
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+			}
+			sdTransform {
+				translation ( 8296 8928 6208 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "info_objective_3_progress_2" {
+			sdDictionary {
+				"mtr_icon"	"hud/objectives/progress_left_up"
+				"icon_size_cm"	"24"
+				"icon_team_color_cm"	"1"
+			}
+			sdTransform {
+				translation ( 9688 8928 6208 )
+			}
+			
+			classname "info_objective"
+		}
+		sdPrimitiveEntity "storage_room_door_trigger" {
+			sdDictionary {
+				"target"	"storage_room_door"
+			}
+			sdTransform {
+				translation ( 3296 9492 168 )
+			}
+			
+			classname "gameplay_destructible_trigger"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_1" {
+					
+					sdTransform {
+						translation ( 1440 -196 576 )
+						rotation ( ( -0.9999998808 0.0000000684 0 ) ( -0.0000000684 -0.9999998808 0 ) ( 0 0 1 ) )
+					}
+					
+					faces {
+						plane ( 0 0 1 -104 ) matrix ( ( 0.0312500037 0 167.7187652588 ) ( 0 0.03125 10.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 0 -1 -40 ) matrix ( ( 0.0312500037 0 167.7187652588 ) ( 0 0.03125 0.75 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( -1 0 0 -83.9999847412 ) matrix ( ( 0.0312500037 0 167.7187652588 ) ( 0 0.03125 6.5000004768 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 1 0 0 -75.9999847412 ) matrix ( ( 0.0312500037 0 178.7187652588 ) ( 0 0.03125 6.5000004768 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 -1 0 -27.9999885559 ) matrix ( ( 0.0312500037 0 168.2187652588 ) ( 0 0.03125 6.5000004768 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+						plane ( 0 1 0 -27.9999885559 ) matrix ( ( 0.0312500037 0 178.2187652588 ) ( 0 0.03125 6.5000004768 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/trigger"
+					}
+				}
+			}
+		}
+		sdPrimitiveEntity "datadisc" {
+			sdDictionary {
+				"item_name"	"maps/island/datadisc"
+				"objective"	"console"
+				"snd_intro_gdf"	"sounds/vo/gdf/highcommand/maps/island/datadisc/take/long"
+				"snd_reminder_gdf"	"sounds/vo/gdf/highcommand/maps/island/datadisc/take"
+				"snd_stolen_gdf"	"sounds/vo/gdf/highcommand/maps/island/datadisc/taken"
+				"snd_dropped_gdf"	"sounds/vo/gdf/highcommand/maps/island/datadisc/dropped"
+				"snd_returned_gdf"	"sounds/vo/gdf/highcommand/maps/island/datadisc/returned"
+				"snd_dropped_strogg"	"sounds/vo/strogg/nexus/maps/island/datadisc/dropped"
+				"snd_intro_strogg"	"sounds/vo/strogg/nexus/maps/island/datadisc/defend/long"
+				"snd_reminder_strogg"	"sounds/vo/strogg/nexus/maps/island/datadisc/defend"
+				"snd_returned_strogg"	"sounds/vo/strogg/nexus/maps/island/datadisc/returned"
+				"snd_stolen_strogg"	"sounds/vo/strogg/nexus/maps/island/datadisc/taken"
+				"task_name"	"maps/island/datadisc"
+				"editor_unique"	"1"
+				"model"	"models/nerve/carry_case.lwo"
+			}
+			sdTransform {
+				translation ( 4744 9471 706 )
+				rotation ( ( -0.9999998808 -0.0000001128 0 ) ( 0.0000001128 -0.9999998808 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "carryable_item_base/strogg_island"
+		}
+		sdPrimitiveEntity "generator" {
+			sdDictionary {
+				"model"	"models/mapobjects/island/objective_generator_piece.lwo"
+			}
+			sdTransform {
+				translation ( -9920 3624 452 )
+			}
+			
+			classname "gameplay_island_generator"
+		}
+		sdPrimitiveEntity "generator_materials" {
+			sdDictionary {
+				"construction"	"generator"
+				"model"	"models/mapobjects/island/objective_generator_trigger.lwo"
+				"objective_index"	"0"
+				"snd_intro_gdf"	"sounds/vo/gdf/highcommand/maps/island/generator/repair/long"
+				"snd_reminder_gdf"	"sounds/vo/gdf/highcommand/maps/island/generator/repair"
+				"snd_constructing_gdf"	"sounds/vo/gdf/highcommand/maps/island/generator/repairing"
+				"snd_finished_gdf"	"sounds/vo/gdf/highcommand/maps/island/generator/success"
+				"snd_intro_strogg"	"sounds/vo/strogg/nexus/maps/island/generator/defend/long"
+				"snd_reminder_strogg"	"sounds/vo/strogg/nexus/maps/island/generator/defend"
+				"snd_constructing_strogg"	"sounds/vo/strogg/nexus/maps/island/generator/repairing"
+				"snd_finished_strogg"	"sounds/vo/strogg/nexus/maps/island/generator/fail"
+				"task_name"	"maps/island/generator"
+				"info_name"	"maps/island/generator"
+				"object_name"	"maps/island/generator"
+			}
+			sdTransform {
+				translation ( -9920 3624 452 )
+			}
+			
+			classname "gameplay_island_generator_materials"
+		}
+		sdPrimitiveEntity "adam_model_static_1" {
+			sdDictionary {
+				"model"	"models/mapobjects/island/objective_generator_base.lwo"
+				"mergecm"	"1"
+			}
+			sdTransform {
+				translation ( -9920 3624 452 )
+			}
+			
+			classname "model_static"
+		}
+		sdPrimitiveEntity "storage_room_door" {
+			sdDictionary {
+				"model"	"models/nerve/vault_door.lwo"
+				"health"	"1"
+				"objective_index"	"1"
+				"snd_destroyed_strogg"	"sounds/vo/strogg/nexus/maps/island/vaultdoor/fail"
+				"snd_destroyed_gdf"	"sounds/vo/gdf/highcommand/maps/island/vaultdoor/success"
+				"snd_planted_strogg"	"sounds/vo/strogg/nexus/maps/island/vaultdoor/planted/long"
+				"snd_planted_gdf"	"sounds/vo/gdf/highcommand/maps/island/vaultdoor/planted"
+				"snd_disarmed_strogg"	"sounds/vo/strogg/nexus/maps/island/vaultdoor/disarmed"
+				"snd_disarmed_gdf"	"sounds/vo/gdf/highcommand/maps/island/vaultdoor/disarmed"
+				"snd_reminder_strogg"	"sounds/vo/strogg/nexus/maps/island/vaultdoor/defend"
+				"snd_reminder_gdf"	"sounds/vo/gdf/highcommand/maps/island/vaultdoor/destroy"
+				"snd_defend_strogg"	"sounds/vo/strogg/nexus/maps/island/vaultdoor/defend"
+				"snd_defend_gdf"	"sounds/vo/gdf/highcommand/maps/island/vaultdoor/defendexpl"
+				"snd_intro_strogg"	"sounds/vo/strogg/nexus/maps/island/vaultdoor/defend"
+				"snd_intro_gdf"	"sounds/vo/gdf/highcommand/maps/island/vaultdoor/destroy"
+				"task_name"	"maps/island/vaultdoor"
+				"object_name"	"maps/island/vaultdoor"
+				"maxVisDist"	"8192"
+			}
+			sdTransform {
+				translation ( 4740 9316 768 )
+			}
+			
+			classname "gameplay/destructible/strogg"
+		}
+		sdPrimitiveEntity "console" {
+			sdDictionary {
+				"item_name"	"datadisc"
+				"model"	"models/mapobjects/island/island_objects/island_dish_console.lwo"
+				"editor_unique"	"1"
+				"objective_index"	"2"
+				"screen_name"	"maps/island/console"
+				"task_name"	"maps/island/console_task"
+				"gui"	"guis/items/data_obj"
+				"use_objective_gui"	"1"
+			}
+			sdTransform {
+				translation ( 9314 9008 2337 )
+				rotation ( ( 0.9999997616 0.0000002384 0 ) ( -0.0000002384 0.9999997616 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "item_capturepoint_use"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_final" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/island/final"
+			}
+			sdTransform {
+				translation ( 9159.8955078125 9027.9638671875 2400 )
+				rotation ( ( -0.002719752 -0.9999963045 -0.0000106421 ) ( -0.0039126868 -0.0000000005 0.9999923706 ) ( -0.9999886751 0.0027197725 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_vault_blowout" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/island/vault_blowout"
+			}
+			sdTransform {
+				translation ( 4740.0361328125 9314.8955078125 761 )
+				rotation ( ( 0.9999963641 -0.0027199311 -0.0000106421 ) ( -0.0000000002 -0.0039126873 0.9999923706 ) ( -0.0027199516 -0.9999887347 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_vault_steam" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/island/vault_steam"
+			}
+			sdTransform {
+				translation ( 4740.0361328125 9314.8955078125 788 )
+				rotation ( ( 0.9999963641 -0.0027199311 -0.0000106421 ) ( -0.0000000002 -0.0039126873 0.9999923706 ) ( -0.0027199516 -0.9999887347 -0.0039126729 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_vault_sparks1" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/island/vault_sparks"
+			}
+			sdTransform {
+				translation ( 4697.0361328125 9328.90625 827.9545898438 )
+				rotation ( ( 0.9999963641 -0.0024452526 -0.0011911666 ) ( -0.0000000002 -0.4379367232 0.8990058303 ) ( -0.0027199516 -0.899002552 -0.4379351139 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_vault_sparks2" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/island/vault_sparks"
+			}
+			sdTransform {
+				translation ( 4779.0361328125 9324.896484375 818.9857788086 )
+				rotation ( ( 0.9999963641 -0.0026936643 -0.0003772421 ) ( -0.0000000002 -0.138694495 0.9903352857 ) ( -0.0027199516 -0.9903316498 -0.1386939734 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "torchy_misc_particle_trigger_vault_light" {
+			sdDictionary {
+				"fx_triggered_1"	"effects/maps/island/vault_light"
+			}
+			sdTransform {
+				translation ( 4742.0361328125 9469.8955078125 853.0014038086 )
+				rotation ( ( 0.9999963641 -0.0027197876 0.0000298946 ) ( -0.0000000002 0.0109907584 0.9999396801 ) ( -0.0027199516 -0.9999359846 0.0109907305 ) )
+			}
+			
+			classname "misc_particle_trigger"
+		}
+		sdPrimitiveEntity "placement_camera_a" {
+			sdTransform {
+				translation ( 12013.763671875 8461.951171875 3815.0700683594 )
+				rotation ( ( -0.9154620171 -0.3885911405 -0.1045284644 ) ( 0.3907316029 -0.9205046296 0 ) ( -0.0962189361 -0.0408425741 0.9945219159 ) )
+			}
+			
+			classname "placement_camera"
+		}
+		sdPrimitiveEntity "placement_camera_b" {
+			sdTransform {
+				translation ( 12621.177734375 -2426.4052734375 2832.1398925781 )
+				rotation ( ( -0.7660442591 0.6427878141 -0 ) ( -0.6427878141 -0.7660442591 0 ) ( 0 0 1 ) )
+			}
+			
+			classname "placement_camera"
+		}
+	}
+}

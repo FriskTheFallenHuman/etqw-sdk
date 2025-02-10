@@ -1,0 +1,122 @@
+version 5
+{
+	model "models/terrain/sdk/etqwmap.lwo"
+	stmodel ""
+	overlayImage "megatextures/area22_lit_preview.tga"
+	overlayImageAlpha "0.000000"
+	detailTexture0 "textures/detail/dirt01.tga"
+	detailTexture1 "textures/detail/rock03.tga"
+	detailTexture2 "textures/detail/gravel01.tga"
+	detailTexture3 "textures/detail/sand01.tga"
+}
+sdRootNode "Root"  {
+	visible 1
+	sdNode "sand" 	 {
+		visible 1
+		renderer sdImageRenderer {
+			{
+				heightmap image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				diffuse image sdTextureTGA_Properties {
+					name "textures/sand/dry_sand_footprints_d.tga"
+				}
+				local image sdTextureTGA_Properties {
+					name "textures/dirt/dirt02_local.tga"
+				}
+				distribution image sdTextureTGA_Properties {
+					name "textures/black.tga"
+				}
+				distributionPattern image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				globalMask image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				projectionPattern image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				alpha 1
+				color ( 1 1 1 )
+				texScale ( 32 32 )
+				inverseAlpha
+				rampWidth 1
+				rotation 0
+				maskRotation 0
+				rotationCenter ( 0.5 0.5 )
+				surfaceType "sand"
+				surfaceTypeThreshold 0.5
+				distributionPatternTexScale ( 1 1 )
+				distributionPatternRotation 0
+				blend "blend"
+				blendParms ( 0 0 0 0 )
+				detailTextureType 2
+			}
+			{	//sdImageRenderer
+				uvType "mesh"
+				projectionAngle 0
+			}
+		}
+	}
+	sdNode "sand2" 	 {
+		visible 0
+		renderer sdImageRenderer {
+			{
+				heightmap image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				diffuse image sdTextureTGA_Properties {
+					clamp 1
+					name "textures/sand/sand01_d.tga"
+				}
+				local image sdTextureTGA_Properties {
+					name "textures/concrete/concr_wall11_local.tga"
+				}
+				distribution image sdImage_Generator_Marble_Properties {
+					resolution 256
+					seed 396401
+					bias 0.5
+					gain 0.5
+					frequency ( 1 1.6000000238 )
+					octaves 8
+					persistence 0.25
+					scaleFactor ( 2 1 2 )
+				}
+				distributionPattern image sdImage_Generator_Marble_Properties {
+					resolution 256
+					seed 382976
+					bias 0.5
+					gain 0.5
+					frequency ( 1 1.6000000238 )
+					octaves 8
+					persistence 0.25
+					scaleFactor ( 2 1 2 )
+				}
+				globalMask image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				projectionPattern image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				alpha 1
+				color ( 1 1 1 )
+				texScale ( 32 32 )
+				rampWidth 1
+				rotation 0
+				maskRotation 0
+				rotationCenter ( 0.5 0.5 )
+				surfaceType "sand"
+				surfaceTypeThreshold 0.5
+				distributionPatternTexScale ( 1 1 )
+				distributionPatternRotation 0
+				blend "blend"
+				blendParms ( 0 0 0 0 )
+				detailTextureType 0
+			}
+			{	//sdImageRenderer
+				uvType "mesh"
+				projectionAngle 0
+			}
+		}
+	}
+}

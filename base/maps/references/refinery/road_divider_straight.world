@@ -1,0 +1,327 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"description"	"unnamed.world"
+		"editor_last_atmosphere"	"atmosphere://refinery01"
+	}
+
+	meta {
+		sdDetailGroup "detailaroony" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdLODGroup "road_divider" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"road_divider (Level 01)"
+			}
+		}
+		sdLODGroup_Level "road_divider (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		8192
+				"minvisdist"		0
+				"visdistfalloff"		0.05
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+				"dontcastfromatmoslight"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdprimitivebrush_2" 
+				groups {
+					"detailaroony"
+					"road_divider (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 72 252 )
+					}
+					
+					faces {
+						plane ( 0 0 1 204 ) matrix ( ( 0.015625 0 -1.5 ) ( 0 0.0009765625 0.53515625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 0 -1 -236 ) matrix ( ( 0 0.03125 16.5170612335 ) ( 0.0312652588 0 173.044631958 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -24 ) matrix ( ( 0.015625 0 1.5 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 1 0 0 -24 ) matrix ( ( 0.015625 0 -1.5 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 -1 -0 56 ) matrix ( ( 0.015625 0 0 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 1 0 -312 ) matrix ( ( 0.015625 0 0 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_1" 
+				groups {
+					"road_divider (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -8 -928 232 )
+					}
+					
+					faces {
+						plane ( 0 0 1 216 ) matrix ( ( 0.015625 0 0 ) ( 0 0.0009765625 -0.578125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( -0 0 -1 -240 ) matrix ( ( 0 0.03125 16.5170612335 ) ( 0.0312652588 0 176.0460968018 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -24 ) matrix ( ( 0.015625 0 0 ) ( 0 0.0009765625 0.515625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 1 0 0 -40 ) matrix ( ( 0.015625 0 0 ) ( 0 0.0009765625 0.515625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 -1 0 384 ) matrix ( ( 0.015625 0 0 ) ( 0 0.0009765625 0.515625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 1 0 -1408 ) matrix ( ( 0.015625 0 0 ) ( 0 0.0009765625 0.515625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_2" 
+				groups {
+					"detailaroony"
+					"road_divider (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 -504 252 )
+					}
+					
+					faces {
+						plane ( 0 0 1 204 ) matrix ( ( 0.015625 0 7.5 ) ( 0 0.0009765625 0.53515625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 0 -1 -236 ) matrix ( ( 0 0.03125 16.5170612335 ) ( 0.0312652588 0 191.0534210205 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -24 ) matrix ( ( 0.015625 0 -7.5 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 1 0 0 -24 ) matrix ( ( 0.015625 0 7.5 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 -1 -0 56 ) matrix ( ( 0.015625 0 0 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 1 0 -312 ) matrix ( ( 0.015625 0 0 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_2" 
+				groups {
+					"detailaroony"
+					"road_divider (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 1608 252 )
+					}
+					
+					faces {
+						plane ( 0 0 1 204 ) matrix ( ( 0.015625 0 -25.5 ) ( 0 0.0009765625 0.53515625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 0 -1 -236 ) matrix ( ( 0 0.03125 16.5170612335 ) ( 0.0312652588 0 125.021194458 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -24 ) matrix ( ( 0.015625 0 25.5 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 1 0 0 -24 ) matrix ( ( 0.015625 0 -25.5 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 -1 -0 56 ) matrix ( ( 0.015625 0 0 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 1 0 -312 ) matrix ( ( 0.015625 0 0 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_1" 
+				groups {
+					"road_divider (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -8 608 232 )
+					}
+					
+					faces {
+						plane ( 0 0 1 216 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.0009765625 -0.578125 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( -0 0 -1 -240 ) matrix ( ( 0 0.03125 16.5170612335 ) ( 0.0312652588 0 128.0226593018 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -24 ) matrix ( ( 0.015625 0 24 ) ( 0 0.0009765625 0.515625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 1 0 0 -40 ) matrix ( ( 0.015625 0 -24 ) ( 0 0.0009765625 0.515625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 -1 0 384 ) matrix ( ( 0.015625 0 0 ) ( 0 0.0009765625 0.515625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 1 0 -1408 ) matrix ( ( 0.015625 0 0 ) ( 0 0.0009765625 0.515625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_2" 
+				groups {
+					"detailaroony"
+					"road_divider (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( 0 1032 252 )
+					}
+					
+					faces {
+						plane ( 0 0 1 204 ) matrix ( ( 0.015625 0 -16.5 ) ( 0 0.0009765625 0.53515625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 0 -1 -236 ) matrix ( ( 0 0.03125 16.5170612335 ) ( 0.0312652588 0 143.0299835205 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -24 ) matrix ( ( 0.015625 0 16.5 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 1 0 0 -24 ) matrix ( ( 0.015625 0 -16.5 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 -1 -0 56 ) matrix ( ( 0.015625 0 0 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+						plane ( 0 1 0 -312 ) matrix ( ( 0.015625 0 0 ) ( 0 0.0009765625 -0.00390625 ) ) texBounds ( ( 0 0 ) ( 512 2048 ) ) "texturesheets/refinery/building02b"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 -320 20 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -28 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -52 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 -0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 256 20 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -28 ) matrix ( ( 0.03125 0 -18 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -52 ) matrix ( ( 0.03125 0 -18 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -32 ) matrix ( ( 0.03125 0 18 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -32 ) matrix ( ( 0.03125 0 -18 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 -0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 1216 20 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -28 ) matrix ( ( 0.03125 0 -48 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -52 ) matrix ( ( 0.03125 0 -48 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -32 ) matrix ( ( 0.03125 0 48 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -32 ) matrix ( ( 0.03125 0 -48 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 -0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 1792 20 )
+					}
+					
+					faces {
+						plane ( -0 0 1 -28 ) matrix ( ( 0.03125 0 -66 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 0 -1 -52 ) matrix ( ( 0.03125 0 -66 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -32 ) matrix ( ( 0.03125 0 66 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -32 ) matrix ( ( 0.03125 0 -66 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 -0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_1" 
+				groups {
+					"road_divider (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -8 -928 232 )
+					}
+					
+					faces {
+						plane ( 0 0 1 216 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 0 -1 -264 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 384 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -1408 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_1" 
+				groups {
+					"road_divider (Level 01)"
+				}
+				{
+					
+					sdTransform {
+						translation ( -8 608 232 )
+					}
+					
+					faces {
+						plane ( 0 0 1 216 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 0 -1 -264 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -24 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -40 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 384 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -1408 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 1792 20 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -108 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 0 0 -1 -52 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( -1 0 0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 1 0 0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 0 -1 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 0 1 -0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 1216 20 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -108 ) matrix ( ( 0.03125 0 18 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 0 0 -1 -52 ) matrix ( ( 0.03125 0 18 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( -1 0 0 -32 ) matrix ( ( 0.03125 0 -18 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 1 0 0 -32 ) matrix ( ( 0.03125 0 18 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 0 -1 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 0 1 -0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 256 20 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -108 ) matrix ( ( 0.03125 0 48 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 0 0 -1 -52 ) matrix ( ( 0.03125 0 48 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( -1 0 0 -32 ) matrix ( ( 0.03125 0 -48 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 1 0 0 -32 ) matrix ( ( 0.03125 0 48 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 0 -1 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 0 1 -0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 -320 20 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -108 ) matrix ( ( 0.03125 0 66 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 0 0 -1 -52 ) matrix ( ( 0.03125 0 66 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( -1 0 0 -32 ) matrix ( ( 0.03125 0 -66 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 1 0 0 -32 ) matrix ( ( 0.03125 0 66 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 0 -1 0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+						plane ( 0 1 -0 -128 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,67 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"description"	"unnamed.world"
+		"editor_last_atmosphere"	""
+	}
+
+	meta {
+		sdGroupVisual "portals" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdGroupVisual "lights" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdGroupVisual "case" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdGroupVisual "interiot" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+		sdGroupVisual "clipping" {
+			propertyTable {
+				"color"		( 1 1 1 )
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			sdDictionary {
+				"movefuncgroups"	"1"
+				"_blocksize"	"10000 10000 10000"
+			}
+			classname "worldspawn"
+		}
+		sdPrimitiveEntity "deployable_basedefence_gdf_1" {
+			sdDictionary {
+				"anim"	"base"
+				"shadowspec"	"med"
+			}
+			sdTransform {
+				translation ( 0 -521 350 )
+				rotation ( ( 0.0000000342 -0.7431447506 -0.6691305637 ) ( 0.9999999404 0.0000000254 0.0000000229 ) ( 0 -0.6691306233 0.7431448102 ) )
+			}
+			
+			classname "deployable_basedefence_gdf"
+		}
+		sdPrimitiveEntity "deployable_basedefence_gdf_2" {
+			sdDictionary {
+				"anim"	"base"
+				"shadowspec"	"med"
+			}
+			sdTransform {
+				translation ( 0 521 350 )
+				rotation ( ( -0.0000000325 0.7431448102 -0.6691306233 ) ( -1 -0.0000000437 0 ) ( -0.0000000292 0.6691306233 0.7431448102 ) )
+			}
+			
+			classname "deployable_basedefence_gdf"
+		}
+	}
+}

@@ -1,0 +1,220 @@
+sdWorldFile version 5 {
+	sdDictionary {
+		"description"	"unnamed.world"
+		"editor_last_atmosphere"	"atmosphere://quarry_cold"
+	}
+
+	meta {
+		sdLODGroup "watertank_small" {
+			propertyTable {
+				"color"		( 1 1 1 )
+				"numstages"		1
+				"uniqueinstance"		1
+			}
+			levels {
+				"watertank_small (Level 01)"
+			}
+		}
+		sdLODGroup_Level "watertank_small (Level 01)" {
+			propertyTable {
+				"color"		( 1 0 0 )
+				"maxvisdist"		8192
+				"minvisdist"		0
+				"visdistfalloff"		0.25
+				"shadowvisdistmult"		0
+				"inlinecollisionmodel"		1
+				"generateaas"		1
+				"ambientcubemap"		""
+				"pushbyorigin"		0
+				"visdummies"		""
+				"instance"		0
+				"occlusiontest"		0
+				"drawspec"		""
+				"shadowspec"		""
+				"noshadows"		0
+			}
+		}
+	}
+	primitiveHolders {
+		sdPrimitiveEntity "worldspawn" {
+			classname "worldspawn"
+			primitives {
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( 0 0 36 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -36 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 0 -1 -36 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( -1 0 0 -164 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 1 0 0 -164 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 -1 0 -44 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 1 0 -44 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 0.9778024554 0.2095291167 -38.8327255249 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+						plane ( 0 -0.9778024554 0.2095291167 -38.8327255249 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/vehicle_clip_metal"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_1" 
+				groups {
+					"watertank_small (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.72549 0.72549 0.72549 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( -128 -72 16 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -16 ) matrix ( ( 0.0124999871 0 0.4999903142 ) ( 0 0.0009765625 0.3828125 ) ) texBounds ( ( 0 1536 ) ( 256 1568 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 0 0 -1 -16 ) matrix ( ( 0.03125 0 -2.25 ) ( 0 0.03125 -12 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -8 ) matrix ( ( -0.0059523974 0 0.4999878705 ) ( 0 -0.0009765625 1.4111328125 ) ) texBounds ( ( 0 1536 ) ( 256 1568 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 1 0 0 -8 ) matrix ( ( -0.0059523974 0 0.4999878705 ) ( 0 -0.0009765625 1.4111328125 ) ) texBounds ( ( 0 1536 ) ( 256 1568 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 0 1 0 -116 ) matrix ( ( 0 -0.0078107459 -0.09375 ) ( 0.0009765625 0 0.1328125 ) ) texBounds ( ( 0 1536 ) ( 256 1568 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 0 0.9701399803 0.2425400019 -112.537109375 ) matrix ( ( 0 -0.0078107459 0 ) ( 0.0009765625 0 0.1328125 ) ) texBounds ( ( 0 1536 ) ( 256 1568 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 0 -1 0 28 ) matrix ( ( 0 -0.0078137713 -0.09375 ) ( 0.0009765625 0 0.3828125 ) ) texBounds ( ( 0 1536 ) ( 256 1568 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 0 -0.9701399803 0.2425400019 27.1645507813 ) matrix ( ( 0 -0.0078137713 0 ) ( 0.0009765625 0 0.3828125 ) ) texBounds ( ( 0 1536 ) ( 256 1568 ) ) "texturesheets/quarry/quarry_works2"
+					}
+				}
+				sdPrimitiveBrush "sdprimitivebrush_1" 
+				groups {
+					"watertank_small (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.72549 0.72549 0.72549 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 127.9999923706 -72 16 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -16 ) matrix ( ( 0.0124999871 0 0.4999902844 ) ( 0 0.0009765625 0.1328125 ) ) texBounds ( ( 0 1536 ) ( 256 1568 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 0 0 -1 -16 ) matrix ( ( 0.03125 0 -2.25 ) ( 0 0.03125 -4 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/caulk"
+						plane ( -1 0 0 -8 ) matrix ( ( -0.0059523974 0 0.4999878705 ) ( 0 -0.0009765625 1.4111328125 ) ) texBounds ( ( 0 1536 ) ( 256 1568 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 1 0 0 -8 ) matrix ( ( -0.0059523974 0 0.4999878705 ) ( 0 -0.0009765625 1.4111328125 ) ) texBounds ( ( 0 1536 ) ( 256 1568 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 0 1 0 -116 ) matrix ( ( 0 -0.0078107459 -0.09375 ) ( 0.0009765625 0 0.3828125 ) ) texBounds ( ( 0 1536 ) ( 256 1568 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 0 0.9701399803 0.2425400019 -112.537109375 ) matrix ( ( 0 -0.0078107459 0 ) ( 0.0009765625 0 0.3828125 ) ) texBounds ( ( 0 1536 ) ( 256 1568 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 0 -1 0 28 ) matrix ( ( 0 -0.0078137713 -0.0859375 ) ( 0.0009765625 0 0.1328125 ) ) texBounds ( ( 0 1536 ) ( 256 1568 ) ) "texturesheets/quarry/quarry_works2"
+						plane ( 0 -0.9701399803 0.2425400019 27.1645507813 ) matrix ( ( 0 -0.0078137713 0 ) ( 0.0009765625 0 0.1328125 ) ) texBounds ( ( 0 1536 ) ( 256 1568 ) ) "texturesheets/quarry/quarry_works2"
+					}
+				}
+				sdPrimitiveBrush "sdPrimitiveBrush" {
+					
+					sdTransform {
+						translation ( -121 0 39 )
+					}
+					
+					faces {
+						plane ( 0 0 1 -33 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -0 0 -1 -39 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( -1 0 0 -41 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 1 0 0 -285 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 -1 0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+						plane ( 0 1 0 -32 ) matrix ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) texBounds ( ( 0 0 ) ( 64 64 ) ) "textures/common/aassolidplayer"
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_3" 
+				groups {
+					"watertank_small (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.65098 0.65098 0.65098 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 0 0 72 )
+						rotation ( ( 0.0000000596 0 0.9999999404 ) ( 0 1 0 ) ( -0.9999999404 0 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( -1 0 0 ) ( 0 -1 0 ) )
+					texBounds ( ( 0 2048 ) ( 256 2496 ) )
+					material "texturesheets/quarry/quarry_works2"
+					explicitSubdivisions( 4 4 )
+					controlPoints( 9 3 ) {
+						(
+							( ( -64 0 -152 1 0.21875 ) ( -64 -32 -152 0.875 0.21875 ) ( -32 -32 -152 0.75 0.21875 ) ( 0 -32 -152 0.625 0.21875 ) ( 0 0 -152 0.5 0.21875 ) ( 0 32 -152 0.375 0.21875 ) ( -32 32 -152 0.25 0.21875 ) ( -64 32 -152 0.125 0.21875 ) ( -64 0 -152 0 0.21875 ) )
+							( ( -64 0 0.9368000031 1 0.109375 ) ( -64 -32 0.9368000031 0.875 0.109375 ) ( -32 -32 0.9368000031 0.75 0.109375 ) ( 0 -32 0.9368000031 0.625 0.109375 ) ( 0 0 0.9368000031 0.5 0.109375 ) ( 0 32 0.9368000031 0.375 0.109375 ) ( -32 32 0.9368000031 0.25 0.109375 ) ( -64 32 0.9368000031 0.125 0.109375 ) ( -64 0 0.9368000031 0 0.109375 ) )
+							( ( -64 0 151.8735961914 1 0 ) ( -64 -32 151.8735961914 0.875 0 ) ( -32 -32 151.8735961914 0.75 0 ) ( 0 -32 151.8735961914 0.625 0 ) ( 0 0 151.8735961914 0.5 0 ) ( 0 32 151.8735961914 0.375 0 ) ( -32 32 151.8735961914 0.25 0 ) ( -64 32 151.8735961914 0.125 0 ) ( -64 0 151.8735961914 0 0 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_1" 
+				groups {
+					"watertank_small (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.65098 0.65098 0.65098 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 0 0 72 )
+						rotation ( ( 0.0000000596 0 0.9999999404 ) ( 0 1 0 ) ( -0.9999999404 0 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 0.0078125 0 -0.2890625 ) ( 0 0.0009765625 1.0771484375 ) )
+					texBounds ( ( 0 2048 ) ( 256 2496 ) )
+					material "texturesheets/quarry/quarry_works2"
+					explicitSubdivisions( 4 4 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -32 32 -152 -0.0390625 1.0380859375 ) ( 0 32 -152 -0.0390625 1.0068359375 ) ( 0 0 -152 -0.2890625 1.0068359375 ) )
+							( ( -64 32 -152 -0.0390625 1.0693359375 ) ( -32 0 -200 -0.2890625 1.0380859375 ) ( 0 -32 -152 -0.5390625 1.0068359375 ) )
+							( ( -64 0 -152 -0.2890625 1.0693359375 ) ( -64 -32 -152 -0.5390625 1.0693359375 ) ( -32 -32 -152 -0.5390625 1.0380859375 ) )
+						)
+					}
+				}
+				sdPrimitivePatch "sdprimitivepatch_2" 
+				groups {
+					"watertank_small (Level 01)"
+				}
+				{
+					sdDictionary {
+						"_color"	"0.65098 0.65098 0.65098 1"
+						"_overbright"	"1.00000"
+					}
+					
+					sdTransform {
+						translation ( 0 0 72 )
+						rotation ( ( 0.0000000596 0 0.9999999404 ) ( 0 1 0 ) ( -0.9999999404 0 0.0000000596 ) )
+					}
+					
+					allowThicken 1
+					allowCap 0
+					thickenAllEdges 1
+					useExplicitSubdivisions 1
+					texMatrix ( ( 0.0078125 0 -0.4921875 ) ( 0 0.0009765625 1.076171875 ) )
+					texBounds ( ( 0 2048 ) ( 256 2496 ) )
+					material "texturesheets/quarry/quarry_works2"
+					explicitSubdivisions( 4 4 )
+					controlPoints( 3 3 ) {
+						(
+							( ( -64 0 151.8735961914 -0.4921875 1.068359375 ) ( -64 -32 151.8735961914 -0.2421875 1.068359375 ) ( -32 -32 151.8735961914 -0.2421875 1.037109375 ) )
+							( ( -64 32 151.8735961914 -0.7421875 1.068359375 ) ( -32 0 199.8735961914 -0.4921875 1.037109375 ) ( 0 -32 151.8735961914 -0.2421875 1.005859375 ) )
+							( ( -32 32 151.8735961914 -0.7421875 1.037109375 ) ( 0 32 151.8735961914 -0.7421875 1.005859375 ) ( 0 0 151.8735961914 -0.4921875 1.005859375 ) )
+						)
+					}
+				}
+			}
+		}
+	}
+}

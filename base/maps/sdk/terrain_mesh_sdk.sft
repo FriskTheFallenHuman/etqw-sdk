@@ -1,0 +1,1073 @@
+version 5
+{
+	model "models/terrain/sdk/terrain_mesh_sdk.lwo"
+	stmodel "models/terrain/sdk/terrain_mesh_sdk.lwo"
+	overlayImage ""
+	overlayImageAlpha "0.000000"
+	detailTexture0 "textures/detail/temperate_dirt.tga"
+	detailTexture1 "textures/detail/temperate_grass.tga"
+	detailTexture2 "textures/detail/temperate_gravel.tga"
+	detailTexture3 "textures/detail/temperate_rock.tga"
+}
+sdRootNode "Root"  {
+	visible 1
+	sdNode "Ground_Base" 	 {
+		visible 1
+		sdNode "Dirt" 		 {
+			visible 1
+			renderer sdImageRenderer {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/dirt_06_d.tga"
+					}
+					local image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/dirt_06_local.tga"
+					}
+					distribution image sdTextureTGA_Properties {
+						name "textures/megagen/white.tga"
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 1
+					color ( 1 1 1 )
+					texScale ( 8 8 )
+					rampWidth 1
+					rotation 270
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType "dirt"
+					surfaceTypeThreshold 0.5
+					distributionPatternTexScale ( 1 1 )
+					distributionPatternRotation 0
+					blend "blend"
+					blendParms ( 0 0 0 0 )
+					detailTextureType 0
+				}
+				{	//sdImageRenderer
+					uvType "mesh"
+					projectionAngle 0
+				}
+			}
+		}
+		sdNode "Sand" 		 {
+			visible 1
+			renderer sdImageRenderer {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/dirt_07_d.tga"
+					}
+					local image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/dirt_07_local.tga"
+					}
+					distribution image sdTextureTGA_Properties {
+						name "textures/megagen/terrain_mesh_sdk/masks/mask_sand.tga"
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/dirt_06_mask_inverse.tga"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 1
+					color ( 1 1 1 )
+					texScale ( 12 12 )
+					rampWidth 0.5
+					rotation 270
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType "sand"
+					surfaceTypeThreshold 0.5
+					distributionPatternTexScale ( 8 8 )
+					distributionPatternRotation 270
+					blend "blend"
+					blendParms ( 0 0 0 0 )
+					detailTextureType 0
+				}
+				{	//sdImageRenderer
+					uvType "mesh"
+					projectionAngle 0
+				}
+			}
+		}
+		sdNode "Gravel" 		 {
+			visible 1
+			renderer sdImageRenderer {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/dirt_03_d.tga"
+					}
+					local image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/dirt_03_local.tga"
+					}
+					distribution image sdTextureTGA_Properties {
+						name "textures/megagen/terrain_mesh_sdk/masks/mask_gravel.tga"
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/dirt_03_mask.tga"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 1
+					color ( 1 1 1 )
+					texScale ( 12 12 )
+					rampWidth 0.5
+					rotation 0
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType "gravel"
+					surfaceTypeThreshold 0.5
+					distributionPatternTexScale ( 12 12 )
+					distributionPatternRotation 0
+					blend "blend"
+					blendParms ( 0 0 0 0 )
+					detailTextureType 2
+				}
+				{	//sdImageRenderer
+					uvType "mesh"
+					projectionAngle 0
+				}
+			}
+		}
+		sdNode "Dry_Dirt" 		 {
+			visible 1
+			renderer sdImageRenderer {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/dirt_02_d.tga"
+					}
+					local image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/dirt_02_local.tga"
+					}
+					distribution image sdTextureTGA_Properties {
+						name "textures/megagen/terrain_mesh_sdk/masks/mask_dry_dirt.tga"
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/dirt_02_mask.tga"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 0.75
+					color ( 1 1 1 )
+					texScale ( 8 8 )
+					rampWidth 0.25
+					rotation 0
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType "dirt"
+					surfaceTypeThreshold 0.5
+					distributionPatternTexScale ( 8 8 )
+					distributionPatternRotation 0
+					blend "blend"
+					blendParms ( 0 0 0 0 )
+					detailTextureType 0
+				}
+				{	//sdImageRenderer
+					uvType "mesh"
+					projectionAngle 0
+				}
+			}
+		}
+		sdNode "Water_Line_Dirt" 		 {
+			visible 1
+			renderer sdStampNode {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					local image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					distribution image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 1
+					color ( 1 1 1 )
+					texScale ( 1 1 )
+					rampWidth 1
+					rotation 0
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType ""
+					surfaceTypeThreshold 0.5
+					distributionPatternTexScale ( 1 1 )
+					distributionPatternRotation 0
+					blend ""
+					blendParms ( 0 0 0 0 )
+					detailTextureType 0
+				}
+				{
+					stampFile "megagen/megastamps/terrain_mesh_sdk/water_line.megastamp"
+				}
+			}
+		}
+		sdNode "Sticks" 		 {
+			visible 1
+			renderer sdImageRenderer {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/dirt_05_d.tga"
+					}
+					local image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/dirt_05_local.tga"
+					}
+					distribution image sdTextureTGA_Properties {
+						name "textures/megagen/terrain_mesh_sdk/masks/mask_sticks.tga"
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/dirt_05_mask.tga"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 1
+					color ( 1 1 1 )
+					texScale ( 16 16 )
+					rampWidth 0.75
+					rotation 0
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType "dirt"
+					surfaceTypeThreshold 0.5
+					distributionPatternTexScale ( 16 16 )
+					distributionPatternRotation 0
+					blend "blend"
+					blendParms ( 0 0 0 0 )
+					detailTextureType 0
+				}
+				{	//sdImageRenderer
+					uvType "mesh"
+					projectionAngle 0
+				}
+			}
+		}
+		sdNode "Grass_Outer" 		 {
+			visible 1
+			renderer sdImageRenderer {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/grass_03_d.tga"
+					}
+					local image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/grass_03_local.tga"
+					}
+					distribution image sdTextureTGA_Properties {
+						name "textures/megagen/terrain_mesh_sdk/masks/mask_grass.tga"
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/grass_03_mask.tga"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 1
+					color ( 1 1 1 )
+					texScale ( 12 12 )
+					rampWidth 0.25
+					rotation 300
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType "grass"
+					surfaceTypeThreshold 0.5
+					distributionPatternTexScale ( 12 12 )
+					distributionPatternRotation 300
+					blend "blend"
+					blendParms ( 0 0 0 0 )
+					detailTextureType 1
+				}
+				{	//sdImageRenderer
+					uvType "mesh"
+					projectionAngle 0
+				}
+			}
+			sdNode "Grass_Inner" 			 {
+				visible 1
+				renderer sdImageRenderer {
+					{
+						heightmap image sdTextureTGA_Properties {
+							name "<none>"
+						}
+						diffuse image sdTextureTGA_Properties {
+							name "textures/megagen/temperate/grass_02_d.tga"
+						}
+						local image sdTextureTGA_Properties {
+							name "textures/megagen/temperate/grass_02_local.tga"
+						}
+						distribution image sdTextureTGA_Properties {
+							name "textures/megagen/terrain_mesh_sdk/masks/mask_grass.tga"
+						}
+						distributionPattern image sdTextureTGA_Properties {
+							name "textures/megagen/temperate/grass_02_mask.tga"
+						}
+						globalMask image sdTextureTGA_Properties {
+							name "<none>"
+						}
+						projectionPattern image sdTextureTGA_Properties {
+							name "<none>"
+						}
+						alpha 1
+						color ( 1 1 1 )
+						texScale ( 12 12 )
+						rampWidth 0.25
+						rotation 300
+						maskRotation 0
+						rotationCenter ( 0.5 0.5 )
+						surfaceType "grass"
+						surfaceTypeThreshold 0.5
+						distributionPatternTexScale ( 12 12 )
+						distributionPatternRotation 300
+						blend "blend"
+						blendParms ( 0 0 0 0 )
+						detailTextureType 1
+					}
+					{	//sdImageRenderer
+						uvType "mesh"
+						projectionAngle 0
+					}
+				}
+			}
+		}
+		sdNode "Stones" 		 {
+			visible 1
+			renderer sdImageRenderer {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/stones_01_d.tga"
+					}
+					local image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/stones_01_local.tga"
+					}
+					distribution image sdTextureTGA_Properties {
+						name "textures/megagen/terrain_mesh_sdk/masks/mask_stones.tga"
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/stones_01_mask.tga"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 1
+					color ( 1 1 1 )
+					texScale ( 8 8 )
+					rampWidth 0.25
+					rotation 270
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType "stone"
+					surfaceTypeThreshold 0.5
+					distributionPatternTexScale ( 8 8 )
+					distributionPatternRotation 270
+					blend "blend"
+					blendParms ( 0 0 0 0 )
+					detailTextureType 0
+				}
+				{	//sdImageRenderer
+					uvType "mesh"
+					projectionAngle 0
+				}
+			}
+		}
+		sdNode "Pebbles" 		 {
+			visible 1
+			renderer sdImageRenderer {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/pebbles_01_d.tga"
+					}
+					local image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/pebbles_01_local.tga"
+					}
+					distribution image sdTextureTGA_Properties {
+						name "textures/megagen/terrain_mesh_sdk/masks/mask_pebbles.tga"
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/pebbles_01_mask.tga"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 1
+					color ( 1 1 1 )
+					texScale ( 8 8 )
+					rampWidth 0.75
+					rotation 270
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType "mud"
+					surfaceTypeThreshold 0.5
+					distributionPatternTexScale ( 8 8 )
+					distributionPatternRotation 270
+					blend "blend"
+					blendParms ( 0 0 0 0 )
+					detailTextureType 0
+				}
+				{	//sdImageRenderer
+					uvType "mesh"
+					projectionAngle 0
+				}
+			}
+		}
+	}
+	sdNode "Main_Road" 	 {
+		visible 1
+		renderer sdRoad {
+			{
+				heightmap image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				diffuse image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				local image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				distribution image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				distributionPattern image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				globalMask image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				projectionPattern image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				alpha 1
+				color ( 1 1 1 )
+				texScale ( 1 1 )
+				rampWidth 1
+				rotation 0
+				maskRotation 0
+				rotationCenter ( 0.5 0.5 )
+				surfaceType ""
+				surfaceTypeThreshold 0.5
+				distributionPatternTexScale ( 1 1 )
+				distributionPatternRotation 0
+				blend ""
+				blendParms ( 0 0 0 0 )
+				detailTextureType 0
+			}
+			{
+				template "sdk_main_road"
+				controlPoints {
+					sdControlPoint( -4095 1024 1536 )( ( 1 0 0 )( 0 1 0 )( 0 0 1 ) ) 640 512 768
+					sdControlPoint( -2560 768 1536 )( ( 0.9486833811 -0.3162277937 -0 )( 0.3162277937 0.9486833811 0 )( 0 -0 1 ) ) 640 404.7715454102 404.7715454102
+					sdControlPoint( -1152 -128 1536 )( ( 0.7843639851 -0.6203008294 0 )( 0.6203008294 0.7843639851 0 )( -0 0 1 ) ) 640 640 999.1284790039
+					sdControlPoint( 896 -1792 1536 )( ( 0.7883980274 -0.6151655316 -0 )( 0.6151655316 0.7883980274 0 )( 0 -0 1 ) ) 640 1340.7648925781 640
+					sdControlPoint( 2432 -2560 1536 )( ( 0.9486833811 -0.3162277937 -0 )( 0.3162277937 0.9486833811 0 )( 0 -0 1 ) ) 640 404.7715454102 404.7715454102
+					sdControlPoint( 4095 -2816 1536 )( ( 1 -0 -0 )( 0 1 0 )( 0 -0 1 ) ) 640 512 512
+				}
+			}
+		}
+	}
+	sdNode "Rock" 	 {
+		visible 1
+		sdNode "Rock_Base" 		 {
+			visible 1
+			renderer sdImageRenderer {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/rock_01_h.tga"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/rock_01_d.tga"
+					}
+					local image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/rock_01_local.tga"
+					}
+					distribution image sdTextureTGA_Properties {
+						name "textures/megagen/terrain_mesh_sdk/masks/mask_rock_base.tga"
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/rock_01_mask.tga"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 1
+					color ( 1 1 1 )
+					texScale ( 8 8 )
+					rampWidth 0.25
+					rotation -45
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType "stone"
+					surfaceTypeThreshold 0.5
+					propagateDistribution
+					distributionPatternTexScale ( 8 8 )
+					distributionPatternRotation -45
+					blend "blend"
+					blendParms ( 0 0 0 0 )
+					detailTextureType 3
+				}
+				{	//sdImageRenderer
+					uvType "mesh"
+					projectionAngle 0
+				}
+			}
+			sdNode "Rock_Smooth" 			 {
+				visible 1
+				renderer sdImageRenderer {
+					{
+						heightmap image sdTextureTGA_Properties {
+							name "textures/megagen/temperate/rock_02_h.tga"
+						}
+						diffuse image sdTextureTGA_Properties {
+							name "textures/megagen/temperate/rock_02_d.tga"
+						}
+						local image sdTextureTGA_Properties {
+							name "textures/megagen/temperate/rock_02_local.tga"
+						}
+						distribution image sdTextureTGA_Properties {
+							name "textures/megagen/terrain_mesh_sdk/masks/mask_rock_smooth.tga"
+						}
+						distributionPattern image sdTextureTGA_Properties {
+							name "textures/megagen/temperate/rock_01_mask.tga"
+						}
+						globalMask image sdTextureTGA_Properties {
+							name "<none>"
+						}
+						projectionPattern image sdTextureTGA_Properties {
+							name "<none>"
+						}
+						alpha 1
+						color ( 1 1 1 )
+						texScale ( 16 16 )
+						rampWidth 0.5
+						rotation -45
+						maskRotation 0
+						rotationCenter ( 0.5 0.5 )
+						surfaceType "stone"
+						surfaceTypeThreshold 0.5
+						distributionPatternTexScale ( 8 8 )
+						distributionPatternRotation -45
+						blend "blend"
+						blendParms ( 0 0 0 0 )
+						detailTextureType 3
+					}
+					{	//sdImageRenderer
+						uvType "mesh"
+						projectionAngle 0
+					}
+				}
+			}
+			sdNode "Rock_Horizontal_(Projected)" 			 {
+				visible 1
+				renderer sdImageRenderer {
+					{
+						heightmap image sdTextureTGA_Properties {
+							name "textures/megagen/temperate/rock_04_h.tga"
+						}
+						diffuse image sdTextureTGA_Properties {
+							name "textures/megagen/temperate/rock_04_d.tga"
+						}
+						local image sdTextureTGA_Properties {
+							name "textures/megagen/temperate/rock_04_local.tga"
+						}
+						distribution image sdTextureTGA_Properties {
+							name "textures/megagen/terrain_mesh_sdk/masks/mask_rock_horizontal.tga"
+						}
+						distributionPattern image sdTextureTGA_Properties {
+							name "textures/megagen/temperate/rock_01_mask.tga"
+						}
+						globalMask image sdTextureTGA_Properties {
+							name "<none>"
+						}
+						projectionPattern image sdTextureTGA_Properties {
+							name "textures/megagen/temperate/rock_04_mask.tga"
+						}
+						alpha 1
+						color ( 1 1 1 )
+						texScale ( 6 2 )
+						rampWidth 1
+						rotation 0
+						maskRotation 0
+						rotationCenter ( 0.5 0.5 )
+						surfaceType "stone"
+						surfaceTypeThreshold 0.5
+						propagateDistribution
+						distributionPatternTexScale ( 8 8 )
+						distributionPatternRotation 0
+						blend "blend"
+						blendParms ( 0 0 0 0.75 )
+						detailTextureType 3
+					}
+					{	//sdImageRenderer
+						uvType "parallelSide"
+						projectionAngle 135
+					}
+				}
+			}
+		}
+		sdNode "Rock_Cracks" 		 {
+			visible 1
+			renderer sdStampNode {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					local image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					distribution image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 1
+					color ( 1 1 1 )
+					texScale ( 1 1 )
+					rampWidth 1
+					rotation 0
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType ""
+					surfaceTypeThreshold 0.5
+					distributionPatternTexScale ( 1 1 )
+					distributionPatternRotation 0
+					blend ""
+					blendParms ( 0 0 0 0 )
+					detailTextureType 0
+				}
+				{
+					stampFile "megagen/megastamps/terrain_mesh_sdk/rock_cracks.megastamp"
+				}
+			}
+		}
+		sdNode "Rock_Stain_(HeightMap)" 		 {
+			visible 1
+			renderer sdImageRenderer {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "textures/megagen/black.tga"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "textures/megagen/white.tga"
+					}
+					local image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					distribution image sdTextureTGA_Properties {
+						name "textures/megagen/terrain_mesh_sdk/masks/mask_rock_stain.tga"
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 0.5
+					color ( 0 0 0 )
+					texScale ( 1 1 )
+					rampWidth 1
+					rotation 0
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType ""
+					surfaceTypeThreshold 0.5
+					distributionPatternTexScale ( 1 1 )
+					distributionPatternRotation 0
+					blend "heightmap"
+					blendParms ( 0.33 0.25 0 0 )
+					detailTextureType -1
+				}
+				{	//sdImageRenderer
+					uvType "mesh"
+					projectionAngle 0
+				}
+			}
+		}
+	}
+	sdNode "Projectors" 	 {
+		visible 1
+		sdNode "Cracked_Road" 		 {
+			visible 1
+			renderer sdWindingProjector {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/road_crack_01_d.tga"
+					}
+					local image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/road_crack_01_local.tga"
+					}
+					distribution image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/road_crack_01_mask.tga"
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 1
+					color ( 1 1 1 )
+					texScale ( 1 1 )
+					rampWidth 1
+					rotation 0
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType "pavement"
+					surfaceTypeThreshold 0.5
+					distributionPatternTexScale ( 1 1 )
+					distributionPatternRotation 0
+					clamp
+					blend "blend"
+					blendParms ( 0 0 0 0 )
+					detailTextureType 2
+				}
+				{	//sdWindingProjector
+					projectionOrigin ( -3472 1192 6400 )
+					projectionWindingCount 4
+					projectionWindingVertex0 ( -3746.337646 1110.398682 6144 0 0 ) 
+					projectionWindingVertex1 ( -3242.116455 1021.490723 6144 0 0 ) 
+					projectionWindingVertex2 ( -3197.662354 1273.601318 6144 0 0 ) 
+					projectionWindingVertex3 ( -3701.883545 1362.509277 6144 0 0 ) 
+					projectionIsParallel
+				}
+			}
+		}
+		sdNode "Crater" 		 {
+			visible 1
+			renderer sdWindingProjector {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/crater_01_d.tga"
+					}
+					local image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/crater_01_local.tga"
+					}
+					distribution image sdTextureTGA_Properties {
+						name "textures/megagen/temperate/crater_01_mask.tga"
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 1
+					color ( 1 1 1 )
+					texScale ( 1 1 )
+					rampWidth 1
+					rotation 0
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType "dirt"
+					surfaceTypeThreshold 0.5
+					distributionPatternTexScale ( 1 1 )
+					distributionPatternRotation 0
+					clamp
+					blend "blend"
+					blendParms ( 0 0 0 0 )
+					detailTextureType 0
+				}
+				{	//sdWindingProjector
+					projectionOrigin ( -3456 1408 6400 )
+					projectionWindingCount 4
+					projectionWindingVertex0 ( -3840 1024 6144 0 0 ) 
+					projectionWindingVertex1 ( -3072 1024 6144 0 0 ) 
+					projectionWindingVertex2 ( -3072 1792 6144 0 0 ) 
+					projectionWindingVertex3 ( -3840 1792 6144 0 0 ) 
+					projectionIsParallel
+				}
+			}
+		}
+	}
+	sdNode "Water_Line" 	 {
+		visible 1
+		sdNode "Water_Line_(Geometry_Based)" 		 {
+			visible 1
+			renderer sdImageRenderer {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "textures/megagen/white.tga"
+					}
+					local image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					distribution image sdGeometryBased_Properties {
+						resolution 1024
+						minAltitude 0 0
+						maxAltitude 800 0.075000003
+						minSlope 0 0
+						maxSlope 128 0
+						minAltitudeEnabled 0
+						maxAltitudeEnabled 1
+						minSlopeEnabled 0
+						maxSlopeEnabled 0
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 1
+					color ( 0.71 0.71 0.71 )
+					texScale ( 1 1 )
+					rampWidth 1
+					rotation 0
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType "water"
+					surfaceTypeThreshold 0.5
+					distributionPatternTexScale ( 1 1 )
+					distributionPatternRotation 0
+					blend "multiply"
+					blendParms ( 0 0 0 0 )
+					detailTextureType -1
+				}
+				{	//sdImageRenderer
+					uvType "mesh"
+					projectionAngle 0
+				}
+			}
+		}
+		sdNode "Water_Fade_(Geometry_Based)" 		 {
+			visible 1
+			renderer sdImageRenderer {
+				{
+					heightmap image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					diffuse image sdTextureTGA_Properties {
+						name "textures/megagen/white.tga"
+					}
+					local image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					distribution image sdGeometryBased_Properties {
+						resolution 1024
+						minAltitude 0 0
+						maxAltitude 768 1
+						minSlope 0 0
+						maxSlope 0 0
+						minAltitudeEnabled 0
+						maxAltitudeEnabled 1
+						minSlopeEnabled 0
+						maxSlopeEnabled 0
+					}
+					distributionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					globalMask image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					projectionPattern image sdTextureTGA_Properties {
+						name "<none>"
+					}
+					alpha 1
+					color ( 0.09 0.09 0.05 )
+					texScale ( 1 1 )
+					rampWidth 1
+					rotation 0
+					maskRotation 0
+					rotationCenter ( 0.5 0.5 )
+					surfaceType "water"
+					surfaceTypeThreshold 0.5
+					distributionPatternTexScale ( 1 1 )
+					distributionPatternRotation 0
+					blend "blend"
+					blendParms ( 0 0 0 0 )
+					detailTextureType -1
+				}
+				{	//sdImageRenderer
+					uvType "mesh"
+					projectionAngle 0
+				}
+			}
+		}
+	}
+	sdNode "Perturbate" 	 {
+		visible 1
+		renderer sdImageRenderer {
+			{
+				heightmap image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				diffuse image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				local image sdTextureTGA_Properties {
+					name "textures/megagen/terrain_mesh_sdk/local.tga"
+				}
+				distribution image sdTextureTGA_Properties {
+					name "textures/megagen/white.tga"
+				}
+				distributionPattern image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				globalMask image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				projectionPattern image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				alpha 1
+				color ( 1 1 1 )
+				texScale ( 1 1 )
+				rampWidth 1
+				rotation 0
+				maskRotation 0
+				rotationCenter ( 0.5 0.5 )
+				surfaceType ""
+				surfaceTypeThreshold 0.5
+				distributionPatternTexScale ( 1 1 )
+				distributionPatternRotation 0
+				blend "perturbateNormals"
+				blendParms ( 0 0 0 0 )
+				detailTextureType -1
+			}
+			{	//sdImageRenderer
+				uvType "mesh"
+				projectionAngle 0
+			}
+		}
+	}
+	sdNode "Ambient_Occlusion" 	 {
+		visible 1
+		renderer sdImageRenderer {
+			{
+				heightmap image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				diffuse image sdTextureTGA_Properties {
+					name "textures/megagen/terrain_mesh_sdk/ambient_occlusion.tga"
+				}
+				local image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				distribution image sdTextureTGA_Properties {
+					name "textures/megagen/white.tga"
+				}
+				distributionPattern image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				globalMask image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				projectionPattern image sdTextureTGA_Properties {
+					name "<none>"
+				}
+				alpha 1
+				color ( 1 1 1 )
+				texScale ( 1 1 )
+				rampWidth 1
+				rotation 0
+				maskRotation 0
+				rotationCenter ( 0.5 0.5 )
+				surfaceType ""
+				surfaceTypeThreshold 0.5
+				distributionPatternTexScale ( 1 1 )
+				distributionPatternRotation 0
+				blend "multiply_s16"
+				blendParms ( 0 0 0 0 )
+				detailTextureType -1
+			}
+			{	//sdImageRenderer
+				uvType "mesh"
+				projectionAngle 0
+			}
+		}
+	}
+}
