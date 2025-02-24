@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,9 +11,9 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Physics_AF.h"
-#include "../WorldSpawn.h"
-#include "../Entity.h"
-#include "../Player.h"
+#include "WorldSpawn.h"
+#include "Entity.h"
+#include "Player.h"
 
 CLASS_DECLARATION( idPhysics_Base, idPhysics_AF )
 END_CLASS
@@ -88,7 +88,7 @@ void sdAFPhysicsNetworkData::Read( idFile* file ) {
 
 	int count;
 	file->ReadInt( count );
-	
+
 	bodies.SetNum( count );
 	for ( int i = 0; i < count; i++ ) {
 		file->ReadVec3( bodies[ i ].origin );
@@ -4954,7 +4954,7 @@ void idPhysics_AF::Evolve( float timeStep ) {
 	idVec6 force;
 	idRotation rotation;
 	float vSqr, maxLinearVelocity, maxAngularVelocity;
-	
+
 	maxLinearVelocity = af_maxLinearVelocity.GetFloat() / timeStep;
 	maxAngularVelocity = af_maxAngularVelocity.GetFloat() / timeStep;
 
@@ -6917,7 +6917,7 @@ void idPhysics_AF::AddForce( const int id, const idVec3 &point, const idVec3 &fo
 	bodies[id]->current->externalForce.SubVec3( 0 ) += force;
 
 	idVec3 dist = ( point - bodies[id]->current->worldOrigin );
-	
+
 	idVec3 aforce = dist.Cross( force );
 
 	bodies[id]->current->externalForce.SubVec3( 1 ) += aforce;
@@ -7506,7 +7506,7 @@ void idPhysics_AF::WriteNetworkState( networkStateMode_t mode, const sdEntitySta
 		msg.WriteDeltaLong( baseData.atRest,		newData.atRest );
 		msg.WriteDeltaFloat( baseData.activateTime,	newData.activateTime );
 		msg.WriteDeltaFloat( baseData.noMoveTime,	newData.noMoveTime );
-		
+
 		msg.WriteDeltaLong( baseData.bodies.Num(),	newData.bodies.Num() );
 		for ( i = 0; i < newData.bodies.Num(); i++ ) {
 			if ( i < baseData.bodies.Num() ) {

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,13 +11,13 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "GameRules_Campaign.h"
-#include "../Player.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../guis/UserInterfaceLocal.h"
-#include "../guis/UIList.h"
-#include "../rules/VoteManager.h"
-#include "../rules/AdminSystem.h"
+#include "Player.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "guis/UserInterfaceLocal.h"
+#include "guis/UIList.h"
+#include "rules/VoteManager.h"
+#include "rules/AdminSystem.h"
 
 sdGameRulesCampaignNetworkState::sdGameRulesCampaignNetworkState( void ) {
 }
@@ -33,7 +33,7 @@ void sdGameRulesCampaignNetworkState::Write( idFile* file ) const {
 	sdGameRulesNetworkState::Write( file );
 
 	file->WriteInt( winningTeam ? winningTeam->GetIndex() : -1 );
-	file->WriteInt( campaignWinningTeam ? campaignWinningTeam->GetIndex() : -1 );	
+	file->WriteInt( campaignWinningTeam ? campaignWinningTeam->GetIndex() : -1 );
 }
 
 void sdGameRulesCampaignNetworkState::Read( idFile* file ) {
@@ -45,7 +45,7 @@ void sdGameRulesCampaignNetworkState::Read( idFile* file ) {
 
 	int campaignWinningTeamIndex;
 	file->ReadInt( campaignWinningTeamIndex );
-	campaignWinningTeam = campaignWinningTeamIndex == -1 ? NULL : &sdTeamManager::GetInstance().GetTeamByIndex( campaignWinningTeamIndex );	
+	campaignWinningTeam = campaignWinningTeamIndex == -1 ? NULL : &sdTeamManager::GetInstance().GetTeamByIndex( campaignWinningTeamIndex );
 }
 
 /*
@@ -424,7 +424,7 @@ void sdGameRulesCampaign::EndGame( void ) {
 			SendMapStats( currentMapIndex, sdReliableMessageClientInfoAll() );
 			if( gameLocal.DoClientSideStuff() ) {
 				OnMapStatsReceived( currentMapIndex );
-			}			
+			}
 		}
 
 		CallScriptEndGame();
@@ -519,13 +519,13 @@ userMapChangeResult_e sdGameRulesCampaign::OnUserStartMap( const char* text, idS
 			reason = va( "Unknown Campaign '%s'", text );
 			return UMCR_ERROR;
 		}
-		
+
 		if( fileSystem->IsAddonPackReferenced( metaData->pak ) ) {
 			reason = va( "Unknown Campaign '%s'", text );
 			return UMCR_ERROR;
 		}
 		fileSystem->ReferenceAddonPack( metaData->pak );
-		
+
 		idCmdArgs args;
 		args.AppendArg( "spawnServer" );
 		args.AppendArg( text );
@@ -605,7 +605,7 @@ bool sdGameRulesCampaign::CheckNetworkStateChanges( const sdEntityStateNetworkDa
 	}
 
 	NET_GET_BASE( sdGameRulesCampaignNetworkState );
-	
+
 	NET_CHECK_FIELD( winningTeam, GetWinningTeam() );
 	NET_CHECK_FIELD( campaignWinningTeam, GetCampaignWinner() );
 
@@ -704,14 +704,14 @@ void sdGameRulesCampaign::ArgCompletion_StartGame( const idCmdArgs& args, argCom
 			continue;
 		}
 		const idDict& meta = *metaData.meta;
-		
+
 		const char* metaName = meta.GetString( "metadata_name" );
 		if ( idStr::Icmpn( metaName, cmd, len ) ) {
 			continue;
 		}
 
 		callback( va( "%s %s", args.Argv( 0 ), metaName ) );
-	}	
+	}
 }
 
 /*
@@ -788,7 +788,7 @@ void sdGameRulesCampaign::UpdateClientFromServerInfo( const idDict& serverInfo, 
 			teamWins[ sdTeamManager::GetInstance().GetTeamByIndex( i ).GetLookupName() ] = 0;
 		}
 
-		const idDict* metaData = gameLocal.mapMetaDataList->FindMetaData( mapName, &gameLocal.defaultMetaData );		
+		const idDict* metaData = gameLocal.mapMetaDataList->FindMetaData( mapName, &gameLocal.defaultMetaData );
 
 		const char* campaignName = serverInfo.GetString( "si_campaign" );
 		const idDict* campaignMetaData = gameLocal.campaignMetaDataList->FindMetaData( campaignName, &gameLocal.defaultMetaData );
@@ -797,7 +797,7 @@ void sdGameRulesCampaign::UpdateClientFromServerInfo( const idDict& serverInfo, 
 		idList< const char* > cachedMapMetaData;
 
 		if( allowMedia ) {
-			const sdDeclCampaign* campaign = gameLocal.declCampaignType.LocalFind( campaignName );			
+			const sdDeclCampaign* campaign = gameLocal.declCampaignType.LocalFind( campaignName );
 
 			// setup the backdrop
 			if ( sdProperty* property = scope->GetProperty( "backdrop", PT_STRING ) ) {
@@ -838,13 +838,13 @@ void sdGameRulesCampaign::UpdateClientFromServerInfo( const idDict& serverInfo, 
 		if ( sdProperty* property = scope->GetProperty( "numMaps", PT_FLOAT ) ) {
 			*property->value.floatValue = showCurrentOnly ? Min( cachedMapInfo.Num(), 1 ) : cachedMapInfo.Num();
 		}
-		
+
 		int mapIndex = 1;
 		int numRead = 1;
 
 		bool readAny = false;
 		// setup the map state (who won, current, or not played)
-		for( int i = 0; i < cachedMapMetaData.Num(); i++ ) {						
+		for( int i = 0; i < cachedMapMetaData.Num(); i++ ) {
 			idStr status = "unplayed";
 
 			bool current = false;
@@ -868,7 +868,7 @@ void sdGameRulesCampaign::UpdateClientFromServerInfo( const idDict& serverInfo, 
 					status = "unplayed";
 				}
 			}
-			
+
 			if( showCurrentOnly && !current ) {
 				continue;
 			}
@@ -898,7 +898,7 @@ void sdGameRulesCampaign::UpdateClientFromServerInfo( const idDict& serverInfo, 
 			}
 			++iter;
 		}
-		
+
 		idWStr value;
 		if( teamWins.Num() == 2 ) {
 			idWStrList args( 2 );
@@ -937,9 +937,9 @@ void sdGameRulesCampaign::GetBrowserStatusString( idWStr& str, const sdNetSessio
 	const idDict& serverInfo = netSession.GetServerInfo();
 	const char* campaignName = serverInfo.GetString( "si_campaign" );
 	if( campaignName[ 0 ] != '\0' ) {
-		const sdDeclCampaign* campaign = gameLocal.declCampaignType.LocalFind( campaignName, false );		
+		const sdDeclCampaign* campaign = gameLocal.declCampaignType.LocalFind( campaignName, false );
 
-		if( campaign != NULL ) {			
+		if( campaign != NULL ) {
 			const char* campaignInfo = serverInfo.GetString( "si_campaignInfo" );
 			int num = 1;
 			int i = 0;
@@ -958,7 +958,7 @@ void sdGameRulesCampaign::GetBrowserStatusString( idWStr& str, const sdNetSessio
 
 			idWStrList args( 3 );
 			args.SetNum( 3 );
-			
+
 			sdGameRules::GetBrowserStatusString( args[ 0 ], netSession );
 			args[ 1 ] = va( L"%i", num );
 			args[ 2 ] = va( L"%i", campaign->GetNumMaps() );

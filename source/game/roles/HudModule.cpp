@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,20 +12,20 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "HudModule.h"
-#include "../Player.h"
-#include "../guis/UserInterfaceLocal.h"
-#include "../guis/UIList.h"
-#include "../Weapon.h"
-#include "../structures/DeployRequest.h"
-#include "../structures/DeployMask.h"
-#include "../script/Script_Helper.h"
-#include "../Atmosphere.h"
+#include "Player.h"
+#include "guis/UserInterfaceLocal.h"
+#include "guis/UIList.h"
+#include "Weapon.h"
+#include "structures/DeployRequest.h"
+#include "structures/DeployMask.h"
+#include "script/Script_Helper.h"
+#include "Atmosphere.h"
 
-#include "../roles/Tasks.h"
+#include "roles/Tasks.h"
 
-#include "../../decllib/declTypeHolder.h"
+#include "decllib/declTypeHolder.h"
 
-#include "../../sys/sys_local.h"
+#include "sys/sys_local.h"
 
 /*
 ===============================================================================
@@ -133,16 +133,16 @@ void sdHudModule::Enable( bool enable, bool urgent, bool timedOut ) {
 			gameLocal.localPlayerProperties.PushPassiveHudModule( *this );
 		} else {
 			if ( urgent ) {
-				gameLocal.localPlayerProperties.PushActiveHudModuleUrgent( *this );				
+				gameLocal.localPlayerProperties.PushActiveHudModuleUrgent( *this );
 			} else {
 				gameLocal.localPlayerProperties.PushActiveHudModule( *this );
 			}
 		}
 		gameLocal.localPlayerProperties.AddDrawHudModule( *this );
-	} else {		
+	} else {
 		_activated = false;
-		
-		if( !timedOut ) {	
+
+		if( !timedOut ) {
 			idPlayer* player = gameLocal.GetLocalPlayer();
 			if ( player ) {
 				if ( DoWeaponLock() ) {
@@ -151,7 +151,7 @@ void sdHudModule::Enable( bool enable, bool urgent, bool timedOut ) {
 				}
 			}
 		}
-		
+
 		OnCancel();
 		sdUserInterfaceLocal* ui = gameLocal.GetUserInterface( _guiHandle );
 		if ( ui ) {
@@ -238,7 +238,7 @@ void sdHudModule::Update( void ) {
 sdLimboMenu::sdLimboMenu
 ==============
 */
-sdLimboMenu::sdLimboMenu( void ) {	
+sdLimboMenu::sdLimboMenu( void ) {
 	_allowInhibit			= false;
 	_inhibitUserCommands	= true;
 	_inhibitGuiFocus		= true;
@@ -257,7 +257,7 @@ bool sdLimboMenu::HandleGuiEvent( const sdSysEvent* event ) {
 		retVal = sdHudModule::HandleGuiEvent( event );
 	}
 
-	return retVal;  
+	return retVal;
 
 }
 
@@ -804,7 +804,7 @@ sdRadialMenuModule::HandleGuiEvent
 bool sdRadialMenuModule::HandleGuiEvent( const sdSysEvent* event ) {
 	// always eat mouse events that come from the controller
 	bool controllerMouse = event->IsControllerMouseEvent();
-	if ( g_radialMenuMouseInput.GetInteger() == 0 && 
+	if ( g_radialMenuMouseInput.GetInteger() == 0 &&
 		!controllerMouse &&
 		( event->IsMouseEvent() ||
 		( event->IsMouseButtonEvent() ) ) ) {
@@ -850,7 +850,7 @@ bool sdRadialMenuModule::GetSensitivity( float& x, float& y ) {
 	}
 
 	if( g_radialMenuMouseInput.GetInteger() == 2 ) {
-		return false;		
+		return false;
 	}
 
 	x = 0.0f;
@@ -964,7 +964,7 @@ void sdWeaponSelectionMenu::SetSwitchActive( eActivationType set ) {
 		return;
 	}
 
-	// jrad - if the menu is deactivated by the fire key, keep the attack from 
+	// jrad - if the menu is deactivated by the fire key, keep the attack from
 	// "leaking" through - otherwise, don't interrupt the player's firing
 	if( switchActive != AT_DIRECT_SELECTION && set == AT_DISABLED ) {
 		idPlayer* player = gameLocal.GetLocalPlayer();
@@ -1002,7 +1002,7 @@ void sdQuickChatMenu::OnActivate( void ) {
 		const sdCrosshairInfo& info = player->GetCrosshairInfoDirect();
 		if( info.IsValid() ) {
 			gameLocal.localPlayerProperties.SetContextEntity( info.GetEntity() );
-		}		
+		}
 	}
 }
 
@@ -1039,6 +1039,6 @@ bool sdFireTeamMenu::HandleGuiEvent( const sdSysEvent* event ) {
 		return true;
 	}
 
-	return sdHudModule::HandleGuiEvent( event );		
+	return sdHudModule::HandleGuiEvent( event );
 }
 

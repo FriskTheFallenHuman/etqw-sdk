@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -35,7 +35,7 @@ bool sdDemoCamera::ParseKey( const idToken& key, idParser& src ) {
 		return true;
 	}
 
-	return false;		
+	return false;
 }
 
 //===============================================================
@@ -50,7 +50,7 @@ sdDemoCamera_Fixed::Parse
 ============
 */
 bool sdDemoCamera_Fixed::Parse( idParser& src ) {
-	
+
 	if ( !src.ExpectTokenString( "{" ) ) {
 		return false;
 	}
@@ -101,7 +101,7 @@ sdDemoCamera_Anim::Parse
 ============
 */
 bool sdDemoCamera_Anim::Parse( idParser& src ) {
-	
+
 	if ( !src.ExpectTokenString( "{" ) ) {
 		return false;
 	}

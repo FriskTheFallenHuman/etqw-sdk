@@ -52,7 +52,7 @@ public:																																		\
 	SD_UI_IMPLEMENT_TYPE_INFO( ClassName, SuperClassName )
 
 #define SD_UI_IMPLEMENT_ABSTRACT_CLASS( ClassName, SuperClassName )																			\
-	SD_UI_IMPLEMENT_TYPE_INFO( ClassName, SuperClassName ) 
+	SD_UI_IMPLEMENT_TYPE_INFO( ClassName, SuperClassName )
 
 /*
 ============
@@ -108,7 +108,7 @@ private:
 	static void 		NumberTypes( node_t& root, size_t& id );
 	static Ptr			FindType( const char* typeName, bool allowNotFound = false );
 	static typeList_t&	GetTypeList();
-	static Ptr			GetTypeRoot( Ptr root = NULL );		
+	static Ptr			GetTypeRoot( Ptr root = NULL );
 };
 
 extern const char sdUITemplateFunctionInstance_IdentifierWindow[];
@@ -217,7 +217,7 @@ public:
 	void									Script_IsChild( sdUIFunctionStack& stack );
 	void									Script_ChangeZOrder( sdUIFunctionStack& stack );
 	void									Script_PostNamedEvent( sdUIFunctionStack& stack );
-	void									Script_PostOptionalNamedEvent( sdUIFunctionStack& stack );	
+	void									Script_PostOptionalNamedEvent( sdUIFunctionStack& stack );
 
 	sdUserInterfaceLocal*					GetUI( void ) { return ui; }
 	const sdUserInterfaceLocal*				GetUI( void ) const { return ui; }
@@ -276,12 +276,12 @@ public:
 	// ===========================================
 
 protected:
-	typedef sdPair< sdProperties::sdProperty*, sdProperties::CallbackHandle > callbackHandler_t;	
+	typedef sdPair< sdProperties::sdProperty*, sdProperties::CallbackHandle > callbackHandler_t;
 	void									ConnectGlobalCallback( const callbackHandler_t& cb ) {
 												toDisconnect.Append( cb );
 											}
 
-	virtual void							InitProperties() {}	
+	virtual void							InitProperties() {}
 	void									SetWindowFlag( const int flag ) { flags = idMath::Ftoi( flags ) | flag; }
 	void									ClearWindowFlag( const int flag ) { flags = idMath::Ftoi( flags ) & ~flag; }
 	bool									FlagActivated( const float oldValue, const float newValue, const int flag ) const	{ return	( !( idMath::Ftoi( oldValue ) & flag ) && ( idMath::Ftoi( newValue ) & flag ) ); }
@@ -305,7 +305,7 @@ private:
 	void									OnVec4PropertyChanged( int event, const idVec4& oldValue, const idVec4& newValue );
 	void									OnVec3PropertyChanged( int event, const idVec3& oldValue, const idVec3& newValue );
 	void									OnVec2PropertyChanged( int event, const idVec2& oldValue, const idVec2& newValue );
-	void									OnCVarChanged( idCVar& cvar, int id );	
+	void									OnCVarChanged( idCVar& cvar, int id );
 
 protected:
 	sdUserInterfaceLocal*					ui;

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,13 +11,13 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Push.h"
-#include "../Entity.h"
-#include "../Actor.h"
+#include "Entity.h"
+#include "Actor.h"
 #include "Physics_Actor.h"
-#include "../Player.h"
-#include "../Moveable.h"
-#include "../Projectile.h"
-#include "../Item.h"
+#include "Player.h"
+#include "Moveable.h"
+#include "Projectile.h"
+#include "Item.h"
 
 /*
 ============

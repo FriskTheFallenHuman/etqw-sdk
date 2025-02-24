@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,8 +11,8 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../../framework/KeyInput.h"
-#include "../../sys/sys_local.h"
+#include "framework/KeyInput.h"
+#include "sys/sys_local.h"
 
 #include "UIWindow.h"
 #include "UserInterfaceLocal.h"
@@ -124,7 +124,7 @@ sdUIEditW::GetFunction
 */
 sdUIFunctionInstance* sdUIEditW::GetFunction( const char* name ) {
 	const sdUITemplateFunction< sdUIEditW >* function = sdUIEditW::FindFunction( name );
-	if ( !function ) {		
+	if ( !function ) {
 		return sdUIWindow::GetFunction( name );
 	}
 
@@ -171,7 +171,7 @@ void sdUIEditW::DrawLocal() {
 		drawIME = true;
 	}
 
-	PostDraw();	
+	PostDraw();
 }
 
 /*
@@ -432,7 +432,7 @@ void sdUIEditW::Script_IsWhitespace( sdUIFunctionStack& stack ) {
 			i++;
 			continue;
 		}
-		
+
 		if( c != L'\n' && c != L' ' ) {
 			stack.Push( false );
 			return;
@@ -562,7 +562,7 @@ void sdUIEditW::DrawIndicator() {
 	deviceContext->SetFontSize( fontSize );
 
 	deviceContext->SetColor( IMETextColor );
-	deviceContext->DrawText( indicator, textRect, DTF_CENTER | DTF_SINGLELINE | DTF_BOTTOM | DTF_NOCLIPPING );								
+	deviceContext->DrawText( indicator, textRect, DTF_CENTER | DTF_SINGLELINE | DTF_BOTTOM | DTF_NOCLIPPING );
 }
 
 #if 0
@@ -596,7 +596,7 @@ void sdUIEditW::DrawComposition() {
 	}
 
 	deviceContext->SetColor( colorWhite );
-	deviceContext->DrawText( compStr, rect, DTF_LEFT | DTF_SINGLELINE | DTF_BOTTOM | DTF_NOCLIPPING );		
+	deviceContext->DrawText( compStr, rect, DTF_LEFT | DTF_SINGLELINE | DTF_BOTTOM | DTF_NOCLIPPING );
 }
 #endif
 
@@ -769,7 +769,7 @@ void sdUIEditW::DrawCandidateReadingWindow( bool reading ) {
 				idVec2 drawEnd;
 				drawEnd.x = drawBegin.x + tdh.GetWidth( firstSelected, firstSelected + horizontalSelectedLen - 1 );
 				drawEnd.y = textRect.GetMins().y;
-				
+
 				deviceContext->DrawRect( drawBegin.x, drawBegin.y, drawEnd.x - drawBegin.x, textRect.GetHeight(), IMESelectionColor );
 			}
 

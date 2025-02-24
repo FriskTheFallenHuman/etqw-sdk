@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,7 +11,7 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "UpdateManager.h"
-#include "../framework/async/AsyncUpdates.h"
+#include "framework/async/AsyncUpdates.h"
 #include "guis/UserInterfaceLocal.h"
 
 idHashMap< sdUpdateManager::uiFunction_t* > sdUpdateManager::uiFunctions;
@@ -90,12 +90,12 @@ void sdUpdateManager::Init( void ) {
 	sdDeclGUI::AddDefine( va( "UPDATE_GUI_NO %i",					UPDATE_GUI_NO ) );
 	sdDeclGUI::AddDefine( va( "UPDATE_GUI_CANCEL %i",				UPDATE_GUI_CANCEL ) );
 
-	sdDeclGUI::AddDefine( va( "UPDATE_IDLE %i", 					UPDATE_IDLE ) );	
-	sdDeclGUI::AddDefine( va( "UPDATE_WAITING %i", 					UPDATE_WAITING ) );			
-//	sdDeclGUI::AddDefine( va( "UPDATE_PROCESS_UPDATE %i", 			UPDATE_PROCESS_UPDATE ) );	
+	sdDeclGUI::AddDefine( va( "UPDATE_IDLE %i", 					UPDATE_IDLE ) );
+	sdDeclGUI::AddDefine( va( "UPDATE_WAITING %i", 					UPDATE_WAITING ) );
+//	sdDeclGUI::AddDefine( va( "UPDATE_PROCESS_UPDATE %i", 			UPDATE_PROCESS_UPDATE ) );
 //	sdDeclGUI::AddDefine( va( "UPDATE_INITIATE_DOWNLOAD %i",		UPDATE_INITIATE_DOWNLOAD ) );
 	sdDeclGUI::AddDefine( va( "UPDATE_REMINDING %i", 				UPDATE_REMINDING ) );
-//	sdDeclGUI::AddDefine( va( "UPDATE_PROMPTING_SETUP %i", 			UPDATE_PROMPTING_SETUP ) );	
+//	sdDeclGUI::AddDefine( va( "UPDATE_PROMPTING_SETUP %i", 			UPDATE_PROMPTING_SETUP ) );
 	sdDeclGUI::AddDefine( va( "UPDATE_PROMPTING %i", 				UPDATE_PROMPTING ) );
 	sdDeclGUI::AddDefine( va( "UPDATE_DOWNLOADING %i", 				UPDATE_DOWNLOADING ) );
 	sdDeclGUI::AddDefine( va( "UPDATE_DOWNLOAD_FAILED %i", 			UPDATE_DOWNLOAD_FAILED ) );
@@ -126,7 +126,7 @@ sdUpdateManager::Update
 ============
 */
 void sdUpdateManager::Update( void ) {
-	
+
 }
 
 /*

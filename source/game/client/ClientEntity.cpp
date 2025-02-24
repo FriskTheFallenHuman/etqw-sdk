@@ -5,7 +5,7 @@
 // ClientEntity.cpp
 //----------------------------------------------------------------
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -15,14 +15,14 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "ClientEntity.h"
-#include "../Player.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
+#include "Player.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
 #include "ClientEffect.h"
-#include "../../decllib/declTypeHolder.h"
-#include "../guis/UserInterfaceLocal.h"
-#include "../guis/GuiSurface.h"
-#include "../ContentMask.h"
+#include "decllib/declTypeHolder.h"
+#include "guis/UserInterfaceLocal.h"
+#include "guis/GuiSurface.h"
+#include "ContentMask.h"
 
 ABSTRACT_DECLARATION( idClass, rvClientEntity )
 END_CLASS

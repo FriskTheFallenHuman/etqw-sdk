@@ -47,7 +47,7 @@ public:
 					// splits the winding into a front and back winding, the winding itself stays unchanged
 					// returns a SIDE_?
 	int				Split( const idPlane &plane, const float epsilon, idWinding **front, idWinding **back ) const;
-					
+
 					// idential to the above version, but avoids heap allocations
 	int				Split( const idPlane &plane, const float epsilon, idWinding& front, idWinding& back ) const;
 
@@ -298,7 +298,7 @@ ID_INLINE float idWinding::TriangleArea( const idVec3 &a, const idVec3 &b, const
 /*
 ===============================================================================
 
-	idGrowingWinding 
+	idGrowingWinding
 
 ===============================================================================
 */

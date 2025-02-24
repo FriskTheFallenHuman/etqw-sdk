@@ -9,7 +9,7 @@
 #include "BotAI_Actions.h"
 #include "BotAI_Routes.h"
 #include "BotAI_Obstacles.h"
-#include "../misc/PlayerBody.h"
+#include "misc/PlayerBody.h"
 #include "Bot_Common.h"
 
 #define MAIN_GUN		 0
@@ -26,7 +26,7 @@
 #define MAX_GRENADES	 4
 #define MAX_MINES		 3
 #define MAX_CARRYABLES	 4
-#define MAX_DEPLOYABLES	 38 
+#define MAX_DEPLOYABLES	 38
 #define MAX_STROYBOMBS	 32
 #define MAX_TEAMS		 2
 #define MAX_SHIELDS		 4
@@ -164,7 +164,7 @@ struct gameLocalInfo_t {
 };
 
 struct playerBodiesInfo_t {//mal: all values set at the end of idGameLocal::RunFrame
-	bool					isValid;							
+	bool					isValid;
 	bool					uniformStolen;
 	bool					isSpawnHost;
 	bool					isSpawnHostAble;
@@ -174,7 +174,7 @@ struct playerBodiesInfo_t {//mal: all values set at the end of idGameLocal::RunF
 	int						areaNum;				//mal: what area of the AAS this body is in.
 	int						spawnID;
 	playerTeamTypes_t		bodyTeam;
-	idVec3					bodyOrigin;	
+	idVec3					bodyOrigin;
 };
 
 struct spawnHostInfo_t {
@@ -239,7 +239,7 @@ struct artyAttackInfo_t  {
 	idVec3					origin;
 };
 
-struct scriptHandlers_t { 
+struct scriptHandlers_t {
 	qhandle_t				chargeTimer;						//mal: a handle to the player's charge bar
 	qhandle_t				bombTimer;							//mal: a handle to the player's charge bar
 	qhandle_t				fireSupportTimer;
@@ -354,7 +354,7 @@ struct clientInfo_t {
 	bool					hasJumped;							//mal: set in idPlayer::Think
 	bool					inWater;							//mal: set in idPlayer::Think
 	bool					wantsVehicle;
-	bool					hasRepairDroneInWorld;				
+	bool					hasRepairDroneInWorld;
 	bool					isTeleporting;
 	bool					usingMountedGPMG;
 	bool					isNoTarget;							//mal: set in idPlayer::Think
@@ -371,11 +371,11 @@ struct clientInfo_t {
 	bool					isDisguised;						//mal: set in idPlayer::Think
 	bool					inEnemyTerritory;					//mal: set in idPlayer::Think
 	bool					hasTeleporterInWorld;
-	
+
 	bool					isActor;							//mal: this client is an actor, presenting info to the player.
 	int						briefingTime;
-	
-	int						resetState;							//mal: should the bot reset its AI, and how much of a priority is it to reset?	
+
+	int						resetState;							//mal: should the bot reset its AI, and how much of a priority is it to reset?
 	int						touchingItemTime;					//mal: set in idItem::OnTouch - is this client touching an item? Useful for finding spies!
 	int						friendsInArea;						//mal: set in idBotAI::RunFrame
 	int						enemiesInArea;						//mal: set in idBotAI::RunFrame
@@ -385,7 +385,7 @@ struct clientInfo_t {
 
 	int						lastOwnedVehicleSpawnID;
 	int						lastOwnedVehicleTime;
-	
+
 	int						classChargeUsed;					//mal: set in idPlayer::Think -
 	int						supplyChargeUsed;					//mal: set in idPlayer::Think - supply packs
 	int						bombChargeUsed;						//mal: set in idPlayer::Think - HE charges
@@ -415,7 +415,7 @@ struct clientInfo_t {
 	bool					commandRequestChatSent;
 
 	int						spawnHostTargetSpawnID;
-	
+
 	int						repairTargetNum;					//mal: keep track of entities that have been marked for repair
 	int						repairTargetSpawnID;
 	int						repairTargetUpdateTime;
@@ -438,13 +438,13 @@ struct clientInfo_t {
 	int						lastAttackedEntityTime;				//mal: last entity attacked time.
 	int						areaNum;							//mal: set in idBotThread::RunFrame - what AAS area this client is in.
 	int						areaNumVehicle;
-	int						invulnerableEndTime;				//mal: set in idPlayer::Think - is this client invulnerable ( i.e. just spawned)?	
+	int						invulnerableEndTime;				//mal: set in idPlayer::Think - is this client invulnerable ( i.e. just spawned)?
 	int						crouchCounter;						//mal: set in idPlayer::Think - how long has this player been crouching.
 	int						killCounter;						//mal: cycles thru the list of "kills".
 	int						favoriteKill;						//mal: set in idPlayer::UpdatePlayerKills - the client we love to kill!
 	int						chatDelay;
 	int						covertWarningTime;
-	int						lastChatTime[ MAX_CHATS ];			//mal: when did this client last chat 
+	int						lastChatTime[ MAX_CHATS ];			//mal: when did this client last chat
 	int						lastThanksTime;
 	int						lastClassChangeTime;
 	int						lastWeapChangedTime;
@@ -460,10 +460,10 @@ struct clientInfo_t {
 	weaponInfo_t			weapInfo;							//mal: the state of this clients weapon
 	playerTeamTypes_t		team;								//mal: set in idPlayer::SetGameTeam
 	playerClassTypes_t		classType;							//mal: set in sdInventory::SetPlayerClass
-	playerClassTypes_t		cachedClassType;					
+	playerClassTypes_t		cachedClassType;
 	scriptHandlers_t		scriptHandler;						//mal: used to get certain, hard to get, script only stuff.
 	botPostureFlags_t		posture;							//mal: set in idPlayer::Think
-	killedPlayersInfo_t		kills[ MAX_KILLS ];	
+	killedPlayersInfo_t		kills[ MAX_KILLS ];
 	supplyPackInfo_t		packs[ MAX_ITEMS ];
 	supplyPackInfo_t		supplyCrate;
 	gameAbilities_t			abilities;
@@ -495,8 +495,8 @@ struct botCommands_t {
 
 	bool					droppingSupplyCrate;
 
-	bool					attack;				// mal: normal cmds 
-	bool					zoom; 
+	bool					attack;				// mal: normal cmds
+	bool					zoom;
 	bool					activate;
 	bool					activateHeld;		// hold down the activate key
 	bool					altAttackOn;
@@ -523,12 +523,12 @@ struct botCommands_t {
 	bool					useTankAim;			// if true, use the Titan's aiming code to look at this location.
 
 	bool					isBlocked;
-	
+
 	bool					lookUp;				// these 2 are just used by bots resupplying themselves.
 	bool					lookDown;
 
 	bool					throwNade;			// looks up just a bit if bot throws nade/airstrike/violater.
-	
+
 	bool					suicide;			// bots wants to end it all.
 
 	bool					constantFire;		// we want the bot to fire constantly
@@ -606,7 +606,7 @@ struct botAIOutput_t {
 	playerWeaponTypes_t		idealWeaponNum;					// the specific weapon the bot wants to use.
 
 	botMoveFlags_t			moveFlag;					    //mal: crouch, sprint, run, walk, etc.
-	
+
 	botMoveTypes_t			specialMoveType;
 	botMoveTypes_t			moveType;						//mal: mostly used for combat, but can be used for jumping, etc.
 
@@ -632,7 +632,7 @@ struct sharedOutputState_t {
 
 class idBotThreadData {
 public:							// the following routines are called from the game thread
-		
+
 								idBotThreadData();
 								~idBotThreadData();
 
@@ -755,7 +755,7 @@ public:							// the following routines are called from the game thread
 	void						DrawDefuseHints();
 	void						DrawDynamicObstacles();
 	void						DrawActionNumber( int actionNumber, const idMat3& viewAxis, bool drawAllInfo );
-	
+
 	int							GetBotFPS() const { return botFPS; }
 	botDebugInfo_t				GetBotDebugInfo( int clientNum );
 
@@ -807,13 +807,13 @@ public:
 	idClip *					clip;
 	idRandom					random;
 
-	idList<idBotActions*>		botActions;	
+	idList<idBotActions*>		botActions;
 	idList<idBotRoutes*>		botRoutes;
 	idList<idBotObstacle*>		botObstacles;
 	idList<botLocationRemap_t*>	botLocationRemap;
 
 	idBotNodeGraph				botVehicleNodes;
-	
+
 	idHashIndex					actionHash;					// hash table to quickly find actions by name
 	idHashIndex					routeHash;					// hash table to quickly find routes by name
 
@@ -855,8 +855,8 @@ private:
 
 	idClipModel*				personalVehicleClipModel;		// icarus and husky
 	idClipModel*				genericVehicleClipModel;		// everything but goliath
-	idClipModel*				goliathVehicleClipModel;		// 
-	
+	idClipModel*				goliathVehicleClipModel;		//
+
 	int							threadMinFrameDelay;
 	int							threadMaxFrameDelay;
 	int							botFPS;

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -16,7 +16,7 @@ static char THIS_FILE[] = __FILE__;
 #include "Script_Helper.h"
 #include "Script_ScriptObject.h"
 
-#include "../../framework/Licensee.h"
+#include "framework/Licensee.h"
 
 const int SCRIPT_TYPE_PTR_SIZE = sizeof( int );
 
@@ -160,7 +160,7 @@ idTypeDef::idTypeDef( etype_t etype, idVarDef *edef, const char *ename, int esiz
 	size		= esize;
 	auxType		= aux;
 	program		= NULL;
-	
+
 	parmTypes.SetGranularity( 1 );
 	parmNames.SetGranularity( 1 );
 	functions.SetGranularity( 1 );
@@ -612,7 +612,7 @@ void idTypeDef::AddFunction( const function_t* func, idProgram& program ) {
 			}
 		}
 	}
-	
+
 	int index = functions.Append( func );
 
 	int globalVirtualIndex = program.MatchesVirtualFunction( *func->def->TypeDef() );
@@ -826,7 +826,7 @@ void idVarDef::SetString( const char *string, bool constant ) {
 		settings.initialized = initializedVariable;
 	}
 	settings.isReturn = false;
-	
+
 	assert( typeDef && ( typeDef->Type() == ev_string ) );
 	idStr::Copynz( value.stringPtr, string, MAX_STRING_LEN );
 }
@@ -986,7 +986,7 @@ idProgram::AllocType
 idTypeDef *idProgram::AllocType( idTypeDef &type ) {
 	idTypeDef* newtype = typeDefAllocator.Alloc();
 	*newtype = type;
-	
+
 	int index = types.Append( newtype );
 
 	AddToHash( newtype, index );
@@ -1360,7 +1360,7 @@ idProgram::GetScopeReturn
 */
 scopeReturn_t& idProgram::GetScopeReturn( idVarDef* scope ) {
 	int key = scopeReturnsHash.GenerateKey( scope );
-	
+
 	for ( int index = scopeReturnsHash.GetFirst( key ); index != idHashIndex::NULL_INDEX; index = scopeReturnsHash.GetNext( index ) ) {
 		if ( scopeReturns[ index ].scope != scope ) {
 			continue;
@@ -1551,7 +1551,7 @@ int idProgram::MatchesVirtualFunction( const idTypeDef& match ) const {
 
 	for ( i = 0; i < globalVirtualFunctions.Num(); i++ ) {
 		const function_t* function = globalVirtualFunctions[ i ];
-		
+
 		const idTypeDef& other = *function->def->TypeDef();
 
 		if ( idStr::Cmp( match.Name(), other.Name() ) ) {
@@ -1813,7 +1813,7 @@ void idProgram::Disassemble( void ) const {
 		for( instructionPointer = 0; instructionPointer < func->numStatements; instructionPointer++ ) {
 			DisassembleStatement( file, func->firstStatement + instructionPointer );
 		}
-	
+
 		file->Printf( "}\n" );
 	}
 
@@ -1929,7 +1929,7 @@ bool idProgram::CompileText( const char *source, const char *text ) {
 			}
 		}
 	}
-	
+
 	catch( idCompileError &err ) {
 		gameLocal.Error( "%s", err.error );
 	};
@@ -2172,7 +2172,7 @@ void idProgram::Restart( void ) {
 	statements.SetNum( 0 );
 	fileList.SetNum( 0, false );
 	filename.Clear();
-	
+
 	// reset the variables to their default values
 	numVariables = variableDefaults.Num();
 	for( int  i = 0; i < numVariables; i++ ) {

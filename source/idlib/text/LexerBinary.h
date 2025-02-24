@@ -51,7 +51,7 @@ ID_INLINE void idTokenCache::Swap( idTokenCache& rhs ) {
 	uniqueTokenHash.Swap( rhs.uniqueTokenHash );
 }
 
-ID_INLINE void idTokenCache::Clear() {	
+ID_INLINE void idTokenCache::Clear() {
 	uniqueTokens.Clear();
 	uniqueTokenHash.Clear();
 }
@@ -71,11 +71,11 @@ public:
 
 	bool					IsLoaded( void ) const { return isLoaded; }
 	int						EndOfFile( void ) const;
-	
+
 	void					AddToken( const idToken& token, idTokenCache* cache = NULL );
 
 	int						ReadToken( idToken *token );
-	void					Swap( idLexerBinary& rhs );	
+	void					Swap( idLexerBinary& rhs );
 
 	void					Clear( void );
 	void					ResetParsing( void );
@@ -85,8 +85,8 @@ public:
 	const idList<idToken>&	GetUniqueTokens( void ) const;
 
 	void					SetData( const idList<unsigned short>* indices, const idTokenCache* cache );
-	
-	const idList<unsigned short>& 
+
+	const idList<unsigned short>&
 							GetTokenStream() const	{ return tokens; }
 
 	size_t					Allocated( void ) const			{ return tokens.Allocated() + tokenCache.Allocated(); }
@@ -94,10 +94,10 @@ public:
 private:
 	bool					isLoaded;
 	int						nextToken;
-	
-	idTokenCache			tokenCache;		
+
+	idTokenCache			tokenCache;
 	idList<unsigned short>	tokens;
-	
+
 									// allow clients to set their own data
 	const idList<unsigned short>*	tokensData;
 	const idTokenCache*				tokenCacheData;
@@ -118,7 +118,7 @@ ID_INLINE void idLexerBinary::Swap( idLexerBinary& rhs ) {
 	::Swap( isLoaded, rhs.isLoaded );
 }
 
-ID_INLINE void idLexerBinary::Clear( void ) {	
+ID_INLINE void idLexerBinary::Clear( void ) {
 	isLoaded = false;
 	nextToken = 0;
 	tokens.Clear();

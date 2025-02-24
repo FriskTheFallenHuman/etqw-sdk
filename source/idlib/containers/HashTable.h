@@ -26,7 +26,7 @@ public:
 	size_t			Size( void ) const;
 
 	const Type&		Set( const char *key, const Type &value );
-	bool			Get( const char *key, Type **value = NULL ) const;	
+	bool			Get( const char *key, Type **value = NULL ) const;
 	bool			Remove( const char *key );
 
 	void			Clear( void );

@@ -34,7 +34,7 @@ private:
 	int					tilex;
 	int					tiley;
 	int					tilez;
-			
+
 	int					localtilex;							//for lower octaves with increased frequency
 	int					localtiley;
 	int					localtilez;

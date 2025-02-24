@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,7 +11,7 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "RoleManager.h"
-#include "../structures/TeamManager.h"
+#include "structures/TeamManager.h"
 
 /*
 ===============================================================================
@@ -80,7 +80,7 @@ sdRequirementCondition::ParseEmitOp
 */
 int sdRequirementCondition::ParseEmitOp( idLexer *src, int a, rexpOpType_t opType, int priority, rexpOp_t** opp ) {
 	int b = ParseExpressionPriority( src, priority );
-	return EmitOp( a, b, opType, opp );  
+	return EmitOp( a, b, opType, opp );
 }
 
 /*
@@ -106,7 +106,7 @@ int sdRequirementCondition::ExpressionConstant( bool v ) {
 			return i;
 		}
 	}
-	
+
 	i = registers.Num();
 	expressionRegister_t& r = registers.Alloc();
 	r.temporary = false;
@@ -130,11 +130,11 @@ int sdRequirementCondition::ParseTerm( idLexer *src ) {
 		src->ExpectTokenString( ")" );
 		return a;
 	}
-	
+
 	if ( !token.Icmp( "true" ) ) {
 		return ExpressionConstant( true );
 	}
-	
+
 	if ( !token.Icmp( "false" ) ) {
 		return ExpressionConstant( false );
 	}
@@ -276,7 +276,7 @@ void sdRequirementContainer::Load( const idDict& requirementList, const char* mo
 sdRequirementContainer::Load
 ================
 */
-void sdRequirementContainer::Load( const char* requirement ) {	
+void sdRequirementContainer::Load( const char* requirement ) {
 	if ( !*requirement ) {
 		return;
 	}
@@ -378,7 +378,7 @@ qhandle_t sdRequirementManagerLocal::RegisterAbility( const char* name ) {
 	qhandle_t* handle = NULL;
 	if ( registeredAbilities.Get( name, &handle ) ) {
 		return *handle;
-	}	
+	}
 
 	return registeredAbilities.Set( name, ( qhandle_t )registeredAbilities.Num() );
 }

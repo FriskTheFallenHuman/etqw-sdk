@@ -136,8 +136,8 @@ ID_INLINE idBox::idBox( const idBounds &bounds, const float modelMatrix[16] ) {
 	axis[2][1] = modelMatrix[9];
 	axis[2][2] = modelMatrix[10];
 
-	origin[0]  = modelMatrix[12];			   
-	origin[1]  = modelMatrix[13];			   
+	origin[0]  = modelMatrix[12];
+	origin[1]  = modelMatrix[13];
 	origin[2]  = modelMatrix[14];
 	this->center = origin + this->center * this->axis;
 }

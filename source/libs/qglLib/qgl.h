@@ -94,7 +94,7 @@ extern PFNGLFINISHOBJECTAPPLEPROC               qglFinishObjectAPPLE;
 extern PFNGLTEXTURERANGEAPPLEPROC              qglTextureRangeAPPLE;
 extern PFNGLGETTEXPARAMETERPOINTERVAPPLEPROC   qglGetTexParameterPointervAPPLE;
 
-#endif // MACOS_X 
+#endif // MACOS_X
 
 // NV_register_combiners
 extern	void ( APIENTRY *qglCombinerParameterfvNV )( GLenum pname, const GLfloat *params );
@@ -103,7 +103,7 @@ extern	void ( APIENTRY *qglCombinerParameterfNV )( GLenum pname, const GLfloat p
 extern	void ( APIENTRY *qglCombinerParameteriNV )( GLenum pname, const GLint param );
 extern	void ( APIENTRY *qglCombinerInputNV )( GLenum stage, GLenum portion, GLenum variable, GLenum input,
 											  GLenum mapping, GLenum componentUsage );
-extern	void ( APIENTRY *qglCombinerOutputNV )( GLenum stage, GLenum portion, GLenum abOutput, GLenum cdOutput, 
+extern	void ( APIENTRY *qglCombinerOutputNV )( GLenum stage, GLenum portion, GLenum abOutput, GLenum cdOutput,
 											   GLenum sumOutput, GLenum scale, GLenum bias, GLboolean abDotProduct,
 											   GLboolean cdDotProduct, GLboolean muxSum );
 extern	void ( APIENTRY *qglFinalCombinerInputNV )( GLenum variable, GLenum input, GLenum mapping, GLenum componentUsage );

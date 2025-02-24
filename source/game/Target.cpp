@@ -7,7 +7,7 @@ Invisible entities that affect other entities or the world when activated.
 
 */
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )

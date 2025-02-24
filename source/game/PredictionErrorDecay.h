@@ -8,7 +8,7 @@
 
 class sdPredictionErrorDecay_Origin {
 public:
-	
+
 	class CustomDecayInfo {
 	public:
 		bool	hasLocalPhysics;

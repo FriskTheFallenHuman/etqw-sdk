@@ -1,19 +1,19 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclPlayerClass.h"
 #include "DeclRadialMenu.h"
 
-#include "../structures/TeamManager.h"
-#include "../guis/UserInterfaceManager.h"
-#include "../proficiency/StatsTracker.h"
+#include "structures/TeamManager.h"
+#include "guis/UserInterfaceManager.h"
+#include "proficiency/StatsTracker.h"
 
-#include "../../decllib/declTypeHolder.h"
-#include "../../framework/KeyInput.h"
-#include "../../framework/DeclParseHelper.h"
+#include "decllib/declTypeHolder.h"
+#include "framework/KeyInput.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -48,7 +48,7 @@ sdDeclPlayerClass::DefaultDefinition
 ================
 */
 const char* sdDeclPlayerClass::DefaultDefinition( void ) const {
-	return 
+	return
 		"{\n"							\
 		"}\n";
 }
@@ -99,10 +99,10 @@ bool sdDeclPlayerClass::Parse( const char *text, const int textLength ) {
 	idParser src;
 
 	src.SetFlags( DECL_LEXER_FLAGS );
-//	src.LoadMemory( text, textLength, GetFileName(), GetLineNum() );	
+//	src.LoadMemory( text, textLength, GetFileName(), GetLineNum() );
 //	src.AddIncludes( GetFileLevelIncludeDependencies() );
-	
-	sdDeclParseHelper declHelper( this, text, textLength, src );	
+
+	sdDeclParseHelper declHelper( this, text, textLength, src );
 
 	src.SkipUntilString( "{", &token );
 
@@ -216,7 +216,7 @@ bool sdDeclPlayerClass::Parse( const char *text, const int textLength ) {
 			}
 
 			for ( i = 0; i < temp.GetNumKeyVals(); i++ ) {
-				const idKeyValue* kv = temp.GetKeyVal( i );				
+				const idKeyValue* kv = temp.GetKeyVal( i );
 				const sdDeclAmmoType* type = gameLocal.declAmmoTypeType[ kv->GetKey() ];
 				if ( !type ) {
 					src.Error( "sdDeclPlayerClass::Parse Invalid Ammo Type '%s'", kv->GetKey().c_str() );
@@ -276,7 +276,7 @@ sdDeclPlayerClass::ReadFromDict
 */
 void sdDeclPlayerClass::ReadFromDict( const idDict& info ) {
 	const char* text;
-	
+
 	if ( info.GetString( "items", "", &text ) ) {
 		package			= gameLocal.declItemPackageType[ text ];
 	}
@@ -540,7 +540,7 @@ bool sdDeclPlayerClass::ParseProficiency( proficiencyCategory_t& category, idPar
 		if( token.Cmp( "}" ) == 0 ) {
 			break;
 		}
-		
+
 	}
 	return true;
 }

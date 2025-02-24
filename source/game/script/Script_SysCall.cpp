@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -14,31 +14,31 @@ static char THIS_FILE[] = __FILE__;
 #include "Script_ScriptObject.h"
 #include "Script_Helper.h"
 
-#include "../Entity.h"
-#include "../Player.h"
-#include "../Camera.h"
-#include "../roles/Tasks.h"
-#include "../roles/ObjectiveManager.h"
-#include "../roles/WayPointManager.h"
-#include "../../bse/BSEInterface.h"
-#include "../../bse/BSE_Envelope.h"
-#include "../../bse/BSE_SpawnDomains.h"
-#include "../../bse/BSE_Particle.h"
-#include "../../bse/BSE.h"
-#include "../client/ClientEntity.h"
+#include "Entity.h"
+#include "Player.h"
+#include "Camera.h"
+#include "roles/Tasks.h"
+#include "roles/ObjectiveManager.h"
+#include "roles/WayPointManager.h"
+#include "bse/BSEInterface.h"
+#include "bse/BSE_Envelope.h"
+#include "bse/BSE_SpawnDomains.h"
+#include "bse/BSE_Particle.h"
+#include "bse/BSE.h"
+#include "client/ClientEntity.h"
 
-#include "../rules/GameRules.h"
-#include "../rules/VoteManager.h"
+#include "rules/GameRules.h"
+#include "rules/VoteManager.h"
 
-#include "../structures/DeployMask.h"
+#include "structures/DeployMask.h"
 
-#include "../guis/UserInterfaceLocal.h"
-#include "../guis/UIWindow.h"
-#include "../guis/UserInterfaceManager.h"
-#include "../../decllib/declTypeHolder.h"
-#include "../../decllib/DeclSurfaceType.h"
+#include "guis/UserInterfaceLocal.h"
+#include "guis/UIWindow.h"
+#include "guis/UserInterfaceManager.h"
+#include "decllib/declTypeHolder.h"
+#include "decllib/DeclSurfaceType.h"
 
-#include "../proficiency/StatsTracker.h"
+#include "proficiency/StatsTracker.h"
 
 trace_t							sdSysCallThread::trace;
 float							sdSysCallThread::cachedRoot[ 2 ];
@@ -406,7 +406,7 @@ ABSTRACT_DECLARATION( sdProgramThread, sdSysCallThread )
 	EVENT( EV_Thread_PlayWorldBeamEffect,			sdSysCallThread::Event_PlayWorldBeamEffect )
 	EVENT( EV_Thread_GetLocalPlayer,				sdSysCallThread::Event_GetLocalPlayer )
 	EVENT( EV_Thread_GetLocalViewPlayer,			sdSysCallThread::Event_GetLocalViewPlayer )
-	
+
 	EVENT( EV_Thread_SetGUIFloat,					sdSysCallThread::Event_SetGUIFloat )
 	EVENT( EV_Thread_SetGUIHandle,					sdSysCallThread::Event_SetGUIInt )
 	EVENT( EV_Thread_SetGUIVec2,					sdSysCallThread::Event_SetGUIVec2 )
@@ -487,11 +487,11 @@ ABSTRACT_DECLARATION( sdProgramThread, sdSysCallThread )
 	EVENT( EV_Thread_GetDeploymentMode,				sdSysCallThread::Event_GetDeploymentMode )
 	EVENT( EV_Thread_GetDeploymentRotation,			sdSysCallThread::Event_GetDeploymentRotation )
 	EVENT( EV_Thread_AllowDeploymentRotation,		sdSysCallThread::Event_AllowDeploymentRotation )
-	
+
 	EVENT( EV_Thread_GetDefaultFov,					sdSysCallThread::Event_GetDefaultFov )
 
 	EVENT( EV_Thread_GetTerritory,					sdSysCallThread::Event_GetTerritory )
-	
+
 	EVENT( EV_Thread_GetMaxClients,					sdSysCallThread::Event_GetMaxClients )
 	EVENT( EV_Thread_GetClient,						sdSysCallThread::Event_GetClient )
 
@@ -536,7 +536,7 @@ ABSTRACT_DECLARATION( sdProgramThread, sdSysCallThread )
 	EVENT( EV_Thread_HeightMapTrace,				sdSysCallThread::Event_HeightMapTrace )
 
 	EVENT( EV_Thread_EnableBotReachability,			sdSysCallThread::Event_EnableBotReachability )
-	
+
 	EVENT( EV_Thread_GetNextBotActionIndex,			sdSysCallThread::Event_GetNextBotActionIndex )
 	EVENT( EV_Thread_GetBotActionOrigin,			sdSysCallThread::Event_GetBotActionOrigin )
 	EVENT( EV_Thread_GetBotActionDeployableType,	sdSysCallThread::Event_GetBotActionDeployableType )
@@ -1090,7 +1090,7 @@ sdSysCallThread::Event_CheckContents
 void sdSysCallThread::Event_CheckContents( const idVec3 &start, const idVec3 &mins, const idVec3 &maxs, int contents_mask, idScriptObject* passObject ) {
 	idEntity* ent = NULL;
 	rvClientEntity* clientEnt = NULL;
-	
+
 	if ( passObject ) {
 		ent = passObject->GetClass()->Cast< idEntity >();
 		if ( !ent ) {
@@ -1122,7 +1122,7 @@ void sdSysCallThread::Event_CheckContents( const idVec3 &start, const idVec3 &mi
 		const idClipModel* cm = clipModels[ i ];
 		contents |= gameLocal.clip.ContentsModel( CLIP_DEBUG_PARMS_SCRIPT start, tempClip, mat3_identity, contents_mask, cm, cm->GetOrigin(), cm->GetAxis() );
 
-		// check if the bounds are totally contained by the bounds of another 
+		// check if the bounds are totally contained by the bounds of another
 		idEntity* other = cm->GetEntity();
 		if ( other == NULL || other->GetPhysics() == NULL ) {
 			continue;
@@ -1137,7 +1137,7 @@ void sdSysCallThread::Event_CheckContents( const idVec3 &start, const idVec3 &mi
 		}
 	}
 
-	if ( tempClip != NULL ) {		
+	if ( tempClip != NULL ) {
 		gameLocal.clip.DeleteClipModel( tempClip );
 	}
 
@@ -1156,8 +1156,8 @@ sdSysCallThread::Event_Trace
 void sdSysCallThread::Event_Trace( const idVec3 &start, const idVec3 &end, const idVec3 &mins, const idVec3 &maxs, int contents_mask, idScriptObject* passObject ) {
 	idEntity* ent = NULL;
 	rvClientEntity* clientEnt = NULL;
-	
-	if ( passObject ) {		
+
+	if ( passObject ) {
 		ent = passObject->GetClass()->Cast< idEntity >();
 		if ( !ent ) {
 			rvClientEntity* clientEnt = passObject->GetClass()->Cast< rvClientEntity >();
@@ -1189,8 +1189,8 @@ sdSysCallThread::Event_TracePoint
 void sdSysCallThread::Event_TracePoint( const idVec3 &start, const idVec3 &end, int contents_mask, idScriptObject* passObject ) {
 	idEntity* ent = NULL;
 	rvClientEntity* clientEnt = NULL;
-	
-	if ( passObject ) {		
+
+	if ( passObject ) {
 		ent = passObject->GetClass()->Cast< idEntity >();
 		if ( !ent ) {
 			rvClientEntity* clientEnt = passObject->GetClass()->Cast< rvClientEntity >();
@@ -1218,8 +1218,8 @@ sdSysCallThread::Event_TraceOriented
 void sdSysCallThread::Event_TraceOriented( const idVec3 &start, const idVec3 &end, const idVec3 &mins, const idVec3 &maxs, const idVec3& angles, int contents_mask, idScriptObject* passObject ) {
 	idEntity* ent = NULL;
 	rvClientEntity* clientEnt = NULL;
-	
-	if ( passObject ) {		
+
+	if ( passObject ) {
 		ent = passObject->GetClass()->Cast< idEntity >();
 		if ( !ent ) {
 			rvClientEntity* clientEnt = passObject->GetClass()->Cast< rvClientEntity >();
@@ -1475,7 +1475,7 @@ void sdSysCallThread::Event_StrLeft( const char *string, int num ) {
 
 /*
 ================
-sdSysCallThread::Event_StrRight 
+sdSysCallThread::Event_StrRight
 ================
 */
 void sdSysCallThread::Event_StrRight( const char *string, int num ) {
@@ -1560,7 +1560,7 @@ void sdSysCallThread::Event_StrToFloat( const char *string ) {
 sdSysCallThread::Event_IsClient
 ================
 */
-void sdSysCallThread::Event_IsClient( void ) { 
+void sdSysCallThread::Event_IsClient( void ) {
 	sdProgram::ReturnBoolean( gameLocal.isClient );
 }
 
@@ -1569,7 +1569,7 @@ void sdSysCallThread::Event_IsClient( void ) {
 sdSysCallThread::Event_IsServer
 ================
 */
-void sdSysCallThread::Event_IsServer( void ) { 
+void sdSysCallThread::Event_IsServer( void ) {
 	sdProgram::ReturnBoolean( gameLocal.isServer );
 }
 
@@ -1578,7 +1578,7 @@ void sdSysCallThread::Event_IsServer( void ) {
 sdSysCallThread::Event_DoClientSideStuff
 ================
 */
-void sdSysCallThread::Event_DoClientSideStuff( void ) { 
+void sdSysCallThread::Event_DoClientSideStuff( void ) {
 	sdProgram::ReturnBoolean( gameLocal.DoClientSideStuff() );
 }
 
@@ -1596,7 +1596,7 @@ void sdSysCallThread::Event_IsNewFrame( void ) {
 sdSysCallThread::Event_GetFrameTime
 ================
 */
-void sdSysCallThread::Event_GetFrameTime( void ) { 
+void sdSysCallThread::Event_GetFrameTime( void ) {
 	sdProgram::ReturnFloat( MS2SEC( gameLocal.msec ) );
 }
 
@@ -1605,7 +1605,7 @@ void sdSysCallThread::Event_GetFrameTime( void ) {
 sdSysCallThread::Event_GetTicsPerSecond
 ================
 */
-void sdSysCallThread::Event_GetTicsPerSecond( void ) { 
+void sdSysCallThread::Event_GetTicsPerSecond( void ) {
 	sdProgram::ReturnFloat( static_cast< float >( USERCMD_HZ ) );
 }
 
@@ -1720,7 +1720,7 @@ void sdSysCallThread::Event_GetDeclCount( int declTypeHandle ) {
 		sdProgram::ReturnInteger( 0 );
 		return;
 	}
-	
+
 	sdProgram::ReturnInteger( declManager->GetNumDecls( declTypeHandle ) );
 }
 
@@ -1899,7 +1899,7 @@ sdSysCallThread::Event_PlayWorldEffect
 ================
 */
 void sdSysCallThread::Event_PlayWorldEffect( const char *effectName, const idVec3& color, const idVec3 &org, const idVec3 &forward ) {
-	gameLocal.PlayEffect( gameLocal.FindEffect( effectName )->Index(), color, org, forward.ToMat3() ); 
+	gameLocal.PlayEffect( gameLocal.FindEffect( effectName )->Index(), color, org, forward.ToMat3() );
 }
 
 /*
@@ -1916,7 +1916,7 @@ void sdSysCallThread::Event_PlayWorldEffectRotateAlign( const char *effectName, 
 	axis[ 1 ] = inaxis[ 1 ];
 	axis[ 2 ] = inaxis[ 2 ];
 	axis.OrthoNormalizeSelf();
-	
+
 	gameLocal.PlayEffect( gameLocal.FindEffect( effectName )->Index(), color, org, rot * axis );
 }
 
@@ -1927,7 +1927,7 @@ sdSysCallThread::Event_PlayWorldEffectRotate
 */
 void sdSysCallThread::Event_PlayWorldEffectRotate( const char *effectName, const idVec3& color, const idVec3 &org, const idVec3 &forward, const idAngles &rotate ) {
 	idMat3 rot = rotate.ToMat3();
-	gameLocal.PlayEffect( gameLocal.FindEffect( effectName )->Index(), color, org, rot * forward.ToMat3() ); 
+	gameLocal.PlayEffect( gameLocal.FindEffect( effectName )->Index(), color, org, rot * forward.ToMat3() );
 }
 
 /*
@@ -1938,7 +1938,7 @@ sdSysCallThread::Event_PlayWorldBeamEffect
 void sdSysCallThread::Event_PlayWorldBeamEffect( const char *effectName, const idVec3& color, const idVec3 &org, const idVec3 &endOrigin ) {
 	idVec3 dir = endOrigin - org;
 	dir.NormalizeFast();
-	gameLocal.PlayEffect( gameLocal.FindEffect( effectName )->Index(), color, org, dir.ToMat3(), false, endOrigin ); 
+	gameLocal.PlayEffect( gameLocal.FindEffect( effectName )->Index(), color, org, dir.ToMat3(), false, endOrigin );
 }
 
 /*
@@ -2055,7 +2055,7 @@ sdSysCallThread::Event_GetDeployMask
 ============
 */
 void sdSysCallThread::Event_GetDeployMask( const char* maskname ) {
-	sdProgram::ReturnInteger( gameLocal.GetDeploymentMask( maskname ) );	
+	sdProgram::ReturnInteger( gameLocal.GetDeploymentMask( maskname ) );
 }
 
 /*
@@ -2914,7 +2914,7 @@ void sdSysCallThread::Event_LocalizeStringIndexArgs( const int index ) {
 	const sdDeclLocStr* locStr = declHolder.declLocStrType.SafeIndex( index );
 
 	idWStr formatted = common->LocalizeText( locStr, localizationStrings );
-	
+
 	localizationStrings.Clear();
 
 	sdProgram::ReturnWString( formatted.c_str() );
@@ -2925,9 +2925,9 @@ void sdSysCallThread::Event_LocalizeStringIndexArgs( const int index ) {
 sdSysCallThread::Event_LocalizeStringArgs
 ============
 */
-void sdSysCallThread::Event_LocalizeStringArgs( const char* str ) {	
+void sdSysCallThread::Event_LocalizeStringArgs( const char* str ) {
 	idWStr formatted = common->LocalizeText( str, localizationStrings );
-	
+
 	localizationStrings.Clear();
 
 	sdProgram::ReturnWString( formatted.c_str() );
@@ -2938,7 +2938,7 @@ void sdSysCallThread::Event_LocalizeStringArgs( const char* str ) {
 sdSysCallThread::Event_LocalizeString
 ============
 */
-void sdSysCallThread::Event_LocalizeString( const char* str ) {	
+void sdSysCallThread::Event_LocalizeString( const char* str ) {
 	if( str[ 0 ] == '\0' ) {
 		Warning( "Tried to localize an empty string" );
 		sdProgram::ReturnHandle( declHolder.FindLocStr( "_default" )->Index() );
@@ -2952,7 +2952,7 @@ void sdSysCallThread::Event_LocalizeString( const char* str ) {
 sdSysCallThread::Event_GetMatchTimeRemaining
 ================
 */
-void sdSysCallThread::Event_GetMatchTimeRemaining( void ) { 
+void sdSysCallThread::Event_GetMatchTimeRemaining( void ) {
 	sdProgram::ReturnFloat( MS2SEC( gameLocal.rules->GetGameTime() ) );
 }
 
@@ -3159,9 +3159,9 @@ void sdSysCallThread::Event_AddNotifyIcon( guiHandle_t handle, const char* windo
 		Warning( "Event_AddNotifyIcon: could not find GUI" );
 		return;
 	}
-	
+
 	sdUserInterfaceScope* scope = NULL;
-	
+
 	sdUIObject* object = ui->GetWindow( window );
 	if( object != NULL ) {
 		scope = &object->GetScope();
@@ -3182,7 +3182,7 @@ void sdSysCallThread::Event_AddNotifyIcon( guiHandle_t handle, const char* windo
 
 	int newHandle;
 	stack.Pop( newHandle );
-	sdProgram::ReturnInteger( newHandle );	
+	sdProgram::ReturnInteger( newHandle );
 }
 
 
@@ -3340,7 +3340,7 @@ void sdSysCallThread::Event_HeightMapTrace( const idVec3& start, const idVec3& e
 	sdProgram::ReturnFloat( heightMap.TracePoint( start, end, tempVec ) );
 }
 
-#include "../botai/BotThreadData.h"
+#include "botai/BotThreadData.h"
 
 /*
 ============

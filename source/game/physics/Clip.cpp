@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -10,15 +10,15 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../../framework/Licensee.h"
+#include "framework/Licensee.h"
 
 #include "Clip.h"
-#include "../Entity.h"
-#include "../WorldSpawn.h"
-#include "../Player.h"
-#include "../ContentMask.h"
-#include "../Projectile.h"
-#include "../Misc.h"
+#include "Entity.h"
+#include "WorldSpawn.h"
+#include "Player.h"
+#include "ContentMask.h"
+#include "Projectile.h"
+#include "Misc.h"
 
 static idVec3 vec3_boxEpsilon( CM_BOX_EPSILON, CM_BOX_EPSILON, CM_BOX_EPSILON );
 unsigned int idClip::mailBoxID = 0;
@@ -296,7 +296,7 @@ done:
 	int count = 0;
 	for ( int i = 0; i < numClipModels; i++ ) {
 		idClipModel* model = clipModels[ i ];
-		
+
 		// if the bounds really do overlap
 		if ( !model->GetAbsBounds().IntersectsBounds( parms ) ) {
 			continue;
@@ -320,11 +320,11 @@ done:
 				if( count >= maxCount ) {
 					break;
 				}
-	
+
 				clipModelList[ count++ ] = world;
 			}
 		}
-	}	
+	}
 
 	return count;
 }
@@ -351,7 +351,7 @@ int idClip::EntitiesTouchingRadius( const idSphere& sphere, int contentMask, idE
 	int count = idClip::ClipModelsTouchingBounds( CLIP_DEBUG_PARMS bounds, contentMask, clipModelList, MAX_GENTITIES, NULL );
 	entCount = 0;
 	for ( i = 0; i < count; i++ ) {
-		idEntity* clipEnt = clipModelList[ i ]->GetEntity();		
+		idEntity* clipEnt = clipModelList[ i ]->GetEntity();
 		if ( checks[ clipEnt->entityNumber ] ) {
 			continue;
 		}
@@ -407,7 +407,7 @@ int idClip::EntitiesTouchingBounds( const idBounds &bounds, int contentMask, idE
 			}
 			return entCount;
 		}
-		
+
 		entityList[ entCount ] = clipEnt;
 		entCount++;
 	}
@@ -538,7 +538,7 @@ void idClip::DrawClipSectors( void ) const {
 			}
 
 			if( link ) {
-				
+
 				gameRenderWorld->DrawText( link->clipModel->GetEntity()->GetClassname(), point, 0.5f, colorCyan, player->viewAngles.ToMat3(), 1 );
 				gameRenderWorld->DebugBounds( colorMagenta, bounds );
 				gameRenderWorld->DebugBounds( colorYellow, link->clipModel->GetBounds(), link->clipModel->GetOrigin() );
@@ -594,7 +594,7 @@ idClip::TraceRenderModel
 ============
 */
 void idClip::TraceRenderModel( trace_t &trace, const idVec3 &start, const idVec3 &end, const float radius, const idMat3 &axis, int contentMask, idClipModel *mdl ) {
-	
+
 	// avoid a crash when bot thread uses render model flag
 	if ( collisionModelManager->GetThreadId() != MAIN_THREAD_ID ) {
 		return;
@@ -719,7 +719,7 @@ int idClip::GetTraceClipModels( const idVec3& start, const idVec3& end, int cont
 					continue;
 				}
 				cm->lastMailBox = curmb;
-#else			
+#else
 				int i;
 				for ( i = 0; i < numClipModels; i++ ) {
 					if ( clipModels[ i ] == link->clipModel ) {
@@ -777,7 +777,7 @@ done:
 			if ( !( model->GetContents() & contentMask ) ) {
 				continue;
 			}
-			
+
 			if ( !model->GetAbsBounds().LineIntersection( start, end ) ) {
 				continue;
 			}
@@ -831,7 +831,7 @@ int idClip::GetTraceClipModels( const idBounds& bounds, int contentMask, const i
 					continue;
 				}
 				cm->lastMailBox = curmb;
-#else			
+#else
 				int i;
 				for ( i = 0; i < numClipModels; i++ ) {
 					if ( clipModels[ i ] == link->clipModel ) {
@@ -890,7 +890,7 @@ done:
 			if ( !( model->GetContents() & contentMask ) ) {
 				continue;
 			}
-			
+
 			// if the bounds really do overlap
 			if ( !model->GetAbsBounds().IntersectsBounds( parms ) ) {
 				continue;
@@ -994,7 +994,7 @@ int idClip::GetTraceClipModelsExt( const idVec3& start, const idVec3& end, int c
 				}
 				cm->lastMailBox = curmb;
 
-#else			
+#else
 				int i;
 				for ( i = 0; i < numClipModels; i++ ) {
 					if ( clipModels[ i ] == link->clipModel ) {
@@ -1046,7 +1046,7 @@ done:
 			if ( !( model->GetContents() & contentMask ) ) {
 				continue;
 			}
-			
+
 			if ( !model->GetAbsBounds().LineIntersection( start, end ) ) {
 				continue;
 			}
@@ -1584,7 +1584,7 @@ idClip::MotionInternal
 */
 bool idClip::MotionInternal( CLIP_DEBUG_PARMS_DECLARATION trace_t &results, const idVec3 &start, const idVec3 &end, const idRotation &rotation,
 					const idClipModel *mdl, const idMat3 &trmAxis, int contentMask, const idEntity *passEntity, traceMode_t traceMode ) {
-	
+
 	int i, j, num;
 	idClipModel *touch, *clipModelList[MAX_GENTITIES];
 	idVec3 dir, endPosition;
@@ -1961,7 +1961,7 @@ const idClipModel* idClip::GetLeanOffsetModel( void ) {
 idClip::TraceBounds
 ============
 */
-bool idClip::TraceBounds( CLIP_DEBUG_PARMS_DECLARATION trace_t &results, const idVec3 &start, const idVec3 &end, const idBounds &bounds, const idMat3& axis, 
+bool idClip::TraceBounds( CLIP_DEBUG_PARMS_DECLARATION trace_t &results, const idVec3 &start, const idVec3 &end, const idBounds &bounds, const idMat3& axis,
 										int contentMask, const idEntity *passEntity, traceMode_t traceMode ) {
 
 	if ( collisionModelManager->GetThreadId() != MAIN_THREAD_ID ) {
@@ -1984,7 +1984,7 @@ void idClip::TranslationModel( CLIP_DEBUG_PARMS_DECLARATION trace_t &results, co
 #ifdef CLIP_DEBUG
 	idClipTimer timer( CLIP_DEBUG_PARMS_PASSTHRU this, CTM_TRANSLATION );
 #endif // CLIP_DEBUG
-						
+
 	int i, j;
 	trace_t trace;
 
@@ -2127,7 +2127,7 @@ int idClip::ContentsModel( CLIP_DEBUG_PARMS_DECLARATION const idVec3 &start,
 #ifdef CLIP_DEBUG
 	idClipTimer timer( CLIP_DEBUG_PARMS_PASSTHRU this, CTM_CONTENTS );
 #endif // CLIP_DEBUG
-						
+
 	int i, j, contents;
 	trace_t trace;
 
@@ -2843,8 +2843,8 @@ void idClip::DumpTraceLog( int mode ) {
 		miniCountLog->WriteString( va( "%s", clipTimerInfoExtreme[ mode ].GetKey( i ).c_str() ) );
 	}
 	miniTimeLog->WriteString( "TOTAL" );
-	miniCountLog->WriteString( "TOTAL" ); 
-	
+	miniCountLog->WriteString( "TOTAL" );
+
 	// print data, row by row
 	for ( int sample = 1; sample < clipSampleUpto; sample++ ) {
 		miniTimeLog->WriteInt( clipTimerSampleTimes[ sample ] );
@@ -2864,7 +2864,7 @@ void idClip::DumpTraceLog( int mode ) {
 			info->frameInfo[ sample ].elapsedTime = 0.0;
 			info->frameInfo[ sample ].count = 0;
 		}
-		
+
 		miniTimeLog->WriteFloat( ( float )totalTime );
 		miniCountLog->WriteInt( totalCount );
 	}

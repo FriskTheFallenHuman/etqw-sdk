@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -34,7 +34,7 @@ sdUIObject::sdUIObject() : ui( NULL ) {
 	hierarchyNode.SetOwner( this );
 	scriptState.Init( this );
 
-	scriptState.				GetProperties().RegisterProperty( "name",					name );	
+	scriptState.				GetProperties().RegisterProperty( "name",					name );
 	scriptState.				GetProperties().RegisterProperty( "flags",					flags );
 	flags = 0.0f;
 
@@ -57,7 +57,7 @@ sdUIObject::GetFunction
 */
 sdUIFunctionInstance* sdUIObject::GetFunction( const char* name ) {
 	const sdUITemplateFunction< sdUIObject >* function = sdUIObject::FindFunction( name );
-	if( function == NULL ) {		
+	if( function == NULL ) {
 		return NULL;
 	}
 
@@ -87,28 +87,28 @@ void sdUIObject::InitFunctions() {
 	SD_UI_FUNC_TAG( setParent, "Sets a new parent for the window." )
 		SD_UI_FUNC_PARM( string, "other", "Name of the new parent." )
 	SD_UI_END_FUNC_TAG
-	objectFunctions.Set( "setParent",					new sdUITemplateFunction< sdUIObject >( 'v', "s",		&sdUIObject::Script_SetParent ) );	
+	objectFunctions.Set( "setParent",					new sdUITemplateFunction< sdUIObject >( 'v', "s",		&sdUIObject::Script_SetParent ) );
 
 	SD_UI_FUNC_TAG( isChild, "Checks if the window is a child (possibly indirectly a child) of the the window supplied as the first parameter." )
 		SD_UI_FUNC_PARM( string, "other", "Name of the other window." )
 		SD_UI_FUNC_RETURN_PARM( float, "Returns 1 if a child, otherwise 0." )
 	SD_UI_END_FUNC_TAG
 	objectFunctions.Set( "isChild",						new sdUITemplateFunction< sdUIObject >( 'f', "s",		&sdUIObject::Script_IsChild ) );
-	
+
 	SD_UI_FUNC_TAG( changeZOrder, "Change the drawing order for the window." )
 		SD_UI_FUNC_PARM( float, "zorder", "ZO_FRONT or ZO_BACK for drawing at front or back respectively." )
 	SD_UI_END_FUNC_TAG
-	objectFunctions.Set( "changeZOrder",				new sdUITemplateFunction< sdUIObject >( 'v', "f",		&sdUIObject::Script_ChangeZOrder ) );	
-	
+	objectFunctions.Set( "changeZOrder",				new sdUITemplateFunction< sdUIObject >( 'v', "f",		&sdUIObject::Script_ChangeZOrder ) );
+
 	SD_UI_FUNC_TAG( postNamedEvent, "Post a named event on the window." )
 		SD_UI_FUNC_PARM( string, "eventName", "Name of the named event." )
 	SD_UI_END_FUNC_TAG
 	objectFunctions.Set( "postNamedEvent",				new sdUITemplateFunction< sdUIObject >( 'v', "s",		&sdUIObject::Script_PostNamedEvent ) );
-	
+
 	SD_UI_FUNC_TAG( postOptionalNamedEvent, "Post a named event on the window. Will not give error if the named event does not exist." )
 		SD_UI_FUNC_PARM( string, "eventName", "Name of the named event." )
 	SD_UI_END_FUNC_TAG
-	objectFunctions.Set( "postOptionalNamedEvent",		new sdUITemplateFunction< sdUIObject >( 'v', "s",		&sdUIObject::Script_PostOptionalNamedEvent ) );	
+	objectFunctions.Set( "postOptionalNamedEvent",		new sdUITemplateFunction< sdUIObject >( 'v', "s",		&sdUIObject::Script_PostOptionalNamedEvent ) );
 
 	SD_UI_ENUM_TAG( ZO_FRONT, "When used together with script event changeZOrder; Draw before all siblings have been drawn." )
 	sdDeclGUI::AddDefine( va( "ZO_FRONT %i",		ZO_FRONT ) );
@@ -180,7 +180,7 @@ void sdUIObject::EnumerateEvents( const char* name, const idList<unsigned short>
 
 			const idToken& name = tokenCache[ flags[ i ] ];
 			idLexer p( sdDeclGUI::LEXER_FLAGS );
-			p.LoadMemory( name.c_str(), name.Length(), "onPropertyChanged event handler" );			
+			p.LoadMemory( name.c_str(), name.Length(), "onPropertyChanged event handler" );
 
 			sdUserInterfaceScope* propertyScope = gameLocal.GetUserInterfaceScope( GetScope(), &p );
 
@@ -197,25 +197,25 @@ void sdUIObject::EnumerateEvents( const char* name, const idList<unsigned short>
 			int eventHandle = NamedEventHandleForString( name.c_str() );
 			int cbHandle = -1;
 			switch( prop->GetValueType() ) {
-				case PT_VEC4: 
-					cbHandle = prop->value.vec4Value->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const idVec4&, const idVec4& >( &sdUIObject::OnVec4PropertyChanged, this , eventHandle ) );					
+				case PT_VEC4:
+					cbHandle = prop->value.vec4Value->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const idVec4&, const idVec4& >( &sdUIObject::OnVec4PropertyChanged, this , eventHandle ) );
 					break;
-				case PT_VEC3: 
-					cbHandle = prop->value.vec3Value->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const idVec3&, const idVec3& >( &sdUIObject::OnVec3PropertyChanged, this , eventHandle ) );					
+				case PT_VEC3:
+					cbHandle = prop->value.vec3Value->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const idVec3&, const idVec3& >( &sdUIObject::OnVec3PropertyChanged, this , eventHandle ) );
 					break;
-				case PT_VEC2: 
-					cbHandle = prop->value.vec2Value->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const idVec2&, const idVec2& >( &sdUIObject::OnVec2PropertyChanged, this , eventHandle ) );					
+				case PT_VEC2:
+					cbHandle = prop->value.vec2Value->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const idVec2&, const idVec2& >( &sdUIObject::OnVec2PropertyChanged, this , eventHandle ) );
 					break;
-				case PT_INT: 
+				case PT_INT:
 					cbHandle = prop->value.intValue->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const int&, const int& >( &sdUIObject::OnIntPropertyChanged, this , eventHandle ) );
 					break;
-				case PT_FLOAT: 
+				case PT_FLOAT:
 					cbHandle = prop->value.floatValue->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const float&, const float& >( &sdUIObject::OnFloatPropertyChanged, this , eventHandle ) );
 					break;
-				case PT_STRING: 
+				case PT_STRING:
 					cbHandle = prop->value.stringValue->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const idStr&, const idStr& >( &sdUIObject::OnStringPropertyChanged, this , eventHandle ) );
 					break;
-				case PT_WSTRING: 
+				case PT_WSTRING:
 					cbHandle = prop->value.wstringValue->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const idWStr&, const idWStr& >( &sdUIObject::OnWStringPropertyChanged, this , eventHandle ) );
 					break;
 			}
@@ -434,8 +434,8 @@ void sdUIObject::CreateEvents( sdUserInterfaceLocal* _ui, const sdDeclGUIWindow*
 	if( timelines.Get() != NULL ) {
 		timelines->CreateEvents( windowParms->GetTimelines(), ui->GetDecl(), tokenCache );
 	}
-	
-	sdUserInterfaceLocal::PopTrace();	
+
+	sdUserInterfaceLocal::PopTrace();
 }
 
 
@@ -533,7 +533,7 @@ bool sdUIObject::PostNamedEvent( const char* event, bool optional ) {
 	}
 
 	bool retVal = RunEvent( sdUIEventInfo( OE_NAMED, index ) );
-	
+
 	if( retVal && sdUserInterfaceLocal::g_debugGUIEvents.GetInteger() > 1 ) {
 		gameLocal.Printf( "GUI '%s', window '%s', event '%s'\n", ui->GetName(), name.GetValue().c_str(), event );
 	}
@@ -677,11 +677,11 @@ void sdUIObject::Script_ChangeZOrder( sdUIFunctionStack& stack ) {
 	sdUIObject* object = NULL;
 	sdUIObject* parent = GetNode().GetParent();
 	sdUIObject* last = NULL;
-	
+
 	if( parent == NULL ) {
 		return;
 	}
-    
+
 	switch( idMath::Ftoi( value )) {
 		case ZO_FRONT:
 			GetNode().ParentTo( parent->GetNode() );
@@ -698,7 +698,7 @@ void sdUIObject::Script_ChangeZOrder( sdUIFunctionStack& stack ) {
 					object = object->GetNode().GetSibling();
 				} else {
 					break;
-				}				
+				}
 			}
 
 			if( object == this || object == NULL ) {
@@ -896,7 +896,7 @@ void sdUIObject::ApplyLayout() {
 sdUIObject::MakeLayoutDirty_r
 ============
 */
-void sdUIObject::MakeLayoutDirty_r( sdUIObject* parent ) {	
+void sdUIObject::MakeLayoutDirty_r( sdUIObject* parent ) {
 	sdUIObject* child = parent->GetNode().GetChild();
 	while( child != NULL ) {
 		child->MakeLayoutDirty();
@@ -945,7 +945,7 @@ void sdUIObject::Script_IsChild( sdUIFunctionStack& stack ) {
 	idStr name;
 	stack.Pop( name );
 	sdUIObject* child = ui->GetWindow( name.c_str() );
-	
+
 	bool isChild = false;
 	if( child != NULL ) {
 		sdUIObject* parent = child->GetNode().GetParent();

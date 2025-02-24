@@ -1,11 +1,11 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h"
-#include "../../game/ContentMask.h"
+#include "Game_local.h"
+#include "game/ContentMask.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -105,12 +105,12 @@ bool idBotAI::Bot_Check_NBG_Goals() {
 	hasGoal = Bot_IsNearTeamGoalUnderAttack();
 
 	if ( hasGoal ) {
-		return true;		
+		return true;
 	}
 
 	if ( aiState == LTG ) {
 		if ( LTG_CHECK_FOR_CLASS_NBG != NULL ) {
-            hasGoal = CallFuncPtr( LTG_CHECK_FOR_CLASS_NBG );	//mal: check for any valid short term goals for this bot.	
+            hasGoal = CallFuncPtr( LTG_CHECK_FOR_CLASS_NBG );	//mal: check for any valid short term goals for this bot.
 		}
 
 		if ( !hasGoal ) {
@@ -233,7 +233,7 @@ void idBotAI::Bot_CheckClassState() {
 		}
 	}
 
-	if ( aiState != LTG ) { 
+	if ( aiState != LTG ) {
 		return;
 	}
 
@@ -274,7 +274,7 @@ void idBotAI::Bot_CheckClassState() {
 
                 botIdealWeapNum = AMMO_PACK;
 				botIdealWeapSlot = NO_WEAPON;
-				botUcmd->moveFlag = RUN;  
+				botUcmd->moveFlag = RUN;
 
 				if ( botInfo->weapInfo.weapon == AMMO_PACK ) {
                     botUcmd->botCmds.attack = true;
@@ -325,7 +325,7 @@ bool idBotAI::Bot_CovertOpsCheckNBGState() {
 	if ( Client_IsCriticalForCurrentObj( botNum, BODY_IGNORE_RANGE ) ) { //mal: if bot is close to its critical obj, forget about grabbing uniforms!
         return false;
 	}
-	
+
 	if ( ClientHasObj( botNum ) && ClientIsCloseToDeliverObj( botNum ) ) {
 		return false;
 	}
@@ -347,7 +347,7 @@ bool idBotAI::Bot_CovertOpsCheckNBGState() {
 		return false;
 	}
 
-	clientNum = Bot_CovertCheckForVictims( range * 2.0f ); 
+	clientNum = Bot_CovertCheckForVictims( range * 2.0f );
 
 	if ( clientNum != -1 ) {
 		nbgTarget = clientNum;
@@ -465,7 +465,7 @@ bool idBotAI::Bot_MedicCheckNBGState_InLTG () {
 	}
 
 	if ( botInfo->team == STROGG ) { //mal: the sinister strogg will look for helpless GDF to turn into unwilling hosts < cue evile laughter >
-		
+
 		clientNum = Bot_CheckForNeedyTeammates( range );
 
 		if ( clientNum != -1 ) {
@@ -493,12 +493,12 @@ bool idBotAI::Bot_MedicCheckNBGState_InLTG () {
 
 		if ( clientNum != -1 ) {
 			nbgTarget = clientNum;
-			nbgTargetType = BODY; 
+			nbgTargetType = BODY;
 			ROOT_AI_NODE = &idBotAI::Run_NBG_Node;
 			NBG_AI_SUB_NODE = &idBotAI::Enter_NBG_DestroySpawnHost;
 			return true;
 		}
-	}			
+	}
 
 	return false;
 }
@@ -521,7 +521,7 @@ bool idBotAI::Bot_MedicCheckNBGState_InNBG () {
 	}
 
 //mal: first, setup some defaults.
-	bool isBusy = ( nbgType == REVIVE_TEAMMATE || nbgType == TK_REVIVE_TEAMMATE ); 
+	bool isBusy = ( nbgType == REVIVE_TEAMMATE || nbgType == TK_REVIVE_TEAMMATE );
 	int clientNum;
 	int targetClientNum = -1;
 	int healthRange = 150; //mal: will heal anyone not at full health
@@ -529,11 +529,11 @@ bool idBotAI::Bot_MedicCheckNBGState_InNBG () {
 
 //mal: add any exceptions to those defaults here
 	if ( isBusy || nbgType == SUPPLY_TEAMMATE ) {
-		
+
 		if ( Client_IsCriticalForCurrentObj( nbgTarget, -1.0f ) && nbgType != SUPPLY_TEAMMATE ) { //mal: sorry guys - critical teammates get priority!
 			return false;
 		}
-		
+
 		range = MEDIC_RANGE_BUSY;
 		targetClientNum = nbgTarget;
 		healthRange = 60; //mal: if already busy, less inclined to heal others
@@ -798,7 +798,7 @@ void idBotAI::Bot_CheckForNearbyVehicleToGrab() {
 	if ( !botWorld->gameLocalInfo.botsUseVehicles ) {
 		return;
 	}
-	
+
 	vehicleNum = FindClosestVehicle( MAX_VEHICLE_RANGE, botInfo->origin, NULL_VEHICLE, GROUND | AIR, PERSONAL, true );
 
 	if ( vehicleNum != -1 ) {
@@ -1041,7 +1041,7 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 				if ( ActionIsIgnored( i ) ) {
 					continue;
 				}
-				
+
 				if ( !Bot_LTGIsAvailable( -1, i, PATROL_DELIVER_GOAL, MAX_PATROL_DELIVER_CLIENTS ) ) { //mal: if just patrolling around the obj, don't need too many there.
 					continue;
 				}
@@ -1195,11 +1195,11 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 				}
 
 				int enemiesInArea = ClientsInArea( botNum, botThreadData.botActions[ i ]->GetActionOrigin(), 300.0f, ( botInfo->team == GDF ) ? STROGG : GDF, NOCLASS, false, false, false, true, true );
-		
+
 				if ( enemiesInArea > 0 ) {
 					continue;
 				} //mal: if bot is disguised, don't camp if lots of the enemy are around - that raises the chances they'll spot us.
-			} 
+			}
 
 			if ( isPriority ) {
 				if ( botWorld->gameLocalInfo.botsIgnoreGoals ) {
@@ -1546,7 +1546,7 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 			continue;
 		}
 
-//mal_TODO: add more invesigate type actions! 
+//mal_TODO: add more invesigate type actions!
 		if ( botThreadData.botActions[ i ]->GetObjForTeam( teamFilter ) == ACTION_DEFUSE ||
 			botThreadData.botActions[ i ]->GetObjForTeam( teamFilter ) == ACTION_PREVENT_BUILD ||
 			botThreadData.botActions[ i ]->GetObjForTeam( teamFilter ) == ACTION_PREVENT_HACK ) {
@@ -1562,7 +1562,7 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 			if ( botWorld->gameLocalInfo.gameIsBotMatch && !TeamHasHuman( botInfo->team ) && botWorld->gameLocalInfo.botSkill == BOT_SKILL_EASY && botThreadData.random.RandomInt( 100 ) > 25 ) { //mal: very small chance will respond to actions being done in easy mode botmatch
 				continue;
 			}
- 
+
 			if ( lastCheckActionTime > botWorld->gameLocalInfo.time ) { //mal: don't repeat ourselves
 				continue;
 			}
@@ -1628,7 +1628,7 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 //mal: if have docs, consider getting them to goal first!
 	if ( deliverGoal != -1 ) {
 		actionNum = deliverGoal;
-		
+
 		if ( ClientHasObj( botNum ) ) {
 		ltgUseVehicle = Bot_ShouldUseVehicleForAction( actionNum );
 
@@ -1653,9 +1653,9 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_DeliverGoal;
 
 		if ( !ltgUseVehicle ) {
-			Bot_FindRouteToCurrentGoal();	
+			Bot_FindRouteToCurrentGoal();
 		}
-			
+
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
 		return true;
 		} else {
@@ -1722,9 +1722,9 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_StealGoal;
 
 		if ( !ltgUseVehicle ) {
-			Bot_FindRouteToCurrentGoal();	
+			Bot_FindRouteToCurrentGoal();
 		}
-			
+
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
 		return true;
 	}
@@ -1748,7 +1748,7 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 				ltgType = DRIVE_MCP;
 				ltgTime = botWorld->gameLocalInfo.time + BOT_INFINITY;
 				actionNum = mcpActionNum;
-				ROOT_AI_NODE = &idBotAI::Run_LTG_Node;	
+				ROOT_AI_NODE = &idBotAI::Run_LTG_Node;
 				LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_UseVehicle;
 				return true;
 			}
@@ -1790,7 +1790,7 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 
 		if ( !botInfo->isDisguised ) {
 			if ( !ltgUseVehicle ) {
-				Bot_FindRouteToCurrentGoal();	
+				Bot_FindRouteToCurrentGoal();
 			}
 
 			PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
@@ -1855,7 +1855,7 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 			return true;
 		}  else {
 			vLTGTarget = botDeployableTarget;
-			
+
 			if ( botVehicleInfo->isAirborneVehicle ) {
 				V_ROOT_AI_NODE = &idBotAI::Run_VLTG_Node;
 				V_LTG_AI_SUB_NODE = &idBotAI::Enter_VLTG_AircraftDestroyDeployable;
@@ -1907,7 +1907,7 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 
         V_ROOT_AI_NODE = &idBotAI::Run_VLTG_Node;
 		V_LTG_AI_SUB_NODE = &idBotAI::Enter_VLTG_RoamGoal;
-	
+
 		return true;
 	}
 
@@ -1929,9 +1929,9 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 		}
 
         V_ROOT_AI_NODE = &idBotAI::Run_VLTG_Node;
-		V_LTG_AI_SUB_NODE = &idBotAI::Enter_VLTG_CampGoal;	
+		V_LTG_AI_SUB_NODE = &idBotAI::Enter_VLTG_CampGoal;
 		return true;
-	} 
+	}
 
 //mal: next decide if should grab forward spawn.
 	if ( spawnGoal != -1 ) {
@@ -1969,9 +1969,9 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 			LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_SpawnPointGoal;
 
 			if ( !ltgUseVehicle ) {
-				Bot_FindRouteToCurrentGoal();	
+				Bot_FindRouteToCurrentGoal();
 			}
-			
+
 			PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
 			return true;
 		}
@@ -2012,9 +2012,9 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 			LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_SpawnPointGoal;
 
 			if ( !ltgUseVehicle ) {
-				Bot_FindRouteToCurrentGoal();	
+				Bot_FindRouteToCurrentGoal();
 			}
-			
+
 			PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
 			return true;
 		}
@@ -2092,7 +2092,7 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 
 		if ( !botInfo->isDisguised ) {
 			if ( !ltgUseVehicle ) {
-				Bot_FindRouteToCurrentGoal();	
+				Bot_FindRouteToCurrentGoal();
 			}
 
 			PushAINodeOntoStack( -1, -1, actionNum, ltgTime, false, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
@@ -2133,7 +2133,7 @@ bool idBotAI::Bot_CheckForTeamGoals() {
 
 		if ( !botInfo->isDisguised ) {
 			if ( !ltgUseVehicle ) {
-				Bot_FindRouteToCurrentGoal();	
+				Bot_FindRouteToCurrentGoal();
 			}
 			PushAINodeOntoStack( -1, -1, actionNum, ltgTime, false, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
 		}
@@ -2189,7 +2189,7 @@ bool idBotAI::Bot_FindCloseSupplyPack( bool healthOnly, bool grenadesOnly ) {
 			continue;
 		}
 #endif
-            
+
 		for( j = 0; j < MAX_ITEMS; j++ ) {
 			if ( botWorld->clientInfo[ i ].packs[ j ].entNum == 0 ) {
 				continue;
@@ -2233,7 +2233,7 @@ bool idBotAI::Bot_FindCloseSupplyPack( bool healthOnly, bool grenadesOnly ) {
 
 //mal: dont steal packs other classes want to use. If noones around it, its fair game!
 			if ( ( botInfo->classType == MEDIC && healthOnly ) || ( botInfo->classType == FIELDOPS && !healthOnly ) ) {
-    
+
 				matesInArea = ClientsInArea( botNum, supplyPack.origin, 250.0f, botInfo->team, NOCLASS, false, false, false, false, true );
 
 				if ( matesInArea > 0 ) {
@@ -2433,7 +2433,7 @@ bool idBotAI::Bot_FindCloseSupplyTeammate( bool buggerForHealth ) {
     if ( busyClient != -1 ) {
         nbgTarget = busyClient;
 		nbgTargetSpawnID = botWorld->clientInfo[ busyClient ].spawnID;
-		
+
 		if ( buggerForHealth == true ) {
 			nbgTargetType = HEAL;
 		} else {
@@ -2471,11 +2471,11 @@ void idBotAI::Bot_FindDeadWhileInVehicle() {
 	if ( Bot_IsInHeavyAttackVehicle() ) { //mal: dont do this if in an attack aircraft or tank.
 		return;
 	}
-	
+
 	if ( botVehicleInfo->driverEntNum != botNum ) { //mal: nothing we can do if we can't control the vehicle.
 		return;
 	}
-	
+
 	if ( botVehicleInfo->type == MCP ) {
 		return;
 	}
@@ -2587,7 +2587,7 @@ bool idBotAI::Bot_CheckForSoldierGoals() {
 				j = botThreadData.random.RandomInt( plantGoals.Num() );
 				actionNum = plantGoals[ j ];
 			} else { //mal: else sort thru the list and find the closest one.
-	
+
 				for( i = 0; i < plantGoals.Num(); i++ ) {
 					vec = botThreadData.botActions[ plantGoals[ i ] ]->GetActionOrigin() - botInfo->origin;
 					dist = vec.LengthFast();
@@ -2597,7 +2597,7 @@ bool idBotAI::Bot_CheckForSoldierGoals() {
 						num = plantGoals[ i ];
 					}
 				}
-				
+
 				idList< int > linkedActionList;
 				FindLinkedActionsForAction( num, plantGoals, linkedActionList );
 
@@ -2633,7 +2633,7 @@ bool idBotAI::Bot_CheckForSoldierGoals() {
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_PlantGoal;
 
 		if ( !ltgUseVehicle ) {
-            Bot_FindRouteToCurrentGoal();	
+            Bot_FindRouteToCurrentGoal();
 		}
 
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
@@ -2647,7 +2647,7 @@ bool idBotAI::Bot_CheckForSoldierGoals() {
 			} else {
 				j = botThreadData.random.RandomInt( trainingModeRoamGoals.Num() );
 				actionNum = trainingModeRoamGoals[ j ];
-			}	
+			}
 
 			ltgUseVehicle = Bot_ShouldUseVehicleForAction( actionNum, true );
 
@@ -2659,7 +2659,7 @@ bool idBotAI::Bot_CheckForSoldierGoals() {
 					} else {
 						Bot_ExitVehicle();
 					}
-				}	
+				}
 			} else {
 				if ( botVehicleInfo != NULL ) { //mal: if we're close to the goal, or theres some other reason not to use a vehicle for this goal, then exit our vehicle
 					Bot_ExitVehicle();
@@ -2672,7 +2672,7 @@ bool idBotAI::Bot_CheckForSoldierGoals() {
 
 			if ( !botInfo->isDisguised ) {
 				if ( !ltgUseVehicle ) {
-					Bot_FindRouteToCurrentGoal();	
+					Bot_FindRouteToCurrentGoal();
 				}
 
 				PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
@@ -2740,7 +2740,7 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 			}
 
 			if ( botWorld->gameLocalInfo.botSkill == BOT_SKILL_DEMO ) {
-				if ( !botWorld->gameLocalInfo.botsDoObjsInTrainingMode ) { 
+				if ( !botWorld->gameLocalInfo.botsDoObjsInTrainingMode ) {
 					continue;
 				}
 
@@ -2752,7 +2752,7 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 			if ( botWorld->gameLocalInfo.heroMode != false && TeamHasHuman( botInfo->team ) ) { //mal: the human has decided to complete the maps goals.
 				continue;
 			}
-	
+
 			if ( !botThreadData.botActions[ i ]->ArmedChargesInsideActionBBox( -1 ) ) {
 				continue;
 			}
@@ -2808,7 +2808,7 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 					continue;
 				}
 			}
-	
+
             buildGoals.Append( i );
 			continue;
 		}
@@ -2889,7 +2889,7 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 
 			vec = botThreadData.botActions[ i ]->GetActionOrigin() - botInfo->origin;
 
-			if ( vec.LengthSqr() > Square( DEPLOYABLE_GOAL_DIST ) ) { 
+			if ( vec.LengthSqr() > Square( DEPLOYABLE_GOAL_DIST ) ) {
 				continue;
 			}
 
@@ -2917,10 +2917,10 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 			}
 
 			if ( botWorld->gameLocalInfo.botSkill == BOT_SKILL_DEMO ) {
-				if ( !botWorld->gameLocalInfo.botsDoObjsInTrainingMode ) { 
+				if ( !botWorld->gameLocalInfo.botsDoObjsInTrainingMode ) {
 					continue;
 				}
-				
+
 				if ( TeamHumanNearLocation( botInfo->team, vec3_zero, -1.0f, false, ENGINEER, false ) ) {
 					continue;
 				}
@@ -2949,7 +2949,7 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 
 			vec = botThreadData.botActions[ i ]->GetActionOrigin() - botInfo->origin;
 
-			if ( vec.LengthSqr() > Square( MG_REPAIR_MAX_DIST ) ) { 
+			if ( vec.LengthSqr() > Square( MG_REPAIR_MAX_DIST ) ) {
 				continue;
 			}
 
@@ -3066,10 +3066,10 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 			}
 
 			if ( botWorld->gameLocalInfo.botSkill == BOT_SKILL_DEMO ) {
-				if ( !botWorld->gameLocalInfo.botsDoObjsInTrainingMode ) { 
+				if ( !botWorld->gameLocalInfo.botsDoObjsInTrainingMode ) {
 					continue;
 				}
-				
+
 				if ( TeamHumanNearLocation( botInfo->team, vec3_zero, -1.0f, false, ENGINEER, false ) ) {
 					continue;
 				}
@@ -3207,18 +3207,18 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 			actionNum = num;
 		}
 
-		if ( botVehicleInfo != NULL ) { 
+		if ( botVehicleInfo != NULL ) {
             Bot_ExitVehicle();
 		}
 
 		ltgTime = botWorld->gameLocalInfo.time + BOT_INFINITY; //mal: do this forever, until we die or complete it!
-		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;	
+		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_DefuseGoal;
 		return true;
 	}
 
 //mal: MCP goals come next
-	if ( mcpGoal ) { 
+	if ( mcpGoal ) {
 		GetVehicleInfo( botWorld->botGoalInfo.botGoal_MCP_VehicleNum, vehicleInfo );
 
 		if ( vehicleInfo.entNum != 0 ) {
@@ -3232,7 +3232,7 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 			}
 
 			ltgTarget = botWorld->botGoalInfo.botGoal_MCP_VehicleNum;
-			ROOT_AI_NODE = &idBotAI::Run_LTG_Node;	
+			ROOT_AI_NODE = &idBotAI::Run_LTG_Node;
 			LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_FixMCP; //mal: dont need to stack this goal
 			return true;
 		}
@@ -3255,7 +3255,7 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 						num = priorityDeployGoals[ i ];
 					}
 				}
-		
+
 				actionNum = num;
 			}
 		}
@@ -3283,9 +3283,9 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_DeployableGoal;
 
 		if ( !ltgUseVehicle ) {
-            Bot_FindRouteToCurrentGoal();	
+            Bot_FindRouteToCurrentGoal();
 		}
-		
+
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
 		return true;
 	}
@@ -3313,10 +3313,10 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 
 		ltgType = PRIORITY_MINE_GOAL;
 		ltgTime = botWorld->gameLocalInfo.time + 30000;
-		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;	
+		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_MineGoal;
 
-        Bot_FindRouteToCurrentGoal();	
+        Bot_FindRouteToCurrentGoal();
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, false, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
 		return true;
 	}
@@ -3330,7 +3330,7 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 				float dist1 = vec.LengthSqr();
 				vec = botThreadData.botActions[ buildGoals[ 0 ] ]->GetActionOrigin() - botInfo->origin;
 				float dist2 = vec.LengthSqr();
-				
+
 				if ( dist1 < dist2 ) { //mal: it has to be closer to us then the primary build goal, else its no good.
 					buildGoals.SetNum( 0, false );
 				}
@@ -3349,7 +3349,7 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 			} else { //mal: else sort thru the list and find the closest one.
 
 				closest = idMath::INFINITY;
-	
+
 				for( i = 0; i < buildGoals.Num(); i++ ) {
 					vec = botThreadData.botActions[ buildGoals[ i ] ]->GetActionOrigin() - botInfo->origin;
 					dist = vec.LengthSqr();
@@ -3391,11 +3391,11 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 
 		ltgType = BUILD_GOAL;
 		ltgTime = botWorld->gameLocalInfo.time + BOT_INFINITY; //mal: do this forever, until we die or complete it!
-		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;	
+		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_BuildGoal;
-		
+
 		if ( !ltgUseVehicle ) {
-            Bot_FindRouteToCurrentGoal();	
+            Bot_FindRouteToCurrentGoal();
 		}
 
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
@@ -3420,7 +3420,7 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 						num = deployableGoals[ i ];
 					}
 				}
-	
+
 				actionNum = num;
 			}
 		}
@@ -3448,9 +3448,9 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_DeployableGoal;
 
 		if ( !ltgUseVehicle ) {
-            Bot_FindRouteToCurrentGoal();	
+            Bot_FindRouteToCurrentGoal();
 		}
-		
+
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
 		return true;
 	}
@@ -3471,7 +3471,7 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 				j = botThreadData.random.RandomInt( mineGoals.Num() );
 				actionNum = mineGoals[ j ];
 			} else { //mal: else sort thru the list and find the closest one.
-	
+
 				for( i = 0; i < mineGoals.Num(); i++ ) {
 					vec = botThreadData.botActions[ mineGoals[ i ] ]->GetActionOrigin() - botInfo->origin;
 					dist = vec.LengthSqr();
@@ -3504,11 +3504,11 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 
 		ltgType = MINE_GOAL;
 		ltgTime = botWorld->gameLocalInfo.time + 30000;
-		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;	
+		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_MineGoal;
 
 		if ( !ltgUseVehicle ) {
-            Bot_FindRouteToCurrentGoal();	
+            Bot_FindRouteToCurrentGoal();
 		}
 
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, false, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
@@ -3537,11 +3537,11 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 
 		ltgType = MINOR_BUILD_GOAL;
 		ltgTime = botWorld->gameLocalInfo.time + 60000; //mal: do this for a minute.
-		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;	
+		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_BuildGoal;
-		
+
 		if ( !ltgUseVehicle ) {
-            Bot_FindRouteToCurrentGoal();	
+            Bot_FindRouteToCurrentGoal();
 		}
 
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, false, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
@@ -3571,9 +3571,9 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 
 		ltgType = MG_REPAIR_GOAL;
 		ltgTime = botWorld->gameLocalInfo.time + 60000;
-		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;	
+		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_RepairGunGoal;
-        
+
 		Bot_FindRouteToCurrentGoal();
 
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, false, false, ( routeNode != NULL ) ? true : false );
@@ -3587,7 +3587,7 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 			} else {
 				j = botThreadData.random.RandomInt( trainingModeRoamGoals.Num() );
 				actionNum = trainingModeRoamGoals[ j ];
-			}	
+			}
 
 			ltgUseVehicle = Bot_ShouldUseVehicleForAction( actionNum, true );
 
@@ -3599,7 +3599,7 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 					} else {
 						Bot_ExitVehicle();
 					}
-				}	
+				}
 			} else {
 				if ( botVehicleInfo != NULL ) { //mal: if we're close to the goal, or theres some other reason not to use a vehicle for this goal, then exit our vehicle
 					Bot_ExitVehicle();
@@ -3612,7 +3612,7 @@ bool idBotAI::Bot_CheckForEngineerGoals() {
 
 			if ( !botInfo->isDisguised ) {
 				if ( !ltgUseVehicle ) {
-					Bot_FindRouteToCurrentGoal();	
+					Bot_FindRouteToCurrentGoal();
 				}
 
 				PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
@@ -3692,7 +3692,7 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 			if ( ActionIsIgnored( i ) ) {
 				continue;
 			}
-	
+
 			if ( botWorld->gameLocalInfo.heroMode != false && TeamHasHuman( botInfo->team ) ) { //mal: the human has decided to complete the maps goals.
 				continue;
 			}
@@ -3732,8 +3732,8 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 
 			if ( botWorld->gameLocalInfo.botsIgnoreGoals ) {
 				continue;
-			}	
-	
+			}
+
 			if ( botWorld->gameLocalInfo.heroMode != false && TeamHasHuman( botInfo->team ) ) { //mal: the human has decided to complete the maps goals.
 				continue;
 			}
@@ -3878,7 +3878,7 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 						num = deployableGoals[ i ];
 					}
 				}
-	
+
 				actionNum = num;
 			}
 		}
@@ -3906,9 +3906,9 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_DeployableGoal;
 
 		if ( !ltgUseVehicle ) {
-            Bot_FindRouteToCurrentGoal();	
+            Bot_FindRouteToCurrentGoal();
 		}
-		
+
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
 		return true;
 	}
@@ -3929,7 +3929,7 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 				j = botThreadData.random.RandomInt( hackGoals.Num() );
 				actionNum = hackGoals[ j ];
 			} else { //mal: else sort thru the list and find the closest one.
-	
+
 				for( i = 0; i < hackGoals.Num(); i++ ) {
 					vec = botThreadData.botActions[ hackGoals[ i ] ]->GetActionOrigin() - botInfo->origin;
 					dist = vec.LengthFast();
@@ -3939,7 +3939,7 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 						num = hackGoals[ i ];
 					}
 				}
-				
+
 				idList< int > linkedActionList;
 				FindLinkedActionsForAction( num, hackGoals, linkedActionList );
 
@@ -3975,7 +3975,7 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_HackGoal;
 
 		if ( !ltgUseVehicle ) {
-            Bot_FindRouteToCurrentGoal();	
+            Bot_FindRouteToCurrentGoal();
 		}
 
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
@@ -3991,7 +3991,7 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 				j = botThreadData.random.RandomInt( hiveGoals.Num() );
 				actionNum = hiveGoals[ j ];
 			} else { //mal: else sort thru the list and find the closest one.
-	
+
 				for( i = 0; i < hiveGoals.Num(); i++ ) {
 					vec = botThreadData.botActions[ hiveGoals[ i ] ]->GetActionOrigin() - botInfo->origin;
 					dist = vec.LengthFast();
@@ -4028,7 +4028,7 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_FlyerHiveGoal;
 
 		if ( !ltgUseVehicle ) {
-            Bot_FindRouteToCurrentGoal();	
+            Bot_FindRouteToCurrentGoal();
 		}
 
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
@@ -4052,7 +4052,7 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 						num = deployableGoals[ i ];
 					}
 				}
-	
+
 				actionNum = num;
 			}
 		}
@@ -4080,9 +4080,9 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_DeployableGoal;
 
 		if ( !ltgUseVehicle ) {
-            Bot_FindRouteToCurrentGoal();	
+            Bot_FindRouteToCurrentGoal();
 		}
-		
+
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
 		return true;
 	}
@@ -4104,7 +4104,7 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 				j = botThreadData.random.RandomInt( sniperGoals.Num() );
 				actionNum = sniperGoals[ j ];
 			} else { //mal: else sort thru the list and find the closest one.
-	
+
 				for( i = 0; i < sniperGoals.Num(); i++ ) {
 					vec = botThreadData.botActions[ sniperGoals[ i ] ]->GetActionOrigin() - botInfo->origin;
 					dist = vec.LengthFast();
@@ -4136,12 +4136,12 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 		}
 
 		ltgType = SNIPE_GOAL;
-		ltgTime = botWorld->gameLocalInfo.time + DEFAULT_LTG_TIME; 
+		ltgTime = botWorld->gameLocalInfo.time + DEFAULT_LTG_TIME;
 		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_SnipeGoal;
 
 		if ( !ltgUseVehicle ) {
-            Bot_FindRouteToCurrentGoal();	
+            Bot_FindRouteToCurrentGoal();
 		}
 
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, false, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
@@ -4155,7 +4155,7 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 			} else {
 				j = botThreadData.random.RandomInt( trainingModeRoamGoals.Num() );
 				actionNum = trainingModeRoamGoals[ j ];
-			}	
+			}
 
 			ltgUseVehicle = Bot_ShouldUseVehicleForAction( actionNum, true );
 
@@ -4167,7 +4167,7 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 					} else {
 						Bot_ExitVehicle();
 					}
-				}	
+				}
 			} else {
 				if ( botVehicleInfo != NULL ) { //mal: if we're close to the goal, or theres some other reason not to use a vehicle for this goal, then exit our vehicle
 					Bot_ExitVehicle();
@@ -4180,7 +4180,7 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 
 			if ( !botInfo->isDisguised ) {
 				if ( !ltgUseVehicle ) {
-					Bot_FindRouteToCurrentGoal();	
+					Bot_FindRouteToCurrentGoal();
 				}
 
 				PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
@@ -4196,7 +4196,7 @@ bool idBotAI::Bot_CheckForCovertGoals() {
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_ThirdEyeCameraGoal;
 		return true;
 	}
-	
+
 	return false; //mal: else, find a normal non-class specific goal to do.
 }
 
@@ -4250,11 +4250,11 @@ bool idBotAI::Bot_CheckForEscortGoals() {
 	}
 
 	if ( botWorld->botGoalInfo.attackingTeam == botInfo->team ) {
-		if ( botWorld->gameLocalInfo.heroMode || botWorld->gameLocalInfo.botSkill == BOT_SKILL_DEMO || botWorld->gameLocalInfo.botSkill == BOT_SKILL_EASY ) { 
+		if ( botWorld->gameLocalInfo.heroMode || botWorld->gameLocalInfo.botSkill == BOT_SKILL_DEMO || botWorld->gameLocalInfo.botSkill == BOT_SKILL_EASY ) {
 		allowedEscorts = 2;
 		}
 	} else {
-		if ( botWorld->gameLocalInfo.heroMode == false && botWorld->gameLocalInfo.botSkill != BOT_SKILL_DEMO && botWorld->gameLocalInfo.botSkill != BOT_SKILL_EASY ) { 
+		if ( botWorld->gameLocalInfo.heroMode == false && botWorld->gameLocalInfo.botSkill != BOT_SKILL_DEMO && botWorld->gameLocalInfo.botSkill != BOT_SKILL_EASY ) {
 			if ( botThreadData.random.RandomInt( 100 ) < 50 ) {
 				return false;
 			}
@@ -4301,7 +4301,7 @@ bool idBotAI::Bot_CheckForEscortGoals() {
 		dist = vec.LengthSqr();
 		int tempAllowedEscorts = allowedEscorts;
 		float maxEscortDist = 1900.0f;
-		
+
 		if ( ( botWorld->gameLocalInfo.botSkill == BOT_SKILL_DEMO || botWorld->gameLocalInfo.botSkill == BOT_SKILL_EASY ) && !playerInfo.isBot ) {
 			maxEscortDist *= 3.5f;
 			tempAllowedEscorts = 3;
@@ -4398,7 +4398,7 @@ bool idBotAI::Bot_CheckForFieldOpsGoals() {
 	}
 
 	if ( numFOps == 1 ) {
-		randNum = 70; 
+		randNum = 70;
 	} else if ( numFOps == 2 ) {
 		randNum = 50;
 	} else {
@@ -4476,7 +4476,7 @@ bool idBotAI::Bot_CheckForFieldOpsGoals() {
 			if ( matesInArea > 0 ) { //mal: theres prolly a human already there doing this, no need to double team it.
 				continue;
 			}
-            
+
 			fireSupportGoals.Append( i );
 			continue;
 		}
@@ -4567,7 +4567,7 @@ bool idBotAI::Bot_CheckForFieldOpsGoals() {
 						num = deployableGoals[ i ];
 					}
 				}
-	
+
 				actionNum = num;
 			}
 		}
@@ -4595,9 +4595,9 @@ bool idBotAI::Bot_CheckForFieldOpsGoals() {
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_DeployableGoal;
 
 		if ( !ltgUseVehicle ) {
-            Bot_FindRouteToCurrentGoal();	
+            Bot_FindRouteToCurrentGoal();
 		}
-		
+
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
 		return true;
 	}
@@ -4613,7 +4613,7 @@ bool idBotAI::Bot_CheckForFieldOpsGoals() {
 				for( i = 0; i < fireSupportGoals.Num(); i++ ) {
 					vec = botThreadData.botActions[ fireSupportGoals[ i ] ]->GetActionOrigin() - botInfo->origin;
 					dist = vec.LengthFast();
-	
+
 					if ( dist < closest ) {
 						closest = dist;
 						num = fireSupportGoals[ i ];
@@ -4646,7 +4646,7 @@ bool idBotAI::Bot_CheckForFieldOpsGoals() {
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_FireSupportGoal;
 
 		if ( !ltgUseVehicle ) {
-			Bot_FindRouteToCurrentGoal();	
+			Bot_FindRouteToCurrentGoal();
 		}
 
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
@@ -4707,7 +4707,7 @@ int idBotAI::Bot_CheckForTacticalAction() {
             actionFilter3 = ACTION_SHIELD_HINT;
 		}
 	}
-	
+
 	if ( botInfo->classType == COVERTOPS ) {
 		if ( tacticalActionTime > botWorld->gameLocalInfo.time ) {
 			if ( botThreadData.botActions[ tacticalActionNum ]->GetObjForTeam( botInfo->team ) == ACTION_SMOKE_HINT ) {
@@ -4726,7 +4726,7 @@ int idBotAI::Bot_CheckForTacticalAction() {
 				if ( botInfo->weapInfo.covertToolInfo.entNum == 0 && tacticalActionTimer > 0 ) {
 					return -1;
 				}
-				
+
 				if ( ( tacticalActionTime - botWorld->gameLocalInfo.time ) < 200 ) {
 					botUcmd->botCmds.attack = true;
 					return -1;
@@ -4826,7 +4826,7 @@ int idBotAI::Bot_CheckForTacticalAction() {
 		}
 
 		if ( botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_AIRCAN_HINT ) {
-   
+
 			int enemiesInArea = ClientsInArea( botNum, botThreadData.botActions[ i ]->GetActionOrigin(), 1700.0f, ( botInfo->team == GDF ) ? STROGG : GDF, NOCLASS, false, false, false, false, false );
 			int friendsInArea = ClientsInArea( botNum, botThreadData.botActions[ i ]->GetActionOrigin(), 1700.0f, botInfo->team , NOCLASS, false, false, false, false, false );
 
@@ -4987,9 +4987,9 @@ bool idBotAI::Bot_CheckForDroppedObjGoals() {
 	LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_RecoverDroppedGoal;
 
 	if ( !ltgUseVehicle ) {
-		Bot_FindRouteToCurrentGoal();	
+		Bot_FindRouteToCurrentGoal();
 	}
-			
+
 	PushAINodeOntoStack( -1, ltgTarget, ACTION_NULL, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
 	return true;
 }
@@ -5119,7 +5119,7 @@ bool idBotAI::Bot_CheckMCPGoals() {
 		ltgType = DRIVE_MCP;
 		ltgTime = botWorld->gameLocalInfo.time + BOT_INFINITY;
 		actionNum = mcpActionNum;
-		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;	
+		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_UseVehicle;
 		return true;
 	}
@@ -5199,7 +5199,7 @@ bool idBotAI::Bot_CheckForVehicleFallBackGoals() {
 		}
 
         V_ROOT_AI_NODE = &idBotAI::Run_VLTG_Node;
-		V_LTG_AI_SUB_NODE = &idBotAI::Enter_VLTG_CampGoal;	
+		V_LTG_AI_SUB_NODE = &idBotAI::Enter_VLTG_CampGoal;
 		return true;
 	}
 
@@ -5260,7 +5260,7 @@ bool idBotAI::Bot_CheckForFallBackGoals() {
 				if ( !botThreadData.botActions[ i ]->disguiseSafe ) { //mal: not a good one for a disguised covert.
 					continue;
 				}
-			} 
+			}
 
 			roamGoals.Append( i );
 			continue;
@@ -5318,7 +5318,7 @@ bool idBotAI::Bot_CheckForFallBackGoals() {
 			if ( botWorld->gameLocalInfo.inWarmup ) {
 				continue;
 			}
- 
+
 			if ( !botThreadData.botActions[ i ]->ActionIsPriority() ) { //mal: not worth worrying about.
 				continue;
 			}
@@ -5373,7 +5373,7 @@ bool idBotAI::Bot_CheckForFallBackGoals() {
 
 		if ( !botInfo->isDisguised ) {
 			if ( !ltgUseVehicle ) {
-				Bot_FindRouteToCurrentGoal();	
+				Bot_FindRouteToCurrentGoal();
 			}
 
 			PushAINodeOntoStack( -1, -1, actionNum, ltgTime, false, ltgUseVehicle, ( routeNode != NULL ) ? true : false );

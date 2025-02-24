@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -13,29 +13,29 @@ static char THIS_FILE[] = __FILE__;
 
 #include "Transport.h"
 #include "TransportComponents.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
 #include "VehicleWeapon.h"
 #include "VehicleView.h"
 #include "VehicleControl.h"
 #include "SoundControl.h"
-#include "../ContentMask.h"
-#include "../Projectile.h"
-#include "../Player.h"
-#include "../PlayerView.h"
-#include "../../decllib/DeclSurfaceType.h"
-#include "../structures/DeployMask.h"
-#include "../rules/VoteManager.h"
+#include "ContentMask.h"
+#include "Projectile.h"
+#include "Player.h"
+#include "PlayerView.h"
+#include "decllib/DeclSurfaceType.h"
+#include "structures/DeployMask.h"
+#include "rules/VoteManager.h"
 
-#include "../../sys/sys_local.h"
+#include "sys/sys_local.h"
 
-#include "../guis/UserInterfaceLocal.h"
-#include "../rules/VoteManager.h"
-#include "../rules/GameRules.h"
-#include "../client/ClientMoveable.h"
-#include "../PredictionErrorDecay.h"
+#include "guis/UserInterfaceLocal.h"
+#include "rules/VoteManager.h"
+#include "rules/GameRules.h"
+#include "client/ClientMoveable.h"
+#include "PredictionErrorDecay.h"
 
-#include "../botai/BotThreadData.h"
+#include "botai/BotThreadData.h"
 
 const int	MAX_ENGINE_SOUNDS	= SND_ENGINE_LAST - SND_ENGINE + 1;
 const int	MAX_ZOOM_LEVELS		= 4;
@@ -383,7 +383,7 @@ bool sdTransportUsableInterface::OnActivate( idPlayer* player, float distance ) 
 
 	sdScriptHelper h1;
 	h1.Push( player->GetScriptObject() );
-	h1.Push( distance );	
+	h1.Push( distance );
 	owner->GetScriptObject()->CallNonBlockingScriptEvent( onActivateFunc, h1 );
 
 	return gameLocal.program->GetReturnedFloat() != 0.f;
@@ -401,7 +401,7 @@ bool sdTransportUsableInterface::OnActivateHeld( idPlayer* player, float distanc
 
 	sdScriptHelper h1;
 	h1.Push( player->GetScriptObject() );
-	h1.Push( distance );	
+	h1.Push( distance );
 	owner->GetScriptObject()->CallNonBlockingScriptEvent( onActivateHeldFunc, h1 );
 
 	return gameLocal.program->GetReturnedFloat() != 0.f;
@@ -683,7 +683,7 @@ sdTransport_RB::~sdTransport_RB
 ================
 */
 sdTransport_RB::~sdTransport_RB( void ) {
-	positionManager.EjectAllPlayers();	
+	positionManager.EjectAllPlayers();
 }
 
 /*
@@ -882,7 +882,7 @@ void sdTransport_RB::LoadParts( int partTypes ) {
 
 			AddDriveObject( part );
 		}
-	}	
+	}
 
 	if ( partTypes & VPT_PSEUDO_HOVER ) {
 		for( i = 0; i < vehicleScript->parts.Num(); i++ ) {
@@ -895,7 +895,7 @@ void sdTransport_RB::LoadParts( int partTypes ) {
 
 			AddDriveObject( part );
 		}
-	}	
+	}
 
 	if ( partTypes & VPT_SUSPENSION ) {
 		for( i = 0; i < vehicleScript->parts.Num(); i++ ) {
@@ -947,7 +947,7 @@ void sdTransport_RB::LoadParts( int partTypes ) {
 
 			AddDriveObject( part );
 		}
-	}	
+	}
 
 	if ( partTypes & VPT_RUDDER ) {
 		for( i = 0; i < vehicleScript->parts.Num(); i++ ) {
@@ -960,7 +960,7 @@ void sdTransport_RB::LoadParts( int partTypes ) {
 
 			AddDriveObject( part );
 		}
-	}	
+	}
 
 	if ( partTypes & VPT_HURTZONE ) {
 		for( i = 0; i < vehicleScript->parts.Num(); i++ ) {
@@ -1066,7 +1066,7 @@ void sdTransport_RB::UpdateScrapeEffects( void ) {
 		effect->Update();
 
 		// stop playing any effects for surfaces we're no longer on
-		if ( ( surfaceTypeIndex == -1  ) || ( effect != &lightScrapeEffects[ surfaceTypeIndex ] 
+		if ( ( surfaceTypeIndex == -1  ) || ( effect != &lightScrapeEffects[ surfaceTypeIndex ]
 											&& effect != &mediumScrapeEffects[ surfaceTypeIndex ]
 											&& effect != &heavyScrapeEffects[ surfaceTypeIndex ] ) ) {
 			effect->Stop();
@@ -1607,7 +1607,7 @@ void sdTransport::UpdatePlayZoneInfo( void ) {
 	if ( GetBindMaster() != NULL ) {
 		return; // Gordon: if we are bound to something, assume we are being flown in, so we shouldn't take damage
 	}
-	
+
 	const sdPlayZone* playZone = gameLocal.GetPlayZone( GetPhysics()->GetOrigin(), sdPlayZone::PZF_PLAYZONE );
 	if ( playZone ) {
 		const sdDeployMaskInstance* deployMask = playZone->GetMask( gameLocal.GetPlayZoneMask() );
@@ -1622,7 +1622,7 @@ void sdTransport::UpdatePlayZoneInfo( void ) {
 	if ( lastTimeInPlayZone >= 0 && gameLocal.time - lastTimeInPlayZone > oobDamageInterval ) {
 		vehicleFlags.inPlayZone = false;
 		lastTimeInPlayZone = gameLocal.time;
-		
+
 		idPlayer* player = positionManager.FindDriver();
 		if ( player ) {
 			player->SpawnToolTip( player->GetTeam()->GetOOBToolTip() );
@@ -1640,9 +1640,9 @@ void sdTransport::UpdatePlayZoneInfo( void ) {
 
 		if ( dist <= ( step * 1 ) ) {
 			damageDeclName = "damage_oob_warning";
-		} else if ( dist <= ( step * 2 ) ) { 
+		} else if ( dist <= ( step * 2 ) ) {
 			damageDeclName = "damage_oob_1st";
-		} else if ( dist <= ( step * 3 ) ) { 
+		} else if ( dist <= ( step * 3 ) ) {
 			damageDeclName = "damage_oob_2nd";
 		} else if ( dist <= ( step * 4 ) ) {
 			damageDeclName = "damage_oob_3rd";
@@ -1650,13 +1650,13 @@ void sdTransport::UpdatePlayZoneInfo( void ) {
 			damageDeclName = "damage_oob_4th";
 		}
 
-		const sdDeclDamage* damageDecl = gameLocal.declDamageType[ damageDeclName.c_str() ];	
+		const sdDeclDamage* damageDecl = gameLocal.declDamageType[ damageDeclName.c_str() ];
 		if ( damageDecl == NULL ) {
 			gameLocal.Warning( "sdTransport::UpdatePlayZoneInfo: couldn't find damage decl %s", damageDeclName.c_str() );
 			return;
 		}
-		
-		Damage( NULL, NULL, idVec3( 0.f, 0.f, 1.f ), damageDecl, 1.f, NULL );	
+
+		Damage( NULL, NULL, idVec3( 0.f, 0.f, 1.f ), damageDecl, 1.f, NULL );
 	}
 }
 
@@ -1720,7 +1720,7 @@ sdTransport::~sdTransport( void ) {
 	engine.Clear();
 	weapons.DeleteContents( true );
 	delete waterEffects;
-	
+
 	delete vehicleControl;
 	vehicleControl = NULL;
 
@@ -1814,7 +1814,7 @@ void sdTransport::LoadVehicleScript( void ) {
 
 	for ( int i = 0; i < driveObjects.Num(); i++ ) {
 		driveObjects[ i ]->PostInit();
-	}	
+	}
 
 	positionManager.Init( vehicleScript, this );
 	SortWeapons();
@@ -2186,7 +2186,7 @@ void sdTransport::DestroyParts( int mask ) {
 	vehicleFlags.disablePartStateUpdate = true;
 
 	vehicleDriveObjectList_t	originalActiveObjects = activeObjects;
-	
+
 	if ( mask == 0 ) {
 		// destroy any "destroy first" objects first
 		for ( int i = 0; i < originalActiveObjects.Num(); i++ ) {
@@ -2553,7 +2553,7 @@ bool sdTransport::Exit( idPlayer* player, bool force ) {
 	int index = player->GetProxyPositionId();
 
 	sdVehiclePosition& position = positionManager.PositionForPlayer( player );
-	
+
 	idPlayer* realPlayer = position.GetPlayer();
 	if ( realPlayer != player ) {
 		assert( realPlayer == NULL );
@@ -2575,7 +2575,7 @@ bool sdTransport::Exit( idPlayer* player, bool force ) {
 					sdVehiclePosition& pos = *GetPositionManager().PositionForId( i );
 
 					idPlayer* other = pos.GetPlayer();
-					
+
 					if ( !other ) {
 						continue;
 					}
@@ -2794,7 +2794,7 @@ void sdTransport::PlacePlayerInPosition( idPlayer *other, sdVehiclePosition &pos
 	BecomeActive( TH_THINK );
 
 	sdTeamInfo* otherTeam = other->GetGameTeam();
-	if ( GetGameTeam() != otherTeam ) {		
+	if ( GetGameTeam() != otherTeam ) {
 		SetGameTeam( otherTeam );
 	}
 
@@ -3001,7 +3001,7 @@ sdVehicleDriveObject* sdTransport::PartForCollision( const trace_t& collision, i
 	}*/
 
 	sdVehicleDriveObject* object;
-		
+
 	object = PartForCollisionById( collision, flags );
 	if ( object ) {
 		return object;
@@ -3062,7 +3062,7 @@ bool sdTransport::NeedsRepair() {
 	if ( health < maxHealth ) {
 		return true;
 	}
-	
+
 	return activeObjects.Num() != driveObjects.Num();
 }
 
@@ -3387,7 +3387,7 @@ void sdTransport::Think( void ) {
 						idVec3 position;
 						idAngles angles;
 						routeTracker.GetDropLocation( position, angles );
-						
+
 						sdScriptHelper h1;
 						h1.Push( position );
 						h1.Push( angles );
@@ -3405,7 +3405,7 @@ void sdTransport::Think( void ) {
 
 			routeKickDistance = routeTracker.GetKickDistance();
 		}
-        
+
 		idPlayer* localPlayer = gameLocal.GetLocalPlayer();
 		if ( localPlayer != NULL && localPlayer == positionManager.FindDriver() ) {
 			routeTracker.Display();
@@ -3419,7 +3419,7 @@ void sdTransport::Think( void ) {
 			RunObjectPostPhysics();
 			UpdateScrapeEffects();
 		}
-		
+
 		if ( health > 0 ) {
 			bool doTouch = false;
 			if ( !gameLocal.isClient ) {
@@ -3591,13 +3591,13 @@ void sdTransport::Spawn( void ) {
 	updateHudFunc			= scriptObject->GetFunction( "OnUpdateHud" );
 
 	vehicleFlags.tryKeepDriver	= spawnArgs.GetBool( "try_keep_driver", "0" );
-	
+
 	toolTipEnter			= gameLocal.declToolTipType[ spawnArgs.GetString( "tt_enter" ) ];
 	toolTipAbandon			= gameLocal.declToolTipType[ spawnArgs.GetString( "tt_abandon" ) ];
-	
+
 	const char* damageName;
-	
-	damageName			= spawnArgs.GetString( "dmg_kill_players" );	
+
+	damageName			= spawnArgs.GetString( "dmg_kill_players" );
 	killPlayerDamage	= gameLocal.declDamageType[ damageName ];
 	if ( !killPlayerDamage ) {
 		gameLocal.Warning( "sdVehicle::Spawn Invalid Kill Player Damage Type '%s'", damageName );
@@ -3607,7 +3607,7 @@ void sdTransport::Spawn( void ) {
 	flippedDamage		= gameLocal.declDamageType[ damageName ];
 	if ( !flippedDamage ) {
 		gameLocal.Warning( "sdVehicle::Spawn Invalid Flipped Damage Type '%s'", damageName );
-	}	
+	}
 
 	if ( !spawnArgs.GetVector( "selection_mins", "0 0 0", selectionBounds[0] ) || !spawnArgs.GetVector( "selection_maxs", "0 0 0", selectionBounds[1] ) ) {
 		selectionBounds.Clear();
@@ -3636,7 +3636,7 @@ void sdTransport::Spawn( void ) {
 	vehicleFlags.amphibious				= spawnArgs.GetBool( "amphibious" );
 	vehicleFlags.weaponDisabled			= false;
 
-	damageName			= spawnArgs.GetString( "dmg_water" );	
+	damageName			= spawnArgs.GetString( "dmg_water" );
 	waterDamageDecl		= gameLocal.declDamageType[ damageName ];
 	if ( !waterDamageDecl ) {
 		gameLocal.Warning( "sdVehicle::Spawn Couldn't find water Damage Type '%s'", damageName );
@@ -3674,7 +3674,7 @@ void sdTransport::Spawn( void ) {
 	} else if ( !idStr::Cmp( controlName, "walker" ) ) {
 		vehicleControl = new sdWalkerControl();
 	}
-	
+
 	if ( vehicleControl == NULL ) {
 		gameLocal.Error( "sdTransport::Spawn - vehicleControl should never be NULL!" );
 	}
@@ -3867,7 +3867,7 @@ void sdTransport::ApplyNetworkState( networkStateMode_t mode, const sdEntityStat
 		DisableModel( vehicleFlags.modelDisabled );
 	}
 
-	if ( mode == NSM_VISIBLE ) {		
+	if ( mode == NSM_VISIBLE ) {
 		NET_GET_NEW( sdTransportNetworkData );
 
 		for ( int i = 0; i < newData.objectStates.Num(); i++ ) {
@@ -3898,7 +3898,7 @@ void sdTransport::ResetNetworkState( networkStateMode_t mode, const sdEntityStat
 			vehicleControl->ResetNetworkState( mode, *newData.controlState );
 		}
 	}
-	if ( mode == NSM_VISIBLE ) {		
+	if ( mode == NSM_VISIBLE ) {
 		NET_GET_NEW( sdTransportNetworkData );
 
 		if ( vehicleControl->IsNetworked() ) {
@@ -3960,7 +3960,7 @@ void sdTransport::ReadNetworkState( networkStateMode_t mode, const sdEntityState
 		}
 	}
 
-	if ( mode == NSM_VISIBLE ) {		
+	if ( mode == NSM_VISIBLE ) {
 		NET_GET_STATES( sdTransportNetworkData );
 
 		for ( int i = 0; i < networkObjects.Num(); i++ ) {
@@ -3975,7 +3975,7 @@ void sdTransport::ReadNetworkState( networkStateMode_t mode, const sdEntityState
 
 		newData.routeKickDistance = msg.ReadDeltaLong( baseData.routeKickDistance );
 	}
-	
+
 	sdScriptEntity::ReadNetworkState( mode, baseState, newState, msg );
 }
 
@@ -4002,7 +4002,7 @@ void sdTransport::WriteNetworkState( networkStateMode_t mode, const sdEntityStat
 		newData.empTime					= empTime;
 		newData.weaponEmpTime			= weaponEmpTime;
 		newData.weaponDisabled			= vehicleFlags.weaponDisabled;
-	
+
 		// write state
 		msg.WriteBool( newData.teleporting );
 		msg.WriteBool( newData.modelDisabled );
@@ -4035,7 +4035,7 @@ void sdTransport::WriteNetworkState( networkStateMode_t mode, const sdEntityStat
 		}
 	}
 
-	if ( mode == NSM_VISIBLE ) {		
+	if ( mode == NSM_VISIBLE ) {
 		NET_GET_STATES( sdTransportNetworkData );
 
 		for ( int i = 0; i < networkObjects.Num(); i++ ) {
@@ -4398,7 +4398,7 @@ void sdTransport::PostThink( void ) {
 
 	positionManager.PresentPlayers();
 
-	if ( ( predictionErrorDecay_Origin != NULL && predictionErrorDecay_Origin->NeedsUpdate() ) 
+	if ( ( predictionErrorDecay_Origin != NULL && predictionErrorDecay_Origin->NeedsUpdate() )
 		|| ( predictionErrorDecay_Angles != NULL && predictionErrorDecay_Angles->NeedsUpdate() ) ) {
 		fl.allowPredictionErrorDecay = true;
 		UpdateVisuals();
@@ -4484,7 +4484,7 @@ bool sdTransport::AreTracksOnGround( void ) const {
 		if ( track == NULL ) {
 			continue;
 		}
-		
+
 		onGround = onGround && track->IsGrounded();
 	}
 
@@ -4562,10 +4562,10 @@ void sdTransport::InitEffectList( vehicleEffectList_t& list, const char* effectN
 
 		if ( effectValue.Length() != 0 ) {
 			list[ i ].Init( effectValue );
-			list[ i ].GetRenderEffect().loop = true;		
-		}		
+			list[ i ].GetRenderEffect().loop = true;
+		}
 	}
-}	
+}
 
 /*
 ============
@@ -4634,7 +4634,7 @@ bool sdTransport::Pain( idEntity *inflictor, idEntity *attacker, int damage, con
 		idPlayer* localPlayer = gameLocal.GetLocalPlayer();
 		if ( localPlayer && localPlayer->GetProxyEntity() == this ) {
 			idVec3 dirNormalized = -dir;
-			dirNormalized.Normalize();	
+			dirNormalized.Normalize();
 
 			if ( damageDecl == NULL || !damageDecl->GetNoDirection() ) {
 				localPlayer->AddDamageEvent( gameLocal.time, dirNormalized.ToAngles().Normalize180().yaw, damage, true );
@@ -4805,7 +4805,7 @@ void sdTransport::OnWeaponEMPStateChanged( void ) {
 	if ( vehicleSoundControl != NULL ) {
 		vehicleSoundControl->OnWeaponEMPStateChanged();
 	}
-	
+
 /*	if ( IsWeaponEMPed() ) {
 		gameLocal.Printf( "EMP Weapon Started\n" );
 	} else {
@@ -4867,7 +4867,7 @@ void sdTransport::Event_ApplyEMPDamage( float time, float weaponTime ) {
 		SetEMPTime( newTime, newWeaponTime );
 
 		Event_ResetDecayTime();
-		
+
 		sdProgram::ReturnBoolean( true );
 	} else {
 		sdProgram::ReturnBoolean( false );
@@ -5070,7 +5070,7 @@ bool sdTransport::ClientReceiveEvent( int event, int time, const idBitMsg& msg )
 			SetTeleportEntity( gameLocal.EntityForSpawnId( spawnId )->Cast< sdTeleporter >() );
 			return true;
 		}
-		
+
 		case EVENT_PARTSTATE: {
 			int partNum = msg.ReadBits( BitsForPartIndex() ) - 1;
 			if ( partNum < -1 || partNum >= driveObjects.Num() ) {
@@ -5287,8 +5287,8 @@ void sdTransport::OnControllerMove( bool doGameCallback, const int numController
 sdTransport::SetMasterDestroyedPart
 ================
 */
-void sdTransport::SetMasterDestroyedPart( rvClientMoveable* part ) { 
-	masterDestroyedPart = part; 
+void sdTransport::SetMasterDestroyedPart( rvClientMoveable* part ) {
+	masterDestroyedPart = part;
 }
 
 /*
@@ -5296,8 +5296,8 @@ void sdTransport::SetMasterDestroyedPart( rvClientMoveable* part ) {
 sdTransport::GetMasterDestroyedPart
 ================
 */
-rvClientMoveable* sdTransport::GetMasterDestroyedPart( void ) { 
-	return masterDestroyedPart; 
+rvClientMoveable* sdTransport::GetMasterDestroyedPart( void ) {
+	return masterDestroyedPart;
 }
 
 /*

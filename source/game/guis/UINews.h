@@ -79,7 +79,7 @@ private:
 
 	static idHashMap< sdUITemplateFunction< sdUINews >* >	newsFunctions;
 
-	static const char*			eventNames[ NE_NUM_EVENTS - WE_NUM_EVENTS ];	
+	static const char*			eventNames[ NE_NUM_EVENTS - WE_NUM_EVENTS ];
 
 	typedef sdPair< idWStr, idStr > motdItem_t;
 	idList< motdItem_t >	items;

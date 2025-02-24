@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,10 +12,10 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "DeployMask.h"
-#include "../Game_local.h"
-#include "../Player.h"
+#include "Game_local.h"
+#include "Player.h"
 
-#include "../../decllib/declTypeHolder.h"
+#include "decllib/declTypeHolder.h"
 
 
 
@@ -204,7 +204,7 @@ void sdDeployMaskEditSession::UpdateProjection( const idVec3& position ) {
 		}
 
 		idFixedWinding winding;
-		
+
 		int spawnID = WORLD_SPAWN_ID;
 
 		for ( int i = expandedExtents.minx; i <= expandedExtents.maxx; i++ ) {
@@ -224,7 +224,7 @@ void sdDeployMaskEditSession::UpdateProjection( const idVec3& position ) {
 				mask->GetBounds( localExtents, bounds, heightMap );
 
 				idVec3 top = bounds.GetCenter();
-				top[ 2 ] = bounds.GetMaxs()[ 2 ];				
+				top[ 2 ] = bounds.GetMaxs()[ 2 ];
 
 				deployResult_t localResult = mask->IsValid( localExtents );
 

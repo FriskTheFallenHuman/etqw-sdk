@@ -2,14 +2,14 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclTargetInfo.h"
-#include "../gamesys/Class.h"
-#include "../../decllib/declEntityDef.h"
-#include "../Entity.h"
-#include "../../framework/DeclParseHelper.h"
+#include "gamesys/Class.h"
+#include "decllib/declEntityDef.h"
+#include "Entity.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -53,7 +53,7 @@ sdDeclTargetInfo::ParseType
 */
 bool sdDeclTargetInfo::ParseType( idParser& src, bool include ) {
 	idToken token;
-	
+
 	if ( !src.ReadToken( &token ) ) {
 		return false;
 	}

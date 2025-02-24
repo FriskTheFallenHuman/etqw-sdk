@@ -197,7 +197,7 @@ ID_INLINE bool idAngles::Compare( const idAngles &a, const float epsilon ) const
 	if ( idMath::Fabs( pitch - a.pitch ) > epsilon ) {
 		return false;
 	}
-			
+
 	if ( idMath::Fabs( yaw - a.yaw ) > epsilon ) {
 		return false;
 	}
@@ -249,7 +249,7 @@ ID_INLINE float *idAngles::ToFloatPtr( void ) {
 
 ID_INLINE idMat3& idAngles::YawToMat3( float yaw, idMat3& mat ) {
 	float sy, cy;
-		
+
 	idMath::SinCos( DEG2RAD( yaw ), sy, cy );
 
 	mat[ 0 ].Set( cy, sy, 0 );

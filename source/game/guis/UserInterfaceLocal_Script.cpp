@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -16,13 +16,13 @@ static char THIS_FILE[] = __FILE__;
 #include "UserInterfaceManagerLocal.h"
 #include "UIWindow.h"
 
-#include "../../framework/KeyInput.h"
+#include "framework/KeyInput.h"
 
-#include "../script/Script_Helper.h"
+#include "script/Script_Helper.h"
 
-#include "../gamesys/SysCmds.h"
+#include "gamesys/SysCmds.h"
 
-#include "../Player.h"
+#include "Player.h"
 
 using namespace sdProperties;
 
@@ -2007,7 +2007,7 @@ void sdUserInterfaceLocal::Script_SoundTest( sdUIFunctionStack& stack ) {
 	} else {
 		gameLocal.Warning( "Script_SoundTest: Invalid enum '%i'", iCommand );
 	}
-	
+
 	stack.Push( returnValue );
 }
 

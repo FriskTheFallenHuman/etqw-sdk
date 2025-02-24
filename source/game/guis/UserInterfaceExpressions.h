@@ -72,7 +72,7 @@ protected:
 	T									end;
 	T									value;
 	idVec2								accelTimes;
-	
+
 	idInterpolateAccelDecelLinear< T >*	interpolator;
 
 
@@ -111,7 +111,7 @@ public:
 	virtual void						Attach( sdUIExpression* output );
 	virtual float						GetFloatValue( void ) { return value; }
 	virtual void						Free( void ) { delete this; }
-private:	
+private:
 };
 
 extern const char sdUITransitionVec2_Identifier[];
@@ -285,7 +285,7 @@ private:
 	} wexpOpType_t;
 
 	typedef struct {
-		unsigned char opType;	
+		unsigned char opType;
 		unsigned char a;
 		unsigned char b;
 		unsigned char c;
@@ -378,7 +378,7 @@ private:
 	} wexpOpType_t;
 
 	typedef struct {
-		wexpOpType_t opType;	
+		wexpOpType_t opType;
 		int	a, b, c, d;
 	} wexpOp_t;
 
@@ -462,7 +462,7 @@ private:
 	} wexpOpType_t;
 
 	typedef struct {
-		unsigned char opType;	
+		unsigned char opType;
 		unsigned char a;
 		unsigned char b;
 		unsigned char c;
@@ -847,7 +847,7 @@ public:
 	virtual								~sdPropertyExpressionField() {}
 
 	virtual sdProperties::ePropertyType	GetType( void ) const { return sdProperties::PT_FLOAT; }
-	void								Update( void );	
+	void								Update( void );
 	virtual void						Free( void ) { delete this; }
 
 protected:

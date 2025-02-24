@@ -4,7 +4,7 @@
 #ifndef __GAME_DEMOS_DEMOCAMERA_H__
 #define __GAME_DEMOS_DEMOCAMERA_H__
 
-#include "../Camera.h"
+#include "Camera.h"
 
 //===============================================================
 //

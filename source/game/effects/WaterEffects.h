@@ -42,19 +42,19 @@ public:
 	void SetVelocity( const idVec3 &velocity );
 
 	// This velocity will cause the atten of the effects to go to 1
-	void SetMaxVelocity( float max) { 
+	void SetMaxVelocity( float max) {
 		maxVelocity = max;
 	}
 
 	// This velocity will cause the atten of the effects to go to 1
-	void SetAtten( float atten) { 
+	void SetAtten( float atten) {
 		this->atten = atten;
 	}
 
 	// Reset water effect state
 	void ResetWaterState() { inWater = false; }
 
-	// Convenience 
+	// Convenience
 	static sdWaterEffects *SetupFromSpawnArgs( const idDict &args  );
 
 protected:

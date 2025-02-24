@@ -1,10 +1,10 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h"
+#include "Game_local.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -73,7 +73,7 @@ void idBotAI::Think() {
 		return;
 	}
 
-	if ( ROOT_AI_NODE == NULL ) {		
+	if ( ROOT_AI_NODE == NULL ) {
 		Bot_ResetState( false, false );
         ROOT_AI_NODE = &idBotAI::Run_LTG_Node;
 	}
@@ -190,14 +190,14 @@ void idBotAI::Bot_Input() {
 	//mal_TODO: add more stuff here as needed!
 
 	if ( aiState == LTG && !botWorld->gameLocalInfo.inWarmup ) {
-		botUcmd->botCmds.reload = true;			
+		botUcmd->botCmds.reload = true;
 	} //mal: just auto-reload in LTG.
 
 	if ( weaponLocked ) {
-		botUcmd->idealWeaponSlot = NO_WEAPON;	
+		botUcmd->idealWeaponSlot = NO_WEAPON;
 		botUcmd->idealWeaponNum = NULL_WEAP;
 	} else {
-		botUcmd->idealWeaponSlot = botIdealWeapSlot;	
+		botUcmd->idealWeaponSlot = botIdealWeapSlot;
 		botUcmd->idealWeaponNum = botIdealWeapNum;
 	}
 
@@ -205,7 +205,7 @@ void idBotAI::Bot_Input() {
 		if ( botThreadData.random.RandomInt( 100 ) > 70 ) {
 			Bot_AddDelayedChat( botNum, HELLO, botThreadData.random.RandomInt( 3 ) ); //mal: say a nice hello to the folks on the server.
 		}
-		hasGreetedServer = true; //mal: never do this again. 
+		hasGreetedServer = true; //mal: never do this again.
 	}
 
 	Bot_CheckDelayedChats();
@@ -384,7 +384,7 @@ bool idBotAI::PopAINodeOffStack() {
 
 	LTG_AI_SUB_NODE = AIStack.STACK_AI_NODE;
 	V_LTG_AI_SUB_NODE = AIStack.VEHICLE_STACK_AI_NODE;
-	
+
 	if ( AIStack.stackClientNum != -1 ) {
 		ltgTarget = AIStack.stackClientNum;
 		ltgTargetSpawnID = AIStack.stackClientSpawnID;
@@ -520,7 +520,7 @@ void idBotAI::Spawn( int playerClass, int playerTeam ) {
 
 	InitAAS();
 
-	ClearBotUcmd( botNum );	
+	ClearBotUcmd( botNum );
 
 	playerTeamTypes_t botTeam = ( playerTeamTypes_t ) playerTeam;
 	playerClassTypes_t botClass = ( playerClassTypes_t ) playerClass;
@@ -617,7 +617,7 @@ void idBotAI::CheckBotStuckState() {
 			if ( framesFlipped >= 100 ) { //mal: give us time to recover, just in case we can.
                 Bot_ExitVehicle( false);
 			}
-			return;		
+			return;
 		}
 
 		if ( botVehicleInfo->isCareening && botVehicleInfo->isAirborneVehicle ) { //mal: out NOW! This thing is lost!
@@ -656,11 +656,11 @@ void idBotAI::CheckBotStuckState() {
 idBotAI::RunDebugChecks
 ================
 */
-void idBotAI::RunDebugChecks() { 
+void idBotAI::RunDebugChecks() {
 	SetupDebugHud();
 
 	if ( botThreadData.AllowDebugData() ) {
-		if ( bot_breakPoint.GetBool() ) { 
+		if ( bot_breakPoint.GetBool() ) {
 			bot_breakPoint.SetBool( false );
 			assert( false ); // stop everything!
 		}
@@ -788,7 +788,7 @@ void idBotAI::Bot_CheckDelayedChats() {
 
 				if ( playerInfo.lastThanksTime + 5000 < botWorld->gameLocalInfo.time || playerInfo.lastThanksTime + 1500 > botWorld->gameLocalInfo.time ) {
 					continue;
-				} 
+				}
 
 				vec = playerInfo.origin - botInfo->origin;
 
@@ -876,7 +876,7 @@ bool idBotAI::BotAI_CheckThinkState() {
 	}
 
 	if ( !botInfo->hasGroundContact && botInfo->invulnerableEndTime > botWorld->gameLocalInfo.time ) {
-		return false; 
+		return false;
 	} //mal: dont start thinking  until we've actually touched the ground after spawning in.
 
 	if ( botInfo->justSpawned ) {
@@ -895,7 +895,7 @@ bool idBotAI::BotAI_CheckThinkState() {
 		return false;
 	}
 
-	if ( botInfo->resetState > 0 ) { 
+	if ( botInfo->resetState > 0 ) {
 		ResetBotsAI( ( botInfo->resetState == MINOR_RESET_EVENT ) ? false : true );
 		return false;
 	}
@@ -1038,7 +1038,7 @@ void idBotAI::ClearBotState() {
 	ignoreDangersTime		= 0;
 
 	lastGrenadeTime			= 0;
-	
+
 	fdaUpdateTime			= 0;
 
 	selfShockTime			= 0;
@@ -1159,7 +1159,7 @@ void idBotAI::ClearBotState() {
 
 	moveErrorCounter.moveErrorTime = 0;
 	moveErrorCounter.moveErrorCount = 0;
-	
+
 	// FIXME: initialize all variables
 
 	lastAINode = "NO NODE";

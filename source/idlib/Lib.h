@@ -35,7 +35,7 @@
 	#endif
 #endif
 
-#include "../common/common.h"
+#include "common/common.h"
 #include <string.h>
 #include <limits.h>
 
@@ -66,8 +66,8 @@ public:
 
 	static void					Init( void );
 	static void					ShutDown( void );
-	
-	// wrapper to idCommon functions 
+
+	// wrapper to idCommon functions
 	static void		   			Printf( const char *fmt, ... );
 	static void					Error( const char *fmt, ... );
 	static void					Warning( const char *fmt, ... );
@@ -197,13 +197,6 @@ instead, use int64_t which is defined in the C99 standard. sadly, M$ doesn't shi
 #ifdef _MSC_VER
 typedef __int64 int64_t;
 typedef unsigned __int64 uint64_t;
-
-#define INT64_MIN _I64_MIN
-#define INT64_MAX _I64_MAX
-
-#define UINT64_MIN 0
-#define UINT64_MAX _UI64_MAX
-
 #else
 #include <stdint.h>
 #endif
@@ -334,8 +327,8 @@ int					IntForSixtets( byte *in );
 
 // memory management and arrays
 #ifdef _XENON
-#include "../Xenon/Sys/Xenon_Common.h"
-#include "../Xenon/Sys/Xenon_Heap.h"
+#include "Xenon/Sys/Xenon_Common.h"
+#include "Xenon/Sys/Xenon_Heap.h"
 #else
 #include "Heap.h"
 #endif

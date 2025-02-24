@@ -3,10 +3,10 @@
 
 #include <set>
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../../framework/Licensee.h"
+#include "framework/Licensee.h"
 
 #include "Script_Exporter.h"
 #include "Script_Program.h"
@@ -185,7 +185,7 @@ int sdScriptExporter::AllocConstant( const idVarDef* var ) {
 		case ev_boolean:
 		case ev_vector:
 			break;
-		default:			
+		default:
 			return -1;
 	}
 
@@ -322,7 +322,7 @@ void sdScriptExporter::WriteFunctionStub( idFile* file, const functionDef_t& fun
 	}
 
 	if ( func->def->scope->Type() == ev_namespace && !funcDef.isVirtual ) {
-		file->Printf( "%s(", BuildGlobalFunctionName( func ) );		
+		file->Printf( "%s(", BuildGlobalFunctionName( func ) );
 	} else {
 		file->Printf( "%s(", func->type->Name() );
 	}
@@ -1057,7 +1057,7 @@ void sdScriptExporter::AddDependency( const function_t* function, idList< const 
 	} else {
 		for ( int i = function->firstStatement; i < function->firstStatement + function->numStatements; i++ ) {
 			statement_t& statement = program->GetStatement( i );
-			
+
 			if ( statement.a != NULL ) {
 				AddDependency( statement.a->TypeDef(), dependencies );
 			}
@@ -1251,7 +1251,7 @@ void sdScriptExporter::WriteNamespaceClassIncludes( const namespaceDef_t* ns, id
 
 	for ( int i = 1; i < ns->classes.Num(); i++ ) {
 		cppFile->Printf( "#include \"%s\"\r\n", BuildClassHeaderName( ns->classes[ i ]->type, false ) );
-	}	
+	}
 }
 
 void sdScriptExporter::WriteNamespaceClassInit( const namespaceDef_t* ns, idFile* cppFile ) {
@@ -1442,7 +1442,7 @@ void sdScriptExporter::RegisterClassThreadCall( idTypeDef* type, const function_
 
 void sdScriptExporter::Finish( void ) {
 	idFile* file;
-	
+
 	file = fileSystem->OpenFileWrite( g_fixedCppFileName[ CS_FFC_EVENTS ], "fs_devpath" );
 	if ( file != NULL ) {
 		file->Printf( "\r\n" );
@@ -1518,9 +1518,9 @@ void sdScriptExporter::WriteBuildVersion( void ) {
 
 void sdScriptExporter::WriteProjectFile( void ) {
 
-    // ASM 
+    // ASM
     WriteXCodeProjectFile();
-    
+
 	const char *project_basename = "src/base/CompiledScript.vcproj.base";
 	idFile* projectBaseFile = fileSystem->OpenFileRead( project_basename );
 	if ( projectBaseFile == NULL ) {
@@ -1597,32 +1597,32 @@ void sdScriptExporter::WriteProjectFile( void ) {
 struct PBXFile
 {
     static unsigned long long lastUsed;
-    
+
     idStr filename;
     idStr file_reference;
     idStr build_reference;
-    
+
     PBXFile() : filename(""), file_reference(""), build_reference("") {}
-    PBXFile(const PBXFile& in_file) : filename(in_file.filename), 
+    PBXFile(const PBXFile& in_file) : filename(in_file.filename),
     file_reference(in_file.file_reference), build_reference(in_file.build_reference) {}
-    
+
     PBXFile operator=(const PBXFile& other)
     {
         filename = other.filename;
         file_reference = other.file_reference;
         build_reference = other.build_reference;
-        
+
         return *this;
     }
-    
+
     PBXFile(const char* new_filename) : filename(new_filename)
     {
         unsigned long fileHash = ++lastUsed;
         unsigned long buildFileHash = ++lastUsed;
-        
+
         sprintf(file_reference, "%llX", fileHash);
         file_reference.CapLength(24);
-        
+
         sprintf(build_reference, "%llX", buildFileHash);
         build_reference.CapLength(24);
     }
@@ -1638,36 +1638,36 @@ void sdScriptExporter::WriteXCodeProjectFile( void ) {
 		gameLocal.Warning( "Failed to load %s - skipping project file generation", project_basename );
 		return;
 	}
-    
+
     int length = projectBaseFile->Length();
-    
+
 	idStr temp;
 	temp.Fill( '\0', length );
 	projectBaseFile->Read( &temp[ 0 ], length );
-    
+
 	fileSystem->CloseFile( projectBaseFile );
-    
+
     for ( int i = 0; i < CS_FFC_NUM; i++ ) {
 		generatedCppFiles.Alloc() = g_fixedCppFileName[ i ];
 	}
-    
+
 	for ( int i = 0; i < CS_FFH_NUM; i++ ) {
 		generatedHFiles.Alloc() = g_fixedHFileName[ i ];
 	}
-    
+
     idList< PBXFile > projectCPPFiles;
     idList< PBXFile > projectHFiles;
-    
+
 	for ( int i = 0; i < generatedCppFiles.Num(); i++ ) {
 		int index = projectCPPFiles.Append( PBXFile( generatedCppFiles[ i ] ) );
 		projectCPPFiles[ index ].filename.StripPath();
 	}
 
-	for ( int i = 0; i < generatedHFiles.Num(); i++ ) {		
+	for ( int i = 0; i < generatedHFiles.Num(); i++ ) {
         int index = projectHFiles.Append( PBXFile( generatedHFiles[ i ] ) );
 		projectHFiles[ index ].filename.StripPath();
 	}
-    
+
 	idStr PBXBuildFileReplaceString;
 
 	for ( int i = 0; i < projectCPPFiles.Num(); i++ ) {
@@ -1678,51 +1678,51 @@ void sdScriptExporter::WriteXCodeProjectFile( void ) {
     idStr PBXFileReferenceReplaceString;
 
 	for ( int i = 0; i < projectCPPFiles.Num(); i++ ) {
-        PBXFileReferenceReplaceString+= "\t" + projectCPPFiles[ i ].file_reference + 
-            " = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = " + 
+        PBXFileReferenceReplaceString+= "\t" + projectCPPFiles[ i ].file_reference +
+            " = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = " +
             projectCPPFiles[ i ].filename + "; path = " + projectCPPFiles[ i ].filename + "; sourceTree = \"<group>\"; };\n";
     }
 
 	for ( int i = 0; i < projectHFiles.Num(); i++ ) {
-        PBXFileReferenceReplaceString+= "\t" + projectHFiles[ i ].file_reference + 
-            " = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = " + 
+        PBXFileReferenceReplaceString+= "\t" + projectHFiles[ i ].file_reference +
+            " = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; name = " +
             projectHFiles[ i ].filename + "; path = " + projectHFiles[ i ].filename + "; sourceTree = \"<group>\"; };\n";
     }
-    
+
     idStr PBXFileSourceReferences;
-    
+
     for ( int i = 0; i < projectCPPFiles.Num(); i++ ) {
         PBXFileSourceReferences+= "\t" + projectCPPFiles[ i ].file_reference + ",\n";
     }
 
     idStr PBXFileHeaderReferences;
-    
+
     for ( int i = 0; i < projectHFiles.Num(); i++ ) {
         PBXFileHeaderReferences+= "\t" + projectHFiles[ i ].file_reference + ",\n";
     }
-    
+
     idStr PBXBuildPhase;
 
     for ( int i = 0; i < projectCPPFiles.Num(); i++ ) {
         PBXBuildPhase+= "\t" + projectCPPFiles[ i ].build_reference + ",\n";
     }
-    
+
     temp.Replace( "$INSERTPBXBUILDFILESHERE$", PBXBuildFileReplaceString.c_str() );
     temp.Replace( "$INSERTPBXFILEREFERENCESHERE$", PBXFileReferenceReplaceString.c_str() );
     temp.Replace( "$INSERTSOURCEREFERENCESHERE$", PBXFileSourceReferences.c_str() );
     temp.Replace( "$INSERTHEADERREFERENCESHERE$", PBXFileHeaderReferences.c_str() );
     temp.Replace( "$INSERTBUILDPHASEHERE$", PBXBuildPhase.c_str() );
-    
+
     fileSystem->CreateOSPath( "src/compiledscript.xcodeproj/" );
     idFile* projectBaseOutput = fileSystem->OpenFileWrite( "src/compiledscript.xcodeproj/project.pbxproj", "fs_devpath" );
 	if ( projectBaseOutput == NULL ) {
 		return;
 	}
-    
+
 	projectBaseOutput->Write( temp.c_str(), temp.Length() );
-    
+
 	fileSystem->CloseFile( projectBaseOutput );
-    
+
     const char *plist_basename = "src/compiledscript.so-Info.plist.base";
 	idFile* plistBaseFile = fileSystem->OpenFileRead( plist_basename );
 	if ( plistBaseFile == NULL ) {
@@ -1730,23 +1730,23 @@ void sdScriptExporter::WriteXCodeProjectFile( void ) {
 		gameLocal.Warning( "Failed to load %s", plist_basename );
 		return;
 	}
-    
+
     length = plistBaseFile->Length();
-    
+
 	temp.Fill( '\0', length );
 	plistBaseFile->Read( &temp[ 0 ], length );
-    
+
 	fileSystem->CloseFile( plistBaseFile );
-    
+
     idFile* plistBaseOutput = fileSystem->OpenFileWrite( "src/compiledscript.so-Info.plist", "fs_devpath" );
 	if ( plistBaseOutput == NULL ) {
 		return;
 	}
-    
+
 	plistBaseOutput->Write( temp.c_str(), temp.Length() );
-    
+
 	fileSystem->CloseFile( plistBaseOutput );
-    
+
     // PBXBuildFile: (INSERTPBXBUILDFILESHERE)
     // 		96F06A1A0CB452A50010D225 /* Generated_EventCalls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96F065D40CB448CE0010D225 /* Generated_EventCalls.cpp */; };
     // PBXFileReference: (INSERTPBXFILEREFERENCESHERE)
@@ -1755,7 +1755,7 @@ void sdScriptExporter::WriteXCodeProjectFile( void ) {
 
     // Source references: (INSERTSOURCEREFERENCESHERE)
     //				96F0671C0CB448CE0010D225 /* GeneratedClass_task_deployable_disable.cpp */,
-    
+
     // Header references: (INSERTHEADERREFERENCESHERE)
     //				96F066FF0CB448CE0010D225 /* GeneratedClass_structure_cc.h */,
 
@@ -2201,7 +2201,7 @@ void sdScriptExporter::WriteClassFunctionWrappers( void ) {
 
 		PrintTabs( cppFile );
 		cppFile->Printf( "internalCallback_t internalCallback = ( internalCallback_t )callback;\r\n" );
-	
+
 		PrintTabs( cppFile );
 		if ( t->returnType->Type() != ev_void ) {
 			cppFile->Printf( "compilerInterface->Return" );
@@ -2289,7 +2289,7 @@ void sdScriptExporter::WriteFunctionWrappers( idFile* cppFile ) {
 
 		PrintTabs( cppFile );
 		cppFile->Printf( "internalCallback_t internalCallback = ( internalCallback_t )callback;\r\n" );
-	
+
 		PrintTabs( cppFile );
 		if ( t->returnType->Type() != ev_void ) {
 			cppFile->Printf( "compilerInterface->Return" );
@@ -2341,7 +2341,7 @@ void sdScriptExporter::WriteFunctionWrappers( idFile* cppFile ) {
 
 void sdScriptExporter::WriteVirtualFunctions( void ) {
 	idFile* headerFile;
-	
+
 	headerFile = fileSystem->OpenFileWrite( g_fixedHFileName[ CS_FFH_VIRTUALFUNCTIONS ], "fs_devpath" );
 
 	idList< const idTypeDef* > dependencies;
@@ -2352,7 +2352,7 @@ void sdScriptExporter::WriteVirtualFunctions( void ) {
 		funcDef.isVirtual = true;
 
 		AddDependency( funcDef.function, dependencies, false );
-		
+
 		WriteFunctionStub( headerFile, funcDef, NULL, 0 );
 		if ( funcDef.function->type->ReturnType()->Type() != ev_void ) {
 			headerFile->Printf( "{ return %s(); }\r\n", BuildFieldName( funcDef.function->type->ReturnType() ) );
@@ -2414,7 +2414,7 @@ void sdScriptExporter::Clear( bool finished ) {
 	eventCalls.DeleteContents( true );
 	generatedCppFiles.Clear();
 	generatedHFiles.Clear();
-	
+
 	constants.Clear();
 }
 
@@ -2657,7 +2657,7 @@ void sdFunctionCompileState::AllocateSubVars( const sdScriptExporter::stackVar_t
 	sdScriptExporter::stackVar_t& newVar1 = *new sdScriptExporter::stackVar_t;
 	sdScriptExporter::stackVar_t& newVar2 = *new sdScriptExporter::stackVar_t;
 	sdScriptExporter::stackVar_t& newVar3 = *new sdScriptExporter::stackVar_t;
-	
+
 	stackVars.Alloc() = &newVar1;
 	stackVars.Alloc() = &newVar2;
 	stackVars.Alloc() = &newVar3;
@@ -3571,7 +3571,7 @@ void sdFunctionCompileState::ScanOpCode( int statement ) {
 
 				return;
 			}
-			
+
 			if ( idStr::Cmp( f->GetName(), "waitFrame" ) == 0 ) {
 				PrintTabs();
 				output->Printf( "compilerInterface->WaitFrame();\r\n" );

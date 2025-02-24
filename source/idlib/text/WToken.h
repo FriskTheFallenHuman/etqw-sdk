@@ -12,7 +12,7 @@
 ===============================================================================
 */
 
-class idWToken : 
+class idWToken :
 	public idWStr,
 	public sdPoolAllocator< idWToken, sdPoolAllocator_DefaultIdentifier, 128 > {
 

@@ -5,7 +5,7 @@
 #ifndef __IDLIB_HANDLES_H__
 #define __IDLIB_HANDLES_H__
 
-#include "../Handle.h"
+#include "Handle.h"
 
 /*
 ============
@@ -24,14 +24,14 @@ public:
 	const T&			operator[]( const handle_t& handle ) const;
 
 	handle_t			GetFirst() const;
-	handle_t			GetNext( const handle_t& handle ) const; 
+	handle_t			GetNext( const handle_t& handle ) const;
 
 	void				SetGranularity( int newGranularity );
 
 						// returns the total number of slots available, use IsValid to make sure an element is actually usable
 	int					Num() const;
 	bool				IsValid( const handle_t& handle ) const;
-					
+
 						// all handles will be invalidated
 	void				DeleteContents();
 
@@ -52,8 +52,8 @@ typename sdHandles< T >::handle_t sdHandles< T >::Acquire() {
 		if( items[ i ] == NULL ) {
 			return handle_t( i );
 		}
-	}	
-	return handle_t( items.Append( T() )); 
+	}
+	return handle_t( items.Append( T() ));
 }
 
 /*
@@ -87,7 +87,7 @@ sdHandles< T >::operator[]
 template< class T >
 const T& sdHandles< T >::operator[]( const handle_t& handle ) const {
 	assert( handle.IsValid() );
-	return items[ handle ];	
+	return items[ handle ];
 }
 
 /*

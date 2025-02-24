@@ -10,7 +10,7 @@
 ===============================================================================
 
   sdClientProjectile
-	
+
 ===============================================================================
 */
 
@@ -164,7 +164,7 @@ bool sdClientProjectile::ClientReceiveEvent( const idVec3 &origin, int event, in
 			if ( index >= -1 && index < declManager->GetNumMaterials() ) {
 				if ( index != -1 ) {
 					collision.c.material =  declManager->MaterialByIndex( index, false );
-				}						
+				}
 			}
 
 			velocity[0] = msg.ReadFloat( 5, 10 );

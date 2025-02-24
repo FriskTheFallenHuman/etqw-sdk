@@ -1,11 +1,11 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h" 
-#include "../../game/ContentMask.h"
+#include "Game_local.h"
+#include "game/ContentMask.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -28,7 +28,7 @@ int idBotAI::Bot_MedicCheckForWoundedMate( int healClientNum, int escortClientNu
 	float closest = idMath::INFINITY; //mal: set it to some large, crazy number
 	float dist;
 	idVec3	vec;
-	
+
 //mal: dont bother doing this if bot has no charge
 	if ( !ClassWeaponCharged( HEALTH ) ) {
 		botIdealWeapSlot = GUN;
@@ -80,7 +80,7 @@ int idBotAI::Bot_MedicCheckForWoundedMate( int healClientNum, int escortClientNu
 		}
 
 		if ( playerInfo.classType == MEDIC ) {
-			continue; 
+			continue;
 		} //mal: if player is a medic, ignore, they can heal themselves!
 
 		if ( playerInfo.team != botInfo->team && playerInfo.isDisguised == false ) {
@@ -95,7 +95,7 @@ int idBotAI::Bot_MedicCheckForWoundedMate( int healClientNum, int escortClientNu
 			continue;
 		}
 
-		if ( healClientNum != -1 && playerInfo.xySpeed > WALKING_SPEED ) { 
+		if ( healClientNum != -1 && playerInfo.xySpeed > WALKING_SPEED ) {
 			continue;
 		} //mal: ignore ppl moving around a lot, if we're already on way to someone else!
 
@@ -158,7 +158,7 @@ int idBotAI::Bot_MedicCheckForWoundedMate( int healClientNum, int escortClientNu
 			continue;
 		}
 
-		if ( escortClientNum != -1 && !requestedHelp ) { 
+		if ( escortClientNum != -1 && !requestedHelp ) {
 			vec = botWorld->clientInfo[ escortClientNum ].origin - playerInfo.origin;
 			if ( vec.LengthSqr() > Square( MEDIC_RANGE_BUSY ) ) {
 				vec = playerInfo.origin - botInfo->origin;
@@ -226,7 +226,7 @@ int idBotAI::Bot_MedicCheckForDeadMateDuringCombat( const idVec3 &dangerOrg, flo
 
 		if ( playerInfo.inLimbo ) {
 			continue;
-		}		
+		}
 
 		if ( playerInfo.team != botInfo->team ) {
 			continue; //mal: give no comfort to the enemy!
@@ -256,7 +256,7 @@ int idBotAI::Bot_MedicCheckForDeadMateDuringCombat( const idVec3 &dangerOrg, flo
 		if ( botWorld->gameLocalInfo.gameIsBotMatch && !playerInfo.isBot ) { //mal: go out of our way more to revive the player in an SP game.
 			tempRangeLimit = 2000.0f;
 		}
-	
+
 		if ( dist > Square( tempRangeLimit ) ) { //mal: too far away from us - ignore!
 			continue;
 		}
@@ -330,7 +330,7 @@ int idBotAI::Bot_StroggCheckForGDFBodies( float range ) {
 		}
 
 		if ( playerInfo.team == botInfo->team ) {
-			continue; 
+			continue;
 		}
 
 		if ( playerInfo.xySpeed > 0.0f ) {
@@ -446,7 +446,7 @@ int idBotAI::Bot_StroggCheckForGDFBodies( float range ) {
 		}
 	}
 
-	return bodyNum;	
+	return bodyNum;
 }
 
 /*
@@ -455,7 +455,7 @@ idBotAI::Bot_MedicCheckForDeadMate
 
 Checks for dead teammates. Works with both gdf and strogg (since the 2 are so similiar).
 If the bot is already in the process of healing/reviving someone, reviveClientNum != -1,
-in which case, the bot will only look at ones that are 
+in which case, the bot will only look at ones that are
 closer then their current NBG goal. "range" is how far bot will look to heal/revive. This will change based on what bot is
 doing (if escorting important mate, or carrying OBJ, will not go as far to heal/revive). origin could be the bot's own origin,
 or the origin of the important mate bot wants to cover.
@@ -556,7 +556,7 @@ int idBotAI::Bot_MedicCheckForDeadMate( int reviveClientNum, int escortClientNum
 			continue;
 		}
 
-		if ( escortClientNum != -1 && !requestedHelp ) { 
+		if ( escortClientNum != -1 && !requestedHelp ) {
 			vec = botWorld->clientInfo[ escortClientNum ].origin - playerInfo.origin;
 			if ( vec.LengthSqr() > Square( MEDIC_RANGE_BUSY ) ) {
 				vec = playerInfo.origin - botInfo->origin;
@@ -690,7 +690,7 @@ bool idBotAI::InFrontOfClient( int clientNum, const idVec3 &origin, bool precise
 	if ( dir * botWorld->clientInfo[ clientNum ].viewAxis[ 0 ] > dotCheck ) {
 		return true;//mal: have someone in front of us..
 	} //mal: since we're only calculating for 90 degrees, we don't need to normalize the dir.
-	
+
 	return false;
 }
 
@@ -706,7 +706,7 @@ bool idBotAI::ClientIsIgnored( int clientNum ) {
 	int i;
 
 	for( i = 0; i < MAX_IGNORE_ENTITIES; i++ ) {
-		
+
 		if ( ignoreClients[ i ].num != clientNum  ) {
 			continue;
 		}
@@ -731,7 +731,7 @@ bool idBotAI::EnemyIsIgnored( int clientNum ) {
 	int i;
 
 	for( i = 0; i < MAX_IGNORE_ENTITIES; i++ ) {
-		
+
 		if ( ignoreEnemies[ i ].num != clientNum  ) {
 			continue;
 		}
@@ -756,7 +756,7 @@ bool idBotAI::VehicleIsIgnored( int vehicleNum ) {
 	int i;
 
 	for( i = 0; i < MAX_IGNORE_ENTITIES; i++ ) {
-		
+
 		if ( ignoreVehicles[ i ].num != vehicleNum  ) {
 			continue;
 		}
@@ -811,7 +811,7 @@ Is this deployable being ignored?
 */
 bool idBotAI::DeployableIsIgnored( int deployableNum ) {
 	for( int i = 0; i < MAX_IGNORE_ENTITIES; i++ ) {
-		
+
 		if ( ignoreDeployables[ i ].num != deployableNum ) {
 			continue;
 		}
@@ -867,7 +867,7 @@ bool idBotAI::BodyIsIgnored( int bodyNum ) {
 	int i;
 
 	for( i = 0; i < MAX_IGNORE_ENTITIES; i++ ) {
-		
+
 		if ( ignoreBodies[ i ].num != bodyNum  ) {
 			continue;
 		}
@@ -892,7 +892,7 @@ bool idBotAI::SpawnHostIsIgnored( int bodyNum ) {
 	int i;
 
 	for( i = 0; i < MAX_IGNORE_ENTITIES; i++ ) {
-		
+
 		if ( ignoreSpawnHosts[ i ].num != bodyNum  ) {
 			continue;
 		}
@@ -949,7 +949,7 @@ Setups an enemy to be ignored
 ================
 */
 void idBotAI::Bot_IgnoreEnemy( int clientNum, int time ) {
-	
+
 	bool hasSlot = false;
 	int i;
 
@@ -1074,7 +1074,7 @@ bool idBotAI::Bot_RandomLook( idVec3 &position, bool ignoreDelay ) {
 		ang[ YAW ] += yaw;
 
 		ang.ToVectors( &forward, NULL, NULL );
-        
+
 		end = botInfo->viewOrigin;
 
 		end += ( randomLookRange * forward );
@@ -1083,7 +1083,7 @@ bool idBotAI::Bot_RandomLook( idVec3 &position, bool ignoreDelay ) {
 			continue;
 		}
 
-		if ( botThreadData.AllowDebugData() ) { 
+		if ( botThreadData.AllowDebugData() ) {
 			idVec3 test = end;
 			test[ 2 ] += 24;
 			gameRenderWorld->DebugLine( colorDkRed, end, test, 2500 );
@@ -1272,7 +1272,7 @@ bool idBotAI::Bot_CheckSelfSupply() {
 	skipStrafeJumpTime = botWorld->gameLocalInfo.time + 500; //mal: dont bother to try to strafe jump if the bot wants to resupply himself!
 
 	supplySelfTime = botWorld->gameLocalInfo.time + 1200; //mal: give ourselves a chance to actually give that pack - just in case we ran out of charge with this one.
-	
+
 	if ( isStrafeJumping != false ) { //mal: if we're already strafejumping, knock it off, and let us supply ourselves!
         isStrafeJumping = false;
 		botUcmd->moveFlag = RUN;
@@ -1281,7 +1281,7 @@ bool idBotAI::Bot_CheckSelfSupply() {
 	if ( botInfo->weapInfo.isReady && ( botInfo->weapInfo.weapon == HEALTH || botInfo->weapInfo.weapon == AMMO_PACK ) ) {
 		botUcmd->botCmds.launchPacks = true;
 	}
-    
+
 	return true;
 }
 
@@ -1294,7 +1294,7 @@ If so, we'll do something else. For humans, will do a proximity check.
 ================
 */
 bool idBotAI::Bot_NBGIsAvailable( int clientNum, int actionNumber, const bot_NBG_Types_t goalType, int &busyClient ) {
-	
+
 	int i;
 
 	for( i = 0; i < MAX_CLIENTS; i++ ) {
@@ -1340,7 +1340,7 @@ bool idBotAI::Bot_NBGIsAvailable( int clientNum, int actionNumber, const bot_NBG
 				continue;
 			}
 		}
-		
+
 		if ( botThreadData.bots[ i ]->GetNBGType() != goalType ) {
 			continue;
 		}
@@ -1362,7 +1362,7 @@ If so, we'll do something else. For humans, will do a proximity check.
 ================
 */
 bool idBotAI::Bot_LTGIsAvailable( int clientNum, int actionNumber, const bot_LTG_Types_t goalType, int minNumClients ) {
-	
+
 	int i;
 	int numClients = 0;
 
@@ -1436,7 +1436,7 @@ Checks to see how many bots are doing a particular LTG.
 ================
 */
 int idBotAI::Bot_NumClientsDoingLTGGoal( int clientNum, int actionNumber, const bot_LTG_Types_t goalType, idList< int >& busyClients ) {
-	
+
 	int numClients = 0;
 
 	for( int i = 0; i < MAX_CLIENTS; i++ ) {
@@ -1598,7 +1598,7 @@ int idBotAI::Bot_CovertCheckForUniforms( float range ) {
 		}
 
 		if ( playerInfo.team == botInfo->team ) {
-			continue; 
+			continue;
 		}
 
 		if ( LocationDistFromCurrentObj( botInfo->team, playerInfo.origin ) < BODY_IGNORE_RANGE && Client_IsCriticalForCurrentObj( botNum, -1.0f ) ) {
@@ -1712,7 +1712,7 @@ int idBotAI::Bot_CovertCheckForUniforms( float range ) {
 		}
 	}
 
-	return bodyNum;	
+	return bodyNum;
 }
 
 /*
@@ -1770,9 +1770,9 @@ int idBotAI::Bot_CovertCheckForVictims( float range ) {
 		}
 
 		if ( playerInfo.team == botInfo->team ) {
-			continue; 
+			continue;
 		}
- 
+
 		if ( botInfo->team == GDF ) {
 			if ( botWorld->gameLocalInfo.botSkill != BOT_SKILL_EXPERT ) { //mal: high skill bots are more likely to just backstab anyone they can....
 			if ( playerInfo.classType != botWorld->botGoalInfo.team_STROGG_criticalClass && !ClientIsDangerous( i ) ) {
@@ -1821,7 +1821,7 @@ int idBotAI::Bot_CovertCheckForVictims( float range ) {
 
 		if ( playerInfo.friendsInArea > MAX_NUM_OF_FRIENDS_OF_VICTIM ) { //mal: this guys got a lot of friends around him - prolly a better idea to try something else....
 			return victim;
-		}	
+		}
 
 		if ( !Bot_NBGIsAvailable( i, ACTION_NULL, STALK_VICTIM, busyClient )) { //mal: some other bot is doing the same thing, so do something else.
 			continue;
@@ -1845,7 +1845,7 @@ int idBotAI::Bot_CovertCheckForVictims( float range ) {
 		}
 	}
 
-	return victim;	
+	return victim;
 }
 
 /*
@@ -1970,7 +1970,7 @@ idBotAI::ClientHasChargeInWorld
 ==================
 */
 bool idBotAI::ClientHasChargeInWorld( int clientNum, bool armedOnly, int actionNumber, bool unArmedOnly ) {
-	
+
 	bool hasBomb = false;
 
 	for( int i = 0; i < MAX_CLIENT_CHARGES; i++ ) {
@@ -1999,7 +1999,7 @@ bool idBotAI::ClientHasChargeInWorld( int clientNum, bool armedOnly, int actionN
 				continue;
 			}
 		}
-		
+
 		hasBomb = true;
 		break;
 	}
@@ -2123,7 +2123,7 @@ Is this action being ignored for some reason?
 */
 bool idBotAI::ActionIsIgnored( int actionNumber ) {
 	for( int i = 0; i < MAX_IGNORE_ENTITIES; i++ ) {
-		
+
 		if ( ignoreActions[ i ].num != actionNumber ) {
 			continue;
 	}
@@ -2176,7 +2176,7 @@ Is this item being ignored for some reason?
 */
 bool idBotAI::ItemIsIgnored( int itemNumber ) {
 	for( int i = 0; i < MAX_IGNORE_ENTITIES; i++ ) {
-		
+
 		if ( ignoreItems[ i ].num != itemNumber ) {
 			continue;
 		}
@@ -2246,7 +2246,7 @@ int idBotAI::Bot_CheckForNeedyTeammates( float range ) {
 	float closest = idMath::INFINITY; //mal: set it to some large, crazy number
 	float dist;
 	idVec3	vec;
-	
+
 //mal: dont bother doing this if bot has no charge
 	if ( !ClassWeaponCharged( AMMO_PACK ) ) {
 		botIdealWeapSlot = GUN;
@@ -2270,7 +2270,7 @@ int idBotAI::Bot_CheckForNeedyTeammates( float range ) {
 		if ( !ClientIsValid( i, -1 ) ) {
 			continue; //mal: no valid client in this client slot!
 		}
- 
+
 		if ( ClientIsIgnored( i )) {
 			continue;
 		}
@@ -2293,7 +2293,7 @@ int idBotAI::Bot_CheckForNeedyTeammates( float range ) {
 
 		if ( botInfo->team == GDF ) {
             if ( playerInfo.classType == FIELDOPS ) {
-				continue; 
+				continue;
 			} //mal: if player is a Fops, ignore, they can rearm themselves!
 		} else {
 			if ( playerInfo.classType == MEDIC ) { //mal: the same for medics on the strogg team!
@@ -2442,18 +2442,18 @@ bool idBotAI::Client_IsCriticalForCurrentObj( int clientNum, float range ) {
 		if ( botActionNum == -1 || botActionNum > botThreadData.botActions.Num() ) {
 			return false;
 		}
-        
+
 		actionGoal = botThreadData.botActions[ botActionNum ]->GetHumanObj();
 	} else {
 		botActionNum = botWorld->botGoalInfo.team_STROGG_PrimaryAction;
-		
+
 		if ( botActionNum == -1 || botActionNum > botThreadData.botActions.Num() ) {
 			return false;
 		}
 
 		actionGoal = botThreadData.botActions[ botActionNum ]->GetStroggObj();
 	}
-	
+
 	actionState = botThreadData.botActions[ botActionNum ]->GetActionState();
 
 	if ( range != -1.0f ) {
@@ -2523,7 +2523,7 @@ int idBotAI::FindBodyOfClient( int clientNum, bool stealUniform, const idVec3 &o
 		break;
 	}
 
-	return bodyNum;	
+	return bodyNum;
 }
 
 /*
@@ -2554,7 +2554,7 @@ float idBotAI::LocationDistFromCurrentObj( const playerTeamTypes_t team, const i
 
 		actionGoal = botThreadData.botActions[ botActionNum ]->GetStroggObj();
 	}
-	
+
 	vec = org - botThreadData.botActions[ botActionNum ]->GetActionOrigin();
 
 	return vec.LengthFast();
@@ -2569,7 +2569,7 @@ bool idBotAI::Bot_IsAwareOfDanger( int entNum, const idVec3& org, const idMat3& 
 	int i;
 
 	for( i = 0; i < MAX_DANGERS; i++ ) {
-		
+
 		if ( currentDangers[ i ].num != entNum ) {
 			continue;
 		}
@@ -2607,7 +2607,7 @@ int idBotAI::AddDangerToAwareList( int entNum, const idVec3 &org, const dangerTy
 	int i;
 
 	for( i = 0; i < MAX_DANGERS; i++ ) {
-		
+
 		if ( currentDangers[ i ].num != 0 ) {
 			if ( currentDangers[ i ].time > botWorld->gameLocalInfo.time ) {
 				continue;
@@ -2740,7 +2740,7 @@ void idBotAI::Bot_CheckForDangers( bool inCombat ) {
 			}
 		}
 	}
-	
+
 //mal: first check for stroybombs
 	for( j = 0; j < MAX_STROYBOMBS; j++ ) {
 		if ( inCombat ) {
@@ -2855,7 +2855,7 @@ void idBotAI::Bot_CheckForDangers( bool inCombat ) {
 			if ( tr.fraction < 1.0f && tr.c.entityNum != airstrikeInfo.oldEntNum ) { //mal: its not visible to us, so dont worry about it.
 				continue;
 			}
-				
+
 			if ( AddDangerToAwareList( airstrikeInfo.oldEntNum, airstrikeInfo.origin, THROWN_AIRSTRIKE, 10, i, airstrikeInfo.dir ) != -1 ) {
 		        airStrikeDangers++;
 			}
@@ -2940,7 +2940,7 @@ void idBotAI::Bot_CheckForDangers( bool inCombat ) {
 			if ( deployable.health <= 0 ) {
 				continue;
 			}
-	
+
 			if ( !deployable.inPlace ) {
 				continue;
 			}
@@ -2980,13 +2980,13 @@ void idBotAI::Bot_CheckForDangers( bool inCombat ) {
 
 			vec = deployable.origin;
 			vec.z += DEPLOYABLE_ORIGIN_OFFSET;
-			
+
 			botThreadData.clip->TracePoint( CLIP_DEBUG_PARMS tr, botInfo->viewOrigin, vec, MASK_SHOT_BOUNDINGBOX | MASK_VEHICLESOLID | CONTENTS_FORCEFIELD, GetGameEntity( botNum ) );
 
 			if ( tr.fraction < 1.0f && tr.c.entityNum != deployable.entNum ) { //mal: its not visible to us, so dont worry about it.
 				continue;
 			}
-			
+
 			if ( AddDangerToAwareList( deployable.entNum, deployable.origin, ANTI_PERSONAL, 10, i ) != -1 ) {
 				turretDangers++;
 			}
@@ -3010,13 +3010,13 @@ void idBotAI::Bot_CheckForDangers( bool inCombat ) {
 		}
 
         if ( botWorld->clientInfo[ i ].team == botInfo->team ) {
-			continue; 
+			continue;
 		}
-		
+
 		if ( inCombat ) {
 			continue;
 		} //mal: 11 and a half hour change: don't avoid certain dangers in combat, as that causes the jittering issues - 4/16/08
-		
+
 		const covertToolInfo_t& covertToolInfo = botWorld->clientInfo[ i ].weapInfo.covertToolInfo;
 
 		if ( covertToolInfo.entNum == 0 ) {
@@ -3061,7 +3061,7 @@ void idBotAI::Bot_CheckForDangers( bool inCombat ) {
 		if ( tr.fraction < 1.0f && tr.c.entityNum != covertToolInfo.entNum ) { //mal: its not visible to us, so dont worry about it.
 			continue;
 		}
-				
+
 		if ( AddDangerToAwareList( covertToolInfo.entNum, covertToolInfo.origin, ( botInfo->team == STROGG ) ? THIRD_EYE_CAM : STROGG_HIVE, 30, i ) != -1 ) {
             covertToolDangers++;
 		}
@@ -3093,7 +3093,7 @@ void idBotAI::Bot_CheckForDangers( bool inCombat ) {
 		if ( charge.entNum == 0 ) {
 			continue;
 		}
-		
+
 		if ( botWorld->gameLocalInfo.friendlyFireOn == false ) {
 			if ( charge.team == botInfo->team && charge.ownerSpawnID != botInfo->spawnID ) {
 				continue;
@@ -3103,7 +3103,7 @@ void idBotAI::Bot_CheckForDangers( bool inCombat ) {
 		if ( botInfo->classType == ENGINEER && charge.team != botInfo->team ) {
 			continue;
 		}
-					
+
 		if ( Bot_IsAwareOfDanger( charge.entNum, charge.origin, mat3_identity ) ) {
 			continue;
 		}
@@ -3140,7 +3140,7 @@ void idBotAI::Bot_CheckForDangers( bool inCombat ) {
 		if ( inCombat ) {
 			continue;
 		} //mal: 11 and a half hour change: don't avoid certain dangers in combat, as that causes the jittering issues - 4/16/08
-		
+
 		if ( !ClientIsValid( i, -1 ) ) {
 			continue;
 		}
@@ -3149,7 +3149,7 @@ void idBotAI::Bot_CheckForDangers( bool inCombat ) {
 			continue;
 		}
 
-		if ( botInfo->isDisguised ) { 
+		if ( botInfo->isDisguised ) {
 			continue;
 		}
 
@@ -3197,7 +3197,7 @@ void idBotAI::Bot_CheckForDangers( bool inCombat ) {
 				vec = mineInfo.origin - botThreadData.botActions[ actionNum ]->GetActionOrigin();
 				if ( vec.LengthSqr() < Square( 512.0f ) ) {
 					actionNumInsideDanger = actionNum;
-				} 
+				}
 
 				if ( !Bot_HasExplosives( inCombat ) ) { //mal: if the mine is on top of our action and we dont have the means to destroy it, we don't have any choice but to try to go to our goal.
 					continue;
@@ -3267,7 +3267,7 @@ void idBotAI::Bot_CheckForDangers( bool inCombat ) {
 		if ( currentDangers[ dangerIndex ].type == HAND_GRENADE || currentDangers[ dangerIndex ].type == PLANTED_CHARGE || currentDangers[ dangerIndex ].type == THROWN_AIRSTRIKE || currentDangers[ dangerIndex ].type == STROY_BOMB_DANGER ) {
 			ROOT_AI_NODE = &idBotAI::Run_NBG_Node;
 			nbgTarget = dangerIndex;
-	
+
 			if ( currentDangers[ dangerIndex ].type == THROWN_AIRSTRIKE ) {
 				nbgTime = botWorld->gameLocalInfo.time + 15000;
 			} else if ( currentDangers[ dangerIndex ].type == PLANTED_CHARGE ) {
@@ -3356,7 +3356,7 @@ int idBotAI::FindClosestDangerIndex() {
 	float dist;
 	float bestDist = idMath::INFINITY; //mal: set it to an insane number.
 	idVec3 vec;
-    
+
 	for( i = 0; i < MAX_DANGERS; i++ ) {
 
 		if ( currentDangers[ i ].num == 0 ) {
@@ -3662,7 +3662,7 @@ void idBotAI::Bot_RunTacticalAction() {
 	BotAI_ResetUcmd();
 	Bot_LookAtLocation( actionOrg, SMOOTH_TURN );
 
-	if ( actionType == ACTION_AIRCAN_HINT ) { 
+	if ( actionType == ACTION_AIRCAN_HINT ) {
 		Bot_UseCannister( AIRCAN, actionOrg );
 	} else if ( actionType == ACTION_SMOKE_HINT ) {
 		Bot_UseCannister( SMOKE_NADE, actionOrg );
@@ -3707,7 +3707,7 @@ void idBotAI::Bot_RunTacticalAction() {
 			}
 
 			Bot_LookAtLocation( tacticalActionOrigin, INSTANT_TURN );
-			
+
 			if ( botInfo->weapInfo.weapon == FLYER_HIVE && ClassWeaponCharged( FLYER_HIVE ) && botThreadData.random.RandomInt( 100 ) > 50 ) {
 				botUcmd->botCmds.attack = true;
 			}
@@ -3724,7 +3724,7 @@ void idBotAI::Bot_RunTacticalAction() {
 
 				if ( vec.LengthSqr() > Square( botThreadData.botActions[ tacticalActionNum ]->radius ) ) {
 					Bot_SetupFlyerMove( goalOrigin, goalAreaNum );
-	
+
 					idVec3 moveGoal = botAAS.path.moveGoal;
 
 					moveGoal.z += FLYER_HIVE_HEIGHT_OFFSET;
@@ -3803,8 +3803,8 @@ bool idBotAI::TeamHumanNearLocation( const playerTeamTypes_t playerTeam, const i
 
         if ( i == botNum ) {
 			continue;
-		}			
-			
+		}
+
 		if ( !ClientIsValid( i, -1 ) ) {
 			continue;
 		}
@@ -3833,7 +3833,7 @@ bool idBotAI::TeamHumanNearLocation( const playerTeamTypes_t playerTeam, const i
 			}
 		}
 
-		if ( ignoreDeadMates == true ) { 
+		if ( ignoreDeadMates == true ) {
 			if ( playerInfo.health <= 0 ) {
 				continue;
 			}
@@ -4009,7 +4009,7 @@ int idBotAI::Bot_CheckForNeedyVehicles( float range, bool& chatRequest ) {
 	float closest = idMath::INFINITY; //mal: set it to some large, crazy number
 	float dist;
 	idVec3	vec;
-	
+
 	if ( Client_IsCriticalForCurrentObj( botNum, CLOSE_TO_GOAL_RANGE ) ) {
 		botIsImportant = true;
 	}
@@ -4195,13 +4195,13 @@ Checks if client owns a vehicle in the world.
 ================
 */
 bool idBotAI::ClientHasVehicleInWorld( int clientNum, float range ) {
-	
+
 	bool hasVehicle = false;
 	int i;
 	idVec3	vec;
 
 	for ( i = 0; i < MAX_VEHICLES; i++ ) {
-        
+
 		const proxyInfo_t& vehicleInfo = botWorld->vehicleInfo[ i ];
 
 		if ( vehicleInfo.entNum == 0 ) {
@@ -4362,7 +4362,7 @@ bool idBotAI::BodyIsObstructed( int entNum, bool isCorpse, bool isSpawnHost ) {
 ================
 idBotAI::ClientIsDead
 
-Just a quick check, that takes into account the bot's thread delay time, 
+Just a quick check, that takes into account the bot's thread delay time,
 to find out if the client in question died while we were in a wait state.
 ================
 */
@@ -4394,7 +4394,7 @@ bool idBotAI::ClientCanBeTKRevived( int clientNum ) {
 	if ( botInfo->team == STROGG ) {
 		return false;
 	} //mal: cant revive fast enough.
-	
+
 	if ( botWorld->gameLocalInfo.botSkill != BOT_SKILL_EXPERT || !botWorld->gameLocalInfo.friendlyFireOn ) { //mal: TK reviving is something only the smartest bots will do
 		return false;
 	}
@@ -4454,7 +4454,7 @@ bool idBotAI::ClientCanBeTKRevived( int clientNum ) {
 	if ( ClientHasObj( clientNum ) ) {
 		return false;
 	}
-    
+
 	return true;
 }
 
@@ -4506,7 +4506,7 @@ int idBotAI::Bot_CheckForSpawnHostsToDestroy( float range, bool& useChat ) {
 		}
 
 		bool spawnHostIsMarkedForDeath = SpawnHostIsMarkedForDeath( botWorld->spawnHosts[ i ].spawnID );
-		
+
 		if ( !spawnHostIsMarkedForDeath ) {
 			//mal: should only destroy a spawnhost if its fairly close to the strogg's goal.
 			if ( botWorld->botGoalInfo.team_STROGG_PrimaryAction != ACTION_NULL ) {
@@ -4590,7 +4590,7 @@ int idBotAI::Bot_CheckForNeedyDeployables( float range ) {
 	if ( Client_IsCriticalForCurrentObj( botNum, CLOSE_TO_GOAL_RANGE ) && botWorld->botGoalInfo.attackingTeam == botInfo->team ) {
 		botIsBusy = true;
 	}
-	
+
 	for ( i = 0; i < MAX_DEPLOYABLES; i++ ) {
 
 		if ( DeployableIsIgnored( botWorld->deployableInfo[ i ].entNum ) ) {
@@ -4641,7 +4641,7 @@ int idBotAI::Bot_CheckForNeedyDeployables( float range ) {
 		if ( !Bot_NBGIsAvailable( deployableInfo.entNum, ACTION_NULL, FIX_DEPLOYABLE, busyClient ) ) {
 			continue;
 		}
-		
+
 		if ( botWorld->clientInfo[ deployableInfo.ownerClientNum ].team != botInfo->team ) {
 			continue;
 		}
@@ -4696,7 +4696,7 @@ int idBotAI::Bot_CheckForNeedyDeployables( float range ) {
 			continue;
 		}
 
-		if ( dist < closest ) { 
+		if ( dist < closest ) {
 			deployableNum = botWorld->deployableInfo[ i ].entNum;
 			closest = dist;
 		}
@@ -4721,7 +4721,7 @@ bool idBotAI::GetDeployableInfo( bool selfDeployable, int entNum, deployableInfo
 
 			if ( botWorld->deployableInfo[ i ].entNum == 0 ) {
 				continue;
-			}	
+			}
 
 			if ( botWorld->deployableInfo[ i ].ownerClientNum != botNum ) {
 				continue;
@@ -4737,10 +4737,10 @@ bool idBotAI::GetDeployableInfo( bool selfDeployable, int entNum, deployableInfo
 		}
 	} else {
 		for( int i = 0; i < MAX_DEPLOYABLES; i++ ) {
-	
+
 			if ( botWorld->deployableInfo[ i ].entNum == 0 ) {
 				continue;
-			}	
+			}
 
 			if ( botWorld->deployableInfo[ i ].entNum != entNum ) {
 				continue;
@@ -4857,7 +4857,7 @@ bool idBotAI::FindMCPStartAction( idVec3& origin ) {
 
 
 	for( i = 0; i < botThreadData.botActions.Num(); i++ ) {
-		
+
 		if ( !botThreadData.botActions[ i ]->ActionIsActive() ) {
 			continue;
 		}
@@ -5153,7 +5153,7 @@ bool idBotAI::Bot_CheckForSpawnHostToGrab() {
 	if ( ClientHasObj( botNum ) ) {
 		return false;
 	}
-	
+
 	int spawnHost = -1;
 	int busyClient;
 	float closest = idMath::INFINITY;
@@ -5458,7 +5458,7 @@ bool idBotAI::Bot_CheckForHumanWantingEscort() {
 
 		int botsFollowingThisClient = Bot_NumClientsDoingLTGGoal( botIsRequestedToEscortClient, ACTION_NULL, FOLLOW_TEAMMATE, busyClients );
 		botsFollowingThisClient += Bot_NumClientsDoingLTGGoal( botIsRequestedToEscortClient, ACTION_NULL, FOLLOW_TEAMMATE_BY_REQUEST, busyClients );
-		
+
 		if ( botsFollowingThisClient >= maxEscortClients ) { //mal: too many bots following this client ATM - dump one
 			int j = botThreadData.random.RandomInt( busyClients.Num() );
 			int botToRemoveFromFollowing = busyClients[ j ];
@@ -5550,7 +5550,7 @@ skipRequestedClientCheck:
 		if ( !botTooBusy && distSqr > Square( escortRange ) ) { //mal: they're too far away for us to start following! Let them know tho.
 			botTooBusy = true;
 		}
-		
+
 		if ( botInfo->isDisguised ) {
 	        botTooBusy = true;
         }
@@ -5570,7 +5570,7 @@ skipRequestedClientCheck:
 			if ( vehicleInfo.driverEntNum != i && !VehicleGoalsExistForVehicle( vehicleInfo ) ) { //mal: we can't be the driver of a vehicle if no goals exist on the map for it.
 				botTooBusy = true;
 			}
-			
+
 			if ( !ClientHasObj( botNum ) && carrierInWorld ) {
 				continue;
 			}
@@ -5660,7 +5660,7 @@ idBotAI::Bot_HasDeployableTargetGoals
 
 Check if the bot should attack enemy deployables.
 
-NOTE: we have code setup to allow the HOG to attack deployables, but it needs some more TLC before its ready for primetime. 
+NOTE: we have code setup to allow the HOG to attack deployables, but it needs some more TLC before its ready for primetime.
 Uncomment the "botVehicleInfo->type != HOG" line below to test.
 ==================
 */
@@ -5671,7 +5671,7 @@ int idBotAI::Bot_HasDeployableTargetGoals( bool hackDeployable ) {
 		if ( botIsBigShot && ( botInfo->classType != SOLDIER || botInfo->weapInfo.primaryWeapon != ROCKET ) ) { //mal: dont go destroy deployables if we're trying to win the game.
 			return -1;
 		}
-		
+
 		if ( ClientHasObj( botNum ) && ( botInfo->classType != SOLDIER || botInfo->weapInfo.primaryWeapon != ROCKET ) ) {
 			return -1;
 		}
@@ -5709,13 +5709,13 @@ int idBotAI::Bot_HasDeployableTargetGoals( bool hackDeployable ) {
 	for( int i = 0; i < botThreadData.botActions.Num(); i++ ) {
 		if ( !botThreadData.botActions[ i ]->ActionIsActive() ) {
 			continue;
-		}	
+		}
 
 		if ( !botThreadData.botActions[ i ]->ActionIsValid() ) {
 			continue;
 		}
 
-		if ( botThreadData.botActions[ i ]->GetBaseObjForTeam( GDF ) != ACTION_DROP_DEPLOYABLE && botThreadData.botActions[ i ]->GetBaseObjForTeam( STROGG ) != ACTION_DROP_DEPLOYABLE && 
+		if ( botThreadData.botActions[ i ]->GetBaseObjForTeam( GDF ) != ACTION_DROP_DEPLOYABLE && botThreadData.botActions[ i ]->GetBaseObjForTeam( STROGG ) != ACTION_DROP_DEPLOYABLE &&
 			botThreadData.botActions[ i ]->GetBaseObjForTeam( GDF ) != ACTION_DROP_PRIORITY_DEPLOYABLE && botThreadData.botActions[ i ]->GetBaseObjForTeam( STROGG ) != ACTION_DROP_PRIORITY_DEPLOYABLE ) {
 			continue;
 		}
@@ -5903,7 +5903,7 @@ int idBotAI::Bot_HasDeployableTargetGoals( bool hackDeployable ) {
 				}
 			} else {
 				if ( botWorld->botGoalInfo.attackingTeam == botInfo->team ) {
-					if ( botActionValid ) { 
+					if ( botActionValid ) {
 						vec = botActionOrg - deployable.origin;
 
 						if ( vec.LengthSqr() < Square( GAME_PLAY_RANGE ) ) {
@@ -5932,7 +5932,7 @@ int idBotAI::Bot_HasDeployableTargetGoals( bool hackDeployable ) {
 
 			if ( botActionValid ) {
 				vec = botActionOrg - deployable.origin;
-				
+
 				if ( vec.LengthSqr() > Square( BOT_ATTACK_DEPLOYABLE_RANGE * 2.0f ) && dist > Square( BOT_ATTACK_DEPLOYABLE_RANGE ) ) {
 					continue;
 				} else {
@@ -5961,12 +5961,12 @@ int idBotAI::Bot_HasDeployableTargetGoals( bool hackDeployable ) {
 			if ( Bot_VehicleIsUnderAVTAttack() == deployable.entNum && deployable.type == AVT ) {
 				dist = 1.0f; //mal: if its attacking us, its RIGHT next to us as far as we're concerned.
 			} else {
-				if ( !Bot_VehicleLTGIsAvailable( deployable.entNum, ACTION_NULL, V_DESTROY_DEPLOYABLE, numClients ) ) { 
+				if ( !Bot_VehicleLTGIsAvailable( deployable.entNum, ACTION_NULL, V_DESTROY_DEPLOYABLE, numClients ) ) {
 					continue;
 				}
 			}
 		} else {
-			if ( !Bot_LTGIsAvailable( deployable.entNum, ACTION_NULL, DESTROY_DEPLOYABLE_GOAL, numClients ) ) { 
+			if ( !Bot_LTGIsAvailable( deployable.entNum, ACTION_NULL, DESTROY_DEPLOYABLE_GOAL, numClients ) ) {
 				continue;
 			}
 		}
@@ -6184,7 +6184,7 @@ bool idBotAI::Bot_CheckNeedClientsOnDefense() {
 	int numNeededDefenders;
 
 	if ( numBots == 1 ) { //mal: we need a defender - and its going to be this bot.
-		return true; 
+		return true;
 	} else {
 		numNeededDefenders = ( numBots / 2 );
 	}
@@ -6363,7 +6363,7 @@ const entityTypes_t idBotAI::FindEntityType( int entNum, int spawnID ) {
 		}
 
 		return ENTITY_PLAYER;
-	} 
+	}
 
 	for( int i = 0; i < MAX_VEHICLES; i++ ) {
 		const proxyInfo_t& vehicleInfo = botWorld->vehicleInfo[ i ];
@@ -6415,7 +6415,7 @@ bool idBotAI::DeployableIsMarkedForRepair( int entNum, bool clearRequest ) {
 	}
 
 	bool isMarked = false;
-	
+
 	for( int i = 0; i < MAX_CLIENTS; i++ ) {
 		if ( !ClientIsValid( i, -1 ) ) {
 			continue;
@@ -6484,7 +6484,7 @@ bool idBotAI::VehicleIsMarkedForRepair( int entNum, bool clearRequest ) {
 	}
 
 	bool isMarked = false;
-	
+
 	for( int i = 0; i < MAX_CLIENTS; i++ ) {
 		if ( !ClientIsValid( i, -1 ) ) {
 			continue;
@@ -6860,9 +6860,9 @@ bool idBotAI::Bot_IsNearDroppedObj() {
 	LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_RecoverDroppedGoal;
 
 	if ( !ltgUseVehicle ) {
-		Bot_FindRouteToCurrentGoal();	
+		Bot_FindRouteToCurrentGoal();
 	}
-			
+
 	PushAINodeOntoStack( -1, ltgTarget, ACTION_NULL, ltgTime, true, ltgUseVehicle, ( routeNode != NULL ) ? true : false );
 	return true;
 }
@@ -6960,7 +6960,7 @@ idBotAI::Bot_IsClearOfObstacle
 */
 bool idBotAI::Bot_IsClearOfObstacle( const idBox& box, const float bboxHeight, const idVec3& botOrigin ) {
 	float minHeight, maxHeight;
-	
+
 	box.AxisProjection( botAAS.aas->GetSettings()->invGravityDir, minHeight, maxHeight );
 
 	if ( ( minHeight > ( botOrigin.z + bboxHeight + BOX_OFFSET ) ) || ( maxHeight < ( botOrigin.z - BOX_OFFSET ) ) ) { //mal: dont see obstacles that are a floor above/below the player/vehicle.
@@ -7032,7 +7032,7 @@ idVec3 idBotAI::GetPlayerViewPosition( int clientNum ) {
 		idVec3 vec = player.origin;
 		vec.z += 48.0f;
 
-		if ( botThreadData.AllowDebugData() ) { 
+		if ( botThreadData.AllowDebugData() ) {
 			gameRenderWorld->DebugCircle( colorGreen, vec, idVec3( 0, 0, 1 ), 48, 32 );
 		}
 		return vec;
@@ -7088,7 +7088,7 @@ bool idBotAI::Bot_IsNearForwardSpawnToGrab() {
 	}
 
 	fdaUpdateTime = botWorld->gameLocalInfo.time + 5000;
-	
+
 	int spawnGoal = ACTION_NULL;
 	int stealSpawnGoal = ACTION_NULL;
 
@@ -7133,7 +7133,7 @@ bool idBotAI::Bot_IsNearForwardSpawnToGrab() {
 				 }
 			}
 		}
-		
+
 		if ( ActionIsIgnored( i ) ) {
 			break;
 		}
@@ -7196,7 +7196,7 @@ bool idBotAI::Bot_IsNearForwardSpawnToGrab() {
 		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;
 		ltgTime = botWorld->gameLocalInfo.time + 120000;
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_SpawnPointGoal;
-		Bot_FindRouteToCurrentGoal();	
+		Bot_FindRouteToCurrentGoal();
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, false, ( routeNode != NULL ) ? true : false );
 		return true;
 	}
@@ -7207,7 +7207,7 @@ bool idBotAI::Bot_IsNearForwardSpawnToGrab() {
 		ROOT_AI_NODE = &idBotAI::Run_LTG_Node;
 		ltgTime = botWorld->gameLocalInfo.time + 120000;
 		LTG_AI_SUB_NODE = &idBotAI::Enter_LTG_SpawnPointGoal;
-		Bot_FindRouteToCurrentGoal();	
+		Bot_FindRouteToCurrentGoal();
 		PushAINodeOntoStack( -1, -1, actionNum, ltgTime, true, false, ( routeNode != NULL ) ? true : false );
 		return true;
 	}
@@ -7310,7 +7310,7 @@ int idBotAI::Bot_FindNearbySafeActionToMoveToward( const idVec3& origin, float m
 		if ( botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_NULL ) {
 			continue;
 		}
-		
+
 		if ( botWorld->gameLocalInfo.gameMap == SLIPGATE ) {
 			if ( !Bot_CheckLocationIsOnSameSideOfSlipGate( botThreadData.botActions[ i ]->GetActionOrigin() ) ) {
 				continue;
@@ -7321,9 +7321,9 @@ int idBotAI::Bot_FindNearbySafeActionToMoveToward( const idVec3& origin, float m
 			continue;
 		}
 
-		if ( botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_AIRCAN_HINT || botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_SMOKE_HINT || 
-			botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_NADE_HINT || botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_SUPPLY_HINT || 
-			botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_SHIELD_HINT || botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_TELEPORTER_HINT || 
+		if ( botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_AIRCAN_HINT || botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_SMOKE_HINT ||
+			botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_NADE_HINT || botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_SUPPLY_HINT ||
+			botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_SHIELD_HINT || botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_TELEPORTER_HINT ||
 			botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_THIRDEYE_HINT || botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_FLYER_HIVE_HINT ||
 			botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_FLYER_HIVE_LAUNCH || botThreadData.botActions[ i ]->GetObjForTeam( botInfo->team ) == ACTION_FLYER_HIVE_TARGET ) {
 			continue;
@@ -7399,7 +7399,7 @@ float idBotAI::Bot_DistSqrToClosestForceShield( idVec3& shieldOrg ) {
 		if ( !ClientIsValid( i, -1 ) ) {
 			continue;
 		}
-		
+
 		const clientInfo_t& player = botWorld->clientInfo[ i ];
 
 		if ( player.team != STROGG ) {
@@ -7468,7 +7468,7 @@ bool idBotAI::Bot_UseRepairDrone( int entNum, const idVec3& entOrg ) {
 	if ( vec.LengthSqr() < Square( REPAIR_DRONE_RANGE ) ) {
 		if ( !botInfo->hasRepairDroneInWorld ) {
 			trace_t tr;
-			botThreadData.clip->TracePoint( CLIP_DEBUG_PARMS tr, botInfo->viewOrigin, entOrg, BOT_VISIBILITY_TRACE_MASK, GetGameEntity( botNum ) ); 
+			botThreadData.clip->TracePoint( CLIP_DEBUG_PARMS tr, botInfo->viewOrigin, entOrg, BOT_VISIBILITY_TRACE_MASK, GetGameEntity( botNum ) );
 
 			if ( tr.fraction < 1.0f && tr.c.entityNum != entNum ) {
 				return false;
@@ -7571,11 +7571,11 @@ int idBotAI::Bot_CheckForGrieferTargetGoals() {
 
 		//mal: check to see if anyone else is targeting this bozo.
 		if ( botVehicleInfo != NULL ) {
-			if ( !Bot_VehicleLTGIsAvailable( i, ACTION_NULL, V_HUNT_GOAL, 1 ) ) { 
+			if ( !Bot_VehicleLTGIsAvailable( i, ACTION_NULL, V_HUNT_GOAL, 1 ) ) {
 				continue;
 			}
 		} else {
-			if ( !Bot_LTGIsAvailable( i, ACTION_NULL, HUNT_GOAL, 1 ) ) { 
+			if ( !Bot_LTGIsAvailable( i, ACTION_NULL, HUNT_GOAL, 1 ) ) {
 				continue;
 			}
 		}
@@ -7691,7 +7691,7 @@ int idBotAI::Bot_FindClosestAVTDanger( const idVec3& location, float range, bool
 		if ( deployable.disabled ) {
 			continue;
 		}
-	
+
 		if ( useAngleCheck ) {
 			idVec3 dir = location - deployable.origin;
 			dir.NormalizeFast();
@@ -7747,9 +7747,9 @@ bool idBotAI::SpawnHostIsMarkedForDeath( int spawnHostSpawnID ) {
 idBotAI::Bot_GetRequestedEscortClient
 ============
 */
-int idBotAI::Bot_GetRequestedEscortClient() { 
+int idBotAI::Bot_GetRequestedEscortClient() {
 	int escortClientNum = -1;
-	
+
 	for( int i = 0; i < MAX_CLIENTS; i++ ) {
 		if ( !ClientIsValid( i, -1 ) ) {
 			continue;
@@ -7871,7 +7871,7 @@ int idBotAI::Bot_HasTeammateWhoCouldUseShieldCoverNearby() {
 	int entNum = -1;
 
 	for( int i = 0; i < MAX_CLIENTS; i++ ) {
-		
+
 		if ( i == botNum ) {
 			continue;
 		}
@@ -7940,7 +7940,7 @@ int idBotAI::Bot_CheckForNearbyTeammateWhoCouldUseSmoke() {
 	int entNum = -1;
 
 	for( int i = 0; i < MAX_CLIENTS; i++ ) {
-		
+
 		if ( i == botNum ) {
 			continue;
 		}
@@ -7962,7 +7962,7 @@ int idBotAI::Bot_CheckForNearbyTeammateWhoCouldUseSmoke() {
 		if ( player.classType != ENGINEER ) {
 			continue;
 		}
-		
+
 		if ( player.inWater ) {
 			continue;
 		}
@@ -7970,7 +7970,7 @@ int idBotAI::Bot_CheckForNearbyTeammateWhoCouldUseSmoke() {
 		if ( player.proxyInfo.entNum != CLIENT_HAS_NO_VEHICLE ) { //mal: client jumped into a vehicle/deployable - forget them
 			continue;
 		}
-		
+
 		if ( ClientIsDead( i ) || player.inLimbo ) {
 			continue;
 		}
@@ -8009,7 +8009,7 @@ bool idBotAI::ClientHasCloseShieldNearby( int clientNum, float considerRange ) {
 		if ( !ClientIsValid( i, -1 ) ) {
 			continue;
 		}
-		
+
 		const clientInfo_t& player = botWorld->clientInfo[ i ];
 
 		if ( player.team != STROGG ) {
@@ -8134,7 +8134,7 @@ void idBotAI::Bot_CheckHealthCrateState() {
 	if ( Bot_CheckIfHealthCrateInArea( 1024.0f ) ) {
 		return;
 	}
-	
+
 	if ( botThreadData.botVehicleNodes.ActiveVehicleNodeNearby( botInfo->origin, 640.0f ) ) { //mal: dont drop crates in the middle of bot defined roads.
 		return;
 	}
@@ -8200,7 +8200,7 @@ bool idBotAI::Bot_CheckIfHealthCrateInArea( float range ) {
 		if ( !ClientIsValid( i, -1 ) ) {
 			continue;
 		}
-		
+
 		const clientInfo_t& playerInfo = botWorld->clientInfo[ i ];
 
 		if ( playerInfo.supplyCrateRequestTime > botWorld->gameLocalInfo.time && botInfo->supplyCrateRequestTime < botWorld->gameLocalInfo.time ) {
@@ -8310,7 +8310,7 @@ bool idBotAI::Bot_HasShieldInWorldNearLocation( const idVec3& checkOrg, float ch
 	}
 
 	bool hasShield = false;
-	
+
 	for( int j = 0; j < MAX_SHIELDS; j++ ) {
 		if ( botInfo->forceShields[ j ].entNum == 0 ) {
 			continue;
@@ -8340,7 +8340,7 @@ int idBotAI::Bot_NumShieldsInWorld() {
 	}
 
 	int numShields = 0;
-	
+
 	for( int j = 0; j < MAX_SHIELDS; j++ ) {
 		if ( botInfo->forceShields[ j ].entNum == 0 ) {
 			continue;
@@ -8366,7 +8366,7 @@ bool idBotAI::CarrierInWorld() {
 		}
 
 		carrierInWorld = true;
-		break;		
+		break;
 	}
 
 	return carrierInWorld;

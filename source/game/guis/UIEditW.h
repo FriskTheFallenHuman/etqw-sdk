@@ -55,7 +55,7 @@ public:
 		EE_INPUT_FAILED = WE_NUM_EVENTS + 1,
 		EE_NUM_EVENTS,
 	} editEvent_t;
-	
+
 												sdUIEditW();
 		virtual									~sdUIEditW();
 

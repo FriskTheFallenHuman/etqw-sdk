@@ -62,12 +62,12 @@ public:
 	static void								InitFunctions();
 	static void								ShutdownFunctions( void ) { marqueeFunctions.DeleteContents(); }
 
-protected:	
+protected:
 	virtual void							DrawText( const wchar_t* text, const idVec4& color );
 
 	void									CalcOffsets();
 
-	static const sdUITemplateFunction< sdUIMarquee >*	FindFunction( const char* name );	
+	static const sdUITemplateFunction< sdUIMarquee >*	FindFunction( const char* name );
 
 private:
 	enum eScrollOrientation{ SO_VERTICAL, SO_HORIZONTAL };
@@ -94,7 +94,7 @@ private:
 	static idHashMap< sdUITemplateFunction< sdUIMarquee >* >	marqueeFunctions;
 
 	int					scrollStartTime;
-	int					scrollTargetTime;	
+	int					scrollTargetTime;
 
 	int					textWidth;
 	int					textHeight;

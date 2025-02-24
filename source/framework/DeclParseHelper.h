@@ -29,17 +29,17 @@ public:
 							sdDeclParseHelper( idDecl* decl_, const char* text, int textLength, idParser& src_ );
 							~sdDeclParseHelper();
 
-	void					GetBinaryBuffer( const byte*& buffer, int& length ) const;	
+	void					GetBinaryBuffer( const byte*& buffer, int& length ) const;
 	const idFile_Memory*	GetOutputFile() const { return binaryOutput; }
 	void					Finish( void );
-		
+
 private:
-	idParser&				src;				// parser that we're reading from/settings up	
-	idFile_Memory*			binaryOutput;		// tokenized parser output to be stored on the decl	
+	idParser&				src;				// parser that we're reading from/settings up
+	idFile_Memory*			binaryOutput;		// tokenized parser output to be stored on the decl
 
 	idDecl*					decl;				// source/target decl
 	idDeclTypeInterface*	type;				// type of the decl, used for decl type-specific behavior
-	
+
 	byte*					declBuffer;			// binary buffer retrieved from the decl
 	int						declBufferLength;	// binary buffer length retrieved from the decl
 };
@@ -90,7 +90,7 @@ ID_INLINE sdDeclParseHelper::sdDeclParseHelper( idDecl* decl_, const char* text,
 			}
 			decl->SetText( builder.c_str() );
 			src.FreeSource( true );
-		}		
+		}
 		src.LoadMemory( text, textLength, va( "%s: %s", decl->GetFileName(), decl->GetName() ), decl->GetLineNum() );
 	}
 
@@ -100,7 +100,7 @@ ID_INLINE sdDeclParseHelper::sdDeclParseHelper( idDecl* decl_, const char* text,
 	}
 
 	if( type->WriteBinary() ) {
-		if( ( cvarSystem->GetCVarBool( "com_writeBinaryDecls" ) || type->AlwaysGenerateBinary() ) && 
+		if( ( cvarSystem->GetCVarBool( "com_writeBinaryDecls" ) || type->AlwaysGenerateBinary() ) &&
 			( !decl->HasBinaryBuffer() || ( type->AlwaysGenerateBinary() && decl->GetState() == DS_DEFAULTED ) ) ) {
 			binaryOutput = fileSystem->OpenMemoryFile( decl->GetName() );
 			binaryOutput->SetGranularity( 256 );
@@ -146,7 +146,7 @@ sdDeclParseHelper::Finish
 ID_INLINE void sdDeclParseHelper::Finish( void ) {
 	// no dependencies in binary mode, except for types that always generate
 	if( decl != NULL && ( binaryOutput == NULL || type->AlwaysGenerateBinary() ) ) {
-		declManager->AddDependencies( decl, src );				
+		declManager->AddDependencies( decl, src );
 	}
 
 	if( decl != NULL && binaryOutput != NULL && decl->GetState() != DS_DEFAULTED ) {

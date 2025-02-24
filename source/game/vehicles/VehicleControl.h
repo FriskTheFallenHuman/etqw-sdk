@@ -24,8 +24,8 @@ class sdVehicleDriveObject;
 */
 class sdVehicleControlBase {
 public:
-	sdVehicleControlBase() { 
-		owner = NULL; 
+	sdVehicleControlBase() {
+		owner = NULL;
 		input = NULL;
 		isImmobilized = false;
 	}
@@ -119,15 +119,15 @@ protected:
 ===============================================================================
 
 	sdVehicleScriptControl
-	
+
 	this just passes the control updates through to script
 
 ===============================================================================
 */
 class sdVehicleScriptControl : public sdVehicleControlBase {
 public:
-	sdVehicleScriptControl() { 
-		inputThread = NULL; 
+	sdVehicleScriptControl() {
+		inputThread = NULL;
 		inputThreadFunc = NULL;
 	}
 
@@ -372,7 +372,7 @@ protected:
 	virtual void			UpdateCareening( idVec3& directions );
 
 	void					UpdatePropeller( propeller_t& prop );
-	
+
 	propeller_t				leftProp;
 	propeller_t				rightProp;
 };
@@ -465,7 +465,7 @@ protected:
 ===============================================================================
 
 	sdAirVehicleControl
-	
+
 	Base class for air vehicle control
 
 ===============================================================================
@@ -519,10 +519,10 @@ protected:
 
 	bool					throttling;
 	bool					landingGearDown;
-	
+
 	float					landingThresholdDistance;
 	float					landingThresholdSpeed;
-	
+
 	float					overDriveFactor;
 	bool					overDrivePlayingSound;
 
@@ -541,11 +541,11 @@ protected:
 	int						landingGearChangeTime;
 	int						landingGearChangeEndTime;
 	float					deadZoneFraction;
-	
+
 	sdVehicleThruster*		leftJet;
 	sdVehicleThruster*		rightJet;
 	sdVehicleAirBrake*		airBrake;
-	
+
 	jointHandle_t			leftThrustEffectJoint;
 	jointHandle_t			rightThrustEffectJoint;
 
@@ -577,7 +577,7 @@ protected:
 ===============================================================================
 
 	sdHornetControl
-	
+
 ===============================================================================
 */
 class sdHornetControl : public sdAirVehicleControl {
@@ -604,7 +604,7 @@ protected:
 ===============================================================================
 
 	sdHovercopterControl
-	
+
 ===============================================================================
 */
 class sdHovercopterControl : public sdAirVehicleControl {
@@ -627,7 +627,7 @@ protected:
 ===============================================================================
 
 	sdAnansiControl
-	
+
 ===============================================================================
 */
 class sdAnansiControl : public sdHovercopterControl {
@@ -644,7 +644,7 @@ protected:
 ===============================================================================
 
 	sdWalkerControl
-	
+
 ===============================================================================
 */
 class sdWalkerNetworkData : public sdEntityStateNetworkData {
@@ -736,7 +736,7 @@ public:
 protected:
 
 	void					UpdateSliding();
-	void					UpdateSlidingFoot( jointHandle_t joint, bool& footOnGround, idVec3& lastFootOrg, 
+	void					UpdateSlidingFoot( jointHandle_t joint, bool& footOnGround, idVec3& lastFootOrg,
 												idVec3& lastFootGroundOrg, int& lastFootEffectTime );
 
 	jointHandle_t			leftFootJoint;

@@ -31,18 +31,18 @@ enum {
 	OP_UINCP_F,
 	OP_UDEC_F,
 	OP_UDECP_F,
-	
+
 	OP_COMP_F,
 
 	OP_MUL_F,
 	OP_MUL_V,
 	OP_MUL_FV,
 	OP_MUL_VF,
-	
+
 	OP_DIV_F,
-	
+
 	OP_MOD_F,
-	
+
 	OP_ADD_F,
 	OP_ADD_V,
 	OP_ADD_S,
@@ -50,24 +50,24 @@ enum {
 	OP_ADD_SF,
 	OP_ADD_VS,
 	OP_ADD_SV,
-	
+
 	OP_SUB_F,
 	OP_SUB_V,
-	
+
 	OP_EQ_B,
 	OP_EQ_F,
 	OP_EQ_V,
 	OP_EQ_S,
 	OP_EQ_W,
 	OP_EQ_O,
-	
+
 	OP_NE_B,
 	OP_NE_F,
 	OP_NE_V,
 	OP_NE_S,
 	OP_NE_W,
 	OP_NE_O,
-	
+
 	OP_LE,
 	OP_GE,
 	OP_LT,
@@ -79,7 +79,7 @@ enum {
 	OP_INDIRECT_W,
 	OP_INDIRECT_BOOL,
 	OP_INDIRECT_OBJ,
-	
+
 	OP_ADDRESS,
 
 	OP_EVENTCALL,
@@ -168,7 +168,7 @@ enum {
 	OP_OR_BOOLF,
 	OP_OR_FBOOL,
 	OP_OR_BOOLBOOL,
-	
+
 	OP_BITAND,
 	OP_BITOR,
 
@@ -191,10 +191,10 @@ private:
 	idParser		parser;
 	idParser		*parserPtr;
 	idToken			token;
-					
+
 	idTypeDef		*immediateType;
 	eval_t			immediate;
-					
+
 	bool			eof;
 	bool			callthread;
 	bool			callguithread;
@@ -206,7 +206,7 @@ private:
 	int				errorCount;
 
 	idProgram*		program;
-					
+
 	idVarDef		*scope;				// the function being parsed, or NULL
 	const idVarDef	*basetype;			// for accessing fields
 
@@ -240,7 +240,7 @@ private:
 	idVarDef		*ParseFunctionCall( idVarDef *func );
 	idVarDef		*ParseObjectCall( idVarDef *object, idVarDef *func );
 	idVarDef		*ParseEventCall( idVarDef *object, idVarDef *func );
-	idVarDef		*ParseVirtualEventCall( idVarDef *object, idVarDef *func );	
+	idVarDef		*ParseVirtualEventCall( idVarDef *object, idVarDef *func );
 	idVarDef		*ParseSysObjectCall( idVarDef *func );
 	idVarDef		*LookupDef( const char *name, const idVarDef *baseobj );
 	idVarDef		*ParseValue( void );

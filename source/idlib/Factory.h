@@ -4,7 +4,7 @@
 #ifndef __FACTORY_H__
 #define __FACTORY_H__
 
-#include "../framework/Common_public.h"
+#include "framework/Common_public.h"
 
 //===============================================================
 //
@@ -12,11 +12,11 @@
 //
 //===============================================================
 
-template<class T> 
+template<class T>
 class sdFactory {
 public:
 	typedef T* (*pfnCreate)(void);
-	
+
 	~sdFactory() {
 		Shutdown();
 	}
@@ -73,7 +73,7 @@ sdFactory::CreateType
 template<class T>
 ID_INLINE T* sdFactory<T>::CreateType( const char* name ) {
 	pfnCreate* findCreator;
-	
+
 	idStr lowerName = name;
 	lowerName.ToLower();
 
@@ -81,7 +81,7 @@ ID_INLINE T* sdFactory<T>::CreateType( const char* name ) {
 	if( findCreator && *findCreator ) {
 		return (**findCreator)();
 	}
-	
+
 	common->Warning( "Factory::CreateType: Unknown type %s", name );
 	return NULL;
 }

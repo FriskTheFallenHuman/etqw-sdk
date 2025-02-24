@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,8 +11,8 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../../framework/KeyInput.h"
-#include "../../sys/sys_local.h"
+#include "framework/KeyInput.h"
+#include "sys/sys_local.h"
 
 #include "UserInterfaceManager.h"
 #include "UserInterfaceLocal.h"
@@ -37,12 +37,12 @@ static char THIS_FILE[] = __FILE__;
 #include "UICreditScroll.h"
 #include "UINews.h"
 
-#include "../demos/DemoManager.h"
+#include "demos/DemoManager.h"
 
 // for render callbacks
-#include "../structures/CommandMapPost.h"
-#include "../Player.h"
-#include "../Atmosphere.h"
+#include "structures/CommandMapPost.h"
+#include "Player.h"
+#include "Atmosphere.h"
 
 sdUserInterfaceManagerLocal uiManagerLocal;
 sdUserInterfaceManager* uiManager = &uiManagerLocal;
@@ -400,7 +400,7 @@ void sdUserInterfaceManagerLocal::Clear( bool force ) {
 			delete instances[ i ];
 			instances[ i ] = NULL;
 		}
-	}	
+	}
 }
 
 /*
@@ -432,7 +432,7 @@ void sdUserInterfaceManagerLocal::OnReloadGUI( idDecl* gui ) {
 		if ( active ) {
 			ui->Activate();
 		}
-		
+
 		guiHandle_t handle = uiManagerLocal.GetHandle( i );
 		for( int i = 0; i < uiManagerLocal.reloadCallbacks.Num(); i++ ) {
 			uiManagerLocal.reloadCallbacks[ i ]( handle );
@@ -496,7 +496,7 @@ void sdUserInterfaceManagerLocal::UnregisterRenderCallback( const char* name ) {
 		return;
 	}
 	delete iter->second;
-	renderCallbacks.Remove( iter );	
+	renderCallbacks.Remove( iter );
 }
 
 /*
@@ -573,7 +573,7 @@ void sdUserInterfaceManagerLocal::UnregisterReloadCallback( reloadGUICallback_t 
 sdUserInterfaceManagerLocal::RegisterCallback
 ============
 */
-template< class T >	
+template< class T >
 void sdUserInterfaceManagerLocal::RegisterCallback( idHashMap< T >& list, const char* name, T callback ) {
 	if( !callback ) {
 		gameLocal.Warning( "sdUserInterfaceManager::RegisterCallback: NULL callback" );
@@ -718,13 +718,13 @@ void sdUserInterfaceManagerLocal::ListGUIs( const idCmdArgs& args ) {
 		sdUserInterfaceLocal* ui = instances[ i ];
 		if ( !ui ) {
 			continue;
-		}		
+		}
 		bool isActive = ui->IsActive();
 		bool isPermanent = ui->IsPermanent();
 		bool isInteractive = ui->IsInteractive();
 		bool isUnique = ui->IsUnique();
-		gameLocal.Printf( "%-32s: %s %s %s %s\n", ui->GetDecl()->GetName(),	isActive		? "A"	: " ", 
-																			isPermanent		? "P"	: " ", 
+		gameLocal.Printf( "%-32s: %s %s %s %s\n", ui->GetDecl()->GetName(),	isActive		? "A"	: " ",
+																			isPermanent		? "P"	: " ",
 																			isInteractive	? "I"	: " ",
 																			isUnique		? "U"	: " " );
 		if( isActive ) {
@@ -770,7 +770,7 @@ void sdUserInterfaceManagerLocal::PrintGuiProperty( const idCmdArgs& args ) {
 			}
 			found = true;
 		}
-	}	
+	}
 
 	if( !found ) {
 		gameLocal.Printf( "GUI  '%s' is not active\n", args.Argv( 1 ));
@@ -804,7 +804,7 @@ void sdUserInterfaceManagerLocal::SetGuiProperty( const idCmdArgs& args ) {
 			}
 			found = true;
 		}
-	}	
+	}
 
 	if( !found ) {
 		gameLocal.Printf( "GUI  '%s' is not active\n", args.Argv( 1 ));
@@ -887,7 +887,7 @@ void sdUserInterfaceManagerLocal::PrintGuiStats( const idCmdArgs& args ) {
 			}
 			found = true;
 		}
-	}	
+	}
 
 	if( !found ) {
 		gameLocal.Printf( "GUI  '%s' not found\n", args.Argv( 1 ));

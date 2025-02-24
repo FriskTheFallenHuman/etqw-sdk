@@ -4,7 +4,7 @@
 #ifndef __GAME_VEHICLES_SYSTEMS_H__
 #define __GAME_VEHICLES_SYSTEMS_H__
 
-#include "../decls/declVehicleScript.h"
+#include "decls/declVehicleScript.h"
 
 class sdTransport;
 class idPlayer;

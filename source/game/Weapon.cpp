@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -10,7 +10,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../decllib/DeclSurfaceType.h"
+#include "decllib/DeclSurfaceType.h"
 
 #include "Weapon.h"
 #include "Actor.h"
@@ -24,7 +24,7 @@ static char THIS_FILE[] = __FILE__;
 #include "script/Script_Helper.h"
 #include "client/ClientEntity.h"
 #include "guis/UserInterfaceLocal.h"
-#include "../decllib/declTypeHolder.h"
+#include "decllib/declTypeHolder.h"
 #include "proficiency/StatsTracker.h"
 #include "client/ClientEffect.h"
 
@@ -54,8 +54,8 @@ void sdWeaponLockInfo::Load( const idDict& dict ) {
 
 /***********************************************************************
 
-  idWeapon  
-	
+  idWeapon
+
 ***********************************************************************/
 
 //
@@ -473,14 +473,14 @@ void idWeapon::Clear( void ) {
 		refSound.referenceSound->Free( false );
 	}
 	memset( &refSound, 0, sizeof( refSound_t ) );
-	
+
 	// setting diversity to 0 results in no random sound.  -1 indicates random.
 	refSound.diversity = -1.0f;
 
 	if ( owner ) {
 		// don't spatialize the weapon sounds
 		refSound.listenerId						= owner->GetListenerId();
-		renderEntity.allowSurfaceInViewID		= owner->entityNumber + 1;	
+		renderEntity.allowSurfaceInViewID		= owner->entityNumber + 1;
 	}
 
 	spawnArgs.Clear();
@@ -638,7 +638,7 @@ void idWeapon::GetWeaponDef( const sdDeclInvItem* item ) {
 	}
 
 	Clear();
-	
+
 	timeStartedUsing = gameLocal.time;
 
 	renderEntity.flags.weaponDepthHack	= true;	// crunch the depth range so it never pokes into walls this breaks the machine gun gui
@@ -660,7 +660,7 @@ void idWeapon::GetWeaponDef( const sdDeclInvItem* item ) {
 
 	int numWorldModels = spawnArgs.GetInt( "num_world_models", "1" );
 	SetNumWorldModels( numWorldModels );
-	
+
 	// jrad - copy these arguments over to the worldModel so we can play sounds and effects
 	for ( int i = 0; i < worldModels.Num(); i++ ) {
 		worldModels[ i ]->Create( &spawnArgs, NULL );
@@ -672,7 +672,7 @@ void idWeapon::GetWeaponDef( const sdDeclInvItem* item ) {
 	muzzle_kick_offset	= spawnArgs.GetVector( "muzzle_kick_offset" );
 
 	hideTime			= SEC2MS( spawnArgs.GetFloat( "hide_time", "0.3" ) );
-	hideDistance		= spawnArgs.GetFloat( "hide_distance", "-15" );	
+	hideDistance		= spawnArgs.GetFloat( "hide_distance", "-15" );
 
 	lockInfo.Load( spawnArgs );
 	lockInfo.SetSupported( false );
@@ -731,7 +731,7 @@ void idWeapon::GetWeaponDef( const sdDeclInvItem* item ) {
 				guiSurface->Dispose();
 			}
 			cent = next;
-		}	
+		}
 
 		// spawn gui entities
 		for ( int i = 0; i < renderEntity.hModel->NumGUISurfaces(); i++ ) {
@@ -849,7 +849,7 @@ void idWeapon::GetWeaponDef( const sdDeclInvItem* item ) {
 		if( spreadValueMax < spreadValues[ i ].max ) {
 			spreadValueMax = spreadValues[ i ].max;
 		}
-	}	
+	}
 
 	const char* objectType;
 	if ( !spawnArgs.GetString( "weapon_scriptobject", NULL, &objectType ) ) {
@@ -861,7 +861,7 @@ void idWeapon::GetWeaponDef( const sdDeclInvItem* item ) {
 
 	// setup script object
 	scriptObject = gameLocal.program->AllocScriptObject( this, objectType );
-	
+
 	LinkScriptVariables();
 
 	onActivateFunc		= scriptObject->GetFunction( "OnActivate" );
@@ -1100,7 +1100,7 @@ bool idWeapon::ClientReceiveEvent( int event, int time, const idBitMsg &msg ) {
 		case EVENT_RELOAD: {
 			if ( !weaponItem ) {
 				return true;
-			}			
+			}
 			if ( msg.ReadLong() != weaponItem->Index() ) {
 				return true;
 			}
@@ -1143,7 +1143,7 @@ bool idWeapon::ClientReceiveUnreliableEvent( int event, int time, const idBitMsg
 		case EVENT_TRACER: {
 			if ( !weaponItem ) {
 				return true;
-			}			
+			}
 			if ( msg.ReadLong() != weaponItem->Index() ) {
 				return true;
 			}
@@ -1189,7 +1189,7 @@ void idWeapon::Raise( void ) {
 idWeapon::PutAway
 ================
 */
-void idWeapon::PutAway( void ) {	
+void idWeapon::PutAway( void ) {
 	if ( isLinked ) {
 		WEAPON_LOWERWEAPON = true;
 	}
@@ -1226,7 +1226,7 @@ void idWeapon::LowerWeapon( void ) {
 	} else {
 		hideStartTime = gameLocal.time;
 	}
-	
+
 	hide = true;
 	WEAPON_HIDE = true;
 }
@@ -1365,7 +1365,7 @@ void idWeapon::EndAttack( void ) {
 	if ( !WEAPON_ATTACK.IsLinked() ) {
 		return;
 	}
-	
+
 	WEAPON_ATTACK = false;
 }
 
@@ -1420,14 +1420,14 @@ idWeapon::GetSpreadValueNormalized
 ============
 */
 float idWeapon::GetSpreadValueNormalized( bool useGlobalMax ) const {
-	if ( useGlobalMax ) { 
+	if ( useGlobalMax ) {
 		if ( spreadValueMax > 0.0f ) {
 			return spreadCurrentValue / spreadValueMax;
 		} else {
 			return 0.0f;
 		}
 	}
-	
+
 	if ( spreadValues[ ownerStanceState ].max > 0.0f ) {
 		return spreadCurrentValue / spreadValues[ ownerStanceState ].max;
 	} else {
@@ -1445,7 +1445,7 @@ void idWeapon::SetOwnerStanceState( weaponSpreadValueIndex_t state ) {
 	if ( ownerStanceState == state ) {
 		return;
 	}
-	
+
 	weaponSpreadValueIndex_t oldState = ownerStanceState;
 	ownerStanceState = state;
 	DoStanceTransition( oldState );
@@ -1515,7 +1515,7 @@ void idWeapon::MuzzleRise( idVec3 &origin, idMat3 &axis ) {
 	if ( time > muzzle_kick_maxtime ) {
 		time = muzzle_kick_maxtime;
 	}
-	
+
 	amount = ( float )time / ( float )muzzle_kick_maxtime;
 	ang		= muzzle_kick_angles * amount;
 	offset	= muzzle_kick_offset * amount;
@@ -1579,7 +1579,7 @@ void idWeapon::DeconstructScriptObject( void ) {
 
 	if ( thread ) {
 		thread->EndThread();
-	
+
 		// call script object's destructor
 		const sdProgram::sdFunction* destructor = scriptObject->GetDestructor();
 		if ( destructor ) {
@@ -1693,7 +1693,7 @@ void idWeapon::PresentWeapon( void ) {
 
 	// hide offset is for dropping the gun when approaching a GUI or NPC
 	// This is simpler to manage than doing the weapon put-away animation
-	if ( gameLocal.time - hideStartTime < hideTime ) {		
+	if ( gameLocal.time - hideStartTime < hideTime ) {
 		float frac = ( float )( gameLocal.time - hideStartTime ) / ( float )hideTime;
 		if ( hideStart < hideEnd ) {
 			frac = 1.0f - frac;
@@ -1783,7 +1783,7 @@ ammoType_t idWeapon::GetAmmoType( const char *ammoname ) {
 idWeapon::AmmoAvailable
 ================
 */
-int idWeapon::ShotsAvailable( int modIndex ) const {	
+int idWeapon::ShotsAvailable( int modIndex ) const {
 	if ( !weaponItem || modIndex >= weaponItem->GetClips().Num() ) {
 		return -1;
 	}
@@ -1905,7 +1905,7 @@ void idWeapon::UpdateVisibility( void ) {
 	if ( modelDisabled ) {
 		viewModelState = VS_NONE;
 	}
-	
+
 	if ( worldModelDisabled ) {
 		worldViewState = VS_NONE;
 	}
@@ -2072,7 +2072,7 @@ void idWeapon::Event_GetWeaponState( void ) {
 		sdProgram::ReturnString( idealState );
 		return;
 	}
-	sdProgram::ReturnString( state );		
+	sdProgram::ReturnString( state );
 }
 
 /*
@@ -2273,7 +2273,7 @@ void idWeapon::Event_SetDriftScale( float scale ) {
 idWeapon::Event_ResetTracerCounter
 ===============
 */
-void idWeapon::Event_ResetTracerCounter() { 
+void idWeapon::Event_ResetTracerCounter() {
 	tracerCounter = 0;
 }
 
@@ -2330,10 +2330,10 @@ idWeapon::Event_PlayAnim
 */
 void idWeapon::Event_PlayAnim( animChannel_t channel, const char *animname ) {
 	int anim;
-	
+
 	anim = animator.GetAnim( animname );
 	if ( !anim ) {
-		if( anim_showMissingAnims.GetBool() ) { 
+		if( anim_showMissingAnims.GetBool() ) {
 			gameLocal.Warning( "missing '%s' animation on '%s' (%s)", animname, name.c_str(), GetEntityDefName() );
 		}
 		animator.Clear( channel, gameLocal.time, FRAME2MS( animBlendFrames ) );
@@ -2366,7 +2366,7 @@ void idWeapon::Event_PlayCycle( animChannel_t channel, const char *animname ) {
 
 	anim = animator.GetAnim( animname );
 	if ( !anim ) {
-		if( anim_showMissingAnims.GetBool() ) { 
+		if( anim_showMissingAnims.GetBool() ) {
 			gameLocal.Warning( "missing '%s' animation on '%s' (%s)", animname, name.c_str(), GetEntityDefName() );
 		}
 		animator.Clear( channel, gameLocal.time, FRAME2MS( animBlendFrames ) );
@@ -2521,7 +2521,7 @@ void idWeapon::Event_LaunchProjectiles( int numProjectiles, int projectileIndex,
 	// calculate the muzzle position for tracers
 	jointHandle_t barrelJoint;
 	bool viewModel;
-	
+
 	if ( gameLocal.GetLocalViewPlayer() == GetOwner() && !pm_thirdPerson.GetBool() ) {
 		barrelJoint = barrelJointView;
 		viewModel = true;
@@ -2559,7 +2559,7 @@ void idWeapon::Event_LaunchProjectiles( int numProjectiles, int projectileIndex,
 		if ( stats.shotsFired != NULL ) {
 			stats.shotsFired->IncreaseValue( owner->entityNumber, numProjectiles );
 		}
-			
+
 		float spreadRad = DEG2RAD( spread );
 		for ( int i = 0; i < numProjectiles; i++ ) {
 			float ang = idMath::Sin( spreadRad * missileRandom.RandomFloat() );
@@ -2576,7 +2576,7 @@ void idWeapon::Event_LaunchProjectiles( int numProjectiles, int projectileIndex,
 
 				bool forceTracer = false;
 				int tracerInterval = projectileDict.GetInt( "tracer_interval" );
-				
+
 				if ( tracerInterval > 0 ) {
 					if ( tracerCounter % tracerInterval == 0 ) {
 						forceTracer = true;
@@ -2631,12 +2631,12 @@ void idWeapon::Event_LaunchProjectiles( int numProjectiles, int projectileIndex,
 							// start from a point behind the muzzle and trace forwards to find the contact point
 							float halfbbox = pm_bboxwidth.GetFloat() * 0.5f;
 							trace_t	trace;
-							gameLocal.clip.Translation( CLIP_DEBUG_PARMS_SCRIPT trace, muzzleOrigin - ( halfbbox + distance ) * playerViewAxis[ 0 ], 
+							gameLocal.clip.Translation( CLIP_DEBUG_PARMS_SCRIPT trace, muzzleOrigin - ( halfbbox + distance ) * playerViewAxis[ 0 ],
 														startPos, clipModel, playerViewAxis, contentMask, owner );
 
 							startPos = trace.endpos - playerViewAxis[ 0 ] * 0.25f;
 
-							// NOTE: to be truly rigorous we should check here if its still inside something 
+							// NOTE: to be truly rigorous we should check here if its still inside something
 							//       and then kill the projectile or something like that, as its really an
 							//       invalid position to launch the projectile from
 						}
@@ -2673,7 +2673,7 @@ void idWeapon::Event_LaunchProjectiles( int numProjectiles, int projectileIndex,
 						item->SetPickupTime( gameLocal.time + SEC2MS( item->spawnArgs.GetFloat( "wait_time", "1" ) ) );
 						item->PostEventMS( &EV_Remove, item->spawnArgs.GetInt( "life_time" ) );
 
-					} else if ( ent->IsType( sdScriptEntity_Projectile::Type ) && 
+					} else if ( ent->IsType( sdScriptEntity_Projectile::Type ) &&
 								( ent->GetPhysics()->IsType( idPhysics_RigidBody::Type ) || ent->GetPhysics()->IsType( sdPhysics_SimpleRigidBody::Type ) ) ) {
 						sdScriptEntity_Projectile* scriptEntity = ent->Cast< sdScriptEntity_Projectile >();
 
@@ -2724,7 +2724,7 @@ void idWeapon::Event_DoProjectileTracer( int projectileIndex, const idVec3& star
 	// calculate the muzzle position for tracers
 	jointHandle_t barrelJoint;
 	bool viewModel;
-	
+
 	if ( gameLocal.GetLocalViewPlayer() == GetOwner() && !pm_thirdPerson.GetBool() ) {
 		barrelJoint = barrelJointView;
 		viewModel = true;
@@ -2747,7 +2747,7 @@ void idWeapon::Event_DoProjectileTracer( int projectileIndex, const idVec3& star
 	idVec3 dir = end - tracerMuzzleOrigin;
 	dir.Normalize();
 
-	lastTracer = gameLocal.PlayEffect( effectHandle, idVec3( 1.0f, 1.0f, 1.0f ), tracerMuzzleOrigin, dir.ToMat3(), false, end ); 
+	lastTracer = gameLocal.PlayEffect( effectHandle, idVec3( 1.0f, 1.0f, 1.0f ), tracerMuzzleOrigin, dir.ToMat3(), false, end );
 }
 
 /*

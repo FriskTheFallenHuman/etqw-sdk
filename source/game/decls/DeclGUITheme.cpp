@@ -1,13 +1,13 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclGUITheme.h"
-#include "../../decllib/declTypeHolder.h"
-#include "../../renderer/DeviceContext.h"
-#include "../../framework/DeclParseHelper.h"
+#include "decllib/declTypeHolder.h"
+#include "renderer/DeviceContext.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -110,7 +110,7 @@ bool sdDeclGUITheme::Parse( const char *text, const int textLength ) {
 	}
 
 	const idKeyValue* kv;
-	for ( int i = 0; i < GetMaterials().GetNumKeyVals(); i++ ) {		
+	for ( int i = 0; i < GetMaterials().GetNumKeyVals(); i++ ) {
 		kv = GetMaterials().GetKeyVal( i );
 		if ( kv->GetValue().Length() ) {
 			idLexer src( LEXFL_ALLOWPATHNAMES  );
@@ -194,7 +194,7 @@ const char* sdDeclGUITheme::GetMaterial( const char* material ) const {
 sdDeclGUITheme::GetSound
 ============
 */
-const char* sdDeclGUITheme::GetSound( const char* sound ) const {	
+const char* sdDeclGUITheme::GetSound( const char* sound ) const {
 	if ( sound[ 0 ] == '\0' ) {
 		return "_efault";
 	}

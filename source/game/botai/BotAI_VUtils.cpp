@@ -1,11 +1,11 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h" 
-#include "../ContentMask.h"
+#include "Game_local.h"
+#include "ContentMask.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -191,7 +191,7 @@ int idBotAI::FindClosestVehicle( float range, const idVec3& org, const playerVeh
 			continue;
 		}
 
-		if ( vehicle.type == PLATYPUS && !vehicle.neverDriven ) { 
+		if ( vehicle.type == PLATYPUS && !vehicle.neverDriven ) {
 			continue;
 		}
 
@@ -295,7 +295,7 @@ int idBotAI::FindClosestVehicle( float range, const idVec3& org, const playerVeh
 		idVec3 vehicleOrigin = vehicle.origin;
 		vehicleOrigin.z += 32.0f; //mal: move it up a bit for safety.
 
-		int travelTime; 
+		int travelTime;
 
 		if ( !Bot_LocationIsReachable( ( botVehicleInfo != NULL ) ? true : false, vehicleOrigin, travelTime ) ) {
 			continue;
@@ -327,7 +327,7 @@ void idBotAI::Bot_ExitVehicle( bool ignoreMCP ) {
 	if ( botVehicleInfo != NULL ) {
 		if ( ( botInfo->classType != ENGINEER || vLTGType != V_STOP_VEHICLE ) && botVehicleInfo->driverEntNum != botNum && ClientIsValid( botVehicleInfo->driverEntNum, -1 ) && botInfo->proxyInfo.weapon != NULL_VEHICLE_WEAPON ) { //mal: if we're riding along with a human, never leave the vehicle - its frustrating for the human, unless we have no weapon to use.
 			const clientInfo_t& player = botWorld->clientInfo[ botVehicleInfo->driverEntNum ];
-	
+
 			if ( !player.isBot ) {
 				if ( Bot_WithObjShouldLeaveVehicle() ) { //mal: if the bot has the obj - they should leave if the player stops the vehicle.
 					goto leaveThisVehicle;
@@ -390,12 +390,12 @@ bool idBotAI::Bot_FindParkingSpotAoundLocaction( idVec3 &loc ) {
 			end = loc;
 			ang[ YAW ] += 90.0f;
 			end += ( checkDist * ang.ToMat3()[ 0 ] );
-	
+
 			if ( !botThreadData.Nav_IsDirectPath( AAS_VEHICLE, botInfo->team, NULL_AREANUM, loc, end ) ) {
 				end = loc;
 				ang[ YAW ] += 90.0f;
 				end += ( checkDist * ang.ToMat3()[ 0 ] );
-	
+
 				if ( !botThreadData.Nav_IsDirectPath( AAS_VEHICLE, botInfo->team, NULL_AREANUM, loc, end ) ) {
 					return false; //mal: no clear parking spot found, so just use the default location.
 				}
@@ -451,14 +451,14 @@ bool idBotAI::InFrontOfVehicle( int vehicleNum, const idVec3 &org, bool precise,
 	float dotCheck = 0.0f;
 
 	if ( precise ) {
-		dir.NormalizeFast(); 
+		dir.NormalizeFast();
 		dotCheck = preciseValue;
 	}
 
 	if ( dir * vehicleInfo.axis[ 0 ] > dotCheck ) {
 		return true;//mal: have someone in front of us..
 	}
-	
+
 	return false;
 }
 
@@ -523,11 +523,11 @@ bool idBotAI::Bot_VehicleCanMove( const moveDirections_t direction, float gUnits
 	idVec3 end = botVehicleInfo->origin;
 
 	switch ( direction ) {
-	
+
 	case FORWARD:
 		end += ( gUnits * botVehicleInfo->axis[ 0 ] );
 		break;
-	
+
 	case BACK:
 		end += ( -gUnits * botVehicleInfo->axis[ 0 ] );
 		break;
@@ -541,7 +541,7 @@ bool idBotAI::Bot_VehicleCanMove( const moveDirections_t direction, float gUnits
 		break;
 	}
 
-	if ( botThreadData.AllowDebugData() ) { 
+	if ( botThreadData.AllowDebugData() ) {
 		gameRenderWorld->DebugLine( colorGreen, botVehicleInfo->origin, end, 16 );
 	}
 
@@ -549,7 +549,7 @@ bool idBotAI::Bot_VehicleCanMove( const moveDirections_t direction, float gUnits
 		botCanMoveGoal = end;
         return true;
 	}
-	
+
 	return false;
 }
 
@@ -567,7 +567,7 @@ void idBotAI::Bot_SetupVehicleMove( const idVec3 &org, int clientNum, int action
 		nodeTimeOut += 50;
 		return;
 	}
-	
+
 	bool moveIsClear = false;
 	int areaNum = 0;
 	int i;
@@ -666,7 +666,7 @@ void idBotAI::Bot_SetupVehicleMove( const idVec3 &org, int clientNum, int action
 		}
 
 	    if ( clientNum != -1 ) {
-			end = botWorld->clientInfo[ clientNum ].aasVehicleOrigin;		
+			end = botWorld->clientInfo[ clientNum ].aasVehicleOrigin;
 		} else if ( actionNumber != -1 ) {
 			end = botThreadData.botActions[ actionNumber ]->GetActionOrigin();
 			radius = botThreadData.botActions[ actionNumber ]->GetRadius();
@@ -711,7 +711,7 @@ void idBotAI::Bot_SetupVehicleMove( const idVec3 &org, int clientNum, int action
 			}
 		}
 
-		
+
 		//mal: experimented with a larger bbox for vehicle, now experiment with normal bbox again.
 
 		float halfVehicleLength = botVehicleInfo->bbox[1][0];
@@ -756,7 +756,7 @@ void idBotAI::Bot_SetupVehicleMove( const idVec3 &org, int clientNum, int action
 		}
 
 		if ( botShouldMoveCautiously && botVehicleInfo->type != GOLIATH ) { //mal: goliath looks nasty when it tries to move slow.
-			botUcmd->specialMoveType = SLOWMOVE; 
+			botUcmd->specialMoveType = SLOWMOVE;
 		}
 
 		moveIsClear = Bot_CheckMoveIsClear( botAAS.path.moveGoal );
@@ -769,7 +769,7 @@ void idBotAI::Bot_SetupVehicleMove( const idVec3 &org, int clientNum, int action
 				botUcmd->specialMoveType = REVERSEMOVE;
 			}
 		}
-		
+
 		if ( !moveIsClear ) {
 			framesVehicleStuck++;
 			int temp = framesVehicleStuck;
@@ -779,7 +779,7 @@ void idBotAI::Bot_SetupVehicleMove( const idVec3 &org, int clientNum, int action
 			} else if ( framesVehicleStuck > 150 ) { //mal: we've been stuck for too long, bail out and do something else!
 				Bot_ExitVehicleAINode( true );
 				Bot_ExitVehicle();
-				Bot_IgnoreVehicle( botVehicleInfo->entNum, 15000 ); 
+				Bot_IgnoreVehicle( botVehicleInfo->entNum, 15000 );
 			}
 		} else {
 			framesVehicleStuck = 0;
@@ -924,7 +924,7 @@ bool idBotAI::Bot_CheckMoveIsClear( idVec3& goalOrigin ) {
 	distToGoal = v.LengthSqr();
 
 	vehicleOrg = botVehicleInfo->origin + ( botVehicleInfo->axis * botVehicleInfo->bbox.GetCenter() );
-	
+
 	forwardVehicleAxis = botVehicleInfo->axis[ 0 ];
 	forwardVehicleAxis.z = 0.0f;
 	forwardVehicleAxis.NormalizeFast();
@@ -938,7 +938,7 @@ bool idBotAI::Bot_CheckMoveIsClear( idVec3& goalOrigin ) {
 
 	bool moveIsClear = botThreadData.Nav_IsDirectPath( AAS_VEHICLE, botInfo->team, botInfo->areaNumVehicle, vehicleOrg, v );
 
-	if ( !moveIsClear && !botVehicleInfo->canRotateInPlace ) { 
+	if ( !moveIsClear && !botVehicleInfo->canRotateInPlace ) {
 		botUcmd->specialMoveType = SLOWMOVE; //mal: if in a tight area, dont go gunning it.
 	}
 
@@ -1006,7 +1006,7 @@ bool idBotAI::Bot_CheckMoveIsClear( idVec3& goalOrigin ) {
 	} else if ( botVehicleInfo->type != MCP ) {
 		float halfVehicleLength = botVehicleInfo->bbox[1][0];
 		idVec3 vehicleOrg = botVehicleInfo->origin + ( botVehicleInfo->axis * botVehicleInfo->bbox.GetCenter() );
-		
+
 		vehicleOrg += ( halfVehicleLength * botVehicleInfo->axis[ 0 ] );
 		trace_t	tr;
 		idVec3 end = vehicleOrg;
@@ -1029,7 +1029,7 @@ bool idBotAI::Bot_CheckMoveIsClear( idVec3& goalOrigin ) {
 		}
 	}
 
-	if ( botVehicleInfo->wheelsAreOnGround != 1.f && !botVehicleInfo->inWater ) { 
+	if ( botVehicleInfo->wheelsAreOnGround != 1.f && !botVehicleInfo->inWater ) {
 		vehicleWheelsAreOffGroundCounter++;
 	} else {
 		vehicleWheelsAreOffGroundCounter = 0;
@@ -1051,7 +1051,7 @@ bool idBotAI::Bot_CheckMoveIsClear( idVec3& goalOrigin ) {
 		isBlocked = false;
 		moveIsClear = true;
 	}
-	
+
 	if ( ( moveIsClear && !isBlocked ) && botIsBlockedTime < botWorld->gameLocalInfo.time ) {
 		botIsBlocked = 0;
 		botIsBlockedTime = 0;
@@ -1081,7 +1081,7 @@ bool idBotAI::Bot_CheckMoveIsClear( idVec3& goalOrigin ) {
 				gameRenderWorld->DebugLine( colorLtBlue, vehicleOrg, v );
 			}
 		}
-	
+
 		int travelFlags = ( botInfo->team == GDF ) ? TFL_VALID_GDF : TFL_VALID_STROGG;
 		int areaNum = botAAS.aas->PointReachableAreaNum( vehicleOrg, botAAS.aas->GetSettings()->boundingBox, AAS_AREA_REACHABLE_WALK, TravelFlagInvalidForTeam() );
 		aasTraceFloor_t tr;
@@ -1189,7 +1189,7 @@ bool idBotAI::Bot_CheckVehicleNodePath( const idVec3& goalOrigin, idVec3& pathPo
 			}
 		}
 
-		float nodeRadius = ( botVehicleInfo->type == GOLIATH ) ? 150.0f : curLink->node->radius; 
+		float nodeRadius = ( botVehicleInfo->type == GOLIATH ) ? 150.0f : curLink->node->radius;
 
 		if ( curDist < nodeRadius ) {
 			botVehiclePathList.SetNum( botVehiclePathList.Num() - 1 );
@@ -1215,7 +1215,7 @@ bool idBotAI::Bot_CheckVehicleNodePath( const idVec3& goalOrigin, idVec3& pathPo
 	int nodeAttempts = 1;
 
 	idBotNode* ignoreNode = ( pathNodeTimer.ignorePathNodeTime > botWorld->gameLocalInfo.time ) ? pathNodeTimer.ignorePathNode : NULL;
-	
+
 	// We don't have a path, try to create one
 	idBotNode* ourNode = botThreadData.botVehicleNodes.GetNearestNode( botAxis, botOrigin, botInfo->team, FORWARD, true, true, true, ignoreNode, botVehicleInfo->flags );
 
@@ -1310,7 +1310,7 @@ bool idBotAI::Bot_CheckVehicleNodePath( const idVec3& goalOrigin, idVec3& pathPo
 ==================
 idBotAI::FindEntityByEntNum
 
-With threading, there is no way for me to search thru the game's entity lists to find out what entity may be blocking the bot, 
+With threading, there is no way for me to search thru the game's entity lists to find out what entity may be blocking the bot,
 so we'll search thru the entities we track internally.
 ==================
 */
@@ -1447,7 +1447,7 @@ void idBotAI::Bot_SetupIcarusMove( const idVec3 &org, int clientNum, int actionN
 
 	if ( clientNum != -1 ) {
 		areaNum = botWorld->clientInfo[ clientNum ].areaNumVehicle;
-		goalOrigin = botWorld->clientInfo[ clientNum ].aasVehicleOrigin;		
+		goalOrigin = botWorld->clientInfo[ clientNum ].aasVehicleOrigin;
 	} else if ( actionNumber != -1 ) {
 		areaNum = botThreadData.botActions[ actionNumber ]->areaNumVehicle;
 		goalOrigin = botThreadData.botActions[ actionNumber ]->origin;
@@ -1486,7 +1486,7 @@ void idBotAI::Bot_SetupIcarusMove( const idVec3 &org, int clientNum, int actionN
 				}
 			}
 		}
-			
+
 		botAAS.hasClearPath = obstacles.FindPathAroundObstacles( botInfo->localBounds, botAAS.aas->GetSettings()->obstaclePVSRadius, botAAS.aas, botInfo->aasVehicleOrigin, botAAS.path.moveGoal, path );
 
 		if ( !botAAS.hasClearPath ) {
@@ -1642,7 +1642,7 @@ int idBotAI::Bot_VehicleIsUnderAVTAttack() {
 		if ( deployable.health == 0 && deployable.maxHealth == 0 ) {
 			continue;
 		}
-	
+
 		if ( !deployable.inPlace ) {
 			continue;
 		}
@@ -1663,7 +1663,7 @@ int idBotAI::Bot_VehicleIsUnderAVTAttack() {
 		dangerOrigin.z += ( deployable.bbox[ 1 ][ 2 ] - deployable.bbox[ 0 ][ 2 ] ) * 0.95f;
 
 		trace_t tr;
-		botThreadData.clip->TracePointExt( CLIP_DEBUG_PARMS tr, botInfo->viewOrigin, dangerOrigin, MASK_SHOT_BOUNDINGBOX | MASK_VEHICLESOLID | CONTENTS_FORCEFIELD, GetGameEntity( botNum ), GetGameEntity( botVehicleInfo->entNum ) ); 
+		botThreadData.clip->TracePointExt( CLIP_DEBUG_PARMS tr, botInfo->viewOrigin, dangerOrigin, MASK_SHOT_BOUNDINGBOX | MASK_VEHICLESOLID | CONTENTS_FORCEFIELD, GetGameEntity( botNum ), GetGameEntity( botVehicleInfo->entNum ) );
 
 		if ( tr.fraction < 1.0f && tr.c.entityNum != deployable.entNum ) {
 			continue;
@@ -1824,19 +1824,19 @@ bool idBotAI::Bot_CheckHumanRequestingTransport() {
 		} else {
 			for( int j = 0; j < MAX_CLIENTS; j++ ) { //mal: check to make sure the bot is the closest vehicle to the player.
 				if ( !ClientIsValid( j, -1 ) ) {
-					continue; 	 
+					continue;
 				}
 
 				if ( j == botNum ) {
 					continue;
 				}
-				
-				const clientInfo_t& bot = botWorld->clientInfo[ j ]; 
+
+				const clientInfo_t& bot = botWorld->clientInfo[ j ];
 
 				if ( !bot.isBot ) {
 					continue;
 				}
-				
+
 				if ( bot.team != botInfo->team ) {
 					continue;
 				}
@@ -1845,7 +1845,7 @@ bool idBotAI::Bot_CheckHumanRequestingTransport() {
 					continue;
 				}
 
-				vec = player.origin - bot.origin; 	 
+				vec = player.origin - bot.origin;
                 float distSqr = vec.LengthSqr();
 
 				if ( distSqr > Square( MAX_RIDE_DIST ) ) {
@@ -2069,8 +2069,8 @@ bool idBotAI::HumanVehicleOwnerNearby( const playerTeamTypes_t playerTeam, const
 
         if ( i == botNum ) {
 			continue;
-		}			
-			
+		}
+
 		if ( !ClientIsValid( i, -1 ) ) {
 			continue;
 		}
@@ -2140,7 +2140,7 @@ bool idBotAI::Bot_CheckFriendlyEngineerIsNearbyOurVehicle() {
 
 	for( int i = 0; i < MAX_CLIENTS; i++ ) {
 
-		if ( i == botNum ) { 
+		if ( i == botNum ) {
 			continue;
 		}
 
@@ -2225,7 +2225,7 @@ bool idBotAI::Bot_CheckForHumanNearByWhoMayWantRide() {
 
 	for( int i = 0; i < MAX_CLIENTS; i++ ) {
 
-		if ( i == botNum ) { 
+		if ( i == botNum ) {
 			continue;
 		}
 
@@ -2282,7 +2282,7 @@ int idBotAI::Bot_GetVehicleGunnerClientNum( int vehicleEntNum ) {
 	proxyInfo_t vehicleInfo;
 	botVehicleWeaponInfo_t weaponType = MINIGUN;
 	GetVehicleInfo( vehicleEntNum, vehicleInfo );
-	
+
 	if ( vehicleInfo.type == TROJAN ) {
 		weaponType = LAW;
 	}
@@ -2298,7 +2298,7 @@ int idBotAI::Bot_GetVehicleGunnerClientNum( int vehicleEntNum ) {
 		}
 
 		const clientInfo_t &playerInfo = botWorld->clientInfo[ i ];
-	
+
 		if ( playerInfo.proxyInfo.entNum != vehicleEntNum ) {
 			continue;
 		}
@@ -2454,14 +2454,14 @@ int idBotAI::Bot_CheckForDeployableTargetsWhileVehicleGunner() {
 				if ( deployable.enemyEntNum == botWorld->botGoalInfo.botGoal_MCP_VehicleNum ) {
 					distSqr = 5.0f;
 				}
-			} else if ( botActionValid ) { 
+			} else if ( botActionValid ) {
 				vec = botActionOrg - deployable.origin;
 				if ( vec.LengthSqr() < Square( BOT_ATTACK_DEPLOYABLE_RANGE ) ) {
 					distSqr -= Square( 1000.0f );
 				}
 			}
 		} else if ( deployable.type == APT ) { //mal: focus more on APTs that are guarding the obj we're trying to attack.
-			if ( botActionValid ) { 
+			if ( botActionValid ) {
 				vec = botActionOrg - deployable.origin;
 				if ( vec.LengthSqr() < Square( BOT_ATTACK_DEPLOYABLE_RANGE ) ) {
 					distSqr -= Square( 1000.0f );

@@ -13,7 +13,7 @@
 */
 
 #include "Physics.h"
-#include "../../cm/CollisionModel.h"
+#include "cm/CollisionModel.h"
 
 typedef idEntityPtr< idEntity > contactEntity_t;
 typedef idList< contactInfo_t > contactList_t;
@@ -26,8 +26,8 @@ public:
 		lastUpdate = -1;
 	}
 
-	void	Update( const idBounds& bounds, const idVec3& origin, const idMat3& axis, 
-					const idVec3& linearVelocity, const idVec3& angularVelocity, 
+	void	Update( const idBounds& bounds, const idVec3& origin, const idMat3& axis,
+					const idVec3& linearVelocity, const idVec3& angularVelocity,
 					int clipMask, idEntity* passEntity );
 
 	void	RemoveEntitiesOfCollection( const char* collection );
@@ -51,7 +51,7 @@ public:
 	bool	Rotation( CLIP_DEBUG_PARMS_DECLARATION trace_t &results, const idVec3 &start, const idRotation &rotation,
 						const idClipModel *mdl, const idMat3 &trmAxis, int contentMask ) const;
 
-	int		Contacts( CLIP_DEBUG_PARMS_DECLARATION contactInfo_t *contacts, const int maxContacts, 
+	int		Contacts( CLIP_DEBUG_PARMS_DECLARATION contactInfo_t *contacts, const int maxContacts,
 						const idVec3 &start, const idVec3 *dir, const float depth,
 						const idClipModel *mdl, const idMat3 &trmAxis, int contentMask ) const;
 

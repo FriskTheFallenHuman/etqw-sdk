@@ -1,10 +1,10 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../../ContentMask.h"
+#include "ContentMask.h"
 
 #include "AAS.h"
 #include "AASCallback_FindAreaOutOfRange.h"

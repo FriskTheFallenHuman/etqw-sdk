@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -76,7 +76,7 @@ void sdWaterEffects::CheckWater( idEntity *ent, const idVec3& waterBodyOrg, cons
 	pos -= waterBodyOrg;
 	pos *= waterBodyAxis.Transpose();
 	bool newInWater = waterBounds.ContainsPoint( pos );
-	
+
 	idBounds bodybb;
 	bool submerged = false;
 	bodybb = ent->GetPhysics()->GetBounds();
@@ -117,9 +117,9 @@ void sdWaterEffects::CheckWater( idEntity *ent, bool newInWater, float waterleve
 	if ( newInWater ) {
 		idVec3 wakeOrigin = origin;
 		wakeOrigin.z = waterlevel + 10.0f;
-		
+
 		if ( !submerged && showWake ) {
-		
+
 			if ( wakeHandle < 0 ) {
 				wakeHandle = sdWakeManager::GetInstance().AllocateWake( wakeParms );
 			}

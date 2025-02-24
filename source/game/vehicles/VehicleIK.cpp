@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -13,12 +13,12 @@ static char THIS_FILE[] = __FILE__;
 
 #include "VehicleIK.h"
 #include "TransportComponents.h"
-#include "../Entity.h"
-#include "../anim/Anim.h"
-#include "../physics/Physics_RigidBodyMultiple.h"
+#include "Entity.h"
+#include "anim/Anim.h"
+#include "physics/Physics_RigidBodyMultiple.h"
 #include "Transport.h"
-#include "../Player.h"
-#include "../ContentMask.h"
+#include "Player.h"
+#include "ContentMask.h"
 #include "VehicleSuspension.h"
 #include "VehicleWeapon.h"
 
@@ -208,7 +208,7 @@ bool sdIK_Walker::Init( idEntity *self, const char *anim, const idVec3 &modelOff
 	if ( !idIK::Init( self, anim, modelOffset ) ) {
 		return false;
 	}
-	
+
 	float tweakFactor = spawnArgs.GetFloat( "ik_tweakFactor", "0.5" );
 	compressionInterpolate.Init( MS2SEC( gameLocal.time ), 1.f, tweakFactor, tweakFactor );
 
@@ -267,7 +267,7 @@ bool sdIK_Walker::Init( idEntity *self, const char *anim, const idVec3 &modelOff
 
 		animator->GetJointTransform( leg.ankleJoint, gameLocal.time, ankleOrigin, ankleAxis );
 		animator->GetJointTransform( leg.kneeJoint, gameLocal.time, kneeOrigin, kneeAxis );
-		animator->GetJointTransform( leg.midJoint, gameLocal.time, midOrigin, midAxis );		
+		animator->GetJointTransform( leg.midJoint, gameLocal.time, midOrigin, midAxis );
 		animator->GetJointTransform( leg.hipJoint, gameLocal.time, hipOrigin, hipAxis );
 		animator->GetJointTransform( leg.footJoint, gameLocal.time, footOrigin, footAxis );
 
@@ -428,7 +428,7 @@ bool sdIK_Walker::Evaluate( void ) {
 
 		idVec3 footOrigin;
 		animator->GetJointTransform( leg.footJoint, gameLocal.time, footOrigin );
-		
+
 		leg.current.jointWorldOrigin = modelOrigin + footOrigin * modelAxis;
 
 		idVec3 start	= leg.current.jointWorldOrigin + ( normal * footUpTrace );
@@ -588,13 +588,13 @@ bool sdIK_Walker::Evaluate( void ) {
 		animator->GetJointTransform( leg.kneeJoint, gameLocal.time, kneeOrigin, axis );
 
 		kneeOrigin = modelOrigin + waistOffset + kneeOrigin * modelAxis;
-		
+
 //		DebugAxis( kneeOrigin, axis * modelAxis );
 
 		idVec3 kneeDir = leg.kneeForward * axis * modelAxis;
 
 		idVec3 ankleOrigin;
-		
+
 		animator->GetJointTransform( leg.ankleJoint, gameLocal.time, ankleOrigin, axis );
 
 		ankleOrigin = modelOrigin + waistOffset + ankleOrigin * modelAxis;
@@ -740,7 +740,7 @@ bool sdVehicleIKSystem::Setup( sdTransport* _vehicle, const angleClamp_t& yaw, c
 sdVehicleIKSystem::GetPlayer
 ================
 */
-idPlayer* sdVehicleIKSystem::GetPlayer( void ) {	
+idPlayer* sdVehicleIKSystem::GetPlayer( void ) {
 	return weapon ? weapon->GetPlayer() : position->GetPlayer();
 }
 
@@ -810,7 +810,7 @@ bool sdVehicleIKArms::Setup( sdTransport* _vehicle, const angleClamp_t& yaw, con
 		animator->GetJointTransform( ikJoints[ i ], gameLocal.time, baseJointPositions[ i ], baseJointAxes[ i ] );
 	}
 
-	pitchAxis = dict.GetInt( "pitchAxis", "2" );	
+	pitchAxis = dict.GetInt( "pitchAxis", "2" );
 	requireTophat = dict.GetBool( "require_tophat" );
 
 	oldParentAxis = mat3_identity;
@@ -882,7 +882,7 @@ void sdVehicleIKArms::Update( void ) {
 		idVec3 target = modelTarget;
 
 		const idVec3& dir = baseJointAxes[ ARM_JOINT_INDEX_MUZZLE ][ 0 ];
-		
+
 		target -= elbowToMuzzle - ( ( dir * elbowToMuzzle ) * dir );
 		target *= baseJointAxes[ ARM_JOINT_INDEX_MUZZLE ].Transpose();
 
@@ -1091,7 +1091,7 @@ bool sdVehicleJointAimer::Setup( sdTransport* _vehicle, const angleClamp_t& yaw,
 sdVehicleIKSystem::GetPlayer
 ================
 */
-idPlayer* sdVehicleJointAimer::GetPlayer( void ) {	
+idPlayer* sdVehicleJointAimer::GetPlayer( void ) {
 	idPlayer* player = weapon ? weapon->GetPlayer() : position->GetPlayer();
 	if ( !player ) {
 		return weapon2 ? weapon2->GetPlayer() : position->GetPlayer();
@@ -1144,9 +1144,9 @@ void sdVehicleJointAimer::Update( void ) {
 		direction.Normalize();
 		idMat3 newAxis = direction.ToMat3();
 		idAngles newAngles = newAxis.ToAngles();
-		
+
 		// clamp the angles
-		
+
 		bool yawChanged = !sdVehiclePosition::ClampAngle( newAngles, angles, clampYaw, 1, 0.1f );
 		if ( yawSound != NULL ) {
 			yawSound->Update( yawChanged );

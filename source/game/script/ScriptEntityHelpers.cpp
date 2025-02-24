@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,8 +11,8 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "ScriptEntityHelpers.h"
-#include "../ScriptEntity.h"
-#include "../IK.h"
+#include "ScriptEntity.h"
+#include "IK.h"
 
 /*
 ===============================================================================
@@ -130,7 +130,7 @@ void sdScriptedEntityHelper_LegIk::Update( bool postThink ) {
 		idMat3 middleAxis = lowerToMidJoint * axis;
 
 		animator->SetJointAxis( upperLegJoint, JOINTMOD_WORLD_OVERRIDE, upperAxis );
-		animator->SetJointAxis( middleLegJoint, JOINTMOD_WORLD_OVERRIDE, middleAxis );		
+		animator->SetJointAxis( middleLegJoint, JOINTMOD_WORLD_OVERRIDE, middleAxis );
 
 /*		idVec3 worldOrg;
 		_owner->GetWorldOrigin( upperLegJoint, worldOrg );
@@ -256,7 +256,7 @@ sdScriptedEntityHelper_LegIk::~sdScriptedEntityHelper_LegIk( void ) {
 sdScriptedEntityHelper_Aimer::Update
 ================
 */
-void sdScriptedEntityHelper_Aimer::Init( bool fixupBarrel, bool invertPitch, sdScriptEntity* owner, int anim, jointHandle_t yawJoint, 
+void sdScriptedEntityHelper_Aimer::Init( bool fixupBarrel, bool invertPitch, sdScriptEntity* owner, int anim, jointHandle_t yawJoint,
 					jointHandle_t pitchJoint, jointHandle_t barrelJoint, jointHandle_t shoulderJoint, const angleClamp_t& _yawInfo, const angleClamp_t& _pitchInfo ) {
 
 	_owner = owner;
@@ -328,13 +328,13 @@ void sdScriptedEntityHelper_Aimer::Init( bool fixupBarrel, bool invertPitch, sdS
 
 		temp *= baseAxes[ AIMER_JOINT_BARREL ].Transpose();
 		temp.y = 0.f;
-		
+
 		pitchInfo.arcLength		= temp.Normalize();
 		pitchInfo.offsetAngle	= 180 - RAD2DEG( atan2( temp.z, temp.x ) );
 		if ( invertPitch ) {
 			pitchInfo.offsetAngle = -pitchInfo.offsetAngle;
 		}
-	}					
+	}
 }
 
 /*
@@ -373,7 +373,7 @@ void sdScriptedEntityHelper_Aimer::Update( bool force ) {
 
 			pitchAxes = baseAxes[ AIMER_JOINT_PITCH ] * pitchAxes * pitchTranspose;
 
-			_owner->GetAnimator()->SetJointAxis( gunJoints[ AIMER_JOINT_PITCH ], JOINTMOD_LOCAL, pitchAxes );		
+			_owner->GetAnimator()->SetJointAxis( gunJoints[ AIMER_JOINT_PITCH ], JOINTMOD_LOCAL, pitchAxes );
 		}
 	}
 }
@@ -680,7 +680,7 @@ bool sdPlayerArmIK::Init( idEntity* target, const idDict& parms ) {
 
 	idAnimator* animator = target->GetAnimator();
 	assert( animator != NULL );
-	
+
 	jointName = parms.GetString( "joint_left" );
 	armTargets[ 0 ].joint = animator->GetJointHandle( jointName );
 	if ( armTargets[ 0 ].joint == INVALID_JOINT ) {
@@ -731,7 +731,7 @@ void sdPlayerArmIK::Update( idPlayer* player, idEntity* target ) {
 		idMat3 handAxis;
 		idVec3 handOrigin;
 		animator->GetJointTransform( player->GetHandJoint( i ), gameLocal.time, handOrigin, handAxis );
-		
+
 		idMat3 elbowAxis;
 		idVec3 elbowOrigin;
 		animator->GetJointTransform( player->GetElbowJoint( i ), gameLocal.time, elbowOrigin, elbowAxis );
@@ -763,7 +763,7 @@ void sdPlayerArmIK::Update( idPlayer* player, idEntity* target ) {
 		idVec3 targetOriginLocal = targetOrigin - modelOrigin;
 		targetOriginLocal *= transposeModelAxis;
 		arms[ i ].targetHandAxis *= transposeModelAxis;
-		
+
 		// solve IK and calculate elbow position
 		idIK::SolveTwoBones( shoulderOrigin, targetOriginLocal, dir, upperArmLength, lowerArmLength, elbowOrigin );
 

@@ -2,7 +2,7 @@
 //
 
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -203,7 +203,7 @@ sdScriptEntityBroadcastData::MakeDefault
 */
 void sdScriptEntityBroadcastData::MakeDefault( void ) {
 	scriptData.MakeDefault();
-	
+
 	if ( physicsData ) {
 		physicsData->MakeDefault();
 	}
@@ -554,7 +554,7 @@ void sdScriptedUsableInterface::Init( sdScriptEntity* _owner ) {
 
 	overlay				= gameLocal.declGUIType[ owner->spawnArgs.GetString( "gui_usable_overlay" ) ];
 	onEnter				= owner->GetScriptObject()->GetFunction( "OnEnter" );
-	onExit				= owner->GetScriptObject()->GetFunction( "OnExit" );	
+	onExit				= owner->GetScriptObject()->GetFunction( "OnExit" );
 }
 
 /*
@@ -563,10 +563,10 @@ sdScriptedUsableInterface::PositionForPlayer
 ================
 */
 sdScriptedUsableInterface::sdPosition& sdScriptedUsableInterface::PositionForPlayer( const idPlayer* player ) {
-	int id = player->GetProxyPositionId(); 
-	
-	assert( id >= 0 && id < positions.Num() ); 
-	
+	int id = player->GetProxyPositionId();
+
+	assert( id >= 0 && id < positions.Num() );
+
 	return positions[ id ];
 }
 
@@ -576,10 +576,10 @@ sdScriptedUsableInterface::PositionForPlayer
 ================
 */
 const sdScriptedUsableInterface::sdPosition& sdScriptedUsableInterface::PositionForPlayer( const idPlayer* player ) const {
-	int id = player->GetProxyPositionId(); 
-	
-	assert( id >= 0 && id < positions.Num() ); 
-	
+	int id = player->GetProxyPositionId();
+
+	assert( id >= 0 && id < positions.Num() );
+
 	return positions[ id ];
 }
 
@@ -632,7 +632,7 @@ bool sdScriptedUsableInterface::IsEmpty( void ) const {
 	return true;
 }
 
-	
+
 /*
 ================
 sdScriptedUsableInterface::SetPositionPlayer
@@ -1489,7 +1489,7 @@ sdScriptEntity::sdScriptEntity( void ) {
 	onCollideFunc			= NULL;
 
 	isDeployedFunc			= NULL;
-	isDisabledFunc			= NULL;	
+	isDisabledFunc			= NULL;
 	getOwnerFunc			= NULL;
 	deployableType			= NULL_DEPLOYABLE;
 
@@ -1579,7 +1579,7 @@ void sdScriptEntity::Spawn( void ) {
 		rbPhysics->SetApplyImpulse( spawnArgs.GetBool( "apply_collision_impulse", "1" ) );
 
 		this->SetPhysics( physicsObj );
-	}	
+	}
 
 	if ( spawnArgs.GetBool( "option_simple_rigid_body_physics" ) ) {
 		idVec3 gravityNormal = gameLocal.GetGravity();
@@ -1600,7 +1600,7 @@ void sdScriptEntity::Spawn( void ) {
 		physicsObj->SetAxis( GetPhysics()->GetAxis() );
 
 		this->SetPhysics( physicsObj );
-	}	
+	}
 
 	if ( spawnArgs.GetBool( "option_simple_physics" ) ) {
 		BecomeActive( TH_PHYSICS );
@@ -2425,7 +2425,7 @@ void sdScriptEntity::Event_RemoveBoundPlayer( idEntity* other ) {
 		gameLocal.Warning( "sdScriptEntity::Event_RemoveBoundPlayer Object Passed was not a Player" );
 		return;
 	}
-	
+
 	if ( usableInterface ) {
 		usableInterface->OnExit( player, true );
 	}
@@ -2776,7 +2776,7 @@ void sdScriptEntity::WriteNetworkState( networkStateMode_t mode, const sdEntityS
 
 		newData.team	= team;
 		sdTeamManager::GetInstance().WriteTeamToStream( baseData.team, newData.team, msg );
-		
+
 		newData.frozen	= scriptEntityFlags.frozen;
 		msg.WriteBool( newData.frozen );
 
@@ -3122,7 +3122,7 @@ void sdScriptEntity::Event_PathFindVampire( const idVec3& runStart, const idVec3
 					float deltaZ = deltaL * idMath::Tan( entryAngle );
 					idVec3 endPoint = trueRunStart - deltaL * runDirection + pathOffset;
 					endPoint.z += deltaZ;
-				
+
 					idVec3 traceEnd;
 					if ( heightMap.TracePoint( trueRunStart + runWidthOffset, endPoint + runWidthOffset, traceEnd, VAMPIRE_RUN_HEIGHT ) == 1.0f ) {
 						if ( heightMap.TracePoint( trueRunStart - runWidthOffset, endPoint - runWidthOffset, traceEnd, VAMPIRE_RUN_HEIGHT ) == 1.0f ) {
@@ -3202,7 +3202,7 @@ void sdScriptEntity::Event_PathFindVampire( const idVec3& runStart, const idVec3
 					float deltaZ = deltaL * idMath::Tan( exitAngle );
 					idVec3 endPoint = trueRunEnd + deltaL * runDirection + pathOffset;
 					endPoint.z += deltaZ;
-					
+
 					idVec3 traceEnd;
 					if ( heightMap.TracePoint( trueRunEnd + runWidthOffset, endPoint + runWidthOffset, traceEnd, VAMPIRE_RUN_HEIGHT ) == 1.0f ) {
 						if ( heightMap.TracePoint( trueRunEnd - runWidthOffset, endPoint - runWidthOffset, traceEnd, VAMPIRE_RUN_HEIGHT ) == 1.0f ) {
@@ -3269,7 +3269,7 @@ void sdScriptEntity::Event_PathFindVampire( const idVec3& runStart, const idVec3
 				pointEntry.origin = endPoint;
 			}
 		}
-	} 
+	}
 
 	if ( !gotHeightMap ) {
 		pathPoint_t& startPointEntry = pathPoints.Alloc();
@@ -3297,7 +3297,7 @@ void sdScriptEntity::Event_PathFindVampire( const idVec3& runStart, const idVec3
 		idVec3 endPoint = pathPoints[ pathPoints.Num() - 1 ].origin;
 		idVec3 endDirection = endPoint - pathPoints[ pathPoints.Num() - 2 ].origin;
 		endDirection.Normalize();
-	
+
 		// trim ends
 		for ( int i = 0; i < 3; i++ ) {
 			if ( startPoint[ i ] < mins[ i ] ) {
@@ -3346,7 +3346,7 @@ void sdScriptEntity::LevelPathSegment( float maxSlope, int startPoint, int endPo
 		float segmentHeight = segment.z;
 		segment.z = 0.0f;
 		float segmentLength = segment.Length();
-		
+
 		// Gordon: TEMP: Tristan needs to merge the points or something, he says!
 		if ( segmentLength == 0.f ) {
 			nextPoint.z = point.z - segmentLength * maxSlope;
@@ -3355,7 +3355,7 @@ void sdScriptEntity::LevelPathSegment( float maxSlope, int startPoint, int endPo
 			if ( slope < -maxSlope ) {
 				// goes down too fast - pull the next point up
 				nextPoint.z = point.z - segmentLength * maxSlope;
-			} else if ( slope > maxSlope ) { 
+			} else if ( slope > maxSlope ) {
 				// goes up too fast - pull the current point up and re-level that side
 				point.z = nextPoint.z - segmentLength * maxSlope;
 				if ( i != startPoint ) {
@@ -3384,7 +3384,7 @@ void sdScriptEntity::Event_PathLevel( float maxSlopeAngle, int startIndex, int e
 		Swap( startIndex, endIndex );
 	}
 
-	if ( endIndex < 0 ) { 
+	if ( endIndex < 0 ) {
 		endIndex = numPathPoints - 1;
 	}
 
@@ -3396,7 +3396,7 @@ void sdScriptEntity::Event_PathLevel( float maxSlopeAngle, int startIndex, int e
 	}
 
 	float pathHeight = pathPoints[ endIndex ].origin.z - pathPoints[ startIndex ].origin.z;
-	
+
 	if ( pathHeight > 2000.0f ) {
 		LevelPathSegment( maxSlope, endIndex, startIndex, true );
 	} else {
@@ -3420,7 +3420,7 @@ void sdScriptEntity::Event_PathStraighten() {
 		gameRenderWorld->DebugLine( colorRed, lastPoint, pathPoints[ i ].origin, 10000 );
 		lastPoint = pathPoints[ i ].origin;
 	}*/
-	
+
 
 	// take samples of 3 points, and make the middle point closer to being a smooth path
 	for ( int j = 0; j < 2; j++ ) {
@@ -3440,7 +3440,7 @@ void sdScriptEntity::Event_PathStraighten() {
 			float distBetween = ( x0 - x1 ).Length();
 			idVec3 dx0 = startDirection * distBetween * 0.25f;
 			idVec3 dx1 = endDirection * distBetween * 0.25f;
-			
+
 			// calculate coefficients
 			idVec3 D = x0;
 			idVec3 C = dx0;
@@ -3528,7 +3528,7 @@ void sdScriptEntity::PathGetPosition( float position, idVec3& result ) {
 		idVec3 p1 = pathPoints[ i - 1 ].origin;
 		idVec3 p2 = pathPoints[ i ].origin;
 
-		float distance = ( p1 - p2 ).Length(); 
+		float distance = ( p1 - p2 ).Length();
 		length += distance;
 
 		// record the information about the point (so searches can be continued)
@@ -3585,7 +3585,7 @@ void sdScriptEntity::Event_GetVampireBombPosition( const idVec3& targetPos, floa
 			}
 
 			idVec3 accelerationNeeded = 2.0f * ( targetPos - origin - velocity * zRoots[ i ] );
-			accelerationNeeded /= Square( zRoots[ i ] ); 
+			accelerationNeeded /= Square( zRoots[ i ] );
 
 			// see if its the smallest acceleration needed yet (most natural looking path)
 			float accel = accelerationNeeded.LengthSqr();
@@ -3676,7 +3676,7 @@ void sdScriptEntity::PathGetAxes( float position, idMat3& result ) {
 		idVec3 p1 = pathPoints[ i - 1 ].origin;
 		idVec3 p2 = pathPoints[ i ].origin;
 
-		float distance = ( p1 - p2 ).Length(); 
+		float distance = ( p1 - p2 ).Length();
 		length += distance;
 
 		// record the information about the point (so searches can be continued)
@@ -3828,8 +3828,8 @@ void sdScriptEntity::GetImpactInfo( idEntity *ent, int id, const idVec3 &point, 
 sdScriptEntity::GetImpactInfo
 ================
 */
-bool sdScriptEntity::IsCollisionPushable( void ) { 
-	return !scriptEntityFlags.noCollisionPush; 
+bool sdScriptEntity::IsCollisionPushable( void ) {
+	return !scriptEntityFlags.noCollisionPush;
 }
 
 /*
@@ -3859,7 +3859,7 @@ void sdScriptEntity::UpdatePlayZoneInfo( void ) {
 	if ( !scriptEntityFlags.takesOobDamage ) {
 		return;
 	}
-	
+
 	const sdPlayZone* playZone = gameLocal.GetPlayZone( GetPhysics()->GetOrigin(), sdPlayZone::PZF_PLAYZONE );
 	if ( playZone != NULL ) {
 		const sdDeployMaskInstance* deployMask = playZone->GetMask( gameLocal.GetPlayZoneMask() );
@@ -3885,9 +3885,9 @@ void sdScriptEntity::UpdatePlayZoneInfo( void ) {
 
 		if ( dist <= ( step * 1 ) ) {
 			damageDeclName = "damage_oob_warning";
-		} else if ( dist <= ( step * 2 ) ) { 
+		} else if ( dist <= ( step * 2 ) ) {
 			damageDeclName = "damage_oob_1st";
-		} else if ( dist <= ( step * 3 ) ) { 
+		} else if ( dist <= ( step * 3 ) ) {
 			damageDeclName = "damage_oob_2nd";
 		} else if ( dist <= ( step * 4 ) ) {
 			damageDeclName = "damage_oob_3rd";
@@ -3895,13 +3895,13 @@ void sdScriptEntity::UpdatePlayZoneInfo( void ) {
 			damageDeclName = "damage_oob_4th";
 		}
 
-		const sdDeclDamage* damageDecl = gameLocal.declDamageType[ damageDeclName.c_str() ];	
+		const sdDeclDamage* damageDecl = gameLocal.declDamageType[ damageDeclName.c_str() ];
 		if ( damageDecl == NULL ) {
 			gameLocal.Warning( "sdScriptEntity::UpdatePlayZoneInfo: couldn't find damage decl %s", damageDeclName.c_str() );
 			return;
 		}
 
-		Damage( NULL, NULL, idVec3( 0.f, 0.f, 1.f ), damageDecl, 1.f, NULL );	
+		Damage( NULL, NULL, idVec3( 0.f, 0.f, 1.f ), damageDecl, 1.f, NULL );
 	}
 }
 
@@ -3934,7 +3934,7 @@ void sdScriptEntity::Event_SetBoxClipModel( const idVec3& mins, const idVec3& ma
 	physicsObj->SetAngularVelocity( angularVelocity );
 	physicsObj->LinkClip();
 
-	if ( !gameLocal.isClient ) {	
+	if ( !gameLocal.isClient ) {
 		// throw a warning if this clip model change has left us embedded in something
 		if ( gameLocal.clip.Contents( CLIP_DEBUG_PARMS_SCRIPT physicsObj->GetOrigin(), newModel, physicsObj->GetAxis(), contents | clipMask, this ) ) {
 			gameLocal.Warning( "sdScriptEntity::Event_SetBoxClipModel - This operation made the entity %s clip into something else!", GetName() );
@@ -4189,10 +4189,10 @@ sdScriptEntityDisplayIconInterface
 sdScriptEntityDisplayIconInterface::Init
 ================
 */
-void sdScriptEntityDisplayIconInterface::Init( sdScriptEntity* _owner ) { 
-	owner = _owner; 
-	hasIconResult = false; 
-	enabled = false; 
+void sdScriptEntityDisplayIconInterface::Init( sdScriptEntity* _owner ) {
+	owner = _owner;
+	hasIconResult = false;
+	enabled = false;
 	cutoffDistance = -1.0f;
 	colorMode = EI_NONE;
 	position = EI_CENTER;
@@ -4214,7 +4214,7 @@ bool sdScriptEntityDisplayIconInterface::HasIcon( idPlayer* viewPlayer, sdWorldT
 	if ( !enabled ) {
 		return false;
 	}
-	
+
 	// is it visible?
 	if ( !owner->IsVisibleOcclusionTest() ) {
 		return false;
@@ -4268,7 +4268,7 @@ bool sdScriptEntityDisplayIconInterface::HasIcon( idPlayer* viewPlayer, sdWorldT
 	storedInfo.color.w *= alphaScale;
 
 
-	hasIconResult = true;	
+	hasIconResult = true;
 	return hasIconResult;
 }
 
@@ -4313,7 +4313,7 @@ void sdScriptEntity_Projectile::Create( idEntity* owner, const idVec3& start, co
 	idPhysics* physics = GetPhysics();
 	idMat3 axis = dir.ToMat3();
 	physics->SetOrigin( start );
-	physics->SetAxis( axis );	
+	physics->SetAxis( axis );
 	physics->SetLinearVelocity( spawnArgs.GetVector( "velocity", "0 0 0" ) * axis );
 	UpdateVisuals();
 
@@ -4326,7 +4326,7 @@ sdScriptEntity_Projectile::Event_GetLaunchTime
 =================
 */
 void sdScriptEntity_Projectile::Event_GetLaunchTime( void ) {
-	sdProgram::ReturnFloat( MS2SEC( launchTime ) ); 
+	sdProgram::ReturnFloat( MS2SEC( launchTime ) );
 }
 
 /*
@@ -4374,10 +4374,10 @@ void sdScriptEntity_Projectile::ApplyNetworkState( networkStateMode_t mode, cons
 sdScriptEntity_Projectile::ReadNetworkState
 ================
 */
-void sdScriptEntity_Projectile::ReadNetworkState( networkStateMode_t mode, const sdEntityStateNetworkData& baseState, 
+void sdScriptEntity_Projectile::ReadNetworkState( networkStateMode_t mode, const sdEntityStateNetworkData& baseState,
 															sdEntityStateNetworkData& newState, const idBitMsg& msg ) const {
 	sdScriptEntity::ReadNetworkState( mode, baseState, newState, msg );
-	
+
 	if ( mode == NSM_BROADCAST ) {
 		NET_GET_STATES( sdScriptEntity_ProjectileBroadcastData );
 
@@ -4392,7 +4392,7 @@ void sdScriptEntity_Projectile::ReadNetworkState( networkStateMode_t mode, const
 sdScriptEntity_Projectile::WriteNetworkState
 ================
 */
-void sdScriptEntity_Projectile::WriteNetworkState( networkStateMode_t mode, const sdEntityStateNetworkData& baseState, 
+void sdScriptEntity_Projectile::WriteNetworkState( networkStateMode_t mode, const sdEntityStateNetworkData& baseState,
 																sdEntityStateNetworkData& newState, idBitMsg& msg ) const {
 	sdScriptEntity::WriteNetworkState( mode, baseState, newState, msg );
 

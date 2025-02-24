@@ -31,7 +31,7 @@ public:
 	virtual messageType_e		GetType() const = 0;
 	virtual const wchar_t*		GetText() const = 0;
 	virtual const byte*			GetData() const = 0;
-	virtual size_t				GetDataSize() const = 0;	
+	virtual size_t				GetDataSize() const = 0;
 	virtual sdNetMessageQueue*	GetSenderQueue() const = 0;
 	virtual const sysTime_t& 	GetTimeStamp() const = 0;
 };

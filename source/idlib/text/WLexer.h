@@ -46,7 +46,7 @@ public:
 	bool			HadWarning( void ) const;
 					// Prints an error message
 	void			Error( const char *str, ... );
-					
+
 					// Prints a warning message
 	void			Warning( const char *str, ... );
 

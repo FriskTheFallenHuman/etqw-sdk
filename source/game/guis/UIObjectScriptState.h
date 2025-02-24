@@ -20,7 +20,7 @@ public:
 	sdUIWindowState( void );
 	~sdUIWindowState( void );
 
-	void									Init( sdUIObject* _window );	
+	void									Init( sdUIObject* _window );
 
 	virtual const char*						GetScopeClassName() const;
 	virtual bool							IsReadOnly() const { return false; }
@@ -52,7 +52,7 @@ public:
 
 	virtual sdUserInterfaceLocal*			GetUI();
 
-	sdUIObject*								GetWindow() { return window; }	
+	sdUIObject*								GetWindow() { return window; }
 
 	virtual const char*						GetName() const;
 

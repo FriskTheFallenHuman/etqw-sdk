@@ -2,11 +2,11 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclAmmoType.h"
-#include "../../framework/DeclParseHelper.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -38,7 +38,7 @@ sdDeclAmmoType::DefaultDefinition
 ================
 */
 const char* sdDeclAmmoType::DefaultDefinition( void ) const {
-	return 
+	return
 		"{\n"							\
 		"}\n";
 }

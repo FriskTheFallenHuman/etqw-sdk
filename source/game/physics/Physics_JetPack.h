@@ -83,7 +83,7 @@ public:
 
 	void					SetPlayerInput( const usercmd_t& cmd, const idAngles &newViewAngles, bool allowMovement );
 	void					SetBoost( float newBoost ) { boost = newBoost; }
-	inline const idVec3&	GetCurrentOrigin() { return current.origin; } 
+	inline const idVec3&	GetCurrentOrigin() { return current.origin; }
 
 	virtual void			Activate( void );
 
@@ -179,7 +179,7 @@ private:
 	float					walkForceScale;
 	float					kineticFriction;
 	float					jumpForce;
-	float					boostForce;	
+	float					boostForce;
 	idVec3					fanForce;
 
 	// results of last evaluate

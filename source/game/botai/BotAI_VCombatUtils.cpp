@@ -1,10 +1,10 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h" 
+#include "Game_local.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -181,7 +181,7 @@ bool idBotAI::Bot_VehicleFindEnemy() {
 		isNearOurObj = ( LocationDistFromCurrentObj( botInfo->team, playerInfo.origin ) < 2500.0f ) ? true : false;
 		bool isCriticalEnemy = Client_IsCriticalForCurrentObj( i, 2500.0f );
 
-		if ( playerInfo.proxyInfo.entNum != CLIENT_HAS_NO_VEHICLE ) { 
+		if ( playerInfo.proxyInfo.entNum != CLIENT_HAS_NO_VEHICLE ) {
 			GetVehicleInfo( playerInfo.proxyInfo.entNum, enemyVehicleInfo );
 		}
 
@@ -297,7 +297,7 @@ bool idBotAI::Bot_VehicleFindEnemy() {
                     continue;
 				}
 			}
-		} 
+		}
 
  		if ( !ClientHasObj( i ) ) {
             audible = ClientIsAudibleToVehicle( i ); //mal: if we can hear you, we'll skip the FOV test in the vis check below
@@ -385,8 +385,8 @@ void idBotAI::Bot_CheckCurrentStateForVehicleCombat() {
 		return;
 	} //mal: if we're not the driver of this vehicle, we'll always attack ( really, what else can we do? ).
 
-    
-	VEHICLE_COMBAT_AI_SUB_NODE = &idBotAI::Enter_COMBAT_Vehicle_AttackEnemy; 
+
+	VEHICLE_COMBAT_AI_SUB_NODE = &idBotAI::Enter_COMBAT_Vehicle_AttackEnemy;
 }
 
 /*
@@ -408,7 +408,7 @@ void idBotAI::Bot_CheckVehicleAttack() {
 	}
 
 	if ( gunTargetEntNum > -1 && gunTargetEntNum < MAX_CLIENTS ) {
-		if ( botWorld->clientInfo[ gunTargetEntNum ].team == botInfo->team && !botWorld->gameLocalInfo.inWarmup ) { 
+		if ( botWorld->clientInfo[ gunTargetEntNum ].team == botInfo->team && !botWorld->gameLocalInfo.inWarmup ) {
 			return;
 		}
 	} //mal: hold your fire! have a friendly in the way.
@@ -424,7 +424,7 @@ void idBotAI::Bot_CheckVehicleAttack() {
 	if ( botInfo->proxyInfo.weapon == PERSONAL_WEAPON ) {
 		if ( enemyInfo.enemyInfont ) {
 			if ( botInfo->weapInfo.weapon == ROCKET ) {
-				if ( botInfo->targetLocked ) { 
+				if ( botInfo->targetLocked ) {
                     botUcmd->botCmds.attack = true;
 				}
 			} else {
@@ -466,7 +466,7 @@ void idBotAI::Bot_CheckVehicleAttack() {
 		}
 
 		dir = botWorld->clientInfo[ enemy ].origin - botVehicleInfo->origin;
-        dir.NormalizeFast(); 
+        dir.NormalizeFast();
 		if ( dir * botVehicleInfo->axis[ 0 ] > minFOV ) { //mal: we have them in our sights - FIRE!
 			botUcmd->botCmds.attack = true;
 		}
@@ -478,7 +478,7 @@ void idBotAI::Bot_CheckVehicleAttack() {
 			botUcmd->botCmds.attack = true;
 		} else {
 			dir = botWorld->clientInfo[ enemy ].origin - botInfo->proxyInfo.weaponOrigin;
-			dir.NormalizeFast(); 
+			dir.NormalizeFast();
 			if ( dir * botInfo->proxyInfo.weaponAxis[0] > minFOV ) { //mal: we have them in our sights - FIRE!
 				botUcmd->botCmds.attack = true;
 			}
@@ -549,7 +549,7 @@ bool idBotAI::Bot_VehicleFindBetterEnemy() {
 	if ( botWorld->clientInfo[ enemy ].proxyInfo.entNum == CLIENT_HAS_NO_VEHICLE && !ClientIsDefusingOurTeamCharge( enemy ) && !vehicleEnemyWasInheritedFromFootCombat ) { //mal: if our current enemy is on foot, more likely to pick a better target. Unless they're defusing our charge, or an enemy we jumped in this vehicle for, then we artificially raise their importance.
 		curEnemyNotInVehicle = true;
 	}
-	
+
 	numVisEnemies = 1; //mal: our current enemy is always visible to us
 
 	for ( i = 0; i < MAX_CLIENTS; i++ ) {
@@ -623,7 +623,7 @@ bool idBotAI::Bot_VehicleFindBetterEnemy() {
 		bool enemyIsInAirAttackVehicle = false;
 
 		if ( playerInfo.proxyInfo.entNum != CLIENT_HAS_NO_VEHICLE ) { //mal: pick the driver of a vehicle as the target, NOT passengers, unless there is no driver - then kill whoever.
-			
+
 			GetVehicleInfo( playerInfo.proxyInfo.entNum, vehicleInfo );
 
 			if ( vehicleInfo.driverEntNum != i && vehicleInfo.driverEntNum != -1 ) {
@@ -633,7 +633,7 @@ bool idBotAI::Bot_VehicleFindBetterEnemy() {
 			if ( vehicleInfo.type == ANANSI || vehicleInfo.type == HORNET ) {
 				enemyIsInAirAttackVehicle = true;
 			} else {
-				vec = vehicleInfo.origin - botInfo->origin;				
+				vec = vehicleInfo.origin - botInfo->origin;
 
 				if ( vehicleInfo.xyspeed > 600.0f && vec.LengthSqr() > Square( 1900.0f ) && !InFrontOfVehicle( vehicleInfo.entNum, botInfo->origin ) ) { //mal: if they're in a mad dash away from us, forget about them!
 					continue;
@@ -773,7 +773,7 @@ bool idBotAI::Bot_ShouldVehicleChaseHiddenEnemy() {
 	} // we have something important on our mind, and cant chase ATM - UNLESS they have the obj! Always chase them!
 
 	vec = enemyInfo.enemy_LS_Pos - botInfo->origin;
-	
+
 	if ( vec.LengthSqr() > Square( ENEMY_CHASE_DIST ) ) {
 		return false;
 	} // too far away to chase
@@ -879,7 +879,7 @@ NOTE: just dont have the bloody time to flesh this out as much as I'd like ATM -
 */
 void idBotAI::Bot_PickVehicleChaseType() {
 	VEHICLE_COMBAT_AI_SUB_NODE = &idBotAI::Enter_COMBAT_Vehicle_ChaseEnemy;
-	return;	
+	return;
 }
 
 /*
@@ -937,7 +937,7 @@ void idBotAI::Bot_PickBestVehicleWeapon() {
 		case TITAN:
 			if ( botVehicleInfo->driverEntNum == botNum ) {
 				if ( enemyInAirborneVehicle && enemyInfo.enemyDist <= TANK_MINIGUN_RANGE && hasGunnerSeatOpen ) {
-					botUcmd->botCmds.becomeGunner = true; 
+					botUcmd->botCmds.becomeGunner = true;
 					needMovementUpdate = true;
 					break;
 				}
@@ -990,7 +990,7 @@ void idBotAI::Bot_PickBestVehicleWeapon() {
 						vehicleDriverTime = botWorld->gameLocalInfo.time + 15000;
 						break;
 					}
-					
+
 					if ( ( enemyInAirborneVehicle || ( enemyInfo.enemyDist < 3000.0f && enemyInfo.enemyDist > 700.0f ) ) && vehicleGunnerTime + 30000 < botWorld->gameLocalInfo.time && enemyInfo.enemyVisible ) { //mal: dont do this if enemy too far away, or its been too soon since we last did this.
 						botUcmd->botCmds.becomeGunner = true;
 						vehicleGunnerTime = botWorld->gameLocalInfo.time + 15000;
@@ -1064,7 +1064,7 @@ void idBotAI::Bot_PickBestVehicleWeapon() {
 		case DESECRATOR:
 			if ( botVehicleInfo->driverEntNum == botNum ) {
 				if ( enemyInAirborneVehicle && enemyInfo.enemyDist <= TANK_MINIGUN_RANGE && hasGunnerSeatOpen ) {
-					botUcmd->botCmds.becomeGunner = true; 
+					botUcmd->botCmds.becomeGunner = true;
 					needMovementUpdate = true;
 					break;
 				}
@@ -1126,7 +1126,7 @@ void idBotAI::Bot_PickBestVehicleWeapon() {
 				}
 			}
 
-			break;		
+			break;
 	}
 
 	if ( needMovementUpdate ) {
@@ -1211,7 +1211,7 @@ idBotAI::Bot_VehicleCanAttackEnemy
 bool idBotAI::Bot_VehicleCanAttackEnemy( int clientNum ) {
 
 	if ( botInfo->proxyInfo.weapon == NULL_VEHICLE_WEAPON ) {
-		if ( !VehicleHasGunnerSeatOpen( botInfo->proxyInfo.entNum ) && botVehicleInfo->driverEntNum != botNum ) { 
+		if ( !VehicleHasGunnerSeatOpen( botInfo->proxyInfo.entNum ) && botVehicleInfo->driverEntNum != botNum ) {
 			return false;
 		}
 	} else if ( botInfo->proxyInfo.weapon == PERSONAL_WEAPON ) { //mal: if we have our personal weapon, we can't control the vehicle in question, so can only attack if client is vis to us, and we have ammo to attack with.
@@ -1231,7 +1231,7 @@ bool idBotAI::Bot_VehicleCanAttackEnemy( int clientNum ) {
 		} //mal: dont fight ppl if we're driving the mcp, and they're not in front of us - just get the MCP to the outpost!
 	}
 
-	return true;	
+	return true;
 }
 
 /*

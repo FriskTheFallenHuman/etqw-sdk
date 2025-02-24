@@ -5,7 +5,7 @@
 #ifndef __GAME_GUIS_USERINTERFACELIST_H__
 #define __GAME_GUIS_USERINTERFACELIST_H__
 
-#include "../../idlib/PropertiesImpl.h"
+#include "idlib/PropertiesImpl.h"
 #include "UserInterfaceTypes.h"
 #include "UIWindow.h"
 
@@ -70,7 +70,7 @@ public:
 		LE_ITEM_ADDED,
 		LE_ITEM_REMOVED,
 		LE_DRAW_SELECTED_BACKGROUND,
-		LE_DRAW_ITEM_BACKGROUND,		
+		LE_DRAW_ITEM_BACKGROUND,
 		LE_DRAW_ITEM,
 		LE_DRAW_COLUMN,
 		LE_ENTER_COLUMN,
@@ -109,7 +109,7 @@ public:
 	virtual void							ApplyLayout();
 	virtual bool							PostEvent( const sdSysEvent* event );
 
-	virtual void							EnumerateEvents( const char* name, const idList<unsigned short>& flags, idList< sdUIEventInfo >& events, const idTokenCache& tokenCache );	
+	virtual void							EnumerateEvents( const char* name, const idList<unsigned short>& flags, idList< sdUIEventInfo >& events, const idTokenCache& tokenCache );
 
 	virtual void							EndLevelLoad();
 
@@ -121,7 +121,7 @@ public:
 	void									SetItemGranularity( int granularity );
 	void									BeginBatch() { inBatchOperation = true; }
 	void									EndBatch() { inBatchOperation = false; Sort(); }
-	
+
 	void									Script_InsertItem( sdUIFunctionStack& stack );
 	void									Script_InsertBlankItems( sdUIFunctionStack& stack );
 	void									Script_SetItemText( sdUIFunctionStack& stack );
@@ -217,7 +217,7 @@ protected:
 	bool									CheckItemMouseOver( const sdBounds2D& windowBounds, const idVec2& point );
 
 private:
-	enum listTransitionProperty_e {	LTP_FORECOLOR = -2, 
+	enum listTransitionProperty_e {	LTP_FORECOLOR = -2,
 									LTP_BACKCOLOR = -1,
 									LTP_PROPERTY_0 = 0,
 									LTP_PROPERTY_1 = 1,
@@ -276,7 +276,7 @@ private:
 			bool customDraw		: 1;
 			bool mouseFocused	: 1;
 		} flags;
-	};	
+	};
 
 	/*
 	============
@@ -303,7 +303,7 @@ private:
 		uiDrawPart_t			part;
 		int						textHandle;
 		int						textFlags;
-		idList< sdUIListItem* >	items;		
+		idList< sdUIListItem* >	items;
 		idList< sdTransition >	itemTransitions;
 		sdTransition			transition;
 
@@ -327,7 +327,7 @@ private:
 	class sdColumnSort {
 	public:
 		sdColumnSort( sdUIListColumn& c ) : column( c ) {}
-		
+
 		int operator()( const int first, const int second ) const {
 			sdUIListItem* firstItem = column.items[ first ];
 			sdUIListItem* secondItem = column.items[ second ];
@@ -386,7 +386,7 @@ private:
 
 											// is the item completely visible within the client rect?
 											// returns how far above or below the item is, or 0 if it is visible
-	float									GetVisibleItemOffset( int item ) const;					
+	float									GetVisibleItemOffset( int item ) const;
 
 	void									GetItemRect( const int row, idVec4& rect ) const;	// get the full (control-width) rectangle of the item
 	void									GetItemRect( const int row, const int col, idVec4& rect, const float* columnWidths ) const;	// get the column width rectangle of the item
@@ -400,7 +400,7 @@ private:
 	float									GetMaxScrollAmount() const;
 	sdUIListItem*							GetItem( int row, int column, const char* warningText = "GetItem", bool direct = false );
 	const sdUIListItem*						GetItem( int row, int column, const char* warningText = "GetItem", bool direct = false ) const;
-	
+
 	bool									CheckItemClick( const sdSysEvent* event, const idVec2& point );
 	bool									CheckHeaderClick( const sdSysEvent* event, const idVec2& point );
 	bool									HandleKeyInput( const sdSysEvent* event );
@@ -437,7 +437,7 @@ private:
 	)
 	sdFloatProperty		currentSelection;
 	// ===========================================
-	
+
 
 	SD_UI_PROPERTY_TAG(
 	title				= "2. Drawing/Internal Border";
@@ -580,9 +580,9 @@ private:
 	sdUIEventHandle		drawItemHandle;
 	sdUIEventHandle		drawItemBackHandle;
 	sdUIEventHandle		drawSelectedItemBackHandle;
-	
+
 private:
-	idList< int >					indices;	
+	idList< int >					indices;
 	idList< sdUIListColumn* >		columns;
 	idList< int >					rowHeights;
 
@@ -600,10 +600,10 @@ private:
 sdUIList::GetFirstVisibleItem
 ============
 */
-ID_INLINE int sdUIList::GetFirstVisibleItem() const {	
+ID_INLINE int sdUIList::GetFirstVisibleItem() const {
 	int num = GetNumItems();
 
-	int index = 0;	
+	int index = 0;
 	float bottom = 0.0f;
 
 	while( index < num - 1 ) {
@@ -694,7 +694,7 @@ sdUIList::GetItemRect
 */
 ID_INLINE void sdUIList::GetItemRect( const int row, int col, idVec4& rect, const float* columnWidths ) const {
 	GetItemRect( row, rect );
-	
+
 	int i = 0;
 	while( i <= col ) {
 		if( i == col ) {
@@ -703,7 +703,7 @@ ID_INLINE void sdUIList::GetItemRect( const int row, int col, idVec4& rect, cons
 		}
 		rect.x += columnWidths[ i ];
 		i++;
-	}	
+	}
 }
 
 /*
@@ -754,9 +754,9 @@ sdUIList::IndexCheck
 ============
 */
 ID_INLINE bool sdUIList::IndexCheck( int row, int column, const char* warningText ) const {
-	if( column < 0 || 
+	if( column < 0 ||
 		column >= columns.Num() ||
-		row < 0 || 
+		row < 0 ||
 		row >= columns[ 0 ]->items.Num() ) {
 		if( warningText != NULL ) {
 			gameLocal.Warning( "%s: %s: index out of range (row %i, column %i)", name.GetValue().c_str(), warningText, row, column );
@@ -770,7 +770,7 @@ ID_INLINE bool sdUIList::IndexCheck( int row, int column, const char* warningTex
 /*
 ============
 sdUIList::GetItem
-============	
+============
 */
 ID_INLINE sdUIList::sdUIListItem* sdUIList::GetItem( int row, int column, const char* warningText, bool direct ) {
 	if( !IndexCheck( row, column, warningText )) {
@@ -785,7 +785,7 @@ ID_INLINE sdUIList::sdUIListItem* sdUIList::GetItem( int row, int column, const 
 /*
 ============
 sdUIList::GetItem
-============	
+============
 */
 ID_INLINE const sdUIList::sdUIListItem* sdUIList::GetItem( int row, int column, const char* warningText, bool direct ) const {
 	if( !IndexCheck( row, column, warningText )) {

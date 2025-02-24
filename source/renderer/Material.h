@@ -204,8 +204,8 @@ struct materialStage_t {
 	float				lineWidth;
 	bool				breakpoint;			// There is a breakpoint on the drawing of this stage
 //	bool				forceDepth;			// Force z-writing on certain transparent stages
-	bool				hasExplicitDepthFunc; // don't autodetect depthfuncs 
-	bool				hasExplicitDepthMask; // don't autodetect depthfuncs 
+	bool				hasExplicitDepthFunc; // don't autodetect depthfuncs
+	bool				hasExplicitDepthMask; // don't autodetect depthfuncs
 
 	const sdDeclRenderProgram*	renderProgram;
 
@@ -271,7 +271,7 @@ typedef enum {
 
 typedef enum {
 	LS_AMBIENTOCCLUSION = -3,	// Drawn just after ambient light
-	LS_REFRACTABLE = -2,		// Drawn before refraction and non-refracting non-light dependent stages 
+	LS_REFRACTABLE = -2,		// Drawn before refraction and non-refracting non-light dependent stages
 	LS_BAD = -1,				// For compatibility with normal sorts
 	LS_NORMAL,					// Normal interaction stages
 	LS_EFFECT,					// Drawn after interaction lights
@@ -376,7 +376,7 @@ typedef enum {
 	SURF_NONSOLID				= BIT(9),
 	SURF_NOPLANT				= BIT(10),	// can't plant landmines, HE charges etc here
 	SURF_NOAREAS				= BIT(11),	// don't create AAS areas on this surface
-	
+
 	SURF_SHADOWCOLLISION		= BIT(12),	// shadow collision surface, used only when CONTENTS_SHADOWCOLLISION is specified
 } surfaceFlags_t;
 
@@ -638,7 +638,7 @@ public:
 	const float *			ConstantRegisters( const float shaderParms[MAX_ENTITY_SHADER_PARMS], const struct viewDef_s *view ) const;
 	void					SetLodDistance( float distance ) const;
 	const subviewInfo_t&	GetSubviewInfo() const { return subviewInfo; }
-	const sdParameterInfo&	GetParameterInfo( int index ) const { return parameterInfo[index]; } //For visual shader tweaking tools	
+	const sdParameterInfo&	GetParameterInfo( int index ) const { return parameterInfo[index]; } //For visual shader tweaking tools
 	unsigned int			GetBreakpoints() const { return breakpointFlags; }
 
 	const float			GetSlopTexCoordMod() const { return slopTexCoordMod; }
@@ -763,8 +763,8 @@ private:
 	idStr				editorImageName;
 	mutable idImage *	editorImage;		// image used for non-shaded preview
 	float				editorAlpha;
-	
-	bool				doLodDistance;		// images will be distance lodded on this shader			
+
+	bool				doLodDistance;		// images will be distance lodded on this shader
 	subviewInfo_t		subviewInfo;
 	sdParameterInfo		parameterInfo[MAX_ENTITY_SHADER_PARMS];		// Names of the shader params for visual tweaking tools
 	unsigned int		breakpointFlags;

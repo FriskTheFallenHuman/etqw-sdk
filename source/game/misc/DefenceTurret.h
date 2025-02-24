@@ -4,9 +4,9 @@
 #ifndef __GAME_MISC_DEFENCETURRET_H__
 #define __GAME_MISC_DEFENCETURRET_H__
 
-#include "../ScriptEntity.h"
-#include "../script/ScriptEntityHelpers.h"
-#include "../botai/Bot_Common.h"
+#include "ScriptEntity.h"
+#include "script/ScriptEntityHelpers.h"
+#include "botai/Bot_Common.h"
 
 class sdDefenceTurret : public sdScriptEntity {
 	CLASS_PROTOTYPE( sdDefenceTurret );
@@ -23,7 +23,7 @@ class sdDefenceTurret : public sdScriptEntity {
 	virtual void						PostThink( void );
 
 	void								SetTargetEntity( idEntity* entity );
-	
+
 	idEntity *							GetTargetEntity( void ) const;
 	float								GetTurretMinRange( void ) const;
 	float								GetTurretMaxRange( void ) const;

@@ -32,7 +32,7 @@ public:
 	int								GetTimeLimit( void ) const { return timeLimit; }
 	int								GetNumWayPoints( void ) const { return waypointData.Num(); }
 	const idDict&					GetWayPointData( int index ) const { return waypointData[ index ]; }
-									
+
 									// this can return NULL if no icon key was specified
 	const idMaterial*				GetWaypointIcon( int index ) const { return waypointIcons[ index ]; }
 	bool							IsMission( void ) const { return type == PTT_MISSION; }

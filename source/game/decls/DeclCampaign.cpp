@@ -2,11 +2,11 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclCampaign.h"
-#include "../../framework/DeclParseHelper.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -56,7 +56,7 @@ bool sdDeclCampaign::Parse( const char *text, const int textLength ) {
 	src.SetFlags( DECL_LEXER_FLAGS );
 //	src.LoadMemory( text, textLength, GetFileName(), GetLineNum() );
 //	src.AddIncludes( GetFileLevelIncludeDependencies() );
-	sdDeclParseHelper declHelper( this, text, textLength, src );	
+	sdDeclParseHelper declHelper( this, text, textLength, src );
 
 	src.SkipUntilString( "{", &token );
 

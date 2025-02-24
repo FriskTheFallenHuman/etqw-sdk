@@ -4,7 +4,7 @@
 #ifndef __GAME_PROFICIENCY_PROFICIENCYMANAGER_H__
 #define __GAME_PROFICIENCY_PROFICIENCYMANAGER_H__
 
-#include "../../sdnet/SDNetStatsManager.h"
+#include "sdnet/SDNetStatsManager.h"
 
 class sdDeclProficiencyItem;
 class sdUserInterfaceLocal;
@@ -38,7 +38,7 @@ public:
 		class sdTask {
 		public:
 			sdTask( void ) {
-				total = 0.f;				
+				total = 0.f;
 			}
 
 			void Clear( void ) {

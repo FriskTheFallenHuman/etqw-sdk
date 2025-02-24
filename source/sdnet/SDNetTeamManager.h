@@ -25,7 +25,7 @@ struct sdNetTeamInvite {
 	char text[ MAX_TEAMNAME_LENGTH ];
 };
 
-typedef idList< sdNetTeamMember* > sdNetTeamMemberList; 
+typedef idList< sdNetTeamMember* > sdNetTeamMemberList;
 
 class sdNetTeamManager {
 public:

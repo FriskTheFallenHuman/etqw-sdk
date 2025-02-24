@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 #include <float.h>
@@ -13,7 +13,7 @@ rvAngles::NormalizeFull
 returns angles normalized to the range [0 <= angle < TWO_PI]
 =================
 */
-rvAngles &rvAngles::NormalizeFull( void ) 
+rvAngles &rvAngles::NormalizeFull( void )
 {
 	// Get to -TWO_PI < a < TWO_PI
 	pitch = fmodf( pitch, idMath::TWO_PI );
@@ -46,7 +46,7 @@ rvAngles::NormalizeHalf
 returns angles normalized to the range [-PI < angle <= PI]
 =================
 */
-rvAngles &rvAngles::NormalizeHalf( void ) 
+rvAngles &rvAngles::NormalizeHalf( void )
 {
 	int		i;
 
@@ -76,10 +76,10 @@ rvAngles &rvAngles::NormalizeHalf( void )
 rvAngles::ToVectors
 =================
 */
-void rvAngles::ToVectors( idVec3 *forward, idVec3 *right, idVec3 *up ) const 
+void rvAngles::ToVectors( idVec3 *forward, idVec3 *right, idVec3 *up ) const
 {
 	float	sr, sp, sy, cr, cp, cy;
-	
+
 	idMath::SinCos( yaw, sy, cy );
 	idMath::SinCos( pitch, sp, cp );
 	idMath::SinCos( roll, sr, cr );

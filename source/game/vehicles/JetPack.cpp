@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,8 +12,8 @@ static char THIS_FILE[] = __FILE__;
 
 #include "JetPack.h"
 #include "TransportComponents.h"
-#include "../ContentMask.h"
-#include "../client/ClientEntity.h"
+#include "ContentMask.h"
+#include "client/ClientEntity.h"
 #include "VehicleView.h"
 #include "VehicleControl.h"
 
@@ -356,7 +356,7 @@ void sdJetPack::UpdateJetPackVisuals( void ) {
 				driver->GetAnimator()->GetJointTransform( driver->GetAnimator()->GetJointHandle( "hips" ), gameLocal.time, posToMatchTo, axisToMatchTo );
 
 				const renderEntity_t* re = driver->GetRenderEntity();
-				posToMatchTo = posToMatchTo * re->axis + re->origin;		
+				posToMatchTo = posToMatchTo * re->axis + re->origin;
 
 				idVec3 posToMatch = baseOrigin + offset * axis;
 				idVec3 offsetNeeded = posToMatchTo - posToMatch;
@@ -569,7 +569,7 @@ void sdJetPack::OnPlayerExited( idPlayer* player, int position ) {
 
 	if ( visuals ) {
 		visuals->Unbind();
-		
+
 		idMat3 axis;
 		idAngles::YawToMat3( lastAngles.yaw, axis );
 		MAT_CHECK_BAD( axis );
@@ -639,7 +639,7 @@ bool sdJetPack::Collide( const trace_t &collision, const idVec3 &velocity, int b
 	idVec3 v = length * normal;
 	idEntity* driver = positionManager.FindDriver();
 	idPlayer* playerDriver = NULL;
-	
+
 	if ( driver != NULL ) {
 		playerDriver = driver->Cast< idPlayer >();
 		assert( playerDriver != NULL );
@@ -693,7 +693,7 @@ sdJetPack::ApplyNetworkState
 ================
 */
 void sdJetPack::ApplyNetworkState( networkStateMode_t mode, const sdEntityStateNetworkData& newState ) {
-	if ( mode == NSM_VISIBLE ) {		
+	if ( mode == NSM_VISIBLE ) {
 		NET_GET_NEW( sdJetPackNetworkData );
 
 		currentJumpCharge = newData.currentJumpCharge;
@@ -708,7 +708,7 @@ sdJetPack::ReadNetworkState
 ================
 */
 void sdJetPack::ReadNetworkState( networkStateMode_t mode, const sdEntityStateNetworkData& baseState, sdEntityStateNetworkData& newState, const idBitMsg& msg ) const {
-	if ( mode == NSM_VISIBLE ) {		
+	if ( mode == NSM_VISIBLE ) {
 		NET_GET_STATES( sdJetPackNetworkData );
 
 		newData.currentJumpCharge = msg.ReadDeltaFloat( baseData.currentJumpCharge );
@@ -723,7 +723,7 @@ sdJetPack::WriteNetworkState
 ================
 */
 void sdJetPack::WriteNetworkState( networkStateMode_t mode, const sdEntityStateNetworkData& baseState, sdEntityStateNetworkData& newState, idBitMsg& msg ) const {
-	if ( mode == NSM_VISIBLE ) {		
+	if ( mode == NSM_VISIBLE ) {
 		NET_GET_STATES( sdJetPackNetworkData );
 
 		newData.currentJumpCharge = currentJumpCharge;

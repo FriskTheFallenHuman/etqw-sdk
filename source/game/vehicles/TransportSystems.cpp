@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,9 +12,9 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "TransportSystems.h"
-#include "../Entity.h"
+#include "Entity.h"
 #include "Transport.h"
-#include "../Atmosphere.h"
+#include "Atmosphere.h"
 
 /*
 ===============================================================================
@@ -47,7 +47,7 @@ sdTransportEngine::~sdTransportEngine( void ) {
 sdTransportEngine::Init
 ================
 */
-void sdTransportEngine::Init( idEntity* _parent, int _startIndex, int _max ) { 
+void sdTransportEngine::Init( idEntity* _parent, int _startIndex, int _max ) {
 	Clear();
 
 	parent		= _parent->Cast< sdTransport >();
@@ -358,7 +358,7 @@ void sdVehicleLightSystem::UpdatePresentation( void ) {
 	int i;
 	for( i = 0; i < lights.Num(); i++ ) {
 		UpdateLightPresentation( lights[ i ] );
-	}		
+	}
 }
 
 /*

@@ -1,5 +1,5 @@
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 /*
@@ -231,7 +231,7 @@ void MD4_Final( MD4_CTX *context, unsigned char digest[16] ) {
 
 	/* Append length (before padding) */
 	MD4_Update( context, bits, 8 );
-	
+
 	/* Store state in digest */
 	Encode( digest, context->state, 16 );
 

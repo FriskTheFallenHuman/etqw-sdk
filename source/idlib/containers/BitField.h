@@ -17,7 +17,7 @@ public:
 	void				operator= ( const sdBitField& other ) { memcpy( bits, other.bits, sizeof( bits ) ); }
 	int					operator[] ( int bit ) const { return Get( bit ); }
 	bool				operator!= ( const sdBitField& other ) const { return memcmp( bits, other.bits, sizeof( bits ) ) != 0; }
-	bool				operator== ( const sdBitField& other ) const { return !(operator!=(other)); }	
+	bool				operator== ( const sdBitField& other ) const { return !(operator!=(other)); }
 	int					Get( int bit ) const { return ( ( bits[ bit / INTBITS ] >> ( bit & INTBITS_X ) ) & 1 ); }
 	void				Set( int bit ) { bits[ bit / INTBITS ] |= 1 << ( bit & INTBITS_X ); }
 	void				Clear( int bit ) { bits[ bit / INTBITS ] &= ~( 1 << ( bit & INTBITS_X ) ); }

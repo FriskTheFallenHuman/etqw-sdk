@@ -19,7 +19,7 @@ public:
 	void								Enable( bool enable, bool urgent = false, bool timedOut = false );
 
 	bool								Active( void ) const { return _activated; }
-	bool								Enabled( void ) const { return _enabled; }	
+	bool								Enabled( void ) const { return _enabled; }
 
 	bool								ManualDraw( void ) const { return _manualDraw; }
 	bool								AllowInhibit( void ) const { return _allowInhibit; }
@@ -50,7 +50,7 @@ public:
 	guiHandle_t							GetGuiHandle( void ) const { return _guiHandle; }
 	idLinkList< sdHudModule >&			GetNode( void ) { return _node; }
 	idLinkList< sdHudModule >&			GetDrawNode( void ) { return _drawNode; }
-	
+
 	virtual sdUserInterfaceScope*		GetScope( void ) { return this; }
 
 	virtual sdProperties::sdProperty*			GetProperty( const char* name, sdProperties::ePropertyType type );
@@ -148,7 +148,7 @@ public:
 	virtual								~sdFireTeamMenu( void ) { }
 	virtual bool						HandleGuiEvent( const sdSysEvent* event );
 
-private:	
+private:
 };
 
 class sdRadialMenuModule : public sdHudModule {
@@ -163,14 +163,14 @@ public:
 
 	virtual void						UsercommandCallback( usercmd_t& cmd );
 
-private:	
+private:
 };
 
 class sdQuickChatMenu : public sdRadialMenuModule {
 public:
 										sdQuickChatMenu( void ) { _inhibitControllerMovement = true; }
 	virtual								~sdQuickChatMenu( void ) { }
-	
+
 	virtual void						OnActivate( void );
 	virtual void						OnCancel( void );
 
@@ -199,7 +199,7 @@ public:
 										sdPassiveHudModule( void ) { _passive = true; _allowInhibit = true; }
 
 	virtual bool						DoWeaponLock( void ) const { return false; }
-	
+
 
 private:
 };

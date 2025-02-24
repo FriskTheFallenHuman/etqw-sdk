@@ -22,6 +22,7 @@ class sdAntiLagEntity;
 class sdAntiLagSet {
 public:
 						sdAntiLagSet();
+	virtual				~sdAntiLagSet() {}
 
 	virtual void		Reset();
 	virtual void		Setup( sdAntiLagEntity& antiLagEntity );

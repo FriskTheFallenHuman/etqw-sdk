@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -207,7 +207,7 @@ bool sdPhysics_Simple::Evaluate( int timeStepMSec, int endTimeMSec ) {
 	if ( IsAtRest() ) {
 		current.velocity.Zero();
 		current.angularVelocity.Zero();
-		
+
 		// evaluate shouldn't become active if this is at rest
 		self->BecomeInactive( TH_PHYSICS );
 		return false;
@@ -658,7 +658,7 @@ void sdPhysics_Simple::ApplyNetworkState( networkStateMode_t mode, const sdEntit
 		current.velocity		= newData.velocity;
 		current.axis			= newData.orientation.ToMat3();
 		current.angularVelocity	= newData.angularVelocity;
-		
+
 		locked					= newData.locked;
 		if ( newData.atRest != atRest ) {
 			if ( newData.atRest == -1 ) {

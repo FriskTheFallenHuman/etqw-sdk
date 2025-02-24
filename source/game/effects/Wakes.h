@@ -66,7 +66,7 @@ private:
 	int		AddToBack( sdWakeNode &node );
 	void	PopFront();
 	int		RemapIndex( int index );
-	sdWakeNode &GetNode( int index );	
+	sdWakeNode &GetNode( int index );
 
 public:
 	sdWakeLayer( void );
@@ -85,7 +85,7 @@ public:
 class sdWake : public sdHardcodedParticleSystem {
 
 	static const int MAX_POINTS = 4;
-	
+
 	idVec3 minPoint;
 	idVec3 maxPoint;
 	int nextNodeTime;
@@ -125,7 +125,7 @@ class sdWakeManagerLocal {
 	int numWakes;
 	int ticket;
 	sdWake *wakes;
-	
+
 public:
 	sdWakeManagerLocal() : wakes(NULL), numWakes(0) {}
 	void Init( void );

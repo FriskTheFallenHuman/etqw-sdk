@@ -4,8 +4,8 @@
 #ifndef __GAME_VEHICLES_VEHICLEIK_H__
 #define __GAME_VEHICLES_VEHICLEIK_H__
 
-#include "../IK.h"
-#include "../script/ScriptEntityHelpers.h"
+#include "IK.h"
+#include "script/ScriptEntityHelpers.h"
 
 /*
 ===============================================================================
@@ -49,7 +49,7 @@ public:
 
 	virtual bool			Init( idEntity *self, const char *anim, const idVec3 &modelOffset );
 	virtual bool			Evaluate( void );
-	virtual void			ClearJointMods( void );	
+	virtual void			ClearJointMods( void );
 
 	float					FindSmallest( float size1, float min2, float max2, float& sizeMin2, float& sizeMax2 );
 	float					FindSmallest( float min1, float max1, float min2, float max2, float& sizeMin1, float& sizeMax1, float& sizeMin2, float& sizeMax2 );

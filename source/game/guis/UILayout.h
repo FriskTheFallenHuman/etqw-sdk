@@ -42,11 +42,11 @@ public:
 	virtual void							MakeLayoutDirty();
 	virtual sdUIObject*						UpdateToolTip( const idVec2& point );
 
-	virtual const char*						GetScopeClassName() const { return "sdUILayout_Static"; }	
+	virtual const char*						GetScopeClassName() const { return "sdUILayout_Static"; }
 
 protected:
-	void									OnRectChanged( const idVec4& oldValue, const idVec4& newValue );	
-	virtual void							DoApplyLayout() {}	
+	void									OnRectChanged( const idVec4& oldValue, const idVec4& newValue );
+	virtual void							DoApplyLayout() {}
 
 protected:
 	SD_UI_PROPERTY_TAG(
@@ -54,7 +54,7 @@ protected:
 	desc				= "Window's rectangle";
 	editor				= "edit";
 	option1				= "{editorComponents} {x,y,w,h}";
-	option2				= "{editorSeparator} {,}";	
+	option2				= "{editorSeparator} {,}";
 	datatype			= "vec4";
 	)
 	sdVec4Property							rect;
@@ -65,7 +65,7 @@ protected:
 	desc				= "Window's absolute rectangle.";
 	editor				= "edit";
 	option1				= "{editorComponents} {x,y,w,h}";
-	option2				= "{editorSeparator} {,}";	
+	option2				= "{editorSeparator} {,}";
 	datatype			= "vec4";
 	readOnly			= "true";
 	)
@@ -106,7 +106,7 @@ public:
 											sdUILayout_StaticBase();
 	virtual									~sdUILayout_StaticBase();
 
-	virtual void							OnCreate();	
+	virtual void							OnCreate();
 	virtual void							Draw();
 	virtual void							FinalDraw();
 	virtual bool							PostEvent( const sdSysEvent* event );
@@ -126,7 +126,7 @@ protected:
 
 private:
 	void									OnMarginsChanged( const idVec4& oldValue, const idVec4& newValue );
-	void									OnSpacingChanged( const idVec2& oldValue, const idVec2& newValue );	
+	void									OnSpacingChanged( const idVec2& oldValue, const idVec2& newValue );
 
 protected:
 	SD_UI_PROPERTY_TAG(
@@ -134,7 +134,7 @@ protected:
 	desc				= "Layout should keep a margin.";
 	editor				= "edit";
 	option1				= "{editorComponents} {l,t,r,b}";
-	option2				= "{editorSeparator} {,}";	
+	option2				= "{editorSeparator} {,}";
 	datatype			= "vec4";
 	)
 	sdVec4Property							margins;
@@ -145,7 +145,7 @@ protected:
 	desc				= "Spacing between child windows. Use x for the horizontal layout and y for the vertical layout.";
 	editor				= "edit";
 	option1				= "{editorComponents} {h,v}";
-	option2				= "{editorSeparator} {,}";	
+	option2				= "{editorSeparator} {,}";
 	datatype			= "vec2"
 	)
 	sdVec2Property							spacing;

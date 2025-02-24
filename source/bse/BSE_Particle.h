@@ -40,7 +40,7 @@ enum
 	PTYPE_COUNT
 };
 
-// Defined classes 
+// Defined classes
 class rvParticle;
 class rvSpriteParticle;
 class rvLineParticle;
@@ -102,7 +102,7 @@ public:
 
 				void			SetFlag( bool on, int flag ) { on ? mFlags |= flag : mFlags &= ~flag; }
 				bool			GetFlag( int flag ) const { return ( mFlags & flag ) != 0 ; }
-				
+
 				int			GetStationary( void ) const { return( ( mFlags & PTFLAG_STATIONARY ) ); }
 				int			GetLocked( void ) const { return( ( mFlags & PTFLAG_LOCKED ) ); }
 				int			GetHasOffset( void ) const { return( ( mFlags & PTFLAG_HAS_OFFSET ) ); }
@@ -117,12 +117,12 @@ public:
 				void			SetHasOffset( bool hasOffset ) { SetFlag( hasOffset, PTFLAG_HAS_OFFSET ); }
 
 				void			SetNext( rvParticle *next ) { mNext = next; }
-				rvParticle		*GetNext( void ) const { return( mNext ); }	
+				rvParticle		*GetNext( void ) const { return( mNext ); }
 
 	ID_INLINE   float			GetDuration( void ) const { return( mEndTime - mStartTime ); }
-				void			ExtendLife( float time ) { mEndTime = time; }	
+				void			ExtendLife( float time ) { mEndTime = time; }
 				bool			Expired( float time ) const { return( time >= mEndTime - BSE_TIME_EPSILON ); }
-	
+
 				void			CalcImpactPoint( idVec3 &endPos, const idVec3 &origin, const idVec3 &motion, const idBounds &bounds, const idVec3 &normal );
 				void			SetOriginUsingEndOrigin( rvBSE *effect, rvParticleTemplate *pt, idVec3 *normal, idVec3 *centre );
 				void			HandleEndOrigin( rvBSE *effect, rvParticleTemplate *pt, idVec3 *normal = NULL, idVec3 *centre = NULL );
@@ -157,11 +157,11 @@ public:
 									offset->Evaluate( mOffsetEnv, time, oneOverDuration, dest.ToFloatPtr() );
 								}
 
-	
+
 	virtual		void			EvaluateSize( rvEnvParms *size, const float time, float oneOverDuration, float *dest ) { assert( 0 ); }
 	virtual		void			EvaluateRotation( rvEnvParms *rotation, const float time, float oneOverDuration, float *dest ) { assert( 0 ); }
 	virtual		void			EvaluateLength( rvEnvParms *length, const float time, float oneOverDuration, idVec3 &dest ) { assert( 0 ); }
-	
+
 
 				void			InitTintEnv( rvEnvParms &env, float duration ) { mTintEnv.Init( env, duration ); }
 				void			InitFadeEnv( rvEnvParms &env, float duration ) { mFadeEnv.Init( env, duration ); }
@@ -597,7 +597,7 @@ struct rvTrailInfo {
 };
 
 struct rvElectricityInfo {
-	int						mNumForks;								// Number of forks for 
+	int						mNumForks;								// Number of forks for
 	byte					mStatic;
 	byte					mPad;
 	idVec3					mForkSizeMins;
@@ -757,7 +757,7 @@ private:
 
 			short					mVertexCount;
 			short					mIndexCount;
-			
+
 			byte					mTrailRepeat;
 			byte					mNumSizeParms;
 			byte					mNumRotateParms;

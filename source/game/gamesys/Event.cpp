@@ -7,7 +7,7 @@ Event are used for scheduling tasks and for linking script commands.
 
 */
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -16,7 +16,7 @@ Event are used for scheduling tasks and for linking script commands.
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../script/Script_Program.h" // Gordon: needed for MAX_STRING_LEN, we should move that to events.h really
+#include "script/Script_Program.h" // Gordon: needed for MAX_STRING_LEN, we should move that to events.h really
 
 //#define CREATE_EVENT_CODE
 
@@ -447,7 +447,7 @@ idEvent *idEvent::Alloc( const idEventDef *evdef, int numargs, va_list args, boo
 
 	format = evdef->GetArgFormat();
 	for( i = 0; i < numargs; i++ ) {
-		arg = va_arg( args, idEventArg* );		
+		arg = va_arg( args, idEventArg* );
 		if ( !ArgsMatch( format[ i ], arg ) ) {
 			gameLocal.Error( "idEvent::Alloc : Wrong type passed in for arg # %d on '%s' event.", i, evdef->GetName() );
 		}
@@ -508,7 +508,7 @@ void idEvent::CopyArgs( const idEventDef *evdef, int numargs, va_list args, UINT
 	}
 
 	for( i = 0; i < numargs; i++ ) {
-		arg = va_arg( args, idEventArg * );		
+		arg = va_arg( args, idEventArg * );
 		if ( !ArgsMatch( format[ i ], arg ) ) {
 			gameLocal.Error( "idEvent::CopyArgs : Wrong type passed in for arg # %d on '%s' event.", i, evdef->GetName() );
 		}
@@ -600,7 +600,7 @@ void idEvent::CancelEvents( const idClass* obj, const idEventDef* evdef ) {
 				ev->Free();
 			}
 		}
-	} else {		
+	} else {
 		while ( idEvent* ev = obj->scheduledEvents.Next() ) {
 			ev->Free();
 		}
@@ -624,8 +624,8 @@ void idEvent::ClearEventList( void ) {
 	frameEventQueue[ 0 ].Clear();
 	frameEventQueue[ 1 ].Clear();
 	eventsToRun.SetNum( 0, false );
-   
-	// 
+
+	//
 	// add the events to the free list
 	//
 	for( i = 0; i < MAX_EVENTS; i++ ) {
@@ -720,7 +720,7 @@ void idEvent::ServiceEvents( void ) {
 	}
 
 	int now;
-	
+
 	now = gameLocal.time;
 	for ( idEvent* evt = eventQueue.Next(); evt != NULL; evt = evt->eventNode.Next() ) {
 		if ( evt->time > now ) {
@@ -797,7 +797,7 @@ void idEvent::Shutdown( void ) {
 	}
 
 	ClearEventList();
-	
+
 	eventDataAllocator.Shutdown();
 
 	// say it is now shutdown
@@ -833,7 +833,7 @@ void CreateEventCallbackHandler( void ) {
 				argString[ k ] = j & ( 1 << k ) ? 'f' : 'i';
 			}
 			argString[ i ] = '\0';
-			
+
 			string1.Empty();
 			string2.Empty();
 

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,12 +11,12 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "FireTeams.h"
-#include "../Player.h"
-#include "../botai/Bot.h"
-#include "../rules/GameRules.h"
-#include "../rules/VoteManager.h"
+#include "Player.h"
+#include "botai/Bot.h"
+#include "rules/GameRules.h"
+#include "rules/VoteManager.h"
 
-#include "../../idlib/PropertiesImpl.h"
+#include "idlib/PropertiesImpl.h"
 
 /*
 ===============================================================================
@@ -315,7 +315,7 @@ void sdFireTeamSystemCommand_Propose::CommandCompletion( const idCmdArgs& args, 
 
 	for ( int i = 0; i < fireTeam->GetNumMembers(); i++ ) {
 		idPlayer* player = fireTeam->GetMember( i );
-		
+
 		if ( player == NULL ) {
 			continue;
 		}
@@ -402,7 +402,7 @@ void sdFireTeamSystemCommand_Kick::CommandCompletion( const idCmdArgs& args, arg
 
 	for ( int i = 0; i < fireTeam->GetNumMembers(); i++ ) {
 		idPlayer* player = fireTeam->GetMember( i );
-		
+
 		if ( player == NULL || player == localPlayer ) {
 			continue;
 		}
@@ -507,7 +507,7 @@ void sdFireTeamSystemCommand_Promote::CommandCompletion( const idCmdArgs& args, 
 
 	for ( int i = 0; i < fireTeam->GetNumMembers(); i++ ) {
 		idPlayer* player = fireTeam->GetMember( i );
-		
+
 		if ( player == NULL || player == localPlayer ) {
 			continue;
 		}
@@ -1154,7 +1154,7 @@ public:
 private:
 	sdFireTeam*				_fireTeam;
 	idEntityPtr< idPlayer >	_player;
-	idEntityPtr< idPlayer >	_leader;	
+	idEntityPtr< idPlayer >	_leader;
 };
 
 /*
@@ -1168,7 +1168,7 @@ void sdFireTeam::Propose( idPlayer* other, idPlayer* member ) {
 
 	idPlayer* leader = GetCommander();
 	assert( leader );
-	
+
 	if ( leader == member ) {
 		Invite( other );
 		return;
@@ -1208,7 +1208,7 @@ void sdFireTeam::Propose( idPlayer* other, idPlayer* member ) {
 
 class sdFireTeam_RequestFinaliser : public sdVoteFinalizer {
 public:
-	sdFireTeam_RequestFinaliser( idPlayer* player, sdFireTeam* fireTeam, idPlayer* leader ) : 
+	sdFireTeam_RequestFinaliser( idPlayer* player, sdFireTeam* fireTeam, idPlayer* leader ) :
 									_player( player ), _fireTeam( fireTeam ), _leader( leader ) {
 	}
 
@@ -1262,7 +1262,7 @@ void sdFireTeam::Request( idPlayer* other ) {
 
 	idPlayer* leader = gameLocal.GetClient( _members[ 0 ] );
 	assert( leader );
-	
+
 	sdFireTeam* otherFireTeam = gameLocal.rules->GetPlayerFireTeam( other->entityNumber );
 	if ( otherFireTeam ) {
 		// TODO: PRINT

@@ -64,7 +64,7 @@ public:
 sdTextLine
 ============
 */
-class sdTextLine : public sdPoolAllocator< sdTextLine, sdPoolAllocator_DefaultIdentifier, 32 > {	
+class sdTextLine : public sdPoolAllocator< sdTextLine, sdPoolAllocator_DefaultIdentifier, 32 > {
 public:
 	typedef idLinkList< sdTextLine > node_t;
 					sdTextLine( int start = 0, int end = 0, int cursor = -1 );
@@ -191,7 +191,7 @@ ID_INLINE sdTextLine* sdTextLine::MoveCursorUp() {
 	int cursorOffset = Min( prev->GetLength(), GetCursor() );
 	prev->SetCursorOnLine( cursorOffset );
 
-	return prev;	
+	return prev;
 }
 
 /*
@@ -404,7 +404,7 @@ private:
 
 	// cursor
 	idVec2			cursorDrawPosition;
-	
+
 	int				cursorDrawTime;
 	bool			drawCursor;
 
@@ -432,7 +432,7 @@ private:
 	sdTextDimensionHelper				tdh;
 
 	idListGranularityOne< int >			lineBreaks;
-	
+
 	sdTextLine::node_t					lines;
 
 	idLinkList< sdUIEditEvent >			eventQueue;
@@ -534,7 +534,7 @@ bool sdUIEditHelper< UIEditClass, StrClass, CharType >::PostEvent( bool retVal, 
 			case M_MOUSE12:
 				retVal = true;
 				break;
-			case M_MWHEELUP: 
+			case M_MWHEELUP:
 				if ( parent->TestFlag( UIEditClass::EF_MULTILINE ) ) {
 					retVal = true;
 				}
@@ -542,13 +542,13 @@ bool sdUIEditHelper< UIEditClass, StrClass, CharType >::PostEvent( bool retVal, 
 					retVal = true;
 				}
 				break;
-			case M_MWHEELDOWN: 
+			case M_MWHEELDOWN:
 				if ( parent->TestFlag( UIEditClass::EF_MULTILINE ) ) {
 					retVal = true;
 				}
 				if ( parent->TestFlag( sdUIWindow::WF_CAPTURE_KEYS ) ) {
 					retVal = true;
-				}					
+				}
 				break;
 		}
 	} else if ( event->IsKeyEvent() && parent->GetUI()->IsFocused( parent ) ) {
@@ -875,7 +875,7 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::ProcessEvent( const sdUI
 			if ( !SelectionActive() ) {
 				// the cursor is at the very end
 				if( index >= parent->editText.GetValue().Length() ) {
-					StrClass temp = parent->editText.GetValue().Mid( 0, parent->editText.GetValue().Length() - 1 );							
+					StrClass temp = parent->editText.GetValue().Mid( 0, parent->editText.GetValue().Length() - 1 );
 					parent->editText = temp;
 				} else {
 					cursorMove += Max( 0, index - 1 ) - index;
@@ -940,7 +940,7 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::ProcessEvent( const sdUI
 					clipboardText.Fill( L'*', selectionText.Length() );
 				} else {
 					clipboardText = sdClipboardConverter< StrClass >::ToClipboard( selectionText );
-				}					
+				}
 
 				sys->SetClipboardData( clipboardText.c_str() );
 			}
@@ -1060,12 +1060,12 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::DrawLocal() {
 	sdBounds2D rect = parent->GetDrawRect();
 	rect.GetMins() += parent->scrollAmount;
 
-	int textLength = localText.Length();	
+	int textLength = localText.Length();
 
 	int now = parent->GetUI()->GetCurrentTime();
 
 	// Draw cursor
-	if ( parent->GetUI()->IsFocused( parent ) ) {		
+	if ( parent->GetUI()->IsFocused( parent ) ) {
 		if( now > cursorDrawTime ) {
 			drawCursor = !drawCursor;
 			cursorDrawTime = now + CURSOR_FLASH_TIME;
@@ -1079,7 +1079,7 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::DrawLocal() {
 			// highlight whole cursor text if present
 			const wchar_t* cursorText = parent->GetCursorText();
 			if ( *cursorText != L'\0' ) {
-				int currentCursor = currentLine->GetStringIndexForCursor() + cursorMove;	
+				int currentCursor = currentLine->GetStringIndexForCursor() + cursorMove;
 
 				w = tdh.GetWidth( currentCursor, currentCursor );
 
@@ -1088,7 +1088,7 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::DrawLocal() {
 				deviceContext->DrawClippedRect( x, y, w, h, color );
 				deviceContext->DrawClippedBox( x, y, w, h, 1.0f, parent->foreColor );
 			} else {
-				parent->DrawMaterial( parent->cursor.mi, x, y, w, h, parent->foreColor );	
+				parent->DrawMaterial( parent->cursor.mi, x, y, w, h, parent->foreColor );
 			}
 		}
 	}
@@ -1108,7 +1108,7 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::DrawLocal() {
 
 		int i = 0;
 		sdBounds2D offsetRect;
-		while( line != NULL ) {		
+		while( line != NULL ) {
 			int begin	= Max( selectionStart, line->GetStart() );
 			int end		= Min( selectionEnd - 1, line->GetEnd() );
 
@@ -1143,7 +1143,7 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::DrawText( const idVec4& 
 		sdTextLine* line = lines.Next();
 		int i = 0;
 		sdBounds2D offsetRect;
-		while( line != NULL ) {		
+		while( line != NULL ) {
 			int len = line->GetLength();
 			if( len > 0 ) {
 				builder = L"";
@@ -1231,11 +1231,11 @@ template < class UIEditClass, class StrClass, typename CharType >
 void sdUIEditHelper< UIEditClass, StrClass, CharType >::MoveLeft() {
 
 	int cursorMove = -1;
-	// move to the previous word	
+	// move to the previous word
 	const CharType* buffer = parent->editText.GetValue().c_str();
 	int len = StrClass::Length( buffer );
 
-	if ( keyInputManager->IsDown( K_CTRL ) || keyInputManager->IsDown( K_RIGHT_CTRL ) ) {						
+	if ( keyInputManager->IsDown( K_CTRL ) || keyInputManager->IsDown( K_RIGHT_CTRL ) ) {
 		if( UIEditClass::CharIsPrintable( buffer[ currentLine->GetStringIndexForCursor() + cursorMove - 1 ] ) ) {
 			while ( ( ( currentLine->GetStringIndexForCursor() + cursorMove ) > 0 ) && UIEditClass::CharIsPrintable( buffer[ currentLine->GetStringIndexForCursor() + cursorMove - 1 ] ) ) {
 				cursorMove--;
@@ -1252,7 +1252,7 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::MoveLeft() {
 			}
 		}
 
-		
+
 	}
 
 	currentLine = currentLine->AdvanceCursor( cursorMove );
@@ -1308,9 +1308,9 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::GetVisibleLines( sdTextL
 	firstVisible = lastVisible = NULL;
 
 	sdBounds2D rect = parent->GetDrawRect();
-	
+
 	firstVisible = lines.Prev();
-	
+
 	int index = lines.Num();
 	while( firstVisible != NULL ) {
 		if( ( index * tdh.GetLineHeight() ) + parent->scrollAmount.GetValue().y <= 0.0f ) {
@@ -1354,7 +1354,7 @@ sdTextLine* sdUIEditHelper< UIEditClass, StrClass, CharType >::GetLineForPositio
 	sdTextLine* line = lines.Next();
 
 	while( line != NULL ) {
-		float rowBase = rect.GetMins().y + index * rowHeight;	
+		float rowBase = rect.GetMins().y + index * rowHeight;
 		if( rowBase < pos.y && pos.y < rowBase + rowHeight ) {
 			return line;
 		}
@@ -1372,7 +1372,7 @@ sdUIEditHelper::CursorChanged
 template < class UIEditClass, class StrClass, typename CharType >
 void sdUIEditHelper< UIEditClass, StrClass, CharType >::CursorChanged( bool adjustVScroll ) {
 	int textLength = localText.Length();
-	
+
 	idVec2 newCursorPos;
 	idVec2 tdhOffset;
 
@@ -1418,8 +1418,8 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::CursorChanged( bool adju
 		if( line == currentLine ) {
 			tdhOffset.x = tdh.GetWidth( line->GetStart(), currentLine->GetStringIndexForCursor() - 1 );
 			break;
-		}		
-		tdhOffset.y += tdh.GetLineHeight();		
+		}
+		tdhOffset.y += tdh.GetLineHeight();
 		line = line->GetNode().Next();
 	}
 
@@ -1433,7 +1433,7 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::CursorChanged( bool adju
 	}
 	drawCursor = true;
 
-	idVec2 offset = parent->scrollAmount;	
+	idVec2 offset = parent->scrollAmount;
 	if( newCursorPos.x >= drawRect.GetMaxs().x ) {
 		// moved past the right end
 		if( ( newCursorPos.x + offset.x ) >= cursorDrawPosition.x ) {
@@ -1443,7 +1443,7 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::CursorChanged( bool adju
 		// moving past the left side
 		offset.x = ( newCursorPos.x + offset.x ) - drawRect.GetMins().x;
 	}
-	
+
 	if( parent->TestFlag( UIEditClass::EF_MULTILINE ) ) {
 		if( adjustVScroll ) {
 			if( newCursorPos.y + offset.y + parent->cursor.height > rect.GetMaxs().y ) {
@@ -1473,7 +1473,7 @@ template < class UIEditClass, class StrClass, typename CharType >
 void sdUIEditHelper< UIEditClass, StrClass, CharType >::TextChanged() {
 	textDirty = false;
 
-	int currentCursor = currentLine->GetStringIndexForCursor() + cursorMove;	
+	int currentCursor = currentLine->GetStringIndexForCursor() + cursorMove;
 
 	localText = sdClipboardConverter< StrClass >::ToClipboard( parent->editText.GetValue() );
 
@@ -1488,14 +1488,14 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::TextChanged() {
 	int textLength = localText.Length();
 
 	if ( parent->password != 0.0f ) {
-		localText.Fill( L'*', textLength ); 
+		localText.Fill( L'*', textLength );
 	}
 
 	ClearLines();
 
 	sdBounds2D rect = parent->GetDrawRect();
 
-	parent->ActivateFont( false );	
+	parent->ActivateFont( false );
 
 	tdh.Init( localText.c_str(), textLength, rect, parent->GetDrawTextFlags(), parent->cachedFontHandle, parent->fontSize, &lineBreaks );
 
@@ -1542,7 +1542,7 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::TextChanged() {
 }
 
 template < class UIEditClass, class StrClass, typename CharType >
-bool sdUIEditHelper< UIEditClass, StrClass, CharType >::CaptureChar( const CharType ch  ) {	
+bool sdUIEditHelper< UIEditClass, StrClass, CharType >::CaptureChar( const CharType ch  ) {
 	bool isNewline = ch == '\n';
 	if ( isNewline && !parent->TestFlag( UIEditClass::EF_MULTILINE ) ) {
 		return false;
@@ -1585,7 +1585,7 @@ bool sdUIEditHelper< UIEditClass, StrClass, CharType >::CaptureChar( const CharT
 }
 
 template < class UIEditClass, class StrClass, typename CharType >
-void sdUIEditHelper< UIEditClass, StrClass, CharType >::InsertChar( CharType ch, int& cursorMove ) {	
+void sdUIEditHelper< UIEditClass, StrClass, CharType >::InsertChar( CharType ch, int& cursorMove ) {
 	bool isNewline = ch == '\n';
 	if ( isNewline && !parent->TestFlag( UIEditClass::EF_MULTILINE ) ) {
 		return;
@@ -1646,7 +1646,7 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::InsertChar( CharType ch,
 				ch = sdCaseConverter< CharType >::ToUpper( ch );
 			}
 
-			StrClass temp = parent->editText;				
+			StrClass temp = parent->editText;
 			temp.Insert( static_cast< CharType >( ch ), selEnd - numErased );
 			parent->editText = temp;
 			CancelSelection();	// collapse the selection after the replacement
@@ -1738,7 +1738,7 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::SurroundSelection( const
 		selEnd = temp.Length();
 	}
 	temp.Insert( suffix, selEnd );
-	temp.Insert( prefix, selStart );	
+	temp.Insert( prefix, selStart );
 
 	if ( parent->maxTextLength == 0.0f || temp.LengthWithoutColors() <= parent->maxTextLength ) {
 		if ( parent->TestFlag( UIEditClass::EF_UPPERCASE ) ) {
@@ -1748,7 +1748,7 @@ void sdUIEditHelper< UIEditClass, StrClass, CharType >::SurroundSelection( const
 		}
 		SaveUndo();
 		parent->editText = temp;
-		
+
 		int len = StrClass::Length( prefix );
 		cursorMove += len;
 
@@ -1781,7 +1781,7 @@ int sdUIEditHelper< UIEditClass, StrClass, CharType >::GetCurrentLineIndex() con
 	int index = 0;
 	while( line != currentLine ) {
 		index++;
-		line = line->GetNode().Next();		
+		line = line->GetNode().Next();
 	}
 	return index;
 }

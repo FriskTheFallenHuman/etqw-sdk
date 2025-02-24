@@ -4,7 +4,7 @@
 #ifndef __GAME_VEHICLES_WALKER_H__
 #define __GAME_VEHICLES_WALKER_H__
 
-#include "../physics/Physics_Monster.h"
+#include "physics/Physics_Monster.h"
 #include "Transport.h"
 #include "VehicleIK.h"
 
@@ -27,7 +27,7 @@ public:
 	virtual void	DoLoadVehicleScript( void );
 
 	virtual void	DisableClip( bool activateContacting = true );
-	virtual void	EnableClip( void );	
+	virtual void	EnableClip( void );
 	virtual bool	UpdateAnimationControllers( void );
 
 	virtual void	OnUpdateVisuals( void );

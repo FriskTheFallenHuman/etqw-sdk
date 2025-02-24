@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -13,10 +13,10 @@ static char THIS_FILE[] = __FILE__;
 #include "UserInterfaceManager.h"
 #include "UIWindow.h"
 #include "UserInterfaceLocal.h"
-#include "../../decllib/declTypeHolder.h"
-#include "../../renderer/Image.h"
+#include "decllib/declTypeHolder.h"
+#include "renderer/Image.h"
 
-#include "../../sys/sys_local.h"
+#include "sys/sys_local.h"
 
 const char sdUITemplateFunctionInstance_IdentifierWindow[] = "sdUIWindowFunction";
 
@@ -89,32 +89,32 @@ sdUIWindow::sdUIWindow( void ) {
 	scriptState.				GetProperties().RegisterProperty( "textAlignment",			textAlignment );
 	scriptState.				GetProperties().RegisterProperty( "material",				materialName );
 	scriptState.				GetProperties().RegisterProperty( "borderWidth",			borderWidth );
-	
-	scriptState.				GetProperties().RegisterProperty( "font",					fontName );	
+
+	scriptState.				GetProperties().RegisterProperty( "font",					fontName );
 	scriptState.				GetProperties().RegisterProperty( "materialScale",			materialScale );
 	scriptState.				GetProperties().RegisterProperty( "allowEvents",			allowEvents );
-	scriptState.				GetProperties().RegisterProperty( "allowChildEvents",		allowChildEvents );	
+	scriptState.				GetProperties().RegisterProperty( "allowChildEvents",		allowChildEvents );
 	scriptState.				GetProperties().RegisterProperty( "materialShift",			materialShift );
 
 	scriptState.				GetProperties().RegisterProperty( "rotation",				rotation );
 	scriptState.				GetProperties().RegisterProperty( "toolTipText",			toolTipText );
 
-	scriptState.				GetProperties().RegisterProperty( "absoluteRect",			absoluteRect );	
-	
+	scriptState.				GetProperties().RegisterProperty( "absoluteRect",			absoluteRect );
+
 	// make sure this is looked up when we first set it up
-	UI_ADD_STR_CALLBACK( materialName,		sdUIWindow, OnMaterialChanged )	
+	UI_ADD_STR_CALLBACK( materialName,		sdUIWindow, OnMaterialChanged )
 	UI_ADD_STR_CALLBACK( fontName,			sdUIWindow, OnFontChanged )
 
-	backColor					= idVec4( 0.0f, 0.0f, 0.0f, 0.0f );	// transparent background	
+	backColor					= idVec4( 0.0f, 0.0f, 0.0f, 0.0f );	// transparent background
 	clientRect					= idVec4( 0.f, 0.f, SCREEN_WIDTH, SCREEN_HEIGHT );
 	cachedClientRect			= clientRect;
 	absoluteRect				= cachedClientRect;
-	foreColor					= colorWhite;	
+	foreColor					= colorWhite;
 	colorMultiplier				= colorWhite;
 
 	flags						= 0.0f;
-	
-	visible						= 1.0f;	
+
+	visible						= 1.0f;
 
 	localizedText				= -1;
 	textAlignment				= idVec2( TA_CENTER, TA_VCENTER );
@@ -122,7 +122,7 @@ sdUIWindow::sdUIWindow( void ) {
 	textOffset					= vec2_zero;
 
 	borderWidth					= 0.0f;
-	borderColor					= colorWhite;	
+	borderColor					= colorWhite;
 
 	fontName					= "dinpro";
 
@@ -132,11 +132,11 @@ sdUIWindow::sdUIWindow( void ) {
 	windowState.breakOnDraw		= false;
 	windowState.breakOnLayout	= false;
 #endif
-	
+
 	materialScale				= vec2_one;
 
 	allowEvents					= 1.0f;
-	allowChildEvents			= 1.0f;	
+	allowChildEvents			= 1.0f;
 
 	cachedFontHandle			= -1;
 
@@ -152,10 +152,10 @@ sdUIWindow::sdUIWindow( void ) {
 
 	// hook these up last to avoid inappropriate callbacks while we're not completely setup
 	UI_ADD_FLOAT_CALLBACK( visible,			sdUIWindow, OnVisibleChanged );
-	UI_ADD_FLOAT_CALLBACK( flags,			sdUIWindow, OnFlagsChanged )	
+	UI_ADD_FLOAT_CALLBACK( flags,			sdUIWindow, OnFlagsChanged )
 	UI_ADD_VEC2_CALLBACK( textAlignment,	sdUIWindow, OnAlignmentChanged )
 	UI_ADD_VEC2_CALLBACK( textOffset,		sdUIWindow, OnTextOffsetChanged )
-	UI_ADD_FLOAT_CALLBACK( fontSize,		sdUIWindow, OnFontSizeChanged )	
+	UI_ADD_FLOAT_CALLBACK( fontSize,		sdUIWindow, OnFontSizeChanged )
 	UI_ADD_WSTR_CALLBACK( text,				sdUIWindow, OnTextChanged )
 	UI_ADD_INT_CALLBACK( localizedText,		sdUIWindow, OnLocalizedTextChanged )
 	UI_ADD_VEC4_CALLBACK( clientRect,		sdUIWindow, OnClientRectChanged )
@@ -216,7 +216,7 @@ void sdUIWindow::Draw() {
 
 	if( TestFlag( WF_INHERIT_PARENT_COLORS ) ) {
 		const idVec4& parent = GetUI()->TopColor();
-		idVec4 c(	colorMultiplier.GetValue().x * parent.x, 
+		idVec4 c(	colorMultiplier.GetValue().x * parent.x,
 					colorMultiplier.GetValue().y * parent.y,
 					colorMultiplier.GetValue().z * parent.z,
 					colorMultiplier.GetValue().w * parent.w );
@@ -224,13 +224,13 @@ void sdUIWindow::Draw() {
 	} else {
 		GetUI()->PushColor( colorMultiplier );
 	}
-	
+
 
 	// pre-render callback
 	if( renderCallback[ UIRC_PRE ] ) {
 		renderCallback[ UIRC_PRE ]( GetUI(), cachedClientRect.x, cachedClientRect.y, cachedClientRect.z, cachedClientRect.w );
 	}
-	
+
 	DrawLocal();
 
 	sdUIObject* child = GetNode().GetChild();
@@ -243,12 +243,12 @@ void sdUIWindow::Draw() {
 
 	if( postDrawChildHandle.IsValid() ) {
 		RunEventHandle( postDrawChildHandle );
-	}	
+	}
 
 	// post-render callback
 	if( renderCallback[ UIRC_POST ] ) {
 		renderCallback[ UIRC_POST ]( GetUI(), cachedClientRect.x, cachedClientRect.y, cachedClientRect.z, cachedClientRect.w );
-	}	
+	}
 
 	GetUI()->PopColor();
 
@@ -291,7 +291,7 @@ sdUIWindow::GetDrawTextFlags
 */
 unsigned int sdUIWindow::GetDrawTextFlags() const {
 	unsigned int flags = 0;
-	
+
 	if ( TestFlag( WF_WRAP_TEXT ) ) {
 		flags |= DTF_WORDWRAP;
 	} else if ( !TestFlag( WF_MULTILINE_TEXT ) ) {
@@ -353,7 +353,7 @@ void sdUIWindow::DrawText( const wchar_t* text, const idVec4& color, const int p
 
 	sdWStringBuilder_Heap  builder;
 	const wchar_t* drawText = text;
-	if( ( flags & DTF_TRUNCATE ) && ( flags & DTF_SINGLELINE ) ) {		
+	if( ( flags & DTF_TRUNCATE ) && ( flags & DTF_SINGLELINE ) ) {
 
 		const wchar_t* truncationText = L"...";
 		int truncationWidth;
@@ -391,7 +391,7 @@ void sdUIWindow::DrawLocal() {
 		DrawBackground( cachedClientRect );
 
 		DrawText();
-		
+
 		// border
 		if ( borderWidth > 0.0f ) {
 			deviceContext->DrawClippedBox( cachedClientRect.x, cachedClientRect.y, cachedClientRect.z, cachedClientRect.w, borderWidth, borderColor );
@@ -406,7 +406,7 @@ void sdUIWindow::DrawLocal() {
 sdUIWindow::DrawBackground
 ============
 */
-void sdUIWindow::DrawBackground( const idVec4& rect ) {	
+void sdUIWindow::DrawBackground( const idVec4& rect ) {
 	if( backColor.GetValue().w <= idMath::FLT_EPSILON && borderColor.GetValue().w <= idMath::FLT_EPSILON ) {
 		return;
 	}
@@ -416,17 +416,17 @@ void sdUIWindow::DrawBackground( const idVec4& rect ) {
 	if( !GetUI()->IsValidMaterial( iter ) ) {
 		iter = GetUI()->SetCachedMaterial( va( "%p_mat", this ), "::guis/assets/white", handle );
 	}
-	
+
 	uiCachedMaterial_t& cached = *iter->second;
 	if ( cached.drawMode != BDM_USE_ST ) {
 		deviceContext->DrawMaterial( rect, cached.material.material, backColor, materialScale, materialShift, rotation );
 	}
-	
+
 	switch( cached.drawMode ) {
 		case BDM_USE_ST:
 			DrawMaterial( cached.material, rect.x, rect.y, rect.z, rect.w, backColor );
 			break;
-		case BDM_SINGLE_MATERIAL:			
+		case BDM_SINGLE_MATERIAL:
 			break;
 		case BDM_FRAME:
 		case BDM_TRI_PART_H:	// FALL THROUGH
@@ -499,7 +499,7 @@ void sdUIWindow::DrawHorizontalProgress( const idVec4& rect, const idVec4& color
 
 	DrawMaterial( left.mi, rect.x, rect.y, left.width * scale.x, rect.w * scale.y, color );
 	DrawMaterial( center.mi, rect.x + left.width * scale.x, rect.y, centerWidth, rect.w * scale.y, color );
-	DrawMaterial( right.mi, rect.x + left.width * scale.x + centerWidth, rect.y, right.width * scale.x, rect.w * scale.y, color );		
+	DrawMaterial( right.mi, rect.x + left.width * scale.x + centerWidth, rect.y, right.width * scale.x, rect.w * scale.y, color );
 }
 
 
@@ -533,7 +533,7 @@ void sdUIWindow::DrawFrame( const idVec4& rect, uiMaterialCache_t::Iterator& cac
 		const uiDrawPart_t& leftStretch		= parts[ FP_LEFT ];
 		const uiDrawPart_t& center			= parts[ FP_CENTER ];
 		const uiDrawPart_t& rightStretch	= parts[ FP_RIGHT ];
-		const uiDrawPart_t& right			= parts[ FP_TOPRIGHT ];		
+		const uiDrawPart_t& right			= parts[ FP_TOPRIGHT ];
 
 		DrawFiveHorizontalParts( rect, color, materialScale, left, leftStretch, center, rightStretch, right );
 		return;
@@ -552,7 +552,7 @@ void sdUIWindow::DrawFrame( const idVec4& rect, uiMaterialCache_t::Iterator& cac
 		const uiDrawPart_t& top		= parts[ FP_TOP ];
 		const uiDrawPart_t& bottom	= parts[ FP_BOTTOM ];
 		const uiDrawPart_t& center	= parts[ FP_CENTER ];
-		
+
 		DrawThreeVerticalParts( rect, color, materialScale, top, center, bottom );
 
 		return;
@@ -568,7 +568,7 @@ void sdUIWindow::DrawFrame( const idVec4& rect, uiMaterialCache_t::Iterator& cac
 	const uiDrawPart_t& bottomLeft	= parts[ FP_BOTTOMLEFT ];
 	const uiDrawPart_t& bottomRight	= parts[ FP_BOTTOMRIGHT ];
 	const uiDrawPart_t& bottom		= parts[ FP_BOTTOM ];
-	const uiDrawPart_t& center		= parts[ FP_CENTER ];	
+	const uiDrawPart_t& center		= parts[ FP_CENTER ];
 
 	float topWidth		= rect.z - ( topLeft.width + topRight.width ) * scale.x;
 	float bottomWidth	= rect.z - ( bottomLeft.width + bottomRight.width ) * scale.x;
@@ -649,7 +649,7 @@ void sdUIWindow::OnActivate( void ) {
 
 	if( timelines.Get() != NULL ) {
 		timelines->PushAllTimelines();
-	}	
+	}
 }
 
 
@@ -698,7 +698,7 @@ sdUIWindow::EnumerateEvents
 ================
 */
 void sdUIWindow::EnumerateEvents( const char* name, const idList<unsigned short>& flags, idList< sdUIEventInfo >& events, const idTokenCache& tokenCache ) {
-	
+
 	if( !idStr::Icmp( name, "onKeyUp" ) ) {
 		if( ParseKeys( name, flags, events, tokenCache, "onKeyUp", WE_KEYUP ) ) {
 			SetWindowFlag( WF_ALLOW_FOCUS );
@@ -732,13 +732,13 @@ void sdUIWindow::EnumerateEvents( const char* name, const idList<unsigned short>
 
 	if( !idStr::Icmp( name, "onCancel" ) ) {
 		events.Append( sdUIEventInfo( WE_CANCEL, 0 ));
-		SetWindowFlag( WF_ALLOW_FOCUS );	
+		SetWindowFlag( WF_ALLOW_FOCUS );
 		return;
 	}
 
 	if( !idStr::Icmp( name, "onAccept" ) ) {
 		events.Append( sdUIEventInfo( WE_ACCEPT, 0 ));
-		SetWindowFlag( WF_ALLOW_FOCUS );	
+		SetWindowFlag( WF_ALLOW_FOCUS );
 		return;
 	}
 
@@ -802,7 +802,7 @@ void sdUIWindow::EnumerateEvents( const char* name, const idList<unsigned short>
 	if( !idStr::Icmp( name, "onQueryToolTip" ) ) {
 		events.Append( sdUIEventInfo( WE_QUERY_TOOLTIP, 0 ));
 		return;
-	}	
+	}
 
 	sdUIObject::EnumerateEvents( name, flags, events, tokenCache );
 }
@@ -817,7 +817,7 @@ void sdUIWindow::LookupFont() {
 		if ( cachedFontHandle != -1 ) {
 			deviceContext->FreeFont( cachedFontHandle );
 		}
-		cachedFontHandle = deviceContext->FindFont( fontName.GetValue() );		
+		cachedFontHandle = deviceContext->FindFont( fontName.GetValue() );
 		windowState.lookupFont = false;
 	}
 }
@@ -894,13 +894,13 @@ void sdUIWindow::EndLayout() {
 
 	cachedClippedRect.FromRectangle( cachedClientRect );
 	windowState.fullyClipped = ClipBounds( cachedClippedRect );
-	
+
 	// always allow exit events to play
 	// enter events should only happen for visible items
 	bool contained = cachedClippedRect.ContainsPoint( ui->cursorPos ) || ui->TestGUIFlag( sdUserInterfaceLocal::GUI_NON_FOCUSED_MOUSE_EVENTS );
 	if( !contained && windowState.mouseFocused ) {
 		windowState.mouseFocused = false;
-		RunEvent( sdUIEventInfo( WE_MOUSEEXIT, 0 ) );			
+		RunEvent( sdUIEventInfo( WE_MOUSEEXIT, 0 ) );
 	} else if( contained && !windowState.mouseFocused && allowEvents && IsVisible() ) {
 		windowState.mouseFocused = true;
 		RunEvent( sdUIEventInfo( WE_MOUSEENTER, 0 ) );
@@ -912,11 +912,11 @@ void sdUIWindow::EndLayout() {
 sdUIWindow::ApplyLayout
 ============
 */
-void sdUIWindow::ApplyLayout() {	
+void sdUIWindow::ApplyLayout() {
 	if( windowState.recalculateLayout ) {
 		bool updateRect = false;
 		BeginLayout();
-		
+
 		float maxHeight = 0.0f;
 
 		if ( localizedText.GetValue() >= 0 || text.GetValue().Length() > 0 ) {
@@ -953,8 +953,8 @@ void sdUIWindow::ApplyLayout() {
 			}
 		}
 
-		cachedClientRect = clientRect;	
-		cachedClientRect.ToVec2() += CalcWorldOffset();	
+		cachedClientRect = clientRect;
+		cachedClientRect.ToVec2() += CalcWorldOffset();
 		EndLayout();
 	}
 	sdUIObject::ApplyLayout();
@@ -978,16 +978,16 @@ void sdUIWindow::Show_r( bool show ) {
 	if( show ) {
 		if( timelines.Get() != NULL ) {
 			timelines->ResetAllTimelines();
-		}		
+		}
 		RunEvent( sdUIEventInfo( WE_SHOW, 0 ) );
 
 		sdBounds2D bounds( cachedClientRect );
 		bool contained = bounds.ContainsPoint( ui->cursorPos ) || ui->TestGUIFlag( sdUserInterfaceLocal::GUI_NON_FOCUSED_MOUSE_EVENTS );
 		if( contained && ParentsAllowEventPosting() && !windowState.recalculateLayout ) {
 			windowState.mouseFocused = true;
-			RunEvent( sdUIEventInfo( WE_MOUSEENTER, 0 ) );			
+			RunEvent( sdUIEventInfo( WE_MOUSEENTER, 0 ) );
 		}
-	} else {		
+	} else {
 		if ( GetUI()->IsFocused( this ) ) {
 			GetUI()->SetFocus( NULL );
 		}
@@ -998,8 +998,8 @@ void sdUIWindow::Show_r( bool show ) {
 
 		if( windowState.mouseFocused && ParentsAllowEventPosting() ) {
 			windowState.mouseFocused = false;
-			RunEvent( sdUIEventInfo( WE_MOUSEEXIT, 0 ) );			
-		}		
+			RunEvent( sdUIEventInfo( WE_MOUSEEXIT, 0 ) );
+		}
 	}
 
 	// broadcast to all children
@@ -1105,7 +1105,7 @@ void sdUIWindow::OnFontChanged( const idStr& oldValue, const idStr& newValue ) {
 sdUIWindow::HandleFocus
 ============
 */
-bool sdUIWindow::HandleFocus( const sdSysEvent* event ) {	
+bool sdUIWindow::HandleFocus( const sdSysEvent* event ) {
 	if( !IsVisible() ) {
 		return false;
 	}
@@ -1192,7 +1192,7 @@ bool sdUIWindow::ClipBounds( sdBounds2D& bounds ) {
 sdUIWindow::PostEvent
 ============
 */
-bool sdUIWindow::PostEvent( const sdSysEvent* event ) {	
+bool sdUIWindow::PostEvent( const sdSysEvent* event ) {
 	if ( !IsVisible() ) {
 		return false;
 	}
@@ -1225,8 +1225,8 @@ bool sdUIWindow::PostEvent( const sdSysEvent* event ) {
 	bool contained = cachedClippedRect.ContainsPoint( ui->cursorPos ) || ui->TestGUIFlag( sdUserInterfaceLocal::GUI_NON_FOCUSED_MOUSE_EVENTS );
 	bool allowKeyEvents = GetUI()->IsFocused( this ) || TestFlag( WF_CAPTURE_KEYS ) || TestFlag( WF_CAPTURE_MOUSE );
 
-	if ( event->IsKeyEvent() || event->IsMouseButtonEvent() ) {	
-		if ( allowKeyEvents ) {			
+	if ( event->IsKeyEvent() || event->IsMouseButtonEvent() ) {
+		if ( allowKeyEvents ) {
 			bool isMouseClick = IsMouseClick( event );
 			if ( ( isMouseClick && ( contained || TestFlag( WF_CAPTURE_MOUSE ) ) ) || ( !isMouseClick ) ) {
 				eventID = event->IsKeyDown() ? WE_KEYDOWN : WE_KEYUP;
@@ -1257,14 +1257,14 @@ bool sdUIWindow::PostEvent( const sdSysEvent* event ) {
 					int keyId = key == NULL ? -1 : key->GetId();
 
 					retVal |= RunEvent( sdUIEventInfo( eventID, keyId ) );
-				}				
+				}
 			}
 		}
 	} else if ( event->IsMouseEvent() ) {
 
 		// check for mouse entering/exiting
 		if( ParentsAllowEventPosting() ) {
-			if ( contained ) {				
+			if ( contained ) {
 				if ( windowState.mouseFocused == false ) {
 					windowState.mouseFocused = true;
 					retVal |= RunEvent( sdUIEventInfo( WE_MOUSEENTER, 0 ) );
@@ -1288,10 +1288,10 @@ bool sdUIWindow::PostEvent( const sdSysEvent* event ) {
 	} else if( event->IsGuiEvent() ) {
 		if( ParentsAllowEventPosting() ) {
 			if( (	event->GetGuiAction() == ULI_MENU_EVENT_NAV_BACKWARD ||
-					event->GetGuiAction() == ULI_MENU_EVENT_NAV_FORWARD || 
+					event->GetGuiAction() == ULI_MENU_EVENT_NAV_FORWARD ||
 					event->GetGuiAction() == ULI_MENU_EVENT_ACCEPT ||
 					event->GetGuiAction() == ULI_MENU_EVENT_CANCEL ) && allowKeyEvents ) {
-				
+
 				if( event->GetGuiAction() == ULI_MENU_EVENT_NAV_BACKWARD ) {
 					eventID = WE_NAV_BACKWARD;
 				} else if( event->GetGuiAction() == ULI_MENU_EVENT_NAV_FORWARD ) {
@@ -1361,7 +1361,7 @@ bool sdUIWindow::HandleBoundKeyInput( const sdSysEvent* event ) {
 				if ( key == keys[j] ) {
 					retVal |= RunEvent( sdUIEventInfo( eventID, i ) );
 					break;
-				}			
+				}
 			}
 		}
 	}
@@ -1377,7 +1377,7 @@ sdUIWindow::GetFunction
 */
 sdUIFunctionInstance* sdUIWindow::GetFunction( const char* name ) {
 	const sdUITemplateFunction< sdUIWindow >* function = sdUIWindow::FindFunction( name );
-	if( !function ) {		
+	if( !function ) {
 		return sdUIObject::GetFunction( name );
 	}
 
@@ -1391,7 +1391,7 @@ sdUIWindow::SetRenderCallback
 ============
 */
 void sdUIWindow::SetRenderCallback( uiRenderCallback_t callback, uiRenderCallbackType_t type ) {
-	renderCallback[ type ] = callback;	
+	renderCallback[ type ] = callback;
 }
 
 /*
@@ -1606,7 +1606,7 @@ bool sdUIWindow::PreDraw() {
 
 	float continueDrawing = 1.0f;
 	if( RunEventHandle( preDrawHandle ) ){
-		GetUI()->PopScriptVar( continueDrawing );		
+		GetUI()->PopScriptVar( continueDrawing );
 	}
 
 	return continueDrawing != 0.0f;
@@ -1641,7 +1641,7 @@ void sdUIWindow::ShortenText( const wchar_t* src, const sdBounds2D& rect, qhandl
 	}
 
 	sdTextDimensionHelper tdh;
-	
+
 	tdh.Init( src, len, rect, drawFlags, font, fontSize );
 
 	if( tdh.GetTextWidth() < rect.GetWidth() ) {
@@ -1661,7 +1661,7 @@ void sdUIWindow::ShortenText( const wchar_t* src, const sdBounds2D& rect, qhandl
 	if( i > 0 ) {
 		builder.Append( src, i );
 	}
-	
+
 	builder += truncation;
 }
 

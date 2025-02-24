@@ -28,7 +28,7 @@ public:
 	void					FreeRenderEffect( void ) { Free(); }
 
 	static void				UpdateDeadEffects( void );
-	static void 			FreeDeadEffects( void ); 
+	static void 			FreeDeadEffects( void );
 
 protected:
 	renderEffect_t			effect;

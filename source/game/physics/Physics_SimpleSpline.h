@@ -56,7 +56,7 @@ private:
 
 	simpleSplinePState_t				current;
 	simpleSplinePState_t				saved;
-	
+
 	idClipModel*						clipModel;
 
 	bool								isOrientated;

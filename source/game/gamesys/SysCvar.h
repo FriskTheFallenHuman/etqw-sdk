@@ -402,7 +402,7 @@ extern idCVar	g_radialMenuStyle;
 
 extern idCVar	g_unlock_updateViewpos;
 extern idCVar	g_unlock_updateAngles;
-extern idCVar	g_unlock_interpolateMoving; 
+extern idCVar	g_unlock_interpolateMoving;
 extern idCVar	g_unlock_viewStyle;
 
 extern idCVar	gui_storeTextInfo;

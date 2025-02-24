@@ -12,7 +12,7 @@
 	Does not use memory allocation during parsing. The lexer uses no
 	memory allocation if a source is loaded with LoadMemory().
 	However, idToken may still allocate memory for large strings.
-	
+
 	A number directly following the escape character '\' in a string is
 	assumed to be in decimal format instead of octal. Binary numbers of
 	the form 0b.. or 0B.. can also be used.
@@ -38,7 +38,7 @@ enum lexerFlags_t {
 	LEXFL_ALLOWBACKSLASHSTRINGCONCAT	= BIT(13),	// allow multiple strings seperated by '\' to be concatenated
 	LEXFL_ONLYSTRINGS					= BIT(14),	// parse as whitespace deliminated strings (quoted strings keep quotes)
 	LEXFL_NOEMITSTRINGESCAPECHARS		= BIT(15),	// no escape characters inside strings
-	LEXFL_ALLOWRAWSTRINGBLOCKS			= BIT(16),	// allow raw text blocks embraced with <% %>	
+	LEXFL_ALLOWRAWSTRINGBLOCKS			= BIT(16),	// allow raw text blocks embraced with <% %>
 };
 
 // punctuation ids
@@ -134,7 +134,7 @@ public:
 							// Load a binary token table and indices as a token stream
 	bool					LoadMemoryBinary( const byte* ptr, int length, const char *name, idTokenCache* globals = NULL );
 	bool					LoadTokenStream( const idList<unsigned short>& indices, const idTokenCache& tokens, const char* name );
-							
+
 
 	idLexerBinary&			GetBinary() ;
 	const idLexerBinary&	GetBinary() const;
@@ -240,7 +240,7 @@ public:
 
 private:
 							idLexer( const idLexer& rhs );
-private:	
+private:
 
 	bool					loaded;					// set when a script file is loaded from file or memory
 	idStr					filename;				// file name of the script

@@ -3,7 +3,7 @@
 
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -17,8 +17,8 @@ static char THIS_FILE[] = __FILE__;
 #include "UserInterfaceLocal.h"
 #include "UIRenderWorld.h"
 
-#include "../../sys/sys_local.h"
-#include "../../decllib/declTypeHolder.h"
+#include "sys/sys_local.h"
+#include "decllib/declTypeHolder.h"
 
 idCVar g_debugGUIRenderWorld( "g_debugGUIRenderWorld", "0", CVAR_GAME | CVAR_BOOL, "Output information for GUI-based renderWorlds" );
 
@@ -41,7 +41,7 @@ sdUIRenderWorld::sdUIRenderWorld
 sdUIRenderWorld::sdUIRenderWorld() {
 	world = renderSystem->AllocRenderWorld();
 	world->InitFromMap( NULL ); // Initialize a single empty area for ambient lighting
-	
+
 	scriptState.GetProperties().RegisterProperty( "atmosphere", atmosphere );
 
 	UI_ADD_STR_CALLBACK( atmosphere, sdUIRenderWorld, OnAtmosphereChanged )
@@ -56,7 +56,7 @@ sdUIRenderWorld::~sdUIRenderWorld
 ============
 */
 sdUIRenderWorld::~sdUIRenderWorld() {
-	renderSystem->FreeRenderWorld( world ); 
+	renderSystem->FreeRenderWorld( world );
 	DisconnectGlobalCallbacks();
 }
 
@@ -96,7 +96,7 @@ void sdUIRenderWorld::DrawLocal() {
 	viewDef.shaderParms[0] = 1.0f;
 	viewDef.shaderParms[1] = 1.0f;
 	viewDef.shaderParms[2] = 1.0f;
-	viewDef.shaderParms[3] = 1.0f;	
+	viewDef.shaderParms[3] = 1.0f;
 
 	const float correction = deviceContext->GetAspectRatioCorrection();
 	viewDef.x = cachedClientRect.x * correction;
@@ -104,7 +104,7 @@ void sdUIRenderWorld::DrawLocal() {
 	viewDef.width = cachedClientRect.z * correction;
 	viewDef.height = cachedClientRect.w;
 	viewDef.time = ui->GetCurrentTime();
-	
+
 	Update_r( GetNode().GetChild() );
 
 	if( viewDef.fov_x <= 0.0f ) {
@@ -113,12 +113,12 @@ void sdUIRenderWorld::DrawLocal() {
 
 	if( viewDef.fov_y <= 0.0f ) {
 		viewDef.fov_y = 90.0f;
-	}	
+	}
 
 	world->RenderScene( &viewDef );
-	
+
 	world->DebugClearLines( ui->GetCurrentTime() );
-	world->DebugClearPolygons( ui->GetCurrentTime() );	
+	world->DebugClearPolygons( ui->GetCurrentTime() );
 
 	deviceContext->BeginEmitFullScreen();
 }
@@ -160,7 +160,7 @@ sdUIRenderWorld::GetFunction
 */
 sdUIFunctionInstance* sdUIRenderWorld::GetFunction( const char* name ) {
 	const RenderWorldTemplateFunction* function = sdUIRenderWorld::FindFunction( name );
-	if ( !function ) {		
+	if ( !function ) {
 		return sdUIWindow::GetFunction( name );
 	}
 	return new sdUITemplateFunctionInstance< sdUIRenderWorld, sdUITemplateFunctionInstance_IdentifierRenderWorld >( this, function );
@@ -298,7 +298,7 @@ void sdUIRenderModel::SpawnDefs() {
 
 	} else if( g_debugGUIRenderWorld.GetBool() ) {
 		gameLocal.Warning( "sdUIRenderModel::SpawnDefs: '%s' couldn't find model '%s'", name.GetValue().c_str(), modelName.GetValue().c_str() );
-	}	
+	}
 
 	if( modelAnim != NULL ) {
 		animLength = gameEdit->ANIM_GetLength( modelAnim );
@@ -360,8 +360,8 @@ void sdUIRenderModel::FreeModel() {
 sdUIRenderModel::Update
 ============
 */
-void sdUIRenderModel::Update( renderView_t& viewDef ) {	
-	
+void sdUIRenderModel::Update( renderView_t& viewDef ) {
+
 	if( visible == 0.0f ) {
 		return;
 	}
@@ -378,7 +378,7 @@ void sdUIRenderModel::Update( renderView_t& viewDef ) {
 			animEndTime = time + animLength;
 		}
 
-		gameEdit->ANIM_CreateAnimFrame( worldEntity.hModel, modelAnim, worldEntity.numJoints, worldEntity.joints, animLength - ( animEndTime - time ), vec3_origin, false );		
+		gameEdit->ANIM_CreateAnimFrame( worldEntity.hModel, modelAnim, worldEntity.numJoints, worldEntity.joints, animLength - ( animEndTime - time ), vec3_origin, false );
 	}
 
 	worldEntity.origin = modelOrigin;
@@ -397,7 +397,7 @@ void sdUIRenderModel::Update( renderView_t& viewDef ) {
 				}
 			}
 		}
-	} 
+	}
 	renderWorld->UpdateEntityDef( modelDef, &worldEntity );
 }
 
@@ -431,14 +431,14 @@ sdUIRenderLight::sdUIRenderLight
 ============
 */
 sdUIRenderLight::sdUIRenderLight() {
-	lightDef		= -1;	
+	lightDef		= -1;
 	lightOrigin		= idVec3( -128.0f, 0.0f, 0.0f );
 	lightColor		= idVec4( 1.0f, 1.0f, 1.0f, 1.0f );
 
 	memset( &rLight, 0, sizeof( rLight ) );
 
 	scriptState.GetProperties().RegisterProperty( "lightColor", lightColor );
-	scriptState.GetProperties().RegisterProperty( "lightOrigin", lightOrigin );	
+	scriptState.GetProperties().RegisterProperty( "lightOrigin", lightOrigin );
 
 	UI_ADD_FLOAT_CALLBACK( visible, sdUIRenderLight, OnVisibleChanged )
 }
@@ -472,7 +472,7 @@ void sdUIRenderLight::Update( renderView_t& viewDef ) {
 	rLight.shaderParms[ SHADERPARM_GREEN ]	= lightColor.GetValue().y;
 	rLight.shaderParms[ SHADERPARM_BLUE ]	= lightColor.GetValue().z;
 
-	renderWorld->UpdateLightDef( lightDef, &rLight );		
+	renderWorld->UpdateLightDef( lightDef, &rLight );
 }
 /*
 ============
@@ -494,7 +494,7 @@ void sdUIRenderLight::SpawnDefs() {
 	memset( &rLight, 0, sizeof( rLight ) );
 	gameEdit->ParseSpawnArgsToRenderLight( spawnArgs, rLight );
 
-	lightDef = renderWorld->AddLightDef( &rLight );	
+	lightDef = renderWorld->AddLightDef( &rLight );
 }
 
 /*
@@ -624,7 +624,7 @@ sdUIRenderCamera_Animated::Update
 void sdUIRenderCamera_Animated::Update( renderView_t& viewDef ) {
 	if( !active ) {
 		return;
-	}	
+	}
 	camera.Evaluate( viewDef.vieworg, viewDef.viewaxis, viewDef.fov_x, GetUI()->GetCurrentTime() );
 	viewDef.fov_y = viewDef.fov_x;
 }

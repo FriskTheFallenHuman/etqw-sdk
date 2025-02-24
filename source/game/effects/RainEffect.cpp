@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -10,10 +10,10 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../Atmosphere.h"
+#include "Atmosphere.h"
 #include "RainEffect.h"
-#include "../Player.h"
-#include "../demos/DemoManager.h"
+#include "Player.h"
+#include "demos/DemoManager.h"
 
 
 CLASS_DECLARATION( idEntity, sdRainEffect )

@@ -19,7 +19,7 @@ public:
 	float							GetPointHeight( int x, int y ) const { return grid[ x ][ y ]; }
 
 	virtual bool					RebuildTextSource( void );
-	
+
 private:
 	idMatX							grid;
 };

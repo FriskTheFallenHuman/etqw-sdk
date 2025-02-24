@@ -37,12 +37,12 @@ public:
 
 	virtual void			Start() {
 								sdThreadProcess::Start();
-                                (*processClass.*startFunc)();								
+                                (*processClass.*startFunc)();
 							}
 	virtual unsigned int	Run( void* parm ) { return (*processClass.*runFunc)( parm ); }
 	virtual void			Stop() {
 								sdThreadProcess::Stop();
-                                (*processClass.*stopFunc)();								
+                                (*processClass.*stopFunc)();
 							}
 
 protected:

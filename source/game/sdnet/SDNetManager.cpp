@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,30 +12,30 @@ static char THIS_FILE[] = __FILE__;
 
 #include "SDNetManager.h"
 
-#include "../guis/UserInterfaceLocal.h"
+#include "guis/UserInterfaceLocal.h"
 
-#include "../../sdnet/SDNet.h"
-#include "../../sdnet/SDNetTask.h"
-#include "../../sdnet/SDNetUser.h"
-#include "../../sdnet/SDNetAccount.h"
-#include "../../sdnet/SDNetProfile.h"
-#include "../../sdnet/SDNetSession.h"
-#include "../../sdnet/SDNetMessage.h"
-#include "../../sdnet/SDNetMessageHistory.h"
-#include "../../sdnet/SDNetSessionManager.h"
-#include "../../sdnet/SDNetStatsManager.h"
-#include "../../sdnet/SDNetFriendsManager.h"
-#include "../../sdnet/SDNetTeamManager.h"
+#include "sdnet/SDNet.h"
+#include "sdnet/SDNetTask.h"
+#include "sdnet/SDNetUser.h"
+#include "sdnet/SDNetAccount.h"
+#include "sdnet/SDNetProfile.h"
+#include "sdnet/SDNetSession.h"
+#include "sdnet/SDNetMessage.h"
+#include "sdnet/SDNetMessageHistory.h"
+#include "sdnet/SDNetSessionManager.h"
+#include "sdnet/SDNetStatsManager.h"
+#include "sdnet/SDNetFriendsManager.h"
+#include "sdnet/SDNetTeamManager.h"
 
-#include "../proficiency/StatsTracker.h"
-#include "../structures/TeamManager.h"
-#include "../rules/GameRules.h"
+#include "proficiency/StatsTracker.h"
+#include "structures/TeamManager.h"
+#include "rules/GameRules.h"
 
-#include "../guis/UIList.h"
+#include "guis/UIList.h"
 
-#include "../../framework/Licensee.h"
+#include "framework/Licensee.h"
 
-#include "../../decllib/declTypeHolder.h"
+#include "decllib/declTypeHolder.h"
 
 idHashMap< sdNetManager::uiFunction_t* > sdNetManager::uiFunctions;
 
@@ -962,7 +962,7 @@ void sdNetManager::InitFunctions() {
 		SD_UI_FUNC_RETURN_PARM( float, "True if task created." )
 	SD_UI_END_FUNC_TAG
 	ALLOC_FUNC( "acceptMembership",			'f', "s",		&sdNetManager::Script_Team_AcceptMembership );
-	
+
 	SD_UI_FUNC_TAG( rejectMembership, "Reject a team membership proposal." )
 		SD_UI_FUNC_PARM( string, "username", "User that sent membership." )
 		SD_UI_FUNC_RETURN_PARM( float, "True if task created." )
@@ -1306,7 +1306,7 @@ void sdNetManager::RunFrame() {
 		}
 	}
 
-	bool findingServers =	findHistoryServersTask != NULL || 
+	bool findingServers =	findHistoryServersTask != NULL ||
 							findServersTask != NULL ||
 							findLANServersTask != NULL ||
 							findFavoriteServersTask != NULL ||
@@ -1358,7 +1358,7 @@ void sdNetManager::RunFrame() {
 							const char* oldIP = (*netSessions)[ index ]->GetHostAddressString();
 							if( idStr::Cmp( newIP, oldIP ) == 0 ) {
 								networkService->GetSessionManager().FreeSession( (*netSessions)[ index ] );
-								(*netSessions)[ index ] = serverRefreshSession;								
+								(*netSessions)[ index ] = serverRefreshSession;
 								serverRefreshSession = NULL;
 								iter->second.lastUpdateTime = sys->Milliseconds();
 							} else {
@@ -1404,7 +1404,7 @@ void sdNetManager::RunFrame() {
 							const char* oldIP = (*netSessions)[ index ]->GetHostAddressString();
 							if( idStr::Cmp( newIP, oldIP ) == 0 ) {
 								networkService->GetSessionManager().FreeSession( (*netSessions)[ index ] );
-								(*netSessions)[ index ] = hotServerRefreshSessions[ i ];								
+								(*netSessions)[ index ] = hotServerRefreshSessions[ i ];
 								hotServerRefreshSessions[ i ] = NULL;
 								iter->second.lastUpdateTime = sys->Milliseconds();
 							} else {
@@ -1558,11 +1558,11 @@ void sdNetManager::CreateServerList( sdUIList* list, findServerSource_e source, 
 		bool ranked = false;
 		bool tvSource = false;
 #endif /* !SD_DEMO_BUILD */
-		idStr address;		
+		idStr address;
 
 		for ( int i = lastServerUpdateIndex; i < netSessions->Num(); i++ ) {
 			sdNetSession* netSession = (*netSessions)[ i ];
-			
+
 			address = netSession->GetHostAddressString();
 			assert( !address.IsEmpty() );
 
@@ -1615,7 +1615,7 @@ void sdNetManager::CreateServerList( sdUIList* list, findServerSource_e source, 
 				if( iter->second.uiListIndex != -1 ) {
 					UpdateSession( *list, *netSession, iter->second.uiListIndex );
 					list->SetItemDataInt( i, iter->second.uiListIndex, BC_IP, true );		// store the session index
-					
+
 					assert( idWStr::Icmp( list->GetItemText( iter->second.uiListIndex, 0 ), va( L"%hs", netSession->GetHostAddressString() ) ) == 0 );
 				}
 			}
@@ -1748,7 +1748,7 @@ void sdNetManager::UpdateSession( sdUIList& list, const sdNetSession& netSession
 				break;
 			}
 			nameStr++;
-		} while( true );			
+		} while( true );
 
 		// Server name
 		sdUIList::SetItemText( &list, nameStr, index, BC_NAME );
@@ -1803,7 +1803,7 @@ void sdNetManager::UpdateSession( sdUIList& list, const sdNetSession& netSession
 		} else {
 			sdUIList::SetItemText( &list, L"<material = '_unknownGameType'>", index, BC_GAMETYPE_ICON );
 			tempWStr = va( L"%hs", fsGame );
-		}		
+		}
 
 		sdUIList::SetItemText( &list, tempWStr.c_str(), index, BC_GAMETYPE );
 
@@ -2786,7 +2786,7 @@ void sdNetManager::Script_FindServers( sdUIFunctionStack& stack ) {
 
 	for ( int i = 0; i < netSessions->Num(); i ++ ) {
 		networkService->GetSessionManager().FreeSession( (*netSessions)[ i ] );
-	}	
+	}
 
 	netSessions->SetGranularity( 1024 );
 	netSessions->SetNum( 0, false );
@@ -2931,7 +2931,7 @@ void sdNetManager::Script_UpdateHotServers( sdUIFunctionStack& stack ) {
 
 	if( netHotServers != NULL ) {
 		netHotServers->Update( *this );
-	}	
+	}
 }
 
 /*
@@ -3031,7 +3031,7 @@ void sdNetManager::Script_RefreshHotServers( sdUIFunctionStack& stack ) {
 	for ( int i = 0; i < numAddresses; i++ ) {
 		hotServerRefreshSessions.Alloc() = networkService->GetSessionManager().AllocSession( &addresses[ i ] );
 	}
-	
+
 	refreshHotServerTask = networkService->GetSessionManager().RefreshSessions( hotServerRefreshSessions );
 	if ( refreshHotServerTask == NULL ) {
 		gameLocal.Printf( "SDNet::RefreshHotServers : failed (%d)\n", networkService->GetLastError() );
@@ -3076,7 +3076,7 @@ void sdNetManager::Script_RefreshServer( sdUIFunctionStack& stack ) {
 		sessionStr = netSession->GetHostAddressString();
 	}
 
-	sys->StringToNetAdr( sessionStr, &addr, false );	
+	sys->StringToNetAdr( sessionStr, &addr, false );
 
 	if( serverRefreshSession != NULL ) {
 		networkService->GetSessionManager().FreeSession( serverRefreshSession );
@@ -3089,7 +3089,7 @@ void sdNetManager::Script_RefreshServer( sdUIFunctionStack& stack ) {
 	sessionHash_t::Iterator iter = hashedSessions.Find( sessionStr );
 	if( iter != hashedSessions.End() ) {
 		int now = sys->Milliseconds();
-		if( iter->second.lastUpdateTime + 2000 > now ) {			
+		if( iter->second.lastUpdateTime + 2000 > now ) {
 			properties.SetServerRefreshComplete( true );
 			stack.Push( 1.0f );
 			return;
@@ -3098,7 +3098,7 @@ void sdNetManager::Script_RefreshServer( sdUIFunctionStack& stack ) {
 
 	serverRefreshSession = networkService->GetSessionManager().AllocSession( &addr );
 	sdIntToContinuousEnum< findServerSource_e >( iSource, FS_MIN, FS_MAX, serverRefreshSource );
-	
+
 	refreshServerTask = networkService->GetSessionManager().RefreshSession( *serverRefreshSession );
 
 	if ( refreshServerTask == NULL ) {
@@ -3698,7 +3698,7 @@ void sdNetManager::Script_QueryServerInfo( sdUIFunctionStack& stack ) {
 		return;
 	}
 
-	if( key.Icmp( "_address" ) == 0 ) {		
+	if( key.Icmp( "_address" ) == 0 ) {
 		stack.Push( netSession->GetHostAddressString() );
 		return;
 	}
@@ -4564,7 +4564,7 @@ bool sdNetManager::SessionIsFiltered( const sdNetSession& netSession, bool ignor
 		if( netSession.IsRepeater() ) {
 			if( filter.type != SF_FULL &&
 				filter.type != SF_EMPTY &&
-				filter.type != SF_PING && 
+				filter.type != SF_PING &&
 #if !defined( SD_DEMO_BUILD ) && !defined( SD_DEMO_BUILD_CONSTRUCTION )
 				filter.type != SF_FRIENDS &&
 #endif /* !SD_DEMO_BUILD && !SD_DEMO_BUILD_CONSTRUCTION */
@@ -4585,7 +4585,7 @@ bool sdNetManager::SessionIsFiltered( const sdNetSession& netSession, bool ignor
 			case SF_FRIENDLYFIRE:
 				value = netSession.GetServerInfo().GetBool( "si_teamDamage", "0" ) ? 1.0f : 0.0f;
 				break;
-			case SF_AUTOBALANCE:	
+			case SF_AUTOBALANCE:
 				value = netSession.GetServerInfo().GetBool( "si_teamForceBalance", "0" ) ? 1.0f : 0.0f;
 				break;
 			case SF_PURE:
@@ -5439,7 +5439,7 @@ void sdNetManager::UpdateServer( sdUIList& list, const char* sessionName, findSe
 
 	GetSessionsForServerSource( source, netSessions, task, netHotServers );
 
-	if( findServersTask != NULL || findLANServersTask != NULL || 
+	if( findServersTask != NULL || findLANServersTask != NULL ||
 		findHistoryServersTask != NULL || findFavoriteServersTask != NULL ||
 		findRepeatersTask != NULL || findLANRepeatersTask != NULL ) {
 		return;
@@ -5855,7 +5855,7 @@ void sdNetManager::Script_FormatSessionInfo( sdUIFunctionStack& stack ) {
 			} else {
 				builder += va( L"%hs", fsGame );
 			}
-			
+
 			builder += L"\n";
 
 			builder += va( L"%ls: ", common->LocalizeText( "guis/mainmenu/time" ).c_str() );
@@ -6052,7 +6052,7 @@ sdNetManager::CreateRetrievedUserNameList
 */
 void sdNetManager::CreateRetrievedUserNameList( sdUIList* list ) {
 	sdUIList::ClearItems( list );
-	
+
 	for( int i = 0; i < retrievedAccountNames.Num(); i++ ) {
 		sdUIList::InsertItem( list, va( L"%hs", retrievedAccountNames[ i ].c_str() ), -1, 0 );
 	}
@@ -6093,7 +6093,7 @@ void sdNetManager::Script_GetNumInterestedInServer( sdUIFunctionStack& stack ) {
 
 	sessionHash_t::Iterator iter = hashedSessions.Find( address );
 	if( iter != hashedSessions.End() ) {
-		interested = (*netSessions)[ iter->second.sessionListIndex ]->GetNumInterestedClients();		
+		interested = (*netSessions)[ iter->second.sessionListIndex ]->GetNumInterestedClients();
 	}
 
 	stack.Push( interested );

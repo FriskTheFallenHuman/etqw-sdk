@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -10,7 +10,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../framework/Licensee.h"
+#include "framework/Licensee.h"
 
 #include "roles/Inventory.h"
 #include "roles/FireTeams.h"
@@ -19,8 +19,8 @@ static char THIS_FILE[] = __FILE__;
 #include "structures/TeamManager.h"
 #include "rules/GameRules.h"
 #include "Player.h"
-#include "../framework/BuildVersion.h"
-#include "../framework/KeyInput.h"
+#include "framework/BuildVersion.h"
+#include "framework/KeyInput.h"
 #include "guis/UserInterfaceLocal.h"
 #include "guis/UserInterfaceManagerLocal.h"
 #include "guis/UIList.h"
@@ -37,11 +37,11 @@ static char THIS_FILE[] = __FILE__;
 #include "ScriptEntity.h"
 #include "Waypoints/LocationMarker.h"
 #include "proficiency/StatsTracker.h"
-#include "../framework/async/Demo.h"
-#include "../sys/sys_local.h"
+#include "framework/async/Demo.h"
+#include "sys/sys_local.h"
 
 #ifndef _XENON
-#include "../sdnet/SDNet.h"
+#include "sdnet/SDNet.h"
 #endif
 
 #define ON_UIVALID( handle, thename ) sdUserInterfaceLocal* thename = GetUserInterface( handle ); if ( thename )
@@ -72,9 +72,9 @@ bool idGameLocal::HandleGuiEvent( const sdSysEvent* event ) {
 
 	idPlayer* localPlayer = gameLocal.GetLocalPlayer();
 	if ( localPlayer ) {
-		if( isServer && event->GetKey() == K_F1 && event->IsKeyDown() && isPaused && localPlayer->IsSinglePlayerToolTipPlaying() ) { 
-			cmdSystem->BufferCommandText( CMD_EXEC_APPEND, "unPauseGame\n" ); 
-			return true; 
+		if( isServer && event->GetKey() == K_F1 && event->IsKeyDown() && isPaused && localPlayer->IsSinglePlayerToolTipPlaying() ) {
+			cmdSystem->BufferCommandText( CMD_EXEC_APPEND, "unPauseGame\n" );
+			return true;
 		}
 
 		if ( localPlayer->HandleGuiEvent( event ) ) {
@@ -256,7 +256,7 @@ void idGameLocal::CreateKeyBindingList( sdUIList* list ) {
 		keyInputManager->KeysFromBinding( gameLocal.GetDefaultBindContext(), kv->GetValue(), numKeys, NULL );
 
 		idKey** keys = NULL;
-		
+
 		if( numKeys > 0 ) {
 			keys = static_cast< idKey** >( _alloca( numKeys * sizeof( idKey* ) ) );
 			keyInputManager->KeysFromBinding( gameLocal.GetDefaultBindContext(), kv->GetValue(), numKeys, keys );
@@ -291,7 +291,7 @@ void idGameLocal::CreateCrosshairList( sdUIList* list ) {
 	assert( list != NULL );
 
 	sdUIList::ClearItems( list );
-	
+
 	int num = gameLocal.declStringMapType.Num();
 	for( int i = 0; i < num; i++ ) {
 		const sdDeclStringMap* decl = gameLocal.declStringMapType.LocalFindByIndex( i, false );
@@ -406,7 +406,7 @@ void idGameLocal::CreateVehiclePlayerList( sdUIList* list ) {
 			}
 		}
 		list->SelectItem( selIndex );
-	} 
+	}
 }
 
 /*
@@ -501,7 +501,7 @@ void idGameLocal::CreateFireTeamListEntry( sdUIList* list, int index, idPlayer* 
 		healthFrac = idMath::ClampFloat( 0.0f, 1.0f, healthFrac );
 		idVec4 healthColor( 1.0f - healthFrac, healthFrac, 0.0f, 1.0f );
 		sdUIList::SetItemForeColor( list, healthColor, index, 2 );
-	}	
+	}
 }
 
 /*
@@ -770,7 +770,7 @@ void idGameLocal::CreateFireTeamList_Manage( sdUIList* list ) {
 	}
 
 	int index = 0;
-	
+
 	if ( fireTeam->IsCommander( localPlayer ) ) {
 		bool canInvite = false;
 		if ( fireTeam->MaxMembers() - fireTeam->GetNumMembers() > 0 ) {
@@ -887,7 +887,7 @@ void idGameLocal::GeneratePlayerListForTask( idStr& playerList, const sdPlayerTa
 idGameLocal::InsertTask
 ============
 */
-int idGameLocal::InsertTask( sdUIList* list, const sdPlayerTask* task, bool highlightActive ) {	
+int idGameLocal::InsertTask( sdUIList* list, const sdPlayerTask* task, bool highlightActive ) {
 	const char* iconMat = "guis/nodraw";
 	if ( task->GetInfo()->GetNumWayPoints() > 0 ) {
 		const idMaterial* mat = task->GetInfo()->GetWaypointIcon( 0 );
@@ -899,9 +899,9 @@ int idGameLocal::InsertTask( sdUIList* list, const sdPlayerTask* task, bool high
 	idWStr xpString = task->GetInfo()->GetXPString();
 	sdUIList::CleanUserInput( xpString );
 
-	int index = sdUIList::InsertItem( list, va( L"<material = \"::%hs\">\t%ls\t<align = right>%ls", 
+	int index = sdUIList::InsertItem( list, va( L"<material = \"::%hs\">\t%ls\t<align = right>%ls",
 										iconMat, task->GetTitle(), xpString.c_str() ), -1, 0 );
-	
+
 	return index;
 }
 
@@ -945,7 +945,7 @@ void idGameLocal::CreateActiveTaskList( sdUIList* list ) {
 		canSelect = fireTeam->GetCommander() == localPlayer;
 	} else {
 		activeTask = localPlayerView->GetActiveTask();
-	}	
+	}
 
 	const sdPlayerTask::nodeType_t& objectiveTasks = sdTaskManager::GetInstance().GetObjectiveTasks( team );
 	sdPlayerTask* objectiveTask = objectiveTasks.Next();
@@ -963,7 +963,7 @@ void idGameLocal::CreateActiveTaskList( sdUIList* list ) {
 		manager.BuildTaskList( localPlayer, miniList );
 		int num = Min( sdPlayerTask::MAX_CHOOSABLE_TASKS, miniList.Num() );
 
-		for( int i = 0; i < num; i++ ) {			
+		for( int i = 0; i < num; i++ ) {
 			int index = InsertTask( list, miniList[ i ], false );
 			if( activeTask == miniList[ i ] ){
 				list->SelectItem( index );
@@ -977,7 +977,7 @@ void idGameLocal::CreateActiveTaskList( sdUIList* list ) {
 		*/
 		idWStrList args( 1 );
 		keyInputManager->KeysFromBinding( gameLocal.GetDefaultBindContext(), "_taskmenu", true, args.Alloc() );
-		
+
 		const idWStr localized = common->LocalizeText( "guis/hud/tasks_are_available", args );
 		sdUIList::InsertItem( list, localized.c_str(), -1, 1 );
 
@@ -1038,7 +1038,7 @@ void idGameLocal::TestGUI_f( const idCmdArgs& args ) {
 	if( args.Argc() < 2 || idStr::Length( args.Argv( 1 )) == 0 ) {
 		gameLocal.uiMainMenuHandle	= gameLocal.LoadUserInterface( "mainmenu",	false, true );
 	} else {
-		gameLocal.uiMainMenuHandle	= gameLocal.LoadUserInterface( args.Argv( 1 ),	false, true );			
+		gameLocal.uiMainMenuHandle	= gameLocal.LoadUserInterface( args.Argv( 1 ),	false, true );
 		// jrad - something of a hack:
 		// ensure that we're pushing the proper times through to the gui
 		sdUserInterfaceLocal* ui =gameLocal.GetUserInterface( gameLocal.uiMainMenuHandle );
@@ -1117,13 +1117,13 @@ sdProperties::sdProperty*	idGameLocal::GetUserInterfaceProperty_r( guiHandle_t h
 
 	if( sdUserInterfaceLocal* ui = GetUserInterface( handle ) ) {
 		idLexer parser( propertyName, idStr::Length( propertyName ), "GetUserInterfaceProperty_r", sdDeclGUI::LEXER_FLAGS | LEXFL_NOERRORS );
-				
+
 		sdUserInterfaceScope* scope = GetUserInterfaceScope( ui->GetState(), &parser );
 		if( scope ) {
 			idToken token;
 			if( parser.ReadToken( &token )) {
 				return scope->GetProperty( token, expectedType );
-			}			
+			}
 		}
 	}
 	return NULL;
@@ -1281,7 +1281,7 @@ idGameLocal::CreateInventoryList
 */
 void idGameLocal::CreateInventoryList( sdUIList* list ) {
 	sdUserInterfaceLocal* ui = list->GetUI();
-		
+
 	assert( ui );
 
 	idStr classname;
@@ -1291,7 +1291,7 @@ void idGameLocal::CreateInventoryList( sdUIList* list ) {
 	ui->PopScriptVar( classname );
 	ui->PopScriptVar( bank );
 	ui->PopScriptVar( package );
-	
+
 
 	idPlayer* player = gameLocal.GetLocalPlayer();
 	idList< itemBankPair_t > items;
@@ -1339,7 +1339,7 @@ void idGameLocal::CreateVideoModeList( sdUIList* list ) {
 		"(16:10)",
 		"(5:4)"
 	};
-	
+
 	idList< modePair_t > modes;
 
 	for( int i = startMode; i < common->GetNumVideoModes(); i++ ) {
@@ -1468,7 +1468,7 @@ void idGameLocal::ShowLevelLoadScreen( const char* mapName ) {
 	mapMetaData = mapMetaDataList->FindMetaData( stripped, &defaultMetaData );
 	mapInfo = declMapInfoType.LocalFind( mapMetaData->GetString( "mapinfo", "default" ) );
 
-	using namespace sdProperties;	
+	using namespace sdProperties;
 	if ( sdUserInterfaceScope* scope = globalProperties.GetSubScope( "mapinfo" ) ) {
 		if ( sdProperty* property = scope->GetProperty( "numObjectives", PT_FLOAT ) ) {
 			*property->value.floatValue = mapInfo->GetData().GetFloat( "numObjectives", "0" );
@@ -1507,10 +1507,10 @@ void idGameLocal::UpdateLevelLoadScreen( const wchar_t* status ) {
 	}
 
 	using namespace sdProperties;
-	sdUserInterfaceScope* scope = globalProperties.GetSubScope( "mapinfo" );	
+	sdUserInterfaceScope* scope = globalProperties.GetSubScope( "mapinfo" );
 	if( scope ) {
 		if( sdProperty* property = scope->GetProperty( "mapStatus", PT_WSTRING )) {
-			*property->value.wstringValue = status;			
+			*property->value.wstringValue = status;
 		}
 	}
 	common->PacifierUpdate();
@@ -1527,7 +1527,7 @@ void idGameLocal::HideLevelLoadScreen() {
 		return;
 	}
 
-	if ( sdUserInterfaceLocal* ui = GetUserInterface( uiLevelLoadHandle ) ) {		
+	if ( sdUserInterfaceLocal* ui = GetUserInterface( uiLevelLoadHandle ) ) {
 		ui->Deactivate();
 	}
 }
@@ -1548,7 +1548,7 @@ idGameLocal::SetGUIFloat
 ============
 */
 void idGameLocal::SetGUIFloat( int handle, const char* name, float value ) {
-	if ( networkSystem->IsDedicated() ) {	
+	if ( networkSystem->IsDedicated() ) {
 		gameLocal.Warning( "Tried to run a GUI command on the server" );
 	}
 
@@ -1589,7 +1589,7 @@ idGameLocal::GetGUIFloat
 ============
 */
 float idGameLocal::GetGUIFloat( int handle, const char* name ) {
-	if( networkSystem->IsDedicated() ) {	
+	if( networkSystem->IsDedicated() ) {
 		gameLocal.Warning( "Tried to run a GUI command on the server" );
 	}
 
@@ -1632,7 +1632,7 @@ idGameLocal::SetGUIInt
 ============
 */
 void idGameLocal::SetGUIInt( int handle, const char* name, int value ) {
-	if ( networkSystem->IsDedicated() ) {	
+	if ( networkSystem->IsDedicated() ) {
 		gameLocal.Warning( "Tried to run a GUI command on the server" );
 	}
 
@@ -1673,7 +1673,7 @@ idGameLocal::SetGUIVec2
 ============
 */
 void idGameLocal::SetGUIVec2( int handle, const char* name, const idVec2& value ) {
-	if ( networkSystem->IsDedicated() ) {	
+	if ( networkSystem->IsDedicated() ) {
 		gameLocal.Warning( "Tried to run a GUI command on the server" );
 	}
 
@@ -1714,7 +1714,7 @@ idGameLocal::SetGUIVec3
 ============
 */
 void idGameLocal::SetGUIVec3( int handle, const char* name, const idVec3& value ) {
-	if ( networkSystem->IsDedicated() ) {	
+	if ( networkSystem->IsDedicated() ) {
 		gameLocal.Warning( "Tried to run a GUI command on the server" );
 	}
 
@@ -1755,7 +1755,7 @@ idGameLocal::SetGUIVec4
 ============
 */
 void idGameLocal::SetGUIVec4( int handle, const char* name, const idVec4& value ) {
-	if ( networkSystem->IsDedicated() ) {	
+	if ( networkSystem->IsDedicated() ) {
 		gameLocal.Warning( "Tried to run a GUI command on the server" );
 	}
 
@@ -1796,7 +1796,7 @@ idGameLocal::SetGUIString
 ============
 */
 void idGameLocal::SetGUIString( int handle, const char* name, const char* value ) {
-	if ( networkSystem->IsDedicated() ) {	
+	if ( networkSystem->IsDedicated() ) {
 		gameLocal.Warning( "Tried to run a GUI command on the server" );
 	}
 
@@ -1837,7 +1837,7 @@ idGameLocal::SetGUIWString
 ============
 */
 void idGameLocal::SetGUIWString( int handle, const char* name, const wchar_t* value ) {
-	if( networkSystem->IsDedicated() ) {	
+	if( networkSystem->IsDedicated() ) {
 		gameLocal.Warning( "Tried to run a GUI command on the server" );
 	}
 
@@ -1898,7 +1898,7 @@ idGameLocal::GUIPostNamedEvent
 ============
 */
 void idGameLocal::GUIPostNamedEvent( int handle, const char* window, const char* name ) {
-	if( networkSystem->IsDedicated() ) {	
+	if( networkSystem->IsDedicated() ) {
 		gameLocal.Warning( "Tried to run a GUI command on the server" );
 	}
 
@@ -1917,9 +1917,9 @@ void idGameLocal::GUIPostNamedEvent( int handle, const char* window, const char*
 		return;
 	} else if( object ) {
 		object->PostNamedEvent( name, false );
-	} else {	
+	} else {
 		ui->PostNamedEvent( name );
-	}	
+	}
 }
 
 
@@ -1970,7 +1970,7 @@ void idGameLocal::CreateWeaponSwitchList( sdUIList* list ) {
 	typedef sdPair< const sdDeclInvItem*, int > invElement_t;
 	idStaticList< invElement_t, 10 > items;
 
-	for( int i = 0; i < inv.GetNumItems(); i++ ) {		
+	for( int i = 0; i < inv.GetNumItems(); i++ ) {
 		if ( !inv.CanAutoEquip( i, false ) ) {
 			continue;
 		}
@@ -2004,7 +2004,7 @@ void idGameLocal::CreateWeaponSwitchList( sdUIList* list ) {
 		const char* material = invItem->GetData().GetString( "mtr_weaponmenu", "_default" );
 		const int title = invItem->GetItemName()->Index();
  		float weaponAmmo = -1.0f;
-	
+
 		const idList< itemClip_t >& itemClips = invItem->GetClips();
 
 		if ( itemClips.Num() && itemClips[ 0 ].ammoPerShot > 0 ) {
@@ -2012,10 +2012,10 @@ void idGameLocal::CreateWeaponSwitchList( sdUIList* list ) {
 			float totalAmmo;
 			if( invItem->GetData().GetBool( "show_all_ammo", "0" )) {
 				ammo = inv.GetAmmo( itemClips[ 0 ].ammoType ) / itemClips[ 0 ].ammoPerShot;
-				totalAmmo = inv.GetMaxAmmo( itemClips[ 0 ].ammoType ) / itemClips[ 0 ].ammoPerShot;				
+				totalAmmo = inv.GetMaxAmmo( itemClips[ 0 ].ammoType ) / itemClips[ 0 ].ammoPerShot;
 			} else {
 				ammo = inv.GetClip( items[ i ].second, 0 );
-				totalAmmo = inv.GetClipSize( items[ i ].second, 0 );				
+				totalAmmo = inv.GetClipSize( items[ i ].second, 0 );
 			}
 			weaponAmmo = idMath::ClampFloat( 0.0f, 1.0f, ammo / totalAmmo );
 		}
@@ -2125,7 +2125,7 @@ void idGameLocal::CreateSpawnLocationList( sdUIList* list ) {
 	int numLocs = info->GetNumSpawnLocations();
 	int* spawnCounts = static_cast< int* >( _alloca( numLocs * sizeof( int ) ) );
 	memset( &spawnCounts[ 0 ], 0, numLocs * sizeof( int ) );
-	
+
 	const idPlayer* localPlayer = gameLocal.GetLocalPlayer();
 	for( int i = 0; i < MAX_CLIENTS; i++ ) {
 		idPlayer* player = gameLocal.GetClient( i );
@@ -2149,11 +2149,11 @@ void idGameLocal::CreateSpawnLocationList( sdUIList* list ) {
 					currentSpawn = si;
 				}
 				break;
-			}			
+			}
 		}
 	}
 
-	idWStr loc;	
+	idWStr loc;
 	for( int i = 0; i < numLocs; i++ ) {
 		const idEntity* spawn = info->GetSpawnLocation( i );
 
@@ -2194,7 +2194,7 @@ idGameLocal::CreateSoundPlaybackList
 void idGameLocal::CreateSoundPlaybackList( sdUIList* list ) {
 	sdUIList::ClearItems( list );
 	const idWStrList* devices = soundSystem->ListSoundPlaybackDevices();
-	
+
 	for( int i = 0; devices != NULL && i < devices->Num(); i++ ) {
 		const idWStr& str = (*devices)[ i ];
 		int hash = soundSystem->GetAudioDeviceHash( str.c_str() );
@@ -2247,7 +2247,7 @@ static void AddLifeStatsItems( sdUIList* list, const char* material, const idLis
 		const sdStatsTracker::lifeStatsData_t* item = data[ i ];
 		const lifeStat_t& stat = gameLocal.lifeStats[ item->index ];
 
-		
+
 		switch( item->newValue.GetType() ) {
 			case sdNetStatKeyValue::SVT_INT:
 			case sdNetStatKeyValue::SVT_INT_MAX:
@@ -2311,7 +2311,7 @@ void idGameLocal::CreatePredictedUpgradesList( sdUIList* list ) {
 	sdUIList::ClearItems( list );
 
 	idPlayer* localPlayer = gameLocal.GetLocalPlayer();
-	if( localPlayer == NULL ) {	
+	if( localPlayer == NULL ) {
 		return;
 	}
 
@@ -2355,8 +2355,8 @@ void idGameLocal::CreatePredictedUpgradesList( sdUIList* list ) {
 			const sdDeclProficiencyType* type = gameLocal.declProficiencyTypeType.LocalFindByIndex( bestCategories[ i ]->index );
 
 			const sdDeclPlayerClass::proficiencyUpgrade_t& upgrade = bestCategories[ i ]->upgrades[ currentLevel ];
-			int index = sdUIList::InsertItem( list, va( L"<material = '%hs'>\t<loc = '%hs'>\t<flags customdraw>%hs", 
-				upgrade.materialInfo.c_str(), 
+			int index = sdUIList::InsertItem( list, va( L"<material = '%hs'>\t<loc = '%hs'>\t<flags customdraw>%hs",
+				upgrade.materialInfo.c_str(),
 				upgrade.title->GetName(),
 				type->GetName()	),
 				-1, 0 );
@@ -2381,7 +2381,7 @@ void idGameLocal::CreateUpgradesReviewList( sdUIList* list ) {
 	sdUIList::ClearItems( list );
 
 	idPlayer* localPlayer = gameLocal.GetLocalPlayer();
-	if( localPlayer == NULL ) {	
+	if( localPlayer == NULL ) {
 		return;
 	}
 
@@ -2406,7 +2406,7 @@ void idGameLocal::CreateUpgradesReviewList( sdUIList* list ) {
 				}
 			}
 			if( k < bestCategories.Num() ) {
-				continue;				
+				continue;
 			}
 
 			bestCategories.Append( &category );
@@ -2416,8 +2416,8 @@ void idGameLocal::CreateUpgradesReviewList( sdUIList* list ) {
 			for ( int level = 0; level < currentLevel && level < category.upgrades.Num(); level++ ) {
 				const sdDeclPlayerClass::proficiencyUpgrade_t& upgrade = category.upgrades[ level ];
 
-				int index = sdUIList::InsertItem( list, va( L"<material = '%hs'>\t<loc = '%hs'>", 
-					upgrade.materialInfo.c_str(), 
+				int index = sdUIList::InsertItem( list, va( L"<material = '%hs'>\t<loc = '%hs'>",
+					upgrade.materialInfo.c_str(),
 					upgrade.title->GetName()),
 					-1, 0 );
 			}

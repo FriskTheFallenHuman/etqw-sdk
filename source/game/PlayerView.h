@@ -17,7 +17,7 @@ class sdDeclDamage;
 class sdUserInterfaceLocal;
 class sdWorldToScreenConverter;
 
-#include "../renderer/RenderWorld.h"
+#include "renderer/RenderWorld.h"
 #include "client/ClientEntity.h"
 #include "effects/Effects.h"
 #include "CrosshairInfo.h"
@@ -130,10 +130,10 @@ private:
 	idQuat									lastSpectateAxis;
 
 	usercmd_t								repeaterUserCmd;
-	repeaterViewInfo_t						repeaterViewInfo;			
+	repeaterViewInfo_t						repeaterViewInfo;
 	sdCrosshairInfo							repeaterCrosshairInfo;
 
-	idEntityPtr< idEntity >					activeViewProxy;	
+	idEntityPtr< idEntity >					activeViewProxy;
 	rvClientEntityPtr< sdClientAnimated >	cockpit;
 
 	sdEffect								underWaterEffect;

@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -183,7 +183,7 @@ void sdProfileHelper::LogValue( const char* sampleName, double value ) {
 		}
 
 		info = *infoPtr;
-		info->frameInfo[ m_SampleUpto ] += 1.0;	
+		info->frameInfo[ m_SampleUpto ] += 1.0;
 	}
 }
 
@@ -247,7 +247,7 @@ void sdProfileHelper::DumpLog( const char* suffix, sampleGroup_t& group ) {
 	if ( m_HasTotal ) {
 		miniLog->WriteString( "TOTAL" );
 	}
-	
+
 	// print data, row by row
 	for ( int sample = 1; sample < m_SampleUpto; sample++ ) {
 		miniLog->WriteInt( m_SampleTimes[ sample ] );
@@ -262,7 +262,7 @@ void sdProfileHelper::DumpLog( const char* suffix, sampleGroup_t& group ) {
 
 			info->frameInfo[ sample ] = 0.0;
 		}
-		
+
 		if ( m_HasTotal ) {
 			miniLog->WriteFloat( ( float )total );
 		}

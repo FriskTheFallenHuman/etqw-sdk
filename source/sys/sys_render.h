@@ -114,9 +114,9 @@ public:
 						  int redBits, int greenBits, int blueBits,
 						  int alphaBits, int depthBits, int stencilBits,
 						  int multiSamples, bool forceUnique,
-						  bool offscreen, bool doubleBuffer, 
-						  bool floatingPoint, bool bindToTexture, 
-						  bool generateMipMaps, bool isGameContext ) 
+						  bool offscreen, bool doubleBuffer,
+						  bool floatingPoint, bool bindToTexture,
+						  bool generateMipMaps, bool isGameContext )
 	:	width( width ),
 		height( height ),
 		redBits( redBits ),
@@ -140,9 +140,9 @@ public:
 						  int redBits, int greenBits, int blueBits,
 						  int alphaBits, int depthBits, int stencilBits,
 						  multiSampleParms multiSamples, bool forceUnique,
-						  bool offscreen, bool doubleBuffer, 
-						  bool floatingPoint, bool bindToTexture, 
-						  bool generateMipMaps, bool isGameContext ) 
+						  bool offscreen, bool doubleBuffer,
+						  bool floatingPoint, bool bindToTexture,
+						  bool generateMipMaps, bool isGameContext )
 	:	width( width ),
 		height( height ),
 		redBits( redBits ),
@@ -279,7 +279,7 @@ public:
 
 	virtual bool					ReleaseCurrent( dcHandle_t windowDC ) = 0;
 
-	// disassociates the rendering context from the specified device context if 
+	// disassociates the rendering context from the specified device context if
 	// the rendering context is currently associated with it.  Windows that call
 	// MakeCurrent should call ReleaseContext before they are destroyed.
 	virtual void					ReleaseContext( dcHandle_t windowDC ) = 0;
@@ -296,10 +296,10 @@ public:
 	virtual int						GetNumMSAAModes( void ) const = 0;
 	virtual const char *			GetMSAAMode( int idx, int &val ) const = 0;
 	virtual bool					IsMSAACountAvailable( int msaa ) const = 0;
-	// returns the number of available monitors 
+	// returns the number of available monitors
 	virtual int						GetNumMonitors() const = 0;
 
-	// returns the number of available monitors 
+	// returns the number of available monitors
 	virtual const monitorInfo_t&	GetMonitor( int index ) const = 0;
 
 	// returns the system's primary monitor

@@ -4,7 +4,7 @@
 #ifndef __GAME_ATMOSPHERERENDERABLE_H__
 #define __GAME_ATMOSPHERERENDERABLE_H__
 
-#include "../framework/CVarSystem.h"
+#include "framework/CVarSystem.h"
 
 class idRenderWorld;
 

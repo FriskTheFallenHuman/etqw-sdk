@@ -1,0 +1,123 @@
+{
+	"game_default": "base",
+	"window_width": 466,
+	"window_height": 640,
+	"supports_addons": true,
+	"sections": [
+		{
+			"name": "Game",
+			"entries": [
+				{
+					"name": "Enemy Territory: Quake Wars",
+					"type": "command",
+					"action": "${ROOT}/etqw",
+					"arguments": [ "+set fs_game", "${GAME}", "+set r_fullscreen", "0", "+set win_allowmultipleInstances", "1" ],
+					"icon_override": "${GAME_ICON}"
+				},
+				{
+					"name": "Enemy Territory: Quake Wars - Dev Mode",
+					"type": "command",
+					"action": "${ROOT}/etqw",
+					"arguments": [ "+set fs_game", "${GAME}", "+set r_fullscreen", "0", "+set g_useCompiledScript", "0", "+set developer", "1", "+set com_allowConsole", "1", "+set con_noPrint", "0", "+set win_allowmultipleInstances", "1" ],
+					"icon_override": "${GAME_ICON}"
+				},
+				{
+					"name": "Enemy Territory: Quake Wars - Safe Mode",
+					"type": "command",
+					"action": "${ROOT}/etqw",
+					"arguments": [ "+set fs_game", "${GAME}", "+set r_fullscreen", "0", "+safe", "+set win_allowmultipleInstances", "1" ],
+					"icon_override": "${GAME_ICON}"
+				}
+			]
+		},
+		{
+			"name": "Tools",
+			"entries": [
+				{
+					"name": "World Editor",
+					"type": "command",
+					"action": "${ROOT}/etqw",
+					"arguments": [ "+set fs_game", "${GAME}", "+set r_fullscreen", "0", "+set g_useCompiledScript", "0", "+editWorld" ],
+					"icon_override": "${WORLD_ICON}",
+					"os": "windows"
+				},
+				{
+					"name": "Atmosphere And Weather Editor",
+					"type": "command",
+					"action": "${ROOT}/etqw",
+					"arguments": [ "+set fs_game", "${GAME}", "+set r_fullscreen", "0", "+set g_useCompiledScript", "0", "+editAtmos" ],
+					"icon_override": "${ATMOS_ICON}",
+					"os": "windows"
+				},
+				{
+					"name": "Ambient Light Editor",
+					"type": "command",
+					"action": "${ROOT}/etqw",
+					"arguments": [ "+set fs_game", "${GAME}", "+set r_fullscreen", "0", "+set g_useCompiledScript", "0", "+editAmbient" ],
+					"icon_override": "${AMBIENT_ICON}",
+					"os": "windows"
+				},
+				{
+					"name": "Atlas Editor",
+					"type": "command",
+					"action": "${ROOT}/etqw",
+					"arguments": [ "+set fs_game", "${GAME}", "+set r_fullscreen", "0", "+set g_useCompiledScript", "0", "+editSheets" ],
+					"icon_override": "${ATLAS_ICON}",
+					"os": "windows"
+				},
+				{
+					"name": "Sound Editor",
+					"type": "command",
+					"action": "${ROOT}/etqw",
+					"arguments": [ "+set fs_game", "${GAME}", "+set r_fullscreen", "0", "+set g_useCompiledScript", "0", "+editSounds" ],
+					"icon_override": "${SOUND_ICON}",
+					"os": "windows"
+				},
+				{
+					"name": "Effects Editor",
+					"type": "command",
+					"action": "${ROOT}/etqw",
+					"arguments": [ "+set fs_game", "${GAME}", "+set r_fullscreen", "0", "+set g_useCompiledScript", "0", "+editEffects" ],
+					"icon_override": "${FX_ICON}",
+					"os": "windows"
+				},
+				{
+					"name": "Articulate Figure Editor",
+					"type": "command",
+					"action": "${ROOT}/etqw",
+					"arguments": [ "+set fs_game", "${GAME}", "+set r_fullscreen", "0", "+set g_useCompiledScript", "0", "+editAFS" ],
+					"icon_override": "${AF_ICON}",
+					"os": "windows"
+				},
+				{
+					"name": "Stamp Editor",
+					"type": "command",
+					"action": "${ROOT}/etqw",
+					"arguments": [ "+set fs_game", "${GAME}", "+set r_fullscreen", "0", "+set g_useCompiledScript", "0", "+editStamps" ],
+					"icon_override": "${STAMP_ICON}",
+					"os": "windows"
+				}
+			]
+		},
+		{
+			"name": "Quick Access",
+			"entries": [
+				{
+					"name": "Base Folder",
+					"type": "directory",
+					"action": "${ROOT}/base"
+				},
+				{
+					"name": "Animation Examples",
+					"type": "directory",
+					"action": "${ROOT}/Animation Examples"
+				},
+				{
+					"name": "Utilities",
+					"type": "directory",
+					"action": "${ROOT}/utilities"
+				}
+			]
+		}
+	]
+}

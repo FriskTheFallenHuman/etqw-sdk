@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #include "TraceModelCache.h"
@@ -239,7 +239,7 @@ void idTraceModelCache::FindClosestPoints( idLinkList< polyPoint_t >& points, po
 
 	for ( polyPoint_t* next = points.Next(); next; next = next->node.Next() ) {
 		for ( polyPoint_t* next2 = next->node.Next(); next2; next2 = next2->node.Next() ) {
-			
+
 			float dist = ( next->xyz - next2->xyz ).LengthSqr() * next->squareWeight * next2->squareWeight;
 			if ( dist < closeDist ) {
 				closeDist	= dist;
@@ -255,7 +255,7 @@ void idTraceModelCache::FindClosestPoints( idLinkList< polyPoint_t >& points, po
 idTraceModelCache::SetupWaterPoints
 ============
 */
-void idTraceModelCache::SetupWaterPoints( trmCache_t& entry ) {	
+void idTraceModelCache::SetupWaterPoints( trmCache_t& entry ) {
 	idTraceModel& trm = entry.trm;
 	if ( !trm.bounds.GetVolume() || !trm.isConvex ) {
 		return;
@@ -321,7 +321,7 @@ void idTraceModelCache::SetupWaterPoints( trmCache_t& entry ) {
 	while ( count > numPoints ) {
 		polyPoint_t* point1;
 		polyPoint_t* point2;
-			
+
 		FindClosestPoints( points, point1, point2 );
 
 		point1->xyz		= ( point1->xyz + point2->xyz ) * 0.5f;
@@ -454,7 +454,7 @@ void idTraceModelCache::Read( idTraceModel& trm, idFile* fp ) {
 	cache.Alloc() = cachedEntry;
 	*cachedEntry = entry;
 	cachedEntry->refCount = 0;
-	cachedEntry->collisionModel = collisionModelManager->ModelFromTrm( gameLocal.GetMapName(), va( "traceModel%d", traceModelIndex ), trm, entry.includesBrushes );	
+	cachedEntry->collisionModel = collisionModelManager->ModelFromTrm( gameLocal.GetMapName(), va( "traceModel%d", traceModelIndex ), trm, entry.includesBrushes );
 
 	int hashKey = GetTraceModelHashKey( trm );
 	hash.Add( hashKey, traceModelIndex );

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 
@@ -43,8 +43,8 @@ void idMath::Init( void ) {
         fo.f	 = (float)( 1.0 / sqrt( fi.f ) );
         iSqrt[i] = ((dword)(((fo.i + (1<<(SEED_POS-2))) >> SEED_POS) & 0xFF))<<SEED_POS;
     }
-    
-	iSqrt[SQRT_TABLE_SIZE / 2] = ((dword)(0xFF))<<(SEED_POS); 
+
+	iSqrt[SQRT_TABLE_SIZE / 2] = ((dword)(0xFF))<<(SEED_POS);
 
 	initialized = true;
 }
@@ -123,7 +123,7 @@ idMath::TestFloatBitConversions
 ================
 */
 void idMath::TestFloatBitConversions() {
-	// 
+	//
 	// test every value that can be represented within the valid ranges of bits
 	char testBuf[ 512 ];
 	int numFails = 0;
@@ -271,7 +271,7 @@ int rvRandom::Init( void )
 // Barycentric texture coordinate functions
 // Get the *SIGNED* area of a triangle required for barycentric
 // ================================================================================================
-float idMath::BarycentricTriangleArea( const idVec3 &normal, const idVec3 &a, const idVec3 &b, const idVec3 &c ) 
+float idMath::BarycentricTriangleArea( const idVec3 &normal, const idVec3 &a, const idVec3 &b, const idVec3 &c )
 {
 	idVec3	v1, v2;
 	idVec3	cross;

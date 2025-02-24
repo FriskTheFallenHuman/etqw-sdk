@@ -1,13 +1,13 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclDeployableZone.h"
-#include "../structures/TeamManager.h" // Gordon: FIXME Move this
-#include "../Game_local.h"
-#include "../../framework/DeclParseHelper.h"
+#include "structures/TeamManager.h" // Gordon: FIXME Move this
+#include "Game_local.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -43,7 +43,7 @@ sdDeclDeployableZone::DefaultDefinition
 ================
 */
 const char* sdDeclDeployableZone::DefaultDefinition( void ) const {
-	return 
+	return
 		"{\n"							\
 		"}\n";
 }

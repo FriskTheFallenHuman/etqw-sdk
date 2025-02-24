@@ -12,13 +12,13 @@
 sdSysSignal::Create
 =============
 */
-void sdSysSignal::Create( signalHandle_t &handle ) {	
+void sdSysSignal::Create( signalHandle_t &handle ) {
 	pthread_mutexattr_t	attr;
 
 	pthread_mutexattr_init( &attr );
 	pthread_mutexattr_settype( &attr, PTHREAD_MUTEX_ERRORCHECK );
 	pthread_mutex_init( &handle.mutex, &attr );
-	pthread_mutexattr_destroy( &attr );	
+	pthread_mutexattr_destroy( &attr );
 
 	pthread_cond_init( &handle.cond, NULL );
 

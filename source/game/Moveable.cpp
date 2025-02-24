@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -109,7 +109,7 @@ void sdMoveableBroadcastData::Read( idFile* file ) {
 ===============================================================================
 
   idMoveable
-	
+
 ===============================================================================
 */
 
@@ -162,8 +162,8 @@ void idMoveable::Spawn( void ) {
 	idTraceModel trm;
 	float density, friction, bouncyness, linearFriction, angularFriction;
 	int clipShrink;
-	
-	
+
+
 	const char* clipModelName = GetClipModelName();
 	if ( !gameLocal.clip.LoadTraceModel( clipModelName, trm ) ) {
 		gameLocal.Error( "idMoveable '%s': cannot load collision model %s", name.c_str(), clipModelName );
@@ -515,7 +515,7 @@ idMoveable::CreateNetworkStructure
 sdEntityStateNetworkData* idMoveable::CreateNetworkStructure( networkStateMode_t mode ) const {
 	if ( mode == NSM_VISIBLE ) {
 		sdMoveableNetworkData* newData = new sdMoveableNetworkData();
-		
+
 		newData->physicsData = GetPhysics()->CreateNetworkStructure( mode );
 
 		return newData;
@@ -523,7 +523,7 @@ sdEntityStateNetworkData* idMoveable::CreateNetworkStructure( networkStateMode_t
 
 	if ( mode == NSM_BROADCAST ) {
 		sdMoveableBroadcastData* newData = new sdMoveableBroadcastData();
-		
+
 		newData->physicsData = GetPhysics()->CreateNetworkStructure( mode );
 
 		return newData;
@@ -536,7 +536,7 @@ sdEntityStateNetworkData* idMoveable::CreateNetworkStructure( networkStateMode_t
 ===============================================================================
 
   idBarrel
-	
+
 ===============================================================================
 */
 

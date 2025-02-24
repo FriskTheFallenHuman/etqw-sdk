@@ -15,7 +15,7 @@ typedef sdSingleton< sdProfileHelperManagerLocal > sdProfileHelperManager;
 /*
 ===============================================================
 
-	sdProfileHelper 
+	sdProfileHelper
 		handy helper class that uses a hash map & lots of mini-dump files to make a full graphable csv file
 		of profiling information.
 		graphs vs game time
@@ -76,7 +76,7 @@ protected:
 /*
 ===============================================================
 
-	sdProfileHelperManagerLocal 
+	sdProfileHelperManagerLocal
 		Keeps track of all the active profile helpers and tells them to update, etc
 
 ===============================================================
@@ -102,7 +102,7 @@ public:
 /*
 ===============================================================
 
-	sdProfileHelper_ScopeTimer 
+	sdProfileHelper_ScopeTimer
 		Handy helper, profiles the current scope if on the stack
 
 ===============================================================

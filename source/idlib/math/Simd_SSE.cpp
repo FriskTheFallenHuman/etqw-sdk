@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 #include "Simd_Generic.h"
@@ -2324,7 +2324,7 @@ void VPCALL idSIMD_SSE::Dot( float *dst, const idPlane &constant, const idPlane 
 		shl			ecx, 2
 		lea			eax, [eax+ecx*4]
 		add			edx, ecx
-		neg			ecx		
+		neg			ecx
 
 		movlps		xmm0, [eax+ecx*4]
 		movhps		xmm0, [eax+ecx*4+16]
@@ -8739,7 +8739,7 @@ void VPCALL idSIMD_SSE::MatX_MultiplyMatX( idMatX &dst, const idMatX &m1, const 
 						MUL_Nx6_6x4_ROW( 1 )
 						MUL_Nx6_6x4_ROW( 2 )
 						MUL_Nx6_6x4_ROW( 3 )
-	
+
 						return;
 					}
 					break;
@@ -11261,7 +11261,7 @@ void VPCALL idSIMD_SSE::DecompressJoints( idJointQuat *joints, const idCompresse
 	__asm {
 
 
-		mov esi, compressedJoints 
+		mov esi, compressedJoints
 		mov edi, joints
 		mov edx, index
 		mov eax, numJoints
@@ -11324,7 +11324,7 @@ void VPCALL idSIMD_SSE::DecompressJoints( idJointQuat *joints, const idCompresse
 
 		shufps		xmm2, xmm2, SHUFFLE_PS( 0, 0, 0, 0 )
 		andps		xmm2, SIMD_SP_clearFirstThree
-		orps		xmm0, xmm2	
+		orps		xmm0, xmm2
 
 		// xmm0 contains quat
 
@@ -14954,7 +14954,7 @@ void VPCALL idSIMD_SSE::DecalPointCull( byte *cullBits, const idPlane *planes, c
 
 		cmpnltps	xmm6, SIMD_SP_zero
 		movmskps	ecx, xmm6
-			
+
 		movaps		xmm6, p0
 		movss		xmm3, [esi+eax+1*DRAWVERT_SIZE+DRAWVERT_XYZ_OFFSET+0]
 		shufps		xmm3, xmm3, R_SHUFFLE_PS( 0, 0, 0, 0 )
@@ -15197,7 +15197,7 @@ void VPCALL idSIMD_SSE::DecalPointCull( byte *cullBits, const idPlane *planes, c
 
 		cmpnltps	xmm6, SIMD_SP_zero
 		movmskps	ecx, xmm6
-			
+
 		movaps		xmm6, p0
 		movss		xmm3, [esi+eax+1*DRAWVERT_SIZE+DRAWVERT_XYZ_OFFSET+0]
 		shufps		xmm3, xmm3, R_SHUFFLE_PS( 0, 0, 0, 0 )
@@ -15439,7 +15439,7 @@ void VPCALL idSIMD_SSE::DecalPointCull( byte *cullBits, const idPlane *planes, c
 
 		cmpnltps	xmm6, SIMD_SP_zero
 		movmskps	ecx, xmm6
-			
+
 		movaps		xmm6, p0
 		movss		xmm3, [esi+eax+1*DRAWVERT_SIZE+DRAWVERT_XYZ_OFFSET+0]
 		shufps		xmm3, xmm3, R_SHUFFLE_PS( 0, 0, 0, 0 )
@@ -19843,7 +19843,7 @@ void VPCALL idSIMD_SSE::MixSoundEightSpeakerStereo( float *mixBuffer, const floa
 		mixBuffer[i*8+ 9] += samples[i*2+2+1] * sL1;
 		mixBuffer[i*8+10] += samples[i*2+2+0] * sL2;
 		mixBuffer[i*8+11] += samples[i*2+2+0] * sL3;
-							 
+
 		mixBuffer[i*8+12] += samples[i*2+2+0] * sL4;
 		mixBuffer[i*8+13] += samples[i*2+2+1] * sL5;
 		mixBuffer[i*8+14] += samples[i*2+2+0] * sL6;

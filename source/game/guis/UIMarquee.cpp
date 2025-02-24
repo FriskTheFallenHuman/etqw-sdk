@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -15,7 +15,7 @@ static char THIS_FILE[] = __FILE__;
 #include "UserInterfaceLocal.h"
 #include "UIMarquee.h"
 
-#include "../../sys/sys_local.h"
+#include "sys/sys_local.h"
 
 SD_UI_IMPLEMENT_CLASS( sdUIMarquee, sdUIWindow )
 
@@ -74,7 +74,7 @@ void sdUIMarquee::CalcOffsets() {
 			rectSize = cachedClientRect.z;
 			scrollOffset[ 1 ] = 0.0f;
 			index = 0;
-			break;		
+			break;
 		case SO_VERTICAL:
 			textSize = textHeight;
 			rectSize = cachedClientRect.w;
@@ -101,7 +101,7 @@ void sdUIMarquee::CalcOffsets() {
 	scrollTargetTime = scrollStartTime + SEC2MS( speed * ratio );
 
 	float totalTime = static_cast< float >( scrollTargetTime - scrollStartTime );
-	float percent = static_cast< float >( now - scrollStartTime ) / totalTime;	
+	float percent = static_cast< float >( now - scrollStartTime ) / totalTime;
 
 	scrollOffset[ index ] = rectSize - percent * ( rectSize + textSize );
 }
@@ -113,7 +113,7 @@ sdUIMarquee::GetFunction
 */
 sdUIFunctionInstance* sdUIMarquee::GetFunction( const char* name ) {
 	const sdUITemplateFunction< sdUIMarquee >* function = sdUIMarquee::FindFunction( name );
-	if( !function ) {		
+	if( !function ) {
 		return sdUIWindow::GetFunction( name );
 	}
 
@@ -139,7 +139,7 @@ SD_UI_PUSH_CLASS_TAG( sdUIMarquee )
 void sdUIMarquee::InitFunctions() {
 	SD_UI_FUNC_TAG( resetScroll, "Reset scroll amount." )
 	SD_UI_END_FUNC_TAG
-	marqueeFunctions.Set( "resetScroll",	new sdUITemplateFunction< sdUIMarquee >( 'v', "",	&sdUIMarquee::Script_ResetScroll ) );	
+	marqueeFunctions.Set( "resetScroll",	new sdUITemplateFunction< sdUIMarquee >( 'v', "",	&sdUIMarquee::Script_ResetScroll ) );
 }
 SD_UI_POP_CLASS_TAG
 

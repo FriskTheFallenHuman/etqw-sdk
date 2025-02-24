@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -211,7 +211,7 @@ sdUIExpression* sdUIExpression::AllocSingleParmExpression( sdProperties::eProper
 		switch( type ) {
 			case sdProperties::PT_INT:
 				return new sdSingleParmExpressionInt( rhs );
-			case sdProperties::PT_FLOAT:				
+			case sdProperties::PT_FLOAT:
 				return new sdSingleParmExpressionFloat( rhs );
 			case sdProperties::PT_VEC2:
 				return new sdSingleParmExpressionVec2( rhs );
@@ -285,7 +285,7 @@ sdUIExpression* sdUIExpression::AllocSingleParmExpression( sdProperties::eProper
 				gameLocal.Error( "'%s' is not numeric", text );
 			}
 			return sdConstParmExpressionInt::Alloc( atoi( sublist[ 0 ] ) );
-		case sdProperties::PT_FLOAT:				
+		case sdProperties::PT_FLOAT:
 			if( !IsNumeric( sublist[ 0 ].c_str() ) ) {
 				gameLocal.Error( "'%s' is not numeric", text );
 			}
@@ -542,10 +542,10 @@ sdUITransition< T, TYPE, COUNT >::sdUITransition( sdUserInterfaceScope* scope, i
 			bool isTable = idStr::Icmpn( temp, "table://", 8 ) == 0;
 			if( !isTable ) {
 				idLexer parser( temp, temp.Length(), "Transition Acceleration" );
-				
+
 				accelTimes.x = parser.ParseFloat();
 				parser.ExpectTokenString( "," );
-				accelTimes.y = parser.ParseFloat();				
+				accelTimes.y = parser.ParseFloat();
 			} else if( temp.Length() > 8 ) {
 				table = gameLocal.declTableType[ temp.c_str() + 8 ];
 				if( !table ) {
@@ -558,7 +558,7 @@ sdUITransition< T, TYPE, COUNT >::sdUITransition( sdUserInterfaceScope* scope, i
 	}
 
 	ui = scope->GetUI();
-	
+
 	assert( startExpressions[ 0 ] != NULL );
 	assert( endExpressions[ 0 ] != NULL );
 
@@ -606,8 +606,8 @@ sdUITransitionFloat::UpdateValue
 */
 template< typename T, sdProperties::ePropertyType TYPE, int COUNT >
 bool sdUITransition< T, TYPE, COUNT >::UpdateValue( void ) {
-	
-	int now = ui->GetCurrentTime();	
+
+	int now = ui->GetCurrentTime();
 	if( now < startTime ) {
 		now = startTime;
 	}
@@ -619,12 +619,12 @@ bool sdUITransition< T, TYPE, COUNT >::UpdateValue( void ) {
 		} else {
 			value = interpolator->GetCurrentValue( now );
 		}
-		
+
 		outputExpression->InputChanged();
 		return !isDone;
 	}
 
-	// normal behavior	
+	// normal behavior
 	if ( now > startTime + _cachedDuration ) {
 		if ( table ) {
 			value = Lerp( start, end, table->TableLookup( 1.0f ) );
@@ -640,7 +640,7 @@ bool sdUITransition< T, TYPE, COUNT >::UpdateValue( void ) {
 		frac = table->TableLookup( frac );
 	}
 	value = Lerp( start, end, frac );
-	
+
 	outputExpression->InputChanged();
 	return true;
 }
@@ -1130,7 +1130,7 @@ int sdFloatParmExpression::ExpressionConstant( float f ) {
 			return i;
 		}
 	}
-	
+
 	i = registers.Num();
 	expressionRegister_t& r = registers.Alloc();
 	r.value = f;
@@ -1219,7 +1219,7 @@ sdFloatParmExpression::ParseEmitOp
 */
 int sdFloatParmExpression::ParseEmitOp( idLexer *src, int a, wexpOpType_t opType, int priority, const char* delimiter, sdUserInterfaceScope* scope, wexpOp_t** opp ) {
 	int b = ParseExpressionPriority( src, priority, delimiter, scope );
-	return EmitOp( a, b, opType, opp );  
+	return EmitOp( a, b, opType, opp );
 }
 
 /*
@@ -1529,7 +1529,7 @@ void sdFloatParmExpression::EvaluateRegisters( void ) {
 			break;
 		case WOP_TYPE_BIT_COMP:
 			registers[ op.c ].value = ~idMath::Ftoi( registers[ op.a ].value );
-			break;						   
+			break;
 		case WOP_TYPE_GT:
 			registers[ op.c ].value = registers[ op.a ].value > registers[ op.b ].value;
 			break;
@@ -1681,7 +1681,7 @@ void sdFloatParmExpression::Detach( void ) {
 sdStringParmExpression::sdStringParmExpression
 ================
 */
-sdStringParmExpression::sdStringParmExpression( sdUserInterfaceScope* _scope, idLexer* src ) : 
+sdStringParmExpression::sdStringParmExpression( sdUserInterfaceScope* _scope, idLexer* src ) :
 	symbols(1),
 	registers(1),
 	ops(1),
@@ -1704,7 +1704,7 @@ int sdStringParmExpression::ExpressionConstant( const char* str ) {
 			return i;
 		}
 	}
-	
+
 	i = registers.Num();
 	expressionRegister_t& r = registers.Alloc();
 	r.temporary = false;
@@ -1796,7 +1796,7 @@ sdStringParmExpression::ParseEmitOp
 */
 int sdStringParmExpression::ParseEmitOp( idLexer *src, int a, wexpOpType_t opType, int priority, const char* delimiter, sdUserInterfaceScope* scope, wexpOp_t** opp ) {
 	int b = ParseExpressionPriority( src, priority, delimiter, scope );
-	return EmitOp( a, b, opType, opp );  
+	return EmitOp( a, b, opType, opp );
 }
 
 /*

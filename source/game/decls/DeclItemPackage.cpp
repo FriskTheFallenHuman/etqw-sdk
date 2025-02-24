@@ -2,14 +2,14 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclItemPackage.h"
-#include "../Game_local.h"
-#include "../Player.h"
+#include "Game_local.h"
+#include "Player.h"
 
-#include "../../framework/DeclParseHelper.h"
+#include "framework/DeclParseHelper.h"
 
 sdFactory< sdConsumable >	sdDeclItemPackage::s_consumableFactory;
 
@@ -291,7 +291,7 @@ bool sdDeclItemPackage::ParseNode( idParser& src, sdDeclItemPackageNode& node ) 
 		} else if ( !token.Cmp( "}" ) ) {
 
 			break;
-		
+
 		}
 	}
 

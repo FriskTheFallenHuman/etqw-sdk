@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 #include "Simd_Generic.h"

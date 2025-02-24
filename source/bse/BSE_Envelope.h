@@ -19,7 +19,7 @@ public:
 						rvEnvParms( void ) : mStatic(0), mFastLookUp(0) {}
 						rvEnvParms( const rvEnvParms &copy ) { *this = copy; }
 						~rvEnvParms( void ) {}
-	
+
 			void		SetDefaultType( void );
 			void		SetType( const char *type ) { mTable = declHolder.declTableType.LocalFind( type ); }
 			void		SetType( const idDeclTable *tabl ) { mTable = tabl; }

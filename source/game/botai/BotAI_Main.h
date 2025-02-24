@@ -8,7 +8,7 @@
 #include "aas/ObstacleAvoidance.h"
 #include "BotAI_Routes.h"
 #include "BotAI_VNodes.h"
-#include "../ContentMask.h"
+#include "ContentMask.h"
 
 #define AAS_PLAYER				0
 #define AAS_VEHICLE				1
@@ -130,7 +130,7 @@
 
 #define SPAWN_CONSIDER_TIME		7000
 
-#define MEDIC_IGNORE_TIME		15000		//mal: medics ignore unreachable clients 
+#define MEDIC_IGNORE_TIME		15000		//mal: medics ignore unreachable clients
 #define ENEMY_IGNORE_TIME		7000		//mal: enemies are ignored for 7 seconds
 #define BODY_IGNORE_TIME		15000		//mal: bodies are ignored for 15 seconds
 #define CLIENT_IGNORE_TIME		15000		//mal: regular clients are ignored for 15 seconds
@@ -233,7 +233,7 @@ const int BOT_VISIBILITY_TRACE_MASK = MASK_SHOT_BOUNDINGBOX | MASK_VEHICLESOLID 
 
 #define	TACTICAL_PAUSE_ACTION	9999999
 
-#define	FIX_DEPLOYABLE_DIST		1900.0f	
+#define	FIX_DEPLOYABLE_DIST		1900.0f
 
 #define BASE_ANTI_MISSILE_RANGE	3000.0f
 
@@ -321,7 +321,7 @@ const int BOT_VISIBILITY_TRACE_MASK = MASK_SHOT_BOUNDINGBOX | MASK_VEHICLESOLID 
 #define MCP_PARKED_DIST			150.0f
 
 //mal: what kind of charge should we look for?
-#define ARM						true 
+#define ARM						true
 #define DISARM					false
 
 #define PACKS_HAVE_NO_NADES		//mal: put in for a last minute change to the gameplay behavior
@@ -372,7 +372,7 @@ enum bot_LTG_Types_t {
 	THIRD_EYE_GOAL,
 	PROTECT_CHARGE,
 	PATROL_DELIVER_GOAL
-	
+
 //mal_TODO: add more here as you add them in the AI network
 
 };
@@ -396,7 +396,7 @@ enum bot_Vehicle_LTG_Types_t {
 enum bot_NBG_Types_t {
 	NO_NBG = -1,
 	REVIVE_TEAMMATE,
-	TK_REVIVE_TEAMMATE,	
+	TK_REVIVE_TEAMMATE,
 	SUPPLY_TEAMMATE,
 	CREATE_SPAWNHOST,
 	HAZE_ENEMY,
@@ -1208,7 +1208,7 @@ public:
 	bool					EntityIsDeployable( int entNum, bool enemyOnly );
 	bool					SpawnHostIsUsed( int entNum );
 	bool					TeamMineInArea( const idVec3& org, float range );
-	bool					Bot_CheckActionIsValid( int actionNumber );	
+	bool					Bot_CheckActionIsValid( int actionNumber );
 	const entityTypes_t		FindEntityType( int entNum, int spawnID );
 	bool					VehicleIsMarkedForRepair( int entNum, bool clearRequest );
 	bool					DeployableIsMarkedForRepair( int entNum, bool clearRequest );
@@ -1555,7 +1555,7 @@ private:
 	int							turretDangerEntNum;
 
 	int							classAbilityDelay;	// how long we should wait before use class ability
-	
+
 	struct enemyInfo_t {
 		bool					enemyVisible;
 		bool					enemyFacingBot;
@@ -1741,7 +1741,7 @@ private:
 	ignoreNodeTimer_t		pathNodeTimer;
 
 	bot_AI_Stack_t			AIStack;	//mal: only important AI nodes will be put on the stack, so that the bots can resume them after doing a NBG/COMBAT
-    
+
 	char					*lastAINode;
 	char					*lastMoveNode;
 

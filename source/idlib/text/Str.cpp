@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 #if defined( MACOS_X )
@@ -724,7 +724,7 @@ int idStr::Last( const char* str, bool casesensitive, int index ) const {
 	if( index == INVALID_POSITION ) {
 		index = Length();
 	}
-	int searchLength = Length( str ); 
+	int searchLength = Length( str );
 	if( len - index > searchLength ) {
 		index -= searchLength;
 	}
@@ -792,7 +792,7 @@ idStr::StripTrailing
 */
 void idStr::StripTrailing( const char c ) {
 	int i;
-	
+
 	for( i = Length(); i > 0 && data[ i - 1 ] == c; i-- ) {
 		data[ i - 1 ] = '\0';
 		len--;
@@ -999,7 +999,7 @@ idStr::StripLeadingWhiteSpace
 */
 void idStr::StripLeadingWhiteSpace( void ) {
 	int i;
-	
+
 	// cast to unsigned char to prevent stripping off high-ASCII characters
 	for ( i = 0; i < Length() && (unsigned char)(data[ i ]) <= ' '; i++ );
 
@@ -1016,7 +1016,7 @@ idStr::StripTrailingWhiteSpace
 */
 void idStr::StripTrailingWhiteSpace( void ) {
 	int i;
-	
+
 	// cast to unsigned char to prevent stripping off high-ASCII characters
 	for ( i = Length(); i > 0 && (unsigned char)(data[ i - 1 ]) <= ' '; i-- ) {
 		data[ i - 1 ] = '\0';
@@ -1037,7 +1037,7 @@ idStr& idStr::StripQuotes ( void )
 	{
 		return *this;
 	}
-	
+
 	// Remove the trailing quote first
 	if ( data[len-1] == '\"' )
 	{
@@ -1046,10 +1046,10 @@ idStr& idStr::StripQuotes ( void )
 	}
 
 	// Strip the leading quote now
-	len--;	
+	len--;
 	memmove( &data[ 0 ], &data[ 1 ], len );
 	data[len] = '\0';
-	
+
 	return *this;
 }
 
@@ -1474,21 +1474,21 @@ bool idStr::HasLower( const char *s ) {
 	if ( !s ) {
 		return false;
 	}
-	
+
 	while ( *s ) {
 		if ( CharIsLower( *s ) ) {
 			return true;
 		}
 		s++;
 	}
-	
+
 	return false;
 }
 
 /*
 ============
 idStr::HasUpper
-	
+
 Checks if a string has any uppercase chars
 ============
 */
@@ -1496,14 +1496,14 @@ bool idStr::HasUpper( const char *s ) {
 	if ( !s ) {
 		return false;
 	}
-	
+
 	while ( *s ) {
 		if ( CharIsUpper( *s ) ) {
 			return true;
 		}
 		s++;
 	}
-	
+
 	return false;
 }
 
@@ -1813,7 +1813,7 @@ int idStr::IcmpnPath( const char *s1, const char *s2, int n ) {
 /*
 =============
 idStr::Copynz
- 
+
 Safe strncpy that ensures a trailing zero
 NOTE: the specs indicate strncpy pads with zeros up to destination size, which be a bit wasteful
 =============
@@ -1824,7 +1824,7 @@ void idStr::Copynz( char *dest, const char *src, int destsize ) {
 		return;
 	}
 	if ( destsize < 1 ) {
-		idLib::common->Warning( "idStr::Copynz: destsize < 1" ); 
+		idLib::common->Warning( "idStr::Copynz: destsize < 1" );
 		return;
 	}
 
@@ -1891,7 +1891,7 @@ char *idStr::RemoveColors( char *string ) {
 	while( (c = *s) != 0 ) {
 		if ( IsColor( s ) ) {
 			s++;
-		}		
+		}
 		else {
 			*d++ = c;
 		}
@@ -1954,7 +1954,7 @@ idStr::StripFilename
 */
 char* idStr::StripFilename( char* string ) {
 	int pos;
-	
+
 	pos = idStr::Length( string ) - 1;
 	while( ( pos > 0 ) && ( string[ pos ] != '/' ) && ( string[ pos ] != '\\' ) ) {
 		pos--;
@@ -2086,7 +2086,7 @@ C99 standard: vsnprintf returns the number of characters (excluding the trailing
 snprintf and vsnprintf do not write more than size bytes (including the trailing '\0')
 
 win32: _vsnprintf returns the number of characters written, not including the terminating null character,
-or a negative value if an output error occurs. If the number of characters to write exceeds count, then count 
+or a negative value if an output error occurs. If the number of characters to write exceeds count, then count
 characters are written and -1 is returned and no trailing '\0' is added.
 
 idStr::vsnPrintf: always appends a trailing '\0', returns number of characters written (not including terminal \0)
@@ -2149,7 +2149,7 @@ int sprintf( idStr &string, const char *fmt, ... ) {
 	int l;
 	va_list argptr;
 	char buffer[32000];
-	
+
 	va_start( argptr, fmt );
 	l = idStr::vsnPrintf( buffer, sizeof(buffer), fmt, argptr );
 	va_end( argptr );
@@ -2168,9 +2168,9 @@ Sets the value of the string using a vprintf interface.
 int vsprintf( idStr &string, const char *fmt, va_list argptr ) {
 	int l;
 	char buffer[32000];
-	
+
 	l = idStr::vsnPrintf( buffer, sizeof(buffer), fmt, argptr );
-	
+
 	string = buffer;
 	return l;
 }
@@ -2360,7 +2360,7 @@ void idStr::SetUnit( const char *format, float value, int unit, measure_t measur
 	value /= 1 << ( unit * 10 );
 	sprintf( *this, format, value );
 	*this += " ";
-	*this += units[ measure ][ unit ];	
+	*this += units[ measure ][ unit ];
 }
 
 /*
@@ -2373,7 +2373,7 @@ void idStr::InitMemory( void ) {
 		stringDataAllocator = new stringDataAllocator_t;
 		stringDataAllocator->Init();
 		stringAllocatorIsShared = false;
-	}	
+	}
 }
 
 /*
@@ -2436,8 +2436,8 @@ stringDataAllocator_t* idStr::GetStringAllocator( void ) {
 ===============
 idStr::IndentAndPad
 
-adds a formated, indented line to a string.  The line is indented "indent" 
-characters and the formatted string is written. If the string size is less than 
+adds a formated, indented line to a string.  The line is indented "indent"
+characters and the formatted string is written. If the string size is less than
 the pad size, the remaining characters in the string are filled with spaces up
 to the "pad" position.
 ===============
@@ -2510,7 +2510,7 @@ void idStr::EraseRange( int start, int len ) {
 	if( len == INVALID_POSITION ) {
 		len = totalLength - start;
 	}
-	
+
 	if( len == totalLength ) {
 		// erase the whole thing
 		Empty();
@@ -2521,7 +2521,7 @@ void idStr::EraseRange( int start, int len ) {
 	if( totalLength - start - len ) {
 		memmove( &data[ start ], &data[ start + len ], totalLength - start - len );
 	}
-	
+
 	data[ totalLength - len ] = '\0';
 	this->len -= len;
 }
@@ -2602,7 +2602,7 @@ idStr& idStr::StripComments() {
 	if( ( startIndex != -1 && endIndex == -1 ) || ( startIndex == -1 && endIndex != -1 )) {
 		idLib::common->Warning( "StripCommentsFromString: mismatched /* */ comment" );
 		return *this;
-	}	
+	}
 
 	while( startIndex != -1 && endIndex != -1 ) {
 		int oldLength = len;
@@ -2672,7 +2672,7 @@ idStr& idStr::Indent() {
 
 		if( data[ i ] == '\n' && indent > 0 ) {
 			output.Append( indent, '\t' );
-		}		
+		}
 	}
 
 	*this = output;
@@ -2690,14 +2690,14 @@ idStr& idStr::Unindent() {
 	idStr output;
 	output.EnsureAlloced( len, false );
 	int i;
-	for( i = 0; i < len; ++i ) {	
+	for( i = 0; i < len; ++i ) {
 		if( data[ i ] == '\t' && i > 0 && data[ i - 1 ] == '\n' ) {
 			// strip leading tabs
 			while( i < len && data[ i ] == '\t' ) {
 				++i;
 			}
 		} else if( data[ i ] == '\t' && i > 0 && data[ i - 1 ] != '\n' ) {
-			// strip trailing tabs 
+			// strip trailing tabs
 			int temp = i;
 			while( temp < len ) {
 				if( data[ temp ] == '\r' || data[ temp ] == '\n' ) {
@@ -2709,7 +2709,7 @@ idStr& idStr::Unindent() {
 				++temp;
 			}
 		}
-		output += data[ i ];				
+		output += data[ i ];
 	}
 
 	*this = output;
@@ -2762,7 +2762,7 @@ bool idStr::BinaryStringToString( const char* str,  void* pv, int size ) {
 				c |= str[ i + 1 ] - 0x30;
 			}
 			assert( j < ( size ) );
-			out[ j++ ] = c;			
+			out[ j++ ] = c;
 		}
 
 		memcpy( pv, out.Get(), size );
@@ -2865,7 +2865,7 @@ const char*	idStr::MS2HMS( double ms, const hmsFormat_t& formatSpec ) {
 
 	int min = sec / 60;
 	int hour = min / 60;
-		
+
 	sec -= min * 60;
 	min -= hour * 60;
 

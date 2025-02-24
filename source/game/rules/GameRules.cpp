@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,25 +12,25 @@ static char THIS_FILE[] = __FILE__;
 
 #include "GameRules.h"
 #include "GameRules_Campaign.h"
-#include "../structures/TeamManager.h"
-#include "../Player.h"
-#include "../roles/FireTeams.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
+#include "structures/TeamManager.h"
+#include "Player.h"
+#include "roles/FireTeams.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
 
-#include "../guis/UserInterfaceLocal.h"
-#include "../guis/UserInterfaceTypes.h"
-#include "../guis/UIWindow.h"
-#include "../guis/UIList.h"
-#include "../guis/UserInterfaceManager.h"
+#include "guis/UserInterfaceLocal.h"
+#include "guis/UserInterfaceTypes.h"
+#include "guis/UIWindow.h"
+#include "guis/UIList.h"
+#include "guis/UserInterfaceManager.h"
 
-#include "../proficiency/StatsTracker.h"
+#include "proficiency/StatsTracker.h"
 
-#include "../botai/BotThreadData.h"
-#include "../botai/Bot.h"	//mal: needed for the bots.
+#include "botai/BotThreadData.h"
+#include "botai/Bot.h"	//mal: needed for the bots.
 
-#include "../Waypoints/LocationMarker.h"
-#include "../demos/DemoManager.h"
+#include "Waypoints/LocationMarker.h"
+#include "demos/DemoManager.h"
 
 #include "VoteManager.h"
 
@@ -673,7 +673,7 @@ void sdGameRules::BackupPlayerTeams( void ) {
 		idPlayer* player = gameLocal.GetClient( i );
 		if ( !player ) {
 			continue;
-		}	
+		}
 
 		playerState[ i ].backupTeam = player->GetGameTeam();
 		playerState[ i ].backupClass = *player->GetInventory().GetClassSetup();
@@ -2679,7 +2679,7 @@ sdGameRules::SetupLoadScreenUI
 ============
 */
 void sdGameRules::SetupLoadScreenUI( sdUserInterfaceScope& scope, const char* status, bool currentMap, int mapIndex, const idDict& metaData, const sdDeclMapInfo* mapInfo ) {
-	using namespace sdProperties;	
+	using namespace sdProperties;
 
 	// setup the icon state
 	if ( sdProperty* property = scope.GetProperty( va( "status%d", mapIndex ), PT_STRING ) ) {
@@ -2690,7 +2690,7 @@ void sdGameRules::SetupLoadScreenUI( sdUserInterfaceScope& scope, const char* st
 	if ( sdProperty* property = scope.GetProperty( va( "title%d", mapIndex ), PT_WSTRING ) ) {
 		*property->value.wstringValue = va( L"%hs", metaData.GetString( "pretty_name" ) );
 	}
-	
+
 
 	if( currentMap ) {
 		// setup the name
@@ -2858,7 +2858,7 @@ sdGameRules_SingleMapHelper::OnUserStartMap
 ============
 */
 userMapChangeResult_e sdGameRules_SingleMapHelper::OnUserStartMap( const char* text, idStr& reason, idStr& mapName ) {
-	mapName = text;	
+	mapName = text;
 	SanitizeMapName( mapName, true );
 
 #if defined( SD_PUBLIC_BUILD )
@@ -2879,9 +2879,9 @@ userMapChangeResult_e sdGameRules_SingleMapHelper::OnUserStartMap( const char* t
 			args.AppendArg( "spawnServer" );
 			args.AppendArg( text );
 			cmdSystem->SetupReloadEngine( args );
-			return UMCR_STOP;	
-		}		
-	}	
+			return UMCR_STOP;
+		}
+	}
 #endif
 	return UMCR_CONTINUE;
 }

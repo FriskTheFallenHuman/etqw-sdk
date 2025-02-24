@@ -15,7 +15,7 @@ void sdSysLock::Init( lockHandle_t& handle ) {
 	pthread_mutexattr_init( &attr );
 	pthread_mutexattr_settype( &attr, PTHREAD_MUTEX_ERRORCHECK );
 	pthread_mutex_init( &handle, &attr );
-	pthread_mutexattr_destroy( &attr );	
+	pthread_mutexattr_destroy( &attr );
 }
 
 /*

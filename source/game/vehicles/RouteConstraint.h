@@ -4,7 +4,7 @@
 #ifndef __GAME_VEHICLES_ROUTECONSTRAINT_H__
 #define __GAME_VEHICLES_ROUTECONSTRAINT_H__
 
-#include "../misc/RenderEntityBundle.h"
+#include "misc/RenderEntityBundle.h"
 
 class sdRouteConstraintMarker;
 class sdRouteConstraintTracker;
@@ -103,7 +103,7 @@ public:
 												sdRouteConstraintTracker( void );
 	void										Init( idEntity* _entity );
 	void										SetTrackerEntity( idEntity* entity );
-	
+
 	bool										IsValid( void ) const { return controller.IsValid(); }
 	void										Display( void );
 	void										Hide( void );

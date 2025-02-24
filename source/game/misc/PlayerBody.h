@@ -4,10 +4,10 @@
 #ifndef __GAME_MISC_PLAYERBODY_H__
 #define __GAME_MISC_PLAYERBODY_H__
 
-#include "../AFEntity.h"
-#include "../interfaces/UsableInterface.h"
-#include "../physics/Physics_Monster.h"
-#include "../Player.h"
+#include "AFEntity.h"
+#include "interfaces/UsableInterface.h"
+#include "physics/Physics_Monster.h"
+#include "Player.h"
 
 class sdPlayerBody;
 

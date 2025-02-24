@@ -42,7 +42,7 @@ public:
 							~idAF( void );
 
 	void					SetAnimator( idAnimator *a ) { animator = a; }
-	
+
 	bool					Load( idEntity *ent, const char *fileName );
 	void					UnLoad( void ) { isLoaded = false; }
 

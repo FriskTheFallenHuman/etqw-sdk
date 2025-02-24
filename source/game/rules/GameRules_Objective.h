@@ -36,7 +36,7 @@ public:
 
 	virtual sdTeamInfo*		GetWinningTeam( void ) const { return winningTeam; }
 	virtual void			SetWinner( sdTeamInfo* team );
-	
+
 	virtual void			ArgCompletion_StartGame( const idCmdArgs& args, argCompletionCallback_t callback );
 
 	virtual void						ApplyNetworkState( const sdEntityStateNetworkData& newState );
@@ -61,7 +61,7 @@ public:
 protected:
 	virtual void			GameState_Review( void );
 	virtual void			GameState_NextGame( void );
-	virtual void			GameState_Warmup( void );	
+	virtual void			GameState_Warmup( void );
 	virtual void			GameState_Countdown( void );
 	virtual void			GameState_GameOn( void );
 	virtual void			GameState_NextMap( void );

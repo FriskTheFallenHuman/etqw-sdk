@@ -75,7 +75,7 @@ public:
 
 	// Comparison functions
 	// find an object that passes the predicate
-	// IMPORTANT: unlike Find, this returns End() if the element is not found, NOT NULL	
+	// IMPORTANT: unlike Find, this returns End() if the element is not found, NOT NULL
 	template< class Cmp >
 	Iterator		FindIteratorIf( Cmp predicate ) {
 						Iterator begin = Begin();
@@ -106,7 +106,7 @@ public:
 
 	// Comparison functions
 	// find an object that passes the predicate
-	// IMPORTANT: unlike Find, this returns End() if the element is not found, NOT NULL	
+	// IMPORTANT: unlike Find, this returns End() if the element is not found, NOT NULL
 	template< class searchType, class Cmp >
 	Iterator		FindIteratorIf( const searchType& element, const Cmp predicate ) {
 						Iterator begin = Begin();
@@ -171,7 +171,7 @@ public:
 	Iterator		FindIteratorBinary( const type& searchElement, Cmp compare ) {
 						return sdBinarySearch( searchElement, Begin(), End(), compare );
 					}
-	
+
 	// IMPORTANT: unlike FindElement, this returns End() if the element is not found, NOT NULL
 	template< class Cmp >
 	ConstIterator	FindIteratorBinary( const type& searchElement, Cmp compare ) const {
@@ -412,7 +412,7 @@ ID_INLINE int idStaticList<type,size>::Append( type const & obj ) {
 ================
 idStaticList<type,size>::Insert
 
-Increases the size of the list by at leat one element if necessary 
+Increases the size of the list by at leat one element if necessary
 and inserts the supplied data into it.
 
 Returns the index of the new element, or -1 when list is full.
@@ -583,10 +583,10 @@ ID_INLINE bool idStaticList<type,size>::RemoveIndex( int index ) {
 idStaticList<type, size>::RemoveIndexFast
 
 Removes the element at the specified index and moves the last element into
-it's spot, rather than moving the whole array down by one.  Of course, this 
+it's spot, rather than moving the whole array down by one.  Of course, this
 doesn't maintain the order of elements!
-The number of elements in the list is reduced by one.  Returns false if the 
-index is outside the bounds of the list. Note that the element is not destroyed, 
+The number of elements in the list is reduced by one.  Returns false if the
+index is outside the bounds of the list. Note that the element is not destroyed,
 so any memory used by it may not be freed until the destruction of the list.
 ===============
 */
@@ -597,7 +597,7 @@ ID_INLINE bool idStaticList< type, size >::RemoveIndexFast( int index ) {
 
 	if ( ( index < 0 ) || ( index >= num ) ) {
 		return false;
-	}	
+	}
 
 	num--;
 
@@ -627,7 +627,7 @@ ID_INLINE bool idStaticList<type,size>::Remove( type const & obj ) {
 	if ( index >= 0 ) {
 		return RemoveIndex( index );
 	}
-	
+
 	return false;
 }
 
@@ -648,7 +648,7 @@ ID_INLINE bool idStaticList<type, size>::RemoveFast( type const & obj ) {
 	if ( index >= 0 ) {
 		return RemoveIndexFast( index );
 	}
-	
+
 	return false;
 }
 

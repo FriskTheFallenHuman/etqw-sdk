@@ -1,10 +1,10 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
-#include "../sys/threading/SysThread.h"
+#include "sys/threading/SysThread.h"
 
 /*
 =============
@@ -61,7 +61,7 @@ bool sdThread::Start( const void *parm, size_t size ) {
 		parms.parm = NULL;
 	}
 	parms.process->Start();
-	
+
 	if ( !sdSysThread::Start( handle ) ) {
 		return false;
 	}

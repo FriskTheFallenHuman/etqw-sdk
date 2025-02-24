@@ -1,13 +1,13 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
-#include "../structures/TeamManager.h"
+#include "structures/TeamManager.h"
 
-#include "../../decllib/declTypeHolder.h"
-#include "../../framework/DeclParseHelper.h"
+#include "decllib/declTypeHolder.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -43,7 +43,7 @@ sdDeclPlayerTask::DefaultDefinition
 ================
 */
 const char* sdDeclPlayerTask::DefaultDefinition( void ) const {
-	return 
+	return
 		"{\n"							\
 		"}\n";
 }
@@ -117,7 +117,7 @@ bool sdDeclPlayerTask::Parse( const char *text, const int textLength ) {
 	src.SetFlags( DECL_LEXER_FLAGS );
 //	src.LoadMemory( text, textLength, GetFileName(), GetLineNum() );
 //	src.AddIncludes( GetFileLevelIncludeDependencies() );
-	
+
 	sdDeclParseHelper declHelper( this, text, textLength, src );
 
 	src.SkipUntilString( "{", &token );
@@ -135,10 +135,10 @@ bool sdDeclPlayerTask::Parse( const char *text, const int textLength ) {
 				return false;
 			}
 
-			info.Copy( dict );			
+			info.Copy( dict );
 
 		} else if ( !token.Icmp( "waypoint" ) ) {
-			idDict data;			
+			idDict data;
 
 			if ( !data.Parse( src ) ) {
 				src.Error( "sdDeclPlayerTask::Parse Error Reading WayPoint Info Dictionary" );

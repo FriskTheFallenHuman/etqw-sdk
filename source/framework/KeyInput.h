@@ -131,7 +131,7 @@ public:
 	static void				SetOverstrikeMode( bool state );
 
 	static void				ClearStates( void );
-	
+
 	static void				SetBinding( idKey& key, const char* binding, idKey* modifier, sdBindContext* context, bool doPrint );
 	static const char*		GetBinding( sdBindContext* context, idKey& key, idKey* modifier );
 	static void				KeysFromBinding( sdBindContext* context, const char* bind, bool useBindStrWhenEmpty, idWStr& keyName );

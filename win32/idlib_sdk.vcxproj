@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug with edit and continue|Win32">
+      <Configuration>Debug with edit and continue</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug with edit and continue|x64">
+      <Configuration>Debug with edit and continue</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug with inlines|Win32">
+      <Configuration>Debug with inlines</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug with inlines|x64">
+      <Configuration>Debug with inlines</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectName>idLib</ProjectName>
+    <ProjectGuid>{F9A72ED4-E4C8-4205-9432-FB241E56C14D}</ProjectGuid>
+    <RootNamespace>idlib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug with inlines|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug with edit and continue|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug with inlines|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug with edit and continue|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug with inlines|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="_Common.props" />
+    <Import Project="_Debug.props" />
+    <Import Project="_WithInlines.props" />
+    <Import Project="_idLib.props" />
+    <Import Project="_SDK.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="_Common.props" />
+    <Import Project="_Release.props" />
+    <Import Project="_idLib.props" />
+    <Import Project="_SDK.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug with edit and continue|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="_Common.props" />
+    <Import Project="_Debug.props" />
+    <Import Project="_idLib.props" />
+    <Import Project="_SDK.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug with inlines|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug with edit and continue|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35707.178</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\source\idlib\BitMsg.cpp" />
+    <ClCompile Include="..\source\idlib\bv\Bounds.cpp" />
+    <ClCompile Include="..\source\idlib\bv\Bounds2D.cpp" />
+    <ClCompile Include="..\source\idlib\bv\BoundsShort.cpp" />
+    <ClCompile Include="..\source\idlib\bv\Box.cpp" />
+    <ClCompile Include="..\source\idlib\bv\Frustum.cpp" />
+    <ClCompile Include="..\source\idlib\bv\Sphere.cpp" />
+    <ClCompile Include="..\source\idlib\Callable.cpp" />
+    <ClCompile Include="..\source\idlib\Color.cpp" />
+    <ClCompile Include="..\source\idlib\containers\HashIndex.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug with edit and continue|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug with inlines|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\source\idlib\Dict.cpp" />
+    <ClCompile Include="..\source\idlib\FunctionSignals.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug with edit and continue|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug with inlines|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\source\idlib\geometry\JointTransform.cpp" />
+    <ClCompile Include="..\source\idlib\geometry\Surface.cpp" />
+    <ClCompile Include="..\source\idlib\geometry\Surface_Patch.cpp" />
+    <ClCompile Include="..\source\idlib\geometry\Surface_Polytope.cpp" />
+    <ClCompile Include="..\source\idlib\geometry\Surface_SweptSpline.cpp" />
+    <ClCompile Include="..\source\idlib\geometry\Surface_Traceable.cpp" />
+    <ClCompile Include="..\source\idlib\geometry\TraceModel.cpp" />
+    <ClCompile Include="..\source\idlib\geometry\TraceSurface.cpp" />
+    <ClCompile Include="..\source\idlib\geometry\Winding.cpp" />
+    <ClCompile Include="..\source\idlib\geometry\Winding2D.cpp" />
+    <ClCompile Include="..\source\idlib\hashing\CRC16.cpp" />
+    <ClCompile Include="..\source\idlib\hashing\CRC32.cpp" />
+    <ClCompile Include="..\source\idlib\hashing\CRC8.cpp" />
+    <ClCompile Include="..\source\idlib\hashing\Honeyman.cpp" />
+    <ClCompile Include="..\source\idlib\hashing\MD4.cpp" />
+    <ClCompile Include="..\source\idlib\hashing\MD5.cpp" />
+    <ClCompile Include="..\source\idlib\Heap.cpp" />
+    <ClCompile Include="..\source\idlib\ImagePacker.cpp" />
+    <ClCompile Include="..\source\idlib\LangDict.cpp" />
+    <ClCompile Include="..\source\idlib\Lib.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug with edit and continue|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug with inlines|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\source\idlib\MapFile.cpp" />
+    <ClCompile Include="..\source\idlib\math\Angles.cpp" />
+    <ClCompile Include="..\source\idlib\math\Complex.cpp" />
+    <ClCompile Include="..\source\idlib\math\Lcp.cpp" />
+    <ClCompile Include="..\source\idlib\math\Mat3x4.cpp" />
+    <ClCompile Include="..\source\idlib\math\Math.cpp" />
+    <ClCompile Include="..\source\idlib\math\Matrix.cpp" />
+    <ClCompile Include="..\source\idlib\math\Ode.cpp" />
+    <ClCompile Include="..\source\idlib\math\Perlin.cpp" />
+    <ClCompile Include="..\source\idlib\math\Plane.cpp" />
+    <ClCompile Include="..\source\idlib\math\Pluecker.cpp" />
+    <ClCompile Include="..\source\idlib\math\Polynomial.cpp" />
+    <ClCompile Include="..\source\idlib\math\Quat.cpp" />
+    <ClCompile Include="..\source\idlib\math\Radians.cpp" />
+    <ClCompile Include="..\source\idlib\math\Random.cpp" />
+    <ClCompile Include="..\source\idlib\math\Rotation.cpp" />
+    <ClCompile Include="..\source\idlib\math\Simd.cpp" />
+    <ClCompile Include="..\source\idlib\math\Simd_3DNow.cpp" />
+    <ClCompile Include="..\source\idlib\math\Simd_Generic.cpp" />
+    <ClCompile Include="..\source\idlib\math\Simd_MMX.cpp" />
+    <ClCompile Include="..\source\idlib\math\Simd_SSE.cpp" />
+    <ClCompile Include="..\source\idlib\math\Simd_SSE2.cpp" />
+    <ClCompile Include="..\source\idlib\math\Simd_SSE3.cpp" />
+    <ClCompile Include="..\source\idlib\math\Simd_Xenon.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug with edit and continue|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug with inlines|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\source\idlib\math\Vector.cpp" />
+    <ClCompile Include="..\source\idlib\PoolAllocator.cpp" />
+    <ClCompile Include="..\source\idlib\precompiled.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug with inlines|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug with edit and continue|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\source\idlib\Properties.cpp" />
+    <ClCompile Include="..\source\idlib\sys\threading\SysLock_win.cpp" />
+    <ClCompile Include="..\source\idlib\sys\threading\SysSignal_win.cpp" />
+    <ClCompile Include="..\source\idlib\sys\threading\SysThread_win.cpp" />
+    <ClCompile Include="..\source\idlib\TextUtilities.cpp" />
+    <ClCompile Include="..\source\idlib\text\Base64.cpp" />
+    <ClCompile Include="..\source\idlib\text\CmdArgs.cpp" />
+    <ClCompile Include="..\source\idlib\text\Lexer.cpp" />
+    <ClCompile Include="..\source\idlib\text\LexerBinary.cpp" />
+    <ClCompile Include="..\source\idlib\text\Parser.cpp" />
+    <ClCompile Include="..\source\idlib\text\Str.cpp" />
+    <ClCompile Include="..\source\idlib\text\StrBuilder.cpp" />
+    <ClCompile Include="..\source\idlib\text\StrSimple.cpp" />
+    <ClCompile Include="..\source\idlib\text\Token.cpp" />
+    <ClCompile Include="..\source\idlib\text\UTF8.cpp" />
+    <ClCompile Include="..\source\idlib\text\WLexer.cpp" />
+    <ClCompile Include="..\source\idlib\text\WStr.cpp" />
+    <ClCompile Include="..\source\idlib\text\WToken.cpp" />
+    <ClCompile Include="..\source\idlib\threading\Lock.cpp" />
+    <ClCompile Include="..\source\idlib\threading\Signal.cpp" />
+    <ClCompile Include="..\source\idlib\threading\Thread.cpp" />
+    <ClCompile Include="..\source\idlib\Timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\source\idlib\AutoPtr.h" />
+    <ClInclude Include="..\source\idlib\AutoTimer.h" />
+    <ClInclude Include="..\source\idlib\BitMsg.h" />
+    <ClInclude Include="..\source\idlib\bv\Bounds.h" />
+    <ClInclude Include="..\source\idlib\bv\Bounds2D.h" />
+    <ClInclude Include="..\source\idlib\bv\BoundsShort.h" />
+    <ClInclude Include="..\source\idlib\bv\Box.h" />
+    <ClInclude Include="..\source\idlib\bv\Frustum.h" />
+    <ClInclude Include="..\source\idlib\bv\Sphere.h" />
+    <ClInclude Include="..\source\idlib\Callable.h" />
+    <ClInclude Include="..\source\idlib\Callable_WIP.h" />
+    <ClInclude Include="..\source\idlib\Color.h" />
+    <ClInclude Include="..\source\idlib\containers\BinSearch.h" />
+    <ClInclude Include="..\source\idlib\containers\BitField.h" />
+    <ClInclude Include="..\source\idlib\containers\BTree.h" />
+    <ClInclude Include="..\source\idlib\containers\Deque.h" />
+    <ClInclude Include="..\source\idlib\containers\Grid.h" />
+    <ClInclude Include="..\source\idlib\containers\Handles.h" />
+    <ClInclude Include="..\source\idlib\containers\HashIndex.h" />
+    <ClInclude Include="..\source\idlib\containers\HashIndexImpl.h" />
+    <ClInclude Include="..\source\idlib\containers\HashMap.h" />
+    <ClInclude Include="..\source\idlib\containers\HashMapGeneric.h" />
+    <ClInclude Include="..\source\idlib\containers\HashTable.h" />
+    <ClInclude Include="..\source\idlib\containers\Hierarchy.h" />
+    <ClInclude Include="..\source\idlib\containers\LinkedList.h" />
+    <ClInclude Include="..\source\idlib\containers\LinkList.h" />
+    <ClInclude Include="..\source\idlib\containers\List.h" />
+    <ClInclude Include="..\source\idlib\containers\ObjArray.h" />
+    <ClInclude Include="..\source\idlib\containers\Pair.h" />
+    <ClInclude Include="..\source\idlib\containers\PlaneSet.h" />
+    <ClInclude Include="..\source\idlib\containers\PtrArray.h" />
+    <ClInclude Include="..\source\idlib\containers\QuadTree.h" />
+    <ClInclude Include="..\source\idlib\containers\Queue.h" />
+    <ClInclude Include="..\source\idlib\containers\Stack.h" />
+    <ClInclude Include="..\source\idlib\containers\StaticList.h" />
+    <ClInclude Include="..\source\idlib\containers\StrList.h" />
+    <ClInclude Include="..\source\idlib\containers\StrPool.h" />
+    <ClInclude Include="..\source\idlib\containers\VectorSet.h" />
+    <ClInclude Include="..\source\idlib\containers\VectorWeld.h" />
+    <ClInclude Include="..\source\idlib\Dict.h" />
+    <ClInclude Include="..\source\idlib\Factory.h" />
+    <ClInclude Include="..\source\idlib\FunctionSignals.h" />
+    <ClInclude Include="..\source\idlib\geometry\DrawVert.h" />
+    <ClInclude Include="..\source\idlib\geometry\JointTransform.h" />
+    <ClInclude Include="..\source\idlib\geometry\Surface.h" />
+    <ClInclude Include="..\source\idlib\geometry\Surface_Patch.h" />
+    <ClInclude Include="..\source\idlib\geometry\Surface_Polytope.h" />
+    <ClInclude Include="..\source\idlib\geometry\Surface_SweptSpline.h" />
+    <ClInclude Include="..\source\idlib\geometry\Surface_Traceable.h" />
+    <ClInclude Include="..\source\idlib\geometry\TraceModel.h" />
+    <ClInclude Include="..\source\idlib\geometry\TraceSurface.h" />
+    <ClInclude Include="..\source\idlib\geometry\Winding.h" />
+    <ClInclude Include="..\source\idlib\geometry\Winding2D.h" />
+    <ClInclude Include="..\source\idlib\Handle.h" />
+    <ClInclude Include="..\source\idlib\hashing\CRC16.h" />
+    <ClInclude Include="..\source\idlib\hashing\CRC32.h" />
+    <ClInclude Include="..\source\idlib\hashing\CRC8.h" />
+    <ClInclude Include="..\source\idlib\hashing\Honeyman.h" />
+    <ClInclude Include="..\source\idlib\hashing\MD4.h" />
+    <ClInclude Include="..\source\idlib\hashing\MD5.h" />
+    <ClInclude Include="..\source\idlib\Heap.h" />
+    <ClInclude Include="..\source\idlib\ImagePacker.h" />
+    <ClInclude Include="..\source\idlib\LangDict.h" />
+    <ClInclude Include="..\source\idlib\Lib.h" />
+    <ClInclude Include="..\source\idlib\LibImpl.h" />
+    <ClInclude Include="..\source\idlib\LibOS.h" />
+    <ClInclude Include="..\source\idlib\MapFile.h" />
+    <ClInclude Include="..\source\idlib\math\Angles.h" />
+    <ClInclude Include="..\source\idlib\math\BasicTypes.h" />
+    <ClInclude Include="..\source\idlib\math\Complex.h" />
+    <ClInclude Include="..\source\idlib\math\Curve.h" />
+    <ClInclude Include="..\source\idlib\math\Extrapolate.h" />
+    <ClInclude Include="..\source\idlib\math\FloatErrors.h" />
+    <ClInclude Include="..\source\idlib\math\Interpolate.h" />
+    <ClInclude Include="..\source\idlib\math\Lcp.h" />
+    <ClInclude Include="..\source\idlib\math\Mat3x4.h" />
+    <ClInclude Include="..\source\idlib\math\Math.h" />
+    <ClInclude Include="..\source\idlib\math\Matrix.h" />
+    <ClInclude Include="..\source\idlib\math\Ode.h" />
+    <ClInclude Include="..\source\idlib\math\Perlin.h" />
+    <ClInclude Include="..\source\idlib\math\Plane.h" />
+    <ClInclude Include="..\source\idlib\math\Pluecker.h" />
+    <ClInclude Include="..\source\idlib\math\Polynomial.h" />
+    <ClInclude Include="..\source\idlib\math\Quat.h" />
+    <ClInclude Include="..\source\idlib\math\Radians.h" />
+    <ClInclude Include="..\source\idlib\math\Random.h" />
+    <ClInclude Include="..\source\idlib\math\Rotation.h" />
+    <ClInclude Include="..\source\idlib\math\Simd.h" />
+    <ClInclude Include="..\source\idlib\math\Simd_3DNow.h" />
+    <ClInclude Include="..\source\idlib\math\Simd_Generic.h" />
+    <ClInclude Include="..\source\idlib\math\Simd_InstructionMacros.h" />
+    <ClInclude Include="..\source\idlib\math\Simd_MMX.h" />
+    <ClInclude Include="..\source\idlib\math\Simd_SSE.h" />
+    <ClInclude Include="..\source\idlib\math\Simd_SSE2.h" />
+    <ClInclude Include="..\source\idlib\math\Simd_SSE3.h" />
+    <ClInclude Include="..\source\idlib\math\Simd_TestData.h" />
+    <CustomBuild Include="..\source\idlib\math\Simd_Xenon.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug with edit and continue|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug with inlines|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <ClInclude Include="..\source\idlib\math\Vector.h" />
+    <ClInclude Include="..\source\idlib\PoolAllocator.h" />
+    <ClInclude Include="..\source\idlib\precompiled.h" />
+    <ClInclude Include="..\source\idlib\Properties.h" />
+    <ClInclude Include="..\source\idlib\PropertiesImpl.h" />
+    <ClInclude Include="..\source\idlib\PropertyTraits.h" />
+    <ClInclude Include="..\source\idlib\PtrPolicies.h" />
+    <ClInclude Include="..\source\idlib\Singleton.h" />
+    <ClInclude Include="..\source\idlib\SmartPtr.h" />
+    <ClInclude Include="..\source\idlib\Sort.h" />
+    <ClInclude Include="..\source\idlib\sys\threading\SysLock.h" />
+    <ClInclude Include="..\source\idlib\sys\threading\SysSignal.h" />
+    <ClInclude Include="..\source\idlib\sys\threading\SysThread.h" />
+    <ClInclude Include="..\source\idlib\TextUtilities.h" />
+    <ClInclude Include="..\source\idlib\text\Base64.h" />
+    <ClInclude Include="..\source\idlib\text\CmdArgs.h" />
+    <ClInclude Include="..\source\idlib\text\Lexer.h" />
+    <ClInclude Include="..\source\idlib\text\LexerBinary.h" />
+    <ClInclude Include="..\source\idlib\text\Parser.h" />
+    <ClInclude Include="..\source\idlib\text\Str.h" />
+    <ClInclude Include="..\source\idlib\text\StrBuilder.h" />
+    <ClInclude Include="..\source\idlib\text\StrSimple.h" />
+    <ClInclude Include="..\source\idlib\text\Token.h" />
+    <ClInclude Include="..\source\idlib\text\UTF8.h" />
+    <ClInclude Include="..\source\idlib\text\WLexer.h" />
+    <ClInclude Include="..\source\idlib\text\WStr.h" />
+    <ClInclude Include="..\source\idlib\text\WToken.h" />
+    <ClInclude Include="..\source\idlib\threading\Atomic.h" />
+    <ClInclude Include="..\source\idlib\threading\Lock.h" />
+    <ClInclude Include="..\source\idlib\threading\Signal.h" />
+    <ClInclude Include="..\source\idlib\threading\Thread.h" />
+    <ClInclude Include="..\source\idlib\threading\ThreadingDefs.h" />
+    <ClInclude Include="..\source\idlib\threading\ThreadProcess.h" />
+    <ClInclude Include="..\source\idlib\Timer.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

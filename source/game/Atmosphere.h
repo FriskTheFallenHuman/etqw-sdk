@@ -95,7 +95,7 @@ public:
 	void						FreeModelDef( void );
 	void						FreeLightDef( void );
 
-	static void					GetAtmosphereLightDetails_f( const idCmdArgs &args );	
+	static void					GetAtmosphereLightDetails_f( const idCmdArgs &args );
 
 	static void					DrawPostProcess( sdUserInterfaceLocal* ui, float x, float y, float w, float h );
 
@@ -103,7 +103,7 @@ public:
 
 	const idVec3&				GetWindVector() const { return windVector; }
 	static sdAtmosphere*		GetAtmosphereInstance() { return currentAtmosphere; }
-	
+
 	static void					SetAtmosphere_f( const idCmdArgs &args );
 	static void					FloodAmbientCubeMap( const idVec3 &origin,  const sdDeclAmbientCubeMap *ambientCubeMap );
 

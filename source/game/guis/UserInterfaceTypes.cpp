@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -226,7 +226,7 @@ sdUIEventTable::sdUIEventTable() {
 sdUIEventTable::AddEvent
 ================
 */
-void sdUIEventTable::AddEvent( const sdUIEventInfo& info, sdUIEventHandle scriptHandle ) {	
+void sdUIEventTable::AddEvent( const sdUIEventInfo& info, sdUIEventHandle scriptHandle ) {
 	if( !info.eventType.IsValid() || info.eventType >= events.Num() ) {
 		gameLocal.Warning( "sdUIEventTable::AddEvent: event type '%i' out of range", (int)info.eventType );
 		assert( 0 );
@@ -249,7 +249,7 @@ void sdUIEventTable::AddEvent( const sdUIEventInfo& info, sdUIEventHandle script
 sdUIEventTable::GetEvent
 ================
 */
-sdUIEventHandle sdUIEventTable::GetEvent( const sdUIEventInfo& info ) const {	
+sdUIEventHandle sdUIEventTable::GetEvent( const sdUIEventInfo& info ) const {
 	if( !info.eventType.IsValid() || info.eventType >= events.Num() ) {
 		assert( 0 );
 		gameLocal.Warning( "sdUIEventTable::GetEvent: event type '%i' out of range", (int)info.eventType );
@@ -268,6 +268,6 @@ sdUIEventHandle sdUIEventTable::GetEvent( const sdUIEventInfo& info ) const {
 sdUIEventTable::Clear
 ============
 */
-void sdUIEventTable::Clear() {	
+void sdUIEventTable::Clear() {
 	events.Clear();
 }

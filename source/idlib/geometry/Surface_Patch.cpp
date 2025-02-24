@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 
@@ -263,7 +263,7 @@ void idSurface_Patch::GenerateNormals( void ) {
 	//
 	idVec3		extent[3];
 	float		offset;
-	
+
 	extent[0] = verts[width - 1].xyz - verts[0].xyz;
 	extent[1] = verts[(height-1) * width + width - 1].xyz - verts[0].xyz;
 	extent[2] = verts[(height-1) * width].xyz - verts[0].xyz;
@@ -551,7 +551,7 @@ void idSurface_Patch::SubdivideExplicit( int horzSubdivisions, int vertSubdivisi
 	}
 
 	// normalize all the lerped normals
-	// 
+	//
 	if ( genNormals ) {
 #if !defined( SD_USE_DRAWVERT_SIZE_32 )
 		// pointless on 32bit format given normal is stored as 2 values, therefor when 3rd is calced

@@ -13,7 +13,7 @@
 */
 
 class idPluecker {
-public:	
+public:
 					idPluecker( void );
 					explicit idPluecker( const float *a );
 					explicit idPluecker( const idVec3 &start, const idVec3 &end );
@@ -180,7 +180,7 @@ ID_INLINE bool idPluecker::Compare( const idPluecker &a, const float epsilon ) c
 	if ( idMath::Fabs( p[0] - a[0] ) > epsilon ) {
 		return false;
 	}
-			
+
 	if ( idMath::Fabs( p[1] - a[1] ) > epsilon ) {
 		return false;
 	}

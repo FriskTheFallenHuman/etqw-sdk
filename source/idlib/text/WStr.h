@@ -74,7 +74,7 @@ public:
 		bool showZeroMinutes;
 		bool showZeroHours;
 		bool showZeroSeconds;
-	};	
+	};
 
 						idWStr( void );
 						idWStr( const idWStr& text );
@@ -152,7 +152,7 @@ public:
 	void				ReplaceFirst( const wchar_t *old, const wchar_t *nw );
 	void				ReplaceChar( wchar_t oldChar, wchar_t newChar );
 	void				EraseRange( int start, int len = INVALID_POSITION );
-	void				EraseChar( const wchar_t c, int start = 0 );	
+	void				EraseChar( const wchar_t c, int start = 0 );
 
 	idWStr&				StripFileExtension();
 
@@ -217,7 +217,7 @@ protected:
 	void				EnsureAlloced( int amount, bool keepold = true );	// ensure string data buffer is large enough
 
 	static				wideStringDataAllocator_t*	stringDataAllocator;
-	static bool			stringAllocatorIsShared;	
+	static bool			stringAllocatorIsShared;
 	static hmsFormat_t	defaultHMSFormat;
 
 public:

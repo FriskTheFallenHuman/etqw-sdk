@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 
@@ -25,7 +25,7 @@ ID_INLINE int UpdateVertexIndex( int vertexIndexNum[2], int *vertexRemap, vertIn
 //#define SD_USE_SURFACE_HEAP
 
 #ifdef SD_USE_SURFACE_HEAP
-#define DEREF_INDEX( index ) (*index) 
+#define DEREF_INDEX( index ) (*index)
 #else
 #define DEREF_INDEX( index ) index
 #endif
@@ -49,8 +49,8 @@ idSurface::Split
 =================
 */
 int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **front, idSurface **back, int *frontOnPlaneEdges, int *backOnPlaneEdges ) const {
-#ifdef SD_USE_SURFACE_HEAP	
-	sdAutoPtr< float, sdArrayCleanupPolicy< float > >			dists;	
+#ifdef SD_USE_SURFACE_HEAP
+	sdAutoPtr< float, sdArrayCleanupPolicy< float > >			dists;
 	sdAutoPtr< byte, sdArrayCleanupPolicy< byte > >			sides;
 
 	dists.Reset( new float[ verts.Num() ], verts.Num() );
@@ -83,7 +83,7 @@ int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **fro
 		}
 		counts[sides[i]]++;
 	}
-	
+
 	*front = *back = NULL;
 
 	// if coplanar, put on the front side if the normals match
@@ -126,15 +126,15 @@ int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **fro
 	vertIndex_t *	indexPtr[2];
 	vertIndex_t *	index;
 
-#endif 
-	int				numEdgeSplitVertexes;	
-	int				vertexIndexNum[2][2];	
+#endif
+	int				numEdgeSplitVertexes;
+	int				vertexIndexNum[2][2];
 	int				indexNum[2];
-	
+
 	int				numOnPlaneEdges[2];
 	int				maxOnPlaneEdges;
 	idSurface *		surface[2];
-	idDrawVert		v;	
+	idDrawVert		v;
 
 	// allocate front and back surface
 	*front = surface[0] = new idSurface();
@@ -284,7 +284,7 @@ int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **fro
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v0 );
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v1 );
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v2 );
-				indexNum[s] = n;				
+				indexNum[s] = n;
 
 				break;
 			}
@@ -297,19 +297,19 @@ int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **fro
 				DEREF_INDEX( index )[n++] = edgeSplitVertex[e0];
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v2 );
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v0 );
-				
+
 				indexNum[s] = n;
 				s ^= 1;
-				n = indexNum[s];				
+				n = indexNum[s];
 
-				onPlaneEdges[s][numOnPlaneEdges[s]++] = n;				
+				onPlaneEdges[s][numOnPlaneEdges[s]++] = n;
 				index = indexPtr[s];
 
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v2 );
 				DEREF_INDEX( index )[n++] = edgeSplitVertex[e0];
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v1 );
-				
-				indexNum[s] = n;			
+
+				indexNum[s] = n;
 
 				break;
 			}
@@ -322,7 +322,7 @@ int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **fro
 				DEREF_INDEX( index )[n++] = edgeSplitVertex[e1];
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v0 );
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v1 );
-				
+
 				indexNum[s] = n;
 				s ^= 1;
 				n = indexNum[s];
@@ -332,7 +332,7 @@ int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **fro
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v0 );
 				DEREF_INDEX( index )[n++] = edgeSplitVertex[e1];
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v2 );
-				
+
 				indexNum[s] = n;
 
 				break;
@@ -343,10 +343,10 @@ int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **fro
 				onPlaneEdges[s][numOnPlaneEdges[s]++] = n;
 				index = indexPtr[s];
 
-				DEREF_INDEX( index )[n++] = edgeSplitVertex[e1];				
-				DEREF_INDEX( index )[n++] = edgeSplitVertex[e0];				
+				DEREF_INDEX( index )[n++] = edgeSplitVertex[e1];
+				DEREF_INDEX( index )[n++] = edgeSplitVertex[e0];
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v1 );
-				
+
 
 				indexNum[s] = n;
 				s ^= 1;
@@ -355,13 +355,13 @@ int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **fro
 				index = indexPtr[s];
 
 				DEREF_INDEX( index )[n++] = edgeSplitVertex[e0];
-				DEREF_INDEX( index )[n++] = edgeSplitVertex[e1];				
+				DEREF_INDEX( index )[n++] = edgeSplitVertex[e1];
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v0 );
 
-				DEREF_INDEX( index )[n++] = edgeSplitVertex[e1];				
-				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v2 );				
-				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v0 );				
-				
+				DEREF_INDEX( index )[n++] = edgeSplitVertex[e1];
+				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v2 );
+				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v0 );
+
 				indexNum[s] = n;
 
 				break;
@@ -372,10 +372,10 @@ int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **fro
 				onPlaneEdges[s][numOnPlaneEdges[s]++] = n;
 				index = indexPtr[s];
 
-				DEREF_INDEX( index )[n++] = edgeSplitVertex[e2];				
-				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v1 );				
+				DEREF_INDEX( index )[n++] = edgeSplitVertex[e2];
+				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v1 );
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v2 );
-				
+
 				indexNum[s] = n;
 				s ^= 1;
 				n = indexNum[s];
@@ -383,9 +383,9 @@ int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **fro
 				index = indexPtr[s];
 
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v1 );
-				DEREF_INDEX( index )[n++] = edgeSplitVertex[e2];				
+				DEREF_INDEX( index )[n++] = edgeSplitVertex[e2];
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v0 );
-				
+
 				indexNum[s] = n;
 
 				break;
@@ -397,20 +397,20 @@ int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **fro
 				index = indexPtr[s];
 
 				DEREF_INDEX( index )[n++] = edgeSplitVertex[e0];
-				DEREF_INDEX( index )[n++] = edgeSplitVertex[e2];			
+				DEREF_INDEX( index )[n++] = edgeSplitVertex[e2];
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v0 );
-				
+
 				indexNum[s] = n;
 				s ^= 1;
 				n = indexNum[s];
 				onPlaneEdges[s][numOnPlaneEdges[s]++] = n;
 				index = indexPtr[s];
 
-				DEREF_INDEX( index )[n++] = edgeSplitVertex[e2];			
-				DEREF_INDEX( index )[n++] = edgeSplitVertex[e0];				
+				DEREF_INDEX( index )[n++] = edgeSplitVertex[e2];
+				DEREF_INDEX( index )[n++] = edgeSplitVertex[e0];
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v1 );
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v1 );
-				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v2 );				
+				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v2 );
 				DEREF_INDEX( index )[n++] = edgeSplitVertex[e2];
 				indexNum[s] = n;
 
@@ -422,23 +422,23 @@ int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **fro
 				onPlaneEdges[s][numOnPlaneEdges[s]++] = n;
 				index = indexPtr[s];
 
-				DEREF_INDEX( index )[n++] = edgeSplitVertex[e2];				
-				DEREF_INDEX( index )[n++] = edgeSplitVertex[e1];				
+				DEREF_INDEX( index )[n++] = edgeSplitVertex[e2];
+				DEREF_INDEX( index )[n++] = edgeSplitVertex[e1];
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v2 );
-				
+
 				indexNum[s] = n;
 				s ^= 1;
 				n = indexNum[s];
 				onPlaneEdges[s][numOnPlaneEdges[s]++] = n;
 				index = indexPtr[s];
 
-				DEREF_INDEX( index )[n++] = edgeSplitVertex[e1];				
-				DEREF_INDEX( index )[n++] = edgeSplitVertex[e2];				
+				DEREF_INDEX( index )[n++] = edgeSplitVertex[e1];
+				DEREF_INDEX( index )[n++] = edgeSplitVertex[e2];
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v1 );
 				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v0 );
-				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v1 );				
+				DEREF_INDEX( index )[n++] = UpdateVertexIndex( vertexIndexNum[s], vertexRemap[s], vertexCopyIndex[s], v1 );
 				DEREF_INDEX( index )[n++] = edgeSplitVertex[e2];
-				
+
 				indexNum[s] = n;
 
 				break;
@@ -456,7 +456,7 @@ int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **fro
 #else
 	index = vertexCopyIndex[0];
 #endif // SD_USE_SURFACE_HEAP
-	
+
 	for ( i = numEdgeSplitVertexes; i < surface[0]->verts.Num(); i++ ) {
 #ifdef SD_USE_SURFACE_HEAP
 		if( DEREF_INDEX( index )[i] >= verts.Num() || DEREF_INDEX( index )[i] < 0 ) {
@@ -507,7 +507,7 @@ int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **fro
 		memcpy( frontOnPlaneEdges, onPlaneEdges[0].Get(), numOnPlaneEdges[0] * sizeof( int ) );
 #else
 		memcpy( frontOnPlaneEdges, onPlaneEdges[0], numOnPlaneEdges[0] * sizeof( int ) );
-#endif // SD_USE_SURFACE_HEAP		
+#endif // SD_USE_SURFACE_HEAP
 		frontOnPlaneEdges[numOnPlaneEdges[0]] = -1;
 	}
 
@@ -517,7 +517,7 @@ int idSurface::Split( const idPlane &plane, const float epsilon, idSurface **fro
 #else
 		memcpy( backOnPlaneEdges, onPlaneEdges[1], numOnPlaneEdges[1] * sizeof( int ) );
 #endif // SD_USE_SURFACE_HEAP
-		
+
 		backOnPlaneEdges[numOnPlaneEdges[1]] = -1;
 	}
 
@@ -581,7 +581,7 @@ bool idSurface::ClipInPlace( const idPlane &plane, const float epsilon, const bo
 		}
 		counts[sides[i]]++;
 	}
-	
+
 	// if coplanar, put on the front side if the normals match
 	if ( !counts[SIDE_FRONT] && !counts[SIDE_BACK] ) {
 
@@ -1095,7 +1095,7 @@ void idSurface::GenerateEdgeIndexes( void ) {
 			}
 		}
 	}
-	
+
 	edges.Resize( edges.Num(), 16 );
 
 	if ( !usingStack ) {

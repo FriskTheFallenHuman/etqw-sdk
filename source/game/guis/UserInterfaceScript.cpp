@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,7 +11,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../../idlib/PropertiesImpl.h"
+#include "idlib/PropertiesImpl.h"
 #include "UserInterfaceScript.h"
 #include "UserInterfaceTypes.h"
 #include "UserInterfaceExpressions.h"
@@ -177,7 +177,7 @@ int sdUIScriptEvent::EmitOpCode( opCode_t code, int parm1, int parm2, int parm3,
 sdUIScriptEvent::Run
 ================
 */
-bool sdUIScriptEvent::Run( sdUIScript* script, sdUserInterfaceScope* scope, int offset, int num ) {	
+bool sdUIScriptEvent::Run( sdUIScript* script, sdUserInterfaceScope* scope, int offset, int num ) {
 	if( num < 0 ) {
 		num = ops.Num();
 	}
@@ -201,7 +201,7 @@ bool sdUIScriptEvent::Run( sdUIScript* script, sdUserInterfaceScope* scope, int 
 					if( condition->GetFloatValue( ) && ops[ i ].parm2 ) {
 						retVal = Run( script, scope, i + 1, ops[ i ].parm2 );
 					} else if( ops[ i ].parm3 ) {
-						retVal = Run( script, scope, i + 1 + ops[ i ].parm2, ops[ i ].parm3 );						
+						retVal = Run( script, scope, i + 1 + ops[ i ].parm2, ops[ i ].parm3 );
 					}
 					if( retVal ) {
 						i += ops[ i ].parm2 + ops[ i ].parm3;
@@ -272,7 +272,7 @@ int sdUIScriptEvent::GetPropertyField( sdProperties::ePropertyType type, idLexer
 				propertyField = 2;
 			} else if( !idStr::Icmp( "alpha", token ) || !idStr::Icmp( "height", token ) ) {
 				propertyField = 3;
-			} 
+			}
 		}
 		if ( propertyField == -1 || propertyField >= numPropertyFields ) {
 			gameLocal.Error( "Invalid Field '%s' on Vector", token.c_str() );
@@ -290,7 +290,7 @@ sdUIScriptEvent::ParsePropertyExpression
 ================
 */
 void sdUIScriptEvent::ParsePropertyExpression( idLexer* src, sdProperties::sdProperty* property, const char* propertyName, sdUserInterfaceScope* scope, sdUserInterfaceScope* propertyScope ) {
-	
+
 	idStr value;
 	try {
 		int propertyIndex = propertyScope->IndexForProperty( property );
@@ -313,7 +313,7 @@ void sdUIScriptEvent::ParsePropertyExpression( idLexer* src, sdProperties::sdPro
 
 		if ( !token.Icmp( "transition" ) ) {
 			sdUIExpression* exp;
-			
+
 			if ( propertyField == -1 ) {
 				exp = new sdPropertyExpressionSingle( propertyName, sdUIExpression::AllocTransition( property->GetValueType(), scope, src ) );
 			} else {
@@ -329,7 +329,7 @@ void sdUIScriptEvent::ParsePropertyExpression( idLexer* src, sdProperties::sdPro
 		} else {
 			src->UnreadToken( &token );
 		}
-		
+
 		idStrList list;
 		ReadExpression( src, value, list );
 
@@ -439,7 +439,7 @@ void sdUIScriptEvent::ParseEvent( idLexer* src, const sdUIEventInfo& info, sdUse
 				expr.StripLeadingOnce( "(" );
 				expr.StripTrailingOnce( ")" );
 				int expressionIndex = scope->AddExpression( sdUIExpression::AllocFloatExpression( scope, expr ) );
-				
+
 				int ifOpcode = EmitOpCode( EO_IF, expressionIndex, 0, 0 );
 
 				int trueBlockOpCount = ops.Num();
@@ -452,7 +452,7 @@ void sdUIScriptEvent::ParseEvent( idLexer* src, const sdUIEventInfo& info, sdUse
 				if ( !token.Icmp( "else" ) ) {
 					falseBlockOpCount = ops.Num();
 					ParseEvent( src, info, scope );
-					falseBlockOpCount = ops.Num() - falseBlockOpCount;					                 
+					falseBlockOpCount = ops.Num() - falseBlockOpCount;
 				} else {
 					src->UnreadToken( &token );
 				}
@@ -545,7 +545,7 @@ bool sdUIScript::RunEventHandle( sdUIEventHandle handle, sdUserInterfaceScope* s
 		return false;
 	}
 
-	sdUIScriptEvent* event = events[ handle ]; 
+	sdUIScriptEvent* event = events[ handle ];
 
 	event->Run( this, scope );
 

@@ -166,23 +166,23 @@ sdColor4::UnpackColor
 void sdColor4::UnpackColor( const dword color, idVec4& unpackedColor ) {
 #if defined( _XENON )
 	unpackedColor.Set( ( ( color >> 24 ) & 255 ) * ( 1.0f / 255.0f ),
-		( ( color >> 16 ) & 255 ) * ( 1.0f / 255.0f ), 
+		( ( color >> 16 ) & 255 ) * ( 1.0f / 255.0f ),
 		( ( color >> 8 ) & 255 ) * ( 1.0f / 255.0f ),
 		( ( color >> 0 ) & 255 ) * ( 1.0f / 255.0f ) );
 #elif defined( _WIN32 ) || defined( __linux__ )
 	unpackedColor.Set( ( ( color >> 0 ) & 255 ) * ( 1.0f / 255.0f ),
-		( ( color >> 8 ) & 255 ) * ( 1.0f / 255.0f ), 
+		( ( color >> 8 ) & 255 ) * ( 1.0f / 255.0f ),
 		( ( color >> 16 ) & 255 ) * ( 1.0f / 255.0f ),
 		( ( color >> 24 ) & 255 ) * ( 1.0f / 255.0f ) );
 #elif defined(MACOS_X)
 	#if defined ( __ppc__ )
 	unpackedColor.Set( ( ( color >> 24 ) & 255 ) * ( 1.0f / 255.0f ),
-		( ( color >> 16 ) & 255 ) * ( 1.0f / 255.0f ), 
+		( ( color >> 16 ) & 255 ) * ( 1.0f / 255.0f ),
 		( ( color >> 8 ) & 255 ) * ( 1.0f / 255.0f ),
 		( ( color >> 0 ) & 255 ) * ( 1.0f / 255.0f ) );
 	#else
 	unpackedColor.Set( ( ( color >> 0 ) & 255 ) * ( 1.0f / 255.0f ),
-		( ( color >> 8 ) & 255 ) * ( 1.0f / 255.0f ), 
+		( ( color >> 8 ) & 255 ) * ( 1.0f / 255.0f ),
 		( ( color >> 16 ) & 255 ) * ( 1.0f / 255.0f ),
 		( ( color >> 24 ) & 255 ) * ( 1.0f / 255.0f ) );
 	#endif
@@ -224,7 +224,7 @@ sdColor3::UnpackColor
 void sdColor3::UnpackColor( const dword color, idVec3& unpackedColor ) {
 #if defined(_WIN32) || defined(__linux__)
 	unpackedColor.Set( ( ( color >> 0 ) & 255 ) * ( 1.0f / 255.0f ),
-		( ( color >> 8 ) & 255 ) * ( 1.0f / 255.0f ), 
+		( ( color >> 8 ) & 255 ) * ( 1.0f / 255.0f ),
 		( ( color >> 16 ) & 255 ) * ( 1.0f / 255.0f ) );
 #elif defined(MACOS_X)
 	#if defined(__ppc__)
@@ -233,7 +233,7 @@ void sdColor3::UnpackColor( const dword color, idVec3& unpackedColor ) {
 		( ( color >> 0 ) & 255 ) * ( 1.0f / 255.0f ) );
 	#else
 	unpackedColor.Set( ( ( color >> 0 ) & 255 ) * ( 1.0f / 255.0f ),
-		( ( color >> 8 ) & 255 ) * ( 1.0f / 255.0f ), 
+		( ( color >> 8 ) & 255 ) * ( 1.0f / 255.0f ),
 		( ( color >> 16 ) & 255 ) * ( 1.0f / 255.0f ) );
 	#endif
 #else

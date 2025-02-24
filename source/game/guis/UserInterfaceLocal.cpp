@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -16,7 +16,7 @@ static char THIS_FILE[] = __FILE__;
 #include "UserInterfaceManagerLocal.h"
 #include "UIWindow.h"
 
-#include "../../sys/sys_local.h"
+#include "sys/sys_local.h"
 
 using namespace sdProperties;
 
@@ -92,7 +92,7 @@ sdPropertyBinder::ClearPropertyExpression
 */
 void sdPropertyBinder::ClearPropertyExpression( int propertyKey, int propertyIndex ) {
 	boundProperty_t& bp = indexedProperties[ propertyKey ];
-	int index = bp.second + propertyIndex;	
+	int index = bp.second + propertyIndex;
 
 	if ( !propertyExpressions[ index ] ) {
 		return;
@@ -144,7 +144,7 @@ int sdPropertyBinder::IndexForProperty( sdProperties::sdProperty* property ) {
 	for ( i = 0; i < count; i++ ) {
 		propertyExpressions.Append( NULL );
 	}
-		
+
 	return indexedProperties.Num() - 1;
 }
 
@@ -391,7 +391,7 @@ void sdUserInterfaceState::Update( void ) {
 	int i;
 	for ( i = 0; i < transitionExpressions.Num(); ) {
 		sdUIExpression* expression = transitionExpressions[ i ];
-		
+
 		if ( !expression->UpdateValue() ) {
 			transitionExpressions.RemoveIndex( i );
 		} else {
@@ -479,21 +479,21 @@ sdUserInterfaceLocal::sdUserInterfaceLocal( int _spawnId, bool _isUnique, bool _
 
 	flags.isActive		= false;
 	flags.isUnique		= _isUnique;
-	flags.isPermanent	= _isPermanent;		
+	flags.isPermanent	= _isPermanent;
 	flags.shouldUpdate	= true;
 
 	currentTime = 0;
 
-	scriptState.Init( this );	
+	scriptState.Init( this );
 
 	UI_ADD_STR_CALLBACK( cursorMaterialName, sdUserInterfaceLocal, OnCursorMaterialNameChanged )
 	UI_ADD_STR_CALLBACK( postProcessMaterialName,sdUserInterfaceLocal, OnPostProcessMaterialNameChanged )
 	UI_ADD_STR_CALLBACK( focusedWindowName, sdUserInterfaceLocal, OnFocusedWindowNameChanged )
-	UI_ADD_STR_CALLBACK( screenSaverName, sdUserInterfaceLocal, OnScreenSaverMaterialNameChanged )	
-	UI_ADD_STR_CALLBACK( themeName, sdUserInterfaceLocal, OnThemeNameChanged )	
+	UI_ADD_STR_CALLBACK( screenSaverName, sdUserInterfaceLocal, OnScreenSaverMaterialNameChanged )
+	UI_ADD_STR_CALLBACK( themeName, sdUserInterfaceLocal, OnThemeNameChanged )
 	UI_ADD_STR_CALLBACK( bindContextName, sdUserInterfaceLocal, OnBindContextChanged )
 	UI_ADD_VEC2_CALLBACK( screenDimensions, sdUserInterfaceLocal, OnScreenDimensionChanged )
-	
+
 	postProcessMaterial = NULL;
 	screenSaverMaterial = NULL;
 
@@ -561,7 +561,7 @@ void sdUserInterfaceLocal::Init() {
 
 	generalStacks.Clear();
 	scriptStack.Clear();
-	
+
 	colorStack.Clear();
 	colorStack.SetGranularity( 1 );
 	currentColor = colorWhite;
@@ -604,17 +604,17 @@ void sdUserInterfaceLocal::PopTrace() {
 sdUserInterfaceLocal::PrintStackTrace
 ============
 */
-void sdUserInterfaceLocal::PrintStackTrace() {	
+void sdUserInterfaceLocal::PrintStackTrace() {
 	if( parseStack.Num() == 0 ) {
 		return;
 	}
 
 	gameLocal.Printf( "^3===============================================\n" );
-	
+
 	for( int i = parseStack.Num() - 1; i >= 0; i-- ) {
 		gameLocal.Printf( "%s\n", parseStack[ i ].c_str() );
 	}
-	
+
 	gameLocal.Printf( "^3===============================================\n" );
 	parseStack.Clear();
 }
@@ -655,7 +655,7 @@ bool sdUserInterfaceLocal::Load( const char* name ) {
 			PushTrace( windowDecl->GetName() );
 
 			sdUIObject* object = uiManager->CreateWindow( windowDecl->GetTypeName() );
-			if ( !object ) {			
+			if ( !object ) {
 				gameLocal.Error( "sdUserInterfaceLocal::Load Invalid Window Type '%s'", windowDecl->GetTypeName() );
 			}
 
@@ -684,7 +684,7 @@ bool sdUserInterfaceLocal::Load( const char* name ) {
 		for ( i = 0; i < guiDecl->GetNumWindows(); i++ ) {
 			GetWindow( i )->CacheEvents();
 		}
-		
+
 
 		desktop = GetWindow( "desktop" )->Cast< sdUIWindow >();
 		if( desktop == NULL ) {
@@ -716,7 +716,7 @@ bool sdUserInterfaceLocal::Load( const char* name ) {
 		}
 
 		// run constructors now that everything is parented
-		for ( i = 0; i < guiDecl->GetNumWindows(); i++ ) {			
+		for ( i = 0; i < guiDecl->GetNumWindows(); i++ ) {
 			GetWindow( i )->RunEvent( sdUIEventInfo( sdUIObject::OE_CREATE, 0 ) );
 			GetWindow( i )->OnCreate();
 		}
@@ -744,7 +744,7 @@ void sdUserInterfaceLocal::Draw() {
 	if ( !desktop ) {
 		return;
 	}
-	
+
 	deviceContext->SetRegisters( shaderParms.Begin() );
 	bool allowScreenSaver = TestGUIFlag( GUI_SCREENSAVER ) && !TestGUIFlag( GUI_FULLSCREEN );
 
@@ -759,7 +759,7 @@ void sdUserInterfaceLocal::Draw() {
 	} else if ( screenSaverMaterial != NULL && allowScreenSaver ) {
 		deviceContext->DrawMaterial( 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, screenSaverMaterial, colorWhite );
 	}
-	
+
 	if( g_debugGUI.GetBool() ) {
 		sdBounds2D rect( 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT );
 
@@ -769,7 +769,7 @@ void sdUserInterfaceLocal::Draw() {
 	}
 
 	UpdateToolTip();
-	
+
 	if ( postProcessMaterial != NULL ) {
 		deviceContext->DrawMaterial( 0.0f, 0.0f, SCREEN_WIDTH, SCREEN_HEIGHT, postProcessMaterial, colorWhite );
 	}
@@ -815,7 +815,7 @@ void sdUserInterfaceLocal::UpdateToolTip() {
 			CancelToolTip();
 			return;
 		}
-		if( idMath::Fabs( cursorPos.GetValue().x - tooltipAnchor.x ) >= TOOLTIP_MOVE_TOLERANCE || 
+		if( idMath::Fabs( cursorPos.GetValue().x - tooltipAnchor.x ) >= TOOLTIP_MOVE_TOLERANCE ||
 			idMath::Fabs( cursorPos.GetValue().y - tooltipAnchor.y ) >= TOOLTIP_MOVE_TOLERANCE ) {
 			CancelToolTip();
 			nextAllowToolTipTime = GetCurrentTime() + SEC2MS( gui_tooltipDelay.GetFloat() );
@@ -830,14 +830,14 @@ void sdUserInterfaceLocal::UpdateToolTip() {
 
 		if( toolText && tipText && active ) {
 			*tipText->value.wstringValue = *toolText->value.wstringValue;
-			*active->value.floatValue = 1.0f;				
+			*active->value.floatValue = 1.0f;
 		}
 
 		if( rect != NULL ) {
 			idVec4 temp = *rect->value.vec4Value;
 			temp.x = cursorPos.GetValue().x;
 			temp.y = cursorPos.GetValue().y + cursorSize.GetValue().y * 0.5f;
-			
+
 			if( temp.x + temp.z >= screenDimensions.GetValue().x ) {
 				temp.x -= temp.z;
 			}
@@ -902,7 +902,7 @@ sdUserInterfaceLocal::Clear
 ============
 */
 void sdUserInterfaceLocal::Clear() {
-	scriptState.ClearExpressions();	
+	scriptState.ClearExpressions();
 
 	// we must do this before we destroy any windows, since a window could be watching other windows' properties
 	DisconnectGlobalCallbacks();
@@ -922,7 +922,7 @@ void sdUserInterfaceLocal::Clear() {
 
 	timelineWindows.Clear();
 	windows.DeleteValues();
-	windows.Clear();	
+	windows.Clear();
 
 	externalProperties.DeleteContents( true );
 
@@ -945,7 +945,7 @@ void sdUserInterfaceLocal::Clear() {
 	focusedWindowName = "";
 	cursorMaterialName = "";
 	cursorSize = vec2_zero;
-	cursorColor = vec4_zero;	
+	cursorColor = vec4_zero;
 	screenSaverName = "";
 	postProcessMaterialName = "";
 }
@@ -969,7 +969,7 @@ bool sdUserInterfaceLocal::PostEvent( const sdSysEvent* event ) {
 	if ( !desktop || !IsInteractive() ) {
 		return false;
 	}
-	
+
 	if ( event->IsControllerButtonEvent() || event->IsKeyEvent() ) {
 		if ( bindContext != NULL ) {
 			bool down;
@@ -989,7 +989,7 @@ bool sdUserInterfaceLocal::PostEvent( const sdSysEvent* event ) {
 
 		if ( TestGUIFlag( GUI_FULLSCREEN ) ) {
 			scaledDelta.x *= ( 1.0f / deviceContext->GetAspectRatioCorrection() );
-		}		
+		}
 
 		pos.x += scaledDelta.x;
 		if ( TestGUIFlag( GUI_USE_MOUSE_PITCH ) && gui_invertMenuPitch.GetBool() ) {
@@ -1004,7 +1004,7 @@ bool sdUserInterfaceLocal::PostEvent( const sdSysEvent* event ) {
 	}
 
 	bool retVal = false;
-	
+
 	if ( !TestGUIFlag( GUI_SHOWCURSOR ) &&
 		( event->IsMouseEvent() || ( event->IsMouseButtonEvent() && event->GetMouseButton() >= M_MOUSE1 && event->GetMouseButton() <= M_MOUSE12 ) && !TestGUIFlag( GUI_NON_FOCUSED_MOUSE_EVENTS ) )) {
 		retVal = false;
@@ -1043,8 +1043,8 @@ bool sdUserInterfaceLocal::PostEvent( const sdSysEvent* event ) {
 					}
 				}
 			}
-		} 
-		
+		}
+
 		if( !retVal ) {
 			retVal |= desktop->PostEvent( event );
 		}
@@ -1053,7 +1053,7 @@ bool sdUserInterfaceLocal::PostEvent( const sdSysEvent* event ) {
 	// eat everything but the F-Keys
 	if ( TestGUIFlag( GUI_CATCH_ALL_EVENTS ) ) {
 		keyNum_t keyNum;
-		
+
 		if ( event->IsKeyEvent() ) {
 			keyNum = event->GetKey();
 		} else {
@@ -1134,7 +1134,7 @@ void sdUserInterfaceLocal::CreateEvents( const sdDeclGUI* guiDecl, idTokenCache&
 	events.Clear();
 	events.SetNumEvents( GE_NUM_EVENTS );
 	namedEvents.Clear();
-	
+
 	sdUserInterfaceLocal::PushTrace( va( "sdUserInterfaceLocal::CreateEvents for gui '%s'", guiDecl->GetName() ));
 
 	idList<unsigned short> constructorTokens;
@@ -1151,11 +1151,11 @@ void sdUserInterfaceLocal::CreateEvents( const sdDeclGUI* guiDecl, idTokenCache&
 
 		sdUserInterfaceLocal::PopTrace();
 	}
-	
+
 
 	if( guiDecl->GetTimelines().GetNumTimelines() > 0 ) {
 		timelines.Reset( new sdUITimelineManager( *this, scriptState, script ));
-		timelines->CreateTimelines( guiDecl->GetTimelines(), guiDecl );	
+		timelines->CreateTimelines( guiDecl->GetTimelines(), guiDecl );
 		timelines->CreateProperties( guiDecl->GetTimelines(), guiDecl, tokenCache );
 	}
 
@@ -1172,7 +1172,7 @@ void sdUserInterfaceLocal::CreateEvents( const sdDeclGUI* guiDecl, idTokenCache&
 		for ( int j = 0; j < eventList.Num(); j++ ) {
 			idLexer parser( sdDeclGUI::LEXER_FLAGS );
 			parser.LoadTokenStream( eventInfo->GetTokenIndices(), tokenCache, tokenCache[ eventInfo->GetName() ] );
-			
+
 			GetScript().ParseEvent( &parser, eventList[ j ], &scriptState );
 		}
 		sdUserInterfaceLocal::PopTrace();
@@ -1245,7 +1245,7 @@ void sdUserInterfaceLocal::EnumerateEvents( const char* name, const idList<unsig
 
 			// do a proper lookup, so windows can watch guis and vice-versa
 			idLexer p( sdDeclGUI::LEXER_FLAGS );
-			p.LoadMemory( name, name.Length(), "onPropertyChanged event handler" );			
+			p.LoadMemory( name, name.Length(), "onPropertyChanged event handler" );
 
 			sdUserInterfaceScope* propertyScope = gameLocal.GetUserInterfaceScope( GetState(), &p );
 
@@ -1262,25 +1262,25 @@ void sdUserInterfaceLocal::EnumerateEvents( const char* name, const idList<unsig
 			int eventHandle = NamedEventHandleForString( name.c_str() );
 			int cbHandle = -1;
 			switch( prop->GetValueType() ) {
-				case PT_VEC4: 
+				case PT_VEC4:
 					cbHandle = prop->value.vec4Value->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const idVec4&, const idVec4& >( &sdUserInterfaceLocal::OnVec4PropertyChanged, this , eventHandle ) );
 					break;
-				case PT_VEC3: 
+				case PT_VEC3:
 					cbHandle = prop->value.vec3Value->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const idVec3&, const idVec3& >( &sdUserInterfaceLocal::OnVec3PropertyChanged, this , eventHandle ) );
 					break;
-				case PT_VEC2: 
+				case PT_VEC2:
 					cbHandle = prop->value.vec2Value->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const idVec2&, const idVec2& >( &sdUserInterfaceLocal::OnVec2PropertyChanged, this , eventHandle ) );
 					break;
-				case PT_INT: 
+				case PT_INT:
 					cbHandle = prop->value.intValue->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const int, const int >( &sdUserInterfaceLocal::OnIntPropertyChanged, this , eventHandle ) );
 					break;
-				case PT_FLOAT: 
+				case PT_FLOAT:
 					cbHandle = prop->value.floatValue->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const float, const float >( &sdUserInterfaceLocal::OnFloatPropertyChanged, this , eventHandle ) );
 					break;
-				case PT_STRING: 
+				case PT_STRING:
 					cbHandle = prop->value.stringValue->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const idStr&, const idStr& >( &sdUserInterfaceLocal::OnStringPropertyChanged, this , eventHandle ) );
 					break;
-				case PT_WSTRING: 
+				case PT_WSTRING:
 					cbHandle = prop->value.wstringValue->AddOnChangeHandler( sdFunctions::sdBindMem1< void, int, const idWStr&, const idWStr& >( &sdUserInterfaceLocal::OnWStringPropertyChanged, this , eventHandle ) );
 					break;
 			}
@@ -1326,7 +1326,7 @@ void sdUserInterfaceLocal::Activate( void ) {
 		sdUIObject* object = windows.FindIndex( i )->second;
 		if( sdUIWindow* window = object->Cast< sdUIWindow >() ) {
 			window->OnActivate();
-		}		
+		}
 	}
 
 	RunEvent( sdUIEventInfo( GE_ACTIVATE, 0 ) );
@@ -1368,7 +1368,7 @@ void sdUserInterfaceLocal::Update( void ) {
 	guiTime.SetReadOnly( false );
 	guiTime = currentTime;
 	guiTime.SetReadOnly( true );
-	
+
 	screenDimensions.SetReadOnly( false );
 	screenCenter.SetReadOnly( false );
 	if ( TestGUIFlag( GUI_FULLSCREEN ) ) {
@@ -1431,14 +1431,14 @@ void sdUserInterfaceLocal::SetFocus( sdUIWindow* focus ) {
 		return;
 	}
 	if( focusedWindow ) {
-		focusedWindow->OnLoseFocus(); 
+		focusedWindow->OnLoseFocus();
 	}
 
 	focusedWindow = focus;
 
 	if( focusedWindow ) {
 		focusedWindow->OnGainFocus();
-	}	
+	}
 }
 
 /*
@@ -1477,7 +1477,7 @@ void sdUserInterfaceLocal::OnPostProcessMaterialNameChanged( const idStr& oldVal
 sdUserInterfaceLocal::OnFocusedWindowNameChanged
 ============
 */
-void sdUserInterfaceLocal::OnFocusedWindowNameChanged( const idStr& oldValue, const idStr& newValue ) {	
+void sdUserInterfaceLocal::OnFocusedWindowNameChanged( const idStr& oldValue, const idStr& newValue ) {
 	SetFocus( GetWindow( newValue )->Cast< sdUIWindow >() );
 	if( newValue.Length() && !focusedWindow ) {
 		gameLocal.Warning( "sdUserInterfaceLocal::OnFocusedWindowNameChanged: '%s' could not find windowDef '%s' for focus", GetName(), newValue.c_str() );
@@ -1522,7 +1522,7 @@ bool sdUserInterfaceLocal::PostNamedEvent( const char* event, bool allowMissing 
 	if( index == -1 ) {
 		if( !allowMissing ) {
 			gameLocal.Error( "sdUserInterfaceLocal::PostNamedEvent: could not find event '%s' in '%s'", event, guiDecl != NULL ? guiDecl->GetName() : "unknown GUI" );
-		}		
+		}
 		return false;
 	}
 
@@ -1645,7 +1645,7 @@ void sdUserInterfaceLocal::SetTheme( const char* theme ) {
 			idStr name = guiDecl->GetName();
 			guiDecl = NULL;
 			Clear();
-			Load( name );	
+			Load( name );
 		}
 
 		if ( isActive ) {
@@ -1681,7 +1681,7 @@ const char* sdUserInterfaceLocal::GetSound( const char* key ) const {
 	if( key[ 0 ] == '\0' ) {
 		return "";
 	}
-	
+
 	if( idStr::Icmpn( key, "::", 2 ) == 0 ) {
 		return key + 2;
 	}
@@ -1722,7 +1722,7 @@ sdUserInterfaceLocal::ApplyLatchedTheme
 void sdUserInterfaceLocal::ApplyLatchedTheme() {
 	if ( latchedTheme.Length() > 0 ) {
 		SetTheme( latchedTheme );
-		latchedTheme.Clear();	
+		latchedTheme.Clear();
 	}
 }
 
@@ -1736,7 +1736,7 @@ void sdUserInterfaceLocal::OnThemeNameChanged( const idStr& oldValue, const idSt
 		latchedTheme = "default";
 	} else {
 		latchedTheme = newValue;
-	}	
+	}
 }
 
 /*
@@ -1749,7 +1749,7 @@ void sdUserInterfaceLocal::OnBindContextChanged( const idStr& oldValue, const id
 		bindContext = NULL;
 	} else {
 		bindContext = keyInputManager->AllocBindContext( newValue.c_str() );
-	}	
+	}
 }
 
 /*
@@ -1762,7 +1762,7 @@ void sdUserInterfaceLocal::OnScreenDimensionChanged( const idVec2& oldValue, con
 	while( iter != windows.End() ) {
 		if( sdUIWindow* window = iter->second->Cast< sdUIWindow >() ) {
 			window->MakeLayoutDirty();
-		}		
+		}
 		++iter;
 	}
 }
@@ -1847,7 +1847,7 @@ void sdUserInterfaceLocal::GetGeneralScriptVar( const char* stackName, idStr& st
 	if( stack.Num() == 0 ) {
 		gameLocal.Error( "sdUserInterfaceLocal::GetGeneralScriptVar: stack underflow for '%s'", stackName );
 	}
-	
+
 	int index = stack.Num() - 1;
 	str = stack[ index ];
 }
@@ -1883,7 +1883,7 @@ void sdUserInterfaceLocal::OnCVarChanged( idCVar& cvar, int id ) {
 sdUserInterfaceLocal::OnInputInit
 ============
 */
-void sdUserInterfaceLocal::OnInputInit( void ) {	
+void sdUserInterfaceLocal::OnInputInit( void ) {
 	if ( bindContextName.GetValue().IsEmpty() ) {
 		bindContext = NULL;
 	} else {
@@ -1946,7 +1946,7 @@ uiMaterialCache_t::Iterator sdUserInterfaceLocal::SetCachedMaterial( const char*
 	uiMaterialCache_t::Iterator findResult = FindCachedMaterial( alias, handle );
 	if( findResult == materialCache.End() ) {
 		uiMaterialCache_t::InsertResult result = materialCache.Set( alias, materialCacheAllocator.Alloc() );
-		findResult = result.first;		
+		findResult = result.first;
 	}
 
 	handle = findResult - materialCache.Begin();
@@ -2003,7 +2003,7 @@ uiMaterialCache_t::Iterator sdUserInterfaceLocal::FindCachedMaterialForHandle( i
 	if( handle < 0 || handle >= materialCache.Num() ) {
 		return materialCache.End();
 	}
-	
+
 	return materialCache.Begin() + handle;
 }
 
@@ -2029,7 +2029,7 @@ void sdUserInterfaceLocal::LookupPartSizes( uiDrawPart_t* parts, int num ) {
 		if ( part.width == 0 || part.height == 0 ) {
 			assert( 0 );
 			part.mi.material = NULL;
-		}		
+		}
 	}
 }
 
@@ -2039,7 +2039,7 @@ sdUserInterfaceLocal::SetupMaterialInfo
 ============
 */
 void sdUserInterfaceLocal::SetupMaterialInfo( uiMaterialInfo_t& mi, int* baseWidth, int* baseHeight ) {
-	if( mi.material == NULL ) {		
+	if( mi.material == NULL ) {
 		return;
 	}
 
@@ -2079,7 +2079,7 @@ void sdUserInterfaceLocal::SetupMaterialInfo( uiMaterialInfo_t& mi, int* baseWid
 
 			mi.st1.x = mi.st0.x + ( mi.st1.x / static_cast< float >( image->sourceWidth ) );
 			mi.st1.y = mi.st0.y + ( mi.st1.y / static_cast< float >( image->sourceHeight ) );
-		}		
+		}
 	}
 	if( mi.flags.flipX ) {
 		idSwap( mi.st0.x, mi.st1.x );
@@ -2147,7 +2147,7 @@ int sdUserInterfaceLocal::ParseMaterial( const char* mat, idStr& outMaterial, bo
 		if( token == "::" ) {
 			globalLookup = true;
 			continue;
-		}	
+		}
 		outMaterial = token;
 		break;
 	}
@@ -2168,7 +2168,7 @@ void sdUserInterfaceLocal::InitPartsForBaseMaterial( const char* material, uiCac
 		SetupPart( cached.parts[ FP_LEFT ],		partNames[ FP_LEFT ], material );		// stretched
 		SetupPart( cached.parts[ FP_CENTER ],	partNames[ FP_CENTER ], material );
 		SetupPart( cached.parts[ FP_RIGHT ],	partNames[ FP_RIGHT ], material );		// stretched
-		SetupPart( cached.parts[ FP_TOPRIGHT ], partNames[ FP_TOPRIGHT ], material );		
+		SetupPart( cached.parts[ FP_TOPRIGHT ], partNames[ FP_TOPRIGHT ], material );
 		return;
 	}
 
@@ -2353,7 +2353,7 @@ void sdUserInterfaceLocal::OnToolTipEvent( const char* arg ) {
 
 	if ( event.eventType.IsValid() ) {
 		PushScriptVar( arg );
-		RunEvent( sdUIEventInfo( GE_TOOLTIPEVENT, 0 ) );		
+		RunEvent( sdUIEventInfo( GE_TOOLTIPEVENT, 0 ) );
 		ClearScriptStack();
 	}
 }

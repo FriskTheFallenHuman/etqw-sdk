@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,18 +11,18 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "AdminSystem.h"
-#include "../Player.h"
-#include "../../idlib/PropertiesImpl.h"
-#include "../guis/UIList.h"
+#include "Player.h"
+#include "idlib/PropertiesImpl.h"
+#include "guis/UIList.h"
 #include "GameRules.h"
 #include "GameRules_Campaign.h"
 #include "GameRules_Objective.h"
 #include "GameRules_StopWatch.h"
 
-#include "../proficiency/StatsTracker.h"
+#include "proficiency/StatsTracker.h"
 
-#include "../botai/Bot.h"
-#include "../botai/BotThreadData.h"
+#include "botai/Bot.h"
+#include "botai/BotThreadData.h"
 
 /*
 ===============================================================================
@@ -79,7 +79,7 @@ bool sdAdminSystemCommand_Kick::PerformCommand( const idCmdArgs& cmd, const sdUs
 		gameLocal.Printf( "Client '%s' not found\n", clientName );
 		return false;
 	}
-	
+
 	const sdUserGroup& kickGroup = sdUserGroupManager::GetInstance().GetGroup( kickPlayer->GetUserGroup() );
 	if ( kickGroup.HasPermission( PF_NO_BAN ) || gameLocal.IsLocalPlayer( kickPlayer ) ) {
 		Print( player, "guis/admin/system/cannotkickplayer" );
@@ -202,7 +202,7 @@ bool sdAdminSystemOnOffCommand::PerformCommand( const idCmdArgs& cmd, const sdUs
 		OnCompleted( player, true );
 		return true;
 	}
-	
+
 	if ( !idStr::Icmp( value, "off" ) ) {
 		OnCompleted( player, false );
 		return true;
@@ -369,7 +369,7 @@ void sdAdminSystemCommand_Ban::CommandCompletion( const idCmdArgs& args, argComp
 		}
 
 		callback( va( "%s %s \"%s\"", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str() ) );
-	}	
+	}
 }
 
 /*
@@ -480,16 +480,16 @@ void sdAdminSystemCommand_SetTeam::CommandCompletion( const idCmdArgs& args, arg
 			continue;
 		}
 
-		if ( idStr::Icmp( player->userInfo.cleanName, clientName ) ) {			
+		if ( idStr::Icmp( player->userInfo.cleanName, clientName ) ) {
 			callback( va( "%s %s \"%s\" \"%s\"", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str(), "spectator" ) );
 			for ( int j = 0; j < teamManager.GetNumTeams(); j++ ) {
 				sdTeamInfo& team = teamManager.GetTeamByIndex( j );
-					callback( va( "%s %s \"%s\" \"%s\"", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str(), team.GetLookupName() ) );				
+					callback( va( "%s %s \"%s\" \"%s\"", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str(), team.GetLookupName() ) );
 			}
 		}
 
 		callback( va( "%s %s \"%s\"", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str() ) );
-	}	
+	}
 }
 
 /*
@@ -545,14 +545,14 @@ void sdAdminSystemCommand_SetCampaign::CommandCompletion( const idCmdArgs& args,
 			continue;
 		}
 		const idDict& meta = *metaData.meta;
-		
+
 		const char* metaName = meta.GetString( "metadata_name" );
 		if ( idStr::Icmpn( metaName, cmd, len ) ) {
 			continue;
 		}
 
 		callback( va( "%s %s %s", args.Argv( 0 ), args.Argv( 1 ), metaName ) );
-	}	
+	}
 }
 
 /*
@@ -676,7 +676,7 @@ bool sdAdminSystemCommand_GlobalMute::PerformCommand( const idCmdArgs& cmd, cons
 		si_disableGlobalChat.SetBool( true );
 		return true;
 	}
-	
+
 	if ( !idStr::Icmp( value, "off" ) ) {
 		si_disableGlobalChat.SetBool( false );
 		return true;
@@ -726,7 +726,7 @@ bool sdAdminSystemCommand_GlobalVOIPMute::PerformCommand( const idCmdArgs& cmd, 
 		g_disableGlobalAudio.SetBool( true );
 		return true;
 	}
-	
+
 	if ( !idStr::Icmp( value, "off" ) ) {
 		g_disableGlobalAudio.SetBool( false );
 		return true;
@@ -795,7 +795,7 @@ bool sdAdminSystemCommand_PlayerMute::PerformCommand( const idCmdArgs& cmd, cons
 		gameLocal.rules->Mute( mutePlayer, MF_CHAT );
 		return true;
 	}
-	
+
 	if ( !idStr::Icmp( value, "off" ) ) {
 		Print( mutePlayer, "rules/messages/textunmuted", idWStrList() );
 		gameLocal.rules->UnMute( mutePlayer, MF_CHAT );
@@ -822,14 +822,14 @@ void sdAdminSystemCommand_PlayerMute::CommandCompletion( const idCmdArgs& args, 
 			continue;
 		}
 
-		callback( va( "%s %s \"%s\"", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str() ) );		
+		callback( va( "%s %s \"%s\"", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str() ) );
 
 		if ( idStr::Icmp( name, player->userInfo.cleanName ) ) {
 			continue;
 		}
 
-		callback( va( "%s %s \"%s\" on", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str() ) );		
-		callback( va( "%s %s \"%s\" off", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str() ) );		
+		callback( va( "%s %s \"%s\" on", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str() ) );
+		callback( va( "%s %s \"%s\" off", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str() ) );
 	}
 }
 
@@ -877,7 +877,7 @@ bool sdAdminSystemCommand_PlayerVOIPMute::PerformCommand( const idCmdArgs& cmd, 
 		gameLocal.rules->Mute( mutePlayer, MF_AUDIO );
 		return true;
 	}
-	
+
 	if ( !idStr::Icmp( value, "off" ) ) {
 		Print( mutePlayer, "rules/messages/voipunmuted", idWStrList() );
 		gameLocal.rules->UnMute( mutePlayer, MF_AUDIO );
@@ -904,14 +904,14 @@ void sdAdminSystemCommand_PlayerVOIPMute::CommandCompletion( const idCmdArgs& ar
 			continue;
 		}
 
-		callback( va( "%s %s \"%s\"", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str() ) );		
+		callback( va( "%s %s \"%s\"", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str() ) );
 
 		if ( idStr::Icmp( name, player->userInfo.cleanName ) != 0 ) {
 			continue;
 		}
 
-		callback( va( "%s %s \"%s\" on", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str() ) );		
-		callback( va( "%s %s \"%s\" off", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str() ) );		
+		callback( va( "%s %s \"%s\" on", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str() ) );
+		callback( va( "%s %s \"%s\" off", args.Argv( 0 ), args.Argv( 1 ), player->userInfo.cleanName.c_str() ) );
 	}
 }
 
@@ -1219,12 +1219,12 @@ void sdAdminSystemCommand_ExecConfig::CommandCompletion( const idCmdArgs& args, 
 sdAdminSystemCommand_ShuffleTeams::PerformCommand
 ============
 */
-bool sdAdminSystemCommand_ShuffleTeams::PerformCommand( const idCmdArgs& cmd, const sdUserGroup& userGroup, idPlayer* player ) const {	
+bool sdAdminSystemCommand_ShuffleTeams::PerformCommand( const idCmdArgs& cmd, const sdUserGroup& userGroup, idPlayer* player ) const {
 	if ( !userGroup.HasPermission( PF_ADMIN_SHUFFLE_TEAMS ) ) {
 		Print( player, "guis/admin/system/nopermshuffleteams" );
 		return false;
 	}
-	
+
 	const char* shuffleModeName = cmd.Args( 2 );
 
 	if ( !idStr::Icmp( shuffleModeName, "xp" ) ) {
@@ -1448,7 +1448,7 @@ bool sdAdminSystemCommand_AddBot::PerformCommand( const idCmdArgs& cmd, const sd
 			basePlayerName = "GDF Bot";
 		} else {
 			basePlayerName = "Strogg Bot";
-		}	
+		}
 
 		sprintf( playerName, "%s %d", basePlayerName, clientNum );
 
@@ -1506,7 +1506,7 @@ bool sdAdminSystemCommand_AdjustBots::PerformCommand( const idCmdArgs& cmd, cons
 		Print( player, "guis/admin/system/nopermadjustbots" );
 		return false;
 	}
-	
+
 	if( cmd.Argc() < 4 ) {
 		return false;
 	}
@@ -1608,7 +1608,7 @@ void sdAdminSystemLocal::Init( void ) {
 	commands.Alloc() = new sdAdminSystemCommand_KickAllBots();
 
 	commands.Alloc() = new sdAdminSystemCommand_SetCampaign();
-	commands.Alloc() = new sdAdminSystemCommand_SetStopWatchMap();	
+	commands.Alloc() = new sdAdminSystemCommand_SetStopWatchMap();
 	commands.Alloc() = new sdAdminSystemCommand_SetObjectiveMap();
 
 	commands.Alloc() = new sdAdminSystemCommand_GlobalMute();
@@ -1738,9 +1738,9 @@ void sdAdminSystemLocal::CreatePlayerAdminList( sdUIList* list ) {
 		const sdUserGroup* userGroup = NULL;
 		if( ( gameLocal.isServer && gameLocal.IsLocalPlayer( player ) ) || ( !gameLocal.isClient && gameLocal.IsLocalPlayer( player ) ) ) {
 			userGroup = &groupManager.GetConsoleGroup();
-		} else {		
+		} else {
 			userGroup = &groupManager.GetGroup( player->GetUserGroup() );
-		}	
+		}
 
 		cleanPlayerName = va( L"%hs", player->userInfo.cleanName.c_str() );
 		sdUIList::CleanUserInput( cleanPlayerName );
@@ -1750,7 +1750,7 @@ void sdAdminSystemLocal::CreatePlayerAdminList( sdUIList* list ) {
 			sdUIList::SetItemText( list, L"<loc = 'guis/admin/superuser'>", index, 1 );
 		} else {
 			sdUIList::SetItemText( list, va( L"%hs", userGroup->GetName() ), index, 1 );
-		}		
+		}
 
 		index++;
 	}
@@ -1800,9 +1800,9 @@ void sdAdminProperties::Update( void ) {
 	sdUserGroupManagerLocal& userGroupManager = sdUserGroupManager::GetInstance();
 
 	const sdUserGroup& playerGroup = gameLocal.isClient ? userGroupManager.GetGroup( localPlayer->GetUserGroup() ) : userGroupManager.GetConsoleGroup();
-	
+
 	isSuperUser			= playerGroup.IsSuperUser() ? 1.0f : 0.0f;
-	if( isSuperUser != 0.0f ) {		
+	if( isSuperUser != 0.0f ) {
 		userGroup			= superUserString->GetText();
 	} else {
 		userGroup			= va( L"%hs", playerGroup.GetName() );

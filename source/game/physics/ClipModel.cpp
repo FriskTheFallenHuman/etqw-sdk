@@ -1,14 +1,14 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h"
+#include "Game_local.h"
 
 static idVec3 vec3_boxEpsilon( CM_BOX_EPSILON, CM_BOX_EPSILON, CM_BOX_EPSILON );
 
-#include "../Player.h"
+#include "Player.h"
 
 const float CLIP_CHECK_FACTOR = CM_CLIP_EPSILON * 0.5f;
 
@@ -168,7 +168,7 @@ void idClipModel::LoadRenderModel( qhandle_t renderEntity ) {
 	FreeModel();
 
 	if ( renderEntity != -1 ) {
-		this->renderEntity	= renderEntity;		
+		this->renderEntity	= renderEntity;
 		this->bounds		= gameRenderWorld->GetRenderEntity( renderEntity )->hModel->Bounds();
 	}
 }
@@ -449,7 +449,7 @@ void idClipModel::Link( idClip &clp ) {
 	}
 
 	if ( !clp.GetClipSectors() || entity->fl.forceDisableClip ) {
-		return; 
+		return;
 	}
 
 	if ( bounds.IsCleared() ) {
@@ -573,7 +573,7 @@ idCollisionModel *idClipModel::GetCollisionModel( int index ) const {
 	if ( collisionModelManager->GetThreadId() == MAIN_THREAD_ID ) {
 		if ( entity != NULL ) {
 			gameLocal.Warning( "idClipModel::GetCollisionModel: clip model %d on '%s' (%i) is not a collision or trace model", id, entity->GetName(), entity->entityNumber );
-		} else {		
+		} else {
 			assert( false );
 			gameLocal.Warning( "idClipModel::GetCollisionModel: clip model %d on NULL entity is not a collision or trace model", id );
 		}

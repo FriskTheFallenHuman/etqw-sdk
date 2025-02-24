@@ -1,10 +1,10 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h" 
+#include "Game_local.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -49,7 +49,7 @@ void idBotAI::SetupDebugHud() {
 		idVec3 vec = botWorld->clientInfo[ enemy ].origin - botInfo->origin;
 		botUcmd->debugInfo.entDist = vec.LengthFast();
 	} else {
-		botUcmd->debugInfo.entDist = -1.0f;  
+		botUcmd->debugInfo.entDist = -1.0f;
 	}
 
 	if ( routeNode == NULL ) {
@@ -153,7 +153,7 @@ void idBotAI::SetupDebugHud() {
 
 				if ( player.proxyInfo.entNum != CLIENT_HAS_NO_VEHICLE ) {
 					botUcmd->debugInfo.botGoalType = DESTROY_VEHICLE;
-				} else { 
+				} else {
 					botUcmd->debugInfo.botGoalType = KILL_PLAYER;
 				}
 			} else {

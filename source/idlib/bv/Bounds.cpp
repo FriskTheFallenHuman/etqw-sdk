@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 idBounds bounds_zero( vec3_zero, vec3_zero );
@@ -274,7 +274,7 @@ void idBounds::FromTransformedBounds( const idBounds &bounds, const float matrix
 	rotatedCenter[ 1 ] = center[ 0 ] * matrix[ 1 ] + center[ 1 ] * matrix[ 5 ] + center[ 2 ] * matrix[ 9 ];
 	rotatedCenter[ 2 ] = center[ 0 ] * matrix[ 2 ] + center[ 1 ] * matrix[ 6 ] + center[ 2 ] * matrix[ 10 ];
 
-	idVec3 origin( matrix[12], matrix[13], matrix[14] ); 
+	idVec3 origin( matrix[12], matrix[13], matrix[14] );
 	center = origin + rotatedCenter;
 	b[ 0 ] = center - rotatedExtents;
 	b[ 1 ] = center + rotatedExtents;

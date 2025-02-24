@@ -15,7 +15,7 @@ class sdUICinematic :
 	public sdUIWindow {
 public:
 	SD_UI_DECLARE_ABSTRACT_CLASS( sdUICinematic )
-				
+
 							sdUICinematic();
 	virtual					~sdUICinematic();
 

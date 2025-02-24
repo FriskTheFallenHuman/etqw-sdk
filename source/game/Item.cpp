@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -115,7 +115,7 @@ idItem::Pickup
 ================
 */
 bool idItem::Pickup( idPlayer *player ) {
-	
+
 	if ( !GiveToPlayer( player ) ) {
 		return false;
 	}
@@ -138,7 +138,7 @@ void idItem::OnPickup( idPlayer *player ) {
 	}
 
 	int length = 0;
-	
+
 	// play pickup sound
 	StartSound( "snd_acquire", SND_ITEM, 0, &length );
 
@@ -292,7 +292,7 @@ void sdMoveableItemNetworkData::Read( idFile* file ) {
 ===============================================================================
 
   idMoveableItem
-	
+
 ===============================================================================
 */
 
@@ -408,7 +408,7 @@ void idMoveableItem::Think( void ) {
 		// update trigger position
 		trigger->Link( gameLocal.clip, this, 0, GetPhysics()->GetOrigin(), mat3_identity );
 	}
-	
+
 	Present();
 }
 
@@ -508,7 +508,7 @@ void idMoveableItem::CheckWater( const idVec3& waterBodyOrg, const idMat3& water
 	if ( waterEffects ) {
 		waterEffects->SetOrigin( GetPhysics()->GetOrigin() );
 		waterEffects->SetAxis( GetPhysics()->GetAxis() );
-		waterEffects->SetVelocity( GetPhysics()->GetLinearVelocity() );		
+		waterEffects->SetVelocity( GetPhysics()->GetLinearVelocity() );
 		waterEffects->CheckWater( this, waterBodyOrg, waterBodyAxis, waterBodyModel );
 	}
 }

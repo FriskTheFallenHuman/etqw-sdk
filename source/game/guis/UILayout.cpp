@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -32,7 +32,7 @@ sdUILayout_Static::sdUILayout_Static() {
 	GetScope().GetProperties().RegisterProperty( "visible",			visible );
 
 	rect = idVec4( 0.0f, 0.0f, SCREEN_WIDTH, SCREEN_HEIGHT );
-	
+
 	absoluteRect = rect;
 	absoluteRect.SetReadOnly( true );
 	visible = 1.0f;
@@ -69,12 +69,12 @@ void sdUILayout_Static::ApplyLayout() {
 
 		absoluteRect.SetReadOnly( false );
 		absoluteRect = cachedOffset;
-		absoluteRect.SetReadOnly( true );		
+		absoluteRect.SetReadOnly( true );
 
 		DoApplyLayout();
 		recalculateLayout = false;
-	}	
-	sdUIObject::ApplyLayout();	
+	}
+	sdUIObject::ApplyLayout();
 }
 
 
@@ -111,7 +111,7 @@ sdUILayout_Static::OnRectChanged
 ============
 */
 void sdUILayout_Static::OnRectChanged( const idVec4& oldValue, const idVec4& newValue ) {
-	MakeLayoutDirty(); 
+	MakeLayoutDirty();
 }
 
 /*
@@ -126,7 +126,7 @@ void sdUILayout_StaticBase::OnChildRectChanged( const idVec4& oldValue, const id
 		info.rect.w = info.property->value.vec4Value->GetValue().w;
 	}
 
-	MakeLayoutDirty(); 
+	MakeLayoutDirty();
 }
 
 /*
@@ -242,7 +242,7 @@ sdUILayout_StaticBase::sdUILayout_StaticBase() {
 
 	margins = idVec4( 4.0f, 4.0f, 4.0f, 4.0f );
 	rect	= idVec4( 0.0f, 0.0f, SCREEN_WIDTH, SCREEN_HEIGHT );
-	spacing = idVec2( 2.0f, 2.0f );	
+	spacing = idVec2( 2.0f, 2.0f );
 
 	UI_ADD_VEC4_CALLBACK( margins, sdUILayout_StaticBase, OnMarginsChanged )
 	UI_ADD_VEC2_CALLBACK( spacing, sdUILayout_StaticBase, OnSpacingChanged )
@@ -264,7 +264,7 @@ sdUILayout_StaticBase::GetFunction
 */
 sdUIFunctionInstance* sdUILayout_StaticBase::GetFunction( const char* name ) {
 	const sdUILayoutFunction* function = sdUILayout_StaticBase::FindFunction( name );
-	if( !function ) {		
+	if( !function ) {
 		return sdUIObject::GetFunction( name );
 	}
 
@@ -411,7 +411,7 @@ bool sdUILayout_StaticBase::PostEvent( const sdSysEvent* event ) {
 	}
 
 	if( !TestFlag( VLF_DRAW_REVERSED ) ) {
-		return sdUILayout_Static::PostEvent( event );		
+		return sdUILayout_Static::PostEvent( event );
 	}
 
 	sdUIObject* prev = NULL;
@@ -444,7 +444,7 @@ bool sdUILayout_StaticBase::HandleFocus( const sdSysEvent* event ) {
 	}
 
 	if( !TestFlag( VLF_DRAW_REVERSED ) ) {
-		return sdUILayout_Static::HandleFocus( event );		
+		return sdUILayout_Static::HandleFocus( event );
 	}
 
 	sdUIObject* prev = NULL;

@@ -2,12 +2,12 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclRadialMenu.h"
-#include "../../decllib/declTypeHolder.h"
-#include "../../framework/DeclParseHelper.h"
+#include "decllib/declTypeHolder.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -110,7 +110,7 @@ bool sdDeclRadialMenu::Parse( const char *text, const int textLength ) {
 			continue;
 		}
 	}
-	
+
 	return !hadError;
 }
 
@@ -175,6 +175,6 @@ bool sdDeclRadialMenu::ParsePage( idParser& src ) {
 	} else {
 		gameLocal.Warning( "sdDeclRadialMenu::ParsePage: parsed an empty page in '%s'", GetName() );
 	}
-	
+
 	return true;
 }

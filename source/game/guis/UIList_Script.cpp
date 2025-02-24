@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -15,9 +15,9 @@ static char THIS_FILE[] = __FILE__;
 #include "UIList.h"
 #include "UserInterfaceManager.h"
 
-#include "../../sys/sys_local.h"
-#include "../../idlib/Sort.h"
-#include "../../decllib/declTypeHolder.h"
+#include "sys/sys_local.h"
+#include "idlib/Sort.h"
+#include "decllib/declTypeHolder.h"
 
 #define INIT_SCRIPT_FUNCTION( SCRIPTNAME, RETURN, PARMS, FUNCTION ) listFunctions.Set( SCRIPTNAME, new sdUITemplateFunction< sdUIList >( RETURN, PARMS, &sdUIList::FUNCTION ) );
 
@@ -249,7 +249,7 @@ void sdUIList::InitFunctions() {
 	SD_UI_FUNC_TAG( restoreVisualState, "Restore the visual state. Makes the layout dirty." )
 	SD_UI_END_FUNC_TAG
 	INIT_SCRIPT_FUNCTION( "restoreVisualState", 'v', "", Script_RestoreVisualState );
-	
+
 	SD_UI_FUNC_TAG( drawItemMaterial, "Draw a material in the given item." )
 		SD_UI_FUNC_PARM( float, "row", "Row index." )
 		SD_UI_FUNC_PARM( float, "column", "Column index." )
@@ -299,7 +299,7 @@ void sdUIList::InitFunctions() {
 	sdDeclGUI::AddDefine( va( "LF_HOT_TRACK %i",				LF_HOT_TRACK ) );
 
 	SD_UI_ENUM_TAG( LF_COLUMN_SORT, "Sort items by column. Items are sorted by the first column by default." )
-	sdDeclGUI::AddDefine( va( "LF_COLUMN_SORT %i",				LF_COLUMN_SORT ) );	
+	sdDeclGUI::AddDefine( va( "LF_COLUMN_SORT %i",				LF_COLUMN_SORT ) );
 
 	SD_UI_ENUM_TAG( LF_NO_NULL_SELECTION, "Clicking in an empty area won't deselect the current item." )
 	sdDeclGUI::AddDefine( va( "LF_NO_NULL_SELECTION %i",		LF_NO_NULL_SELECTION ) );
@@ -340,7 +340,7 @@ void sdUIList::InitFunctions() {
 	sdDeclGUI::AddDefine( va( "GIR_COLUMN %i",					GIR_COLUMN ) );
 
 	SD_UI_ENUM_TAG( GIR_FULLWIDTH, "Get item rectangle with row width." )
-	sdDeclGUI::AddDefine( va( "GIR_FULLWIDTH %i",				GIR_FULLWIDTH ) );	
+	sdDeclGUI::AddDefine( va( "GIR_FULLWIDTH %i",				GIR_FULLWIDTH ) );
 }
 SD_UI_POP_CLASS_TAG
 #pragma optimize( "", on )
@@ -359,7 +359,7 @@ void sdUIList::Script_GetItemDataInt( sdUIFunctionStack& stack ) {
 	stack.Pop( row );
 	stack.Pop( column );
 	stack.Pop( defaultValue );
-	
+
 	if( !IndexCheck( row, column, "GetItemDataInt" )) {
 		stack.Push( defaultValue );
 		return;
@@ -474,15 +474,15 @@ void sdUIList::Script_InsertItem( sdUIFunctionStack& stack ) {
 			sdUIListItem* blankItem = new sdUIListItem( *newItem );
 			blankItem->textHandle = -1;
 			blankItem->part.mi.Clear();
-			
+
 			sdTransition transition;
 			transition.foreColor.InitConstant( foreColor );
 			transition.backColor.InitConstant( backColor );
 			if( i < items.Num() && column == 0 ) {
 				FormatItemText( *blankItem, transition, items[ i ].c_str() );
 			} else {
-				blankItem->text = L"";				
-			}			
+				blankItem->text = L"";
+			}
 			columns[ i ]->items.Insert( blankItem, index );
 			columns[ i ]->itemTransitions.Insert( transition, index );
 		}
@@ -492,7 +492,7 @@ void sdUIList::Script_InsertItem( sdUIFunctionStack& stack ) {
 
 	Sort();
 	MakeLayoutDirty();
-	
+
 	stack.Push( itemIndex );
 
 	numItems.SetReadOnly( false );
@@ -530,8 +530,8 @@ void sdUIList::Script_SetItemText( sdUIFunctionStack& stack ) {
 	int item;
 	idWStr text;
 	stack.Pop( text );
-	stack.Pop( item );	
-	stack.Pop( column );	
+	stack.Pop( item );
+	stack.Pop( column );
 
 	if( column < 0 ) {
 		// take care of all columns if < 0
@@ -595,8 +595,8 @@ void sdUIList::Script_SetItemIcon( sdUIFunctionStack& stack ) {
 	int item;
 	idStr materialName;
 	stack.Pop( materialName );
-	stack.Pop( item );	
-	stack.Pop( column );	
+	stack.Pop( item );
+	stack.Pop( column );
 
 	uiMaterialInfo_t mi;
 	GetUI()->LookupMaterial( materialName, mi );
@@ -612,7 +612,7 @@ void sdUIList::Script_SetItemIcon( sdUIFunctionStack& stack ) {
 			}
 
 			c->items[ item ]->part.mi = mi;
-		}		
+		}
 	} else {
 		if( column >= columns.Num() ) {
 			gameLocal.Warning( "SetItemIcon:  '%s' column '%i' out of range", name.GetValue().c_str(), column );
@@ -640,7 +640,7 @@ void sdUIList::Script_SetColumnWidth( sdUIFunctionStack& stack ) {
 	int column;
 	bool percent;
 
-	stack.Pop( width );	
+	stack.Pop( width );
 	stack.Pop( column );
 	stack.Pop( percent );
 
@@ -670,20 +670,20 @@ void sdUIList::Script_SetItemForeColor( sdUIFunctionStack& stack ) {
 	idVec4 color;
 	stack.Pop( color );
 	stack.Pop( item );
-	stack.Pop( column );	
+	stack.Pop( column );
 
 	if( column < 0 ) {
 		// take care of all columns if < 0
 		for( int i = 0; i < columns.Num(); i++ ) {
 			sdUIListColumn* c = columns[ i ];
-			
+
 			if( item < 0 || item >= c->items.Num() ) {
 				gameLocal.Warning( "SetItemForeColor:  '%s' item '%i' out of range in column '%i'", name.GetValue().c_str(), item, i );
 				return;
 			}
 
 			c->itemTransitions[ item ].foreColor.InitConstant( color );
-		}		
+		}
 	} else {
 		if( column >= columns.Num() ) {
 			gameLocal.Warning( "SetItemForeColor: '%s' column '%i' out of range", name.GetValue().c_str(), column );
@@ -715,8 +715,8 @@ void sdUIList::Script_SetItemBackColor( sdUIFunctionStack& stack ) {
 	idVec4 color;
 	stack.Pop( color );
 	stack.Pop( item );
-	stack.Pop( column );	
-	
+	stack.Pop( column );
+
 	if( column < 0 ) {
 		// take care of all columns if < 0
 		for( int i = 0; i < columns.Num(); i++ ) {
@@ -727,7 +727,7 @@ void sdUIList::Script_SetItemBackColor( sdUIFunctionStack& stack ) {
 			}
 
 			c->itemTransitions[ item ].backColor.InitConstant( color );
-		}		
+		}
 	} else {
 		if( column >= columns.Num() ) {
 			gameLocal.Warning( "SetItemBackColor: '%s' column '%i' out of range", name.GetValue().c_str(), (int)column );
@@ -752,9 +752,9 @@ sdUIList::Script_DeleteItem
 */
 void sdUIList::Script_DeleteItem( sdUIFunctionStack& stack ) {
 	int item;
-	stack.Pop( item );	
+	stack.Pop( item );
 
-	if( columns.Num() == 0 ) {		
+	if( columns.Num() == 0 ) {
 		return;
 	}
 
@@ -768,7 +768,7 @@ void sdUIList::Script_DeleteItem( sdUIFunctionStack& stack ) {
 		columns[ i ]->items.RemoveIndex( item );
 	}
 	Sort();
-	
+
 	numItems.SetReadOnly( false );
 	numItems = columns[ 0 ]->items.Num();
 	numItems.SetReadOnly( true );
@@ -782,7 +782,7 @@ sdUIList::Script_InsertColumn
 ============
 */
 void sdUIList::Script_InsertColumn( sdUIFunctionStack& stack ) {
-	
+
 	sdUIListColumn* column = new sdUIListColumn;
 	idVec4 localForeColor = foreColor;
 	idVec4 localBackColor = backColor;
@@ -809,7 +809,7 @@ void sdUIList::Script_InsertColumn( sdUIFunctionStack& stack ) {
 	}
 
 	stack.Push( columns.Insert( column, index ));
-	
+
 	// sort by the first column by default
 	if( TestFlag( LF_COLUMN_SORT ) && index == 0 && idMath::Ftoi( activeColumn ) == -1 ) {
 		activeColumn = 0.0f;
@@ -922,7 +922,7 @@ sdUIList::Script_RestoreVisualState
 ============
 */
 void sdUIList::Script_RestoreVisualState( sdUIFunctionStack& stack ) {
-	MakeLayoutDirty();	
+	MakeLayoutDirty();
 }
 
 /*
@@ -942,10 +942,10 @@ sdUIList::Script_FindItem
 void sdUIList::Script_FindItem( sdUIFunctionStack& stack ) {
 	idWStr searchText;
 	stack.Pop( searchText );
-	
+
 	int column;
 	stack.Pop( column );
-	
+
 	if ( column < 0 || column >= columns.Num() ) {
 		gameLocal.Warning( "Script_FindItem: '%s' column %i out of range", name.GetValue().c_str(), idMath::Ftoi( column ));
 		stack.Push( -1 );
@@ -1011,7 +1011,7 @@ void sdUIList::Script_SetItemMaterialSize( sdUIFunctionStack& stack ) {
 
 	stack.Pop( size );
 	stack.Pop( item );
-	stack.Pop( column );	
+	stack.Pop( column );
 
 	if( column < 0 ) {
 		// take care of all columns if < 0
@@ -1029,7 +1029,7 @@ void sdUIList::Script_SetItemMaterialSize( sdUIFunctionStack& stack ) {
 
 			c->items[ item ]->part.width = size.x;
 			c->items[ item ]->part.height = size.y;
-		}		
+		}
 	} else {
 		if( column >= columns.Num() ) {
 			gameLocal.Warning( "SetItemMaterialSize: '%s' column '%i' out of range", name.GetValue().c_str(), column );
@@ -1049,7 +1049,7 @@ void sdUIList::Script_SetItemMaterialSize( sdUIFunctionStack& stack ) {
 
 		c->items[ item ]->part.width = size.x;
 		c->items[ item ]->part.height = size.y;
-	}	
+	}
 }
 
 /*
@@ -1064,7 +1064,7 @@ void sdUIList::Script_SetItemTextFlags( sdUIFunctionStack& stack ) {
 
 	stack.Pop( flags );
 	stack.Pop( item );
-	stack.Pop( column );	
+	stack.Pop( column );
 
 	if( column < 0 ) {
 		// take care of all columns if < 0
@@ -1077,7 +1077,7 @@ void sdUIList::Script_SetItemTextFlags( sdUIFunctionStack& stack ) {
 			}
 
 			c->items[ item ]->textFlags = flags;
-		}		
+		}
 	} else {
 		if( column >= columns.Num() ) {
 			gameLocal.Warning( "SetItemTextFlags: '%s' column '%i' out of range", name.GetValue().c_str(), column );
@@ -1095,7 +1095,7 @@ void sdUIList::Script_SetItemTextFlags( sdUIFunctionStack& stack ) {
 		}
 
 		c->items[ item ]->textFlags = flags;
-	}	
+	}
 }
 
 /*
@@ -1130,7 +1130,7 @@ void sdUIList::Script_SetColumnText( sdUIFunctionStack& stack ) {
 	ExtractTextFormatFromString( text.c_str(),		L"align",		column->textFlags );
 	ExtractLocalizedTextFromString( text.c_str(),	L"loc",			column->textHandle );
 	ExtractColumnFlagsFromString( text.c_str(),		L"flags",		*column );
-	ExtractColumnWidthFromString( text.c_str(),		L"width",		*column );	
+	ExtractColumnWidthFromString( text.c_str(),		L"width",		*column );
 
 	StripFormatting( text );
 	column->text = text;
@@ -1201,7 +1201,7 @@ void sdUIList::Script_TransitionItemVec4( sdUIFunctionStack& stack ) {
 	stack.Pop( to );
 	stack.Pop( time );
 	stack.Pop( accel );
-	stack.Pop( row );	
+	stack.Pop( row );
 	stack.Pop( column );
 
 	if( time < 0.0f ) {
@@ -1244,7 +1244,7 @@ void sdUIList::Script_GetItemTransitionVec4Result( sdUIFunctionStack& stack ) {
 
 	stack.Pop( property );
 	stack.Pop( defaultValue );
-	stack.Pop( row );	
+	stack.Pop( row );
 	stack.Pop( column );
 
 	if( property < LTP_FORECOLOR || property >= LTP_PROPERTY_MAX ) {
@@ -1296,7 +1296,7 @@ void sdUIList::Script_TransitionColumnVec4( sdUIFunctionStack& stack ) {
 	stack.Pop( to );
 	stack.Pop( time );
 	stack.Pop( accel );
-	stack.Pop( column );	
+	stack.Pop( column );
 
 	if( time < 0.0f ) {
 		gameLocal.Error( "TransitionColumnVec4: '%s' duration '%i' out of bounds", name.GetValue().c_str(), time );
@@ -1359,7 +1359,7 @@ sdUIList::Script_ClearTransitions
 void sdUIList::Script_ClearTransitions( sdUIFunctionStack& stack ) {
 	int row;
 	int column;
-	
+
 	stack.Pop( row );
 	stack.Pop( column );
 
@@ -1380,7 +1380,7 @@ void sdUIList::Script_ClearTransitions( sdUIFunctionStack& stack ) {
 			if( row < 0 ) {
 				for( int trans = 0; trans < col->itemTransitions.Num(); trans++ ) {
 					ClearTransition( col->itemTransitions[ trans ] );
-				}				
+				}
 			} else {
 				ClearTransition( col->itemTransitions[ row ] );
 			}
@@ -1389,8 +1389,8 @@ void sdUIList::Script_ClearTransitions( sdUIFunctionStack& stack ) {
 		sdUIListColumn* col = columns[ column ];
 		if( row < 0 ) {
 			for( int trans = 0; trans < col->itemTransitions.Num(); trans++ ) {
-				ClearTransition( col->itemTransitions[ trans ] );				
-			}			
+				ClearTransition( col->itemTransitions[ trans ] );
+			}
 		} else if( row < col->itemTransitions.Num() ) {
 			ClearTransition( col->itemTransitions[ row ] );
 		}
@@ -1460,7 +1460,7 @@ void sdUIList::Script_SizeLastColumn( sdUIFunctionStack& stack ) {
 		return;
 	}
 	MakeLayoutDirty();
-	sizeLastColumnDelta = delta;		
+	sizeLastColumnDelta = delta;
 }
 
 /*
@@ -1471,12 +1471,12 @@ sdUIList::Script_SetItemFlags
 void sdUIList::Script_SetItemFlags( sdUIFunctionStack& stack ) {
 	idWStr text;
 	int row;
-	int column;	
+	int column;
 
 	stack.Pop( text );
 	stack.Pop( row );
-	stack.Pop( column );	
-	
+	stack.Pop( column );
+
 
 	if( column < 0 ) {
 		// take care of all columns if < 0
@@ -1490,8 +1490,8 @@ void sdUIList::Script_SetItemFlags( sdUIFunctionStack& stack ) {
 				}
 			} else {
 				ExtractItemFlagsFromString( text.c_str(), L"flags", *c->items[ row ] );
-			}			
-		}		
+			}
+		}
 	} else {
 		if( column >= columns.Num() ) {
 			gameLocal.Warning( "SetItemFlags: '%s' column '%i' out of range", name.GetValue().c_str(), column );
@@ -1530,7 +1530,7 @@ sdUIList::Script_FillFromFile
 void sdUIList::Script_FillFromFile( sdUIFunctionStack& stack ) {
 	idStr fileName;
 	stack.Pop( fileName );
-	
+
 	sdFilePtr file( fileSystem->OpenFileRead( fileName.c_str() ) );
 	if( !file.IsValid() ) {
 		gameLocal.Warning( "%s: Script_FillFromFile: could not find '%s'", name.GetValue().c_str(), fileName.c_str() );

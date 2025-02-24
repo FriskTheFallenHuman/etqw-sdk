@@ -68,14 +68,14 @@ void gameError( const char *fmt, ... );
 #include "decls/DeclHeightMap.h"
 #include "decls/DeclDeployMask.h"
 
-#include "../decllib/declAF.h"
-#include "../decllib/declAtmosphere.h"
-#include "../decllib/declEntityDef.h"
-#include "../decllib/declSkin.h"
-#include "../decllib/declTable.h"
-#include "../decllib/declStuffType.h"
-#include "../decllib/declDecal.h"
-#include "../decllib/declLocStr.h"
+#include "decllib/declAF.h"
+#include "decllib/declAtmosphere.h"
+#include "decllib/declEntityDef.h"
+#include "decllib/declSkin.h"
+#include "decllib/declTable.h"
+#include "decllib/declStuffType.h"
+#include "decllib/declDecal.h"
+#include "decllib/declLocStr.h"
 
 #include "gamesys/Pvs.h"
 
@@ -597,7 +597,7 @@ public:
 	idLinkList< idEntity >	nonNetworkedEntities;	// all entities that dont send/receive network traffic
 	idLinkList< idEntity >	activeEntities;			// all thinking entities (idEntity::thinkFlags != 0)
 	idLinkList< idEntity >	activeNetworkEntities;	// all thinking entities (idEntity::thinkFlags != 0)
-	idLinkList< idEntity >	postThinkEntities;		// 
+	idLinkList< idEntity >	postThinkEntities;		//
 	idList< idEntityPtr< idEntity > > changedEntities;
 	bool					sortPushers;			// true if active lists needs to be reordered to place pushers at the front
 	bool					sortTeamMasters;		// true if active lists needs to be reordered to place physics team masters before their slaves
@@ -629,7 +629,7 @@ public:
 	idClip					clip;					// collision detection
 	idPush					push;					// geometric pushing
 	idPVS					pvs;					// potential visible set
-	
+
 	sdAORManagerLocal		aorManager;
 
 	sdPersistentRankInfo					rankInfo;
@@ -665,7 +665,7 @@ public:
 	int						startTime;
 	int						previousTime;			// time in msec of last frame
 	int						time;					// in msec
-	int						timeOffset;				// 
+	int						timeOffset;				//
 	int						msec;					// time since last update in milliseconds
 	int						localViewChangedTime;	// time that the local player view changed
 	int						playerSpawnTime;		// time at which players are allowed to spawn again
@@ -834,7 +834,7 @@ public:
 	void					ResetGameState( extNetworkStateMode_t mode );
 
 	void					ParseClamp( angleClamp_t& clamp, const char* prefix, const idDict& dict );
-	
+
 	void					FreeGameState( sdGameState* state );
 	void					FreeNetworkState( sdEntityState* state );
 	void					CreateNetworkState( int entityNum );
@@ -882,7 +882,7 @@ public:
 
 	void					LogComplaint( idPlayer* player, idPlayer* attacker );
 	bool					DoSkyCheck( const idVec3& location ) const;
-	
+
 	virtual bool			HandleGuiEvent( const sdSysEvent* event );
 	virtual bool			TranslateGuiBind( const idKey& key, sdKeyCommand** cmd );
 
@@ -956,7 +956,7 @@ public:
 	bool					IsDeveloper( void ) const { return cvarSystem->GetCVarBool( "developer" ); }
 
 	virtual sdUserInterfaceManager* GetUIManager();
-	
+
 	virtual void			MessageBox( msgBoxType_t type, const wchar_t* message, const sdDeclLocStr* title );
 	virtual void			CloseMessageBox();
 
@@ -1120,7 +1120,7 @@ public:
 	bool							CheatsOk( bool requirePlayer = true );
 	gameState_t						GameState( void ) const;
 
-	template< typename T > 
+	template< typename T >
 	T* SpawnEntityTypeT( bool callPostMapSpawn, const idDict *args = NULL ) {
 		return static_cast< T* >( SpawnEntityType( T::Type, callPostMapSpawn, args ) );
 	}
@@ -1333,7 +1333,7 @@ public:
 	const idList<sdEnvDefinition>&	GetEnvDefinitions( void ) { return envDefs; }
 
 	// GUIs
-	const guiHandle_t&				GetMainMenuGui() const { return uiMainMenuHandle; }	
+	const guiHandle_t&				GetMainMenuGui() const { return uiMainMenuHandle; }
 
 	void							ApplyRulesData( const sdEntityStateNetworkData& newState );
 	void							ReadRulesData( const sdEntityStateNetworkData& baseState, sdEntityStateNetworkData& newState, const idBitMsg& msg ) const;
@@ -1529,7 +1529,7 @@ private:
 
 	// keep an instance of each type of game rules around
 	// we use these in various places where we need to use virtual functions on
-	// an instance that doesn't match the current local rules 
+	// an instance that doesn't match the current local rules
 	// (eg, the server browser needs to query information from rules running on servers)
 
 	typedef sdHashMapGeneric< idStr, sdGameRules*, sdHashCompareStrCmp > rulesMap_t;
@@ -1739,7 +1739,7 @@ typedef enum {
 	SND_WALKER_LEGS = SND_ANY + 20,
 	SND_WALKER_LEGS_LAST = ( SND_WALKER_LEGS + /* MAX WALKER LEG SOUNDS */ 8 ) - 1,
 
-	// quickchat starts at a crazy number just so that if MAX_CLIENTS 
+	// quickchat starts at a crazy number just so that if MAX_CLIENTS
 	// is increased then it won't collide with other channels
 	SND_QUICKCHAT = SND_ANY + 1000,
 	SND_QUICKCHAT_LAST = ( SND_QUICKCHAT + MAX_CLIENTS ) - 1,

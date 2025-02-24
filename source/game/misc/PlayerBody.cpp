@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,10 +11,10 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "PlayerBody.h"
-#include "../Player.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../ContentMask.h"
+#include "Player.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "ContentMask.h"
 
 
 /*
@@ -212,16 +212,16 @@ void sdPlayerBody::Spawn( void ) {
 	physicsObj.SetMass( spawnArgs.GetFloat( "mass", "100" ) );
 	physicsObj.SetClipMask( MASK_PLAYERSOLID );
 	physicsObj.DisableImpact();
-	
+
 	idVec3 gravity = spawnArgs.GetVector( "gravityDir", "0 0 -1" );
-	gravity *= g_gravity.GetFloat();		
+	gravity *= g_gravity.GetFloat();
 	physicsObj.SetGravity( gravity );
 	physicsObj.SetMaxStepHeight( 0 );
-	physicsObj.SetContents( 0 );	
+	physicsObj.SetContents( 0 );
 
 	SetPhysics( &physicsObj );
 
-	BecomeActive( TH_THINK );	
+	BecomeActive( TH_THINK );
 }
 
 /*
@@ -281,7 +281,7 @@ void sdPlayerBody::Init( idPlayer* _client, const sdPlayerClassSetup* _playerCla
 
 	animator.CreateFrame( gameLocal.time, true );
 
-	// ensure that the combat model has the correct bounds 
+	// ensure that the combat model has the correct bounds
 	// fixes the case where people tapping out made spawn hosting & possess/disguise difficult
 	animator.GetBounds( gameLocal.time, renderEntity.bounds, true );
 
@@ -472,7 +472,7 @@ void sdPlayerBody::Init( int clientSpawnId, int rankIndex, int ratingIndex, int 
 
 	animator.CreateFrame( gameLocal.time, true );
 
-	// ensure that the combat model has the correct bounds 
+	// ensure that the combat model has the correct bounds
 	// fixes the case where people tapping out made spawn hosting & possess/disguise difficult
 	animator.GetBounds( gameLocal.time, renderEntity.bounds, true );
 

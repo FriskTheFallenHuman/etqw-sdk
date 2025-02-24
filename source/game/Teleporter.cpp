@@ -1,6 +1,6 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -508,8 +508,8 @@ void sdTeleporter::FinishTeleport( const teleportParms_t& parms ) {
 
 					testPosition = targetPosition + y*yAxis + x*xAxis;
 
-					gameLocal.clip.TraceBounds( CLIP_DEBUG_PARMS trace, testPosition + idVec3( 0.0f, 0.0f, 128.0f ), 
-												testPosition - idVec3( 0.0f, 0.0f, 512.0f ), bounds, 
+					gameLocal.clip.TraceBounds( CLIP_DEBUG_PARMS trace, testPosition + idVec3( 0.0f, 0.0f, 128.0f ),
+												testPosition - idVec3( 0.0f, 0.0f, 512.0f ), bounds,
 												mat3_identity, CONTENTS_MOVEABLECLIP | CONTENTS_SOLID, NULL );
 
 					int contents = gameLocal.clip.Contents( CLIP_DEBUG_PARMS trace.endpos + idVec3( 0.0f, 0.0f, 4.0f ), phys->GetClipModel(), mat3_identity, clipMask, this );
@@ -534,8 +534,8 @@ void sdTeleporter::FinishTeleport( const teleportParms_t& parms ) {
 
 						testPosition = targetPosition + y*yAxis + x*xAxis;
 
-						gameLocal.clip.TraceBounds( CLIP_DEBUG_PARMS trace, testPosition + idVec3( 0.0f, 0.0f, 128.0f ), 
-													testPosition - idVec3( 0.0f, 0.0f, 512.0f ), bounds, 
+						gameLocal.clip.TraceBounds( CLIP_DEBUG_PARMS trace, testPosition + idVec3( 0.0f, 0.0f, 128.0f ),
+													testPosition - idVec3( 0.0f, 0.0f, 512.0f ), bounds,
 													mat3_identity, CONTENTS_MOVEABLECLIP | CONTENTS_SOLID, NULL );
 
 						int contents = gameLocal.clip.Contents( CLIP_DEBUG_PARMS trace.endpos + idVec3( 0.0f, 0.0f, 4.0f ), phys->GetClipModel(), mat3_identity, clipMask, this );
@@ -575,7 +575,7 @@ void sdTeleporter::FinishTeleport( const teleportParms_t& parms ) {
 			// telefrag stuff
 			// see what we're touching
 			idStaticList< idEntity*, MAX_GENTITIES > fragEntities;
-			int numTouching = gameLocal.clip.ClipModelsTouchingBounds( CLIP_DEBUG_PARMS phys->GetAbsBounds(), phys->GetClipMask(), 
+			int numTouching = gameLocal.clip.ClipModelsTouchingBounds( CLIP_DEBUG_PARMS phys->GetAbsBounds(), phys->GetClipMask(),
 																		clipModels, MAX_GENTITIES, ent );
 			for ( int i = 0; i < numTouching; i++ ) {
 				const idClipModel* cm = clipModels[ i ];

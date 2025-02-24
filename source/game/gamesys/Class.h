@@ -52,7 +52,7 @@ public:
 	idEventArg( const idWStr &data )			{ type = D_EVENT_WSTRING; value = reinterpret_cast<UINT_PTR>( data.c_str() ); };
 	idEventArg( const wchar_t *data )			{ type = D_EVENT_WSTRING; value = reinterpret_cast<UINT_PTR>( data ); };
 	idEventArg( const class idEntity *data )	{ type = D_EVENT_ENTITY; value = reinterpret_cast<UINT_PTR>( data ); };
-	
+
 	void SetHandle( int data )					{ type = D_EVENT_HANDLE; value = data; };
 };
 
@@ -89,7 +89,7 @@ CLASS_DECLARATION
 
 This macro must be included in the code to properly initialize variables
 used in type checking and run-time instanciation.  It also defines the list
-of events that the class responds to.  Take special care to ensure that the 
+of events that the class responds to.  Take special care to ensure that the
 proper superclass is indicated or the run-time type information will be
 incorrect.  Use this on concrete classes only.
 ================
@@ -186,7 +186,7 @@ public:
 
 	template< typename T >
 	T*							Cast( void ) { return this ? ( IsType( T::Type ) ? static_cast< T* >( this ) : NULL ) : NULL; }
-	
+
 	template< typename T >
 	const T*					Cast( void ) const { return this ? ( IsType( T::Type ) ? static_cast< const T* >( this ) : NULL ) : NULL; }
 
@@ -319,10 +319,10 @@ public:
 
 	idHierarchy<idTypeInfo>		node;
 
-								idTypeInfo( const char *classname, 
-											const char *superclass, 
-											idEventFunc<idClass> *eventCallbacks, 
-											idClass* ( *CreateInstance )( void ), 
+								idTypeInfo( const char *classname,
+											const char *superclass,
+											idEventFunc<idClass> *eventCallbacks,
+											idClass* ( *CreateInstance )( void ),
 											void ( idClass::*Spawn )( void ),
 											bool ( *inhibitSpawn )( const idDict& dict )
 											);
@@ -362,7 +362,7 @@ private:
 ================
 idTypeInfo::IsType
 
-Checks if the object's class is a subclass of the class defined by the 
+Checks if the object's class is a subclass of the class defined by the
 passed in idTypeInfo.
 ================
 */
@@ -384,7 +384,7 @@ ID_INLINE bool idTypeInfo::RespondsTo( const idEventDef &ev ) const {
 ================
 idClass::IsType
 
-Checks if the object's class is a subclass of the class defined by the 
+Checks if the object's class is a subclass of the class defined by the
 passed in idTypeInfo.
 ================
 */

@@ -109,7 +109,7 @@ ID_INLINE void idBoundsShort::SetBounds( const short *list ) {
 ID_INLINE const short * idBoundsShort::GetBounds( void ) {
 	return b[0];
 }
-  	 
+
 
 ID_INLINE void idBoundsShort::Clear( void ) {
 	b[0][0] = b[0][1] = b[0][2] = 32767;

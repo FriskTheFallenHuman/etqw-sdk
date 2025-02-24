@@ -135,7 +135,7 @@ sdCallableCaller0
 */
 extern const char sdCallableCaller0_Identifier[];
 template< class Func, class Ret >
-class sdCallableCaller0 : 
+class sdCallableCaller0 :
 	public sdCallableBase0< Ret >/*,
 	public sdPoolAllocator< sdCallableCaller0< Func, Ret >, sdCallableCaller0_Identifier > */{
 public:
@@ -152,12 +152,12 @@ public:
 sdCallableCaller1
 ============
 */
-template< class Func = sdEmptyType, class R = sdEmptyType, class T1 = sdEmptyType > 
+template< class Func = sdEmptyType, class R = sdEmptyType, class T1 = sdEmptyType >
 class sdCallableCaller1;
 
 extern const char sdCallableCaller1_Identifier[];
 template< class Func, class Ret, class T1 >
-class sdCallableCaller1 : 
+class sdCallableCaller1 :
 	public sdCallableBase1< Ret, T1 >/*,
 	public sdPoolAllocator< sdCallableCaller1< Func, Ret, T1 >, sdCallableCaller1_Identifier > */{
 public:
@@ -169,7 +169,7 @@ public:
 	virtual sdCallableBase1< Ret, T1 >* Clone() const { return new sdCallableCaller1( function ); }
 };
 
-template< class Func = sdEmptyType, class R = sdEmptyType, class T1 = sdEmptyType, class T2 = sdEmptyType > 
+template< class Func = sdEmptyType, class R = sdEmptyType, class T1 = sdEmptyType, class T2 = sdEmptyType >
 class sdCallableCaller2;
 /*
 ============
@@ -178,7 +178,7 @@ sdCallableCaller2
 */
 extern const char sdCallableCaller2_Identifier[];
 template< class Func, class Ret, class T1, class T2 >
-class sdCallableCaller2 : 
+class sdCallableCaller2 :
 	public sdCallableBase2< Ret, T1, T2 >/*,
 	public sdPoolAllocator< sdCallableCaller2< Func, Ret, T1, T2 >, sdCallableCaller2_Identifier >*/ {
 public:
@@ -190,7 +190,7 @@ public:
 	virtual sdCallableBase2< Ret, T1, T2 >* Clone() const { return new sdCallableCaller2( function ); }
 };
 
-template< class Func = sdEmptyType, class R = sdEmptyType, class T1 = sdEmptyType, class T2 = sdEmptyType , class T3 = sdEmptyType > 
+template< class Func = sdEmptyType, class R = sdEmptyType, class T1 = sdEmptyType, class T2 = sdEmptyType , class T3 = sdEmptyType >
 class sdCallableCaller3;
 /*
 ============
@@ -199,7 +199,7 @@ sdCallableCaller3
 */
 extern const char sdCallableCaller3_Identifier[];
 template< class Func, class Ret, class T1, class T2, class T3 >
-class sdCallableCaller3 : 
+class sdCallableCaller3 :
 	public sdCallableBase3< Ret, T1, T2, T3 >/*,
 	public sdPoolAllocator< sdCallableCaller3< Func, Ret, T1, T2, T3 >, sdCallableCaller3_Identifier > */{
 public:
@@ -329,7 +329,7 @@ public:
 		if( f.function ) {
 			function = f.function->Clone();
 		}
-		
+
 		return *this;
 	}
 
@@ -341,7 +341,7 @@ public:
 		return (*function)( arg1, arg2 );
 	}
 
-	void Release() { 
+	void Release() {
 		delete function;
 		function = NULL;
 	}
@@ -388,7 +388,7 @@ public:
 		return (*function)( arg1, arg2, arg3 );
 	}
 
-	void Release() { 
+	void Release() {
 		delete function;
 		function = NULL;
 	}
@@ -413,7 +413,7 @@ struct add_pointer
 	typedef no_ref_type* type;
 };
 
-template <typename T> typename 
+template <typename T> typename
 add_pointer< T >::type addressof( T& t ) {
 	return reinterpret_cast< T* >( &const_cast< char& >( reinterpret_cast< const volatile char & >( t )));
 }

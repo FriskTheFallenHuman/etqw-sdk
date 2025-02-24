@@ -4,9 +4,9 @@
 /*
 ================================================================================
 
-idAutoTimer 
+idAutoTimer
 
-idAutoTimer is a simple derivation of idTimer that can start a timer upon 
+idAutoTimer is a simple derivation of idTimer that can start a timer upon
 instantiation and stop the timer on destruction, outputting the results.
 
 The TIMER_ macros simplify the use of the timers.  To time the execution of an
@@ -55,9 +55,9 @@ destructor to enable auto timer stopping and output.
 /*
 ================================================================================
 
-idAutoTimer 
+idAutoTimer
 
-idTimer that will automatically stop the timer and results when it goes out of 
+idTimer that will automatically stop the timer and results when it goes out of
 scope.
 ================================================================================
 */
@@ -67,21 +67,21 @@ public:
 	const char *		extraData;
 
 public:
-	idAutoTimer( const char *name, const char *extraData, bool start = false ) 
+	idAutoTimer( const char *name, const char *extraData, bool start = false )
 	:	name( name ),
 		extraData( extraData ) {
 		if ( start ) {
 			Clear();
 			Start();
-		} 
+		}
 	}
-	idAutoTimer( const char *name, bool start = false ) 
+	idAutoTimer( const char *name, bool start = false )
 	:	name( name ),
 		extraData( NULL ) {
 		if ( start ) {
 			Clear();
 			Start();
-		} 
+		}
 	}
 	~idAutoTimer( void ) {
 		// don't call shutdown here... virtual function table will be hosed already.
@@ -122,7 +122,7 @@ protected:
 	virtual	void	Output( const char *name ) const = 0;
 	// output a standard message with some extra data
 	virtual	void	Output( const char *name, const char *extraData ) const = 0;
-	
+
 	// output a message formatted with %s (name) and %f (time)
 	virtual	void	OutputMsg( const char *message, const char *name ) const = 0;
 
@@ -133,17 +133,17 @@ protected:
 /*
 ================================================================================
 
-idTimerConsole 
+idTimerConsole
 
 Timer that outputs results to the console
 ================================================================================
 */
 class idTimerConsole : public idAutoTimer {
 public:
-	idTimerConsole( const char *name, bool start = false ) 
+	idTimerConsole( const char *name, bool start = false )
 		:	idAutoTimer( name, start ) {
 	}
-	idTimerConsole( const char *name, const char *extraData, bool start = false ) 
+	idTimerConsole( const char *name, const char *extraData, bool start = false )
 		:	idAutoTimer( name, extraData, start ) {
 	}
 

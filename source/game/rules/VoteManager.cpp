@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,14 +11,14 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "VoteManager.h"
-#include "../Player.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../rules/GameRules.h"
-#include "../rules/AdminSystem.h"
-#include "../guis/UserInterfaceLocal.h"
-#include "../guis/UIList.h"
-#include "../botai/Bot.h"
+#include "Player.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "rules/GameRules.h"
+#include "rules/AdminSystem.h"
+#include "guis/UserInterfaceLocal.h"
+#include "guis/UIList.h"
+#include "botai/Bot.h"
 
 
 
@@ -38,7 +38,7 @@ sdCallVote::AddVoteOption
 */
 void sdCallVote::AddVoteOption( sdUIList* list, const wchar_t* text, int dataKey ) {
 	int index = sdUIList::InsertItem( list, text, -1, 0 );
-	list->SetItemDataInt( dataKey, index, 0 );	
+	list->SetItemDataInt( dataKey, index, 0 );
 }
 
 /*
@@ -366,7 +366,7 @@ public:
 		if ( vote != NULL ) {
 			vote->MakeGlobalVote();
 			vote->SetText( gameLocal.declToolTipType[ "votes/serverMode/text" ] );
-			vote->AddTextParm( va( L"%hs", configName ) ); 
+			vote->AddTextParm( va( L"%hs", configName ) );
 			vote->SetFinalizer( new sdCallVoteServerModeFinalizer( configName ) );
 		}
 
@@ -443,7 +443,7 @@ public:
 		if ( vote != NULL ) {
 			vote->MakeGlobalVote();
 			vote->SetText( gameLocal.declToolTipType[ GetVoteTextKey() ] );
-			vote->AddTextParm( va( L"%hs", other->userInfo.name.c_str() ) ); 
+			vote->AddTextParm( va( L"%hs", other->userInfo.name.c_str() ) );
 			vote->SetFinalizer( new sdPlayerCallVoteFinalizer( other, GetAdminCommand(), GetAdminCommandSuffix() ) );
 		}
 
@@ -618,7 +618,7 @@ public:
 	virtual const char* GetVoteTextKey( void ) const = 0;
 	virtual const char* GetModeName( void ) const = 0;
 
-	virtual void		PreCache( void ) const { PreCache( this ); } 
+	virtual void		PreCache( void ) const { PreCache( this ); }
 
 	protected:
 		static void PreCache( const sdCallVoteMapChange* command ) {
@@ -629,7 +629,7 @@ public:
 class sdCallVoteObjectiveMap : public sdCallVoteMapChange {
 public:
 	virtual const char* GetCommandName( void ) const { return "setobjectivemap"; }
-	virtual void GetText( idWStr& out ) const { out = common->LocalizeText( "votes/setobjectivemap" ); }	
+	virtual void GetText( idWStr& out ) const { out = common->LocalizeText( "votes/setobjectivemap" ); }
 	virtual const char* GetVoteTextKey( void ) const { return "votes/setobjectivemap/text"; }
 	virtual const char* GetModeName( void ) const { return "setObjectiveMap"; }
 	virtual bool AllowedOnRankedServer( void ) const { return false; }
@@ -638,7 +638,7 @@ public:
 class sdCallVoteStopWatchMap : public sdCallVoteMapChange {
 public:
 	virtual const char* GetCommandName( void ) const { return "setstopwatchmap"; }
-	virtual void GetText( idWStr& out ) const { out = common->LocalizeText( "votes/setstopwatchmap" ); }	
+	virtual void GetText( idWStr& out ) const { out = common->LocalizeText( "votes/setstopwatchmap" ); }
 	virtual const char* GetVoteTextKey( void ) const { return "votes/setstopwatchmap/text"; }
 	virtual const char* GetModeName( void ) const { return "setStopWatchMap"; }
 	virtual bool AllowedOnRankedServer( void ) const { return false; }
@@ -684,7 +684,7 @@ public:
 				continue;
 			}
 			const idDict& dict = *metaData.meta;
-			
+
 			const char* materialName = dict.GetString( "server_shot_thumb" );
 			const char* prettyName = dict.GetString( "pretty_name" );
 
@@ -747,7 +747,7 @@ public:
 		return vote;
 	}
 
-	virtual void		PreCache( void ) const { 
+	virtual void		PreCache( void ) const {
 		gameLocal.declToolTipType[ "votes/setcampaign/text" ];
 	}
 };
@@ -846,7 +846,7 @@ void sdVoteFinalizer_Script::OnVoteCompleted( bool passed ) const {
 sdPlayerVote::sdPlayerVote
 ================
 */
-sdPlayerVote::sdPlayerVote( void ) : index( -1 ), mode( NULL ), endTime( 0 ), finalizer( NULL ), 
+sdPlayerVote::sdPlayerVote( void ) : index( -1 ), mode( NULL ), endTime( 0 ), finalizer( NULL ),
 									yesCount( 0 ), noCount( 0 ), totalCount( 0 ), text( NULL ), voteId( VI_NONE ), displayFinishedMessage( true ) {
 
 	for ( int i = 0; i < MAX_CLIENTS; i++ ) {
@@ -1013,7 +1013,7 @@ void sdPlayerVote::Start( idPlayer* player ) {
 			msg.WriteByte( player->entityNumber );
 		} else {
 			msg.WriteBits( 0, 1 );
-			
+
 		}
 
 		msg.WriteBits( text ? text->Index() + 1 : 0, idMath::BitsForInteger( gameLocal.declToolTipType.Num() + 1 ) );
@@ -1255,7 +1255,7 @@ sdPlayerVote* sdVoteManagerLocal::AllocVote( int index ) {
 		gameLocal.Error( "sdVoteManagerLocal::AllocVote Max Votes Hit" );
 		return NULL;
 	}
-	
+
 	votes[ index ] = new sdPlayerVote();
 	votes[ index ]->Init( index );
 	return votes[ index ];
@@ -1303,7 +1303,7 @@ void sdVoteManagerLocal::FreeVote( int index ) {
 	if ( gameLocal.isServer ) {
 		sdReliableServerMessage msg( GAME_RELIABLE_SMESSAGE_VOTE );
 		msg.WriteBits( VM_FREE, idMath::BitsForInteger( VM_NUM ) );
-		msg.WriteBits( index, idMath::BitsForInteger( sdVoteManagerLocal::MAX_VOTES ) );			
+		msg.WriteBits( index, idMath::BitsForInteger( sdVoteManagerLocal::MAX_VOTES ) );
 		vote->SendMessage( msg );
 	}
 
@@ -1430,7 +1430,7 @@ void sdVoteManagerLocal::ClientReadNetworkMessage( const idBitMsg& msg ) {
 			vote->Start( player );
 			vote->SetEndTime( msg.ReadLong() );
 			vote->SetVoteFlags();
-			
+
 			break;
 		}
 		case VM_FREE: {
@@ -1637,7 +1637,7 @@ void sdVoteManagerLocal::EnumerateCallVotes( sdUIList* list ) {
 			if( !globalCallVotes[ i ]->AllowedOnRankedServer() && networkSystem->IsRankedServer() ) {
 				continue;
 			}
-			PushVoteItem( list, ruleVotes[ i ], voteIndex );			
+			PushVoteItem( list, ruleVotes[ i ], voteIndex );
 		}
 	}
 }

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,8 +11,8 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "UserGroup.h"
-#include "../Player.h"
-#include "../guis/UIList.h"
+#include "Player.h"
+#include "guis/UIList.h"
 
 typedef sdPair< const char*, userPermissionFlags_t > permissionName_t;
 
@@ -61,7 +61,7 @@ int numPermissionNames = _arraycount( permissionNames );
 sdUserGroup::sdUserGroup
 ============
 */
-sdUserGroup::sdUserGroup( void ) : superUser( false ), voteLevel( -1 ), needsLogin( false ) {	
+sdUserGroup::sdUserGroup( void ) : superUser( false ), voteLevel( -1 ), needsLogin( false ) {
 }
 
 /*
@@ -540,7 +540,7 @@ void sdUserGroupManagerLocal::CreateUserGroupList( sdUIList* list ) {
 		sdUIList::InsertItem( list, va( L"%hs", userGroups[ i ].GetName() ), index, 0 );
 		index++;
 	}
-	
+
 	/*
 	for ( int i = 1; i < userGroups.Num(); i++ ) {
 		sdUIList::InsertItem( list, va( L"%hs", userGroups[ i ].GetName() ), i - 1, 0 );

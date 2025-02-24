@@ -5,8 +5,8 @@
 #ifndef __GAME_ROLES_TASKS_H__
 #define __GAME_ROLES_TASKS_H__
 
-#include "../misc/RenderEntityBundle.h"
-#include "../decls/DeclPlayerTask.h"
+#include "misc/RenderEntityBundle.h"
+#include "decls/DeclPlayerTask.h"
 
 class sdFireTeam;
 class sdDeclPlayerTask;
@@ -147,7 +147,7 @@ public:
 	void								Event_GetIntKeyWithDefault( const char *key, int defaultvalue );
 	void								Event_GetFloatKeyWithDefault( const char *key, float defaultvalue );
 	void								Event_GetVectorKeyWithDefault( const char *key, const idVec3& defaultvalue );
-	
+
 	void								Event_GiveObjectiveProficiency( float count, const char* reason );
 
 	void								Event_SetUserCreated( void );
@@ -208,7 +208,7 @@ public:
 
 	bool								IsTaskValid( idPlayer* player, taskHandle_t taskHandle, bool onlyCheckInitialFT );
 	void								SelectTask( idPlayer* player, taskHandle_t taskHandle );
-	
+
 	void								WriteInitialReliableMessages( const sdReliableMessageClientInfoBase& target ) const;
 
 	void								Write( idFile* file ) const;

@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug with edit and continue|Win32">
+      <Configuration>Debug with edit and continue</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug with inlines|Win32">
+      <Configuration>Debug with inlines</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectName>game</ProjectName>
+    <ProjectGuid>{D790F4F6-F08E-41CE-8DE6-C9222A1621AB}</ProjectGuid>
+    <RootNamespace>game</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug with edit and continue|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug with inlines|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug with edit and continue|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="_Common.props" />
+    <Import Project="_Game.props" />
+    <Import Project="_Debug.props" />
+    <Import Project="_SDK.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug with inlines|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="_Common.props" />
+    <Import Project="_Game.props" />
+    <Import Project="_Debug.props" />
+    <Import Project="_WithInlines.props" />
+    <Import Project="_SDK.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="_Common.props" />
+    <Import Project="_Game.props" />
+    <Import Project="_Release.props" />
+    <Import Project="_SDK.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35707.178</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug with edit and continue|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command />
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug with inlines|Win32'">
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+    <Link>
+      <IgnoreSpecificDefaultLibraries>MSVCRTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <PostBuildEvent>
+      <Command />
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug with edit and continue|Win32'">
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+    <ClCompile>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command />
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\source\game\Actor.h" />
+    <ClInclude Include="..\source\game\AF.h" />
+    <ClInclude Include="..\source\game\AFEntity.h" />
+    <ClInclude Include="..\source\game\AnimatedEntity.h" />
+    <ClInclude Include="..\source\game\anim\Anim.h" />
+    <ClInclude Include="..\source\game\anim\Anim_FrameCommands.h" />
+    <ClInclude Include="..\source\game\anim\Anim_Testmodel.h" />
+    <ClInclude Include="..\source\game\AntiLag.h" />
+    <ClInclude Include="..\source\game\AORManager.h" />
+    <ClInclude Include="..\source\game\Atmosphere.h" />
+    <ClInclude Include="..\source\game\AtmosphereRenderable.h" />
+    <ClInclude Include="..\source\game\botai\aas\AAS.h" />
+    <ClInclude Include="..\source\game\botai\aas\AASCallback_AvoidLocation.h" />
+    <ClInclude Include="..\source\game\botai\aas\AASCallback_FindAreaOutOfRange.h" />
+    <ClInclude Include="..\source\game\botai\aas\AASCallback_FindCoverArea.h" />
+    <ClInclude Include="..\source\game\botai\aas\AASCallback_FindFlaggedArea.h" />
+    <ClInclude Include="..\source\game\botai\aas\AAS_local.h" />
+    <ClInclude Include="..\source\game\botai\aas\ObstacleAvoidance.h" />
+    <ClInclude Include="..\source\game\botai\Bot.h" />
+    <ClInclude Include="..\source\game\botai\BotAI_Actions.h" />
+    <ClInclude Include="..\source\game\botai\BotAI_Debug.h" />
+    <ClInclude Include="..\source\game\botai\BotAI_Main.h" />
+    <ClInclude Include="..\source\game\botai\BotAI_Obstacles.h" />
+    <ClInclude Include="..\source\game\botai\BotAI_Routes.h" />
+    <ClInclude Include="..\source\game\botai\BotAI_VNodes.h" />
+    <ClInclude Include="..\source\game\botai\BotThread.h" />
+    <ClInclude Include="..\source\game\botai\BotThreadData.h" />
+    <ClInclude Include="..\source\game\botai\Bot_Common.h" />
+    <ClInclude Include="..\source\game\Camera.h" />
+    <ClInclude Include="..\source\game\client\ClientEffect.h" />
+    <ClInclude Include="..\source\game\client\ClientEntity.h" />
+    <ClInclude Include="..\source\game\client\ClientEntityInlines.h" />
+    <ClInclude Include="..\source\game\client\ClientMoveable.h" />
+    <ClInclude Include="..\source\game\CommandMapInfo.h" />
+    <ClInclude Include="..\source\game\Common.h" />
+    <ClInclude Include="..\source\game\ContentMask.h" />
+    <ClInclude Include="..\source\game\CrosshairInfo.h" />
+    <ClInclude Include="..\source\game\demos\DemoAnalyzer.h" />
+    <ClInclude Include="..\source\game\demos\DemoCamera.h" />
+    <ClInclude Include="..\source\game\demos\DemoManager.h" />
+    <ClInclude Include="..\source\game\demos\DemoScript.h" />
+    <ClInclude Include="..\source\game\docs\wiki.h" />
+    <ClInclude Include="..\source\game\Effect.h" />
+    <ClInclude Include="..\source\game\effects\Effects.h" />
+    <ClInclude Include="..\source\game\effects\Flares.h" />
+    <ClInclude Include="..\source\game\effects\FootPrints.h" />
+    <ClInclude Include="..\source\game\effects\HardcodedParticleSystem.h" />
+    <ClInclude Include="..\source\game\effects\PrecipitationSystem.h" />
+    <ClInclude Include="..\source\game\effects\RainEffect.h" />
+    <ClInclude Include="..\source\game\effects\SnowEffect.h" />
+    <ClInclude Include="..\source\game\effects\TemplatedParticleSystem.h" />
+    <ClInclude Include="..\source\game\effects\TireTread.h" />
+    <ClInclude Include="..\source\game\effects\Wakes.h" />
+    <ClInclude Include="..\source\game\effects\WaterEffects.h" />
+    <ClInclude Include="..\source\game\Entity.h" />
+    <ClInclude Include="..\source\game\EntityPtr.h" />
+    <ClInclude Include="..\source\game\Game.h" />
+    <ClInclude Include="..\source\game\GameEdit.h" />
+    <ClInclude Include="..\source\game\gamesys\Class.h" />
+    <ClInclude Include="..\source\game\gamesys\DebugGraph.h" />
+    <ClInclude Include="..\source\game\gamesys\DeviceContextHelper.h" />
+    <ClInclude Include="..\source\game\gamesys\Event.h" />
+    <ClInclude Include="..\source\game\gamesys\Pvs.h" />
+    <ClInclude Include="..\source\game\gamesys\SysCmds.h" />
+    <ClInclude Include="..\source\game\gamesys\SysCvar.h" />
+    <ClInclude Include="..\source\game\Game_local.h" />
+    <ClInclude Include="..\source\game\Game_network.h" />
+    <ClInclude Include="..\source\game\Game_Repeater.h" />
+    <ClInclude Include="..\source\game\guis\GuiSurface.h" />
+    <ClInclude Include="..\source\game\guis\GuiSurfaceRenderable.h" />
+    <ClInclude Include="..\source\game\guis\UIBinder.h" />
+    <ClInclude Include="..\source\game\guis\UICinematic.h" />
+    <ClInclude Include="..\source\game\guis\UICreditScroll.h" />
+    <ClInclude Include="..\source\game\guis\UICrosshairInfo.h" />
+    <ClInclude Include="..\source\game\guis\UIEdit.h" />
+    <ClInclude Include="..\source\game\guis\UIEditHelper.h" />
+    <ClInclude Include="..\source\game\guis\UIEditW.h" />
+    <ClInclude Include="..\source\game\guis\UIIconNotification.h" />
+    <ClInclude Include="..\source\game\guis\UILayout.h" />
+    <ClInclude Include="..\source\game\guis\UIList.h" />
+    <ClInclude Include="..\source\game\guis\UIMarquee.h" />
+    <ClInclude Include="..\source\game\guis\UINews.h" />
+    <ClInclude Include="..\source\game\guis\UIObject.h" />
+    <ClInclude Include="..\source\game\guis\UIObjectScriptState.h" />
+    <ClInclude Include="..\source\game\guis\UIProgress.h" />
+    <ClInclude Include="..\source\game\guis\UIRadialMenu.h" />
+    <ClInclude Include="..\source\game\guis\UIRenderWorld.h" />
+    <ClInclude Include="..\source\game\guis\UISlider.h" />
+    <ClInclude Include="..\source\game\guis\UITimeline.h" />
+    <ClInclude Include="..\source\game\guis\UIWindow.h" />
+    <ClInclude Include="..\source\game\guis\UIWindow_Shaped.h" />
+    <ClInclude Include="..\source\game\guis\UserInterfaceExpressions.h" />
+    <ClInclude Include="..\source\game\guis\UserInterfaceLocal.h" />
+    <ClInclude Include="..\source\game\guis\UserInterfaceManager.h" />
+    <ClInclude Include="..\source\game\guis\UserInterfaceManagerLocal.h" />
+    <ClInclude Include="..\source\game\guis\UserInterfaceScript.h" />
+    <ClInclude Include="..\source\game\guis\UserInterfaceTypes.h" />
+    <ClInclude Include="..\source\game\IK.h" />
+    <ClInclude Include="..\source\game\InputMode.h" />
+    <ClInclude Include="..\source\game\interfaces\CrosshairInterface.h" />
+    <ClInclude Include="..\source\game\interfaces\DeployControl.h" />
+    <ClInclude Include="..\source\game\interfaces\GuiInterface.h" />
+    <ClInclude Include="..\source\game\interfaces\NetworkInterface.h" />
+    <ClInclude Include="..\source\game\interfaces\RadarInterface.h" />
+    <ClInclude Include="..\source\game\interfaces\ResupplyInterface.h" />
+    <ClInclude Include="..\source\game\interfaces\SpawnInterface.h" />
+    <ClInclude Include="..\source\game\interfaces\TargetInterface.h" />
+    <ClInclude Include="..\source\game\interfaces\TaskInterface.h" />
+    <ClInclude Include="..\source\game\interfaces\UsableInterface.h" />
+    <ClInclude Include="..\source\game\Item.h" />
+    <ClInclude Include="..\source\game\Light.h" />
+    <ClInclude Include="..\source\game\LimboProperties.h" />
+    <ClInclude Include="..\source\game\Misc.h" />
+    <ClInclude Include="..\source\game\misc\AdEntity.h" />
+    <ClInclude Include="..\source\game\misc\DefenceTurret.h" />
+    <ClInclude Include="..\source\game\misc\DeliveryVehicle.h" />
+    <ClInclude Include="..\source\game\misc\Door.h" />
+    <ClInclude Include="..\source\game\misc\General.h" />
+    <ClInclude Include="..\source\game\misc\Parachute.h" />
+    <ClInclude Include="..\source\game\misc\PlayerBody.h" />
+    <ClInclude Include="..\source\game\misc\ProfileHelper.h" />
+    <ClInclude Include="..\source\game\misc\RenderEntityBundle.h" />
+    <ClInclude Include="..\source\game\misc\RepairDrone.h" />
+    <ClInclude Include="..\source\game\misc\WorldToScreen.h" />
+    <ClInclude Include="..\source\game\Moveable.h" />
+    <ClInclude Include="..\source\game\Mover.h" />
+    <ClInclude Include="..\source\game\network\SnapshotState.h" />
+    <ClInclude Include="..\source\game\physics\Clip.h" />
+    <ClInclude Include="..\source\game\physics\ClipModel.h" />
+    <ClInclude Include="..\source\game\physics\Force.h" />
+    <ClInclude Include="..\source\game\physics\Force_Constant.h" />
+    <ClInclude Include="..\source\game\physics\Force_Drag.h" />
+    <ClInclude Include="..\source\game\physics\Force_Field.h" />
+    <ClInclude Include="..\source\game\physics\Force_Spring.h" />
+    <ClInclude Include="..\source\game\physics\Physics.h" />
+    <ClInclude Include="..\source\game\physics\PhysicsEvent.h" />
+    <ClInclude Include="..\source\game\physics\Physics_Actor.h" />
+    <ClInclude Include="..\source\game\physics\Physics_AF.h" />
+    <ClInclude Include="..\source\game\physics\Physics_Base.h" />
+    <ClInclude Include="..\source\game\physics\Physics_JetPack.h" />
+    <ClInclude Include="..\source\game\physics\Physics_Linear.h" />
+    <ClInclude Include="..\source\game\physics\Physics_Monster.h" />
+    <ClInclude Include="..\source\game\physics\Physics_Parabola.h" />
+    <ClInclude Include="..\source\game\physics\Physics_Parametric.h" />
+    <ClInclude Include="..\source\game\physics\Physics_Player.h" />
+    <ClInclude Include="..\source\game\physics\Physics_RigidBody.h" />
+    <ClInclude Include="..\source\game\physics\Physics_RigidBodyMultiple.h" />
+    <ClInclude Include="..\source\game\physics\Physics_Simple.h" />
+    <ClInclude Include="..\source\game\physics\Physics_SimpleRigidBody.h" />
+    <ClInclude Include="..\source\game\physics\Physics_SimpleSpline.h" />
+    <ClInclude Include="..\source\game\physics\Physics_Static.h" />
+    <ClInclude Include="..\source\game\physics\Physics_StaticMulti.h" />
+    <ClInclude Include="..\source\game\physics\Push.h" />
+    <ClInclude Include="..\source\game\physics\TraceModelCache.h" />
+    <ClInclude Include="..\source\game\Player.h" />
+    <ClInclude Include="..\source\game\PlayerIcon.h" />
+    <ClInclude Include="..\source\game\PlayerProperties.h" />
+    <ClInclude Include="..\source\game\PlayerView.h" />
+    <ClInclude Include="..\source\game\Game_Precompiled.h" />
+    <ClInclude Include="..\source\game\PredictionErrorDecay.h" />
+    <ClInclude Include="..\source\game\proficiency\ProficiencyManager.h" />
+    <ClInclude Include="..\source\game\proficiency\StatsTracker.h" />
+    <ClInclude Include="..\source\game\Projectile.h" />
+    <ClInclude Include="..\source\game\roles\FireTeams.h" />
+    <ClInclude Include="..\source\game\roles\HudModule.h" />
+    <ClInclude Include="..\source\game\roles\Inventory.h" />
+    <ClInclude Include="..\source\game\roles\ObjectiveManager.h" />
+    <ClInclude Include="..\source\game\roles\RoleManager.h" />
+    <ClInclude Include="..\source\game\roles\Tasks.h" />
+    <ClInclude Include="..\source\game\roles\WayPointManager.h" />
+    <ClInclude Include="..\source\game\rules\AdminSystem.h" />
+    <ClInclude Include="..\source\game\rules\GameRules.h" />
+    <ClInclude Include="..\source\game\rules\GameRules_Campaign.h" />
+    <ClInclude Include="..\source\game\rules\GameRules_Objective.h" />
+    <ClInclude Include="..\source\game\rules\GameRules_StopWatch.h" />
+    <ClInclude Include="..\source\game\rules\GUIDState.h" />
+    <ClInclude Include="..\source\game\rules\UserGroup.h" />
+    <ClInclude Include="..\source\game\rules\VoteManager.h" />
+    <ClInclude Include="..\source\game\ScriptEntity.h" />
+    <ClInclude Include="..\source\game\script\ScriptEntityHelpers.h" />
+    <ClInclude Include="..\source\game\script\Script_Compiler.h" />
+    <ClInclude Include="..\source\game\script\Script_DLL.h" />
+    <ClInclude Include="..\source\game\script\Script_Exporter.h" />
+    <ClInclude Include="..\source\game\script\Script_Helper.h" />
+    <ClInclude Include="..\source\game\script\Script_Interface.h" />
+    <ClInclude Include="..\source\game\script\Script_Interpreter.h" />
+    <ClInclude Include="..\source\game\script\Script_Program.h" />
+    <ClInclude Include="..\source\game\script\Script_ScriptObject.h" />
+    <ClInclude Include="..\source\game\script\Script_SysCall.h" />
+    <ClInclude Include="..\source\game\script\Script_Thread.h" />
+    <ClInclude Include="..\source\game\sdnet\SDNetManager.h" />
+    <ClInclude Include="..\source\game\sdnet\SDNetProperties.h" />
+    <ClInclude Include="..\source\game\Sound.h" />
+    <ClInclude Include="..\source\game\structures\CommandMapPost.h" />
+    <ClInclude Include="..\source\game\structures\DeployMask.h" />
+    <ClInclude Include="..\source\game\structures\DeployRequest.h" />
+    <ClInclude Include="..\source\game\structures\DeployZone.h" />
+    <ClInclude Include="..\source\game\structures\TeamManager.h" />
+    <ClInclude Include="..\source\game\StuffSystem.h" />
+    <ClInclude Include="..\source\game\Target.h" />
+    <ClInclude Include="..\source\game\Teleporter.h" />
+    <ClInclude Include="..\source\game\Trigger.h" />
+    <ClInclude Include="..\source\game\UpdateManager.h" />
+    <ClInclude Include="..\source\game\vehicles\Attachments.h" />
+    <ClInclude Include="..\source\game\vehicles\JetPack.h" />
+    <ClInclude Include="..\source\game\vehicles\Pathing.h" />
+    <ClInclude Include="..\source\game\vehicles\RouteConstraint.h" />
+    <ClInclude Include="..\source\game\vehicles\SoundControl.h" />
+    <ClInclude Include="..\source\game\vehicles\Transport.h" />
+    <ClInclude Include="..\source\game\vehicles\TransportComponents.h" />
+    <ClInclude Include="..\source\game\vehicles\TransportExtras.h" />
+    <ClInclude Include="..\source\game\vehicles\TransportSystems.h" />
+    <ClInclude Include="..\source\game\vehicles\VehicleControl.h" />
+    <ClInclude Include="..\source\game\vehicles\VehicleIK.h" />
+    <ClInclude Include="..\source\game\vehicles\VehicleSuspension.h" />
+    <ClInclude Include="..\source\game\vehicles\VehicleView.h" />
+    <ClInclude Include="..\source\game\vehicles\VehicleWeapon.h" />
+    <ClInclude Include="..\source\game\vehicles\Vehicle_RigidBody.h" />
+    <ClInclude Include="..\source\game\vehicles\Walker.h" />
+    <ClInclude Include="..\source\game\Waypoints\LocationMarker.h" />
+    <ClInclude Include="..\source\game\Weapon.h" />
+    <ClInclude Include="..\source\game\WorldSpawn.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\source\framework\BuildVersion.cpp" />
+    <ClCompile Include="..\source\game\Actor.cpp" />
+    <ClCompile Include="..\source\game\AF.cpp" />
+    <ClCompile Include="..\source\game\AFEntity.cpp" />
+    <ClCompile Include="..\source\game\AnimatedEntity.cpp" />
+    <ClCompile Include="..\source\game\anim\Anim.cpp" />
+    <ClCompile Include="..\source\game\anim\Anim_Blend.cpp" />
+    <ClCompile Include="..\source\game\anim\Anim_FrameCommands.cpp" />
+    <ClCompile Include="..\source\game\anim\Anim_Import.cpp" />
+    <ClCompile Include="..\source\game\anim\Anim_Testmodel.cpp" />
+    <ClCompile Include="..\source\game\AntiLag.cpp" />
+    <ClCompile Include="..\source\game\AORManager.cpp" />
+    <ClCompile Include="..\source\game\Atmosphere.cpp" />
+    <ClCompile Include="..\source\game\AtmosphereRenderable.cpp" />
+    <ClCompile Include="..\source\game\botai\aas\AAS.cpp" />
+    <ClCompile Include="..\source\game\botai\aas\AASCallback_AvoidLocation.cpp" />
+    <ClCompile Include="..\source\game\botai\aas\AASCallback_FindAreaOutOfRange.cpp" />
+    <ClCompile Include="..\source\game\botai\aas\AASCallback_FindCoverArea.cpp" />
+    <ClCompile Include="..\source\game\botai\aas\AASCallback_FindFlaggedArea.cpp" />
+    <ClCompile Include="..\source\game\botai\aas\AAS_debug.cpp" />
+    <ClCompile Include="..\source\game\botai\aas\AAS_pathing.cpp" />
+    <ClCompile Include="..\source\game\botai\aas\AAS_routing.cpp" />
+    <ClCompile Include="..\source\game\botai\aas\ObstacleAvoidance.cpp" />
+    <ClCompile Include="..\source\game\botai\Bot.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_Actions.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_CombatNet.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_Debug.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_DMNet.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_FightUtils.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_Goals.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_LTGNet.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_Main.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_MoveNet.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_MoveUtils.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_Navigation.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_NBGNet.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_NodeCommands.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_Obstacles.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_Routes.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_Utils.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_VCombatNet.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_VCombatUtils.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_VDMNet.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_VMain.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_VMoveNet.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_VNodes.cpp" />
+    <ClCompile Include="..\source\game\botai\BotAI_VUtils.cpp" />
+    <ClCompile Include="..\source\game\botai\BotThread.cpp" />
+    <ClCompile Include="..\source\game\botai\BotThreadData.cpp" />
+    <ClCompile Include="..\source\game\Camera.cpp" />
+    <ClCompile Include="..\source\game\client\ClientEffect.cpp" />
+    <ClCompile Include="..\source\game\client\ClientEntity.cpp" />
+    <ClCompile Include="..\source\game\client\ClientMoveable.cpp" />
+    <ClCompile Include="..\source\game\CommandMapInfo.cpp" />
+    <ClCompile Include="..\source\game\CrosshairInfo.cpp" />
+    <ClCompile Include="..\source\game\demos\DemoAnalyzer.cpp" />
+    <ClCompile Include="..\source\game\demos\DemoCamera.cpp" />
+    <ClCompile Include="..\source\game\demos\DemoManager.cpp" />
+    <ClCompile Include="..\source\game\demos\DemoScript.cpp" />
+    <ClCompile Include="..\source\game\docs\wiki.cpp" />
+    <ClCompile Include="..\source\game\Effect.cpp" />
+    <ClCompile Include="..\source\game\effects\Effects.cpp" />
+    <ClCompile Include="..\source\game\effects\Flares.cpp" />
+    <ClCompile Include="..\source\game\effects\FootPrints.cpp" />
+    <ClCompile Include="..\source\game\effects\HardcodedParticleSystem.cpp" />
+    <ClCompile Include="..\source\game\effects\RainEffect.cpp" />
+    <ClCompile Include="..\source\game\effects\SnowEffect.cpp" />
+    <ClCompile Include="..\source\game\effects\TireTread.cpp" />
+    <ClCompile Include="..\source\game\effects\Wakes.cpp" />
+    <ClCompile Include="..\source\game\effects\WaterEffects.cpp" />
+    <ClCompile Include="..\source\game\Entity.cpp" />
+    <ClCompile Include="..\source\game\GameEdit.cpp" />
+    <ClCompile Include="..\source\game\gamesys\Class.cpp" />
+    <ClCompile Include="..\source\game\gamesys\DebugGraph.cpp" />
+    <ClCompile Include="..\source\game\gamesys\DeviceContextHelper.cpp" />
+    <ClCompile Include="..\source\game\gamesys\Event.cpp" />
+    <ClCompile Include="..\source\game\gamesys\Pvs.cpp" />
+    <ClCompile Include="..\source\game\gamesys\SysCmds.cpp" />
+    <ClCompile Include="..\source\game\gamesys\SysCvar.cpp" />
+    <ClCompile Include="..\source\game\Game_local.cpp" />
+    <ClCompile Include="..\source\game\Game_network.cpp" />
+    <ClCompile Include="..\source\game\Game_Repeater.cpp" />
+    <ClCompile Include="..\source\game\Game_ui.cpp" />
+    <ClCompile Include="..\source\game\guis\GuiSurface.cpp" />
+    <ClCompile Include="..\source\game\guis\GuiSurfaceRenderable.cpp" />
+    <ClCompile Include="..\source\game\guis\UIBinder.cpp" />
+    <ClCompile Include="..\source\game\guis\UICinematic.cpp" />
+    <ClCompile Include="..\source\game\guis\UICreditScroll.cpp" />
+    <ClCompile Include="..\source\game\guis\UICrosshairInfo.cpp" />
+    <ClCompile Include="..\source\game\guis\UIEdit.cpp" />
+    <ClCompile Include="..\source\game\guis\UIEditW.cpp" />
+    <ClCompile Include="..\source\game\guis\UIIconNotification.cpp" />
+    <ClCompile Include="..\source\game\guis\UILayout.cpp" />
+    <ClCompile Include="..\source\game\guis\UIList.cpp" />
+    <ClCompile Include="..\source\game\guis\UIList_Script.cpp" />
+    <ClCompile Include="..\source\game\guis\UIMarquee.cpp" />
+    <ClCompile Include="..\source\game\guis\UINews.cpp" />
+    <ClCompile Include="..\source\game\guis\UIObject.cpp" />
+    <ClCompile Include="..\source\game\guis\UIObjectScriptState.cpp" />
+    <ClCompile Include="..\source\game\guis\UIProgress.cpp" />
+    <ClCompile Include="..\source\game\guis\UIRadialMenu.cpp" />
+    <ClCompile Include="..\source\game\guis\UIRenderWorld.cpp" />
+    <ClCompile Include="..\source\game\guis\UISlider.cpp" />
+    <ClCompile Include="..\source\game\guis\UITimeline.cpp" />
+    <ClCompile Include="..\source\game\guis\UIWindow.cpp" />
+    <ClCompile Include="..\source\game\guis\UIWindow_Script.cpp" />
+    <ClCompile Include="..\source\game\guis\UIWindow_Shaped.cpp" />
+    <ClCompile Include="..\source\game\guis\UserInterfaceExpressions.cpp" />
+    <ClCompile Include="..\source\game\guis\UserInterfaceLocal.cpp" />
+    <ClCompile Include="..\source\game\guis\UserInterfaceLocal_Eval.cpp" />
+    <ClCompile Include="..\source\game\guis\UserInterfaceLocal_Script.cpp" />
+    <ClCompile Include="..\source\game\guis\UserInterfaceLocal_Script_Game.cpp" />
+    <ClCompile Include="..\source\game\guis\UserInterfaceManagerLocal.cpp" />
+    <ClCompile Include="..\source\game\guis\UserInterfaceScript.cpp" />
+    <ClCompile Include="..\source\game\guis\UserInterfaceTypes.cpp" />
+    <ClCompile Include="..\source\game\IK.cpp" />
+    <ClCompile Include="..\source\game\InputMode.cpp" />
+    <ClCompile Include="..\source\game\interfaces\TaskInterface.cpp" />
+    <ClCompile Include="..\source\game\Item.cpp" />
+    <ClCompile Include="..\source\game\Light.cpp" />
+    <ClCompile Include="..\source\game\LimboProperties.cpp" />
+    <ClCompile Include="..\source\game\Misc.cpp" />
+    <ClCompile Include="..\source\game\misc\AdEntity.cpp" />
+    <ClCompile Include="..\source\game\misc\DefenceTurret.cpp" />
+    <ClCompile Include="..\source\game\misc\DeliveryVehicle.cpp" />
+    <ClCompile Include="..\source\game\misc\Door.cpp" />
+    <ClCompile Include="..\source\game\misc\General.cpp" />
+    <ClCompile Include="..\source\game\misc\Parachute.cpp" />
+    <ClCompile Include="..\source\game\misc\PlayerBody.cpp" />
+    <ClCompile Include="..\source\game\misc\ProfileHelper.cpp" />
+    <ClCompile Include="..\source\game\misc\RenderEntityBundle.cpp" />
+    <ClCompile Include="..\source\game\misc\RepairDrone.cpp" />
+    <ClCompile Include="..\source\game\Moveable.cpp" />
+    <ClCompile Include="..\source\game\Mover.cpp" />
+    <ClCompile Include="..\source\game\network\SnapshotState.cpp" />
+    <ClCompile Include="..\source\game\physics\Clip.cpp" />
+    <ClCompile Include="..\source\game\physics\ClipModel.cpp" />
+    <ClCompile Include="..\source\game\physics\Force.cpp" />
+    <ClCompile Include="..\source\game\physics\Force_Constant.cpp" />
+    <ClCompile Include="..\source\game\physics\Force_Drag.cpp" />
+    <ClCompile Include="..\source\game\physics\Force_Field.cpp" />
+    <ClCompile Include="..\source\game\physics\Force_Spring.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics.cpp" />
+    <ClCompile Include="..\source\game\physics\PhysicsEvent.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_Actor.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_AF.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_Base.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_JetPack.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_Linear.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_Monster.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_Parabola.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_Parametric.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_Player.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_RigidBody.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_RigidBodyMultiple.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_Simple.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_SimpleRigidBody.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_SimpleSpline.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_Static.cpp" />
+    <ClCompile Include="..\source\game\physics\Physics_StaticMulti.cpp" />
+    <ClCompile Include="..\source\game\physics\Push.cpp" />
+    <ClCompile Include="..\source\game\physics\TraceModelCache.cpp" />
+    <ClCompile Include="..\source\game\Player.cpp" />
+    <ClCompile Include="..\source\game\PlayerIcon.cpp" />
+    <ClCompile Include="..\source\game\PlayerProperties.cpp" />
+    <ClCompile Include="..\source\game\PlayerView.cpp" />
+    <ClCompile Include="..\source\game\Game_Precompiled.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug with edit and continue|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug with inlines|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\source\game\PredictionErrorDecay.cpp" />
+    <ClCompile Include="..\source\game\proficiency\ProficiencyManager.cpp" />
+    <ClCompile Include="..\source\game\proficiency\StatsTracker.cpp" />
+    <ClCompile Include="..\source\game\Projectile.cpp" />
+    <ClCompile Include="..\source\game\roles\FireTeams.cpp" />
+    <ClCompile Include="..\source\game\roles\HudModule.cpp" />
+    <ClCompile Include="..\source\game\roles\Inventory.cpp" />
+    <ClCompile Include="..\source\game\roles\ObjectiveManager.cpp" />
+    <ClCompile Include="..\source\game\roles\RoleManager.cpp" />
+    <ClCompile Include="..\source\game\roles\Tasks.cpp" />
+    <ClCompile Include="..\source\game\roles\WayPointManager.cpp" />
+    <ClCompile Include="..\source\game\rules\AdminSystem.cpp" />
+    <ClCompile Include="..\source\game\rules\GameRules.cpp" />
+    <ClCompile Include="..\source\game\rules\GameRules_Campaign.cpp" />
+    <ClCompile Include="..\source\game\rules\GameRules_Objective.cpp" />
+    <ClCompile Include="..\source\game\rules\GameRules_StopWatch.cpp" />
+    <ClCompile Include="..\source\game\rules\GUIDState.cpp" />
+    <ClCompile Include="..\source\game\rules\UserGroup.cpp" />
+    <ClCompile Include="..\source\game\rules\VoteManager.cpp" />
+    <ClCompile Include="..\source\game\ScriptEntity.cpp" />
+    <ClCompile Include="..\source\game\script\ScriptEntityHelpers.cpp" />
+    <ClCompile Include="..\source\game\script\Script_Compiler.cpp" />
+    <ClCompile Include="..\source\game\script\Script_DLL.cpp" />
+    <ClCompile Include="..\source\game\script\Script_Exporter.cpp" />
+    <ClCompile Include="..\source\game\script\Script_Helper.cpp" />
+    <ClCompile Include="..\source\game\script\Script_Interface.cpp" />
+    <ClCompile Include="..\source\game\script\Script_Interpreter.cpp" />
+    <ClCompile Include="..\source\game\script\Script_Program.cpp" />
+    <ClCompile Include="..\source\game\script\Script_ScriptObject.cpp" />
+    <ClCompile Include="..\source\game\script\Script_SysCall.cpp" />
+    <ClCompile Include="..\source\game\script\Script_Thread.cpp" />
+    <ClCompile Include="..\source\game\sdnet\SDNetManager.cpp" />
+    <ClCompile Include="..\source\game\sdnet\SDNetProperties.cpp" />
+    <ClCompile Include="..\source\game\Sound.cpp" />
+    <ClCompile Include="..\source\game\structures\CommandMapPost.cpp" />
+    <ClCompile Include="..\source\game\structures\DeployMask.cpp" />
+    <ClCompile Include="..\source\game\structures\DeployRequest.cpp" />
+    <ClCompile Include="..\source\game\structures\DeployZone.cpp" />
+    <ClCompile Include="..\source\game\structures\TeamManager.cpp" />
+    <ClCompile Include="..\source\game\StuffSystem.cpp" />
+    <ClCompile Include="..\source\game\Target.cpp" />
+    <ClCompile Include="..\source\game\Teleporter.cpp" />
+    <ClCompile Include="..\source\game\Trigger.cpp" />
+    <ClCompile Include="..\source\game\UpdateManager.cpp" />
+    <ClCompile Include="..\source\game\vehicles\Attachments.cpp" />
+    <ClCompile Include="..\source\game\vehicles\JetPack.cpp" />
+    <ClCompile Include="..\source\game\vehicles\Pathing.cpp" />
+    <ClCompile Include="..\source\game\vehicles\RouteConstraint.cpp" />
+    <ClCompile Include="..\source\game\vehicles\SoundControl.cpp" />
+    <ClCompile Include="..\source\game\vehicles\Transport.cpp" />
+    <ClCompile Include="..\source\game\vehicles\TransportComponents.cpp" />
+    <ClCompile Include="..\source\game\vehicles\TransportExtras.cpp" />
+    <ClCompile Include="..\source\game\vehicles\TransportSystems.cpp" />
+    <ClCompile Include="..\source\game\vehicles\VehicleControl.cpp" />
+    <ClCompile Include="..\source\game\vehicles\VehicleIK.cpp" />
+    <ClCompile Include="..\source\game\vehicles\VehicleSuspension.cpp" />
+    <ClCompile Include="..\source\game\vehicles\VehicleView.cpp" />
+    <ClCompile Include="..\source\game\vehicles\VehicleWeapon.cpp" />
+    <ClCompile Include="..\source\game\vehicles\Vehicle_RigidBody.cpp" />
+    <ClCompile Include="..\source\game\vehicles\Walker.cpp" />
+    <ClCompile Include="..\source\game\Waypoints\LocationMarker.cpp" />
+    <ClCompile Include="..\source\game\Weapon.cpp" />
+    <ClCompile Include="..\source\game\WorldSpawn.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="idlib_sdk.vcxproj">
+      <Project>{f9a72ed4-e4c8-4205-9432-fb241e56c14d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="libGameDecl_sdk.vcxproj">
+      <Project>{a2d0b8a0-9f12-4d5d-8d60-e99d3ebef961}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

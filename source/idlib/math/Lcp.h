@@ -27,7 +27,7 @@
     lo[i] = - fabs( lo[i] * x[boxIndex[i]] )
     hi[i] = fabs( hi[i] * x[boxIndex[i]] )
 	boxIndex[boxIndex[i]] must be -1
-  
+
   Before calculating any of the bounded x[i] with boxIndex[i] != -1 the
   solver calculates all unbounded x[i] and all x[i] with boxIndex[i] == -1.
 

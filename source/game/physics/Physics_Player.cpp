@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,13 +11,13 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Physics_Player.h"
-#include "../Entity.h"
-#include "../Player.h"
-#include "../ContentMask.h"
-#include "../Misc.h"
-#include "../vehicles/Transport.h"
+#include "Entity.h"
+#include "Player.h"
+#include "ContentMask.h"
+#include "Misc.h"
+#include "vehicles/Transport.h"
 #include "Physics_RigidBodyMultiple.h"
-#include "../botai/Bot.h"
+#include "botai/Bot.h"
 
 CLASS_DECLARATION( idPhysics_Actor, idPhysics_Player )
 END_CLASS
@@ -2121,7 +2121,7 @@ sdLadderEntity* idPhysics_Player::FindLadder( const idVec3& origin, sdLadderEnti
 			continue;
 		}
 
-		int contents = gameLocal.clip.ContentsModel( CLIP_DEBUG_PARMS_CLIENTINFO( self ) origin, clipModel, ladders[ i ]->GetPhysics()->GetAxis(), -1, 
+		int contents = gameLocal.clip.ContentsModel( CLIP_DEBUG_PARMS_CLIENTINFO( self ) origin, clipModel, ladders[ i ]->GetPhysics()->GetAxis(), -1,
 			ladders[ i ]->GetLadderModel(), ladders[ i ]->GetPhysics()->GetOrigin(), ladders[ i ]->GetPhysics()->GetAxis() );
 
 		if ( contents != 0 ) {

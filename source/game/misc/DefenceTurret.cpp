@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,11 +11,11 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "DefenceTurret.h"
-#include "../Player.h"
-#include "../ContentMask.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../rules/GameRules.h"
+#include "Player.h"
+#include "ContentMask.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "rules/GameRules.h"
 
 /*
 ===============================================================================
@@ -94,7 +94,7 @@ void sdDefenceTurret::InitAngleInfo( const char* name, angleClamp_t& info, const
 		gameLocal.Error( "sdDefenceTurret::InitAngleInfo Max rate set with no Min rate set in '%s'", map->GetName() );
 	}
 
-	info.flags.enabled			= false;	
+	info.flags.enabled			= false;
 	bool minLimit	= dict.GetFloat( va( "min_%s", name ), "0", info.extents[ 0 ] );
 	bool maxLimit	= dict.GetFloat( va( "max_%s", name ), "0", info.extents[ 1 ] );
 	if ( minLimit ) {
@@ -134,7 +134,7 @@ void sdDefenceTurret::Spawn( void ) {
 		jointHandle_t yawJoint		= animator.GetJointHandle( aimData->GetDict().GetString( "joint_yaw" ) );
 		jointHandle_t pitchJoint	= animator.GetJointHandle( aimData->GetDict().GetString( "joint_pitch" ) );
 		jointHandle_t barrelJoint	= animator.GetJointHandle( aimData->GetDict().GetString( "joint_barrel" ) );
-		
+
 		aimer.Init( aimData->GetDict().GetBool( "fix_barrel" ), aimData->GetDict().GetBool( "invert_pitch" ), this, anim, yawJoint, pitchJoint, barrelJoint, INVALID_JOINT, yawInfo, pitchInfo );
 	} else {
 		gameLocal.Error( "sdDefenceTurret::Spawn No Aim Data" );
@@ -184,7 +184,7 @@ void sdDefenceTurret::UpdatePlayerTarget( idPlayer* player ) {
 
 	trace_t trace;
 	gameLocal.clip.TracePoint( CLIP_DEBUG_PARMS trace, start, targetPos, MASK_SHOT_RENDERMODEL, this );
-	
+
 	aimer.SetTarget( trace.endpos );
 	aimer.LockTarget();
 
@@ -222,7 +222,7 @@ idEntity* sdDefenceTurret::GetTurretOwner( void ) const {
 	sdScriptHelper h1;
 	CallNonBlockingScriptEvent( getOwnerFunc, h1 );
 
-	idScriptObject* object = gameLocal.program->GetReturnedObject();	
+	idScriptObject* object = gameLocal.program->GetReturnedObject();
 	if ( object == NULL ) {
 		return NULL;
 	}
@@ -321,9 +321,9 @@ void sdDefenceTurret::UpdateTarget( void ) {
 			SetTargetEntity( NULL );
 		} else {
 			idVec3 targetPos = GetTargetPosition( targetEntity );
-			
+
 			aimer.SetTarget( targetPos );
-			
+
 			bool inFireRange = InFiringRange( targetPos );
 			if ( inFireRange && aimer.TargetClose() ) {
 				BeginAttack();
@@ -425,7 +425,7 @@ sdDefenceTurret::DamageFeedback
 */
 void sdDefenceTurret::DamageFeedback( idEntity *victim, idEntity *inflictor, int oldHealth, int newHealth, const sdDeclDamage* damageDecl, bool headshot ) {
 	if ( usableInterface != NULL ) {
-		idPlayer* user = usableInterface->GetBoundPlayer( 0 );	
+		idPlayer* user = usableInterface->GetBoundPlayer( 0 );
 		if ( user != NULL ) {
 			user->DamageFeedback( victim, inflictor, oldHealth, newHealth, damageDecl, headshot );
 		}
@@ -498,7 +498,7 @@ void sdDefenceTurret::SetDisabled( bool value ) {
 	}
 	turretFlags.disabled = value;
 
-	if ( turretFlags.disabled ) {	
+	if ( turretFlags.disabled ) {
 		EndAttack();
 		SetTargetEntity( NULL );
 	}

@@ -42,7 +42,7 @@ const float BSE_PARTICLE_TEXCOORDSCALE = ( 0.01f );
 const unsigned int MEMORY_BLOCK_SIZE = ( 0x100000 );
 const unsigned int BSE_ELEC_MAX_BOLTS = ( 200 );
 
-typedef enum eBSEPerfCounter
+enum eBSEPerfCounter
 {
 	PERF_NUM_BSE,
 	PERF_NUM_TRACES,
@@ -52,7 +52,7 @@ typedef enum eBSEPerfCounter
 	NUM_PERF_COUNTERS
 };
 
-typedef enum eBSESegment
+enum eBSESegment
 {
 	SEG_NONE = 0,
 	SEG_EFFECT,						// Spawns another effect inheriting data from owner
@@ -68,7 +68,7 @@ typedef enum eBSESegment
 	SEG_COUNT
 };
 
-typedef enum eBSETrail
+enum eBSETrail
 {
 	TRAIL_NONE = 0,
 	TRAIL_BURN,
@@ -90,7 +90,7 @@ class rvSegment
 {
 public:
 				friend	class			rvBSE;
-										rvSegment( void ) { mFlags = 0; mParticles = NULL; mUsedHead = NULL; mFreeHead = NULL; mParticleCount = 0; mLoopParticleCount = 0; }		
+										rvSegment( void ) { mFlags = 0; mParticles = NULL; mUsedHead = NULL; mFreeHead = NULL; mParticleCount = 0; mLoopParticleCount = 0; }
 										~rvSegment( void );
 
 				void					SetFlag( bool on, int flag ) { on ? mFlags |= flag : mFlags &= ~flag; }
@@ -102,7 +102,7 @@ public:
 				void					SetExpired( bool expired ) { SetFlag( expired, SFLAG_EXPIRED ); }
 				void					SetSoundPlaying( bool soundPlaying ) { SetFlag( soundPlaying, SFLAG_SOUNDPLAYING ); }
 				void					SetHasMotionTrail( bool hmt ) { SetFlag( hmt, SFLAG_HASMOTIONTRAIL ); }
-										
+
 				int						GetMotionTrailCount( void ) { return( mActiveCount ); }
 
 				rvSegmentTemplate		*GetSegmentTemplate( void );
@@ -136,7 +136,7 @@ public:
 				void					CreateDecal( rvBSE *effect, float time );
 				void					InitLight( rvBSE *effect, rvSegmentTemplate *st, float time );
 				bool					HandleLight( rvBSE *effect, rvSegmentTemplate *st, float time );
-			
+
 				rvParticle				*InitParticleArray( rvBSE *effect );
 				rvParticle				*GetFreeParticle( rvBSE *effect );
 				rvParticle				*SpawnParticle( rvBSE *effect, rvSegmentTemplate *st, float birthTime, const idVec3 &initPos = vec3_origin, const idMat3 &initAxis = mat3_identity );
@@ -157,7 +157,7 @@ protected:
 	const		rvDeclEffect			*mEffectDecl;
 
 				float					mSegStartTime;					// Start time of segment
-				float					mSegEndTime;						
+				float					mSegEndTime;
 
 				idVec2					mSecondsPerParticle;			// How quickly the particles are spawned in an emitter
 				idVec2					mCount;							// The count of particles from a spawner
@@ -171,7 +171,7 @@ protected:
 				// Dynamically altered during effect
 				int						mFlags;
 				float					mLastTime;						// Last time the segment was serviced
-				int						mActiveCount;					// Number of active particles 
+				int						mActiveCount;					// Number of active particles
 
 				rvParticle				*mFreeHead;						// Linked list of particles
 				rvParticle				*mUsedHead;
@@ -204,10 +204,10 @@ public:
 
 										rvSegmentTemplate( void ) { Init( NULL ); SetEnabled( true ); }
 										~rvSegmentTemplate( void ) {}
-				
+
 										// Support copying of a template
 										rvSegmentTemplate( const rvSegmentTemplate& copy ) { *this = copy; }
-				
+
 				void					operator = ( const rvSegmentTemplate &copy );
 				bool					operator == ( const rvSegmentTemplate& a ) const { return Compare ( a ); }
 				bool					operator != ( const rvSegmentTemplate& a ) const { return !Compare ( a ); }
@@ -249,7 +249,7 @@ public:
 				const idStr				&GetSegmentName( void ) const { return( mSegmentName ); }
 
 				const rvDeclEffect		*GetEffectDecl( void ) { return( mDeclEffect ); }
-				
+
 				void					EvaluateTrailSegment( rvDeclEffect *et );
 				int						GetTrailSegmentIndex( void ) const { return( mTrailSegmentIndex ); }
 
@@ -384,7 +384,7 @@ public:
 
 			int						GetNumSegmentTemplates( void ) const { return( mSegmentTemplates.Num() ); }
 			rvSegmentTemplate		*GetSegmentTemplate( const char *name ) const;
-			
+
 			void					Init( void );
 			void					Finish( void );
 			bool					ParseSegment( int segmentType, idLexer *lexer );
@@ -398,7 +398,7 @@ public:
 			float					EvaluateCost( int activeParticles, int segment = -1 ) const;
 
 			float					GetCutOffDistance( void ) const { return mCutOffDistance; }
-			void					SetCutOffDistance( float dist ) { mCutOffDistance = dist; } 
+			void					SetCutOffDistance( float dist ) { mCutOffDistance = dist; }
 private:
 			bool					Compare( const rvDeclEffect& comp ) const;
 
@@ -408,7 +408,7 @@ private:
 			float					mCutOffDistance;
 			float					mSize;
 	idList	<rvSegmentTemplate>		mSegmentTemplates;
-	
+
 			mutable int				mPlayCount;					// For profiling
 			mutable int				mLoopCount;					// For profiling
 };
@@ -552,8 +552,8 @@ private:
 				idMat3					mCurrentAxisTransposed;		// Current axis of orientation transposed
 				idBounds				mCurrentLocalBounds;		// Current local bounds
 				idBounds				mCurrentWorldBounds;		// Current world bounds
-				idBounds				mLastRenderBounds;			// Last render bounds 
-				idBounds				mGrownRenderBounds;			// Last render bounds 
+				idBounds				mLastRenderBounds;			// Last render bounds
+				idBounds				mGrownRenderBounds;			// Last render bounds
 				bool					mForcePush;
 				idVec3					mCurrentWindVector;
 
@@ -592,7 +592,7 @@ public:
 
 	virtual void					SetShakeParms( float time, float scale );
 	virtual void					SetTunnelParms( float time, float scale );
-	
+
 	void							LoadAll( const idCmdArgs &args );
 	void							Stats( const idCmdArgs &args );
 	void							Pause( const idCmdArgs &args );

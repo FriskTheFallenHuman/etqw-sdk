@@ -1,10 +1,10 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h" 
+#include "Game_local.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -41,15 +41,15 @@ bool idBotAI::COMBAT_Foot_AttackEnemy() {
 	if ( !enemyInfo.enemyVisible && enemyInfo.enemyLastVisTime + 500 < botWorld->gameLocalInfo.time ) {
 		if ( !Bot_ShouldChaseHiddenEnemy( false ) ) {
 			Bot_ResetEnemy();
-			return false; 
+			return false;
 		}
 
 		if ( enemyIsHuntGoal ) {
 			COMBAT_AI_SUB_NODE = &idBotAI::Enter_COMBAT_Foot_ChaseEnemy;
 		} else if ( Bot_CheckShouldUseAircan( false ) ) {
-			COMBAT_AI_SUB_NODE = &idBotAI::Enter_COMBAT_Foot_ChaseEnemy_Aircan;			
+			COMBAT_AI_SUB_NODE = &idBotAI::Enter_COMBAT_Foot_ChaseEnemy_Aircan;
 		} else if ( Bot_CheckShouldUseGrenade( false )) {
-			COMBAT_AI_SUB_NODE = &idBotAI::Enter_COMBAT_Foot_ChaseEnemy_Grenade;	
+			COMBAT_AI_SUB_NODE = &idBotAI::Enter_COMBAT_Foot_ChaseEnemy_Grenade;
 		} else {
 			if ( BotLeftEnemysSight() ) {
 				if ( botThreadData.random.RandomInt( 100 ) > 80 ) {
@@ -154,7 +154,7 @@ bool idBotAI::COMBAT_Foot_ChaseEnemy() {
 	botIdealWeapSlot = GUN;
 	botUcmd->botCmds.reload = true; //mal_TODO: this is lame - fix this when have total control of weapon info.
 
-	if ( botThreadData.AllowDebugData() ) { 
+	if ( botThreadData.AllowDebugData() ) {
 		gameRenderWorld->DebugCircle( colorRed, enemyInfo.enemy_LS_Pos, idVec3( 0, 0, 1 ), 16, 8 );
 		gameRenderWorld->DebugCircle( colorBlue, enemyInfo.enemy_NS_Pos, idVec3( 0, 0, 1 ), 16, 8 );
 	}
@@ -167,14 +167,14 @@ bool idBotAI::COMBAT_Foot_ChaseEnemy() {
 
 	if ( enemyDist > ENEMY_CHASE_DIST && !enemyIsHuntGoal ) {
 		Bot_ResetEnemy();
-		return false; 
+		return false;
 	}
 
 //mal: chase the bastid's last known position!
 	if ( ourDist > 75.0f || botInfo->onLadder ) {
 
 		Bot_SetupMove( enemyLastOrg, -1, ACTION_NULL );
- 
+
 		if ( MoveIsInvalid() ) {
 			Bot_IgnoreEnemy( enemy, ENEMY_IGNORE_TIME );
 			Bot_ResetEnemy();
@@ -239,7 +239,7 @@ bool idBotAI::COMBAT_Foot_ChaseEnemy_Grenade() {
 	UpdateNonVisEnemyInfo();
 	Bot_MedicCheckNBGState_InCombat();
 
-	if ( botThreadData.AllowDebugData() ) { 
+	if ( botThreadData.AllowDebugData() ) {
 		gameRenderWorld->DebugCircle( colorRed, enemyInfo.enemy_LS_Pos, idVec3( 0, 0, 1 ), 16, 8 );
 		gameRenderWorld->DebugCircle( colorBlue, enemyInfo.enemy_NS_Pos, idVec3( 0, 0, 1 ), 16, 8 );
 	}
@@ -300,7 +300,7 @@ bool idBotAI::COMBAT_Foot_ChaseEnemy_Grenade() {
 	} else {
 
 		Bot_SetupMove( enemyLastOrg, -1, ACTION_NULL );
-  
+
 		if ( MoveIsInvalid() ) {
 			Bot_IgnoreEnemy( enemy, ENEMY_IGNORE_TIME );
 			Bot_ResetEnemy();
@@ -312,7 +312,7 @@ bool idBotAI::COMBAT_Foot_ChaseEnemy_Grenade() {
 		Bot_MoveAlongPath( RUN );
 
 		if ( Bot_ThrowGrenade( enemyLastOrg, false ) ) {
-		
+
 			k = ( botThreadData.random.RandomInt( 100 ) > 80 ) ? true : false;
 
 			if ( !k ) {
@@ -490,7 +490,7 @@ bool idBotAI::COMBAT_Foot_EvadeEnemy() {
 
 	if ( !enemyInfo.enemyVisible && enemyInfo.enemyLastVisTime + 500 < botWorld->gameLocalInfo.time ) {
         UpdateNonVisEnemyInfo();
-		
+
 		if ( BotLeftEnemysSight() ) {
             vec = bot_LS_Enemy_Pos;
 		} else {
@@ -501,7 +501,7 @@ bool idBotAI::COMBAT_Foot_EvadeEnemy() {
 			Bot_UseCannister( AIRCAN, vec );
 			Bot_LookAtLocation( vec, INSTANT_TURN );
 		} else if ( Bot_CheckShouldUseGrenade( false ) ) {
-			Bot_ThrowGrenade( vec, false );	
+			Bot_ThrowGrenade( vec, false );
 		}
 	} else {
 
@@ -630,7 +630,7 @@ bool idBotAI::COMBAT_Foot_ReviveTeammate() {
 			combatNBGType = NO_COMBAT_TYPE;
 			return false;
 		}
-		
+
 		Bot_MoveAlongPath( RUN );
 
 		if ( !enemyInfo.enemyVisible && enemyInfo.enemyLastVisTime + 500 < botWorld->gameLocalInfo.time ) {
@@ -639,7 +639,7 @@ bool idBotAI::COMBAT_Foot_ReviveTeammate() {
 		} else {
 			Bot_LookAtEntity( enemy, AIM_TURN );
 			Bot_CheckAttack();
-		} 
+		}
 		return true;
 	}
 
@@ -702,7 +702,7 @@ bool idBotAI::COMBAT_Foot_ChaseEnemy_Aircan() {
 
 	UpdateNonVisEnemyInfo();
 
-	if ( botThreadData.AllowDebugData() ) { 
+	if ( botThreadData.AllowDebugData() ) {
 		gameRenderWorld->DebugCircle( colorRed, enemyInfo.enemy_LS_Pos, idVec3( 0, 0, 1 ), 16, 8 );
 		gameRenderWorld->DebugCircle( colorBlue, enemyInfo.enemy_NS_Pos, idVec3( 0, 0, 1 ), 16, 8 );
 	}
@@ -715,7 +715,7 @@ bool idBotAI::COMBAT_Foot_ChaseEnemy_Aircan() {
 
 	if ( enemyDist > ENEMY_CHASE_DIST ) {
 		Bot_ResetEnemy();
-		return false; 
+		return false;
 	}
 
 	if ( enemyDist > 900.0f ) {
@@ -745,7 +745,7 @@ bool idBotAI::COMBAT_Foot_ChaseEnemy_Aircan() {
 	}
 
 	if ( ourDist > 900.0f || botInfo->onLadder ) {
-		
+
 		Bot_SetupMove( enemyLastOrg, -1, ACTION_NULL );
 
 		if ( MoveIsInvalid() ) {
@@ -801,7 +801,7 @@ bool idBotAI::COMBAT_Foot_Hide() {
 
 	if ( enemyInfo.enemyLastVisTime + 5000 < botWorld->gameLocalInfo.time || vec.LengthSqr() > Square( 700.0f ) ) {
 		Bot_ResetEnemy();
-		return false; 
+		return false;
 	}
 
 	if ( combatDangerExists ) {
@@ -824,7 +824,7 @@ bool idBotAI::COMBAT_Foot_Hide() {
 	Bot_LookAtLocation( bot_LS_Enemy_Pos, SMOOTH_TURN );
 
 	botUcmd->botCmds.reload = true; //mal_TODO: this is lame - fix this when have total control of weapon info.
-	
+
 	return true;
 }
 
@@ -908,7 +908,7 @@ bool idBotAI::COMBAT_Foot_GrabVehicle() {
 
 	GetVehicleInfo( combatNBGTarget, vehicleInfo );
 
-	if ( !VehicleIsValid( vehicleInfo.entNum ) || exitNode ) {	
+	if ( !VehicleIsValid( vehicleInfo.entNum ) || exitNode ) {
 		COMBAT_AI_SUB_NODE = NULL;
 		combatNBGType = NO_COMBAT_TYPE;
 		return false;
@@ -930,7 +930,7 @@ bool idBotAI::COMBAT_Foot_GrabVehicle() {
 
 		idVec3 vehicleOrigin = vehicleInfo.origin;
 		vehicleOrigin.z += VEHICLE_PATH_ORIGIN_OFFSET;
-        
+
 		Bot_SetupMove( vehicleOrigin, -1, ACTION_NULL );
 
 		if ( MoveIsInvalid() ) {
@@ -938,7 +938,7 @@ bool idBotAI::COMBAT_Foot_GrabVehicle() {
 			combatNBGType = NO_COMBAT_TYPE;
 			return false;
 		}
-		
+
 		Bot_MoveAlongPath( RUN );
 
 		if ( !enemyInfo.enemyVisible && enemyInfo.enemyLastVisTime + 500 < botWorld->gameLocalInfo.time ) {
@@ -947,10 +947,10 @@ bool idBotAI::COMBAT_Foot_GrabVehicle() {
 		} else {
 			Bot_LookAtEntity( enemy, AIM_TURN );
 			Bot_CheckAttack();
-		} 
+		}
 		return true;
 	}
-   
+
 	Bot_LookAtLocation( vehicleInfo.origin, SMOOTH_TURN );
 
 	botUcmd->botCmds.enterVehicle = true;
@@ -1010,7 +1010,7 @@ bool idBotAI::COMBAT_Foot_AttackTurret() {
 	if ( tr.fraction < 1.0f && tr.c.entityNum != deployableInfo.entNum ) {  //mal: can't see it anymore, so go back to fighting our enemy.
 		COMBAT_AI_SUB_NODE = NULL;
 		return false;
-	} 
+	}
 
 	if ( botInfo->classType == FIELDOPS && LocationVis2Sky( deployableInfo.origin ) && ClassWeaponCharged( AIRCAN ) ) {
 		botIdealWeapNum = AIRCAN;
@@ -1033,7 +1033,7 @@ bool idBotAI::COMBAT_Foot_AttackTurret() {
 	if ( botIdealWeapSlot == NADE ) {
 		if ( distToTurretSqr > Square( GRENADE_THROW_MAXDIST ) ) {
 			Bot_SetupMove( deployableOrg, -1, ACTION_NULL );
-		
+
 			if ( MoveIsInvalid() ) {
 				COMBAT_AI_SUB_NODE = NULL;
 				return false;
@@ -1048,7 +1048,7 @@ bool idBotAI::COMBAT_Foot_AttackTurret() {
 	} else if ( botIdealWeapNum == AIRCAN ) {
 		Bot_UseCannister( AIRCAN, deployableOrg );
 	} else if ( botIdealWeapSlot == GUN ) {
-		if ( distToTurretSqr < Square( 500.0f ) ) { // too close, back up some! 
+		if ( distToTurretSqr < Square( 500.0f ) ) { // too close, back up some!
 			if ( Bot_CanMove( BACK, 100.0f, true ) ) {
 				Bot_MoveToGoal( botCanMoveGoal, vec3_zero, RUN, RANDOM_JUMP );
 			} else if ( Bot_CanMove( RIGHT, 100.0f, true ) ) {
@@ -1057,11 +1057,11 @@ bool idBotAI::COMBAT_Foot_AttackTurret() {
 				Bot_MoveToGoal( botCanMoveGoal, vec3_zero, RUN, RANDOM_JUMP_LEFT );
 			}
 
-			Bot_LookAtLocation( deployableOrg, SMOOTH_TURN ); 
+			Bot_LookAtLocation( deployableOrg, SMOOTH_TURN );
 			return true;
 		}
-		
-		Bot_LookAtLocation( deployableOrg, SMOOTH_TURN ); 
+
+		Bot_LookAtLocation( deployableOrg, SMOOTH_TURN );
 		botUcmd->botCmds.attack = true;
 	}
 

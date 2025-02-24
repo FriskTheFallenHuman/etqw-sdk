@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -10,7 +10,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../../decllib/DeclSurfaceType.h"
+#include "decllib/DeclSurfaceType.h"
 
 #include "Script_Thread.h"
 #include "Script_Helper.h"
@@ -160,7 +160,7 @@ idThread::Init
 void idThread::Init( void ) {
 	threadNum = GetFreeThreadNum();
 	threadNode.AddToEnd( threadList );
-	
+
 	creationTime = gameLocal.time;
 	lastExecuteTime = 0;
 	manualControl = false;
@@ -190,19 +190,19 @@ idThread::DisplayInfo
 ================
 */
 void idThread::DisplayInfo( void ) {
-	gameLocal.Printf( 
+	gameLocal.Printf(
 		"%12i: '%s'\n"
 		"        File: %s(%d)\n"
 		"     Created: %d (%d ms ago)\n"
-		"      Status: ", 
-		threadNum, threadName.c_str(), 
-		interpreter.CurrentFile(), interpreter.CurrentLine(), 
+		"      Status: ",
+		threadNum, threadName.c_str(),
+		interpreter.CurrentFile(), interpreter.CurrentLine(),
 		creationTime, gameLocal.time - creationTime );
 
 	if ( interpreter.threadDying ) {
 		gameLocal.Printf( "Dying\n" );
 	} else if ( interpreter.doneProcessing ) {
-		gameLocal.Printf( 
+		gameLocal.Printf(
 			"Paused since %d (%d ms)\n"
 			"      Reason: ",  lastExecuteTime, gameLocal.time - lastExecuteTime );
 		if ( waitingUntil ) {
@@ -248,7 +248,7 @@ void idThread::PruneThreads( void ) {
 		if ( thread->interpreter.terminateOnExit ) {
 			FreeThread( thread );
 			continue;
-		}	
+		}
 	}
 }
 

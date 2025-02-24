@@ -2,12 +2,12 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclToolTip.h"
-#include "../../framework/KeyInput.h"
-#include "../../framework/DeclParseHelper.h"
+#include "framework/KeyInput.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -138,7 +138,7 @@ bool sdDeclToolTip::Parse( const char *text, const int textLength ) {
 			}
 
 			nextShowDelay = SEC2MS( token.GetFloatValue() );
-			
+
 		} else if( !token.Icmp( "sound" ) ) {
 			if( !src.ExpectTokenType( TT_STRING, 0, &token ) ) {
 				src.Error( "sdDeclToolTip::Parse Invalid Parm For 'text'" );
@@ -214,7 +214,7 @@ bool sdDeclToolTip::ParseTimeline( idParser& src ) {
 		}
 
 		if ( !token.Icmp( "onTime" ) ) {
-		
+
 			src.ReadToken( &token );
 
 			int time;
@@ -241,7 +241,7 @@ bool sdDeclToolTip::ParseTimeline( idParser& src ) {
 			src.ReadToken( &token );
 
 			if ( !token.Icmp( "guiEvent" ) ) {
-				
+
 				event.second.eventType = TL_GUIEVENT;
 
 				if( !src.ExpectTokenType( TT_STRING, 0, &token ) ) {
@@ -332,7 +332,7 @@ bool sdDeclToolTip::AddMessage( const wchar_t *text ) {
 	messages.Alloc() = message;
 
 	idWStr buffer;
-	
+
 	const wchar_t* start = text;
 	const wchar_t* p;
 	for ( p = text; *p; p++ ) {

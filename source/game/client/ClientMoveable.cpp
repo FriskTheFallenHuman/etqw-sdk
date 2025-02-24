@@ -5,7 +5,7 @@
 // ClientMoveable.cpp
 //----------------------------------------------------------------
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -15,8 +15,8 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "ClientMoveable.h"
-#include "../ContentMask.h"
-#include "../demos/DemoManager.h"
+#include "ContentMask.h"
+#include "demos/DemoManager.h"
 
 /*
 ===============================================================================
@@ -71,7 +71,7 @@ void rvClientMoveable::FreeEntityDef ( void ) {
 	if ( entityDefHandle >= 0 ) {
 		gameRenderWorld->FreeEntityDef ( entityDefHandle );
 		entityDefHandle = -1;
-	}	
+	}
 }
 
 /*
@@ -93,8 +93,8 @@ void rvClientMoveable::Spawn( const idDict* args, int _effectSet ) {
 
 	idTraceModel	trm;
 	int				clipShrink;
-	
-	
+
+
 	const char* clipModelName = spawnArgs->GetString( "cm_model" );
 	if ( !gameLocal.clip.LoadTraceModel( clipModelName, trm ) ) {
 		gameLocal.Error( "rvClientMoveable '%d': cannot load collision model %s", entityNumber, clipModelName );
@@ -107,7 +107,7 @@ void rvClientMoveable::Spawn( const idDict* args, int _effectSet ) {
 		trm.Shrink( clipShrink * CM_CLIP_EPSILON );
 	}
 
-	physicsObj.SetSelf( gameLocal.entities[ENTITYNUM_CLIENT] );		
+	physicsObj.SetSelf( gameLocal.entities[ENTITYNUM_CLIENT] );
 	physicsObj.SetClipModel( new idClipModel( trm, false ), spawnArgs->GetFloat ( "density", "0.5" ), 0 );
 	physicsObj.SetOrigin( worldOrigin );
 	physicsObj.SetAxis( worldAxis );
@@ -136,9 +136,9 @@ void rvClientMoveable::Spawn( const idDict* args, int _effectSet ) {
 	if ( effectSet != 0 ) {
 		trailEffectName = va( "fx_trail_%i", effectSet );
 	}
-	trailEffect = gameLocal.PlayEffect( *spawnArgs, colorWhite.ToVec3(), trailEffectName, NULL, center, worldAxis, true );	
+	trailEffect = gameLocal.PlayEffect( *spawnArgs, colorWhite.ToVec3(), trailEffectName, NULL, center, worldAxis, true );
 	trailAttenuateSpeed = spawnArgs->GetFloat ( "trailAttenuateSpeed", "200" );
-	
+
 	bounceSoundShader = gameLocal.declSoundShaderType[ spawnArgs->GetString( "snd_bounce" ) ];
 	bounceSoundTime   = 0;
 
@@ -158,7 +158,7 @@ void rvClientMoveable::Think ( void ) {
 			runPhysics = false;
 		}
 	}
-	
+
 	if ( runPhysics ) {
 		RunPhysics();
 	}
@@ -168,7 +168,7 @@ void rvClientMoveable::Think ( void ) {
 		refSound.origin = worldOrigin;
 		refSound.referenceSound->UpdateEmitter( refSound.origin, refSound.listenerId, &refSound.parms );
 	}
-	
+
 	renderEntity.origin = worldOrigin;
 	renderEntity.axis = worldAxis;
 
@@ -192,7 +192,7 @@ void rvClientMoveable::Think ( void ) {
 		entityDefHandle = gameRenderWorld->AddEntityDef( &renderEntity );
 	} else {
 		gameRenderWorld->UpdateEntityDef( entityDefHandle, &renderEntity );
-	}		
+	}
 }
 
 /*
@@ -209,7 +209,7 @@ idPhysics* rvClientMoveable::GetPhysics ( void ) const {
 rvClientMoveable::Collide
 ================
 */
-bool rvClientMoveable::Collide ( const trace_t &collision, const idVec3 &velocity ) {	
+bool rvClientMoveable::Collide ( const trace_t &collision, const idVec3 &velocity ) {
 	if ( firstBounce ) {
 		// first bounce, play effect
 		const char* bounceEffectName = "fx_firstbounce";
@@ -229,8 +229,8 @@ bool rvClientMoveable::Collide ( const trace_t &collision, const idVec3 &velocit
 			StartSoundShader ( bounceSoundShader, SND_ANY, 0 );
 			bounceSoundTime = BOUNCE_SOUND_DELAY;
 		}
-	}	
-		
+	}
+
 	return false;
 }
 

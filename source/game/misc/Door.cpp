@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,10 +11,10 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Door.h"
-#include "../Player.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../ContentMask.h"
+#include "Player.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "ContentMask.h"
 
 idList< doorSpawnInfo_t* > idDoor::s_doorInfo;
 
@@ -129,7 +129,7 @@ sdPhysics_Door::SetBodyPositions
 */
 void sdPhysics_Door::SetBodyProperties( int id, const idVec3& _pos1, const idVec3& _pos2, const idMat3& _axes, bool pusher ) {
 	assert( id >= 0 && id < bodies.Num() );
-	if ( id < 0 || id >= bodies.Num() ) {		
+	if ( id < 0 || id >= bodies.Num() ) {
 		return;
 	}
 
@@ -158,7 +158,7 @@ sdPhysics_Door::GetOrigin
 const idVec3& sdPhysics_Door::GetOrigin( int id ) const {
 	assert( id >= 0 && id < bodies.Num() );
 
-	if ( id < 0 || id >= bodies.Num() ) {		
+	if ( id < 0 || id >= bodies.Num() ) {
 		return vec3_origin;
 	}
 
@@ -237,7 +237,7 @@ bool sdPhysics_Door::Evaluate( int timeStepMSec, int endTimeMSec ) {
 		}
 
 		// re-link all the clip models that have moved so far using the new position
-		// otherwise they could potentially move into blocking entities		
+		// otherwise they could potentially move into blocking entities
 		currentPos = newPos;
 		for ( int j = 0; j <= i; j++ ) {
 			UpdateBodyPosition( j );
@@ -401,7 +401,7 @@ sdPhysics_Door::GetClipModel
 idClipModel* sdPhysics_Door::GetClipModel( int id ) const {
 	assert( id >= 0 && id < bodies.Num() );
 
-	if ( id < 0 || id >= bodies.Num() ) {		
+	if ( id < 0 || id >= bodies.Num() ) {
 		return NULL;
 	}
 
@@ -422,7 +422,7 @@ int sdPhysics_Door::GetContents( int id ) const {
 	for ( int i = 0; i < bodies.Num(); i++ ) {
 		contents |= bodies[ i ].clipModel->GetContents();
 	}
-	return contents;	
+	return contents;
 }
 
 /*
@@ -433,7 +433,7 @@ sdPhysics_Door::SetContents
 void sdPhysics_Door::SetContents( int contents, int id ) {
 	assert( id >= 0 && id < bodies.Num() );
 
-	if ( id < 0 || id >= bodies.Num() ) {		
+	if ( id < 0 || id >= bodies.Num() ) {
 		return;
 	}
 
@@ -467,7 +467,7 @@ sdPhysics_Door::SetClipMask
 void sdPhysics_Door::SetClipMask( int mask, int id ) {
 	assert( id >= 0 && id < bodies.Num() );
 
-	if ( id < 0 || id >= bodies.Num() ) {		
+	if ( id < 0 || id >= bodies.Num() ) {
 		return;
 	}
 
@@ -482,7 +482,7 @@ sdPhysics_Door::GetAxis
 const idMat3& sdPhysics_Door::GetAxis( int id ) const {
 	assert( id >= 0 && id < bodies.Num() );
 
-	if ( id < 0 || id >= bodies.Num() ) {		
+	if ( id < 0 || id >= bodies.Num() ) {
 		return mat3_identity;
 	}
 
@@ -880,7 +880,7 @@ void idDoor::CalcPositions( idVec3& pos1, idVec3& pos2 ) {
 			// a la oldschool Quake
 			SetAngles( ang_zero );
 			dir = spawnArgs.GetFloat( "angle" );
-		} 
+		}
 
 		idVec3 movedir;
 		// jrad - support for all the other motion types
@@ -1116,7 +1116,7 @@ void idDoor::CalcTriggerBounds( float size, idBounds &bounds ) {
 
 	const idVec3& org = baseOrg;
 	idMat3 transpose = baseAxis.Transpose();
-	
+
 	if ( health ) {
 		fl.takedamage = true;
 	}
@@ -1124,7 +1124,7 @@ void idDoor::CalcTriggerBounds( float size, idBounds &bounds ) {
 	for ( int i = 0; i < parts.Num(); i++ ) {
 		const idVec3& otherOrg	= physicsObj.GetOrigin( i );
 		const idMat3& otherAxis = physicsObj.GetAxis( i );
-		
+
 		idMat3 axisDiff = otherAxis * transpose;
 
 		idVec3 diff = otherOrg - org;
@@ -1261,7 +1261,7 @@ void idDoor::OnTouch( idEntity *other, const trace_t& trace ) {
 
 		return;
 	}
-	
+
 	if ( sndTrigger && trace.c.id == sndTrigger->GetId() ) {
 		if ( !hasRequirements && gameLocal.time > nextSndTriggerTime ) {
 			StartSound( "snd_locked", SND_ANY, 0, NULL );
@@ -1290,7 +1290,7 @@ void idDoor::SpectatorTouch( idPlayer* p, const trace_t& trace ) {
 		idVec3 relativeOrg = ( trace.endpos - baseOrg ) * baseAxis.Transpose();
 
 		const idBounds& bounds = sndTrigger->GetBounds();
-		
+
 		idVec3 translate = bounds.GetCenter();
 
 		idVec3 playerSize = p->GetPhysics()->GetBounds().Size();

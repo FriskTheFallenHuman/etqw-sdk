@@ -20,7 +20,7 @@ public:
 	// New for this decl
 	int						GetNumModels( void ) const { return models.Num(); }
 	const char *			GetModelName( int index ) const { return models[index].c_str(); }
-	bool					GetRandomizeAngles( void ) const  { return randomizeAngles; } 
+	bool					GetRandomizeAngles( void ) const  { return randomizeAngles; }
 	const sdDeclStuffType * GetLodType( void ) const { return lodType; }
 
 private:

@@ -103,7 +103,7 @@ ID_INLINE float& idComplex::operator[]( int index ) {
 ID_INLINE idComplex idComplex::operator-() const {
 	return idComplex( -r, -i );
 }
-	
+
 ID_INLINE idComplex &idComplex::operator=( const idComplex &a ) {
 	r = a.r;
 	i = a.i;

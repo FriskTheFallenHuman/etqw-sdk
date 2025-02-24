@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../idlib/precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 #ifndef USE_LIBC_MALLOC
@@ -199,7 +199,7 @@ idHeap::~idHeap( void ) {
 	if ( smallCurPage ) {
 		FreePage( smallCurPage );			// free small-heap current allocation page
 	}
-	p = smallFirstUsedPage;					// free small-heap allocated pages 
+	p = smallFirstUsedPage;					// free small-heap allocated pages
 	while( p ) {
 		idHeap::page_s *next = p->next;
 		FreePage( p );
@@ -227,7 +227,7 @@ idHeap::~idHeap( void ) {
 		p = next;
 	}
 
-	ReleaseSwappedPages();			
+	ReleaseSwappedPages();
 
 	if ( defragBlock ) {
 		free( defragBlock );
@@ -342,7 +342,7 @@ void *idHeap::AllocateAligned( const size_t bytes, const align_t align ) {
 			MEMORYSTATUSEX statex;
 			statex.dwLength = sizeof( statex );
 			GlobalMemoryStatusEx( &statex );
-			common->Printf( "\nTotal Physical Memory: %I64d bytes\nAvailable Physical Memory: %I64d bytes\nMemory Utilization: %d %%\n\n", 
+			common->Printf( "\nTotal Physical Memory: %I64d bytes\nAvailable Physical Memory: %I64d bytes\nMemory Utilization: %d %%\n\n",
 				statex.ullTotalPhys, statex.ullAvailPhys, (int)statex.dwMemoryLoad );
 #endif
 #if defined( SD_PUBLIC_BUILD )
@@ -439,7 +439,7 @@ void idHeap::Dump( void ) {
 	for ( pg = mediumFirstFreePage; pg; pg = pg->next ) {
 		idLib::common->Printf( "%p  bytes %-8d  (partially used by medium heap)\n", pg->data, pg->dataSize );
 	}
-	
+
 	for ( pg = largeFirstUsedPage; pg; pg = pg->next ) {
 		idLib::common->Printf( "%p  bytes %-8d  (fully used by large heap)\n", pg->data, pg->dataSize );
 	}
@@ -503,7 +503,7 @@ idHeap::page_s* idHeap::AllocatePage( dword bytes ) {
 				idLib::common->Printf( "Freeing defragBlock on alloc of %i.\n", size + ALIGN - 1 );
 				free( defragBlock );
 				defragBlock = NULL;
-				p = (idHeap::page_s *) ::malloc( size + ALIGN - 1 );			
+				p = (idHeap::page_s *) ::malloc( size + ALIGN - 1 );
 				AllocDefragBlock();
 			}
 			if ( !p ) {
@@ -511,7 +511,7 @@ idHeap::page_s* idHeap::AllocatePage( dword bytes ) {
 				MEMORYSTATUSEX statex;
 				statex.dwLength = sizeof( statex );
 				GlobalMemoryStatusEx( &statex );
-				common->Printf( "\nTotal Physical Memory: %I64d bytes\nAvailable Physical Memory: %I64d bytes\nMemory Utilization: %i %%\n\n", 
+				common->Printf( "\nTotal Physical Memory: %I64d bytes\nAvailable Physical Memory: %I64d bytes\nMemory Utilization: %i %%\n\n",
 					statex.ullTotalPhys, statex.ullAvailPhys, (int)statex.dwMemoryLoad );
 #endif
 				common->FatalError( "idHeap::AllocatePage request for %i bytes failed", bytes );
@@ -529,7 +529,7 @@ idHeap::page_s* idHeap::AllocatePage( dword bytes ) {
 	p->next = NULL;
 
 	pagesAllocated++;
-	
+
 	return p;
 }
 
@@ -677,7 +677,7 @@ void *idHeap::MediumAllocateFromPage( idHeap::page_s *p, dword sizeNeeded ) {
 		}
 		best->next	= nw;
 		best->size	-= sizeNeeded;
-		
+
 		p->largestFree = best->size;
 	}
 	else {
@@ -744,7 +744,7 @@ void *idHeap::MediumAllocate( dword bytes ) {
 		}
 
 		mediumFirstFreePage		= p;
-		
+
 		p->largestFree	= pageSize;
 		p->firstFree	= (void *)p->data;
 
@@ -855,18 +855,18 @@ void idHeap::MediumFree( void *ptr ) {
 		p->largestFree	= e->size;
 		e->freeBlock	= 1;				// mark block as free
 	}
-			
+
 	mediumHeapEntry_s *next = e->next;
 
 	// if the next block is free we can merge
 	if ( next && next->freeBlock ) {
 		e->size += next->size;
 		e->next = next->next;
-		
+
 		if ( next->next ) {
 			next->next->prev = e;
 		}
-		
+
 		if ( next->prevFree ) {
 			next->prevFree->nextFree = next->nextFree;
 		}
@@ -899,7 +899,7 @@ void idHeap::MediumFree( void *ptr ) {
 		if ( e->nextFree ) {
 			e->nextFree->prevFree = e->prevFree;
 		}
-		
+
 		e->nextFree = (mediumHeapEntry_s *)p->firstFree;
 		e->prevFree = NULL;
 		if ( e->nextFree ) {
@@ -932,7 +932,7 @@ void idHeap::MediumFree( void *ptr ) {
 		if ( !mediumFirstFreePage ) {
 			mediumFirstFreePage = p;
 		}
-	} 
+	}
 }
 
 //===============================================================
@@ -1120,7 +1120,7 @@ void *Mem_Alloc( const size_t size ) {
 		MEMORYSTATUSEX statex;
 		statex.dwLength = sizeof( statex );
 		GlobalMemoryStatusEx( &statex );
-		common->Printf( "\nTotal Physical Memory: %I64d bytes\nAvailable Physical Memory: %I64d bytes\nMemory Utilization: %i %%\n\n", 
+		common->Printf( "\nTotal Physical Memory: %I64d bytes\nAvailable Physical Memory: %I64d bytes\nMemory Utilization: %i %%\n\n",
 			statex.ullTotalPhys, statex.ullAvailPhys, (int)statex.dwMemoryLoad );
 #endif
 		common->FatalError( "Mem_Alloc request for %li bytes failed", size );
@@ -1138,7 +1138,7 @@ void Mem_Free( void *ptr ) {
 		return;
 	}
 #if 0 // used to catch memory allocated with Mem_AllocAligned
-	UINT_PTR checkPtr = *((UINT_PTR *)( (UINT_PTR)ptr - sizeof( UINT_PTR ) )); 
+	UINT_PTR checkPtr = *((UINT_PTR *)( (UINT_PTR)ptr - sizeof( UINT_PTR ) ));
 	if ( checkPtr > (UINT_PTR)ptr - 132 && checkPtr < (UINT_PTR)ptr ) {
 		assert( !"possible aligned memory deallocation" );
 	}
@@ -1235,7 +1235,7 @@ Mem_CopyString
 */
 char *Mem_CopyString( const char *in ) {
 	char	*out;
-	
+
 	out = (char *)Mem_Alloc( idStr::Length( in ) + 1 );
 	strcpy( out, in );
 	return out;
@@ -1948,7 +1948,7 @@ Mem_CopyString
 */
 char *Mem_CopyString( const char *in, const char *fileName, const int lineNumber ) {
 	char	*out;
-	
+
 	out = (char *)Mem_Alloc( idStr::Length( in ) + 1, fileName, lineNumber );
 	idStr::Copynz( out, in, idStr::Length( in ) + 1 );
 	return out;

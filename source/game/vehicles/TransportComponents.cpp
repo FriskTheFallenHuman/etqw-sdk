@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -13,22 +13,22 @@ static char THIS_FILE[] = __FILE__;
 #include "TransportComponents.h"
 #include "Transport.h"
 #include "Vehicle_RigidBody.h"
-#include "../anim/Anim.h"
+#include "anim/Anim.h"
 #include "Attachments.h"
-#include "../ContentMask.h"
-#include "../IK.h"
+#include "ContentMask.h"
+#include "IK.h"
 #include "VehicleIK.h"
-#include "../../framework/CVarSystem.h"
+#include "framework/CVarSystem.h"
 #include "VehicleSuspension.h"
 #include "VehicleControl.h"
-#include "../Player.h"
-#include "../client/ClientMoveable.h"
-#include "../physics/Physics_JetPack.h"
+#include "Player.h"
+#include "client/ClientMoveable.h"
+#include "physics/Physics_JetPack.h"
 
-#include "../../decllib/DeclSurfaceType.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../effects/TireTread.h"
+#include "decllib/DeclSurfaceType.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "effects/TireTread.h"
 
 const float minParticleCreationSpeed = 64.f;
 
@@ -236,8 +236,8 @@ const idEventDef EV_VehiclePart_GetJoint( "getJoint", 's', DOC_TEXT( "Returns th
 ABSTRACT_DECLARATION( sdVehicleDriveObject, sdVehiclePart )
 	EVENT( EV_GetHealth,					sdVehiclePart::Event_GetHealth )
 	EVENT( EV_GetOrigin,					sdVehiclePart::Event_GetOrigin )
-	EVENT( EV_GetAngles,					sdVehiclePart::Event_GetAngles )	
-	EVENT( EV_VehiclePart_GetParent,		sdVehiclePart::Event_GetParent )	
+	EVENT( EV_GetAngles,					sdVehiclePart::Event_GetAngles )
+	EVENT( EV_VehiclePart_GetParent,		sdVehiclePart::Event_GetParent )
 	EVENT( EV_VehiclePart_GetJoint,			sdVehiclePart::Event_GetJoint )
 END_CLASS
 
@@ -259,7 +259,7 @@ sdVehiclePart::sdVehiclePart( void ) {
 sdVehiclePart::AddSurface
 ================
 */
-void sdVehiclePart::AddSurface( const char* surfaceName )  { 
+void sdVehiclePart::AddSurface( const char* surfaceName )  {
 	int id = GetParent()->FindSurfaceId( surfaceName );
 	if ( id != -1 ) {
 		surfaces.Alloc() = id;
@@ -334,13 +334,13 @@ void sdVehiclePart::CreateExplosionDebris( void ) {
 	rvClientMoveable* cent = gameLocal.SpawnClientMoveable( brokenPart->GetName(), 5000, org, axis, vec3_origin, vec3_origin );
 	AddDebris( cent, priority );
 	if ( cent != NULL ) {
-		gameLocal.PlayEffect( brokenPart->dict, colorWhite.ToVec3(), "fx_explode", NULL, cent->GetPhysics()->GetOrigin(), cent->GetPhysics()->GetAxis(), false );	
+		gameLocal.PlayEffect( brokenPart->dict, colorWhite.ToVec3(), "fx_explode", NULL, cent->GetPhysics()->GetOrigin(), cent->GetPhysics()->GetAxis(), false );
 
 		if ( flipMaster ) {
 			transport->SetMasterDestroyedPart( cent );
 		}
 
-		// 
+		//
 		const idVec3& centCOM = cent->GetPhysics()->GetCenterOfMass();
 		const idVec3& parentCOM = parentPhysics->GetCenterOfMass();
 		const idVec3& parentOrg = parentPhysics->GetOrigin();
@@ -350,7 +350,7 @@ void sdVehiclePart::CreateExplosionDebris( void ) {
 		// calculate the actual linear velocity of this point
 		idVec3 myVelocity = vel + aVel.Cross( radiusVector );
 		cent->GetPhysics()->SetLinearVelocity( myVelocity );
-		
+
 		//
 		cent->GetPhysics()->SetContents( 0, 0 );
 		cent->GetPhysics()->SetClipMask( CONTENTS_SOLID | CONTENTS_BODY, 0 );
@@ -439,7 +439,7 @@ void sdVehiclePart::CreateDecayDebris( void ) {
 	rvClientMoveable* cent = gameLocal.SpawnClientMoveable( brokenPart->GetName(), 5000, org, axis, vel, aVel, 1 );
 	AddDebris( cent, priority );
 	if ( cent != NULL ) {
-		gameLocal.PlayEffect( brokenPart->dict, colorWhite.ToVec3(), "fx_decay", NULL, cent->GetPhysics()->GetOrigin(), cent->GetPhysics()->GetAxis(), false );	
+		gameLocal.PlayEffect( brokenPart->dict, colorWhite.ToVec3(), "fx_decay", NULL, cent->GetPhysics()->GetOrigin(), cent->GetPhysics()->GetAxis(), false );
 
 		cent->GetPhysics()->SetContents( 0 );
 		cent->GetPhysics()->SetClipMask( CONTENTS_SOLID | CONTENTS_BODY );
@@ -662,7 +662,7 @@ void sdVehiclePart::Init( const sdDeclVehiclePart& part ) {
 	noAutoHide						= part.data.GetBool( "noAutoHide", "0" );
 	flipPower						= part.data.GetFloat( "flip_power", "5" );
 	flipMaster						= part.data.GetBool( "flip_master" );
-	
+
 	const idKeyValue* kv = NULL;
 	while ( kv = part.data.MatchPrefix( "surface", kv ) ) {
 		AddSurface( kv->GetValue() );
@@ -677,7 +677,7 @@ void sdVehiclePart::Init( const sdDeclVehiclePart& part ) {
 			partBounds = renderEnt.hModel->Bounds();
 		}
 	}
-	
+
 	waterEffects = sdWaterEffects::SetupFromSpawnArgs( part.data );
 	if ( waterEffects ) {
 		waterEffects->SetMaxVelocity( 300.0f );
@@ -718,7 +718,7 @@ idBounds sdVehiclePart::CalcSurfaceBounds( jointHandle_t joint ) {
 
 	for ( int i = 0; i < surfaces.Num(); i++ ) {
 		idBounds b;
-		GetParent()->GetAnimator()->GetMeshBounds( joint, surfaces[ i ], gameLocal.time, b, true ); 
+		GetParent()->GetAnimator()->GetMeshBounds( joint, surfaces[ i ], gameLocal.time, b, true );
 		res.AddBounds( b );
 	}
 	return res;
@@ -1058,7 +1058,7 @@ void sdVehicleRigidBodyPart::Init( const sdDeclVehiclePart& part, sdTransport_RB
 
 	} else {
 		idTraceModel trm;
-		
+
 		idVec3 mins = part.data.GetVector( "mins" );
 		idVec3 maxs = part.data.GetVector( "maxs" );
 
@@ -1421,9 +1421,9 @@ void sdVehicleRigidBodyWheel::UpdateSuspension( const sdVehicleInput& input ) {
 		}
 	}
 
-	if( HasSteering() ) {		
+	if( HasSteering() ) {
 		idealSteerAngle = input.GetSteerAngle();
-		
+
 		if( HasInverseSteering() ) {
 			idealSteerAngle = -idealSteerAngle;
 		}
@@ -1439,11 +1439,11 @@ void sdVehicleRigidBodyWheel::UpdateSuspension( const sdVehicleInput& input ) {
 		if ( state.setSteering ) {
 			parent->SetSteerVisualAngle( steerAngle );
 		}
-		
+
 		state.steeringChanged = true;
 		idAngles::YawToMat3( -steerAngle, frictionAxes );
 	}
-	
+
 	if ( !input.GetBraking() && !input.GetHandBraking() && HasDrive() ) {
 		physics.Activate();
 	}
@@ -1556,7 +1556,7 @@ void sdVehicleRigidBodyWheel::UpdateSuspension( const sdVehicleInput& input ) {
 		state.rested = true;
 		state.spinning = false;
 		state.skidding = false;
-		
+
 		if ( groundTrace.fraction != 1.0f ) {
 			CalcForces( suspensionForce, suspensionVelocity );
 
@@ -1604,7 +1604,7 @@ void sdVehicleRigidBodyWheel::UpdateMotor( const sdVehicleInput& input, float in
 			motorSpeed = GetInputSpeed( input );
 
 			// adjust wheel velocity for better steering because there are no differentials between the wheels
-			if(( steerAngle < 0.0f && SlowsOnLeft()) || 
+			if(( steerAngle < 0.0f && SlowsOnLeft()) ||
 				( steerAngle > 0.0f && SlowsOnRight() )) {
 				motorSpeed *= 0.5f;
 			}
@@ -1704,7 +1704,7 @@ sdVehicleRigidBodyWheel::UpdateSkidding
 */
 void sdVehicleRigidBodyWheel::UpdateSkidding() {
 	idBounds bb;
-	
+
 	GetBounds( bb );
 
 	if ( bb.IsCleared() ) {
@@ -1999,7 +1999,7 @@ void sdVehicleRigidBodyWheel::UpdateParticles( const sdVehicleInput& input ) {
 	sdPhysics_RigidBodyMultiple& physics = *parent->GetRBPhysics();
 
 	int surfaceTypeIndex = -1;
-	
+
 	if ( groundTrace.fraction < 1.0f ) {
 		surfaceTypeIndex = 0;
 	}
@@ -2012,9 +2012,9 @@ void sdVehicleRigidBodyWheel::UpdateParticles( const sdVehicleInput& input ) {
 		if ( state.grounded && state.moving ) {
 			renderEffect_t& renderEffect = dustEffects[ surfaceTypeIndex ].GetRenderEffect();
 			renderEffect.origin = groundTrace.c.point;
-	
+
 			float vel = idMath::Fabs( rotationspeed );
-			renderEffect.attenuation = vel > 1000.0f ? 1.0f : 0.5f * ( 2 / Square( 1000.0f ) ) * Square( vel );		
+			renderEffect.attenuation = vel > 1000.0f ? 1.0f : 0.5f * ( 2 / Square( 1000.0f ) ) * Square( vel );
 			renderEffect.gravity = gameLocal.GetGravity();
 			dustEffects[ surfaceTypeIndex ].Start( gameLocal.time );
 			dustEffects[ surfaceTypeIndex ].GetNode().AddToEnd( activeEffects );
@@ -2054,12 +2054,12 @@ void sdVehicleRigidBodyWheel::UpdateParticles( const sdVehicleInput& input ) {
 		effect->Update();
 
 		// stop playing any effects for surfaces we're no longer on
-		if ( ( surfaceTypeIndex == -1  ) || ( effect != &dustEffects[ surfaceTypeIndex ] 
-												&& effect != &spinEffects[ surfaceTypeIndex ] 
+		if ( ( surfaceTypeIndex == -1  ) || ( effect != &dustEffects[ surfaceTypeIndex ]
+												&& effect != &spinEffects[ surfaceTypeIndex ]
 												&& effect != &skidEffects[ surfaceTypeIndex ] ) ) {
 			effect->Stop();
 		}
-	}	
+	}
 }
 
 
@@ -2276,7 +2276,7 @@ void sdVehicleTrack::UpdatePostPhysics( const sdVehicleInput& input ) {
 			break;
 		}
 	}
-	
+
 	if ( grounded ) {
 		idVec3 pos;
 		parent->GetWorldOrigin( joint, pos );
@@ -2291,7 +2291,7 @@ void sdVehicleTrack::UpdatePostPhysics( const sdVehicleInput& input ) {
 	}
 
 	parent->GetRenderEntity()->shaderParms[ shaderParmIndex ] += speed;
-	
+
 	for ( i = 0; i < wheels.Num(); i++ ) {
 		wheels[ i ]->UpdateRotation( speed );
 	}
@@ -2534,7 +2534,7 @@ void sdVehicleThruster::UpdatePrePhysics( const sdVehicleInput& input ) {
 		CalcPos( pos );
 
 		idVec3 dir = parent->GetPhysics()->GetAxis() * ( ( direction * thrustScale ) + ( fixedDirection * idMath::Fabs( thrustScale ) ) );
-		
+
 		parent->GetPhysics()->AddForce( 0, pos, dir * forceScale );
 	}
 }
@@ -2819,7 +2819,7 @@ void sdVehicleRigidBodyRotor::UpdatePrePhysics_Main( const sdVehicleInput& input
 
 	float speedFrac = speed / GetTopGoalSpeed();
 	if ( speedFrac > liftSpeedFrac ) {
-	
+
 		lift += input.GetCollective();
 		if ( control && careening ) {
 			lift += control->GetCareeningCollectiveAmount();
@@ -2850,11 +2850,11 @@ void sdVehicleRigidBodyRotor::UpdatePrePhysics_Main( const sdVehicleInput& input
 	if ( drowned ) {
 		// try to resist all movement
 		const idVec3& linearVelocity = physics->GetLinearVelocity();
-		idVec3 stoppingAcceleration = -0.05f * linearVelocity / MS2SEC( gameLocal.msec ); 
+		idVec3 stoppingAcceleration = -0.05f * linearVelocity / MS2SEC( gameLocal.msec );
 		physics->AddForce( stoppingAcceleration * physics->GetMass( -1 ) );
 
 		const idVec3& angularVelocity = physics->GetAngularVelocity();
-		idVec3 stoppingAlpha = -0.05f * angularVelocity / MS2SEC( gameLocal.msec ); 
+		idVec3 stoppingAlpha = -0.05f * angularVelocity / MS2SEC( gameLocal.msec );
 		physics->AddTorque( stoppingAlpha * physics->GetInertiaTensor( -1 ) );
 	}
 }
@@ -3051,7 +3051,7 @@ void sdVehicleRigidBodyRotor::UpdatePostPhysics( const sdVehicleInput& input ) {
 sdVehicleRigidBodyRotor::GetTopGoalSpeed
 ================
 */
-float sdVehicleRigidBodyRotor::GetTopGoalSpeed( void ) const {	
+float sdVehicleRigidBodyRotor::GetTopGoalSpeed( void ) const {
 	sdPhysics_RigidBodyMultiple* physics	= parent->GetRBPhysics();
 
 	return ( physics->GetMainMass() * -physics->GetGravity()[ 2 ] ) / liftCoefficient;
@@ -3108,7 +3108,7 @@ void sdVehicleRigidBodyHoverPad::Init( const sdDeclVehiclePart& part, sdTranspor
 	maxAngles				= part.data.GetAngles( "max_angles", "10 10 10" );
 
 	maxTraceLength			= part.data.GetFloat( "distance", "64" );
-	
+
 	shaderParmIndex			= part.data.GetInt( "shaderParmIndex", "0" );
 	adaptSpeed				= part.data.GetFloat( "adaption_speed", "0.005" );
 
@@ -3138,7 +3138,7 @@ void sdVehicleRigidBodyHoverPad::Init( const sdDeclVehiclePart& part, sdTranspor
 idCVar g_debugVehicleHoverPads( "g_debugVehicleHoverPads", "0", CVAR_GAME | CVAR_BOOL | CVAR_CHEAT, "show info about hoverpads" );
 
 void sdVehicleRigidBodyHoverPad::UpdatePostPhysics( const sdVehicleInput& input ) {
-	
+
 	if ( !input.GetPlayer() || parent->GetPhysics()->GetAxis()[ 2 ].z < 0.f ) {
 		return;
 	}
@@ -3185,7 +3185,7 @@ void sdVehicleRigidBodyHoverPad::UpdatePostPhysics( const sdVehicleInput& input 
 	target = totalMat.ToAngles();
 	target.Clamp( minAngles, maxAngles );
 
-	// Lerp with the current rotations 
+	// Lerp with the current rotations
 	// this is a semi hack, you have to do an slerp to be totally correct, but we just do a linear lerp + renormalize
 	// this causes or rotation speeds to be non uniform but who cares... the rotations are still correct
 	float lerp = ( gameLocal.msec * adaptSpeed );
@@ -3239,7 +3239,7 @@ void sdVehicleRigidBodyHoverPad::UpdatePostPhysics( const sdVehicleInput& input 
 			}
 
 		}
-		
+
 		if ( !foundAttractor ) {
 			// Random vector in negative z cone
 			idVec3 dir = gameLocal.random.RandomVectorInCone( 80.f );
@@ -3250,7 +3250,7 @@ void sdVehicleRigidBodyHoverPad::UpdatePostPhysics( const sdVehicleInput& input 
 			memset( &beamTrace, 0, sizeof( beamTrace ) );
 			gameLocal.clip.TracePoint( CLIP_DEBUG_PARMS beamTrace, origin, end, MASK_VEHICLESOLID, parent );
 
-			// If it hit anything then spawn a beam towards that 
+			// If it hit anything then spawn a beam towards that
 			if ( beamTrace.fraction < 1.f ) {
 				engineEffect.GetRenderEffect().endOrigin = beamTrace.endpos;
 				engineEffect.Start( gameLocal.time );
@@ -3432,7 +3432,7 @@ int sdVehicleSuspensionPoint::EvaluateContacts( contactInfo_t* list, contactInfo
 	if ( state.grounded ) {
 
 		listExt[ 0 ].contactForceMax		= suspensionForce;
-		listExt[ 0 ].contactForceVelocity	= suspensionVelocity; 
+		listExt[ 0 ].contactForceVelocity	= suspensionVelocity;
 		listExt[ 0 ].contactFriction		= contactFriction;
 		listExt[ 0 ].frictionAxes			= frictionAxes;
 
@@ -3595,7 +3595,7 @@ void sdVehicleRigidBodyVtol::Init( const sdDeclVehiclePart& part, sdTransport_RB
 	currentAxes = ident.ToQuat();
 	noisePhase = gameLocal.random.CRandomFloat() * 4000.0f;
 
-	//Dir is the direction the pads should "point to" when the vehicle is rotating along it's z-axis 
+	//Dir is the direction the pads should "point to" when the vehicle is rotating along it's z-axis
 	//(so it can turn on the spot (velocity == 0)) and still look cool
 	//This gives directions on the rotation circle (like the arms of a swastika)
 	angularDir.Cross( baseOrg, idVec3( 0, 0, 1 ) );
@@ -3682,7 +3682,7 @@ void sdVehicleRigidBodyVtol::UpdatePostPhysics( const sdVehicleInput& input ) {
 		engineEffect.Start( gameLocal.time );
 		engineEffect.Update();
 	} else {
-		engineEffect.Stop();	
+		engineEffect.Stop();
 	}
 }
 
@@ -3887,7 +3887,7 @@ void sdVehicleRigidBodyAntiGrav::UpdatePostPhysics( const sdVehicleInput& input 
 	oldAngle = angle;
 
 
-	if ( !targetVelocity.Compare( oldVelocity, 0.00001f ) ) 
+	if ( !targetVelocity.Compare( oldVelocity, 0.00001f ) )
 	{
 		// Engine hubs
 		idVec3 dir = targetVelocity ;
@@ -3981,7 +3981,7 @@ void sdVehicleRigidBodyAntiGrav::UpdateEffect() {
 		if ( boost ) {
 			engineBoostEffect.Start( gameLocal.time );
 		} else {
-			engineBoostEffect.Stop();	
+			engineBoostEffect.Stop();
 		}
 		engineBoostEffect.Update();
 
@@ -4008,8 +4008,8 @@ void sdVehicleRigidBodyAntiGrav::UpdateEffect() {
 			}
 		}
 	} else {
-		engineMainEffect.Stop();	
-		engineBoostEffect.Stop();	
+		engineMainEffect.Stop();
+		engineBoostEffect.Stop();
 	}
 }
 
@@ -4130,7 +4130,7 @@ void sdVehicleRigidBodyPseudoHover::DoRepulsionForCast( const idVec3& start, con
 	float idealLength = desiredFraction * fullLength;
 
 	if ( trace.c.normal.z < 0.2f ) {
-		// HACK - make it pretend like a trace went straight down the full distance if it touched 
+		// HACK - make it pretend like a trace went straight down the full distance if it touched
 		// a too-steep slope
 		const_cast< idVec3& >( trace.c.normal ) = evalState.axis[ 2 ];
 		traceLength = idealLength;
@@ -4239,7 +4239,7 @@ void sdVehicleRigidBodyPseudoHover::DoRepulsors() {
 		castEnd += castDirections[ i ] * evalState.axis;
 
 		evalState.clipLocale.TracePoint( CLIP_DEBUG_PARMS currentTrace, castStart, castEnd, MASK_PSEUDOHOVERCLIP );
-		
+
 		if ( currentTrace.c.normal.z < 0.2f ) {
 			idVec3 castEnd = castStart + idVec3( 0.0f, 0.0f, -1.0f ) * extraTraceLength;
 			evalState.clipLocale.TracePoint( CLIP_DEBUG_PARMS currentTrace, castStart, castEnd, MASK_PSEUDOHOVERCLIP );
@@ -4275,7 +4275,7 @@ void sdVehicleRigidBodyPseudoHover::DoRepulsors() {
 	}
 
 
-	// 
+	//
 	// Up vector based velocity dampening
 	//
 	grounded = false;
@@ -4426,7 +4426,7 @@ void sdVehicleRigidBodyPseudoHover::CalculateFrictionForce( const sdVehicleInput
 	const idVec3& surfaceUp = evalState.surfaceAxis[ 2 ];
 
 	// calculate the future velocity that will be created by the forces that are applied
-	idVec3 futureVelocity = evalState.linVelocity 
+	idVec3 futureVelocity = evalState.linVelocity
 							+ ( evalState.hoverForce + evalState.drivingForce ) * evalState.timeStep / evalState.mass
 							/*+ evalState.gravity * evalState.timeStep*/;
 
@@ -4443,12 +4443,12 @@ void sdVehicleRigidBodyPseudoHover::CalculateFrictionForce( const sdVehicleInput
 		futureVelDamp = 0.0f;
 	}
 
-	// if the speed is quite small or the player is giving no input 
+	// if the speed is quite small or the player is giving no input
 	// then increase the magnitude of the friction
 	// TODO: Move these tuning parameters to vscript defined thingies
 	float frictionScaleCutoff = 128.0f;
 	float frictionScaleMax = 15.0f;
-	float frictionScalePower = 0.5f; 
+	float frictionScalePower = 0.5f;
 	float frictionScale = 0.8f;
 
 	float parkTimeRemaining = parkTime;
@@ -4580,7 +4580,7 @@ void sdVehicleRigidBodyPseudoHover::ChooseParkPosition() {
 	end = start + traceVector;
 	evalState.clipLocale.TracePoint( CLIP_DEBUG_PARMS groundTrace, start, end , MASK_PSEUDOHOVERCLIP );
 	grounded |= groundTrace.fraction < 1.0f;
-	
+
 	idVec3 frontEndPoint = groundTrace.endpos;
 	idVec3 frontNormal = groundTrace.c.normal;
 
@@ -4594,7 +4594,7 @@ void sdVehicleRigidBodyPseudoHover::ChooseParkPosition() {
 	end = start + traceVector;
 	evalState.clipLocale.TracePoint( CLIP_DEBUG_PARMS groundTrace, start, end , MASK_PSEUDOHOVERCLIP );
 	grounded |= groundTrace.fraction < 1.0f;
-	
+
 	idVec3 backEndPoint = groundTrace.endpos;
 	idVec3 backNormal = groundTrace.c.normal;
 
@@ -4608,7 +4608,7 @@ void sdVehicleRigidBodyPseudoHover::ChooseParkPosition() {
 	end = start + traceVector;
 	evalState.clipLocale.TracePoint( CLIP_DEBUG_PARMS groundTrace, start, end , MASK_PSEUDOHOVERCLIP );
 	grounded |= groundTrace.fraction < 1.0f;
-	
+
 	idVec3 leftEndPoint = groundTrace.endpos;
 	idVec3 leftNormal = groundTrace.c.normal;
 
@@ -4622,7 +4622,7 @@ void sdVehicleRigidBodyPseudoHover::ChooseParkPosition() {
 	end = start + traceVector;
 	evalState.clipLocale.TracePoint( CLIP_DEBUG_PARMS groundTrace, start, end , MASK_PSEUDOHOVERCLIP );
 	grounded |= groundTrace.fraction < 1.0f;
-	
+
 	idVec3 rightEndPoint = groundTrace.endpos;
 	idVec3 rightNormal = groundTrace.c.normal;
 
@@ -4638,7 +4638,7 @@ void sdVehicleRigidBodyPseudoHover::ChooseParkPosition() {
 	//
 	// Use the info gleaned to estimate a surface normal
 	//
-	
+
 	// Calculate the pitch angle of the surface
 	idVec3 frontBack = frontEndPoint - backEndPoint;
 	idVec3 frontBackDir = frontBack;
@@ -4657,7 +4657,7 @@ void sdVehicleRigidBodyPseudoHover::ChooseParkPosition() {
 	idMat3 chosenAxis = newAngles.ToMat3();
 	chosenParkAxis = chosenAxis;
 
-	// now cast the main body down with that normal as its 
+	// now cast the main body down with that normal as its
 	start = evalState.origin;
 	end = start - 1024.0f * chosenParkAxis[ 2 ];
 	memset( &groundTrace, 0, sizeof( groundTrace ) );
@@ -4770,8 +4770,8 @@ void sdVehicleRigidBodyPseudoHover::UpdatePrePhysics( const sdVehicleInput& inpu
 	// get the set of clip models to trace against
 	idBounds localeBounds = mainBounds;
 	localeBounds[ 0 ].z -= hoverHeight;
-	evalState.clipLocale.Update( localeBounds, evalState.physics->GetOrigin(), evalState.physics->GetAxis(), 
-								evalState.physics->GetLinearVelocity(), evalState.physics->GetAngularVelocity(), 
+	evalState.clipLocale.Update( localeBounds, evalState.physics->GetOrigin(), evalState.physics->GetAxis(),
+								evalState.physics->GetLinearVelocity(), evalState.physics->GetAngularVelocity(),
 								MASK_PSEUDOHOVERCLIP, parent );
 	evalState.clipLocale.RemoveEntitiesOfCollection( "vehicles" );
 	evalState.clipLocale.RemoveEntitiesOfCollection( "deployables" );
@@ -5064,7 +5064,7 @@ int sdVehicleRigidBodyPseudoHover::AddCustomConstraints( constraintInfo_t* list,
 sdVehicleRigidBodyPseudoHover::CreateNetworkStructure
 ================
 */
-sdEntityStateNetworkData*	sdVehicleRigidBodyPseudoHover::CreateNetworkStructure( networkStateMode_t mode ) const { 
+sdEntityStateNetworkData*	sdVehicleRigidBodyPseudoHover::CreateNetworkStructure( networkStateMode_t mode ) const {
 	if ( mode == NSM_BROADCAST ) {
 		return new sdPseudoHoverBroadcastData;
 	}
@@ -5158,7 +5158,7 @@ void sdVehicleRigidBodyPseudoHover::ReadNetworkState( networkStateMode_t mode, c
 	if ( mode == NSM_VISIBLE ) {
 		NET_GET_STATES( sdPseudoHoverNetworkData );
 
-		newData.lastFrictionScale	= msg.ReadDeltaFloat( baseData.lastFrictionScale );		
+		newData.lastFrictionScale	= msg.ReadDeltaFloat( baseData.lastFrictionScale );
 
 		return;
 	}
@@ -5375,7 +5375,7 @@ void sdVehicleRigidBodyDragPlane::UpdatePrePhysics( const sdVehicleInput& input 
 
 				// check if it is in the water
 				int cont = gameLocal.clip.Contents( CLIP_DEBUG_PARMS worldRear, NULL, mat3_identity, CONTENTS_WATER, parent );
-				
+
 				if ( cont ) {
 					// find the top of the water
 
@@ -5416,7 +5416,7 @@ void sdVehicleRigidBodyDragPlane::UpdatePrePhysics( const sdVehicleInput& input 
 
 	// apply the drag force
 	parent->GetPhysics()->AddForce( 0, worldOrigin, dragForce );
-	
+
 //	gameRenderWorld->DebugLine( colorGreen, worldOrigin, worldOrigin + dragForce * 0.0001f );
 }
 
@@ -5607,7 +5607,7 @@ int sdVehicleAntiRoll::AddCustomConstraints( constraintInfo_t* list, int max ) {
 	if ( !active ) {
 		return 0;
 	}
-	
+
 	//
 	// LIMIT ROLLING
 	//  unidirectional rotation constraint away from current direction we exceed allowed in
@@ -5630,7 +5630,7 @@ int sdVehicleAntiRoll::AddCustomConstraints( constraintInfo_t* list, int max ) {
 	// clamp the diff angles so that it doesn't try to achieve something totally insane
 	diffAngles.roll = idMath::ClampFloat( -5.0f, 5.0f, diffAngles.roll );
 
-	
+
 	float rollVelocity = parentPhysics->GetAngularVelocity() * axis[ 0 ];
 	float neededVelocity = DEG2RAD( diffAngles.roll / MS2SEC( gameLocal.msec ) );
 	float targetRollVel = neededVelocity - rollVelocity * angVelDamp;
@@ -5654,7 +5654,7 @@ int sdVehicleAntiRoll::AddCustomConstraints( constraintInfo_t* list, int max ) {
 	wx.lm = 0.0f;
 
 	wx.c = -targetRollVel;
-	
+
 	if ( rollImpulse < 0.0f ) {
 		wx.lo = rollImpulse;
 		wx.hi = 0.0f;
@@ -5772,7 +5772,7 @@ int sdVehicleAntiPitch::AddCustomConstraints( constraintInfo_t* list, int max ) 
 	if ( !active ) {
 		return 0;
 	}
-	
+
 	//
 	// LIMIT PITCHING
 	//  unidirectional rotation constraint away from current direction we exceed allowed in
@@ -5795,7 +5795,7 @@ int sdVehicleAntiPitch::AddCustomConstraints( constraintInfo_t* list, int max ) 
 	// clamp the diff angles so that it doesn't try to achieve something totally insane
 	diffAngles.pitch = idMath::ClampFloat( -5.0f, 5.0f, diffAngles.pitch );
 
-	
+
 	float pitchVelocity = parentPhysics->GetAngularVelocity() * axis[ 1 ];
 	float neededVelocity = DEG2RAD( diffAngles.pitch / MS2SEC( gameLocal.msec ) );
 	float targetPitchVel = neededVelocity - pitchVelocity * angVelDamp;
@@ -5819,7 +5819,7 @@ int sdVehicleAntiPitch::AddCustomConstraints( constraintInfo_t* list, int max ) 
 	wx.lm = 0.0f;
 
 	wx.c = -targetPitchVel;
-	
+
 	if ( pitchImpulse < 0.0f ) {
 		wx.lo = pitchImpulse;
 		wx.hi = 0.0f;

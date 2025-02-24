@@ -90,7 +90,7 @@ public:
 
 	static void			Toggle_f( const idCmdArgs& args );
 	static void			Record_f( const idCmdArgs& args );
-	static void			Stop_f( const idCmdArgs& args );	
+	static void			Stop_f( const idCmdArgs& args );
 	static void			Play_f( const idCmdArgs& args );
 	static void			PlayJumpStartDemo_f( const idCmdArgs& args );
 	static void			Time_f( const idCmdArgs& args );

@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -149,7 +149,7 @@ sdVehicleSuspension_Pivot::UpdateIKJoints
 bool sdVehicleSuspension_Pivot::UpdateIKJoints( idAnimator* animator ) {
 	float offset = _object->GetOffset();
 	if ( _lastOffset != -idMath::INFINITY ) {
-		if ( offset < _lastOffset ) { 
+		if ( offset < _lastOffset ) {
 			offset = Lerp( _lastOffset, offset, 0.5f );
 		}
 	}
@@ -274,7 +274,7 @@ sdVehicleSuspension_DoubleWishbone::UpdateIKJoints
 bool sdVehicleSuspension_DoubleWishbone::UpdateIKJoints( idAnimator* animator ) {
 	float offset = _object->GetOffset();
 	if ( _lastOffset != -idMath::INFINITY ) {
-		if ( offset < _lastOffset ) { 
+		if ( offset < _lastOffset ) {
 			offset = Lerp( _lastOffset, offset, _lerpScale );
 		}
 	}
@@ -373,7 +373,7 @@ sdVehicleSuspension_Vertical::UpdateIKJoints
 */
 bool sdVehicleSuspension_Vertical::UpdateIKJoints( idAnimator* animator ) {
 	float offset = _object->GetOffset();
-	if ( _offset != -idMath::INFINITY && offset < _offset ) { 
+	if ( _offset != -idMath::INFINITY && offset < _offset ) {
 		_offset = Lerp( _offset, offset, 0.3f );
 	} else {
 		_offset = offset;
@@ -485,7 +485,7 @@ sdVehicleSuspension_2JointLeg::UpdateIKJoints
 bool sdVehicleSuspension_2JointLeg::UpdateIKJoints( idAnimator* animator ) {
 	float offset = _object->GetOffset();
 	if ( _lastOffset != idMath::INFINITY ) {
-		if ( offset < _lastOffset ) { 
+		if ( offset < _lastOffset ) {
 			offset = Lerp( _lastOffset, offset, _lerpScale );
 		}
 	}

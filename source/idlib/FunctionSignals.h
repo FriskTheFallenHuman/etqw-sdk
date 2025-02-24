@@ -13,7 +13,7 @@ namespace sdFunctions {
 	============
 	*/
 	class sdSignalBase {
-	public:		
+	public:
 		typedef sdUtility::sdHandle< int, -1 > connectionHandle_t;
 
 		virtual			~sdSignalBase() {}
@@ -34,9 +34,9 @@ namespace sdFunctions {
 								handle( handle_ ) {
 							}
 
-							~sdConnection() {												
+							~sdConnection() {
 							}
-		
+
 		void				Release() {
 								target = NULL;
 								handle.Release();
@@ -116,7 +116,7 @@ namespace sdFunctions {
 	class sdSignal< Ret() > :
 		public sdSignalBase {
 	private:
-		typedef sdCallable< Ret() > funcType_t;				
+		typedef sdCallable< Ret() > funcType_t;
 		typedef sdHandles< funcType_t* > container_t;
 		typedef typename container_t::handle_t connectionHandle_t;
 
@@ -141,7 +141,7 @@ namespace sdFunctions {
 	class sdSignal< Ret( T1 ) > :
 		public sdSignalBase {
 	private:
-		typedef sdCallable< Ret( T1 ) > funcType_t;				
+		typedef sdCallable< Ret( T1 ) > funcType_t;
 		typedef sdHandles< funcType_t* > container_t;
 		typedef typename container_t::handle_t connectionHandle_t;
 
@@ -165,7 +165,7 @@ namespace sdFunctions {
 	template< class Ret, class T1, class T2 >
 	class sdSignal< Ret( T1, T2 ) > : public sdSignalBase {
 	private:
-		typedef sdCallable< Ret( T1, T2 ) > funcType_t;				
+		typedef sdCallable< Ret( T1, T2 ) > funcType_t;
 		typedef sdHandles< funcType_t* > container_t;
 		typedef typename container_t::handle_t connectionHandle_t;
 
@@ -185,7 +185,7 @@ namespace sdFunctions {
 	class sdSignal< Ret( T1, T2, T3 ) > :
 		public sdSignalBase {
 	private:
-		typedef sdCallable< Ret( T1, T2, T3 ) > funcType_t;				
+		typedef sdCallable< Ret( T1, T2, T3 ) > funcType_t;
 		typedef sdHandles< funcType_t* > container_t;
 		typedef typename container_t::handle_t connectionHandle_t;
 
@@ -201,7 +201,7 @@ namespace sdFunctions {
 		container_t targets;
 	};
 
-#undef ITERATE_TARGETS	
+#undef ITERATE_TARGETS
 #undef END_ITERATE_TARGETS
 }
 

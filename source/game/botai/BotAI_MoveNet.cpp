@@ -1,10 +1,10 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h" 
+#include "Game_local.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -14,7 +14,7 @@ idBotAI::Enter_Run_And_Gun_Movement
 ================
 */
 bool idBotAI::Enter_Run_And_Gun_Movement() {
- 
+
 	COMBAT_MOVEMENT_STATE = &idBotAI::Run_And_Gun_Movement;
 
 	combatMoveType = RUN_N_GUN_ATTACK;
@@ -69,7 +69,7 @@ bool idBotAI::Run_And_Gun_Movement() {		//mal: like the name says, just a basic,
                     combatMoveFlag = PRONE;
 				} else {
 					combatMoveFlag = RUN;
-				}				
+				}
 			} else {
 				combatMoveFlag = RUN;
 			}
@@ -165,14 +165,14 @@ bool idBotAI::Crazy_Jump_Attack_Movement() {
 					combatMoveDir = LEFT;
 				}
 			}
-			combatMoveTime = botWorld->gameLocalInfo.time + 1700;		
+			combatMoveTime = botWorld->gameLocalInfo.time + 1700;
 		}
 
 		if ( enemyInfo.enemyDist > chaseDist ) {
             if ( Bot_CanMove( combatMoveDir, 150.0f, true )) {
-	
+
 				Bot_SetupMove( vec3_zero, enemy, ACTION_NULL );
-			
+
 				if ( MoveIsInvalid() ) {
 					Bot_IgnoreEnemy( enemy, ENEMY_IGNORE_TIME ); //mal: no valid path to this client for some reason - ignore him for a while
 					Bot_ResetEnemy();
@@ -186,7 +186,7 @@ bool idBotAI::Crazy_Jump_Attack_Movement() {
 			combatMoveFailedCount++;
 		}
 	}
-	
+
 	return true;
 }
 
@@ -234,13 +234,13 @@ bool idBotAI::Knife_Attack_Movement() {
 				}
 			}
 
-			combatMoveTime = botWorld->gameLocalInfo.time + 500;		
+			combatMoveTime = botWorld->gameLocalInfo.time + 500;
 		}
 
 		if ( Bot_CanMove( combatMoveDir, 50.0f, true )) {
-            
+
 			Bot_SetupMove( vec3_zero, enemy, ACTION_NULL );
-			
+
 			if ( MoveIsInvalid() ) {
 				Bot_IgnoreEnemy( enemy, ENEMY_IGNORE_TIME ); //mal: no valid path to this client for some reason - ignore him for a while
 				Bot_ResetEnemy();
@@ -252,7 +252,7 @@ bool idBotAI::Knife_Attack_Movement() {
             combatMoveTime = 1; //mal: mark the move as having failed, so we know to try a diff dir next frame.
 			combatMoveFailedCount++;
 		}
-	
+
 		return true;
 	}
 
@@ -266,7 +266,7 @@ bool idBotAI::Knife_Attack_Movement() {
 			Bot_ResetEnemy();
 			return false;
 		}
-	
+
 		Bot_MoveAlongPath( SPRINT );
 	}
 
@@ -509,7 +509,7 @@ bool idBotAI::Circle_Strafe_Attack_Movement() {
 		} else {
 			combatMoveDir = LEFT;
 		}
-        combatMoveTime = botWorld->gameLocalInfo.time + 15000;		
+        combatMoveTime = botWorld->gameLocalInfo.time + 15000;
 	}
 
 	if ( Bot_CanMove( combatMoveDir, 100.0f, true )) {
@@ -684,7 +684,7 @@ bool idBotAI::Enter_Stand_Ground_Attack_Movement() {
 idBotAI::Stand_Ground_Attack_Movement
 ================
 */
-bool idBotAI::Stand_Ground_Attack_Movement() { 
+bool idBotAI::Stand_Ground_Attack_Movement() {
 
 	float tooCloseDist = ( botInfo->weapInfo.weapon == ROCKET ) ? 450.0f : 300.0f;
 	idVec3 vec;
@@ -791,14 +791,14 @@ bool idBotAI::Grenade_Attack_Movement() {
 					combatMoveDir = LEFT;
 				}
 			}
-			combatMoveTime = botWorld->gameLocalInfo.time + 1700;		
+			combatMoveTime = botWorld->gameLocalInfo.time + 1700;
 		}
 
 		if ( enemyInfo.enemyDist > chaseDist ) {
             if ( Bot_CanMove( combatMoveDir, 150.0f, true ) ) {
-	
+
 				Bot_SetupMove( vec3_zero, enemy, ACTION_NULL );
-			
+
 				if ( MoveIsInvalid() ) {
 					Bot_IgnoreEnemy( enemy, ENEMY_IGNORE_TIME ); //mal: no valid path to this client for some reason - ignore him for a while
 					Bot_ResetEnemy();
@@ -814,7 +814,7 @@ bool idBotAI::Grenade_Attack_Movement() {
 			Bot_MoveToGoal( vec3_zero, vec3_zero, RUN, ( combatMoveDir == RIGHT ) ? RANDOM_JUMP_RIGHT : RANDOM_JUMP_LEFT );
 		}
 	}
-	
+
 	return true;
 }
 
@@ -824,7 +824,7 @@ idBotAI::Enter_Avoid_Danger_Movement
 ================
 */
 bool idBotAI::Enter_Avoid_Danger_Movement() {
- 
+
 	COMBAT_MOVEMENT_STATE = &idBotAI::Avoid_Danger_Movement;
 
 	combatMoveType = AVOID_DANGER_ATTACK;
@@ -864,7 +864,7 @@ idBotAI::Enter_Null_Move_Attack
 ================
 */
 bool idBotAI::Enter_Null_Move_Attack() {
- 
+
 	COMBAT_MOVEMENT_STATE = &idBotAI::Null_Move_Attack;
 
 	combatMoveType = NULL_MOVE_ATTACK;

@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 /*
@@ -11,7 +11,7 @@ idSurface_Traceable::sdTraceableTriangleHash::sdTraceableTriangleHash
 ====================
 */
 idSurface_Traceable::sdTraceableTriangleHash::sdTraceableTriangleHash( idSurface_Traceable& surface, const int binsPerAxis, const int snapFractions ) {
-	
+
 	this->binsPerAxis = binsPerAxis;
 	this->snapFractions = snapFractions;
 	bounds = surface.GetBounds();
@@ -38,7 +38,7 @@ idSurface_Traceable::sdTraceableTriangleHash::sdTraceableTriangleHash( idSurface
 	int					triBins[2][3];
 	const idDrawVert*	verts = surface.GetVertices();
 	const vertIndex_t*	indexes = surface.GetIndexes();
-	
+
 	for ( int i = 0; i < surface.GetNumIndexes(); i += 3 ) {
 		triBounds.Clear();
 		for ( int k = 0; k < 3; k++ ) {
@@ -129,7 +129,7 @@ bool idSurface_Traceable::RayIntersection( /*idList< int >& tracedTris,*/ const 
 		bin->lastTrace = traceCount;
 
 		for ( sdTraceableTriangleHash::hashTriangle_t* tri = bin->triangleList; tri; tri = tri->next ) {
-			
+
 			if ( lastTriTrace[ tri->triIndex / 3 ] == traceCount ) {
 				continue;
 			}

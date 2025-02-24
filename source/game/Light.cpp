@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -706,7 +706,7 @@ void idLight::SetLightAreas() {
 	// parse potentially visible areas
 	int pvAreas[ MAX_LIGHT_AREAS ];
 	int numPVAreas = 0;
-	
+
 	const char *areas;
 
 	if ( spawnArgs.GetString( "areas", "", &areas ) ) {

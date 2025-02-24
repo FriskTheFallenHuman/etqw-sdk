@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,9 +12,9 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "SoundControl.h"
-#include "../Player.h"
+#include "Player.h"
 #include "Transport.h"
-#include "../../decllib/DeclSurfaceType.h"
+#include "decllib/DeclSurfaceType.h"
 #include "JetPack.h"
 
 /*
@@ -178,7 +178,7 @@ void sdVehicleSoundControl_Simple::StartHornSound( void ) {
 	}
 	simpleSoundFlags.playingHornSound = true;
 
-	owner->StartSound( "snd_horn_loop", SND_VEHICLE_HORN, 0, NULL );	
+	owner->StartSound( "snd_horn_loop", SND_VEHICLE_HORN, 0, NULL );
 }
 
 /*
@@ -353,7 +353,7 @@ void sdVehicleSoundControl_CrossFade::CalcSoundParmsAdvanced( soundParmsAdvanced
 	if ( accelYawPitch > 0.0f ) {
 		currentAccelPitchOffset += accelYawPitchMultiplier * idMath::ClampFloat( 0.0f, 1.0f, idMath::Fabs( yawVel ) / accelYawPitch );
 	}
-	
+
 	float volumeIncreaseValue = 0.0f;
 	float inputVal = 0.0f;
 	if ( owner->GetPhysics()->HasGroundContacts() || ( owner->GetPhysics()->InWater() && owner->IsAmphibious() ) ) {
@@ -1146,7 +1146,7 @@ void sdVehicleSoundControl_Helicopter::OnPlayerEntered( idPlayer* player, int po
 			StartRotorSound();
 			StartThrottleSound();
 		}
-	}	
+	}
 }
 
 /*
@@ -1404,7 +1404,7 @@ void sdVehicleSoundControl_JetPack::Update( void ) {
 	}
 
 	const sdVehicleInput& input = owner->GetInput();
-	
+
 	bool playJetSound = false;
 
 	idPlayer* driver = owner->GetPositionManager().FindDriver();
@@ -1515,7 +1515,7 @@ void sdVehicleSoundControl_JetPack::StartJetSound( void ) {
 		return;
 	}
 	soundFlags.playingJetSound = true;
-	
+
 	if ( !owner->IsEMPed() ) {
 		owner->StartSound( "snd_jet", SND_VEHICLE_DRIVE, 0, NULL );
 
@@ -1542,7 +1542,7 @@ void sdVehicleSoundControl_JetPack::StopJetSound( void ) {
 		return;
 	}
 	soundFlags.playingJetSound = false;
-	
+
 	owner->FadeSound( SND_VEHICLE_DRIVE, -60.0f, 2.0f );
 	owner->FadeSound( SND_VEHICLE_DRIVE2, -60.0f, 2.0f );
 }

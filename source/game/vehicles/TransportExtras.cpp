@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,18 +11,18 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../Player.h"
+#include "Player.h"
 #include "TransportExtras.h"
 #include "VehicleView.h"
 #include "VehicleWeapon.h"
 #include "Transport.h"
 #include "VehicleIK.h"
-#include "../ContentMask.h"
-#include "../script/Script_Helper.h"
-#include "../proficiency/StatsTracker.h"
+#include "ContentMask.h"
+#include "script/Script_Helper.h"
+#include "proficiency/StatsTracker.h"
 
-#include "../botai/Bot.h"
-#include "../botai/BotThreadData.h"
+#include "botai/Bot.h"
+#include "botai/BotThreadData.h"
 
 /*
 ===============================================================================
@@ -395,7 +395,7 @@ const sdVehicleView& sdVehiclePosition::GetViewParms( void ) const {
 sdVehiclePosition::AddIKSystem
 ================
 */
-void sdVehiclePosition::AddIKSystem( sdVehicleIKSystem* _ikSystem ) { 
+void sdVehiclePosition::AddIKSystem( sdVehicleIKSystem* _ikSystem ) {
 	sdVehicleIKSystem** allocedIK = ikSystems.Alloc();
 	if ( allocedIK == NULL ) {
 		gameLocal.Error( "sdVehiclePosition::AddIKSystem number of ik systems for position exceeds MAX_POSITION_IK" );
@@ -430,7 +430,7 @@ void sdVehiclePosition::AddView( const positionViewMode_t& parms ) {
 sdVehiclePosition::CycleCamera
 ================
 */
-void sdVehiclePosition::CycleCamera( void ) {	
+void sdVehiclePosition::CycleCamera( void ) {
 	int viewMode = player->GetProxyViewMode();
 	viewMode++;
 	viewMode %= views.Num();
@@ -503,7 +503,7 @@ void sdVehiclePosition::UpdateIK( void ) {
 	}
 
 	currentViewOffsetAngles = ( idMath::Cos( DEG2RAD( ( currentViewOffset * 180 ) + 180 ) ) + 1 ) * 0.5f * idMath::Sign( currentViewOffset ) * maxViewOffset;
-	
+
 	for ( int i = 0; i < ikSystems.Num(); i++ ) {
 		ikSystems[ i ]->Update();
 	}
@@ -662,7 +662,7 @@ void sdTransportPositionManager::SwapPosition( idPlayer* player, bool allowCycle
 	int	endpos;
 	sdVehiclePosition* botPosition = NULL;
 	idPlayer* botPlayer;
-	
+
 	bool cycle = transport->CycleAllPositions();
 
 	if ( cycle && allowCycle ) {
@@ -675,13 +675,13 @@ void sdTransportPositionManager::SwapPosition( idPlayer* player, bool allowCycle
 
 	while( i != endpos ) {
 
-		if ( ( positions[ i ].GetPlayer() == NULL || positions[ i ].GetPlayer()->IsType( idBot::Type ) && !player->IsType( idBot::Type ) ) 
-			&& positions[ i ].CheckRequirements( player ) 
+		if ( ( positions[ i ].GetPlayer() == NULL || positions[ i ].GetPlayer()->IsType( idBot::Type ) && !player->IsType( idBot::Type ) )
+			&& positions[ i ].CheckRequirements( player )
 			&& ( i != 0 || !transport->IsLocked() ) ) {
-			
+
 			haveBotInSeat = ( positions[ i ].GetPlayer() != NULL ) ? true : false;
 
-			if ( haveBotInSeat ) { //mal: if have a bot in this seat, boot him out of the vehicle.				
+			if ( haveBotInSeat ) { //mal: if have a bot in this seat, boot him out of the vehicle.
 				botPlayer = positions[ i ].GetPlayer();
 				botPosition = &transport->GetPositionManager().PositionForPlayer( botPlayer );
 				transport->GetPositionManager().EjectPlayer( *botPosition, true );
@@ -744,7 +744,7 @@ void sdTransportPositionManager::RemovePlayer( sdVehiclePosition& position ) {
 		return;
 	}
 
-	position.SetPlayer( NULL );	
+	position.SetPlayer( NULL );
 
 	gameLocal.localPlayerProperties.ExitingObject( player, transport );
 
@@ -771,7 +771,7 @@ public:
 	jointHandle_t	joint;
 	idVec3			origin;
 	idMat3			axis;
-	
+
 	static int SortByDistance( const sdExitJointDistanceInfo* a, const sdExitJointDistanceInfo* b ) {
 		if ( a->distanceSqr > b->distanceSqr ) {
 			return 1;
@@ -805,7 +805,7 @@ bool sdTransportPositionManager::EjectPlayer( sdVehiclePosition& position, bool 
 				selectedOrg.z += 64.f;
 				foundOrg = true;
 			} else {
-				// prioritize exit joints by the nearest 
+				// prioritize exit joints by the nearest
 				idStaticList< sdExitJointDistanceInfo, MAX_EXIT_JOINTS > sortedExitJoints;
 				sortedExitJoints.SetNum( exitJoints.Num() );
 				idVec3 traceFromPoint;
@@ -1172,7 +1172,7 @@ bool sdTransportPositionManager::HasFreePosition( void ) {
 		if ( positions[ i ].GetPlayer() ) {
 			continue;
 		}
-		
+
 		hasSeat = true;
 		break;
 	}

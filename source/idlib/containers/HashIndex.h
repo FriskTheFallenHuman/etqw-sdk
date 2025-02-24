@@ -68,7 +68,7 @@ public:
 	int				GenerateKey( const unsigned int n1, const unsigned int n2 ) const;
 					// returns a key for a single integer
 	int				GenerateKey( const int n ) const;
-					// returns a key a pointer type					
+					// returns a key a pointer type
 	int				GenerateKey( const void* n ) const;
 
 					// returns a key for a file name

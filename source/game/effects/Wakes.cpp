@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -80,11 +80,11 @@ void sdWakeLayer::PopFront() {
 }
 
 int sdWakeLayer::RemapIndex( int index ) {
-	return (firstNode+index)%MAX_NODES;	
+	return (firstNode+index)%MAX_NODES;
 }
 
 sdWakeNode &sdWakeLayer::GetNode( int index ) {
-	return nodes[ RemapIndex( index ) ];	
+	return nodes[ RemapIndex( index ) ];
 }
 
 sdWakeLayer::sdWakeLayer( void ) {
@@ -150,7 +150,7 @@ void sdWakeLayer::AddNode( const idVec3 &origin, const idVec3 &emitLeft, float a
 		curv = (dp.x * ddp.y - dp.y * ddp.x) * dv;
 	} else {
 		curv = 0.00001f;// Almost straight
-	} 
+	}
 
 	// Convert this curvature to some scale value
 	// as to make the wake thinner in tight coners
@@ -190,7 +190,7 @@ void sdWakeLayer::AddNode( const idVec3 &origin, const idVec3 &emitLeft, float a
 	node.breakWake = false;
 	node.alpha = alpha;
 	int index = AddToBack( node );
-	
+
 	// Update the vertices corresponding to this node
 	index = index*2 + firstVert;
 	triangleVerts[index+0].xyz = origin + leftL * negWidth * posScale;
@@ -232,7 +232,7 @@ void sdWakeLayer::Update( srfTriangles_t *triangles ) {
 		if ( nodes[curIndex].breakWake || nodes[lastIndex].breakWake ) {
 			triangles->verts[curVertIndex+0].color[3] = 0;
 			triangles->verts[curVertIndex+1].color[3] = 0;
-		} else { 
+		} else {
 			byte alpha = (1.0f - ((gameLocal.time - nodes[curIndex].spawnTime) / (float)lifeTime)) * 255 * basealpha;
 			triangles->verts[curVertIndex+0].color[3] = alpha;
 			triangles->verts[curVertIndex+1].color[3]  = alpha;
@@ -271,7 +271,7 @@ int sdWakeLayer::NumNodes( void ) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
+
 sdWake::sdWake( void ) {
 	minPoint = vec3_origin;
 	maxPoint = vec3_origin;
@@ -301,8 +301,8 @@ void sdWake::Init(  const sdWakeParms &params, int ticket ) {
 	// Allocate surfaces
 	if ( !NumSurfaces() ) {
 		AddSurfaceDB( params.centerMat, ( sdWakeLayer::MAX_NODES * 2 + 2), ( sdWakeLayer::MAX_NODES * 6) );
-		GetTriSurf( 0, 0 )->numVerts = GetTriSurf( 0, 0 )->numAllocedVerts;	
-		GetTriSurf( 1, 0 )->numVerts = GetTriSurf( 1, 0 )->numAllocedVerts;	
+		GetTriSurf( 0, 0 )->numVerts = GetTriSurf( 0, 0 )->numAllocedVerts;
+		GetTriSurf( 1, 0 )->numVerts = GetTriSurf( 1, 0 )->numAllocedVerts;
 
 		AddSurfaceDB( params.edgeMat, ( sdWakeLayer::MAX_NODES * 2 + 2)*MAX_POINTS, ( sdWakeLayer::MAX_NODES * 6)*MAX_POINTS );
 		GetTriSurf( 0, 1 )->numVerts = GetTriSurf( 0, 1 )->numAllocedVerts;
@@ -341,7 +341,7 @@ void sdWake::Init(  const sdWakeParms &params, int ticket ) {
 	layer3.Init( triangleVerts[0].Begin(), 0 );
 	layer3.SetWidths( params.centerWidths[0], params.centerWidths[1] );
 	layer3.SetCurvatureScales( params.centerScales[0], params.centerScales[1] );
-	layer3.SetTexCoords( params.centerTexCoord[0], params.centerTexCoord[1] );	
+	layer3.SetTexCoords( params.centerTexCoord[0], params.centerTexCoord[1] );
 
 	stopped = false;
 }
@@ -367,7 +367,7 @@ void sdWake::Update( const idVec3 &forward, const idVec3 &origin, const idMat3 &
 	}
 
 
-	flat.Normalize();	
+	flat.Normalize();
 	left.Cross( flat, up  );
 	left.Normalize();
 
@@ -519,7 +519,7 @@ unsigned int sdWakeManagerLocal::AllocateWake( const sdWakeParms &params ) {
 		if ( wakes[i].HasStopped() ) {
 			if ( g_debugWakes.GetBool() ) {
 				common->Printf( "Initializing wake %i-%i (%s) (%i)\n", i, ticket, params.centerMat->GetName(), gameLocal.time );
-			}		
+			}
 			if ( !idStr::Cmp( "_default", params.centerMat->GetName() ) ) {
 				common->Printf("defaulted\n");
 			}
@@ -540,7 +540,7 @@ unsigned int sdWakeManagerLocal::AllocateWake( const sdWakeParms &params ) {
 	wakes[numWakes].Init( params );
 	numWakes++;
 	return numWakes-1;*/
-	
+
 	return 0;
 }
 

@@ -4,7 +4,7 @@
 #ifndef __GAME_PLAYER_H__
 #define __GAME_PLAYER_H__
 
-typedef enum playerStance_t {
+enum playerStance_t {
 	PS_DEAD,
 	PS_PRONE,
 	PS_CROUCH,
@@ -47,7 +47,7 @@ const int STEPUP_TIME				= 200;
 ===============================================================================
 
 	Player entity.
-	
+
 ===============================================================================
 */
 
@@ -244,7 +244,7 @@ public:
 	idAngles				cameraViewAngles;
 	idAngles				clientViewAngles;	// client interpolated view angles
 	float					baseDeathYaw;
-	
+
 	bool					lastWeaponViewAnglesValid;
 	idAngles				lastWeaponViewAngles;
 	idVec3					weaponAngVel;
@@ -254,7 +254,7 @@ public:
 	userButtonsUnion_t		clientOldButtons;
 	userButtonsUnion_t		clientButtons;
 	bool					clientButtonsUsed;
-	
+
 	int						nextSndHitTime;			// MP hit sound - != lastHurtTime because we throttle
 
 	int						lastReviveTime;
@@ -288,7 +288,7 @@ public:
 
 	int						lastGroundContactTime;
 	idEntityPtr< idWeapon >	weapon;
-	
+
 	int						vehicleViewCurrentZoom;
 
 	int						lastTimeInPlayZone;
@@ -302,7 +302,7 @@ public:
 
 	renderView_s			renderView;
 
-	idLinkList< idEntity >	targetNode;	
+	idLinkList< idEntity >	targetNode;
 
 	idEntityPtr< idEntity >	targetEntity;
 	idEntityPtr< idEntity >	targetEntityPrevious;
@@ -354,7 +354,7 @@ private:
 
 	int						lastDamageDealtTime;		// last time projectile fired by player hit target
 	teamAllegiance_t		lastDamageDealtType;		// the allegiance of the last item hit
-	bool					newDamageDealt;				// 
+	bool					newDamageDealt;				//
 
 	int						lastDamageFriendlyVO;
 
@@ -398,7 +398,7 @@ public:
 	idVec3					GetEyeOffset( eyePos_t pos );
 	float					GetEyeChangeRate( eyePos_t pos );
 
-	bool					HandleGuiEvent( const sdSysEvent* event );	
+	bool					HandleGuiEvent( const sdSysEvent* event );
 	bool					TranslateGuiBind( const idKey& key, sdKeyCommand** cmd );
 
 	void					SetActionMessage( const char* message );
@@ -406,7 +406,7 @@ public:
 	void					UpdateToolTipTimeline( void );
 
 	void					RunToolTipTimelineEvent( const sdDeclToolTip::timelineEvent_t& event );
-	
+
 	bool					IsToolTipPlaying( void ) const { return toolTips.Num() > 0 || nextTooltipTime > gameLocal.time; }
 
 	bool					IsSinglePlayerToolTipPlaying( void ) const { return currentToolTip != NULL && currentToolTip->GetSinglePlayerToolTip(); }
@@ -421,7 +421,7 @@ public:
 
 	bool					IsReady( void ) const { return playerFlags.ready; }
 	void					SetReady( bool value, bool force );
-	
+
 	void					UsercommandCallback( usercmd_t& cmd );
 	bool					GetSensitivity( float& scaleX, float& scaleY );
 
@@ -555,7 +555,7 @@ public:
 
 	virtual void			OnBindMasterVisChanged();
 
-public:	
+public:
 	void					PlayFootStep( const char* prefix, bool rightFoot );
 	virtual void			PlayPain( const char* strength );
 
@@ -759,7 +759,7 @@ public:
 
 	idWeapon*				GetWeapon( void ) { return weapon.GetEntity(); }
 	const idWeapon*			GetWeapon( void ) const { return weapon.GetEntity(); }
-	
+
 	void					UpdateConditions( void );
 	void					SetViewAngles( const idAngles &angles );
 	virtual void			SetAxis( const idMat3 &axis );
@@ -781,7 +781,7 @@ public:
 
 	void					GetHeadModelCenter( idVec3& output );
 	float					GetDamageScaleForTrace( const trace_t& t, const idVec3& traceDirection, locationDamageArea_t& area );
-	void					CalcDamagePoints(  idEntity *inflictor, idEntity *attacker, const sdDeclDamage* damageDecl, 
+	void					CalcDamagePoints(  idEntity *inflictor, idEntity *attacker, const sdDeclDamage* damageDecl,
 											const float damageScale, const trace_t* collision, float& _health, const idVec3& dir, bool& headshot );
 
 	virtual void			DamageFeedback( idEntity *victim, idEntity *inflictor, int oldHealth, int newHealth, const sdDeclDamage* damageDecl, bool headshot );
@@ -986,7 +986,7 @@ public:
 
 	void					SetSuppressPredictionReset( bool reset ) { suppressPredictionReset = reset; }
 	void					GetAORView( idVec3& origin, idMat3& axis );
-	
+
 	const idVec3&			GetLastPredictionErrorDecayOrigin( void );
 
 private:
@@ -1066,7 +1066,7 @@ private:
 	// if there is a focusGUIent, the attack button will be changed into mouse clicks
 	idEntityPtr< idEntity >	focusGUIent;
 	guiHandle_t				focusUI;				// focusGUIent->renderEntity.gui, gui2, or gui3
-	int						focusTime;	
+	int						focusTime;
 
 	int						lastDamageDecl;
 	idVec3					lastDamageDir;
@@ -1120,7 +1120,7 @@ private:
 	sdPlayerInteractiveInterface	interactiveInterface;
 
 	float					armor;
-	
+
 	idStaticList< idEntityPtr< idEntity >, MAX_PLAYER_BIN_SIZE >	entityBin;
 	idStaticList< idEntityPtr< idEntity >, MAX_PLAYER_BIN_SIZE >	abilityEntityBin;
 
@@ -1232,7 +1232,7 @@ public:
 	void					Event_GetRenderViewAngles( void );
 	void					Event_GetViewOrigin( void );
 	void					Event_GetWeaponEntity( void );
-	
+
 	void					Event_IsGunHidden( void );
 
 	void					Event_CreateIcon( const char* materialName, int priority, float timeout );
@@ -1315,7 +1315,7 @@ public:
 	void					Event_SetSpectateClient( idEntity* other );
 	void					Event_SetViewSkin( const char *name );
 	void					Event_GetViewSkin( void );
-	
+
 	void					Event_SetGUIClipIndex( int index );
 
 	void					Event_GetDeploymentRequest( void );
@@ -1372,7 +1372,7 @@ public:
 	void					Event_IsBot();
 	void					Event_SetBotEscort( idEntity* botEscort );
 	void					Event_SetPlayerSpawnHostTarget( idEntity* spawnHostTarget );
-	
+
 	void					Event_ResetTargetLock( void );
 	void					Event_IsLocking( void );
 

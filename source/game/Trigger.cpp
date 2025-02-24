@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -20,7 +20,7 @@ static char THIS_FILE[] = __FILE__;
 ===============================================================================
 
   idTrigger
-	
+
 ===============================================================================
 */
 
@@ -155,7 +155,7 @@ void idTrigger::Spawn( void ) {
 ===============================================================================
 
   idTrigger_Multi
-	
+
 ===============================================================================
 */
 
@@ -202,7 +202,7 @@ void idTrigger_Multi::Spawn( void ) {
 	spawnArgs.GetFloat( "random", "0", random );
 	spawnArgs.GetFloat( "delay", "0", delay );
 	spawnArgs.GetFloat( "random_delay", "0", random_delay );
-	
+
 	if ( random && ( random >= wait ) && ( wait >= 0 ) ) {
 		random = wait - 1;
 		gameLocal.Warning( "idTrigger_Multi '%s' at (%s) has random >= wait", name.c_str(), GetPhysics()->GetOrigin().ToString(0) );
@@ -338,7 +338,7 @@ void idTrigger_Multi::OnTouch( idEntity *other, const trace_t& trace ) {
 
 	if( other->IsType( sdTransport::Type ) ) {
 		sdTransport* transport = reinterpret_cast< sdTransport* >( other );
-		
+
 		idPlayer* driver = transport->GetPositionManager().FindDriver();
 		if( !driver ) {
 			return;
@@ -396,7 +396,7 @@ void idTrigger_Multi::OnTouch( idEntity *other, const trace_t& trace ) {
 ===============================================================================
 
   idTrigger_Hurt
-	
+
 ===============================================================================
 */
 

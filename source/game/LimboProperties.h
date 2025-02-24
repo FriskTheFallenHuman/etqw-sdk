@@ -32,7 +32,7 @@ public:
 
 	void									Update( void );
 	void									Init( void );
-	void									Shutdown( void );	
+	void									Shutdown( void );
 	void									SetProficiencySource( const char* className );
 	void									OnSetActiveSpawn( idEntity* newSpawn );
 

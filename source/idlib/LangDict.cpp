@@ -13,7 +13,7 @@ idLangDict::idLangDict
 idLangDict::idLangDict( void ) {
 	args.SetGranularity( 256 );
 	hash.SetGranularity( 256 );
-	hash.Clear( 4096, 8192 );	
+	hash.Clear( 4096, 8192 );
 }
 
 /*

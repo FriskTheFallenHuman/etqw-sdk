@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 /*
@@ -13,7 +13,7 @@
 */
 
 #include "DeclVehiclePath.h"
-#include "../../framework/DeclParseHelper.h"
+#include "framework/DeclParseHelper.h"
 
 
 /*
@@ -95,7 +95,7 @@ bool sdDeclVehiclePath::RebuildTextSource( void ) {
 	int numSamples = grid.GetNumColumns();
 
 	idStr temp;
-	
+
 	temp += va( "vehiclePath %s {\n", GetName() );
 
 	temp += va( "\tnumsamples %i\n", grid.GetNumColumns() );

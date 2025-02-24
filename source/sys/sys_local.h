@@ -125,15 +125,15 @@ sdPerformanceQueryLocal
 	Provides some common implementations that may be interesting for all os-es
 ==============================================================
 */
-class sdPerformanceQueryLocal : public sdPerformanceQuery { 
+class sdPerformanceQueryLocal : public sdPerformanceQuery {
 private:
 	int capacity;				//Maximum number of performance history values
 	int head;					//Index of last value in circular buffer
 	float minv;					//Minimum value encountered (even if pushed out of circular buffer)
 	float maxv;					//Maximum value encountered
-	idList<float> values; 
+	idList<float> values;
 
-protected:	
+protected:
 	void Insert( float f )    {
 		minv = minv > f ? f : minv;
 		maxv = maxv < f ? f : maxv;
@@ -316,7 +316,7 @@ public:
 private:
 	idLinkList< sdSysEvent > eventQue;
 	idBlockAlloc< sdSysEvent, 128 > eventAllocator;
-	
+
 	sdControllerManagerLocal	controllerManager;
 };
 

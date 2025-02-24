@@ -7,7 +7,7 @@
 
 Model viewing can begin with either "testmodel <modelname>"
 
-The names must be the full pathname after the basedir, like 
+The names must be the full pathname after the basedir, like
 "models/weapons/v_launch/tris.md3" or "players/male/tris.md3"
 
 Extension will default to ".ase" if not specified.
@@ -23,7 +23,7 @@ move around it to view it from different angles.
 =============================================================================
 */
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -33,7 +33,7 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Anim_Testmodel.h"
-#include "../Player.h"
+#include "Player.h"
 
 CLASS_DECLARATION( idAnimatedEntity, idTestModel )
 END_CLASS
@@ -82,7 +82,7 @@ void idTestModel::Spawn( void ) {
 	physicsObj.SetSelf( this );
 	physicsObj.SetOrigin( GetPhysics()->GetOrigin() );
 	physicsObj.SetAxis( GetPhysics()->GetAxis() );
-	
+
 	if ( spawnArgs.GetVector( "mins", NULL, bounds[0] ) ) {
 		spawnArgs.GetVector( "maxs", NULL, bounds[1] );
 		physicsObj.SetClipBox( bounds, 1.0f );
@@ -118,7 +118,7 @@ void idTestModel::Spawn( void ) {
 			head.GetEntity()->SetModel( headModel );
 			head.GetEntity()->SetPosition( origin, GetPhysics()->GetAxis() );
 			head.GetEntity()->BindToJoint( this, animator.GetJointName( joint ), true );
-		
+
 			headAnimator = head.GetEntity()->GetAnimator();
 
 			// set up the list of joints to copy to the head
@@ -276,7 +276,7 @@ void idTestModel::Think( void ) {
 				}
 				break;
 			}
-			
+
 			mode = g_testModelAnimate.GetInteger();
 		}
 
@@ -727,7 +727,7 @@ void idTestModel::TestModel_f( const idCmdArgs &args ) {
 			// without appending an ase
 			if ( name[ 0 ] != '_' ) {
 				name.DefaultFileExtension( ".ase" );
-			} 
+			}
 
 #if defined( ID_ALLOW_TOOLS )
 			if ( strstr( name, ".ma" ) || strstr( name, ".mb" ) ) {

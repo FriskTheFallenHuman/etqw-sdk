@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,10 +12,10 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "LocationMarker.h"
-#include "../Player.h"
-#include "../CommandMapInfo.h"
-#include "../WorldSpawn.h"
-#include "../roles/WayPointManager.h"
+#include "Player.h"
+#include "CommandMapInfo.h"
+#include "WorldSpawn.h"
+#include "roles/WayPointManager.h"
 
 /*
 ===============================================================================
@@ -282,7 +282,7 @@ locationInfo_t* sdLocationMarker::LocationForPosition( const idVec3& position ) 
 
 	for ( int i = 0; i < s_exteriorLocations.Num(); i++ ) {
 		locationInfo_t* testLoc = s_exteriorLocations[ i ];
-		
+
 		float dist = ( testLoc->origin - position ).LengthSqr();
 		if ( dist > Square( testLoc->maxRange ) ) {
 			continue;
@@ -303,7 +303,7 @@ sdLocationMarker::DebugDraw
 ==============
 */
 void sdLocationMarker::DebugDraw( const idVec3& position ) {
-	locationInfo_t* loc = LocationForPosition( position );	
+	locationInfo_t* loc = LocationForPosition( position );
 
 	for ( int i = 0; i < s_locations.Num(); i++ ) {
 		gameRenderWorld->DebugBounds( loc == &s_locations[ i ] ? colorGreen : colorRed, idBounds( idSphere( s_locations[ i ].origin, 16 ) ) );

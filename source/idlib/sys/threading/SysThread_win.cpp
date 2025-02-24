@@ -123,7 +123,7 @@ void sdSysThread::SetProcessor( threadHandle_t& handle, const unsigned int proce
 	::XSetThreadProcessor( handle.handle, processor );
 #else
 	::SetThreadAffinityMask( handle.handle, 1 << processor );
-#endif	
+#endif
 }
 
 /*

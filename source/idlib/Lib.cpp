@@ -50,7 +50,7 @@ void idLib::Init( void ) {
 	idMath::Init();
 
 	// test idMatX
-	// jrad - this is horribly broken 
+	// jrad - this is horribly broken
 	//idMatX::Test();
 
 	// initialize the dictionary string pools
@@ -253,8 +253,8 @@ float FloatSwap( float f ) {
 		float	f;
 		byte	b[4];
 	} dat1, dat2;
-	
-	
+
+
 	dat1.f = f;
 	dat2.b[0] = dat1.b[3];
 	dat2.b[1] = dat1.b[2];
@@ -282,8 +282,8 @@ double DoubleSwap( double d ) {
 		double	d;
 		byte	b[8];
 	} dat1, dat2;
-	
-	
+
+
 	dat1.d = d;
 	dat2.b[0] = dat1.b[7];
 	dat2.b[1] = dat1.b[6];
@@ -371,9 +371,9 @@ Reverses the bitfield of size elsize.
 void RevBitFieldSwap( void *bp, int elsize) {
 	int i;
 	unsigned char *p, t, v;
-	
+
 	LittleRevBytes( bp, elsize, 1 );
-	
+
 	p = (unsigned char *) bp;
 	while( elsize-- ) {
 		v = *p;
@@ -470,7 +470,7 @@ Swap_Init
 */
 void Swap_Init( void ) {
 
-	// set the byte swapping variables in a portable manner	
+	// set the byte swapping variables in a portable manner
 	if ( Swap_IsBigEndian() ) {
 		// big endian ex: ppc
 		_BigShort = ShortNoSwap;

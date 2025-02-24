@@ -2,7 +2,7 @@
 //
 
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -120,7 +120,7 @@ void sdAORManagerLocal::SetClient( idPlayer* client ) {
 
 	cachedViewOrg	= origin.ToVec2();
 	cachedViewDir	= axis[ 0 ].ToVec2();
-	
+
 	FreePVS();
 	pvsHandle = gameLocal.pvs.SetupCurrentPVS( client->firstPersonViewOrigin );
 
@@ -301,7 +301,7 @@ void sdAORManagerLocal::DebugDrawEntities( int clientNum ) {
 		idStr message;
 
 		gameRenderWorld->DebugBounds( *colorTable[ ent->entityNumber % 13 ], bounds, org, axes );
-		
+
 		if ( ent->IsNetSynced() ) {
 			message += "Visible";
 

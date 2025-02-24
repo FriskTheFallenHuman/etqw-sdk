@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 /*
@@ -119,7 +119,7 @@ idVec3 idQuat::ToAngularVelocity( void ) const {
 	//		then this function would return the correct value.
 	//
 	//		However its easier & faster just to do the one branch and invert the axis
-	//		
+	//
 	if ( w > 0.0f ) {
 		vec.x = x;
 		vec.y = y;

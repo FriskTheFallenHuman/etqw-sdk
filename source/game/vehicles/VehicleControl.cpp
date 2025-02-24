@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -15,12 +15,12 @@ static char THIS_FILE[] = __FILE__;
 #include "Transport.h"
 #include "TransportComponents.h"
 #include "Vehicle_RigidBody.h"
-#include "../ContentMask.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../../decllib/DeclSurfaceType.h"
-#include "../InputMode.h"
-#include "../rules/GameRules.h"
+#include "ContentMask.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "decllib/DeclSurfaceType.h"
+#include "InputMode.h"
+#include "rules/GameRules.h"
 
 idCVar g_vehicleSteerKeyScale( "g_vehicleSteerKeyScale",	"1",	CVAR_GAME | CVAR_ARCHIVE | CVAR_FLOAT | CVAR_PROFILE, "The scale of the wheeled vehicle steering keys - 1 is standard, 2 is twice as fast, etc" );
 
@@ -287,7 +287,7 @@ void sdVehicleControl::UpdateOverdriveSound( bool thrusting ) {
 		}
 		if( driver != NULL && driver == gameLocal.GetLocalPlayer() ) {
 			gameLocal.SetGUIFloat( GUI_GLOBALS_HANDLE, "vehicles.overDriveFraction", 1.0f );
-		}		
+		}
 	} else {
 		if ( gameLocal.isNewFrame ) {
 			if ( overDriveSoundEndTime < 0 ) {
@@ -299,13 +299,13 @@ void sdVehicleControl::UpdateOverdriveSound( bool thrusting ) {
 		}
 		if( driver != NULL && driver == gameLocal.GetLocalPlayer() ) {
 			gameLocal.SetGUIFloat( GUI_GLOBALS_HANDLE, "vehicles.overDriveFraction", 0.5f );
-		}		
+		}
 	}
 
 	if ( overDrivePitchEndSpeed != overDrivePitchStartSpeed && ( overDriveSoundEndTime == -1 || gameLocal.time < overDriveSoundEndTime ) ) {
 		float speed = idMath::Fabs( owner->GetPhysics()->GetLinearVelocity() * owner->GetPhysics()->GetAxis()[ 0 ] );
 		speed = UPSToKPH( speed );
-		float pitch = idMath::ClampFloat( 0.0f, 1.0f, ( speed - overDrivePitchStartSpeed ) / ( overDrivePitchEndSpeed - overDrivePitchStartSpeed ) ); 
+		float pitch = idMath::ClampFloat( 0.0f, 1.0f, ( speed - overDrivePitchStartSpeed ) / ( overDrivePitchEndSpeed - overDrivePitchStartSpeed ) );
 		pitch = idMath::Sqrt( pitch ) * ( overDrivePitchEnd - overDrivePitchStart ) + overDrivePitchStart;
 		owner->SetChannelPitchShift( SND_VEHICLE_OVERDRIVE, pitch );
 	}
@@ -487,8 +487,8 @@ void sdDesecratorControl::RunStateMachine() {
 
 	if ( state == CS_POWERED && newState == CS_SHUTDOWN && oldNewState != CS_SHUTDOWN ) {
 		owner->StartSound( "snd_shutdown", SND_BODY, 0, NULL );
-	} 
-	
+	}
+
 	if ( state == CS_SHUTDOWN && newState == CS_POWERED && oldNewState != CS_POWERED  ) {
 		owner->StartSound( "snd_startup", SND_BODY, 0, NULL );
 	}
@@ -620,7 +620,7 @@ sdWheeledVehicleControl::OnControllerMove
 */
 void sdWheeledVehicleControl::OnControllerMove( bool doGameCallback, const int numControllers, const int* controllerNumbers,
 								 const float** controllerAxis, idVec3& viewAngles, usercmd_t& cmd ) {
-	
+
 	char oldRightMove = cmd.rightmove;
 
 	// run the input for each controller
@@ -670,7 +670,7 @@ void sdWheeledVehicleControl::SetupInput() {
 
 		UpdateCareening( directions );
 		UpdateDirectionBraking( directions, vel, speedKPH, braking );
-		UpdateHandbrake( directions, speedKPH, handbraking, braking );		
+		UpdateHandbrake( directions, speedKPH, handbraking, braking );
 		UpdateControls();
 
 		float fixedGear = SelectGear( directions, absSpeedKPH );
@@ -982,7 +982,7 @@ float sdWheeledVehicleControl::GetHudSpeed( void ) const {
 sdWheeledVehicleControl::CreateNetworkStructure
 ================
 */
-sdEntityStateNetworkData*	sdWheeledVehicleControl::CreateNetworkStructure( networkStateMode_t mode ) const { 
+sdEntityStateNetworkData*	sdWheeledVehicleControl::CreateNetworkStructure( networkStateMode_t mode ) const {
 	if ( mode == NSM_VISIBLE ) {
 		return new sdWheeledControlNetworkData;
 	}
@@ -1037,8 +1037,8 @@ void sdWheeledVehicleControl::ReadNetworkState( networkStateMode_t mode, const s
 	if ( mode == NSM_VISIBLE ) {
 		NET_GET_STATES( sdWheeledControlNetworkData );
 
-		newData.desiredDirection	= msg.ReadDeltaFloat( baseData.desiredDirection );		
-		newData.steerVisualAngle	= msg.ReadDeltaFloat( baseData.steerVisualAngle );		
+		newData.desiredDirection	= msg.ReadDeltaFloat( baseData.desiredDirection );
+		newData.steerVisualAngle	= msg.ReadDeltaFloat( baseData.steerVisualAngle );
 		return;
 	}
 }
@@ -1294,7 +1294,7 @@ void sdTitanControl::SetSpeed( idVec3& directions, float gearSpeed, float gearFo
 			rightSpeed = gearSpeed * sideMove * -2.0f;
 		}
 //	}
-	
+
 	input->SetLeftSpeed( leftSpeed );
 	input->SetRightSpeed( rightSpeed );
 	input->SetForce( force );
@@ -1347,7 +1347,7 @@ void sdTrojanControl::UpdateControls() {
 
 	float leftThrust = input->GetForward();
 	float rightThrust = input->GetForward();
-	
+
 	if ( input->GetRight() > 0.0f ) {
 		leftThrust *= 1.75f;
 		rightThrust *= -0.25f;
@@ -1426,7 +1426,7 @@ void sdTrojanControl::Update() {
 		rightProp.object = owner->GetDriveObject( "right_thruster" )->Cast< sdVehicleThruster >();
 		if ( !rightProp.object ) {
 			gameLocal.Error( "sdTrojanControl::Init - \'right_thruster\' drive object does not exist" );
-		}	
+		}
 	}
 
 	sdWheeledVehicleControl::Update();
@@ -1623,7 +1623,7 @@ sdHogControl::Update
 */
 void sdHogControl::Update() {
 	sdWheeledVehicleControl::Update();
-	
+
 	if ( ramming ) {
 		owner->SetDamageDealtScale( ramDamageScale );
 	} else {
@@ -1775,7 +1775,7 @@ void sdAirVehicleControl::Init( sdTransport* transport ) {
 
 	throttling							= false;
 	landingGearDown						= true;
-	
+
 	landingThresholdDistance			= MetresToInches( args.GetFloat( "landing_threshold_distance" ) );
 	landingThresholdSpeed				= KPHtoUPS( args.GetFloat( "landing_threshold_speed" ) );
 	deadZoneFraction					= false;
@@ -1801,7 +1801,7 @@ void sdAirVehicleControl::Init( sdTransport* transport ) {
 	leftJet								= NULL;
 	rightJet							= NULL;
 	airBrake							= NULL;
-	
+
 	leftThrustEffectJoint				= owner->GetAnimator()->GetJointHandle( args.GetString( "left_thrust_effect_joint" ) );
 	rightThrustEffectJoint				= owner->GetAnimator()->GetJointHandle( args.GetString( "right_thrust_effect_joint" ) );
 
@@ -1839,7 +1839,7 @@ void sdAirVehicleControl::SetupComponents( void ) {
 
 	airBrake = owner->GetDriveObject( "air_brake" )->Cast< sdVehicleAirBrake >();
 
-	mainBounds.Clear();	
+	mainBounds.Clear();
 	for ( int i = 0; i < owner->GetPhysics()->GetNumClipModels(); i++ ) {
 		int contents = owner->GetPhysics()->GetContents( i );
 		if ( contents && contents != MASK_HURTZONE ) {
@@ -2055,10 +2055,10 @@ void sdAirVehicleControl::SetupInput() {
 		// don't allow them to tilt over too far
 		if ( angles.pitch > 45.0f || angles.pitch < -30.0f ) {
 			float desiredPitch = idMath::ClampFloat( -30.0f, 45.0f, angles.pitch );
-			
+
 			// calculate the pitching input needed to get back towards the limit
 			float levellingPitch = ( angles.pitch - desiredPitch ) * timeDelta + pitchVelocity * 2.0f;
-			if ( desiredPitch < 0.0f ) { 
+			if ( desiredPitch < 0.0f ) {
 				maxPitch = levellingPitch < 0.0f ? levellingPitch : 0.0f;
 			} else {
 				minPitch = levellingPitch > 0.0f ? levellingPitch : 0.0f;
@@ -2067,10 +2067,10 @@ void sdAirVehicleControl::SetupInput() {
 
 		if ( idMath::Fabs( angles.roll ) > 30.0f ) {
 			float desiredRoll = idMath::ClampFloat( -30.0f, 30.0f, angles.roll );
-			
+
 			// calculate the rolling input needed to get back towards the limit
 			float levellingRoll = ( desiredRoll - angles.roll ) * timeDelta - rollVelocity;
-			if ( desiredRoll > 0.0f ) { 
+			if ( desiredRoll > 0.0f ) {
 				maxRoll = levellingRoll < 0.0f ? levellingRoll : 0.0f;
 			} else {
 				minRoll = levellingRoll > 0.0f ? levellingRoll : 0.0f;
@@ -2154,7 +2154,7 @@ void sdAirVehicleControl::SetupInput() {
 	}
 
 	UpdateLandingGear( directions );
-	
+
 	float thrust = 0.0f;
 	bool thrusters = canThrust && !owner->IsEMPed();
 	bool careening = owner->IsCareening() && !owner->InDeathThroes();
@@ -2168,12 +2168,12 @@ void sdAirVehicleControl::SetupInput() {
 			thrust = -overDriveFactor;
 			if( driver == gameLocal.GetLocalPlayer() && driver ) {
 				gameLocal.SetGUIFloat( GUI_GLOBALS_HANDLE, "vehicles.overDriveFraction", 0.0f );
-			}			
+			}
 		} else {
 			thrust = overDriveFactor;
 			if( driver == gameLocal.GetLocalPlayer() && driver ) {
 				gameLocal.SetGUIFloat( GUI_GLOBALS_HANDLE, "vehicles.overDriveFraction", 1.0f );
-			}			
+			}
 		}
 
 		if ( !owner->IsInPlayzone() ) {
@@ -2197,7 +2197,7 @@ void sdAirVehicleControl::SetupInput() {
 		}
 		if( driver == gameLocal.GetLocalPlayer() && driver ) {
 			gameLocal.SetGUIFloat( GUI_GLOBALS_HANDLE, "vehicles.overDriveFraction", 0.5f );
-		}		
+		}
 	}
 
 	if ( thrusters && gameLocal.time >= ( lastThrusterEffectsTime + 1000 ) )  {
@@ -2243,7 +2243,7 @@ void sdAirVehicleControl::SetupInput() {
 	}
 
 	input->SetCollective( collective );
-	
+
 	// hack so that careening vehicles blow up when contacting ground even if it the suspension touching
 	if ( !gameLocal.isClient ) {
 		if ( ( owner->IsCareening() || owner->InDeathThroes() ) && owner->GetPhysics()->HasGroundContacts() ) {
@@ -2514,7 +2514,7 @@ void sdHornetControl::UpdateEffects( const idVec3& absMins, const trace_t& trace
 	}*/
 
 	if ( gameLocal.time >= ( lastGroundEffectsTime + 100 ) && !isEmpty
-		&& groundEffects && traceObject.fraction < 1.0f 
+		&& groundEffects && traceObject.fraction < 1.0f
 		&& gameLocal.time > landingGearChangeEndTime ) {
 
 		const char* surfaceTypeName = NULL;
@@ -2536,7 +2536,7 @@ sdHornetControl::IsContacting
 bool sdHornetControl::IsContacting( const idVec3& absMins, const trace_t& traceObject ) {
 	if ( owner->IsAtRest() && owner->GetPhysics()->HasGroundContacts() ) {
 		return true;
-	} 
+	}
 
 	return ( absMins.z - traceObject.endpos.z ) < landingThresholdDistance;
 }
@@ -2554,7 +2554,7 @@ void sdHornetControl::UpdateLandingGear( const idVec3& directions ) {
 	float speed = owner->GetPhysics()->GetLinearVelocity() * owner->GetPhysics()->GetAxis()[ 0 ];
 	float absSpeed = fabs( speed );
 
-	int anim = 0; 
+	int anim = 0;
 	if ( height < landingThresholdDistance && absSpeed < landingThresholdSpeed && directions.z <= 0.0f  ) {
 		if( !landingGearDown ) {
 			landingGearDown = true;
@@ -2632,7 +2632,7 @@ void sdHovercopterControl::UpdateEffects( const idVec3& absMins, const trace_t& 
 	}
 
 	if ( gameLocal.time >= ( lastGroundEffectsTime + 100 ) && !isEmpty
-		&& groundEffects && traceObject.fraction < 1.0f 
+		&& groundEffects && traceObject.fraction < 1.0f
 		&& gameLocal.time > landingGearChangeEndTime ) {
 
 		const char* surfaceTypeName = NULL;
@@ -2678,7 +2678,7 @@ void sdAnansiControl::UpdateLandingGear( const idVec3& directions ) {
 	float speed = owner->GetPhysics()->GetLinearVelocity() * owner->GetPhysics()->GetAxis()[ 0 ];
 	float absSpeed = fabs( speed );
 
-	int anim = 0; 
+	int anim = 0;
 	if ( height < landingThresholdDistance && absSpeed < landingThresholdSpeed && directions.z <= 0.0f ) {
 		if( !landingGearDown ) {
 			landingGearDown = true;
@@ -2773,7 +2773,7 @@ void sdWalkerControl::Init( sdTransport* transport ) {
 	}
 
 	owner->SetLightsEnabled( 0, false );
-	
+
 	owner->SetLightsEnabled( 1, true );
 	walker->SetCompressionScale( 0.9f, 0.1f );
 
@@ -2812,9 +2812,9 @@ void sdWalkerControl::Init( sdTransport* transport ) {
 	flags.manualCrouch		= false;
 	flags.startOnLeftLeg	= owner->spawnArgs.GetBool( "start_on_left", "1" );
 
-	walkingGroundPoundForce			= owner->spawnArgs.GetFloat( "ground_pound_walk_force", "10000000" );	
-	walkingGroundPoundDamageScale	= owner->spawnArgs.GetFloat( "ground_pound_walk_damage_scale", "0.25" );	
-	walkingGroundPoundRange			= owner->spawnArgs.GetFloat( "ground_pound_walk_range", "384" );	
+	walkingGroundPoundForce			= owner->spawnArgs.GetFloat( "ground_pound_walk_force", "10000000" );
+	walkingGroundPoundDamageScale	= owner->spawnArgs.GetFloat( "ground_pound_walk_damage_scale", "0.25" );
+	walkingGroundPoundRange			= owner->spawnArgs.GetFloat( "ground_pound_walk_range", "384" );
 }
 
 /*
@@ -2864,7 +2864,7 @@ void sdWalkerControl::Turn( void ) {
 	float ang = idMath::AngleNormalize180( idealYaw - currentYaw );
 
 	float maxTurn = rate * gameLocal.msec;
-	
+
 	float newAngles;
 	if ( ang < -maxTurn ) {
 		newAngles = currentYaw - maxTurn;
@@ -2873,7 +2873,7 @@ void sdWalkerControl::Turn( void ) {
 	} else {
 		newAngles = idealYaw;
 	}
- 
+
 	SetYaw( newAngles );
 }
 
@@ -2904,7 +2904,7 @@ void sdWalkerControl::SetPowered( bool value ) {
 		owner->StartSound( "snd_engine_start_interior", SND_VEHICLE_INTERIOR_IDLE, 0, NULL );
 		owner->StartSound( "snd_engine_start", SND_VEHICLE_IDLE, 0, NULL );
 		owner->SetLightsEnabled( 0, true );
-		
+
 		const char *sparks = owner->spawnArgs.GetString( "joints_up_sparks" );
 		if ( sparks && *sparks ) {
 			idStrList placement;
@@ -2958,7 +2958,7 @@ void sdWalkerControl::OnNewStateCompleted( controlState_t state ) {
 		case CS_WALK_BACK_LEFT_LEG_START:
 		case CS_WALK_RIGHT_LEG:
 		case CS_WALK_RIGHT_LEG_START:
-		case CS_WALK_BACK_RIGHT_LEG: 
+		case CS_WALK_BACK_RIGHT_LEG:
 		case CS_WALK_BACK_RIGHT_LEG_START: {
 			walker->GroundPound( walkingGroundPoundForce, walkingGroundPoundDamageScale, walkingGroundPoundRange );
 			break;
@@ -2997,7 +2997,7 @@ bool sdWalkerControl::SetupNextState( controlState_t state, int time, int blendT
 	newState			= state;
 	newStateTime		= time + length;
 	newStateStartTime	= time;
-	
+
 	animator->PlayAnim( ANIMCHANNEL_LEGS, stateAnims[ state ], time, blendTime );
 
 	// Gordon: Need to test with and without this, as i'd rather not do this if we don't "have" to
@@ -3019,7 +3019,7 @@ bool sdWalkerControl::SetupNextState( controlState_t state, int time, int blendT
 	}
 
 	if ( turnScale != 0.f ) {
-		TurnToward( currentYaw + ( turnScale * turnRate ) );		
+		TurnToward( currentYaw + ( turnScale * turnRate ) );
 		dynamicTurnRate = turnRate / length;
 	} else {
 		TurnToward( currentYaw );
@@ -3074,7 +3074,7 @@ bool sdWalkerControl::CheckWalk( float direction ) {
 	idClipModel* cm = walker->GetPhysics()->GetClipModel();
 
 	const idVec3& origin = walker->GetPhysics()->GetOrigin();
-	
+
 	trace_t trace;
 
 	gameLocal.clip.TranslationWorld( CLIP_DEBUG_PARMS trace, origin, origin + forward, cm, mat3_identity, walker->GetPhysics()->GetClipMask() );
@@ -3367,7 +3367,7 @@ void sdWalkerControl::SetYaw( float yaw ) {
 sdWalkerControl::UpdateSlidingFoot
 ================
 */
-void sdWalkerControl::UpdateSlidingFoot( jointHandle_t joint, bool& footOnGround, idVec3& lastFootOrg, 
+void sdWalkerControl::UpdateSlidingFoot( jointHandle_t joint, bool& footOnGround, idVec3& lastFootOrg,
 										   idVec3& lastFootGroundOrg, int& lastFootEffectTime ) {
 
 	bool wasOnGround = footOnGround;

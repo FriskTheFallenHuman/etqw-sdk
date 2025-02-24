@@ -16,7 +16,7 @@ public:
 
 private:
 	int					num;			//mal: this will be a # > ( MAX_ENTITIES + MAX_CLIENTS ).
-	int					areaNum[2];		// area number in 
+	int					areaNum[2];		// area number in
 	idBox				bbox;
 };
 

@@ -65,7 +65,7 @@ typedef enum {
 	SE_CONTROLLER_BUTTON,	// value is the button number, value2 is the controller hash << 1 OR'ed with the down flag
 	SE_CONSOLE,				// evPtr is a char*, from typing something at a non-game console
 	SE_GUI,					// an event generated specifically for guis
-	SE_IME,					// value is the event number, 
+	SE_IME,					// value is the event number,
 } sysEventType_t;
 
 typedef enum {
@@ -247,7 +247,7 @@ void			Sys_DLL_Unload( void* dllHandle );
 void			Sys_GenerateEvents( void );
 void			Sys_PumpEvents( void );
 
-// input is tied to windows, so it needs to be started up and shut down whenever 
+// input is tied to windows, so it needs to be started up and shut down whenever
 // the main window is recreated
 void			Sys_InitInput( void );
 void			Sys_ShutdownInput( void );
@@ -442,7 +442,7 @@ Performance timers
 */
 
 // This class provides some circular buffer stuff, the platform dependent one should then implement the actual performance queries
-class sdPerformanceQuery { 
+class sdPerformanceQuery {
 
 public:
 	virtual ~sdPerformanceQuery () {}
@@ -465,7 +465,7 @@ public:
 	virtual bool Sample( void ) = 0;
 };
 
-// Fixme: Not all systems may have identical semantics for performance query results? 
+// Fixme: Not all systems may have identical semantics for performance query results?
 // and some will definately be unsupported on certain systems
 typedef enum {
 	PQT_CPU0,

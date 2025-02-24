@@ -9,7 +9,7 @@ class sdTextDimensionHelper {
 public:
 			sdTextDimensionHelper( void );
 			~sdTextDimensionHelper( void );
-	
+
 	void	Init( const wchar_t* text, const int textLength, const sdBounds2D& rect, unsigned int flags, const qhandle_t font, const int pointSize, idList< int >* lineBreaks = NULL );
 
 	int		GetAdvance( const int index ) const;
@@ -70,11 +70,11 @@ sdTextDimensionHelper::Init
 ID_INLINE void sdTextDimensionHelper::Init( const wchar_t* text, const int textLength, const sdBounds2D& rect, unsigned int flags, const qhandle_t font, const int pointSize, idList< int >* lineBreaks ) {
 	if( lineBreaks != NULL ) {
 		lineBreaks->SetNum( 0, false );
-	}	
+	}
 
 	if ( textLength == 0 ) {
 		memset( advances, 0, this->textLength * sizeof( int ) );
-		this->textLength = 0;		
+		this->textLength = 0;
 		return;
 	}
 
@@ -85,10 +85,10 @@ ID_INLINE void sdTextDimensionHelper::Init( const wchar_t* text, const int textL
 
 	if( textLength > BASE_BUFFER ) {
 		advances = static_cast<	int* >( Mem_Alloc( textLength * sizeof( int ) ) );
-	}	
+	}
 
 	deviceContext->GetTextDimensions( text, rect, flags, font, pointSize, width, height, &scale, &advances, lineBreaks );
-	
+
 	int numLines = ( lineBreaks != NULL ) ? lineBreaks->Num() : 0;
 
 	// a trailing empty line isn't included in the total drawn height

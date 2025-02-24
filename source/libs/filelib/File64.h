@@ -9,7 +9,7 @@
 #ifdef _WIN32
 	#include <fcntl.h>
 	#include <sys/stat.h>
-	#include <io.h>	
+	#include <io.h>
 #else
 	#include <sys/types.h>
 	#include <sys/stat.h>
@@ -73,7 +73,7 @@ public:
 							lseek64( fh, offset, origin );
 #endif
 #else
-							_lseeki64( fh, offset, origin );							
+							_lseeki64( fh, offset, origin );
 #endif
 						}
 					}

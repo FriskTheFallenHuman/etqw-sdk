@@ -214,7 +214,7 @@ public:
 	void		SetSteerSpeed( float value )		{ data.steerSpeed = value; }
 	void		SetBraking( bool braking )			{ data.braking = braking; }
 	void		SetHandBraking( bool handBraking )	{ data.handBraking = handBraking; }
-	
+
 	float		GetForce( void ) const				{ return data.force; }
 	float		GetRightSpeed( void ) const			{ return data.rightSpeed; }
 	float		GetLeftSpeed( void ) const			{ return data.leftSpeed; }

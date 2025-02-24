@@ -103,7 +103,7 @@ ID_INLINE type idInterpolate<type>::GetCurrentValue( float time ) const {
 
 template< class type >
 class idInterpolateAccelDecelLinear  {
-	
+
 public:
 						idInterpolateAccelDecelLinear();
 
@@ -394,7 +394,7 @@ ID_INLINE type idInterpolateAccelDecelSine<type>::GetCurrentSpeed( float time ) 
 ==============================================================================================
 
 	Bandpass filter styleee, with lerping on the leading and falling edges.
-	If OOB flag is set, an additional OOB value will be returned if the 
+	If OOB flag is set, an additional OOB value will be returned if the
 	time is out with the boundaries of the filter.
 
 	        _______

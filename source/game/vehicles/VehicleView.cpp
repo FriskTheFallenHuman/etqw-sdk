@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -13,7 +13,7 @@ static char THIS_FILE[] = __FILE__;
 #include "VehicleView.h"
 #include "VehicleWeapon.h"
 #include "Transport.h"
-#include "../ContentMask.h"
+#include "ContentMask.h"
 
 /*
 ===============================================================================
@@ -531,7 +531,7 @@ sdDampedVehicleView::OnPlayerSwitched
 */
 void sdDampedVehicleView::OnPlayerSwitched( idPlayer* player, bool newPosition ) {
 	GetDampingAxis( player->vehicleEyeAxis );
-	
+
 	sdVehicleView::OnPlayerSwitched( player, newPosition );
 
 	lastReturnedAxis = player->firstPersonViewAxis;
@@ -627,7 +627,7 @@ sdDampedVehicleView_Pivot::GetRequiredViewAngles
 ================
 */
 const idAngles sdDampedVehicleView_Pivot::GetRequiredViewAngles( const idVec3& aimPosition ) const {
-// FIXME: This isn't quite correct, it doesn't take the arm into account properly. 
+// FIXME: This isn't quite correct, it doesn't take the arm into account properly.
 	return sdDampedVehicleView::GetRequiredViewAngles( aimPosition );
 }
 
@@ -775,7 +775,7 @@ sdDampedVehicleView_FreePivot::GetRequiredViewAngles
 */
 const idAngles sdDampedVehicleView_FreePivot::GetRequiredViewAngles( const idVec3& aimPosition ) const {
 
-// FIXME: This isn't quite correct, it doesn't take the arm into account properly. 
+// FIXME: This isn't quite correct, it doesn't take the arm into account properly.
 
 	idVec3 eyePos;
 //	position->GetTransport()->GetWorldOrigin( eyeJoint, eyePos );
@@ -1010,7 +1010,7 @@ idVec3 sdSmoothVehicleView::CalculateCameraDelta( const viewEvalProperties_t& st
 
 	idVec3 cameraDelta( -cameraDist, 0.0f, cameraHeight );
 	cameraDelta = cameraDelta * evalState.aimMatrix;
-	
+
 	return cameraDelta;
 }
 
@@ -1099,7 +1099,7 @@ void sdSmoothVehicleView::CalculateViewPos( idPlayer* player, idVec3& origin, id
 	state.ownerOrigin = state.owner->GetLastPushedOrigin();
 	state.ownerAxes = state.owner->GetLastPushedAxis();
 	state.ownerAxesT = state.ownerAxes.Transpose();
-	state.ownerAngles = state.ownerAxes.ToAngles(); 
+	state.ownerAngles = state.ownerAxes.ToAngles();
 	idAngles::YawToMat3( state.ownerAngles.yaw, evalState.ownerYawAxis );
 	state.ownerVelocity = state.ownerPhysics->GetLinearVelocity();
 	state.ownerDirection = state.ownerVelocity;
@@ -1128,9 +1128,9 @@ void sdSmoothVehicleView::CalculateViewPos( idPlayer* player, idVec3& origin, id
 	// Aiming
 	//
 	CalculateAimMatrix( state );
-	idVec3 cameraDelta = CalculateCameraDelta( state );	
+	idVec3 cameraDelta = CalculateCameraDelta( state );
 	evalState.cameraOrigin = cameraDelta + state.ownerOrigin;
-	
+
 	previousRawAimMatrix = evalState.aimMatrix;
 
 	//
@@ -1515,7 +1515,7 @@ idVec3 sdSmoothVehicleView_Locked::CalculateCameraDelta( const viewEvalPropertie
 		if ( state.ownerAxes[ 0 ] * state.ownerVelocity < 0.0f ) {
 			turningPredict = -turningPredict;
 		}
-	
+
 		futurePredictedPosition += turningPredict;
 		idVec3 directionToFuture = futurePredictedPosition - state.ownerOrigin;
 		float distanceFromHere = directionToFuture.Normalize();
@@ -1539,10 +1539,10 @@ idVec3 sdSmoothVehicleView_Locked::CalculateCameraDelta( const viewEvalPropertie
 		newYawAngle = currentYawAngle + yawDiff;
 		futureDelta.x = cameraDist * idMath::Cos( DEG2RAD( newYawAngle ) );
 		futureDelta.y = cameraDist * idMath::Sin( DEG2RAD( newYawAngle ) );
-		
+
 		// modify the aim matrix to fit what all this has done
 		noTopHatFutureDelta = cameraDelta = futureDelta;
-	} 
+	}
 
 	if ( topHatTransition > 0.0f ) {
 		idAngles topHatViewAngles = state.viewAngles;
@@ -1564,7 +1564,7 @@ idVec3 sdSmoothVehicleView_Locked::CalculateCameraDelta( const viewEvalPropertie
 			cameraDelta = Lerp( noTopHatFutureDelta, topHatDelta, topHatTransition );
 			idVec3 deltaDirection = cameraDelta;
 			float deltaLength = deltaDirection.Normalize();
-			if ( deltaLength > idMath::FLT_EPSILON ) { 
+			if ( deltaLength > idMath::FLT_EPSILON ) {
 				float idealLength = topHatDelta.Length();
 				cameraDelta = deltaDirection * idealLength;
 			} else {
@@ -1671,7 +1671,7 @@ void sdIcarusVehicleView::CalculateViewPos( idPlayer* player, idVec3& origin, id
 			}
 		}
 	}
-	
+
 	origin += player->GetEyeOffset( idPlayer::EP_NORMAL );
 	thirdPersonViewOrigin = origin;
 	thirdPersonViewAxes = axis;

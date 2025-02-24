@@ -52,7 +52,7 @@ void sdDynamicBlockManagerBase::ShutdownPools() {
 sdDynamicBlockManagerBase::CompactPools
 ============
 */
-void sdDynamicBlockManagerBase::CompactPools() {	
+void sdDynamicBlockManagerBase::CompactPools() {
 //	idLib::Printf( "Compacting %i memory pools...\n", GetList().Num() );
 
 	int totalBytesFreed = 0;
@@ -60,7 +60,7 @@ void sdDynamicBlockManagerBase::CompactPools() {
 	for( int i = 0; i < GetList().Num(); i++ ) {
 		bytesFreed = GetList()[ i ]->Compact();
 //		if( bytesFreed > 0 ) {
-//			idLib::Printf( "%s: freed %i bytes\n", GetList()[ i ]->GetName(), bytesFreed );		
+//			idLib::Printf( "%s: freed %i bytes\n", GetList()[ i ]->GetName(), bytesFreed );
 //		}
 		totalBytesFreed += bytesFreed;
 	}

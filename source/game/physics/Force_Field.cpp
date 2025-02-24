@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,10 +12,10 @@ static char THIS_FILE[] = __FILE__;
 
 #include "Force_Field.h"
 #include "Clip.h"
-#include "../Entity.h"
+#include "Entity.h"
 #include "Physics_Player.h"
 #include "Physics_Monster.h"
-#include "../WorldSpawn.h"
+#include "WorldSpawn.h"
 
 CLASS_DECLARATION( idForce, idForce_Field )
 END_CLASS

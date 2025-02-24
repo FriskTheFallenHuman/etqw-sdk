@@ -66,6 +66,20 @@
 	#include <windows.h>
 #endif
 
+	#ifdef _MSC_VER
+		#ifdef GAME_DLL
+			#define ID_GAME_API					__declspec(dllexport)
+		#else
+			#define ID_GAME_API
+		#endif
+	#else
+		#ifdef GAME_DLL
+			#define ID_GAME_API					__attribute__((visibility ("default")))
+		#else
+			#define ID_GAME_API
+		#endif
+	#endif
+
 	// stupid namespace polluting Microsoft monkeys
 	#undef FindText
 	#undef IsMinimized
@@ -111,7 +125,7 @@
 
 	#include <pthread.h>
 	#include <stddef.h>
-	
+
 	#undef WIN32
 	#undef _XENON
 	#undef _CONSOLE

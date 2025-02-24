@@ -158,7 +158,7 @@ public:
 	const idStrList&						GetChildren( void ) const { return children; }
 
 	static bool								ParseProperties( idList< sdDeclGUIProperty* >& properties, idLexer& src );
-	static bool								ParseEvents( idList< sdDeclGUIEvent* >& events, idLexer& src );	
+	static bool								ParseEvents( idList< sdDeclGUIEvent* >& events, idLexer& src );
 
 #ifdef _DEBUG
 	bool									GetBreakOnDraw() const { return breakOnDraw; }
@@ -191,7 +191,7 @@ sdDeclGUI
 class sdDeclGUI :
 	public idDecl,
 	public sdDeclGUITimelineHolder {
-public:	
+public:
 	static const int LEXER_FLAGS			= LEXFL_NOSTRINGCONCAT	| LEXFL_ALLOWMULTICHARLITERALS | LEXFL_ALLOWBACKSLASHSTRINGCONCAT | LEXFL_NOEMITSTRINGESCAPECHARS;
 											sdDeclGUI( void );
 	virtual									~sdDeclGUI( void );
@@ -236,9 +236,9 @@ private:
 	idList< sdDeclGUIWindow* >				windows;
 	idList< sdDeclGUIProperty* >			properties;
 	idList< sdDeclGUIEvent* >				events;
-	
+
 	sdDeclGUITimelineHolder					timelines;
-	
+
 	idDict									materials;
 	idDict									sounds;
 	idDict									colors;

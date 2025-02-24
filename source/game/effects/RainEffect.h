@@ -5,7 +5,7 @@
 #define __RAINEFFECT_H__
 
 #include "HardcodedParticleSystem.h"
-#include "../Atmosphere.h"
+#include "Atmosphere.h"
 #include "Effects.h"
 
 class sdRainEffect : public idEntity {

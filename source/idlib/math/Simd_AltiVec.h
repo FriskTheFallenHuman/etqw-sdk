@@ -15,7 +15,7 @@
 // Defines for enabling parts of the library
 #if 0 //DAJ turn them all off
 // Turns on/off the simple math routines (add, sub, div, etc)
-#define ENABLE_SIMPLE_MATH	
+#define ENABLE_SIMPLE_MATH
 
 // Turns on/off the dot routines
 #define ENABLE_DOT
@@ -59,7 +59,7 @@
 // then we take a big performance hit from unaligned stores.
 //#define VERTEXCACHE_ALIGNED
 
-// This turns on support for PPC intrinsics in the SIMD_AltiVec.cpp file. Right now it's only used for frsqrte. GCC 
+// This turns on support for PPC intrinsics in the SIMD_AltiVec.cpp file. Right now it's only used for frsqrte. GCC
 // supports these intrinsics but XLC does not.
 #define PPC_INTRINSICS
 
@@ -83,11 +83,11 @@ public:
  	virtual void VPCALL Mul( float *dst, const float constant, const float *src, const int count);
 	virtual void VPCALL Mul( float *dst, const float *src0, const float *src1, const int count );
 	virtual void VPCALL Div( float *dst, const float constant, const float *divisor, const int count );
-	virtual void VPCALL Div( float *dst, const float *src0, const float *src1, const int count ); 
+	virtual void VPCALL Div( float *dst, const float *src0, const float *src1, const int count );
 	virtual void VPCALL MulAdd( float *dst, const float constant, const float *src, const int count );
 	virtual void VPCALL MulAdd( float *dst, const float *src0, const float *src1, const int count );
 	virtual void VPCALL MulSub( float *dst, const float constant, const float *src, const int count );
-	virtual void VPCALL MulSub( float *dst, const float *src0, const float *src1, const int count ); 
+	virtual void VPCALL MulSub( float *dst, const float *src0, const float *src1, const int count );
 #endif
 
 #ifdef ENABLE_DOT
@@ -114,7 +114,7 @@ public:
 	virtual void VPCALL CmpLE( byte *dst,			const byte bitNum,		const float *src0,		const float constant,	const int count );
 #endif
 
-#ifdef ENABLE_MINMAX	
+#ifdef ENABLE_MINMAX
 	// Min/Max. Expects data structures in contiguous memory
 	virtual void VPCALL MinMax( float &min,			float &max,				const float *src,		const int count );
 	virtual	void VPCALL MinMax( idVec2 &min,		idVec2 &max,			const idVec2 *src,		const int count );
@@ -183,7 +183,7 @@ public:
 
 #ifdef ENABLE_DERIVE
 	virtual void VPCALL DeriveTriPlanes( idPlane *planes, const idDrawVert *verts, const int numVerts, const int *indexes, const int numIndexes );
-#endif	
+#endif
 
 #ifdef ENABLE_CREATE
 	virtual int  VPCALL CreateShadowCache( idVec4 *vertexCache, const idDrawVert *verts, const int numVerts );

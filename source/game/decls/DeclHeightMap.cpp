@@ -2,11 +2,11 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclHeightMap.h"
-#include "../../framework/DeclParseHelper.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -57,7 +57,7 @@ bool sdDeclHeightMap::Parse( const char *text, const int textLength ) {
 	src.SetFlags( DECL_LEXER_FLAGS );
 //	src.LoadMemory( text, textLength, GetFileName(), GetLineNum() );
 //	src.AddIncludes( GetFileLevelIncludeDependencies() );
-	sdDeclParseHelper declHelper( this, text, textLength, src );	
+	sdDeclParseHelper declHelper( this, text, textLength, src );
 
 	src.SkipUntilString( "{", &token );
 
@@ -137,7 +137,7 @@ void sdHeightMapInstance::Init( const char* declName, const idBounds& bounds ) {
 	if ( declHeightMap == NULL ) {
 		gameLocal.Error( "sdHeightMapInstance::Init Invalid Heightmap '%s'", declName );
 	}
-	
+
 	heightMap = &declHeightMap->GetHeightMap();
 	heightMapData.Init( bounds );
 }

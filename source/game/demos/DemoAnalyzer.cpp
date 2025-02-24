@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,11 +11,11 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "DemoAnalyzer.h"
-#include "../structures/TeamManager.h"
-#include "../Player.h"
-#include "../vehicles/Transport.h"
+#include "structures/TeamManager.h"
+#include "Player.h"
+#include "vehicles/Transport.h"
 
-idCVar sdDemoAnalyzer::g_demoAnalysisSectorSize( "g_demoAnalysisSectorSize", "64", CVAR_SYSTEM | CVAR_INTEGER, "sector size for stat generation" );	
+idCVar sdDemoAnalyzer::g_demoAnalysisSectorSize( "g_demoAnalysisSectorSize", "64", CVAR_SYSTEM | CVAR_INTEGER, "sector size for stat generation" );
 
 /*
 ================

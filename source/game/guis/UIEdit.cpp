@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,8 +11,8 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../../framework/KeyInput.h"
-#include "../../sys/sys_local.h"
+#include "framework/KeyInput.h"
+#include "sys/sys_local.h"
 
 #include "UIWindow.h"
 #include "UserInterfaceLocal.h"
@@ -115,7 +115,7 @@ sdUIEdit::GetFunction
 */
 sdUIFunctionInstance* sdUIEdit::GetFunction( const char* name ) {
 	const sdUITemplateFunction< sdUIEdit >* function = sdUIEdit::FindFunction( name );
-	if ( !function ) {		
+	if ( !function ) {
 		return sdUIWindow::GetFunction( name );
 	}
 
@@ -145,12 +145,12 @@ sdUIEdit::DrawLocal
 void sdUIEdit::DrawLocal() {
 	if( PreDraw() ) {
 		DrawBackground( cachedClientRect );
-		
+
 		deviceContext->PushClipRect( GetDrawRect() );
 
 		helper.DrawText( foreColor );
 		helper.DrawLocal();
-		
+
 		deviceContext->PopClipRect();
 
 		// border
@@ -159,7 +159,7 @@ void sdUIEdit::DrawLocal() {
 		}
 	}
 
-	PostDraw();		
+	PostDraw();
 }
 
 /*
@@ -183,7 +183,7 @@ sdUIEdit::Script_ClearText
 ============
 */
 void sdUIEdit::Script_ClearText( sdUIFunctionStack& stack ) {
-	ClearText();	
+	ClearText();
 }
 
 /*
@@ -349,7 +349,7 @@ void sdUIEdit::Script_IsWhitespace( sdUIFunctionStack& stack ) {
 			i++;
 			continue;
 		}
-		
+
 		if( c != '\n' && c != ' ' ) {
 			stack.Push( false );
 			return;
@@ -387,7 +387,7 @@ sdUIEdit::Script_SurroundSelection
 void sdUIEdit::Script_SurroundSelection( sdUIFunctionStack& stack ) {
 	idStr prefix;
 	stack.Pop( prefix );
-	
+
 	idStr suffix;
 	stack.Pop( suffix );
 

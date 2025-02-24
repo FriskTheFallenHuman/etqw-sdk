@@ -135,12 +135,12 @@ public:
 
 	int							sequence;			// snapshot number
 	int							time;
-	
+
 	idList< int >				visibleEntities;
 	sdBitField< MAX_CLIENTS >	clientUserCommands;	// which clients have user commands going along with this snapshot
 	sdEntityState*				firstEntityState[ NSM_NUM_MODES ];
 	sdGameState*				gameStates[ ENSM_NUM_MODES ];
-	
+
 	snapshot_t*					next;
 };
 

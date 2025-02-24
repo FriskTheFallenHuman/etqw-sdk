@@ -44,7 +44,7 @@ struct sdPrecipitationParameters {
 	float					weightMin;			// Used to control tumbling speed with snow
 	float					weightMax;
 	float					windScale;			// Scales the atmosphere's wind direction
-	float					gustWindScale;		// Scales the atmosphere's wind direction during gusts 
+	float					gustWindScale;		// Scales the atmosphere's wind direction during gusts
 	float					fallMin;			// Z-axis velocity
 	float					fallMax;
 	float					timeMin;

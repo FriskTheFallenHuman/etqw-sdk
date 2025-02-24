@@ -85,7 +85,7 @@ public:
 	virtual int				ReadMat3( idMat3 &mat );
 	virtual int				Read1DFloatArray( float* dst );
 	virtual int				ReadFloatArray( float* src, const int num );
-	
+
 	// Endian portable alternatives to Write(...)
 	virtual int				WriteInt( const int value );
 	virtual int				WriteUnsignedInt( const unsigned int value );

@@ -1,10 +1,10 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h"
+#include "Game_local.h"
 #include "Script_DLL.h"
 #include "Script_ScriptObject.h"
 #include "Script_Helper.h"
@@ -15,7 +15,7 @@ extern const idEventDefInternal EV_Thread_Execute;
 #pragma warning( push )
 #pragma warning( disable: 4312 )
 
-class MainCoroutine : public sdDLLThread { 
+class MainCoroutine : public sdDLLThread {
 public:
     MainCoroutine() { s_current = this; s_main = this; storedStackPointer = ( char* )0xFFFFFFFF; flags.threadDying = false; name = "main"; }
     virtual void Routine() {}
@@ -294,7 +294,7 @@ bool sdDLLProgram::Init( void ) {
 			newInfo->functions.Alloc() = new sdDLLClassFunction( fInfo ); // FIXME: Block Alloc
 		}
 
-		for ( sdClassVariableInfo* vInfo = c->variableInfo; vInfo->name != NULL; vInfo++ ) {	
+		for ( sdClassVariableInfo* vInfo = c->variableInfo; vInfo->name != NULL; vInfo++ ) {
 			newInfo->variablesHash.Add( newInfo->variablesHash.GenerateKey( vInfo->name ), newInfo->variables.Num() );
 			newInfo->variables.Alloc() = new sdDLLClassVariable( vInfo ); // FIXME: Block Alloc
 		}
@@ -444,7 +444,7 @@ sdDLLProgram::FindFunction
 */
 const sdProgram::sdFunction* sdDLLProgram::FindFunction( const char* name, const sdProgram::sdTypeObject* object ) {
 	const sdDLLTypeObject* t = reinterpret_cast< const sdDLLTypeObject* >( object );
-	
+
 	const sdDLLClassInfo* info = t->GetInfo();
 
 	for ( const sdDLLClassInfo* i = info; i != NULL; i = i->superClass ) {
@@ -802,7 +802,7 @@ void sdDLLThread::Clear( void ) {
 	if ( program != NULL ) {
 		program->OnThreadShutdown( this );
 	}
-	
+
 	if ( call != &call1 && call != &call2 ) {
 		delete call;
 	}
@@ -822,7 +822,7 @@ void sdDLLThread::Clear( void ) {
 	name.Clear();
 
     callee = NULL;
-	caller = NULL; 
+	caller = NULL;
 
 	flags.manualDelete		= false;
 	flags.manualControl		= false;
@@ -1118,7 +1118,7 @@ Coroutine_Enter
 ================
 */
 void Coroutine_Enter( sdDLLThread *self ) {
-#if defined( MACOS_X ) || defined( __linux__ ) || ( defined( _WIN32 ) && !defined( _XENON ) )	
+#if defined( MACOS_X ) || defined( __linux__ ) || ( defined( _WIN32 ) && !defined( _XENON ) )
 
 	PUSH_REGS;
 
@@ -1189,7 +1189,7 @@ void Coroutine_Enter( sdDLLThread *self ) {
 	// never returns
 	gameLocal.Error( "setcontext %s failed", self->name.c_str() );
 #else
-	longjmp( self->environment, 1 );		
+	longjmp( self->environment, 1 );
 #endif
 
 #else
@@ -1430,7 +1430,7 @@ void sdDLLScriptInterface::DoFreeObject( sdCompiledScript_ClassBase* instance ) 
 
 	sdScriptHelper h1;
 	obj->CallNonBlockingScriptEvent( obj->GetDestructor(), h1 );
-	
+
 	program->FreeScriptObject( obj );
 
 	return;

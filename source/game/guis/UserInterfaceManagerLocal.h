@@ -26,7 +26,7 @@ public:
 	virtual int							NumInstances() const;
 	virtual void						Init( void );
 	virtual void						Shutdown( void );
-	virtual void						Clear( bool force = false );	
+	virtual void						Clear( bool force = false );
 	virtual void						Update( bool outOfSequence );
 	virtual void						OnInputInit( void );
 	virtual void						OnInputShutdown( void );
@@ -35,7 +35,7 @@ public:
 
 	virtual void						BeginLevelLoad( void );
 	virtual void						EndLevelLoad( void );
-	
+
 	virtual renderCallbackHandle_t		GetRenderCallbackHandle( const char* name ) const;
 	virtual uiRenderCallback_t			GetRenderCallback( const renderCallbackHandle_t& handle ) const;
 
@@ -50,7 +50,7 @@ public:
 	virtual void						RegisterListEnumerationCallback( const char* name, uiListEnumerationCallback_t callback );
 	virtual void						UnregisterListEnumerationCallback( const char* name );
 	virtual	uiListEnumerationCallback_t	GetListEnumerationCallback( const char* callback );
-	
+
 	virtual void								RegisterIconEnumerationCallback( const char* name, uiIconEnumerationCallback_t callback );
 	virtual void								UnregisterIconEnumerationCallback( const char* name );
 	virtual	uiIconEnumerationCallback_t			GetIconEnumerationCallback( const char* callback );
@@ -80,13 +80,13 @@ public:
 	static void							PrintGuiStats( const idCmdArgs& args );
 
 private:
-	template< class T >	
+	template< class T >
 	void								RegisterCallback( idHashMap< T >& list, const char* name, T callback );
-	template< class T >					
+	template< class T >
 	void								UnregisterCallback( idHashMap< T >& list, const char* name );
 	template< class T >
 	T									GetCallback( idHashMap< T >& list, const char* name );
-	
+
 	int									GetUserInterfaceIndex( const guiHandle_t handle );
 
 private:

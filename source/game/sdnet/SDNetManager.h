@@ -6,8 +6,8 @@
 
 #include "SDNetProperties.h"
 
-#include "../../sdnet/SDNetSession.h"
-#include "../../sdnet/SDNetTask.h"
+#include "sdnet/SDNetSession.h"
+#include "sdnet/SDNetTask.h"
 
 class sdNetUser;
 class sdNetMessage;
@@ -63,7 +63,7 @@ public:
 		SFS_MIN = -1,
 		SFS_DONTCARE = 0,
 		SFS_SHOWONLY,
-		SFS_HIDE,		
+		SFS_HIDE,
 		SFS_MAX
 	};
 
@@ -102,7 +102,7 @@ public:
 		SFO_EQUAL = 0,
 		SFO_NOT_EQUAL,
 		SFO_LESS,
-		SFO_GREATER,		
+		SFO_GREATER,
 		SFO_NOOP,
 		SFO_CONTAINS,
 		SFO_NOT_CONTAINS,
@@ -191,7 +191,7 @@ public:
 
 	const char*						GetName() const { return "sdnet"; }
 
-	void							CreateServerList( sdUIList* list, findServerSource_e source, findServerMode_e mode, bool flagOffline );	
+	void							CreateServerList( sdUIList* list, findServerSource_e source, findServerMode_e mode, bool flagOffline );
 	void							CreateHotServerList( sdUIList* list, findServerSource_e source );
 	void							CreateRetrievedUserNameList( sdUIList* list );
 
@@ -345,7 +345,7 @@ private:
 
 	void							Script_FormatSessionInfo( sdUIFunctionStack& stack );
 
-	void							Script_FindServers( sdUIFunctionStack& stack );	
+	void							Script_FindServers( sdUIFunctionStack& stack );
 	void							Script_RefreshHotServers( sdUIFunctionStack& stack );
 	void							Script_UpdateHotServers( sdUIFunctionStack& stack );
 	void							Script_GetNumInterestedInServer( sdUIFunctionStack& stack );
@@ -449,7 +449,7 @@ private:
 
 	void							CancelUserTasks();
 	bool							DoFiltering( const sdNetSession& netSession ) const;
-	
+
 
 private:
 	static idHashMap< uiFunction_t* >	uiFunctions;
@@ -509,7 +509,7 @@ private:
 	int									lastServerUpdateIndex;
 
 	idList< netadr_t >					unfilteredSessions;
-	
+
 	struct sessionIndices_t {
 		int sessionListIndex;
 		int uiListIndex;

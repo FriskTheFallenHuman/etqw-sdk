@@ -6,8 +6,8 @@
 
 class sdUTF8 {
 public:
-			sdUTF8( idFile* file );	
-			sdUTF8( const byte* data, const int size );	
+			sdUTF8( idFile* file );
+			sdUTF8( const byte* data, const int size );
 			~sdUTF8( void );
 
 	int		DecodeLength( void ) const;

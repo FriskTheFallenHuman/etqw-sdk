@@ -1,11 +1,11 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #include "AAS_local.h"
-#include "../../../libs/AASLib/AASFile.h"
+#include "libs/AASLib/AASFile.h"
 
 /*
 ============

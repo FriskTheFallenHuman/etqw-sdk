@@ -1,14 +1,14 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #include "Anim_FrameCommands.h"
-#include "../demos/DemoScript.h"
-#include "../demos/DemoManager.h"
-#include "../Player.h"
-#include "../Weapon.h"
+#include "demos/DemoScript.h"
+#include "demos/DemoManager.h"
+#include "Player.h"
+#include "Weapon.h"
 
 /*
 ===============================================================================
@@ -30,7 +30,7 @@ sdAnimFrameCommand::factory_t sdAnimFrameCommand::frameCommandFactory;
 sdAnimFrameCommand::Init
 ============
 */
-void sdAnimFrameCommand::Init( void ) {	
+void sdAnimFrameCommand::Init( void ) {
 	FRAME_COMMAND_ALLOC_TYPE( sdAnimFrameCommand_ScriptFunction );
 	FRAME_COMMAND_ALLOC_TYPE( sdAnimFrameCommand_ScriptObjectFunction );
 	FRAME_COMMAND_ALLOC_TYPE( sdAnimFrameCommand_Event );
@@ -274,14 +274,14 @@ bool sdAnimFrameCommand_Fade::Init( idParser& src ) {
 
 	if ( !src.ReadTokenOnLine( &token ) ) {
 		src.Error( "sdAnimFrameCommand_Fade::Init Unexpected end of line" );
-		return false;		
+		return false;
 	}
 
 	to = atof( token.c_str() );
 
 	if ( !src.ReadTokenOnLine( &token ) ) {
 		src.Error( "sdAnimFrameCommand_Fade::Init Unexpected end of line" );
-		return false;		
+		return false;
 	}
 
 	over = token.GetFloatValue();
@@ -300,7 +300,7 @@ void sdAnimFrameCommand_Fade::Run( idClass* ent ) const {
 		entity->FadeSound( soundChannel, to, over );
 	} else {
 		gameLocal.Warning( "sdAnimFrameCommand_Sound::Run Not Currently Supported on Client Entities" );
-	}	
+	}
 }
 
 /*
@@ -556,6 +556,6 @@ void sdAnimFrameCommand_WeaponState::Run( idClass* ent ) const {
 	if ( g_debugFrameCommands.GetBool() ) {
 		if( !idStr::Length( g_debugFrameCommandsFilter.GetString()) || idStr::FindText( GetTypeName(), g_debugFrameCommandsFilter.GetString(), false ) != idStr::INVALID_POSITION )  {
 			gameLocal.Printf( "Command '%s': state '%s'\n", GetTypeName(), command.c_str() );
-		}		
+		}
 	}
 }

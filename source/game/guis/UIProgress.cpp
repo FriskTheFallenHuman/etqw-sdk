@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -16,9 +16,9 @@ static char THIS_FILE[] = __FILE__;
 #include "UIProgress.h"
 #include "UserInterfaceManager.h"
 
-#include "../../renderer/DeviceContext.h"
+#include "renderer/DeviceContext.h"
 
-#include "../../sys/sys_local.h"
+#include "sys/sys_local.h"
 
 SD_UI_IMPLEMENT_CLASS( sdUIProgress, sdUIWindow )
 
@@ -118,7 +118,7 @@ void sdUIProgress::DrawSegment( const idVec4& color, eSliderPart begin, eSliderP
 	} else {
 		DrawVerticalProgress( drawRect, color, vec2_one, sliderParts[ SP_BEGIN ], sliderParts[ SP_CENTER ], sliderParts[ SP_END ] );
 	}
-	
+
 }
 
 /*
@@ -126,7 +126,7 @@ void sdUIProgress::DrawSegment( const idVec4& color, eSliderPart begin, eSliderP
 sdUIProgress::DrawLocal
 ============
 */
-void sdUIProgress::DrawLocal() {	
+void sdUIProgress::DrawLocal() {
 	if( !PreDraw() ) {
 		return;
 	}
@@ -137,7 +137,7 @@ void sdUIProgress::DrawLocal() {
 
 	int xDim = 0;
 	int yDim = 1;
-	float totalDim = 0.0f;	
+	float totalDim = 0.0f;
 
 	switch( idMath::Ftoi( orientation ) ) {
 		case SO_HORIZONTAL:
@@ -155,7 +155,7 @@ void sdUIProgress::DrawLocal() {
 			totalDim = rect.GetWidth() / numSegments;
 			break;
 	}
-	
+
 
 	sdBounds2D clipRect( cachedClientRect );
 	float percent = GetPercent();
@@ -165,7 +165,7 @@ void sdUIProgress::DrawLocal() {
 	} else {
 		clipRect.GetMaxs()[ xDim ] = clipRect.GetMins()[ xDim ] + cachedClientRect[ xDim + 2 ] * percent;
 	}
-	
+
 	{
 		deviceContext->PushClipRect( clipRect );
 		// draw normal segments
@@ -204,8 +204,8 @@ void sdUIProgress::DrawLocal() {
 			}
 			deviceContext->PopClipRect();
 		}
-	}	
-	
+	}
+
 	// text
 	DrawText();
 

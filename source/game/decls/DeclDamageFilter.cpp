@@ -2,12 +2,12 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclDamageFilter.h"
-#include "../Game_local.h"
-#include "../../framework/DeclParseHelper.h"
+#include "Game_local.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================

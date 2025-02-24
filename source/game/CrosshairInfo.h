@@ -4,7 +4,7 @@
 #ifndef __GAME_CROSSHAIRINFO_H__
 #define __GAME_CROSSHAIRINFO_H__
 
-#include "../cm/CollisionModel.h"
+#include "cm/CollisionModel.h"
 
 class idEntity;
 

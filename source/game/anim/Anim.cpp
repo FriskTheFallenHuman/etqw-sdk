@@ -2,7 +2,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,7 +12,7 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Anim.h"
-#include "../../framework/Licensee.h"
+#include "framework/Licensee.h"
 
 bool idAnimManager::forceExport = false;
 
@@ -348,7 +348,7 @@ bool idMD5Anim::LoadAnim( const char *filename ) {
 	for( i = 0; i < numJoints; i++ ) {
 		parser.ReadToken( &token );
 		jointInfo[ i ].nameIndex = AssertShortRange( animationLib.JointIndex( token ) );
-		
+
 		// parse parent num
 		jointInfo[ i ].parentNum = AssertShortRange( parser.ParseInt() );
 		if ( jointInfo[ i ].parentNum >= i ) {
@@ -407,8 +407,8 @@ bool idMD5Anim::LoadAnim( const char *filename ) {
 				fabsf( t.y ) >= idCompressedJointQuat::MAX_BONE_LENGTH ||
 				fabsf( t.z ) >= idCompressedJointQuat::MAX_BONE_LENGTH ) {
 					int jointNum = jointInfo[ i ].nameIndex;
-					gameLocal.Warning( "WARNING: bone offset of '%s' joint '%s' greater than %i", 
-						filename, 
+					gameLocal.Warning( "WARNING: bone offset of '%s' joint '%s' greater than %i",
+						filename,
 						animationLib.JointName( jointNum ),
 						idCompressedJointQuat::MAX_BONE_LENGTH );
 
@@ -562,7 +562,7 @@ void idMD5Anim::Resample( void ) {
 				if ( animBits == 0 ) {
 					continue;
 				}
-				baseIndex[numBaseIndex] = numBaseIndex; 
+				baseIndex[numBaseIndex] = numBaseIndex;
 				idCompressedJointQuat *jointPtr = &compressedJoints[numBaseIndex];
 				idCompressedJointQuat *blendPtr = &compressedBlendJoints[numBaseIndex];
 				const short *jointframe1 = srcPtr + infoPtr->firstComponent;
@@ -831,7 +831,7 @@ void idMD5Anim::ConvertTimeToFrame( int time, int cyclecount, frameBlend_t &fram
 		frame.cycleCount	= 0;
 		return;
 	}
-	
+
 	frameTime			= time * frameRate;
 	frameNum			= frameTime / 1000;
 	frame.cycleCount	= frameNum / ( numFrames - 1 );
@@ -844,7 +844,7 @@ void idMD5Anim::ConvertTimeToFrame( int time, int cyclecount, frameBlend_t &fram
 		frame.frontlerp		= 1.0f;
 		return;
 	}
-	
+
 	frame.frame1 = frameNum % ( numFrames - 1 );
 	frame.frame2 = frame.frame1 + 1;
 	if ( frame.frame2 >= numFrames ) {
@@ -906,10 +906,10 @@ idMD5Anim::GetOriginRotation
 void idMD5Anim::GetOriginRotation( idQuat &rotation, int time, int cyclecount ) const {
 	frameBlend_t	frame;
 	int				animBits;
-	
+
 	animBits = jointInfo[ 0 ].animBits;
 	if ( !( animBits & ( ANIM_QX | ANIM_QY | ANIM_QZ ) ) ) {
-		// just use the baseframe		
+		// just use the baseframe
 		rotation[0] = idCompressedJointQuat::ShortToQuat( baseFrame[ 0 ].q[0] );
 		rotation[1] = idCompressedJointQuat::ShortToQuat( baseFrame[ 0 ].q[1] );
 		rotation[2] = idCompressedJointQuat::ShortToQuat( baseFrame[ 0 ].q[2] );
@@ -1768,7 +1768,7 @@ void idAnimManager::FlushUnusedAnims( void ) {
 	int						i;
 	idMD5Anim				**animptr;
 	idList<idMD5Anim *>		removeAnims;
-	
+
 	for ( i = 0; i < animations.Num(); i++ ) {
 		animptr = animations.GetIndex( i );
 		if ( animptr && *animptr ) {

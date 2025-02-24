@@ -1,14 +1,14 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #include "AAS_local.h"
-#include "../../../libs/AASLib/AASFile.h"
+#include "libs/AASLib/AASFile.h"
 
-#include "../BotThread.h"
-#include "../BotThreadData.h"
+#include "botai/BotThread.h"
+#include "botai/BotThreadData.h"
 
 const float	MAX_WALK_PATH_DISTANCE				= 512.0f;
 const float MAX_WALK_PATH_DEST_DISTANCE			= 4096.0f;
@@ -61,7 +61,7 @@ idAASLocal::WalkPathIsValid
   Returns true if one can walk in a straight line from start to goal.
 ============
 */
-ID_INLINE bool idAASLocal::WalkPathIsValid( int startAreaNum, const idVec3 &startOrigin, int goalAreaNum, 
+ID_INLINE bool idAASLocal::WalkPathIsValid( int startAreaNum, const idVec3 &startOrigin, int goalAreaNum,
 							    const idVec3 &goalOrigin, int travelFlags, int &endAreaNum ) const {
 	aasTraceFloor_t trace;
 	file->TraceFloor( trace, startOrigin, startAreaNum, goalOrigin, goalAreaNum, travelFlags );
@@ -157,7 +157,7 @@ bool idAASLocal::WalkPathToGoal( idAASPath &path, int startAreaNum, const idVec3
 
 		if ( i == 0 ) {
 			path.travelTime = travelTime;
-		}	
+		}
 
 		// no need to check through the first area
 		if ( curAreaNum != startAreaNum ) {

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -24,7 +24,7 @@ static char THIS_FILE[] = __FILE__;
 #include "Script_Compiler.h"
 #include "Script_Helper.h"
 #include "Script_ScriptObject.h"
-#include "../Entity.h"
+#include "Entity.h"
 
 int idInterpreter::s_stackHigh = 0;
 
@@ -162,7 +162,7 @@ void idInterpreter::StackTrace( void ) const {
 	if ( top >= MAX_STACK_DEPTH ) {
 		top = MAX_STACK_DEPTH - 1;
 	}
-	
+
 	if ( !currentFunction ) {
 		gameLocal.Printf( "<NO FUNCTION>\n" );
 	} else {
@@ -365,7 +365,7 @@ idInterpreter::LeaveFunction
 void idInterpreter::LeaveFunction( idVarDef *returnDef ) {
 	prstack_t *stack;
 	varEval_t ret;
-	
+
 	if ( callStackDepth <= 0 ) {
 		Error( "prog stack underflow" );
 	}
@@ -411,7 +411,7 @@ void idInterpreter::LeaveFunction( idVarDef *returnDef ) {
 
 	// up stack
 	callStackDepth--;
-	stack = &callStack[ callStackDepth ]; 
+	stack = &callStack[ callStackDepth ];
 	currentFunction = stack->f;
 	localstackBase = stack->stackbase;
 	NextInstruction( stack->s );
@@ -558,7 +558,7 @@ void idInterpreter::CallEvent( const function_t *func, int argsize ) {
 				break;
 			}
 
-			default : 
+			default :
 				Error( "Invalid arg format string for '%s' event.", evdef->GetName() );
 				break;
 		}
@@ -752,7 +752,7 @@ bool idInterpreter::Execute( void ) {
 				newThread = idThread::AllocThread();
 				newThread->Init( this, func, func->parmTotal, st->op == OP_GUIOBJTHREAD );
 				newThread->GetAutoNode().AddToEnd( obj->GetAutoThreads() );
-				
+
 				idEntity* ent = obj->GetClass()->Cast< idEntity >();
 				if ( ent != NULL ) {
 					newThread->SetName( va( "%s_%s", func->type->Name(), ent->name.c_str() ) );
@@ -786,7 +786,7 @@ bool idInterpreter::Execute( void ) {
 			func = NULL;
 			if ( obj ) {
 				const idTypeDef* t = reinterpret_cast< idProgramTypeObject* >( obj->GetObject() )->GetType();
-				
+
 				func = t->GetVirtualFunction( st->a->value.virtualFunction );
 			} else {
 				Warning( "Virtual function call on a NULL entity" );
@@ -833,12 +833,12 @@ bool idInterpreter::Execute( void ) {
 			break;
 		}
 
-		case OP_OBJECTCALL:	
+		case OP_OBJECTCALL:
 			var_a = GetVariable( st->a );
 			obj = GetScriptObject( *var_a.objectId );
 			if ( obj ) {
 				const idTypeDef* t = reinterpret_cast< idProgramTypeObject* >( obj->GetObject() )->GetType();
-				
+
 				func = t->GetFunction( st->b->value.virtualFunction );
 				EnterFunction( func, false );
 			} else {
@@ -1062,7 +1062,7 @@ bool idInterpreter::Execute( void ) {
 			*var_c.floatPtr = ( *var_a.intPtr != 0 ) && ( *var_b.intPtr != 0 );
 			break;
 
-		case OP_OR:	
+		case OP_OR:
 			var_a = GetVariable( st->a );
 			var_b = GetVariable( st->b );
 			var_c = GetVariable( st->c );
@@ -1082,14 +1082,14 @@ bool idInterpreter::Execute( void ) {
 			var_c = GetVariable( st->c );
 			*var_c.floatPtr = ( *var_a.floatPtr != 0.0f ) || ( *var_b.intPtr != 0 );
 			break;*/
-			
+
 		case OP_OR_BOOLBOOL:
 			var_a = GetVariable( st->a );
 			var_b = GetVariable( st->b );
 			var_c = GetVariable( st->c );
 			*var_c.floatPtr = ( *var_a.intPtr != 0 ) || ( *var_b.intPtr != 0 );
 			break;
-			
+
 		case OP_NOT_BOOL:
 			var_a = GetVariable( st->a );
 			var_c = GetVariable( st->c );
@@ -1341,7 +1341,7 @@ bool idInterpreter::Execute( void ) {
 			*var_b.floatPtr = *var_a.floatPtr;
 			break;
 
-		case OP_STORE_BOOL:	
+		case OP_STORE_BOOL:
 			var_a = GetVariable( st->a );
 			var_b = GetVariable( st->b );
 			*var_b.intPtr = *var_a.intPtr;
@@ -1456,7 +1456,7 @@ bool idInterpreter::Execute( void ) {
 				*var_b.evalPtr->vectorPtr = *var_a.vectorPtr;
 			}
 			break;
-		
+
 		case OP_STOREP_FTOS:
 			var_b = GetVariable( st->b );
 			if ( var_b.evalPtr && var_b.evalPtr->stringPtr ) {
@@ -1510,7 +1510,7 @@ bool idInterpreter::Execute( void ) {
 			if ( var_b.evalPtr && var_b.evalPtr->objectId ) {
 				var_a = GetVariable( st->a );
 				obj = GetScriptObject( *var_a.objectId );
-				
+
 				if ( obj == NULL ) {
 					*var_b.evalPtr->objectId = 0;
 				} else {

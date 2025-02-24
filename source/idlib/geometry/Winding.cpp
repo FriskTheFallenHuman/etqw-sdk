@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -10,7 +10,7 @@
 
 #if defined( ID_WIN_X86_SSE )
 
-#include "../math/Simd_InstructionMacros.h"
+#include "math/Simd_InstructionMacros.h"
 
 #define VEC5_SIZE	5*4			// sizeof( idVec5 )
 
@@ -84,7 +84,7 @@ void TestSides( const idVec5 *points, int numPoints, const idPlane &plane, const
 	int i, cnts[3];
 
 	cnts[0] = cnts[1] = cnts[2] = 0;
-		
+
 	for (i = 0; i < numPoints; i++) {
 		double d = plane.Distance( points[i].ToVec3() );
 		if ( d != dists[i] ) {
@@ -210,7 +210,7 @@ void CalculateSides( const idVec5 *points, int numPoints, const idPlane &plane, 
 	}
 	sides[i] = sides[0];
 	dists[i] = dists[0];
-	
+
 #endif
 }
 
@@ -310,7 +310,7 @@ int idWinding::Split( const idPlane &plane, const float epsilon, idWinding& fron
 			mid.t = (double)p1->t + d * ( (double)p2->t - (double)p1->t );
 		} else {
 			double d = dists[i+1] / ( dists[i+1] - dists[i] );
-			for ( j = 0; j < 3; j++ ) {	
+			for ( j = 0; j < 3; j++ ) {
 				// avoid round off error when possible
 				if ( plane.Normal()[j] == 1.0f ) {
 					mid[j] = plane.Dist();
@@ -389,10 +389,10 @@ int idWinding::Split( const idPlane &plane, const float epsilon, idWinding **fro
 
 	*front = f = new idWinding(maxpts);
 	*back = b = new idWinding(maxpts);
-		
+
 	for (i = 0; i < numPoints; i++) {
 		p1 = &p[i];
-		
+
 		if ( sides[i] == SIDE_ON ) {
 			f->p[f->numPoints] = *p1;
 			f->numPoints++;
@@ -400,7 +400,7 @@ int idWinding::Split( const idPlane &plane, const float epsilon, idWinding **fro
 			b->numPoints++;
 			continue;
 		}
-	
+
 		if ( sides[i] == SIDE_FRONT ) {
 			f->p[f->numPoints] = *p1;
 			f->numPoints++;
@@ -412,10 +412,10 @@ int idWinding::Split( const idPlane &plane, const float epsilon, idWinding **fro
 		if ( sides[i+1] == SIDE_ON || sides[i+1] == sides[i] ) {
 			continue;
 		}
-			
+
 		// generate a split point
 		p2 = &p[(i+1)%numPoints];
-		
+
 		// always calculate the split going from the same side or minor epsilon issues can happen
 		if ( sides[i] == SIDE_FRONT ) {
 			double d = dists[i] / ( dists[i] - dists[i+1] );
@@ -433,7 +433,7 @@ int idWinding::Split( const idPlane &plane, const float epsilon, idWinding **fro
 			mid.t = (double)p1->t + d * ( (double)p2->t - (double)p1->t );
 		} else {
 			double d = dists[i+1] / ( dists[i+1] - dists[i] );
-			for ( j = 0; j < 3; j++ ) {	
+			for ( j = 0; j < 3; j++ ) {
 				// avoid round off error when possible
 				if ( plane.Normal()[j] == 1.0f ) {
 					mid[j] = plane.Dist();
@@ -452,7 +452,7 @@ int idWinding::Split( const idPlane &plane, const float epsilon, idWinding **fro
 		b->p[b->numPoints] = mid;
 		b->numPoints++;
 	}
-	
+
 	if ( f->numPoints > maxpts || b->numPoints > maxpts ) {
 		idLib::common->FatalError( "idWinding::Split: points exceeded estimate." );
 	}
@@ -535,10 +535,10 @@ int idWinding::SplitInPlace( const idPlane &plane, const float epsilon, idWindin
 		if ( sides[i+1] == SIDE_ON || sides[i+1] == sides[i] ) {
 			continue;
 		}
-			
+
 		// generate a split point
 		p2 = &p[(i+1)%numPoints];
-		
+
 		// always calculate the split going from the same side or minor epsilon issues can happen
 		if ( sides[i] == SIDE_FRONT ) {
 			double d = dists[i] / ( dists[i] - dists[i+1] );
@@ -556,7 +556,7 @@ int idWinding::SplitInPlace( const idPlane &plane, const float epsilon, idWindin
 			mid.t = (double)p1->t + d * ( (double)p2->t - (double)p1->t );
 		} else {
 			double d = dists[i+1] / ( dists[i+1] - dists[i] );
-			for ( j = 0; j < 3; j++ ) {	
+			for ( j = 0; j < 3; j++ ) {
 				// avoid round off error when possible
 				if ( plane.Normal()[j] == 1.0f ) {
 					mid[j] = plane.Dist();
@@ -631,7 +631,7 @@ bool idWinding::ClipInPlace( const idPlane &plane, const float epsilon, const bo
 
 	newPoints = (idVec5 *) _alloca16( maxpts * sizeof( newPoints[0] ) );
 	newNumPoints = 0;
-		
+
 	for ( i = 0; i < numPoints; i++ ) {
 		p1 = &p[i];
 
@@ -687,7 +687,7 @@ bool idWinding::ClipInPlace( const idPlane &plane, const float epsilon, const bo
 		newPoints[newNumPoints] = mid;
 		newNumPoints++;
 	}
-	
+
 	if ( !EnsureAlloced( newNumPoints, false ) ) {
 		return true;
 	}
@@ -734,7 +734,7 @@ int idWinding::SplitWithEdgeNums( const int *edgeNums, const idPlane &plane, con
 	sides = (byte *) _alloca( (numPoints+4) * sizeof( sides[0] ) );
 
 	CalculateSides( p, numPoints, plane, epsilon, dists, sides, counts );
-	
+
 	*front = *back = NULL;
 	*frontEdgeNums = *backEdgeNums = NULL;
 
@@ -776,7 +776,7 @@ int idWinding::SplitWithEdgeNums( const int *edgeNums, const idPlane &plane, con
 
 	for ( i = 0; i < numPoints; i++ ) {
 		p1 = &p[i];
-		
+
 		if ( sides[i] == SIDE_ON ) {
 			if ( sides[i+1] == SIDE_FRONT ) {
 				fe[f->numPoints] = edgeNums[i];
@@ -811,7 +811,7 @@ int idWinding::SplitWithEdgeNums( const int *edgeNums, const idPlane &plane, con
 
 		// generate a split point
 		p2 = &p[(i+1)%numPoints];
-		
+
 		// always calculate the split going from the same side or minor epsilon issues can happen
 		if ( sides[i] == SIDE_FRONT ) {
 			double d = dists[i] / ( dists[i] - dists[i+1] );
@@ -832,7 +832,7 @@ int idWinding::SplitWithEdgeNums( const int *edgeNums, const idPlane &plane, con
 			be[b->numPoints] = edgeNums[i];
 		} else {
 			double d = dists[i+1] / ( dists[i+1] - dists[i] );
-			for ( j = 0; j < 3; j++ ) {	
+			for ( j = 0; j < 3; j++ ) {
 				// avoid round off error when possible
 				if ( plane.Normal()[j] == 1.0f ) {
 					mid[j] = plane.Dist();
@@ -854,7 +854,7 @@ int idWinding::SplitWithEdgeNums( const int *edgeNums, const idPlane &plane, con
 		b->p[b->numPoints] = mid;
 		b->numPoints++;
 	}
-	
+
 	if ( f->numPoints > maxpts || b->numPoints > maxpts ) {
 		idLib::common->FatalError( "idWinding::Split: points exceeded estimate." );
 	}
@@ -895,7 +895,7 @@ int idWinding::ClipInPlaceWithEdgeNums( idList<int> &edgeNums, const idPlane &pl
 	sides = (byte *) _alloca( (numPoints+4) * sizeof( sides[0] ) );
 
 	CalculateSides( p, numPoints, plane, epsilon, dists, sides, counts );
-	
+
 	// if the winding is on the plane and we should keep it
 	if ( keepOn && !counts[SIDE_FRONT] && !counts[SIDE_BACK] ) {
 		return SIDE_ON;
@@ -931,7 +931,7 @@ int idWinding::ClipInPlaceWithEdgeNums( idList<int> &edgeNums, const idPlane &pl
 			newNumPoints++;
 			continue;
 		}
-	
+
 		if ( sides[i] == SIDE_FRONT ) {
 			newEdgeNums[newNumPoints] = edgeNums[i];
 			newPoints[newNumPoints] = *p1;
@@ -941,10 +941,10 @@ int idWinding::ClipInPlaceWithEdgeNums( idList<int> &edgeNums, const idPlane &pl
 		if ( sides[i+1] == SIDE_ON || sides[i+1] == sides[i] ) {
 			continue;
 		}
-			
+
 		// generate a split point
 		p2 = &p[(i+1)%numPoints];
-		
+
 		// always calculate the split going from the same side or minor epsilon issues can happen
 		if ( sides[i] == SIDE_FRONT ) {
 			double d = dists[i] / ( dists[i] - dists[i+1] );
@@ -964,7 +964,7 @@ int idWinding::ClipInPlaceWithEdgeNums( idList<int> &edgeNums, const idPlane &pl
 			newEdgeNums[newNumPoints] = edgeNum;
 		} else {
 			double d = dists[i+1] / ( dists[i+1] - dists[i] );
-			for ( j = 0; j < 3; j++ ) {	
+			for ( j = 0; j < 3; j++ ) {
 				// avoid round off error when possible
 				if ( plane.Normal()[j] == 1.0f ) {
 					mid[j] = plane.Dist();
@@ -979,7 +979,7 @@ int idWinding::ClipInPlaceWithEdgeNums( idList<int> &edgeNums, const idPlane &pl
 
 			newEdgeNums[newNumPoints] = edgeNums[i];
 		}
-			
+
 		newPoints[newNumPoints] = mid;
 		newNumPoints++;
 	}
@@ -1062,7 +1062,7 @@ bool idWinding::Check( bool print ) const {
 		}
 		return false;
 	}
-	
+
 	area = GetArea();
 	if ( area < 1.0f ) {
 		if ( print ) {
@@ -1072,7 +1072,7 @@ bool idWinding::Check( bool print ) const {
 	}
 
 	GetPlane( plane );
-	
+
 	for ( i = 0; i < numPoints; i++ ) {
 		const idVec3 &p1 = p[i].ToVec3();
 
@@ -1087,7 +1087,7 @@ bool idWinding::Check( bool print ) const {
 		}
 
 		j = i + 1 == numPoints ? 0 : i + 1;
-		
+
 		// check if the point is on the face plane
 		d = p1 * plane.Normal() + plane[3];
 		if ( d < -ON_EPSILON || d > ON_EPSILON ) {
@@ -1096,11 +1096,11 @@ bool idWinding::Check( bool print ) const {
 			}
 			return false;
 		}
-	
+
 		// check if the edge isn't degenerate
 		const idVec3 &p2 = p[j].ToVec3();
 		dir = p2 - p1;
-		
+
 		if ( dir.Length() < ON_EPSILON) {
 			if ( print ) {
 				idLib::common->Printf( "idWinding::Check: edge %d is degenerate.", i );
@@ -1113,7 +1113,7 @@ bool idWinding::Check( bool print ) const {
 		edgenormal.Normalize();
 		edgedist = p1 * edgenormal;
 		edgedist += ON_EPSILON;
-		
+
 		// all other points must be on front side
 		for ( j = 0; j < numPoints; j++ ) {
 			if ( j == i ) {
@@ -1592,10 +1592,10 @@ idWinding *idWinding::TryMerge( const idWinding &w, const idVec3 &planenormal, i
 	f2 = &w;
 	//
 	// find a idLib::common edge
-	//	
+	//
 	p1 = p2 = NULL;	// stop compiler warning
 	j = 0;
-	
+
 	for ( i = 0; i < f1->numPoints; i++ ) {
 		p1 = &f1->p[i].ToVec3();
 		p2 = &f1->p[(i+1) % f1->numPoints].ToVec3();
@@ -1618,7 +1618,7 @@ idWinding *idWinding::TryMerge( const idWinding &w, const idVec3 &planenormal, i
 			break;
 		}
 	}
-	
+
 	if ( i == f1->numPoints ) {
 		return NULL;			// no matching edges
 	}
@@ -1631,7 +1631,7 @@ idWinding *idWinding::TryMerge( const idWinding &w, const idVec3 &planenormal, i
 	delta = (*p1) - (*back);
 	normal = planenormal.Cross(delta);
 	normal.Normalize();
-	
+
 	back = &f2->p[(j+2)%f2->numPoints].ToVec3();
 	delta = (*back) - (*p1);
 	dot = delta * normal;
@@ -1640,7 +1640,7 @@ idWinding *idWinding::TryMerge( const idWinding &w, const idVec3 &planenormal, i
 	}
 
 	keep1 = (bool)(dot < -CONTINUOUS_EPSILON);
-	
+
 	back = &f1->p[(i+2)%f1->numPoints].ToVec3();
 	delta = (*back) - (*p2);
 	normal = planenormal.Cross( delta );
@@ -1659,17 +1659,17 @@ idWinding *idWinding::TryMerge( const idWinding &w, const idVec3 &planenormal, i
 	// build the new polygon
 	//
 	newf = new idWinding( f1->numPoints + f2->numPoints );
-	
+
 	// copy first polygon
 	for ( k = (i+1) % f1->numPoints; k != i; k = (k+1) % f1->numPoints ) {
 		if ( !keep && k == (i+1) % f1->numPoints && !keep2 ) {
 			continue;
 		}
-		
+
 		newf->p[newf->numPoints] = f1->p[k];
 		newf->numPoints++;
 	}
-	
+
 	// copy second polygon
 	for ( l = (j+1) % f2->numPoints; l != j; l = (l+1) % f2->numPoints ) {
 		if ( !keep && l == (j+1) % f2->numPoints && !keep1 ) {
@@ -2206,7 +2206,7 @@ int idFixedWinding::SplitInPlace( const idPlane &plane, const float epsilon, idF
 			return SIDE_FRONT;
 		}
 	}
-	
+
 	if ( !counts[SIDE_FRONT] ) {
 		return SIDE_BACK;
 	}
@@ -2231,7 +2231,7 @@ int idFixedWinding::SplitInPlace( const idPlane &plane, const float epsilon, idF
 			back->numPoints++;
 			continue;
 		}
-	
+
 		if ( sides[i] == SIDE_FRONT ) {
 			out.p[out.numPoints] = *p1;
 			out.numPoints++;
@@ -2240,11 +2240,11 @@ int idFixedWinding::SplitInPlace( const idPlane &plane, const float epsilon, idF
 			back->p[back->numPoints] = *p1;
 			back->numPoints++;
 		}
-		
+
 		if ( sides[i+1] == SIDE_ON || sides[i+1] == sides[i] ) {
 			continue;
 		}
-			
+
 		if ( !out.EnsureAlloced( out.numPoints+1, true ) ) {
 			return SIDE_FRONT;		// can't split -- fall back to original
 		}
@@ -2274,7 +2274,7 @@ int idFixedWinding::SplitInPlace( const idPlane &plane, const float epsilon, idF
 		}
 		mid.s = (double)p1->s + d * ( (double)p2->s - (double)p1->s );
 		mid.t = (double)p1->t + d * ( (double)p2->t - (double)p1->t );
-			
+
 		out.p[out.numPoints] = mid;
 		out.numPoints++;
 		back->p[back->numPoints] = mid;

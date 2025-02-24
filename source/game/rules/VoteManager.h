@@ -56,7 +56,7 @@ public:
 	virtual const char* GetVoteTextKey( void ) const = 0;
 
 
-	virtual void		PreCache( void ) const { 
+	virtual void		PreCache( void ) const {
 		gameLocal.declToolTipType[ GetVoteTextKey() ];
 	}
 };

@@ -428,7 +428,7 @@ ID_INLINE int idObjArray<type,gran>::Append( const type & obj ) {
 ================
 idObjArray::Insert
 
-Increases the size of the array by at leat one element if necessary 
+Increases the size of the array by at leat one element if necessary
 and inserts the supplied data into it.
 
 Returns the index of the new element.
@@ -577,10 +577,10 @@ ID_INLINE bool idObjArray<type,gran>::RemoveIndex( int index ) {
 idObjArray::RemoveIndexFast
 
 Removes the element at the specified index and moves the last element into
-it's spot, rather than moving the whole array down by one.  Of course, this 
+it's spot, rather than moving the whole array down by one.  Of course, this
 doesn't maintain the order of elements!
-The number of elements in the array is reduced by one.  Returns false if the 
-index is outside the bounds of the array. Note that the element is not destroyed, 
+The number of elements in the array is reduced by one.  Returns false if the
+index is outside the bounds of the array. Note that the element is not destroyed,
 so any memory used by it may not be freed until the destruction of the array.
 ===============
 */
@@ -617,7 +617,7 @@ ID_INLINE bool idObjArray<type,gran>::Remove( const type & obj ) {
 	if ( index >= 0 ) {
 		return RemoveIndex( index );
 	}
-	
+
 	return false;
 }
 
@@ -638,7 +638,7 @@ ID_INLINE bool idObjArray<type,gran>::RemoveFast( const type & obj ) {
 	if ( index >= 0 ) {
 		return RemoveIndexFast( index );
 	}
-	
+
 	return false;
 }
 

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -26,7 +26,7 @@ public:
 	virtual void Deinit( void );
 
 	virtual bool AddFootPrint( const idVec3 & point, const idVec3 &forward, const idVec3 &up, bool right );
-	
+
 	virtual void Think( void );
 
 	virtual renderEntity_t* GetRenderEntity( void );

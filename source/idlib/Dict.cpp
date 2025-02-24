@@ -396,13 +396,13 @@ idDict::GetAngles
 bool idDict::GetAngles( const char *key, const char *defaultString, idAngles &out ) const {
 	bool		found;
 	const char	*s;
-	
+
 	if ( !defaultString ) {
 		defaultString = "0 0 0";
 	}
 
 	found = GetString( key, defaultString, &s );
-	out.Zero();	
+	out.Zero();
 	sscanf( s, "%f %f %f", &out.pitch, &out.yaw, &out.roll );
 	return found;
 }
@@ -415,7 +415,7 @@ idDict::GetVector
 bool idDict::GetVector( const char *key, const char *defaultString, idVec3 &out ) const {
 	bool		found;
 	const char	*s;
-	
+
 	if ( !defaultString ) {
 		defaultString = "0 0 0";
 	}
@@ -434,7 +434,7 @@ idDict::GetVec2
 bool idDict::GetVec2( const char *key, const char *defaultString, idVec2 &out ) const {
 	bool		found;
 	const char	*s;
-	
+
 	if ( !defaultString ) {
 		defaultString = "0 0";
 	}
@@ -453,7 +453,7 @@ idDict::GetVec4
 bool idDict::GetVec4( const char *key, const char *defaultString, idVec4 &out ) const {
 	bool		found;
 	const char	*s;
-	
+
 	if ( !defaultString ) {
 		defaultString = "0 0 0 0";
 	}
@@ -472,7 +472,7 @@ idDict::GetMatrix
 bool idDict::GetMatrix( const char *key, const char *defaultString, idMat3 &out ) const {
 	const char	*s;
 	bool		found;
-		
+
 	if ( !defaultString ) {
 		defaultString = "1 0 0 0 1 0 0 0 1";
 	}
@@ -798,7 +798,7 @@ write the key value pairs to a file
 */
 bool idDict::WriteIndented( idFile* file, bool indentFirst ) const {
 	sdTextUtil::GetInstance().Write( file, "{\n", indentFirst );
-	
+
 	sdTextUtil::GetInstance().Indent( file );
 	for( int i = 0; i < GetNumKeyVals(); i++ ) {
 		const idKeyValue* kv = GetKeyVal( i );

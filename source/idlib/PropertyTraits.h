@@ -19,63 +19,63 @@ namespace sdProperties {
 	template< class T >
 	struct sdPropertyTypeTraits {
 		typedef T type;
-		typedef enum { tag = PT_INVALID };
+		enum { tag = PT_INVALID };
 	};
 
 	template<>
 	struct sdPropertyTypeTraits< int > {
 		typedef int type;
-		typedef enum { tag = PT_INT };
+		enum { tag = PT_INT };
 	};
 	template<>
 	struct sdPropertyTypeTraits< float > {
 		typedef float type;
-		typedef enum { tag = PT_FLOAT };
+		enum { tag = PT_FLOAT };
 	};
 	template<>
 	struct sdPropertyTypeTraits< bool > {
 		typedef bool type;
-		typedef enum { tag = PT_BOOL };
+		enum { tag = PT_BOOL };
 	};
 	template<>
 	struct sdPropertyTypeTraits< idStr > {
 		typedef idStr type;
-		typedef enum { tag = PT_STRING };
+		enum { tag = PT_STRING };
 	};
 	template<>
 	struct sdPropertyTypeTraits< idWStr > {
 		typedef idWStr type;
-		typedef enum { tag = PT_WSTRING };
+		enum { tag = PT_WSTRING };
 	};
 	template<>
 	struct sdPropertyTypeTraits< idVec2 > {
 		typedef idVec2 type;
-		typedef enum { tag = PT_VEC2 };
+		enum { tag = PT_VEC2 };
 	};
 	template<>
 	struct sdPropertyTypeTraits< idVec3 > {
 		typedef idVec3 type;
-		typedef enum { tag = PT_VEC3 };
+		enum { tag = PT_VEC3 };
 	};
 	template<>
 	struct sdPropertyTypeTraits< idVec4 > {
 		typedef idVec4 type;
-		typedef enum { tag = PT_VEC4 };
+		enum { tag = PT_VEC4 };
 	};
 	template<>
 	struct sdPropertyTypeTraits< sdColor3 > {
 		typedef sdColor3 type;
-		typedef enum { tag = PT_COLOR3 };
+		enum { tag = PT_COLOR3 };
 	};
 	template<>
 	struct sdPropertyTypeTraits< sdColor4 > {
 		typedef sdColor3 type;
-		typedef enum { tag = PT_COLOR4 };
+		enum { tag = PT_COLOR4 };
 	};
 	template<>
 	struct sdPropertyTypeTraits< idAngles > {
 		typedef idAngles type;
-		typedef enum { tag = PT_ANGLES };
+		enum { tag = PT_ANGLES };
 	};
 
 	/*
@@ -99,8 +99,8 @@ namespace sdProperties {
 		typedef T parameter;
 		typedef const T ConstParameter;
 
-		typedef enum { integral = true };
-		typedef enum { dimension = 1 };
+		enum { integral = true };
+		enum { dimension = 1 };
 
 		typedef sdPropertyTypeTraits< T > TypeTraits;
 	};
@@ -125,8 +125,8 @@ Built-ins
 		typedef Reference Parameter;						\
 		typedef ConstReference ConstParameter;			\
 		\
-		typedef enum { integral = true };					\
-		typedef enum { dimension = 1 };						\
+		enum { integral = true };					\
+		enum { dimension = 1 };						\
 		\
 		typedef sdPropertyTypeTraits< InType > TypeTraits;	\
 	};
@@ -153,8 +153,8 @@ User-defined types
 		typedef Reference Parameter;						\
 		typedef ConstReference ConstParameter;			\
 		\
-		typedef enum { integral = false };					\
-		typedef enum { dimension = ( Dimension ) };			\
+		enum { integral = false };					\
+		enum { dimension = ( Dimension ) };			\
 		\
 		typedef sdPropertyTypeTraits< InType > TypeTraits;	\
 	};

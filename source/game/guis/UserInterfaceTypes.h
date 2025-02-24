@@ -5,9 +5,9 @@
 #ifndef __GAME_GUIS_USERINTERFACETYPES_H__
 #define __GAME_GUIS_USERINTERFACETYPES_H__
 
-#include "../../game/decls/DeclGUI.h"
-#include "../../decllib/declTable.h"
-#include "../../decllib/declTypeHolder.h"
+#include "game/decls/DeclGUI.h"
+#include "decllib/declTable.h"
+#include "decllib/declTypeHolder.h"
 
 #define SD_UI_PROPERTY_TAG( InfoText )
 
@@ -53,7 +53,7 @@
 typedef sdHandle< unsigned int, 0 > guiHandle_t;
 
 typedef void (*uiRenderCallback_t)( class sdUserInterfaceLocal*, float, float, float, float );
-typedef enum uiRenderCallbackType_t { UIRC_PRE, UIRC_POST, UIRC_MAX };
+enum uiRenderCallbackType_t { UIRC_PRE, UIRC_POST, UIRC_MAX };
 
 typedef bool (*uiInputHandler_t)( class sdUIWindow*, const sdSysEvent* );
 typedef void (*uiListEnumerationCallback_t)( class sdUIList* );
@@ -73,7 +73,7 @@ class sdUIEventInfo {
 public:
 	sdUIEventInfo( void ) : parameter( -1 ) { ; }
 	sdUIEventInfo( sdUIEventHandle h, int parm ) : eventType( h ), parameter( parm ) { ; }
-	
+
 	bool operator==( const sdUIEventInfo& rhs ) const {
 		return ( ( eventType == rhs.eventType ) && ( parameter == rhs.parameter ) );
 	}
@@ -398,12 +398,12 @@ template< typename T, const char allocatorName[] >
 class sdUITemplateFunctionInstance :
 	public sdUIFunctionInstance,
 	public sdPoolAllocator< sdUITemplateFunctionInstance< T, allocatorName >, allocatorName, 4096 > {
-public:		
+public:
 
 	typedef void ( T::*windowFunction_t )( sdUIFunctionStack& );
 
 												sdUITemplateFunctionInstance( T* _window, const sdUITemplateFunction< T >* _function ) : window( _window ), function( _function ) { ; }
-												
+
 												// jrad - provide for implicit conversions that make sense
 												template< class U >
 												sdUITemplateFunctionInstance( U* _window, const sdUITemplateFunction< U >* _function ) : window( _window ), function( _function ) { ; }
@@ -465,7 +465,7 @@ public:
 		mode = TABLE;
 	}
 	void	InitAccelDecelEvaluation( const float accelParm, const float decelParm ) {
-		float duration = targetTime - startTime;	
+		float duration = targetTime - startTime;
 		interpolator.Init( startTime, duration * accelParm, duration * decelParm, duration, startValue, targetValue );
 		table = NULL;
 		mode = ACCEL_DECEL;
@@ -487,7 +487,7 @@ public:
 			return interpolator.GetCurrentValue( time );
 		}
 
-		float percent = static_cast< float> ( ( time - startTime ) / static_cast< float >( targetTime - startTime ) );				
+		float percent = static_cast< float> ( ( time - startTime ) / static_cast< float >( targetTime - startTime ) );
 		percent = idMath::ClampFloat( 0.0f, 1.0f, percent );
 
 		if ( percent >= 1.0f ) {
@@ -499,8 +499,8 @@ public:
 		}
 		if( mode == TABLE && table != NULL ) {
 			percent = table->TableLookup( percent );
-		}				
-		return Lerp( startValue, targetValue, percent );			
+		}
+		return Lerp( startValue, targetValue, percent );
 	}
 	bool	IsDone( const int time ) const  {
 		if( targetTime == startTime ) {
@@ -510,7 +510,7 @@ public:
 			return interpolator.IsDone( time );
 		}
 
-		float percent = static_cast< float> ( ( time - startTime ) / static_cast< float >( targetTime - startTime ) );				
+		float percent = static_cast< float> ( ( time - startTime ) / static_cast< float >( targetTime - startTime ) );
 		percent = idMath::ClampFloat( 0.0f, 1.0f, percent );
 		return ( idMath::Fabs( 1.0f - percent ) < idMath::FLT_EPSILON );
 	}
@@ -613,7 +613,7 @@ struct uiDrawPart_t {
 	int					height;
 };
 
-// make sure to increase the number of bits for backgroundDrawMode in windowState_t 
+// make sure to increase the number of bits for backgroundDrawMode in windowState_t
 enum uiDrawMode_e {
 	BDM_SINGLE_MATERIAL,
 	BDM_FRAME,

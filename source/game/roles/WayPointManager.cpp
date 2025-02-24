@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,10 +12,10 @@ static char THIS_FILE[] = __FILE__;
 
 #include "WayPointManager.h"
 
-#include "../misc/WorldToScreen.h"
-#include "../Player.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
+#include "misc/WorldToScreen.h"
+#include "Player.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
 
 /*
 ===============================================================================
@@ -455,7 +455,7 @@ void sdWayPointManagerLocal::UpdateActive( void ) {
 			if ( !wayPoint->IsValid() ) {
 				shouldBeActive = false;
 				break;
-			}		
+			}
 			if ( !wayPoint->IsAlwaysActive() ) {
 				if ( ( wayPoint->GetPosition() - view.vieworg ).LengthSqr() > Square( wayPoint->GetRange() ) ) {
 					shouldBeActive = false;

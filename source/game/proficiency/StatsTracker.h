@@ -5,7 +5,7 @@
 #ifndef __GAME_PROFICIENCY_STATSTRACKER_H__
 #define __GAME_PROFICIENCY_STATSTRACKER_H__
 
-#include "../../sdnet/SDNetStatsManager.h"
+#include "sdnet/SDNetStatsManager.h"
 
 enum statsRequestState_t {
 	SR_EMPTY,
@@ -152,7 +152,7 @@ public:
 
 								sdStatsTracker( void );
 								~sdStatsTracker( void );
-								
+
 	statHandle_t				AllocStat( const char* name, sdNetStatKeyValue::statValueType type );
 	statHandle_t				GetStat( const char* name ) const;
 	sdPlayerStatEntry*			GetStat( statHandle_t handle ) const;
@@ -186,7 +186,7 @@ public:
 	const sdNetStatKeyValList&	GetLocalStats( void ) const { return completeStats; }
 
 	const idHashIndex&			GetLocalStatsHash( void ) const { return completeStatsHash; }
-	
+
 	const sdNetStatKeyValue*	GetLocalStat( const char* name ) const;
 	const sdNetStatKeyValue*	GetNetStat( const char* name ) const;
 	const sdNetStatKeyValue*	GetServerStat( const char* name ) const;
@@ -207,7 +207,7 @@ private:
 	// Server
 	void						ProcessLocalStats( int playerIndex );
 	void						ProcessRemoteStats( int playerIndex );
-	
+
 	// Client
 	void						UpdateStatsRequest( void );
 	void						OnServerStatsRequestMessage( const sdNetStatKeyValList& list );

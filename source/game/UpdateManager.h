@@ -5,7 +5,7 @@
 #define __UPDATE_MANAGER_H__
 
 #include "guis/UserInterfaceTypes.h"
-#include "../framework/async/AsyncUpdates.h"
+#include "framework/async/AsyncUpdates.h"
 
 class sdUpdateManager : public sdUIPropertyHolder {
 public:
@@ -23,7 +23,7 @@ public:
 
 	void									Update( void );
 	void									Init( void );
-	void									Shutdown( void );	
+	void									Shutdown( void );
 	void									SetAvailability( updateAvailability_t availability ) { this->availability = availability; }
 	void									SetUpdateProgress( float progress ) { this->progress = progress; }
 	void									SetUpdateState( updateState_t state ) { this->state = state; }
@@ -43,7 +43,7 @@ private:
 
 private:
 	static idHashMap< uiFunction_t* >		uiFunctions;
-	
+
 	sdWStringProperty						message;
 	sdFloatProperty							state;
 	sdFloatProperty							availability;

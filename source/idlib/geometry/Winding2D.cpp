@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 #include "Winding2D.h"
@@ -142,7 +142,7 @@ int idWinding2D::Split( const idVec3 &plane, const float epsilon, idWinding2D **
 	}
 	sides[i] = sides[0];
 	dists[i] = dists[0];
-	
+
 	*front = *back = NULL;
 
 	// if nothing at the front of the clipping plane
@@ -160,10 +160,10 @@ int idWinding2D::Split( const idVec3 &plane, const float epsilon, idWinding2D **
 
 	*front = f = new idWinding2D;
 	*back = b = new idWinding2D;
-		
+
 	for ( i = 0; i < numPoints; i++ ) {
 		p1 = &p[i];
-		
+
 		if ( sides[i] == SIDE_ON ) {
 			f->p[f->numPoints] = *p1;
 			f->numPoints++;
@@ -171,7 +171,7 @@ int idWinding2D::Split( const idVec3 &plane, const float epsilon, idWinding2D **
 			b->numPoints++;
 			continue;
 		}
-	
+
 		if ( sides[i] == SIDE_FRONT ) {
 			f->p[f->numPoints] = *p1;
 			f->numPoints++;
@@ -185,10 +185,10 @@ int idWinding2D::Split( const idVec3 &plane, const float epsilon, idWinding2D **
 		if ( sides[i+1] == SIDE_ON || sides[i+1] == sides[i] ) {
 			continue;
 		}
-			
+
 		// generate a split point
 		p2 = &p[(i+1)%numPoints];
-		
+
 		// always calculate the split going from the same side
 		// or minor epsilon issues can happen
 		if ( sides[i] == SIDE_FRONT ) {
@@ -252,7 +252,7 @@ bool idWinding2D::ClipInPlace( const idVec3 &plane, const float epsilon, const b
 	}
 	sides[i] = sides[0];
 	dists[i] = dists[0];
-	
+
 	// if the winding is on the plane and we should keep it
 	if ( keepOn && !counts[SIDE_FRONT] && !counts[SIDE_BACK] ) {
 		return true;
@@ -275,14 +275,14 @@ bool idWinding2D::ClipInPlace( const idVec3 &plane, const float epsilon, const b
 		if ( newNumPoints+1 > maxpts ) {
 			return true;		// can't split -- fall back to original
 		}
-		
+
 		if ( sides[i] == SIDE_ON ) {
 			newPoints[newNumPoints] = *p1;
 			newST[newNumPoints] = *st1;
 			newNumPoints++;
 			continue;
 		}
-	
+
 		if ( sides[i] == SIDE_FRONT ) {
 			newPoints[newNumPoints] = *p1;
 			newST[newNumPoints] = *st1;
@@ -292,7 +292,7 @@ bool idWinding2D::ClipInPlace( const idVec3 &plane, const float epsilon, const b
 		if ( sides[i+1] == SIDE_ON || sides[i+1] == sides[i] ) {
 			continue;
 		}
-			
+
 		if ( newNumPoints+1 > maxpts ) {
 			return true;		// can't split -- fall back to original
 		}
@@ -300,7 +300,7 @@ bool idWinding2D::ClipInPlace( const idVec3 &plane, const float epsilon, const b
 		// generate a split point
 		p2 = &p[(i+1)%numPoints];
 		st2 = &st[(i+1)%numPoints];
-		
+
 		dot = dists[i] / (dists[i] - dists[i+1]);
 		for ( j = 0; j < 2; j++ ) {
 			// avoid round off error when possible
@@ -432,7 +432,7 @@ float idWinding2D::GetRadius( const idVec2 &center ) const {
 idWinding2D::GetBounds
 ============
 */
-void idWinding2D::GetBounds( idVec2 bounds[2] ) const {	
+void idWinding2D::GetBounds( idVec2 bounds[2] ) const {
 
 	if ( !numPoints ) {
 		bounds[0].x = bounds[0].y = idMath::INFINITY;
@@ -818,7 +818,7 @@ bool idWinding2D::SplitEdgesByLine( const idVec2& start, const idVec2& end, cons
 
 		const idVec2& st1 = st[ i ];
 		const idVec2& st2 = st[ ( i + 1 )% numPoints ];
-		
+
 		if( tempWinding.GetNumPoints() >= idWinding2D::MAX_POINTS ) {
 			continue;
 		}
@@ -839,7 +839,7 @@ bool idWinding2D::SplitEdgesByLine( const idVec2& start, const idVec2& end, cons
 
 		if( ( frac1 < 0.0f || frac1 > 1.0f ) || ( frac2 < 0.0f || frac2 > 1.0f )) {
 			continue;	// co-linear
-		}		
+		}
 
 		idVec2 newPoint	= p3 + (( p4 - p3 ) * frac2 );
 		idVec2 newST = st1 + (( st2 - st1 ) * frac2 );
@@ -915,7 +915,7 @@ bool idWinding2D::ClipByBounds( const sdBounds2D& bounds, const float epsilon ) 
 	}
 
 	int count = numPoints;
-	Clear();	
+	Clear();
 	for( i = 0; i < count; i++ ) {
 		int j = ( i + 1 ) % count;
 

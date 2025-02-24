@@ -6,7 +6,7 @@ Various utility objects and functions.
 
 */
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -23,8 +23,8 @@ static char THIS_FILE[] = __FILE__;
 #include "WorldSpawn.h"
 #include "ContentMask.h"
 #include "Moveable.h"
-#include "../decllib/declTypeHolder.h"
-#include "../decllib/declImposter.h"
+#include "decllib/declTypeHolder.h"
+#include "decllib/declImposter.h"
 
 /*
 ===============================================================================
@@ -223,7 +223,7 @@ void idPlayerStart::PostMapSpawn( void ) {
 			gameLocal.Error( "idPlayerStart::PostMapSpawn Could not find owner '%s'", ownerName );
 		}
 
-		idVec3 org = ( origin - owner->GetPhysics()->GetOrigin() ) * owner->GetPhysics()->GetAxis().Transpose();						
+		idVec3 org = ( origin - owner->GetPhysics()->GetOrigin() ) * owner->GetPhysics()->GetAxis().Transpose();
 		if ( target ) {
 			idVec3 vec = target->GetPhysics()->GetOrigin() - org;
 			vec.Normalize();
@@ -254,7 +254,7 @@ void idPlayerStart::PostMapSpawn( void ) {
 ===============================================================================
 
   idForceField
-	
+
 ===============================================================================
 */
 
@@ -453,7 +453,7 @@ void idAnimated::Spawn( void ) {
 	float		wait;
 	const char	*joint;
 
-	joint = spawnArgs.GetString( "sound_bone", "origin" ); 
+	joint = spawnArgs.GetString( "sound_bone", "origin" );
 	soundJoint = animator.GetJointHandle( joint );
 	if ( soundJoint == INVALID_JOINT ) {
 		gameLocal.Warning( "idAnimated '%s' at (%s): cannot find joint '%s' for sound playback", name.c_str(), GetPhysics()->GetOrigin().ToString(0), joint );
@@ -502,7 +502,7 @@ void idAnimated::Spawn( void ) {
 		animator.CycleAnim( ANIMCHANNEL_ALL, anim2, gameLocal.time, 0 );
 	} else if ( anim ) {
 		// init joints to the first frame of the animation
-		animator.SetFrame( ANIMCHANNEL_ALL, anim, 1, gameLocal.time, 0 );		
+		animator.SetFrame( ANIMCHANNEL_ALL, anim, 1, gameLocal.time, 0 );
 
 		if ( !num_anims ) {
 			blendFrames = 0;
@@ -563,7 +563,7 @@ bool idAnimated::StartRagdoll( void ) {
 
 	// start using the AF
 	af.StartFromCurrentPose( spawnArgs.GetInt( "velocityTime", "0" ) );
-	
+
 	return true;
 }
 
@@ -606,7 +606,7 @@ void idAnimated::PlayNextAnim( void ) {
 	if ( g_debugCinematic.GetBool() ) {
 		gameLocal.Printf( "%d: '%s' start anim '%s'\n", gameLocal.framenum, GetName(), animname );
 	}
-		
+
 	spawnArgs.GetInt( "cycle", "1", cycle );
 	if ( ( current_anim_index == num_anims ) && spawnArgs.GetBool( "loop_last_anim" ) ) {
 		cycle = -1;
@@ -794,7 +794,7 @@ void sdStaticEntityBroadcastData::Write( idFile* file ) const {
 	if ( physicsData != NULL ) {
 		physicsData->Write( file );
 	}
-	
+
 	file->WriteBool( hidden > 0 );
 	file->WriteBool( forceDisableClip > 0 );
 }
@@ -808,7 +808,7 @@ void sdStaticEntityBroadcastData::Read( idFile* file ) {
 	if ( physicsData != NULL ) {
 		physicsData->Read( file );
 	}
-	
+
 	bool temp;
 	file->ReadBool( temp );
 	hidden = temp ? 1 : 0;
@@ -855,7 +855,7 @@ void idStaticEntity::Spawn( void ) {
 	bool solid	= spawnArgs.GetBool( "solid" );
 	bool hidden = spawnArgs.GetBool( "hide" );
 	bool disableClip = spawnArgs.GetBool( "disableClip" );
-	
+
 	const char *areas;
 	if ( spawnArgs.GetString( "areas", "", &areas ) ) {
 		idStrList areaList;
@@ -1202,7 +1202,7 @@ sdLODEntity::FreeModelDefs
 void sdLODEntity::FreeModelDefs() {
 	for ( int i = 0; i < modelDefHandles.Num(); i++ ) {
 		int& modelDefHandle = modelDefHandles[ i ];
-			
+
 		if ( modelDefHandle != -1 ) {
 			renderEntity_t *re = gameRenderWorld->GetRenderEntity( modelDefHandle );
 			delete []re->dummies;
@@ -1448,7 +1448,7 @@ struct imposterGather_s {
 };
 #if 1
 void sdImposterEntity::Spawn() {
-	const char* defaultMaxVisDist = spawnArgs.GetString( "maxvisdist", "0" );	
+	const char* defaultMaxVisDist = spawnArgs.GetString( "maxvisdist", "0" );
 	const int imposterStrLen = idStr::Length( "imposter" );
 	idList< imposterGather_s > imposterList;
 	for( int i = 0; i < spawnArgs.GetNumKeyVals(); i++ )	{
@@ -1543,14 +1543,14 @@ void sdImposterEntity::Spawn() {
 	delete []renderEntity;
 }
 #else
-void sdImposterEntity::Spawn() {	
+void sdImposterEntity::Spawn() {
 	renderEntity_t renderEntity;
 	idDict tempDict;
 	tempDict.Set( "forceimposter", "1" );
 	tempDict.Set( "model", "_default" );
 
 	const char* defaultMaxVisDist = spawnArgs.GetString( "maxvisdist", "0" );
-	
+
 	const int imposterStrLen = idStr::Length( "imposter" );
 
 	for( int i = 0; i < spawnArgs.GetNumKeyVals(); i++ )	{
@@ -1839,7 +1839,7 @@ void sdInstStatic::Spawn() {
 			}
 		}
 	}
-				
+
 	AddRenderEntity( renderEntity );
 
 	physicsObj.SetContents( CONTENTS_SOLID );

@@ -3,7 +3,7 @@
 #ifndef __ANIM_H__
 #define __ANIM_H__
 
-#include "../Common.h"
+#include "Common.h"
 
 //
 // animation channels
@@ -165,7 +165,7 @@ public:
 	void							IncreaseRefs( void ) const;
 	void							DecreaseRefs( void ) const;
 	int								NumRefs( void ) const;
-	
+
 	void							CheckModelHierarchy( const idRenderModel* model ) const;
 	void							GetInterpolatedFrame( frameBlend_t& frame, idJointQuat* joints, const int* index, int numIndexes ) const;
 	void							GetSingleFrame( int framenum, idJointQuat* joints, const int* index, int numIndexes ) const;
@@ -183,7 +183,7 @@ public:
 	void							GetBounds( idBounds& bounds, int currentTime, int cyclecount ) const;
 	int								GetFrameRate() const { return frameRate; }
 	void							Resample( void );
-	
+
 	bool							IsReduced( void ) const { return reduced; }
 private:
 	int								numFrames;
@@ -261,7 +261,7 @@ public:
 	void							SetAnimFlags( const animFlags_t& animflags );
 	const animFlags_t&				GetAnimFlags( void ) const;
 
-private:	
+private:
 	const class idDeclModelDef*		baseModelDef;
 
 	const idMD5Anim*				anims[ ANIM_MaxSyncedAnims ];
@@ -525,7 +525,7 @@ public:
 	bool						GetBounds( int currentTime, idBounds& bounds, bool force = false );
 
 	// Gets the bounding box in joint space of the specified mesh, this is uncached and will cause reskinning so use sparingly
-	bool						GetMeshBounds( jointHandle_t jointnum, int meshHandle, int currentTime, idBounds& bounds, bool useDefaultAnim ); 
+	bool						GetMeshBounds( jointHandle_t jointnum, int meshHandle, int currentTime, idBounds& bounds, bool useDefaultAnim );
 
 	idAnimBlend*				CurrentAnim( animChannel_t channelNum );
 	void						Clear( animChannel_t channelNum, int currentTime, int cleartime );

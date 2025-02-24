@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,10 +11,10 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Physics_Monster.h"
-#include "../Entity.h"
-#include "../Actor.h"
-#include "../Player.h"
-#include "../../decllib/DeclSurfaceType.h"
+#include "Entity.h"
+#include "Actor.h"
+#include "Player.h"
+#include "decllib/DeclSurfaceType.h"
 
 CLASS_DECLARATION( idPhysics_Actor, idPhysics_Monster )
 END_CLASS
@@ -133,7 +133,7 @@ void idPhysics_Monster::CheckGround( void ) {
 		walking = false;
 		return;
 	}
-	
+
 	current.onGround = true;
 	walking = true;
 
@@ -238,7 +238,7 @@ bool idPhysics_Monster::SlideMove( bool gravity, bool stepUp, bool stepDown, boo
 
 					// if moved the entire distance
 					if ( stepTrace.fraction >= 1.0f ) {
-						time_left = 0.0f;						
+						time_left = 0.0f;
 						current.stepUp -= ( downTrace.endpos - current.origin ) * gravityNormal;
 						current.origin = downTrace.endpos;
 						current.velocity *= CONST_PM_STEPSCALE;
@@ -275,7 +275,7 @@ bool idPhysics_Monster::SlideMove( bool gravity, bool stepUp, bool stepDown, boo
 				current.velocity *= 1.0f - idMath::ClampFloat( 0.0f, 1000.0f, totalMass - 20.0f ) * ( 1.0f / 950.0f );
 				pushed = true;
 			}
-	
+
 			current.origin = trace.endpos;
 			time_left -= time_left * trace.fraction;
 
@@ -304,7 +304,7 @@ bool idPhysics_Monster::SlideMove( bool gravity, bool stepUp, bool stepDown, boo
 		if ( !stepped && !vehiclePushed && !vehiclePush ) {
 			// let the entity know about the collision
 			idEntity *ent = gameLocal.entities[ trace.c.entityNum ];
-			ent->Hit( trace, current.velocity, self );			
+			ent->Hit( trace, current.velocity, self );
 			self->Collide( trace, current.velocity, -1 );
 		}
 
@@ -438,7 +438,7 @@ idPhysics_Monster::idPhysics_Monster( void ) {
 
 	memset( &current, 0, sizeof( current ) );
 	saved = current;
-	
+
 	delta.Zero();
 	maxStepHeight = 18.0f;
 	useVelocityMove = false;
@@ -601,7 +601,7 @@ bool idPhysics_Monster::Evaluate( int timeStepMSec, int endTimeMSec ) {
 	// check if on the ground
 	CheckGround();
 
-	idVec3 newVelocity = current.velocity - current.pushVelocity;	
+	idVec3 newVelocity = current.velocity - current.pushVelocity;
 
 	if ( !isStable ) {
 		current.onGround = false;
@@ -820,8 +820,8 @@ bool idPhysics_Monster::CheckNetworkStateChanges( networkStateMode_t mode, const
 
 		if ( !baseData.velocity.Compare( current.velocity, 0.01f ) ) {
 			return true;
-		}		
-		
+		}
+
 		return false;
 	}
 
@@ -1155,8 +1155,8 @@ int idPhysics_Monster::VehiclePush( bool stuck, float timeDelta, idVec3& move, i
 	//		pusher->Enable();
 
 			CheckWater();
-			CheckGround();	
-			
+			CheckGround();
+
 			clipModel->Link( gameLocal.clip, self, 0, current.origin, clipModel->GetAxis() );
 			self->UpdateVisuals();
 		}
@@ -1222,7 +1222,7 @@ int idPhysics_Monster::VehiclePush( bool stuck, float timeDelta, idVec3& move, i
 			idVec3 normalFinderEnd = current.origin + traceDir * 128.0f;
 
 			trace_t normalFinder;
-			gameLocal.clip.TranslationModel( CLIP_DEBUG_PARMS normalFinder, normalFinderStart, normalFinderEnd, clipModel, 
+			gameLocal.clip.TranslationModel( CLIP_DEBUG_PARMS normalFinder, normalFinderStart, normalFinderEnd, clipModel,
 																clipModel->GetAxis(), GetClipMask(), pusher,
 																pusher->GetOrigin(), pusher->GetAxis() );
 			if ( normalFinder.fraction == 1.0f ) {

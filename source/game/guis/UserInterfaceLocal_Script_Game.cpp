@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -15,19 +15,19 @@ static char THIS_FILE[] = __FILE__;
 #include "UserInterfaceExpressions.h"
 #include "UserInterfaceManagerLocal.h"
 
-//#include "../interfaces/ResupplyInterface.h"
-#include "../proficiency/StatsTracker.h"
+//#include "interfaces/ResupplyInterface.h"
+#include "proficiency/StatsTracker.h"
 
-#include "../Player.h"
-#include "../Weapon.h"
+#include "Player.h"
+#include "Weapon.h"
 
-#include "../rules/GameRules.h"
-#include "../rules/VoteManager.h"
-#include "../roles/FireTeams.h"
-#include "../roles/Tasks.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../gamesys/SysCmds.h"
+#include "rules/GameRules.h"
+#include "rules/VoteManager.h"
+#include "roles/FireTeams.h"
+#include "roles/Tasks.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "gamesys/SysCmds.h"
 
 using namespace sdProperties;
 
@@ -38,7 +38,7 @@ sdUserInterfaceLocal::Script_GetTeamPlayerCount
 */
 void sdUserInterfaceLocal::Script_GetTeamPlayerCount( sdUIFunctionStack& stack ) {
 	idStr teamName;
-	stack.Pop( teamName );	
+	stack.Pop( teamName );
 
 	if( !gameLocal.rules ) {
 		stack.Push( 0 );
@@ -116,7 +116,7 @@ void sdUserInterfaceLocal::Script_UpdateLimboProficiency( sdUIFunctionStack& sta
 	idStr className;
 	stack.Pop( className );
 
-	gameLocal.limboProperties.SetProficiencySource( className );	
+	gameLocal.limboProperties.SetProficiencySource( className );
 }
 
 /*
@@ -234,7 +234,7 @@ void sdUserInterfaceLocal::Script_GetWeaponBankForName( sdUIFunctionStack& stack
 	int bankNum = -1;
 	if ( name.Length() > 0 ) {
 		const sdDeclInvSlot* slot = gameLocal.declInvSlotType.LocalFind( name, false );
-		if( slot ) {			
+		if( slot ) {
 			bankNum = slot->GetBank() + 1;
 		}
 	}
@@ -292,7 +292,7 @@ void sdUserInterfaceLocal::Script_GetRoleCountForTeam( sdUIFunctionStack& stack 
 		return;
 	}
 
-	// jrad - we do the counting manually, rather than using gameLocal.ClassCount() to avoid causing 
+	// jrad - we do the counting manually, rather than using gameLocal.ClassCount() to avoid causing
 	// pre-caching of the player class declarations
 
 	int count = 0;
@@ -310,7 +310,7 @@ void sdUserInterfaceLocal::Script_GetRoleCountForTeam( sdUIFunctionStack& stack 
 
 		const sdDeclPlayerClass* pc = inv.GetClass();
 		if( ( pc && ( roleName.Icmp( pc->GetName() ) == 0 ) ) ) {
-			count++;	
+			count++;
 		}
 	}
 
@@ -451,7 +451,7 @@ void sdUserInterfaceLocal::Script_GetPersistentRankInfo( sdUIFunctionStack& stac
 		} else if( !type.Icmp( "material" ) ) {
 			stack.Push( rank->GetMaterial() );
 			return;
-		} else if( !type.Icmpn( "next", 4 ) ) {			
+		} else if( !type.Icmpn( "next", 4 ) ) {
 			const idList< sdPersistentRankInfo::sdBadge >& badges = gameLocal.rankInfo.GetBadges();
 
 			const sdPersistentRankInfo::sdBadge* bestBadge = NULL;
@@ -520,7 +520,7 @@ void sdUserInterfaceLocal::Script_GetPersistentRankInfo( sdUIFunctionStack& stac
 	}
 
 	gameLocal.Warning( "Script_GetPersistentRankInfo: unknown rank info type '%s' for rank index '%i'", type.c_str(), gameLocal.rankScratchInfo.completeTasks );
-	stack.Push( "" );	
+	stack.Push( "" );
 }
 
 /*
@@ -590,7 +590,7 @@ void sdUserInterfaceLocal::Script_HighlightSpawnPoint( sdUIFunctionStack& stack 
 	}
 
 	idEntity* spawnPoint = NULL;
-	
+
 	// reset to default spawn
 	if( name.IsEmpty() ) {
 		spawnPoint = info->GetDefaultSpawn();

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,14 +11,14 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "ProficiencyManager.h"
-#include "../Player.h"
-#include "../rules/GameRules.h"
+#include "Player.h"
+#include "rules/GameRules.h"
 #include "StatsTracker.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../roles/FireTeams.h"
-#include "../roles/Tasks.h"
-#include "../../idlib/PropertiesImpl.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "roles/FireTeams.h"
+#include "roles/Tasks.h"
+#include "idlib/PropertiesImpl.h"
 
 idCVar g_logProficiency( "g_logProficiency", "1", CVAR_BOOL | CVAR_GAME | CVAR_NOCHEAT | CVAR_RANKLOCKED, "log proficiency data" );
 
@@ -216,7 +216,7 @@ void sdProficiencyTable::UpdateLevel( int index ) {
 	}
 
 	using namespace sdProperties;
-	
+
 	if ( levels[ index ] != oldLevel ) {
 		idPlayer* player = gameLocal.GetClient( clientNum );
 		if ( player == NULL ) {
@@ -526,7 +526,7 @@ void sdProficiencyManagerLocal::GiveProficiency( int index, float count, idPlaye
 	}
 
 	sdProficiencyTable& proficiencyTable = player->GetProficiencyTable();
-	
+
 	count *= scale;
 
 	player->OnProficiencyGain( index, count, reason );
@@ -638,7 +638,7 @@ void sdProficiencyManagerLocal::GiveProficiency( const sdDeclProficiencyItem* pr
 			idStr bonusReason = va( "Mission Team Bonus: %s", reason );
 
 			taskHandle_t handle = task->GetHandle();
-			
+
 			if ( handle == player->GetActiveTaskHandle() ) {
 				for ( int i = 0; i < MAX_CLIENTS; i++ ) {
 					idPlayer* other = gameLocal.GetClient( i );
@@ -1033,7 +1033,7 @@ bool sdPersistentRankInfo::ParseBadge( idParser& src ) {
 			while ( ( match = taskInfo.MatchPrefix( "field", match ) ) != NULL ) {
 				task.fields.Alloc() = match->GetValue();
 			}
-			
+
 		} else if ( token.Icmp( "category" ) == 0 ) {
 			if ( src.ReadToken( &token ) == 0 ) {
 				return false;
@@ -1076,7 +1076,7 @@ float sdPersistentRankInfo::FindData( const char* key, const idHashIndex& hash, 
 		if ( idStr::Icmp( list[ index ].key->c_str(), key ) != 0 ) {
 			continue;
 		}
-		
+
 		switch ( list[ index ].type ) {
 			case sdNetStatKeyValue::SVT_INT:
 				return list[ index ].val.i;

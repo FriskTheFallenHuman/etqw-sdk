@@ -1,10 +1,10 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h" 
+#include "Game_local.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -88,7 +88,7 @@ bool idBotActions::EntityIsInsideActionBBox( int entNum, const dangerTypes_t ent
 	} else if ( entityType == PLANTED_LANDMINE ) {
 		for( i = 0; i < MAX_CLIENTS; i++ ) {
 			for( j = 0; j < MAX_MINES; j++ ) {
-			
+
 				if ( botThreadData.GetGameWorldState()->clientInfo[ i ].weapInfo.landMines[ j ].entNum != entNum ) {
 					continue;
 				}
@@ -208,7 +208,7 @@ void idBotActions::FindBBoxCenterLinePoint( idVec3& point ) const {
 
 	ProjectPointOntoLine( start, end, point );
 
-/*	
+/*
 	idBounds bounds = actionBBox;
     idVec3 v = bounds[1] - bounds[0];
 	int i = MaxIndex( v[0], v[1] );

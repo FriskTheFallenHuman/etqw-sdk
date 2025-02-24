@@ -1,11 +1,11 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h" 
-#include "../ContentMask.h"
+#include "Game_local.h"
+#include "ContentMask.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 

@@ -32,7 +32,7 @@ public:
 	virtual int									NumInstances() const = 0;
 	virtual void								Init( void ) = 0;
 	virtual void								Shutdown( void ) = 0;
-	virtual void								Clear( bool force = false ) = 0;	
+	virtual void								Clear( bool force = false ) = 0;
 	virtual void								Update( bool outOfSequence ) = 0;
 	virtual void								OnInputInit( void ) = 0;
 	virtual void								OnInputShutdown( void ) = 0;

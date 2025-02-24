@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 #include "Simd_Generic.h"
@@ -233,7 +233,7 @@ void PrintResolution( void ) { }
 void FlushCache( void ) { }
 
 #define StartRecordTime( start )			\
-	start = mach_absolute_time(); 
+	start = mach_absolute_time();
 
 #define StopRecordTime( end )				\
 	end = mach_absolute_time();
@@ -1512,7 +1512,7 @@ void TestMemcpy( void ) {
 		p_simd->Memcpy( test1, test0, 8192 );
 		for ( j = 0; j < i; j++ ) {
 			if ( test1[j] != test0[j] ) {
-				idLib::common->Printf( "   simd->Memcpy() "S_COLOR_RED"X\n" );
+				idLib::common->Printf( "   simd->Memcpy() " S_COLOR_RED "X\n" );
 				return;
 			}
 		}
@@ -1538,7 +1538,7 @@ void TestMemset( void ) {
 			p_simd->Memset( test, j, i );
 			for ( k = 0; k < i; k++ ) {
 				if ( test[k] != (byte)j ) {
-					idLib::common->Printf( "   simd->Memset() "S_COLOR_RED"X\n" );
+					idLib::common->Printf( "   simd->Memset() " S_COLOR_RED "X\n" );
 					return;
 				}
 			}
@@ -5017,7 +5017,7 @@ void TestNegate( void ) {
 	ALIGN16( float fsrc0[COUNT]; )
 	ALIGN16( float fsrc1[COUNT]; )
 	ALIGN16( float fsrc2[COUNT]; )
-	
+
 	const char *result;
 
 	idRandom srnd( RANDOM_SEED );
@@ -5031,9 +5031,9 @@ void TestNegate( void ) {
 
 	bestClocksGeneric = 0;
 	for ( i = 0; i < NUMTESTS; i++ ) {
-	
+
 		memcpy( &fsrc1[0], &fsrc0[0], COUNT * sizeof(float) );
-	
+
 		StartRecordTime( start );
 		p_generic->Negate16( fsrc1, COUNT );
 		StopRecordTime( end );
@@ -5043,9 +5043,9 @@ void TestNegate( void ) {
 
 	bestClocksSIMD = 0;
 	for ( i = 0; i < NUMTESTS; i++ ) {
-	
+
 		memcpy( &fsrc2[0], &fsrc0[0], COUNT * sizeof(float) );
-	
+
 		StartRecordTime( start );
 		p_simd->Negate16( fsrc2, COUNT );
 		StopRecordTime( end );
@@ -5141,7 +5141,7 @@ void idSIMD::Test_f( const idCmdArgs &args ) {
 #if XENON_FRAMES
 	for ( int i = 0; i < 1000; i++ ) {
 		// Clear the backbuffer
-		g_pd3dDevice->Clear( 0L, NULL, D3DCLEAR_TARGET|D3DCLEAR_ZBUFFER|D3DCLEAR_STENCIL, 
+		g_pd3dDevice->Clear( 0L, NULL, D3DCLEAR_TARGET|D3DCLEAR_ZBUFFER|D3DCLEAR_STENCIL,
 									0xff000000, 1.0f, 0L );
 #endif
 

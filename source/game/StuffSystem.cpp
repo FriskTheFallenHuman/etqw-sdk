@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -13,11 +13,11 @@ static char THIS_FILE[] = __FILE__;
 #include "StuffSystem.h"
 #include "Player.h"
 #include "Misc.h"
-#include "../bse/BSEInterface.h"
-#include "../bse/BSE_Envelope.h"
-#include "../bse/BSE_SpawnDomains.h"
-#include "../bse/BSE_Particle.h"
-#include "../bse/BSE.h"
+#include "bse/BSEInterface.h"
+#include "bse/BSE_Envelope.h"
+#include "bse/BSE_SpawnDomains.h"
+#include "bse/BSE_Particle.h"
+#include "bse/BSE.h"
 
 CLASS_DECLARATION( idEntity, sdStuffSystem )
 END_CLASS

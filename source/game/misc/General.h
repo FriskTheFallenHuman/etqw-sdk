@@ -5,8 +5,8 @@
 #ifndef __GAME_MOVER_GENERAL_H__
 #define __GAME_MOVER_GENERAL_H__
 
-#include "../ScriptEntity.h"
-#include "../physics/Physics_Base.h"
+#include "ScriptEntity.h"
+#include "physics/Physics_Base.h"
 
 /*
 ===============================================================================
@@ -128,7 +128,7 @@ protected:
 		idAngles			angles;
 	} positionInfo_t;
 
-	typedef struct moveInfo_s { 
+	typedef struct moveInfo_s {
 		int					startPos;
 		int					endPos;
 		int					startTime;

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,10 +12,10 @@ static char THIS_FILE[] = __FILE__;
 
 #include "Anim.h"
 #include "Anim_FrameCommands.h"
-#include "../Entity.h"
-//#include "../ai/AI.h"
-#include "../Player.h"
-#include "../../framework/DeclParseHelper.h"
+#include "Entity.h"
+//#include "ai/AI.h"
+#include "Player.h"
+#include "framework/DeclParseHelper.h"
 
 static const char* channelNames[ ANIM_NumAnimChannels ] = {
 	"all", "torso", "legs", "head"
@@ -146,7 +146,7 @@ index 0 will never be NULL.  Any anim >= NumAnims will return NULL.
 =====================
 */
 const idMD5Anim* idAnim::MD5Anim( int num ) const {
-	if ( anims[ 0 ] == NULL ) { 
+	if ( anims[ 0 ] == NULL ) {
 		return NULL;
 	}
 	return anims[ num ];
@@ -170,11 +170,11 @@ int idAnim::Length( void ) const {
 idAnim::NumFrames
 =====================
 */
-int	idAnim::NumFrames( void ) const { 
+int	idAnim::NumFrames( void ) const {
 	if ( !anims[ 0 ] ) {
 		return 0;
 	}
-	
+
 	return anims[ 0 ]->NumFrames();
 }
 
@@ -183,7 +183,7 @@ int	idAnim::NumFrames( void ) const {
 idAnim::NumAnims
 =====================
 */
-int	idAnim::NumAnims( void ) const { 
+int	idAnim::NumAnims( void ) const {
 	return numAnims;
 }
 
@@ -196,7 +196,7 @@ const idVec3 &idAnim::TotalMovementDelta( void ) const {
 	if ( !anims[ 0 ] ) {
 		return vec3_zero;
 	}
-	
+
 	return anims[ 0 ]->TotalMovementDelta();
 }
 
@@ -259,7 +259,7 @@ sdAnimFrameCommand* idAnim::ReadFrameCommand( idParser& src ) {
 		return false;
 	}
 
-	sdAnimFrameCommand* fc = sdAnimFrameCommand::Alloc( token );	
+	sdAnimFrameCommand* fc = sdAnimFrameCommand::Alloc( token );
 	if ( !fc ) {
 		src.Error( "idAnim::AddFrameCommand Unknown command '%s'", token.c_str() );
 		return NULL;
@@ -322,7 +322,7 @@ bool idAnim::AddFrameCommand( int framenum, sdAnimFrameCommand* fc ) {
 		frameLookup[ i ].firstCommand++;
 	}
 
-	// store the new command 
+	// store the new command
 	frameCommands[ index ] = fc;
 
 	// increase the number of commands on this frame
@@ -363,7 +363,7 @@ bool idAnim::AddAbsoluteFrameCommand( absoluteFrameCommandType_t framenum, sdAni
 
 	fc->IncRef();
 
-	// store the new command 
+	// store the new command
 	list->Alloc() = fc;
 	return true;
 }
@@ -403,7 +403,7 @@ void idAnim::CallFrameCommands( idClass* ent, int from, int to ) const {
 
 			if ( g_debugFrameCommands.GetBool() ) {
 				if( !idStr::Length( g_debugFrameCommandsFilter.GetString()) || idStr::FindText( command->GetTypeName(), g_debugFrameCommandsFilter.GetString(), false ) != idStr::INVALID_POSITION )  {
-					gameLocal.Printf( "Anim '%s' frame command: Frame: %d, '%s'\n", realname.c_str(), frame + 1, command->GetTypeName() );	
+					gameLocal.Printf( "Anim '%s' frame command: Frame: %d, '%s'\n", realname.c_str(), frame + 1, command->GetTypeName() );
 				}
 			}
 
@@ -446,7 +446,7 @@ void idAnim::CallAbsoluteFrameCommands( idClass *ent, absoluteFrameCommandType_t
 
 		if ( g_debugFrameCommands.GetBool() ) {
 			if( !idStr::Length( g_debugFrameCommandsFilter.GetString()) || idStr::FindText( command->GetTypeName(), g_debugFrameCommandsFilter.GetString(), false ) != idStr::INVALID_POSITION )  {
-				gameLocal.Printf( "Anim '%s' frame command: Frame: '%s', '%s'\n", realname.c_str(), frameName, command->GetTypeName() );	
+				gameLocal.Printf( "Anim '%s' frame command: Frame: '%s', '%s'\n", realname.c_str(), frameName, command->GetTypeName() );
 			}
 		}
 		command->Run( ent );
@@ -665,7 +665,7 @@ void idAnimBlend::SetFrame( idClass* ent, const idDeclModelDef *modelDef, int _a
 	if ( !modelDef ) {
 		return;
 	}
-	
+
 	const idAnim *_anim = modelDef->GetAnim( _animNum );
 	if ( _anim == NULL ) {
 		return;
@@ -677,7 +677,7 @@ void idAnimBlend::SetFrame( idClass* ent, const idDeclModelDef *modelDef, int _a
 		gameLocal.Warning( "Model '%s' has different # of joints than anim '%s'", modelDef->GetModelName(), md5anim->Name() );
 		return;
 	}
-	
+
 	animNum				= _animNum;
 	starttime			= currentTime;
 	endtime				= -1;
@@ -709,7 +709,7 @@ void idAnimBlend::CycleAnim( idClass* ent, const idDeclModelDef *modelDef, int _
 	if ( !modelDef ) {
 		return;
 	}
-	
+
 	const idAnim *_anim = modelDef->GetAnim( _animNum );
 	if ( _anim == NULL ) {
 		return;
@@ -750,7 +750,7 @@ void idAnimBlend::PlayAnim( idClass* ent, const idDeclModelDef *modelDef, int _a
 	if ( !modelDef ) {
 		return;
 	}
-	
+
 	const idAnim *_anim = modelDef->GetAnim( _animNum );
 	if ( _anim == NULL ) {
 		return;
@@ -1327,7 +1327,7 @@ void idAnimBlend::BlendDelta( int fromtime, int totime, idVec3 &blendDelta, floa
 	float	lerp;
 	int		num;
 	int		i;
-	
+
 	if ( frame || !allowMove || ( ( endtime > 0 ) && ( fromtime > endtime ) ) ) {
 		return;
 	}
@@ -1386,7 +1386,7 @@ void idAnimBlend::BlendDeltaRotation( int fromtime, int totime, idQuat &blendDel
 	float	mixWeight;
 	int		num;
 	int		i;
-	
+
 	if ( frame || !allowMove || ( ( endtime > 0 ) && ( fromtime > endtime ) ) ) {
 		return;
 	}
@@ -1469,7 +1469,7 @@ bool idAnimBlend::AddBounds( int currentTime, idBounds &bounds, bool removeOrigi
 
 	time = AnimTime( currentTime );
 	num = anim->NumAnims();
-	
+
 	addorigin = !allowMove || !removeOriginOffset;
 	for( i = 0; i < num; i++ ) {
 		if ( anim->GetBounds( b, i, time, cycle ) ) {
@@ -1614,7 +1614,7 @@ const jointInfo_t *idDeclModelDef::FindJoint( const char *name ) const {
 	if ( !modelHandle ) {
 		return NULL;
 	}
-	
+
 	joint = modelHandle->GetJoints();
 	for( i = 0; i < joints.Num(); i++, joint++ ) {
 		if ( !joint->name.Icmp( name ) ) {
@@ -2075,7 +2075,7 @@ bool idDeclModelDef::Parse( const char *text, const int textLength ) {
 				src.Warning( "Unexpected end of file" );
 				return false;
 			}
-			
+
 			const idDeclModelDef* copy = gameLocal.declModelDefType.LocalFind( token2, false );
 			if ( !copy ) {
 				gameLocal.Warning( "Unknown model definition '%s'", token2.c_str() );
@@ -2422,7 +2422,7 @@ const idAnim *idDeclModelDef::GetAnim( int index ) const {
 	if ( ( index < 1 ) || ( index > anims.Num() ) ) {
 		return NULL;
 	}
-	
+
 	return anims.FindIndex( index - 1 )->second;
 }
 
@@ -2520,7 +2520,7 @@ const char *idDeclModelDef::GetJointName( int jointHandle ) const {
 	if ( !modelHandle ) {
 		return NULL;
 	}
-	
+
 	if ( ( jointHandle < 0 ) || ( jointHandle > joints.Num() ) ) {
 		gameLocal.Error( "idDeclModelDef::GetJointName : joint handle out of range" );
 	}
@@ -2696,7 +2696,7 @@ idRenderModel *idAnimator::SetModel( const char *modelname ) {
 	if ( !modelDef ) {
 		return NULL;
 	}
-	
+
 	idRenderModel *renderModel = modelDef->ModelHandle();
 	if ( !renderModel ) {
 		modelDef = NULL;
@@ -2784,7 +2784,7 @@ int	idAnimator::NumAnims( void ) const {
 	if ( !modelDef ) {
 		return 0;
 	}
-	
+
 	return modelDef->NumAnims();
 }
 
@@ -2797,7 +2797,7 @@ const idAnim *idAnimator::GetAnim( int index ) const {
 	if ( !modelDef ) {
 		return NULL;
 	}
-	
+
 	return modelDef->GetAnim( index );
 }
 
@@ -2810,7 +2810,7 @@ int idAnimator::GetAnim( const char *name ) const {
 	if ( !modelDef ) {
 		return 0;
 	}
-	
+
 	return modelDef->GetAnim( name );
 }
 
@@ -2823,7 +2823,7 @@ bool idAnimator::HasAnim( const char *name ) const {
 	if ( !modelDef ) {
 		return false;
 	}
-	
+
 	return modelDef->HasAnim( name );
 }
 
@@ -2845,7 +2845,7 @@ idRenderModel *idAnimator::ModelHandle( void ) const {
 	if ( !modelDef ) {
 		return NULL;
 	}
-	
+
 	return modelDef->ModelHandle();
 }
 
@@ -2904,7 +2904,7 @@ void idAnimator::SetFrame( animChannel_t channelNum, int animNum, float frame, i
 	if ( !modelDef || !modelDef->GetAnim( animNum ) ) {
 		return;
 	}
-	
+
 	PushAnims( channelNum, currentTime, 0 );
 	channels[ channelNum ][ 0 ].SetFrame( entity, modelDef, animNum, frame, currentTime, blendTime );
 	if ( entity ) {
@@ -2925,7 +2925,7 @@ void idAnimator::CycleAnim( animChannel_t channelNum, int animNum, int currentTi
 	if ( !modelDef || !modelDef->GetAnim( animNum ) ) {
 		return;
 	}
-	
+
 	PushAnims( channelNum, currentTime, blendTime );
 	channels[ channelNum ][ 0 ].CycleAnim( entity, modelDef, animNum, currentTime, blendTime );
 	if ( entity ) {
@@ -2946,7 +2946,7 @@ void idAnimator::PlayAnim( animChannel_t channelNum, int animNum, int currentTim
 	if ( !modelDef || !modelDef->GetAnim( animNum ) ) {
 		return;
 	}
-	
+
 	PushAnims( channelNum, currentTime, blendTime );
 	channels[ channelNum ][ 0 ].PlayAnim( entity, modelDef, animNum, currentTime, blendTime );
 	if ( entity ) {
@@ -3357,7 +3357,7 @@ void idAnimator::FinishAFPose( int animNum, const idBounds &bounds, const int ti
 	if ( !modelDef ) {
 		return;
 	}
-	
+
 	const idAnim *anim = modelDef->GetAnim( animNum );
 	if ( !anim ) {
 		return;
@@ -3846,7 +3846,7 @@ bool idAnimator::CreateFrame( int currentTime, bool force ) {
 			case JOINTMOD_LOCAL:
 				joints[0].SetRotation( jointMod->mat * joints[0].ToMat3() );
 				break;
-			
+
 			case JOINTMOD_WORLD:
 				joints[0].SetRotation( joints[0].ToMat3() * jointMod->mat );
 				break;
@@ -3864,7 +3864,7 @@ bool idAnimator::CreateFrame( int currentTime, bool force ) {
 			case JOINTMOD_LOCAL:
 				joints[0].SetTranslation( joints[0].ToVec3() + jointMod->pos );
 				break;
-			
+
 			case JOINTMOD_LOCAL_OVERRIDE:
 			case JOINTMOD_WORLD:
 			case JOINTMOD_WORLD_OVERRIDE:
@@ -3902,7 +3902,7 @@ bool idAnimator::CreateFrame( int currentTime, bool force ) {
 			case JOINTMOD_LOCAL:
 				joints[i].SetRotation( jointMod->mat * ( joints[i].ToMat3() * joints[parentNum].ToMat3() ) );
 				break;
-			
+
 			case JOINTMOD_LOCAL_OVERRIDE:
 				joints[i].SetRotation( jointMod->mat * joints[parentNum].ToMat3() );
 				break;
@@ -3925,7 +3925,7 @@ bool idAnimator::CreateFrame( int currentTime, bool force ) {
 			case JOINTMOD_LOCAL:
 				joints[i].SetTranslation( joints[parentNum].ToVec3() + ( joints[i].ToVec3() + jointMod->pos ) * joints[parentNum].ToMat3() );
 				break;
-			
+
 			case JOINTMOD_LOCAL_OVERRIDE:
 				joints[i].SetTranslation( joints[parentNum].ToVec3() + jointMod->pos * joints[parentNum].ToMat3() );
 				break;
@@ -4123,7 +4123,7 @@ idAnimator::GetJointParent
 jointHandle_t idAnimator::GetJointParent( jointHandle_t jointHandle ) const {
 	if ( !modelDef || !modelDef->ModelHandle() || jointHandle <= 0 ) {
 		return INVALID_JOINT;
-	}	
+	}
 
 	return modelDef->Joints()[ jointHandle ].parentNum;
 }
@@ -4659,7 +4659,7 @@ idRenderModel *idGameEdit::ANIM_CreateMeshForAnim( idRenderModel *model, const i
 	if ( model == NULL || model->IsDefaultModel() ) {
 		return NULL;
 	}
-			
+
 	const idMD5Anim*		md5anim;
 	idStr					filename;
 	idStr					extension;

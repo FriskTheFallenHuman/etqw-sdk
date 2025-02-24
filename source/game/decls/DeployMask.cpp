@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -116,7 +116,7 @@ void sdDeployMask::WriteTGA( void ) const {
 			}
 		}
 	}
-	
+
 	fileSystem->WriteTGA( fileName.c_str(), buffer, dimensions[ 0 ], dimensions[ 1 ] );
 
 	delete[] buffer;
@@ -149,11 +149,11 @@ void sdDeployMask::DebugDraw( const sdDeployMaskBounds& bounds ) const {
 		for ( int y = 0; y < dimensions[ 1 ]; y++ ) {
 			dims[ 0 ] = ( x + 0.5f ) / fdim[ 0 ];
 			dims[ 1 ] = ( y + 0.5f ) / fdim[ 1 ];
-			
+
 			point[ 0 ] = bounds.worldBounds.GetMins()[ 0 ] + ( bounds.worldSize[ 0 ] * dims[ 0 ] );
 			point[ 1 ] = bounds.worldBounds.GetMins()[ 1 ] + ( bounds.worldSize[ 1 ] * dims[ 1 ] );
 			point[ 2 ] = 0.f;
-			
+
 			if ( hm != NULL ) {
 				point[ 2 ] = hm->GetHeight( point );
 			}

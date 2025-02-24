@@ -14,7 +14,7 @@ public:
 	void	PushBack( const T& element );
 	void	PopBack();
 	T&		Back();
-	
+
 	T&		Front();
 	void	PushFront( const T& element );
 	void	PopFront();

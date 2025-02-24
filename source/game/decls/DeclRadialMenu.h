@@ -2,7 +2,7 @@
 //
 
 
-#include "../../decllib/declLocStr.h"
+#include "decllib/declLocStr.h"
 
 #ifndef __DECLRADIALMENU_H__
 #define __DECLRADIALMENU_H__

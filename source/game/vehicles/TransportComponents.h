@@ -4,8 +4,8 @@
 #ifndef __GAME_VEHICLE_COMPONENTS_H__
 #define __GAME_VEHICLE_COMPONENTS_H__
 
-#include "../effects/Effects.h"
-#include "../effects/WaterEffects.h"
+#include "effects/Effects.h"
+#include "effects/WaterEffects.h"
 #include "VehicleSuspension.h"
 #include "Transport.h"
 
@@ -522,7 +522,7 @@ public :
 
 	bool								IsInWater( void ) const { return inWater; }
 	float								GetThrust( void ) const { return thrustScale; }
-	
+
 	virtual void						SetThrust( float thrust );
 	void								Event_SetThrust( float thrust );
 
@@ -741,7 +741,7 @@ public:
 	virtual bool					HasPhysics( void ) const { return false; }
 
 	void							Init( const sdDeclVehiclePart& part, sdTransport_RB* _parent );
-	virtual void					UpdatePostPhysics( const sdVehicleInput& input );	
+	virtual void					UpdatePostPhysics( const sdVehicleInput& input );
 	virtual int						EvaluateContacts( contactInfo_t* list, contactInfoExt_t* listExt, int max );
 
 protected:
@@ -812,7 +812,7 @@ public:
 
 	void							Init( const sdDeclVehiclePart& part, sdTransport_RB* _parent );
 	virtual void					UpdatePrePhysics( const sdVehicleInput& input );
-	virtual void					UpdatePostPhysics( const sdVehicleInput& input );	
+	virtual void					UpdatePostPhysics( const sdVehicleInput& input );
 	virtual int						AddCustomConstraints( constraintInfo_t* list, int max );
 
 	virtual sdTransport*			GetParent( void ) const { return parent; }
@@ -947,7 +947,7 @@ public:
 
 	void							Init( const sdDeclVehiclePart& part, sdTransport_RB* _parent );
 	virtual void					UpdatePrePhysics( const sdVehicleInput& input );
-	virtual void					UpdatePostPhysics( const sdVehicleInput& input );	
+	virtual void					UpdatePostPhysics( const sdVehicleInput& input );
 
 protected:
 
@@ -983,9 +983,9 @@ public:
 
 	void							Init( const sdDeclVehiclePart& part, sdTransport* _parent );
 	virtual void					UpdatePrePhysics( const sdVehicleInput& input );
-	virtual void					UpdatePostPhysics( const sdVehicleInput& input );	
+	virtual void					UpdatePostPhysics( const sdVehicleInput& input );
 
-	void							UpdateEffect();	
+	void							UpdateEffect();
 
 	void							SetClientParent( rvClientEntity* p );
 
@@ -1039,7 +1039,7 @@ public:
 
 	void							Init( const sdDeclVehiclePart& part, sdTransport_RB* _parent );
 	virtual void					UpdatePrePhysics( const sdVehicleInput& input );
-	virtual void					UpdatePostPhysics( const sdVehicleInput& input );	
+	virtual void					UpdatePostPhysics( const sdVehicleInput& input );
 
 	virtual sdTransport*			GetParent( void ) const { return parent; }
 
@@ -1085,7 +1085,7 @@ public:
 
 	void							Init( const sdDeclVehiclePart& part, sdTransport_RB* _parent );
 	virtual void					UpdatePrePhysics( const sdVehicleInput& input );
-	virtual void					UpdatePostPhysics( const sdVehicleInput& input );	
+	virtual void					UpdatePostPhysics( const sdVehicleInput& input );
 	virtual int						AddCustomConstraints( constraintInfo_t* list, int max );
 
 	virtual sdTransport*			GetParent( void ) const { return parent; }
@@ -1113,7 +1113,7 @@ public:
 
 	void							Init( const sdDeclVehiclePart& part, sdTransport_RB* _parent );
 	virtual void					UpdatePrePhysics( const sdVehicleInput& input );
-	virtual void					UpdatePostPhysics( const sdVehicleInput& input );	
+	virtual void					UpdatePostPhysics( const sdVehicleInput& input );
 	virtual int						AddCustomConstraints( constraintInfo_t* list, int max );
 
 	virtual sdTransport*			GetParent( void ) const { return parent; }

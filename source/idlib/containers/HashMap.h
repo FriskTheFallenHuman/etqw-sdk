@@ -135,7 +135,7 @@ idHashMap<Type>::Remove
 */
 template< class Type >
 ID_INLINE bool idHashMap<Type>::Remove( const char *key ) {
-	int hashKey = hashIndex.GenerateKey( key );	
+	int hashKey = hashIndex.GenerateKey( key );
 	int i;
 	for ( i = hashIndex.GetFirst( hashKey ); i != idHashIndex::NULL_INDEX; i = hashIndex.GetNext( i ) ) {
 		if ( keyList[ i ].Cmp( key ) == 0 ) {

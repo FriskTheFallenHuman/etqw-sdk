@@ -107,7 +107,7 @@ public:
 class collisionWorldPatch_t {
 public:
 	collisionWorldPatch_t() : material( NULL ) {}
-	collisionWorldPatch_t( const idSurface_Patch& patch, const idMaterial* mat, int w, int h, cm_contents_override_t contentsOverride_ ) : 
+	collisionWorldPatch_t( const idSurface_Patch& patch, const idMaterial* mat, int w, int h, cm_contents_override_t contentsOverride_ ) :
 		width( w ), height( h ), surface( patch ), material( mat ), contentsOverride( contentsOverride_ ) {}
 
 	idSurface_Patch			surface;
@@ -129,7 +129,7 @@ struct collisionWorldMesh_t {
 	idStr						modelName;
 	idVec3						origin;
 	idMat3						axis;
-	cm_contents_override_t		contentsOverride;	
+	cm_contents_override_t		contentsOverride;
 };
 
 class collisionWorldEntity_t {
@@ -143,13 +143,13 @@ public:
 	idVec3							translation;
 	idMat3							rotation;
 	idBounds						bounds;
-	
+
 	idList< collisionWorldBrushSide_t >		sides;
 	idList< int >							planeNums;
 	idList< sdPair< int, int > >			brushSideIndices;	// [ first, second ), each pair indexes into the sides list, comprising a single brush
 	idList< collisionWorldPatch_t >			patches;
 	idList< collisionWorldMesh_t >			meshes;
-    
+
 };
 
 struct cm_procNode_t {

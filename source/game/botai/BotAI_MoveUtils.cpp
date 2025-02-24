@@ -1,11 +1,11 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h" 
-#include "../ContentMask.h"
+#include "Game_local.h"
+#include "ContentMask.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -16,7 +16,7 @@ idBotAI::Bot_FindBestCombatMovement
 Finds the best combat movement for the bot while on foot.
 ================
 */
-void idBotAI::Bot_FindBestCombatMovement() {		
+void idBotAI::Bot_FindBestCombatMovement() {
 	int result, k;
 	int travelFlags = ( botInfo->team == GDF ) ? TFL_VALID_GDF : TFL_VALID_STROGG;
 
@@ -57,7 +57,7 @@ void idBotAI::Bot_FindBestCombatMovement() {
 		COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Grenade_Attack_Movement;
 		return;
 	}
-	
+
 	if ( combatDangerExists ) {
 		COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Avoid_Danger_Movement;
 		return;
@@ -192,7 +192,7 @@ void idBotAI::Bot_FindBestCombatMovement() {
 
 
 		result = botThreadData.random.RandomInt( 4 );
-		
+
 //mal: the point here is we want to be constantly moving around and making ourselves a harder target, when we're so vulnerable.
 		if ( result == 0 ) {
 			COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Crazy_Jump_Attack_Movement;
@@ -206,7 +206,7 @@ void idBotAI::Bot_FindBestCombatMovement() {
 
 		return;
 	}
- 
+
 	if ( botThreadData.GetBotSkill() == BOT_SKILL_EASY ) { //mal: stupid bot! Just stand there and take your punishment. >:-D
 		COMBAT_MOVEMENT_STATE = &idBotAI::Stand_Ground_Attack_Movement;
 		return;
@@ -258,7 +258,7 @@ void idBotAI::Bot_FindBestCombatMovement() {
 				COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Side_Strafe_Attack_Movement;
 			} else {
 				COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Circle_Strafe_Attack_Movement; //mal: this will be skipped if enemy too far away.
-			} 
+			}
 
 			return;
 		}
@@ -275,7 +275,7 @@ void idBotAI::Bot_FindBestCombatMovement() {
 					COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Hal_Strafe_Attack_Movement;
 				} else {
 					COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Side_Strafe_Attack_Movement;
-				} 
+				}
 
 				return;
 			}
@@ -394,14 +394,14 @@ void idBotAI::Bot_FindBestCombatMovement() {
             result = botThreadData.random.RandomInt( 4 );
 
 			if ( result == 0 ) {
-		        COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Crazy_Jump_Attack_Movement;	
+		        COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Crazy_Jump_Attack_Movement;
 			} else if ( result == 1 ) {
 				COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Hal_Strafe_Attack_Movement;
 			} else if ( result == 2 ) {
 				COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Circle_Strafe_Attack_Movement;
 			} else {
 				COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Side_Strafe_Attack_Movement;
-			} 
+			}
 			return;
 		}
 	}
@@ -418,7 +418,7 @@ void idBotAI::Bot_FindBestCombatMovement() {
         result = botThreadData.random.RandomInt( 3 );
 
 		if ( result == 0 ) {
-			COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Run_And_Gun_Movement;			
+			COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Run_And_Gun_Movement;
 		} else if ( result == 1 ) {
 			COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Hal_Strafe_Attack_Movement;
 		} else {
@@ -431,7 +431,7 @@ void idBotAI::Bot_FindBestCombatMovement() {
 ================
 idBotAI::Bot_SetupMove
 
-Sets up the bot's path goal 
+Sets up the bot's path goal
 ================
 */
 void idBotAI::Bot_SetupMove( const idVec3 &org, int clientNum, int actionNumber, int areaNum ) {
@@ -477,7 +477,7 @@ void idBotAI::Bot_SetupMove( const idVec3 &org, int clientNum, int actionNumber,
         if ( clientNum != -1 ) {
 			areaNum = botWorld->clientInfo[ clientNum ].areaNum;
 			if ( botInfo->areaNum != areaNum ) {
-				goalOrigin = botWorld->clientInfo[ clientNum ].aasOrigin;	
+				goalOrigin = botWorld->clientInfo[ clientNum ].aasOrigin;
 			} else {
 				goalOrigin = botWorld->clientInfo[ clientNum ].origin;
 			}
@@ -518,7 +518,7 @@ void idBotAI::Bot_SetupMove( const idVec3 &org, int clientNum, int actionNumber,
 		Bot_FindNextRouteToGoal();
 	}
 
-	botAAS.path.moveGoal = path.seekPos; 
+	botAAS.path.moveGoal = path.seekPos;
 
 	if ( path.firstObstacle != -1 && botWorld->gameLocalInfo.botsCanDecayObstacles ) {
 		proxyInfo_t vehicle;
@@ -632,13 +632,13 @@ bool idBotAI::Bot_CanMove( const moveDirections_t direction, float gUnits, bool 
 	idVec3 end;
 
 	end = botInfo->origin;
-	
+
 	switch ( direction ) {
-	
+
 	case FORWARD:
 		end += ( gUnits * botInfo->viewAxis[ 0 ] );
 		break;
-	
+
 	case BACK:
 		end += ( -gUnits * botInfo->viewAxis[ 0 ] );
 		break;
@@ -665,7 +665,7 @@ bool idBotAI::Bot_CanMove( const moveDirections_t direction, float gUnits, bool 
 		botCanMoveGoal = end;
         return true;
 	}
-	
+
 	return false;
 }
 
@@ -673,7 +673,7 @@ bool idBotAI::Bot_CanMove( const moveDirections_t direction, float gUnits, bool 
 ================
 idBotAI::Bot_MoveToGoal
 
-Sets where the bot would like to move. 
+Sets where the bot would like to move.
 ================
 */
 void idBotAI::Bot_MoveToGoal( const idVec3 &spot1, const idVec3 &spot2, const botMoveFlags_t moveFlag, const botMoveTypes_t moveType ) {
@@ -700,7 +700,7 @@ void idBotAI::Bot_MoveToGoal( const idVec3 &spot1, const idVec3 &spot2, const bo
 		}
 
 		if ( botThreadData.AllowDebugData() ) {
-			if ( bot_debug.GetBool() ) { 
+			if ( bot_debug.GetBool() ) {
 				idVec3 test = spot1;
 				test[ 2 ] += 24;
 				gameRenderWorld->DebugLine(colorYellow, spot1, test, 16 );
@@ -764,7 +764,7 @@ void idBotAI::Bot_MoveAlongPath( botMoveFlags_t defaultMoveFlags ) {
 
 		default: { //mal: check to see if we're under attack from an enemy we can't see - if so, move around a bit to make ourselves harder to hit.
 
-			bool safeToJump = false; 
+			bool safeToJump = false;
 			botMoveTypes_t defaultMoveType = NULLMOVETYPE;
 
 			idVec3 vec = botAAS.path.moveGoal - botInfo->origin;
@@ -896,7 +896,7 @@ const botMoveFlags_t idBotAI::Bot_ShouldStrafeJump( const idVec3 &targetOrigin )
 	if ( end.LengthSqr() < strafeDist ) {
 		isStrafeJumping = false;
 		skipStrafeJumpTime = botWorld->gameLocalInfo.time + delayTime;
-		
+
 		if ( botThreadData.GetBotSkill() > BOT_SKILL_EASY && botWorld->gameLocalInfo.botSkill != BOT_SKILL_DEMO ) {
             return SPRINT;
 		} else {
@@ -944,14 +944,14 @@ const botMoveFlags_t idBotAI::Bot_ShouldStrafeJump( const idVec3 &targetOrigin )
 	}
 
 	if ( botInfo->xySpeed < SPRINTING_SPEED ) {
-		skipStrafeJumpTime = botWorld->gameLocalInfo.time + delayTime; 
+		skipStrafeJumpTime = botWorld->gameLocalInfo.time + delayTime;
 		isStrafeJumping = false;
 		return SPRINT;
 	}
 
 	if ( !LocationVis2Sky( botInfo->origin ) ) { //mal: if indoors, make sure we have enough ceiling room
 		if ( !LocationHasHeadRoom( botInfo->origin ) ) {
-            skipStrafeJumpTime = botWorld->gameLocalInfo.time + delayTime; 
+            skipStrafeJumpTime = botWorld->gameLocalInfo.time + delayTime;
 			isStrafeJumping = false;
 
 			if ( botInfo->enemiesInArea == 0 && enemy == -1 ) {
@@ -973,7 +973,7 @@ const botMoveFlags_t idBotAI::Bot_ShouldStrafeJump( const idVec3 &targetOrigin )
 	}
 
 //mal: we're not going to strafe jump...
-	skipStrafeJumpTime = botWorld->gameLocalInfo.time + delayTime; 
+	skipStrafeJumpTime = botWorld->gameLocalInfo.time + delayTime;
 	isStrafeJumping = false;
 
 	if ( botInfo->enemiesInArea == 0 && enemy == -1 ) {
@@ -1099,7 +1099,7 @@ void idBotAI::Bot_MoveAwayFromClient( int clientNum, bool randomStrafe ) {
 
 	if ( botInfo->posture == IS_CROUCHED || botInfo->posture == IS_PRONE ) {
 		botMoveFlag = CROUCH;
-	} else { 
+	} else {
 		botMoveFlag = WALK;
 	}
 
@@ -1264,13 +1264,13 @@ bool idBotAI::AddGroundObstacles( bool largePlayerBBox, bool inVehicle ) {
 			} else {
 				//mal: if on foot - only avoid enemy players if we can see them and we're not disguised.
 				if ( !botInfo->isDisguised && !InFrontOfClient( botNum, playerInfo.origin ) ) {
-					continue;											
+					continue;
 				}
 			}
 		} else {
 			if ( botVehicleInfo == NULL ) {
 				if ( !InFrontOfClient( botNum, playerInfo.origin, true ) ) {
-					continue;											
+					continue;
 				}
 			}
 		}
@@ -1338,7 +1338,7 @@ bool idBotAI::AddGroundObstacles( bool largePlayerBBox, bool inVehicle ) {
 
 		const clientInfo_t& playerInfo = botWorld->clientInfo[ i ];
 
-		if ( playerInfo.supplyCrate.entNum == 0 ) { 
+		if ( playerInfo.supplyCrate.entNum == 0 ) {
 			continue;
 		}
 
@@ -1422,7 +1422,7 @@ bool idBotAI::AddGroundObstacles( bool largePlayerBBox, bool inVehicle ) {
 		if ( currentDangers[ i ].num == 0 ) {
 			continue;
 		}
-	
+
 		if ( currentDangers[ i ].time < botWorld->gameLocalInfo.time ) {
 			continue;
 		}
@@ -1450,7 +1450,7 @@ bool idBotAI::AddGroundObstacles( bool largePlayerBBox, bool inVehicle ) {
 			box = idBox( vec, idVec3( 512.0f, 512.0f, 128.0f ), mat3_identity );
 		} else if ( currentDangers[ i ].type == THROWN_AIRSTRIKE ) {
 			box = idBox( vec, idVec3( 1024.0f, 768.0f, 64.0f ), currentDangers[ i ].dir );
-			
+
 			if ( botThreadData.AllowDebugData() ) {
 				gameRenderWorld->DebugBox( colorBlue, box );
 			}
@@ -1532,9 +1532,9 @@ bool idBotAI::AddGroundAndAirObstacles( bool largePlayerBBox, bool inVehicle, bo
 
 	//mal: vehicles
 	for( int i = 0; i < MAX_VEHICLES; i++ ) {
-		
+
 		const proxyInfo_t& vehicleInfo = botWorld->vehicleInfo[ i ];
-	
+
 		if ( vehicleInfo.entNum == 0 ) {
 			continue;
 		}
@@ -1622,7 +1622,7 @@ bool idBotAI::AddGroundAndAirObstacles( bool largePlayerBBox, bool inVehicle, bo
 							}
 						}
 					}
-				} else if ( !( botVehicleInfo->flags & PERSONAL ) && !( vehicleInfo.flags & ARMOR ) ) { 
+				} else if ( !( botVehicleInfo->flags & PERSONAL ) && !( vehicleInfo.flags & ARMOR ) ) {
 					if ( InFrontOfVehicle( vehicleInfo.entNum, botVehicleInfo->origin, true ) ) { //mal: ok - this is the pain: what is the other guy doing?
 						if ( vehicleInfo.driverEntNum != -1 ) {
 							clientInfo_t driver = botWorld->clientInfo[ vehicleInfo.driverEntNum ];
@@ -1664,7 +1664,7 @@ bool idBotAI::AddGroundAndAirObstacles( bool largePlayerBBox, bool inVehicle, bo
 		}
 
 		if ( botVehicleInfo != NULL && distSqr < Square( 1024.0f ) && InFrontOfVehicle( botInfo->proxyInfo.entNum, vehicleInfo.origin, true ) && vehicleInfo.xyspeed > WALKING_SPEED ) {
-			vehiclePauseTime = botWorld->gameLocalInfo.time + VEHICLE_PAUSE_TIME; 
+			vehiclePauseTime = botWorld->gameLocalInfo.time + VEHICLE_PAUSE_TIME;
 			continue;
 		}
 
@@ -1673,7 +1673,7 @@ bool idBotAI::AddGroundAndAirObstacles( bool largePlayerBBox, bool inVehicle, bo
 		}
 
 		obstacles.AddObstacle( box, vehicleInfo.entNum );
-		
+
 		if ( botThreadData.AllowDebugData() ) {
 			if ( bot_debugObstacles.GetBool() ) {
 				gameRenderWorld->DebugBox( colorGreen, box, 128 );
@@ -1753,7 +1753,7 @@ void idBotAI::FlyerHive_BuildPlayerObstacleList() {
 		}
 
 		idBox box = idBox( playerInfo.origin, idVec3( 64.0f, 64.0f, 84.0f ), playerInfo.bodyAxis );
-		
+
 		obstacles.AddObstacle( box, i );
 	}
 }
@@ -1805,7 +1805,7 @@ void idBotAI::Bot_FindRouteToCurrentGoal() {
 	}
 
 	for( i = 0; i < botThreadData.botRoutes.Num(); i++ ) {
-		
+
 		if ( botThreadData.botRoutes[ i ]->groupID != botThreadData.botActions[ actionNum ]->routeID ) {
 			continue;
 		}
@@ -1958,7 +1958,7 @@ const moveDirections_t idBotAI::Bot_DirectionToLocation( const idVec3& location,
 			return BACK;
 		} else if ( dir * axis[ 1 ] > 0.50f ) {
 			return LEFT;
-		} else { 
+		} else {
 			return RIGHT;
 		}
 	} else {
@@ -1968,7 +1968,7 @@ const moveDirections_t idBotAI::Bot_DirectionToLocation( const idVec3& location,
 			return BACK;
 		} else if ( dir * axis[ 1 ] > 0.50f ) {
 			return LEFT;
-		} else { 
+		} else {
 			return RIGHT;
 		}
 	}
@@ -2015,7 +2015,7 @@ bool idBotAI::Bot_LocationIsReachable( bool inVehicle, const idVec3& loc, int& t
 ================
 idBotAI::Bot_SetupFlyerMove
 
-Sets up the bot's path goal with the flyer hive. 
+Sets up the bot's path goal with the flyer hive.
 ================
 */
 void idBotAI::Bot_SetupFlyerMove( idVec3& goalOrigin, int goalAreaNum ) {
@@ -2030,7 +2030,7 @@ void idBotAI::Bot_SetupFlyerMove( idVec3& goalOrigin, int goalAreaNum ) {
 
 	idVec3 hiveOrigin = botInfo->weapInfo.covertToolInfo.origin;
 	int hiveAreaNum = botAAS.aas->PointReachableAreaNum( hiveOrigin, botAAS.aas->GetSettings()->boundingBox, AAS_AREA_REACHABLE_WALK, TravelFlagInvalidForTeam() );
-	
+
 	botAAS.aas->PushPointIntoArea( hiveAreaNum, hiveOrigin );
 
 	if ( goalAreaNum == 0 ) {
@@ -2144,7 +2144,7 @@ bool idBotAI::Bot_CheckIfObstacleInArea( float minAvoidDist ) {
 	bool hasObstacle = false;
 
 	for( int i = 0; i < botThreadData.botObstacles.Num(); i++ ) {
-		
+
 		idBotObstacle *obstacle = botThreadData.botObstacles[ i ];
 		idVec3 vec = obstacle->bbox.GetCenter() - botInfo->origin;
 

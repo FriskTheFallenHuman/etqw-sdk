@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -161,7 +161,7 @@ INPUTMODE_AXIS_DECLARE_DEF_INVERT( sdInputModePlayer, player,  side, 0, 0 );
 =======================================
 */
 void sdInputModePlayer::ControllerMove( bool doGameCallback, const int controllerNum, const float* controllerAxis, idVec3& viewAngles, usercmd_t& cmd ) {
-	INPUTMODE_AXIS_EVALUATE( sdInputModePlayer, pitch, controllerAxis );	
+	INPUTMODE_AXIS_EVALUATE( sdInputModePlayer, pitch, controllerAxis );
 	INPUTMODE_AXIS_EVALUATE( sdInputModePlayer, forward, controllerAxis );
 	INPUTMODE_AXIS_EVALUATE( sdInputModePlayer, yaw, controllerAxis );
 	INPUTMODE_AXIS_EVALUATE( sdInputModePlayer, side, controllerAxis );

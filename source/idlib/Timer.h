@@ -179,7 +179,7 @@ ID_INLINE double idTimer::Milliseconds( void ) const {
 State
 ===============
 */
-ID_INLINE idTimer::timerState_t idTimer::State( void ) const { 
+ID_INLINE idTimer::timerState_t idTimer::State( void ) const {
 	return state;
 }
 

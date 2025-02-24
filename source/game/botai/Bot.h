@@ -15,7 +15,7 @@
    the bot through the world while the actual AI is implemented in idBotAI
    which runs in a separate thread.
 
-  - QW:ET Bot. Begun July 5, 2006 
+  - QW:ET Bot. Begun July 5, 2006
   - bot born in game (spawning in - but buggy, crashes) July 7, 2006
   - made thread safe (for the Xbox) August 8, 2006.
   - bot codename: Strogg Bot August 14, 2006.
@@ -82,7 +82,7 @@ private:
 	idVec3					GetPlayerViewPosition( int clientNum ) const;
 	bool					InVehicleGunSights( const idVec3 &org, bool precise );
 	void					CheckBotIngameMissionStatus();
-	
+
 #ifdef BOT_MOVE_LOOKUP
 	void					MoveDirectionToInput( const idVec2& localMoveDir, botMoveFlags_t moveFlags, float& moveForward, float& moveRight );
 #endif

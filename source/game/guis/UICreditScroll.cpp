@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -15,7 +15,7 @@ static char THIS_FILE[] = __FILE__;
 #include "UserInterfaceLocal.h"
 #include "UICreditScroll.h"
 
-#include "../../sys/sys_local.h"
+#include "sys/sys_local.h"
 
 SD_UI_IMPLEMENT_CLASS( sdUICreditScroll, sdUIWindow )
 
@@ -71,7 +71,7 @@ sdUICreditScroll::GetFunction
 */
 sdUIFunctionInstance* sdUICreditScroll::GetFunction( const char* name ) {
 	const sdUITemplateFunction< sdUICreditScroll >* function = sdUICreditScroll::FindFunction( name );
-	if( !function ) {		
+	if( !function ) {
 		return sdUIWindow::GetFunction( name );
 	}
 
@@ -97,12 +97,12 @@ SD_UI_PUSH_CLASS_TAG( sdUICreditScroll )
 void sdUICreditScroll::InitFunctions() {
 	SD_UI_FUNC_TAG( resetScroll, "Reset scroll amount." )
 	SD_UI_END_FUNC_TAG
-	creditFunctions.Set( "resetScroll",	new sdUITemplateFunction< sdUICreditScroll >( 'v', "",	&sdUICreditScroll::Script_ResetScroll ) );	
+	creditFunctions.Set( "resetScroll",	new sdUITemplateFunction< sdUICreditScroll >( 'v', "",	&sdUICreditScroll::Script_ResetScroll ) );
 
 	SD_UI_FUNC_TAG( loadFromFile, "Load the text to scroll from a file. Supports UTF8." )
 		SD_UI_FUNC_PARM( string, "filePath", "File to load data from." )
 	SD_UI_END_FUNC_TAG
-	creditFunctions.Set( "loadFromFile",new sdUITemplateFunction< sdUICreditScroll >( 'v', "s",	&sdUICreditScroll::Script_LoadFromFile ) );	
+	creditFunctions.Set( "loadFromFile",new sdUITemplateFunction< sdUICreditScroll >( 'v', "s",	&sdUICreditScroll::Script_LoadFromFile ) );
 }
 SD_UI_POP_CLASS_TAG
 
@@ -122,7 +122,7 @@ sdUICreditScroll::DrawLocal
 */
 void sdUICreditScroll::DrawLocal() {
 	const sdCreditItem* item = items;
-	
+
 	sdBounds2D bounds( cachedClientRect );
 	while( item != NULL ) {
 		sdBounds2D b( item->rect );
@@ -131,9 +131,9 @@ void sdUICreditScroll::DrawLocal() {
 		if( b.IntersectsBounds( bounds ) ) {
 			if( item->material.material != NULL ) {
 				deviceContext->DrawMaterial( item->rect.x, item->rect.y + scrollOffset, item->rect.z, item->rect.w, item->material.material, item->color, item->material.st0, item->material.st1 );
-			} else {							
+			} else {
 				deviceContext->SetColor( item->color );
-				
+
 				deviceContext->SetFontSize( fontSize + item->fontSize );
 				deviceContext->DrawText( item->text.c_str(), b, DTF_TOP | DTF_SINGLELINE |  DTF_CENTER );
 			}
@@ -152,7 +152,7 @@ void sdUICreditScroll::Script_LoadFromFile( sdUIFunctionStack& stack ) {
 
 	idStr fileName;
 	stack.Pop( fileName );
-	
+
 	sdFilePtr file( fileSystem->OpenFileRead( fileName.c_str() ) );
 	if( !file.IsValid() ) {
 		gameLocal.Warning( "%s: Script_LoadFromFile: could not find '%s'", name.GetValue().c_str(), fileName.c_str() );
@@ -180,7 +180,7 @@ void sdUICreditScroll::Script_LoadFromFile( sdUIFunctionStack& stack ) {
 	idWToken token;
 	while( src.ReadToken( &token ) ) {
 
-		int i = token.linesCrossed; 
+		int i = token.linesCrossed;
 		while( i > 1 ) {
 			sdCreditItem* item = new sdCreditItem;
 			item->rect.w = 8.0f;
@@ -204,7 +204,7 @@ void sdUICreditScroll::Script_LoadFromFile( sdUIFunctionStack& stack ) {
 			assert( w.type == TT_NUMBER );
 			assert( h.type == TT_NUMBER );
 			item->rect.z = w.GetFloatValue();
-			item->rect.w = h.GetFloatValue();			
+			item->rect.w = h.GetFloatValue();
 			useText = false;
 			item->color = colorWhite;
 		} else if( token.Icmp( L"small" ) == 0 )  {
@@ -222,14 +222,14 @@ void sdUICreditScroll::Script_LoadFromFile( sdUIFunctionStack& stack ) {
 		}
 
 		if( needText ) {
-			src.ReadToken( &token );		
+			src.ReadToken( &token );
 		}
 
 		if( useText ) {
 			assert( token.type == TT_STRING );
 			item->text = token.c_str();
 		}
-		
+
 		Append( item );
 	}
 	MakeLayoutDirty();
@@ -243,7 +243,7 @@ sdUICreditScroll::Append
 */
 void sdUICreditScroll::Append( sdCreditItem* item ) {
 	if( items == NULL ) {
-		items = item;			
+		items = item;
 	} else if( lastItem != NULL ) {
 		lastItem->next = item;
 	}
@@ -271,7 +271,7 @@ void sdUICreditScroll::ApplyLayout() {
 		while( item != NULL ) {
 			if( item->material.material != NULL ) {
 				item->rect.x = cachedClientRect.x + ( cachedClientRect.z * 0.5f ) - ( item->rect.z * 0.5f );
-				item->rect.y = cachedClientRect.y + yOffset;				
+				item->rect.y = cachedClientRect.y + yOffset;
 			} else if( !item->text.IsEmpty() ) {
 				deviceContext->SetFontSize( fontSize + item->fontSize );
 				deviceContext->GetTextDimensions( item->text.c_str(), measureRect, DTF_SINGLELINE | DTF_CENTER | DTF_TOP, cachedFontHandle, fontSize + item->fontSize, w, h );
@@ -281,7 +281,7 @@ void sdUICreditScroll::ApplyLayout() {
 				item->rect.w = h;
 			}
 			yOffset += item->rect.w;
-			item = item->next;			
+			item = item->next;
 		}
 		totalHeight = yOffset;
 		scrollOffset = cachedClientRect.w;
@@ -302,9 +302,9 @@ void sdUICreditScroll::ApplyLayout() {
 	scrollTargetTime = scrollStartTime + SEC2MS( speed * ratio );
 
 	float totalTime = static_cast< float >( scrollTargetTime - scrollStartTime );
-	float percent = static_cast< float >( now - scrollStartTime ) / totalTime;	
+	float percent = static_cast< float >( now - scrollStartTime ) / totalTime;
 
-	scrollOffset = cachedClientRect.w - percent * ( cachedClientRect.w + totalHeight );	
+	scrollOffset = cachedClientRect.w - percent * ( cachedClientRect.w + totalHeight );
 
 	if( idMath::Fabs( scrollOffset ) >= totalHeight ) {
 		scrollOffset = cachedClientRect.w;

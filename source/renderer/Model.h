@@ -261,7 +261,7 @@ public:
 	// which can regenerate the data with LoadModel()
 	virtual void				PurgeModel() = 0;
 
-	// resets any model information that needs to be reset on a same level load etc.. 
+	// resets any model information that needs to be reset on a same level load etc..
 	// currently only implemented for liquids
 	virtual void				Reset() = 0;
 
@@ -297,7 +297,7 @@ public:
 	// prints a single line report for listTexUsage
 	virtual void				TexUsage() const = 0;
 
-	// 
+	//
 	virtual void				Media( idFile *reportfile, sdHashMapGeneric< const idImage*, imageuseinfo > &texref ) const = 0;
 
 	// reports the amount of memory (roughly) consumed by the model

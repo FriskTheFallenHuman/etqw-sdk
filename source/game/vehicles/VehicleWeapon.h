@@ -4,8 +4,8 @@
 #ifndef __GAME_VEHICLE_WEAPON_H__
 #define __GAME_VEHICLE_WEAPON_H__
 
-#include "../Weapon.h"
-#include "../script/ScriptEntityHelpers.h"
+#include "Weapon.h"
+#include "script/ScriptEntityHelpers.h"
 
 class sdVehiclePosition;
 class sdTransport;
@@ -61,7 +61,7 @@ public:
 	void								Event_GetPlayer( void );
 	void								Event_SetState( const char* state );
 	void								Event_SetTarget( const idVec3& target, bool state );
-	
+
 	bool								IsWeaponReady( void );
 	void								GetWeaponOriginAxis( idVec3& org, idMat3& axis );
 	jointHandle_t						GetWeaponJointHandle( void ) const { return gunJointHandle; }
@@ -78,7 +78,7 @@ protected:
 	sdVehiclePosition*					position;
 	sdVehiclePosition*					basePosition;
 	sdTransport*						vehicle;
-	
+
 	const sdDeclStringMap*				spawnWeaponParms;
 	sdWeaponLockInfo					lockInfo;
 

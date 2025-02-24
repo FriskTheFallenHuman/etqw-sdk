@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,10 +11,10 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Physics_Static.h"
-#include "../Entity.h"
+#include "Entity.h"
 #include "Force.h"
 #include "Clip.h"
-#include "../ContentMask.h"
+#include "ContentMask.h"
 
 CLASS_DECLARATION( idPhysics, idPhysics_Static )
 END_CLASS
@@ -431,7 +431,7 @@ idPhysics_Static::SetAxis
 */
 void idPhysics_Static::SetAxis( const idMat3 &newAxis, int id ) {
 
-	if ( flags.hasMaster ) { 
+	if ( flags.hasMaster ) {
 		if ( flags.isOrientated ) {
 			idVec3 masterOrigin;
 			idMat3 masterAxis;
@@ -580,7 +580,7 @@ void idPhysics_Static::ClipTranslation( trace_t &results, const idVec3 &translat
 	} else {
 		gameLocal.clip.Translation( CLIP_DEBUG_PARMS results, current.origin, current.origin + translation,
 			clipModel, current.axis, MASK_SOLID, self );
-	}	
+	}
 }
 
 /*
@@ -841,7 +841,7 @@ idPhysics_Static::CheckNetworkStateChanges
 bool idPhysics_Static::CheckNetworkStateChanges( networkStateMode_t mode, const sdEntityStateNetworkData& baseState ) const {
 	if ( mode == NSM_VISIBLE ) {
 		NET_GET_BASE( sdPhysicsStaticNetworkData );
-		
+
 		if ( baseData.position != current.origin ) {
 			return true;
 		}

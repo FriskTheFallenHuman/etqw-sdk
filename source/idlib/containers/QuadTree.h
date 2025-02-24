@@ -480,7 +480,7 @@ ID_INLINE typename sdQuadTree<type>::sdQuadNode * sdQuadTree<type>::AllocNode( s
 			*parent = new sdQuadNode( nodeBounds );
 
 			(*parent)->SetNodePosition( pNodeLevel, pX, pY );
-		} 
+		}
 
 		(*child)->SetParent( *(*parent) );
 

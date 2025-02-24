@@ -1,11 +1,11 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../../idlib/precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 #include "TraceModel.h"
-#include "../../renderer/Material.h"
+#include "renderer/Material.h"
 
 /*
 ============
@@ -1381,7 +1381,7 @@ idTraceModel::Compare
 bool idTraceModel::Compare( const idTraceModel &trm ) const {
 	int i;
 
-	if ( type != trm.type || numVerts != trm.numVerts || 
+	if ( type != trm.type || numVerts != trm.numVerts ||
 			numEdges != trm.numEdges || numPolys != trm.numPolys ) {
 		return false;
 	}
@@ -1605,7 +1605,7 @@ void idTraceModel::ProjectionIntegrals( int polyNum, int a, int b, projectionInt
 		b0_3 = b0_2 * b0;
 		b0_4 = b0_3 * b0;
 		a1_2 = a1 * a1;
-		a1_3 = a1_2 * a1; 
+		a1_3 = a1_2 * a1;
 		b1_2 = b1 * b1;
 		b1_3 = b1_2 * b1;
 
@@ -1685,7 +1685,7 @@ void idTraceModel::PolygonIntegrals( int polyNum, int a, int b, int c, polygonIn
 
 	integrals.Faaa = k1 * pi.Paaa;
 	integrals.Fbbb = k1 * pi.Pbbb;
-	integrals.Fccc = -k4 * (Cube(n[a]) * pi.Paaa + 3 * Square(n[a]) * n[b] * pi.Paab 
+	integrals.Fccc = -k4 * (Cube(n[a]) * pi.Paaa + 3 * Square(n[a]) * n[b] * pi.Paab
 			+ 3 * n[a] * Square(n[b]) * pi.Pabb + Cube(n[b]) * pi.Pbbb
 			+ 3 * w * (Square(n[a]) * pi.Paa + 2 * n[a] * n[b] * pi.Pab + Square(n[b]) * pi.Pbb)
 			+ w * w * (3 * (n[a] * pi.Pa + n[b] * pi.Pb) + w * pi.P1));

@@ -65,7 +65,7 @@ public:
 
 	int								Infrequent() const { return infrequent; }
 	void							SetInfrequentIndex( const int index ) const { infrequent = index; }
-	
+
 	// Only for renderer use, the rest of the engine HANDS OFF THE GOODS!
 	void							SetEvaluator( evaluatorCallback_t evaluator ) const { this->evaluator = evaluator; }
 	void							ClearEvaluator() const { this->evaluator = NoOpEvaluator; }

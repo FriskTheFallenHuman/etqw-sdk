@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -13,14 +13,14 @@ static char THIS_FILE[] = __FILE__;
 
 #include "Physics_RigidBodyMultiple.h"
 #include "Clip.h"
-#include "../Player.h"
-#include "../../decllib/DeclSurfaceType.h"
-#include "../vehicles/Transport.h"
-#include "../Game_local.h"
-#include "../vehicles/VehicleControl.h"
-#include "../ContentMask.h"
+#include "Player.h"
+#include "decllib/DeclSurfaceType.h"
+#include "vehicles/Transport.h"
+#include "Game_local.h"
+#include "vehicles/VehicleControl.h"
+#include "ContentMask.h"
 
-#include "../misc/ProfileHelper.h"
+#include "misc/ProfileHelper.h"
 
 const float GRAVITY_STOP_SPEED		= 20.0f;
 const float STOP_SPEED				= 0.0f;
@@ -347,7 +347,7 @@ sdPhysics_RigidBodyMultiple::sdPhysics_RigidBodyMultiple( void ) {
 
 	// use the least expensive euler integrator
 	integrator = new idODE_Euler( sizeof( rigidBodyIState_t ) / sizeof( float ), RigidBodyDerivatives_Multi, this );
-	
+
 	lcp = idLCP::AllocSymmetric();
 
 	masterEntity = NULL;
@@ -448,7 +448,7 @@ void sdPhysics_RigidBodyMultiple::CalculateMassProperties( void ) {
 		bounds.TranslateSelf( bodies[ i ].GetOffset() );
 
 		totalBounds += bounds;
-		
+
 		if ( bodies[ i ].GetClipMask() && clipModel->GetContents() != MASK_HURTZONE ) {
 			mainBounds += bounds;
 		}
@@ -714,7 +714,7 @@ bool sdPhysics_RigidBodyMultiple::CollisionImpulse( const trace_t& collision, id
 
 	idVec3	v1AB	= v1A - v1B;
 	relativeVelocity = v1AB;
-	
+
 	float j = STOP_SPEED;
 
 
@@ -753,7 +753,7 @@ bool sdPhysics_RigidBodyMultiple::CollisionImpulse( const trace_t& collision, id
 
 	impulse = j * normal;
 
-	// if this collision isn't going to result in this body getting pushed, 
+	// if this collision isn't going to result in this body getting pushed,
 	// double the impulse and leave it all for the thing we're colliding with
 
 	// update linear and angular momentum with impulse
@@ -1036,7 +1036,7 @@ void sdPhysics_RigidBodyMultiple::SetupVPushCollection( void ) {
 sdPhysics_RigidBodyMultiple::CheckForPlayerCollisions
 
   Check for collisions against players only between the current and next state, by
-  hurtzone bodies. These then immediately have the callbacks executed so the players 
+  hurtzone bodies. These then immediately have the callbacks executed so the players
   are caused damage, but no impulse is imparted on player or vehicle.
 ================
 */
@@ -1127,7 +1127,7 @@ bool sdPhysics_RigidBodyMultiple::CheckForPlayerCollisions( float timeDelta, tra
 				if ( gameLocal.time - positionManager->GetPlayerExitTime( playerOther ) < 1000 ) {
  					noCollide = true;
 				}
-			} 
+			}
 			if ( other->GetPhysics()->IsGroundEntity( self->entityNumber ) ) {
 				noCollide = true;
 			}
@@ -1235,7 +1235,7 @@ bool sdPhysics_RigidBodyMultiple::CheckForPlayerCollisions( float timeDelta, tra
 				if ( gameLocal.time - positionManager->GetPlayerExitTime( playerOther ) < 1000 ) {
 					noCollide = true;
 				}
-			} 
+			}
 			if ( other->GetPhysics()->IsGroundEntity( self->entityNumber ) ) {
 				noCollide = true;
 			}
@@ -1335,7 +1335,7 @@ bool sdPhysics_RigidBodyMultiple::CheckForPlayerCollisions( float timeDelta, tra
 							blockingTrace = tr;
 							blockingTrace.fraction = trueFraction;
 							nextOrientation = tr.endAxis;
-							
+
 							end = nextPosition + mainCenterOfMass * currentOrientation;
 							noCollisionDamage = noCollide;
 						}
@@ -1447,7 +1447,7 @@ sdPhysics_RigidBodyMultiple::ContactFriction
 */
 void sdPhysics_RigidBodyMultiple::ContactFriction( float deltaTime, bool addEntityConstraints ) {
 	int i;
-	idVec3 massCenter, r; 
+	idVec3 massCenter, r;
 
 	massCenter = current->i.position + ( mainCenterOfMass * current->i.orientation );
 
@@ -1570,7 +1570,7 @@ void sdPhysics_RigidBodyMultiple::ContactFriction( float deltaTime, bool addEnti
 		// burp?
 		return;
 	}
-	
+
 	for ( i = 0; i < numConstraints; i++ ) {
 		constraintInfo_t& constraint = constraintInfo[ i ];
 
@@ -1642,7 +1642,7 @@ bool sdPhysics_RigidBodyMultiple::TestIfAtRest( void ) const {
 
 	// linear velocity of body
 	idVec3 v = GetLinearVelocity();
-	
+
 	// linear velocity in gravity direction
 	gv = v * gravityNormal;
 	// linear velocity orthogonal to gravity direction
@@ -1656,7 +1656,7 @@ bool sdPhysics_RigidBodyMultiple::TestIfAtRest( void ) const {
 		return false;
 	}
 
-	float speed = v.Length();	
+	float speed = v.Length();
 
 	// if too much velocity orthogonal to gravity direction
 	if ( speed > 2.f ) {
@@ -1729,7 +1729,7 @@ void sdPhysics_RigidBodyMultiple::DebugDraw( void ) {
 				clipModel->Draw();
 			}
 		}
-		
+
 
 		if ( rb_showVelocity.GetBool() ) {
 			DrawVelocity( clipModel->GetId(), 0.1f, 4.0f );
@@ -2494,7 +2494,7 @@ bool sdPhysics_RigidBodyMultiple::EvaluateContacts( bool addEntityContacts ) {
 
 	int count = 0;
 
-	idEntity* collisionEnt = NULL; 
+	idEntity* collisionEnt = NULL;
 	if ( lastCollision.time >= gameLocal.time - gameLocal.msec ) {
 		collisionEnt = gameLocal.entities[ lastCollision.trace.c.entityNum ];
 	}
@@ -2519,9 +2519,9 @@ bool sdPhysics_RigidBodyMultiple::EvaluateContacts( bool addEntityContacts ) {
 			if ( contents & vpushClipMask ) {
 				idClipModel* otherClip = collisionEnt->GetPhysics()->GetClipModel();
 				if ( otherClip != NULL ) {
-					num = gameLocal.clip.ContactsModel( CLIP_DEBUG_PARMS_ENTINFO( self ) &contacts[ count ], RBM_MAX_CONTACTS - count, 
-														clipModel->GetOrigin(), &dir, CONTACT_EPSILON, clipModel, 
-														clipModel->GetAxis(), body.GetClipMask(), otherClip, 
+					num = gameLocal.clip.ContactsModel( CLIP_DEBUG_PARMS_ENTINFO( self ) &contacts[ count ], RBM_MAX_CONTACTS - count,
+														clipModel->GetOrigin(), &dir, CONTACT_EPSILON, clipModel,
+														clipModel->GetAxis(), body.GetClipMask(), otherClip,
 														otherClip->GetOrigin(), otherClip->GetAxis() );
 
 					for ( int j = count; j < count + num; j++ ) {
@@ -2818,7 +2818,7 @@ void sdPhysics_RigidBodyMultiple::ClipTranslation( trace_t &results, const idVec
 		if( tr.fraction < results.fraction ) {
 			results = tr;
 		}
-		
+
 	}
 
 	results.endpos = current->i.position + results.fraction * translation;
@@ -2852,7 +2852,7 @@ void sdPhysics_RigidBodyMultiple::ClipRotation( trace_t &results, const idRotati
 
 		if( tr.fraction < results.fraction ) {
 			results = tr;
-		}		
+		}
 	}
 
 	partialRotation = rotation * results.fraction;
@@ -3263,7 +3263,7 @@ sdPhysics_RigidBodyMultiple::CheckNetworkStateChanges
 bool sdPhysics_RigidBodyMultiple::CheckNetworkStateChanges( networkStateMode_t mode, const sdEntityStateNetworkData& baseState ) const {
 	if ( mode == NSM_VISIBLE ) {
 		NET_GET_BASE( sdRBMultipleNetworkState );
-		
+
 		idVec3 angularVelocity = GetAngularVelocity();
 		idVec3 linearVelocity = GetLinearVelocity();
 

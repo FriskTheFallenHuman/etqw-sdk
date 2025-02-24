@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,15 +11,15 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "TeamManager.h"
-#include "../structures/DeployRequest.h"
-#include "../Player.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../rules/VoteManager.h"
-#include "../roles/FireTeams.h"
+#include "structures/DeployRequest.h"
+#include "Player.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "rules/VoteManager.h"
+#include "roles/FireTeams.h"
 
-#include "../botai/Bot.h"	//mal: needed for the bots.
-#include "../botai/BotThreadData.h"
+#include "botai/Bot.h"	//mal: needed for the bots.
+#include "botai/BotThreadData.h"
 
 
 /*
@@ -163,7 +163,7 @@ void sdTeamManagerLocal::Shutdown( void ) {
 sdTeamManagerLocal::GetTeam
 ================
 */
-sdTeamInfo* sdTeamManagerLocal::GetTeamSafe( const char* name ) {	
+sdTeamInfo* sdTeamManagerLocal::GetTeamSafe( const char* name ) {
 	for( int i = 0; i < teamInfo.Num(); i++ ) {
 		if ( idStr::Icmp( teamInfo[ i ]->GetLookupName(), name ) ) {
 			continue;
@@ -196,7 +196,7 @@ int sdTeamManagerLocal::GetIndexForTeam( const char* name ) {
 sdTeamManagerLocal::GetTeam
 ================
 */
-sdTeamInfo& sdTeamManagerLocal::GetTeam( const char* name ) {	
+sdTeamInfo& sdTeamManagerLocal::GetTeam( const char* name ) {
 	for( int i = 0; i < teamInfo.Num(); i++ ) {
 		if( !idStr::Icmp( teamInfo[ i ]->GetLookupName(), name ) ) {
 			return *teamInfo[ i ];
@@ -380,7 +380,7 @@ sdEntityStateNetworkData* sdTeamManagerLocal::CreateNetworkStructure( void ) con
 ===============================================================================
 
 	sdTeamInfo
-	
+
 ===============================================================================
 */
 
@@ -421,7 +421,7 @@ extern const idEventDef EV_SyncScriptFieldBroadcast;
 extern const idEventDef EV_SyncScriptFieldCallback;
 extern const idEventDef EV_GetName;
 
-const idEventDef EV_Team_GetTitle( "getTitle", 'h', DOC_TEXT( "Returns a handle to the localized name of the team." ), 0, NULL ); 
+const idEventDef EV_Team_GetTitle( "getTitle", 'h', DOC_TEXT( "Returns a handle to the localized name of the team." ), 0, NULL );
 const idEventDef EV_Team_RegisterDeployable( "registerDeployable", '\0', DOC_TEXT( "Registers an entity as belonging to this team." ), 1, "See also $event:unRegisterDeployable$.", "e", "entity", "Entity to add to the list." );
 const idEventDef EV_Team_UnRegisterDeployable( "unRegisterDeployable", '\0', DOC_TEXT( "Removes an entity from this team's list." ), 1, "See also $event:registerDeployable$.", "e", "entity", "Entity to remove from the list." );
 const idEventDef EV_Team_RegisterSpawnPoint( "registerSpawnPoint", '\0', DOC_TEXT( "Registers an entity as an active spawn point for this team." ), 1, "See also $event:unRegisterSpawnPoint$.", "e", "entity", "Entity to add to the list." );
@@ -482,7 +482,7 @@ sdTeamInfo::sdTeamInfo( void ) : index( -1 ), info( NULL ), passwordCVar( NULL )
 	rearSpawnBase = NULL;
 
 	playZoneExitToolTip = NULL;
-		
+
 	fireTeams = new sdFireTeam[ MAX_FIRETEAMS ];
 	for ( int i = 0; i < MAX_FIRETEAMS; i++ ) {
 		fireTeams[ i ].SetDefaultName( fireTeamNames[ i ] );
@@ -596,7 +596,7 @@ sdTeamInfo::AllowRespawn
 bool sdTeamInfo::AllowRespawn( idPlayer* player ) {
 	sdScriptHelper h1;
 	h1.Push( player->GetScriptObject() );
-	scriptObject->CallNonBlockingScriptEvent( allowRespawnFunc, h1 );	
+	scriptObject->CallNonBlockingScriptEvent( allowRespawnFunc, h1 );
 	return gameLocal.program->GetReturnedInteger() != 0;
 }
 
@@ -607,7 +607,7 @@ sdTeamInfo::GetTeamRespawnTime
 */
 int sdTeamInfo::GetTeamRespawnTime(  void ) {
  	sdScriptHelper h1;
-	scriptObject->CallNonBlockingScriptEvent( teamNextRespawnTimeFunc, h1 );	
+	scriptObject->CallNonBlockingScriptEvent( teamNextRespawnTimeFunc, h1 );
 	return idMath::Ftoi( gameLocal.program->GetReturnedFloat() );
 }
 
@@ -909,7 +909,7 @@ void sdTeamInfo::RegisterSpawnPoint( idEntity* other ) {
 			spawnLocations.Insert( temp, i );
 			break;
 		}
-		
+
 		i++;
 	}
 
@@ -931,7 +931,7 @@ sdTeamInfo::UnRegisterSpawnPoint
 */
 void sdTeamInfo::UnRegisterSpawnPoint( idEntity* other ) {
 	idEntity* oldDefault = spawnLocations.Num() ? spawnLocations[ 0 ].GetEntity() : NULL;
-	
+
 	RemoveEntityFromList( spawnLocations, other );
 
 	idEntity* newDefault = spawnLocations.Num() ? spawnLocations[ 0 ].GetEntity() : NULL;
@@ -1039,7 +1039,7 @@ void sdTeamInfo::OnNewScriptLoad( void ) {
 	const char* scriptObjectName = info->GetDict().GetString( "scriptObject", "default" );
 	scriptObject = gameLocal.program->AllocScriptObject( this, scriptObjectName );
 	allowRespawnFunc = scriptObject->GetFunction( "OnAllowRespawn" );
-	
+
 	teamNextRespawnTimeFunc = scriptObject->GetFunction( "GetNextRespawnTime" );
 
 	sdScriptHelper h1;
@@ -1353,7 +1353,7 @@ const sdDeclPlayerClass* sdTeamInfo::GetEquivalentClass( const sdDeclPlayerClass
 	const idDict& dict = desiredTeam.GetDict();
 	idStr key = va( "pc_team_remap_%s_%s", GetLookupName(), currentClass.GetName() );
 	const char* remappedClass = dict.GetString( key, "" );
-	
+
 	if( idStr::Length( remappedClass ) == 0 ) {
 		return &currentClass;
 	}
@@ -1390,7 +1390,7 @@ sdTeamInfo::FreeRadarLayer
 */
 void sdTeamInfo::FreeRadarLayer( sdRadarLayer* layer ) {
 	int index;
-	
+
 	index = radarLayers.FindIndex( layer );
 	if ( index != -1 ) {
 		radarLayers.RemoveIndexFast( index );

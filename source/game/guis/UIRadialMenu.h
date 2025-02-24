@@ -84,14 +84,14 @@ public:
 	static void								InitFunctions( void );
 	static void								ShutdownFunctions( void ) { radialMenuFunctions.DeleteContents(); }
 	static const uiTemplateFunction_t*		FindFunction( const char* name );
-	
+
 private:
 
 	enum radialItemStyle {	RIS_LEFT		= BITT< 0 >::VALUE,
 							RIS_RIGHT		= BITT< 1 >::VALUE,
 							RIS_CENTER		= BITT< 2 >::VALUE,
 							RIS_TOP			= BITT< 3 >::VALUE,
-							RIS_BOTTOM		= BITT< 4 >::VALUE,							
+							RIS_BOTTOM		= BITT< 4 >::VALUE,
 	};
 
 	enum radialTransitionProperty_e{	RTP_FORECOLOR = -2,
@@ -183,7 +183,7 @@ protected:
 
 	void									DrawItem( radialPage_t& page, radialItem_t& item, int index, const idVec2& center, const idVec2& offset, int radialItemStyle );
 	void									DrawTitle( radialPage_t& page, const idVec2& center );
-	
+
 	void									OnCurrentPageChanged( const float oldValue, const float newValue );
 	void									OnDrawStyleChanged( const float oldValue, const float newValue );
 	bool									OnValidateCurrentItem( const float newValue );
@@ -229,7 +229,7 @@ protected:
 	datatype			= "float";
 	)
 	sdFloatProperty		currentPage;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "1. Object/CurrentItem";
 	desc				= "CurrentItem";
@@ -245,7 +245,7 @@ protected:
 	datatype			= "float";
 	)
 	sdFloatProperty		verticalPadding;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "1. Object/DrawStyle";
 	desc				= "Radial menu draw style";

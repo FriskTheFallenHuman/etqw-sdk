@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -138,7 +138,7 @@ void idPlayerView::WeaponFireFeedback( const weaponFeedback_t& feedback ) {
 		kickAngles = feedback.recoilAngles;
 		int	finish = gameLocal.time + static_cast< int >( g_kickTime.GetFloat() * feedback.recoilTime );
 		kickFinishTime = finish;
-	}	
+	}
 
 }
 
@@ -260,7 +260,7 @@ bool idPlayerView::SkipWorldRender( void ) {
 	bool skipWorldRender =  false;
 	idPlayer* localPlayer = gameLocal.GetLocalPlayer();
 	if ( localPlayer != NULL ) {
-		sdHudModule* module = NULL;		
+		sdHudModule* module = NULL;
 		for ( module = gameLocal.localPlayerProperties.GetDrawHudModule(); module; module = module->GetDrawNode().Next() ) {
 			const sdUserInterfaceLocal* ui = module->GetGui();
 			if( ui == NULL ) {
@@ -269,7 +269,7 @@ bool idPlayerView::SkipWorldRender( void ) {
 			if( ui->TestGUIFlag( sdUserInterfaceLocal::GUI_INHIBIT_GAME_WORLD ) ) {
 				skipWorldRender = true;
 				break;
-			}			
+			}
 		}
 		if ( sdUserInterfaceLocal* scoreboardUI = gameLocal.GetUserInterface( gameLocal.localPlayerProperties.GetScoreBoard() ) ) {
 			skipWorldRender |= scoreboardUI->TestGUIFlag( sdUserInterfaceLocal::GUI_INHIBIT_GAME_WORLD );
@@ -360,7 +360,7 @@ idPlayerView::SingleView2D
 */
 void idPlayerView::SingleView2D( idPlayer* viewPlayer ) {
 	sdPostProcess* postProcess = gameLocal.localPlayerProperties.GetPostProcess();
-	postProcess->DrawPost();		
+	postProcess->DrawPost();
 
 	if ( sdDemoManager::GetInstance().g_showDemoHud.GetBool() && sdDemoManager::GetInstance().InPlayBack() ) {
 		sdUserInterfaceLocal* ui = gameLocal.GetUserInterface( sdDemoManager::GetInstance().GetHudHandle() );
@@ -368,7 +368,7 @@ void idPlayerView::SingleView2D( idPlayer* viewPlayer ) {
 		if ( ui != NULL ) {
 			ui->Draw();
 		}
-	}	
+	}
 
 	idPlayer* localPlayer = gameLocal.GetLocalPlayer();
 	if ( localPlayer != NULL || gameLocal.serverIsRepeater ) {
@@ -385,20 +385,20 @@ void idPlayerView::SingleView2D( idPlayer* viewPlayer ) {
 				drawHud &= !proxy->GetUsableInterface()->GetHideHud( viewPlayer );
 			}
 		}
-		
-		sdHudModule* module = NULL;		
+
+		sdHudModule* module = NULL;
 		for ( module = gameLocal.localPlayerProperties.GetDrawHudModule(); module; module = module->GetDrawNode().Next() ) {
 			if( module->ManualDraw() ) {
 				continue;
 			}
 			if( drawHud || !module->AllowInhibit() ) {
 				module->Draw();
-			}			
+			}
 		}
 			// jrad - the scoreboard should top everything
 		if ( drawHud ) {
 			DrawScoreBoard( localPlayer );
-		}		
+		}
 	}
 
 	// test a single material drawn over everything
@@ -531,7 +531,7 @@ void idPlayerView::DrawScoreBoard( idPlayer* player ) {
 					limboMenu->Enable( false );
 				}
 			}
-		}		
+		}
 		scoreboardUI->Draw();
 
 		if( gameLocal.localPlayerProperties.ShouldShowEndGame() ) {
@@ -765,7 +765,7 @@ void idPlayerView::UpdateRepeaterView( void ) {
 			if ( accelspeed > addspeed ) {
 				accelspeed = addspeed;
 			}
-			
+
 			repeaterViewInfo.velocity += accelspeed * wishdir;
 		}
 
@@ -782,7 +782,7 @@ void idPlayerView::UpdateRepeaterView( void ) {
 			const idClipModel* clipModel = gameLocal.clip.GetTemporaryClipModel( bounds );
 
 			trace_t trace;
-			gameLocal.clip.TranslationWorld( trace, repeaterViewInfo.origin, newOrigin, clipModel, mat3_identity, CONTENTS_SOLID | CONTENTS_PLAYERCLIP | CONTENTS_BODY ); 
+			gameLocal.clip.TranslationWorld( trace, repeaterViewInfo.origin, newOrigin, clipModel, mat3_identity, CONTENTS_SOLID | CONTENTS_PLAYERCLIP | CONTENTS_BODY );
 			if ( trace.fraction != 1.f ) {
 				repeaterViewInfo.origin = trace.endpos;
 				timeLeft -= timeLeft * trace.fraction;
@@ -862,7 +862,7 @@ bool idPlayerView::RenderPlayerView( idPlayer* viewPlayer ) {
 	if ( sdDemoManager::GetInstance().CalculateRenderView( &currentView ) ) {
 		// place the sound origin for the player
 		gameSoundWorld->PlaceListener( currentView.vieworg, currentView.viewaxis, -1, gameLocal.time );
-		
+
 		// field of view
 		gameLocal.CalcFov( currentView.fov_x, currentView.fov_x, currentView.fov_y );
 	} else {
@@ -1071,7 +1071,7 @@ void idPlayerView::UpdateSpectateView( idPlayer* other ) {
 	if ( other != NULL ) {
 		if ( gameLocal.time > lastSpectateUpdateTime ) {
 			lastSpectateUpdateTime = gameLocal.time;
-			
+
 			// this is a spectator view
 			if ( lastSpectatePlayer != other ) {
 				lastSpectatePlayer = other;
@@ -1106,7 +1106,7 @@ void idPlayerView::Init( void ) {
 
 void idPlayerView::SetupEffect( void ) {
 	idPlayer* localPlayer = gameLocal.GetLocalPlayer();
-	
+
 	renderEffect_t &renderEffect = underWaterEffect.GetRenderEffect();
 	renderEffect.declEffect = gameLocal.FindEffect( localPlayer->spawnArgs.GetString( "fx_underWater" ), false );
 	renderEffect.axis.Identity();

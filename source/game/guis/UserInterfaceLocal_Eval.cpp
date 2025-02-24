@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -16,8 +16,8 @@ static char THIS_FILE[] = __FILE__;
 #include "UserInterfaceManagerLocal.h"
 #include "UIWindow.h"
 
-#include "../../decllib/declTypeHolder.h"
-#include "../../decllib/declLocStr.h"
+#include "decllib/declTypeHolder.h"
+#include "decllib/declLocStr.h"
 
 using namespace sdProperties;
 
@@ -312,7 +312,7 @@ float sdUserInterfaceLocal::Eval_ToFloat( const sdUIEvaluator* evaluator ) {
 	idStr temp;
 	idStr const &parm1 = evaluator->GetParm( 0 )->GetStringValue( temp );
 	float output = 0.0f;
-	
+
 	int num = sscanf( parm1, "%f", &output );
 	if( num != 1 ) {
 		gameLocal.Warning( "sdUserInterfaceLocal::Eval_ToFloat: Invalid input string '%s'", parm1.c_str() );
@@ -511,7 +511,7 @@ idWStr sdUserInterfaceLocal::Eval_LocalizeArgs( const sdUIEvaluator* evaluator )
 	formatStrings.SetNum( evaluator->GetNumParms() - 1 );
 
 	idWStr tempw;
-	for ( int i = 1; i < evaluator->GetNumParms(); i++ ) {		
+	for ( int i = 1; i < evaluator->GetNumParms(); i++ ) {
 		formatStrings[ i - 1 ] = evaluator->GetParm( i )->GetWStringValue( tempw );
 	}
 
@@ -712,7 +712,7 @@ sdUserInterfaceLocal::Eval_FormatWString
 */
 idWStr sdUserInterfaceLocal::Eval_FormatWString( const sdUIEvaluator* evaluator ) {
 	idWStr temp;
-	
+
 	idStr tempFormat;
 	const idStr& formatStr = evaluator->GetParm( 0 )->GetStringValue( tempFormat );
 
@@ -726,7 +726,7 @@ idWStr sdUserInterfaceLocal::Eval_FormatWString( const sdUIEvaluator* evaluator 
 			i++;
 			if( formatStr[ i ] == '%' ) {
 				builder += L'%';
-			} else {				
+			} else {
 				int index = sdTypeFromString< int >( &formatStr.c_str()[ i ] );
 				if( index > 0 && index < evaluator->GetNumParms() ) {
 					const idWStr& value = evaluator->GetParm( index )->GetWStringValue( temp );

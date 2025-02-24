@@ -6,7 +6,7 @@
 #define __GAME_GUIS_USERINTERFACE_CROSSHAIRINFO_H__
 
 #include "UserInterfaceTypes.h"
-#include "../PlayerIcon.h"
+#include "PlayerIcon.h"
 
 extern const char sdUITemplateFunctionInstance_IdentifierCrosshairInfo[];
 
@@ -46,7 +46,7 @@ public:
 
 	virtual const char*						GetScopeClassName() const { return "sdUICrosshairInfo"; }
 	virtual const CrosshairInfoTemplateFunction*	FindFunction( const char* name );
-	
+
 	virtual sdUIFunctionInstance*			GetFunction( const char* name );
 	static void								InitFunctions();
 	static void								ShutdownFunctions( void ) { crosshairInfoFunctions.DeleteContents(); }
@@ -106,7 +106,7 @@ protected:
 
 
 private:
-	enum eCrosshairPart {	CP_BAR_LEFT, CP_BAR_CENTER, CP_BAR_RIGHT, 
+	enum eCrosshairPart {	CP_BAR_LEFT, CP_BAR_CENTER, CP_BAR_RIGHT,
 							CP_BAR_FILL_LEFT, CP_BAR_FILL_CENTER, CP_BAR_FILL_RIGHT,
 							CP_BAR_LINE_LEFT, CP_BAR_LINE_CENTER, CP_BAR_LINE_RIGHT,
 							CP_SMALL_DAMAGE, CP_MEDIUM_DAMAGE, CP_LARGE_DAMAGE,
@@ -121,7 +121,7 @@ private:
 	int										bracketFadeTime;
 	idEntityPtr< idEntity >					lastBracketEntity;
 
-	idStaticList< uiDrawPart_t, CP_MAX > crosshairParts;	
+	idStaticList< uiDrawPart_t, CP_MAX > crosshairParts;
 	static idHashMap< CrosshairInfoTemplateFunction* >		crosshairInfoFunctions;
 	idStaticList< sdDockedScreenIcon, 6 >					dockedIcons;
 };

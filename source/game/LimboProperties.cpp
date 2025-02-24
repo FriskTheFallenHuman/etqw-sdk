@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,7 +11,7 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "LimboProperties.h"
-#include "../idlib/PropertiesImpl.h"
+#include "idlib/PropertiesImpl.h"
 #include "Player.h"
 #include "rules/GameRules.h"
 #include "Waypoints/LocationMarker.h"
@@ -99,7 +99,7 @@ void sdLimboProperties::Init( void ) {
 		properties.RegisterProperty( va( "proficiencyTitle%i", i ),		proficiencyTitle[ i ] );
 		properties.RegisterProperty( va( "proficiencyLevels%i", i ),	proficiencyLevels[ i ] );
 		properties.RegisterProperty( va( "proficiencyName%i", i ),		proficiencyName[ i ] );
-	}	
+	}
 }
 
 
@@ -135,19 +135,19 @@ void sdLimboProperties::Update( void ) {
 	const sdInventory& inv = player->GetInventory();
 
 	name			= player->GetUserInfo().rawName;
-	
+
 	if( inv.GetCachedClass() != NULL ) {
 		role = inv.GetCachedClass()->GetName();
 		if( inv.GetCachedClassOptions().Num() > 0 ) {
 			weaponIndex = inv.GetCachedClassOption( 0 );
-		} else {			
+		} else {
 			weaponIndex = 0;
 		}
 	} else if( inv.GetClass() != NULL ) {
 		role = inv.GetClass()->GetName();
 		if( inv.GetClassOptions().Num() > 0 ) {
 			weaponIndex = inv.GetClassOption( 0 );
-		} else {			
+		} else {
 			weaponIndex = 0;
 		}
 	} else {
@@ -169,7 +169,7 @@ void sdLimboProperties::Update( void ) {
 
 	if( gameLocal.rules != NULL ) {
 		matchTime		= gameLocal.rules->GetGameTime();
-	}	
+	}
 
 	UpdateProficiency( player, proficiencySource );
 }
@@ -180,9 +180,9 @@ sdLimboProperties::UpdateProficiency
 ============
 */
 void sdLimboProperties::UpdateProficiency( idPlayer* player, const sdDeclPlayerClass* pc ) {
-	if ( pc != NULL ) {		
+	if ( pc != NULL ) {
 		const sdProficiencyTable& table = player->GetProficiencyTable();
-		const sdTeamInfo* teamInfo = pc->GetTeam();	
+		const sdTeamInfo* teamInfo = pc->GetTeam();
 
 		for( int i = 0; i < pc->GetNumProficiencies(); i++ ) {
 			const sdDeclPlayerClass::proficiencyCategory_t& category = pc->GetProficiency( i );
@@ -192,7 +192,7 @@ void sdLimboProperties::UpdateProficiency( idPlayer* player, const sdDeclPlayerC
 			proficiency[ i ] = static_cast< float >( table.GetLevel( profIndex ) );
 
 			const sdDeclProficiencyType* prof = gameLocal.declProficiencyTypeType.LocalFindByIndex( profIndex );
-			const sdDeclLocStr* title = declHolder.declLocStrType.LocalFind( teamInfo->GetDict().GetString( va( "prof_%s", prof->GetLookupTitle() ) ) ); 
+			const sdDeclLocStr* title = declHolder.declLocStrType.LocalFind( teamInfo->GetDict().GetString( va( "prof_%s", prof->GetLookupTitle() ) ) );
 			proficiencyTitle[ i ]	= title->Index();
 			proficiencyLevels[ i ]	= prof->GetNumLevels();
 			proficiencyName[ i ]	= prof->GetName();

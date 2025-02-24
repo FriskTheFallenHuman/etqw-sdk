@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 const sdStringBuilder_Traits< idStr >::CharType sdStringBuilder_Traits< idStr >::terminator = '\0';

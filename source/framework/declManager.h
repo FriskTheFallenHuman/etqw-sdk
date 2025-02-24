@@ -126,7 +126,7 @@ public:
 	virtual const char *		GetFileName( void ) const = 0;
 	virtual void				GetText( char *text ) const = 0;
 	virtual int					GetTextLength( void ) const = 0;
-	virtual void				SetBinarySource( const byte* source, int length ) = 0;	
+	virtual void				SetBinarySource( const byte* source, int length ) = 0;
 	virtual void				GetBinarySource( byte*& source, int& length ) const = 0;
 	virtual void				FreeSourceBuffer( byte* buffer ) const = 0;
 	virtual bool				HasBinaryBuffer() const = 0;
@@ -202,7 +202,7 @@ public:
 
 								// Sets new decl text.
 	void						SetText( const char *text ) { base->SetText( text ); }
-								
+
 								// Sets new binary source data.
 	void						SetBinarySource( const byte* source, int length )  { base->SetBinarySource( source, length ); }
 
@@ -277,7 +277,7 @@ public:
 	virtual void				Print( void ) const { base->Print(); }
 
 	virtual int					GetFileOffset( void ) const { return base->GetFileOffset(); }
-	virtual int					GetFileLength( void ) const { return base->GetFileLength(); }	
+	virtual int					GetFileLength( void ) const { return base->GetFileLength(); }
 
 								// a list of relative files that have been #included by at any level of the file
 	virtual const idStrList&	GetIncludeDependencies() const { return base->GetIncludeDependencies(); }
@@ -371,16 +371,16 @@ enum declInfoFlags_e {
 class sdDeclInfo {
 public:
 	static const int MAX_DECLINFO_STRING = 256;
-	typedef void ( *pfnCacheFromDict )( const idDict& dict ); 
+	typedef void ( *pfnCacheFromDict )( const idDict& dict );
 	typedef void ( *pfnOnReload )( idDecl* );
 	typedef void ( *pfnOnPostParse )( idDecl* );
 
 	sdDeclInfo( const char* typeName, int flags = DIF_ALLOW_TEMPLATES, pfnCacheFromDict cacheFromDict = NULL, pfnOnReload onReload = NULL );
-	
+
 	const char*					GetTypeName( void ) const				{ return _typeName; }
 	pfnCacheFromDict			CacheFromDict( void ) const				{ return _cacheFromDictFunction; }
 	pfnOnReload					OnReload( void ) const					{ return _onReload; }
-	
+
 	bool						SkipChecksum( void ) const				{ return ( _flags & DIF_SKIP_CHECKSUM ) != 0; }
 	bool						AllowTemplateEvaluation( void ) const	{ return ( _flags & DIF_ALLOW_TEMPLATES ) != 0; }
 	bool						SkipParsing( void ) const				{ return ( _flags & DIF_SKIP_PARSING ) != 0; }
@@ -391,9 +391,9 @@ public:
 	bool						NeverStoreBinary( void ) const			{ return ( _flags & DIF_NEVER_STORE_BINARY ) != 0; }
 
 								// jrad - postParse callbacks
-	void						RegisterPostParse( pfnOnPostParse postParse ) const { 
-									assert( postParse != NULL ); 
-									_onPostParse.AddUnique( postParse );																
+	void						RegisterPostParse( pfnOnPostParse postParse ) const {
+									assert( postParse != NULL );
+									_onPostParse.AddUnique( postParse );
 								}
 
 	void						UnregisterPostParse( pfnOnPostParse postParse ) const { assert( postParse ); _onPostParse.Remove( postParse ); }
@@ -442,13 +442,13 @@ public:
 	virtual const char*			GetName( void ) const { return INFO->GetTypeName(); }
 	virtual void				CacheFromDict( const idDict& dict ) const { if ( INFO->CacheFromDict() ) { INFO->CacheFromDict()( dict ); } }
 	virtual bool				CanCacheFromDict() const { return INFO->CacheFromDict() != NULL; }
-	virtual void				OnReload( idDecl* decl ) const { if ( INFO->OnReload() ) { INFO->OnReload()( decl ); } }	
+	virtual void				OnReload( idDecl* decl ) const { if ( INFO->OnReload() ) { INFO->OnReload()( decl ); } }
 	virtual bool				AllowTemplateEvaluation( void ) const { return INFO->AllowTemplateEvaluation(); }
 
 	virtual void				PostParse( idDecl* decl ) const { INFO->PostParse( decl ); }
-	virtual void				RegisterPostParse( pfnOnPostParse postParse ) const { 
+	virtual void				RegisterPostParse( pfnOnPostParse postParse ) const {
 									assert( postParse );
-									INFO->RegisterPostParse( postParse ); 
+									INFO->RegisterPostParse( postParse );
 									for( int i = 0; i < this->Num(); i++ ) {
 										idDecl* decl = const_cast< idDecl* >( FindByIndex( i, false ));
 										declState_t state = decl->GetState();
@@ -546,7 +546,7 @@ public:
 	virtual void			FinishBuild() = 0;
 
 							// Returns the system token cache
-	virtual idTokenCache&	GetGlobalTokenCache() = 0;						
+	virtual idTokenCache&	GetGlobalTokenCache() = 0;
 
 							// Is the global token cache active?
 	virtual bool			HasGlobalTokenCache() const = 0;
@@ -585,7 +585,7 @@ public:
 							// If forceParse is set false, you can get the decl to check name / filename / etc.
 							// without causing it to parse the source and load media.
 	virtual const idDecl *	DeclByIndex( qhandle_t typeHandle, int index, bool forceParse = true ) = 0;
-	
+
 
 							// List and print decls.
 	virtual void			DotType( const idCmdArgs &args, const char* typeName ) = 0;

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 // Gordon: FIXME: This isn't initialised, so wont actually be zero?
@@ -41,7 +41,7 @@ idBoundsShort::PlaneSide
 ================
 */
 #if defined( ID_WIN_X86_SSE )
-#include "../math/Simd_InstructionMacros.h"
+#include "math/Simd_InstructionMacros.h"
 ALIGN4_INIT1( float SIMD_SP_half, 0.5f );
 ALIGN4_INIT1( unsigned int SIMD_SP_absMask, ~(1<<31) );
 #endif
@@ -86,11 +86,11 @@ int idBoundsShort::PlaneSide( const idPlane &plane, const float epsilon ) const 
 		movhlps		xmm3, xmm2
 		movaps		xmm4, xmm3
 		shufps		xmm4, xmm4, SHUFFLE_PS( 1, 1, 1, 1 )
-		
+
 		addss		xmm2, xmm3
 		addss		xmm2, xmm4
 		addss		xmm2, xmm0
-	
+
 		// idMath::Fabs( ( b[1] - center ) * plane.Normal() )
 		subps		xmm5, xmm7
 		mulps		xmm5, xmm1

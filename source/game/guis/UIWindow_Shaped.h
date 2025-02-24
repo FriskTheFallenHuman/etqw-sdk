@@ -25,7 +25,7 @@ public:
 
 	virtual const char*						GetScopeClassName() const { return "sdUIWindow_Shaped"; }
 	virtual const ShapedTemplateFunction*	FindFunction( const char* name );
-	
+
 	virtual sdUIFunctionInstance*			GetFunction( const char* name );
 	static void								InitFunctions();
 	static void								ShutdownFunctions( void ) { shapedFunctions.DeleteContents(); }

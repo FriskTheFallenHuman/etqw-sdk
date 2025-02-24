@@ -2,15 +2,15 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "declVehicleScript.h"
-#include "../../framework/CVarSystem.h"
-#include "../proficiency/StatsTracker.h"
+#include "framework/CVarSystem.h"
+#include "proficiency/StatsTracker.h"
 
-#include "../../decllib/declTypeHolder.h"
-#include "../../framework/DeclParseHelper.h"
+#include "decllib/declTypeHolder.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -279,24 +279,24 @@ bool sdDeclVehicleScript::ParseView( positionViewMode_t& view, idParser& src ) {
 
 		} else if ( !token.Icmp( "followPitch" ) ) {
 
-			view.followPitch = true;			
+			view.followPitch = true;
 
 		} else if ( !token.Icmp( "showCrosshairInThirdPerson" ) ) {
 
-			view.showCrosshairInThirdPerson = true;			
+			view.showCrosshairInThirdPerson = true;
 
 		} else if ( !token.Icmp( "followYaw" ) ) {
 
-			view.followYaw = true;			
+			view.followYaw = true;
 
 		} else if ( !token.Icmp( "tophatRequired" ) ) {
 
-			view.tophatRequired = true;			
+			view.tophatRequired = true;
 
 		} else if ( !token.Icmp( "disableDamping" ) ) {
 
-			view.allowDamping = false;			
-			
+			view.allowDamping = false;
+
 		} else if ( !token.Icmp( "autoCenter" ) ) {
 
 			view.autoCenter = true;
@@ -349,21 +349,21 @@ bool sdDeclVehicleScript::ParseView( positionViewMode_t& view, idParser& src ) {
 			view.showTargetingInfo = true;
 
 		} else if ( !token.Icmp( "cameraDistance" ) ) {
-			
+
 			view.cameraDistance = src.ParseFloat( &error );
 			if( error ) {
 				return false;
 			}
 
 		} else if ( !token.Icmp( "dampSpeed" ) ) {
-			
+
 			view.dampSpeed = src.ParseFloat( &error );
 			if( error ) {
 				return false;
 			}
 
 		} else if ( !token.Icmp( "dampCopyFactor" ) ) {
-			
+
 			if ( !src.Parse1DMatrix( 3, view.dampCopyFactor.ToFloatPtr() ) ) {
 				return false;
 			}
@@ -381,7 +381,7 @@ bool sdDeclVehicleScript::ParseView( positionViewMode_t& view, idParser& src ) {
 			if( error ) {
 				return false;
 			}
-			
+
 		} else if( !token.Icmp( "sensitivityYaw" ) ) {
 
 			if( !src.ExpectTokenType( TT_STRING, 0, &token ) ) {
@@ -437,7 +437,7 @@ bool sdDeclVehicleScript::ParseView( positionViewMode_t& view, idParser& src ) {
 			}
 
 			view.zoomTable = token;
-			
+
 		} else if( !token.Icmp( "type" ) ) {
 
 			if( !src.ExpectTokenType( TT_STRING, 0, &token ) ) {
@@ -643,7 +643,7 @@ bool sdDeclVehicleScript::ParseIKSystem( vehicleIKSystemInfo_t& ikSystem, idPars
 			if ( !src.ReadToken( &token ) ) {
 				src.Error( "sdDeclVehicleScript::ParseWeapon Invalid Parameter for 'type'" );
 				return false;
-			}			
+			}
 
 			ikSystem.ikType = token;
 
@@ -715,7 +715,7 @@ bool sdDeclVehicleScript::ParseWeapon( vehicleWeaponInfo_t& weapon, idParser& sr
 			if ( !src.ReadToken( &token ) ) {
 				src.Error( "sdDeclVehicleScript::ParseWeapon Invalid Parameter for 'weapon'" );
 				return false;
-			}			
+			}
 
 			weapon.weaponDef = gameLocal.declStringMapType[ token ];
 			if ( !weapon.weaponDef ) {
@@ -730,7 +730,7 @@ bool sdDeclVehicleScript::ParseWeapon( vehicleWeaponInfo_t& weapon, idParser& sr
 			if ( !src.ReadToken( &token ) ) {
 				src.Error( "sdDeclVehicleScript::ParseWeapon Invalid Parameter for 'type'" );
 				return false;
-			}			
+			}
 
 			weapon.weaponType = token;
 
@@ -775,7 +775,7 @@ sdDeclVehicleScript::ParsePositionToken
 bool sdDeclVehicleScript::ParsePositionToken( sdDeclVehiclePosition* position, idParser& src, idToken& token ) {
 
 	if( !token.Icmp( "name" ) ) {
-		
+
 		if( !src.ExpectTokenType( TT_STRING, 0, &token ) ) {
 			return false;
 		}
@@ -783,7 +783,7 @@ bool sdDeclVehicleScript::ParsePositionToken( sdDeclVehiclePosition* position, i
 		position->positionInfo.name = token;
 
 	} else if( !token.Icmp( "data" ) ) {
-		
+
 		if ( !position->positionInfo.data.Parse( src ) ) {
 			return false;
 		}
@@ -791,7 +791,7 @@ bool sdDeclVehicleScript::ParsePositionToken( sdDeclVehiclePosition* position, i
 		game->CacheDictionaryMedia( position->positionInfo.data );
 
 	} else if( !token.Icmp( "hudname" ) ) {
-		
+
 		if( !src.ExpectTokenType( TT_STRING, 0, &token ) ) {
 			return false;
 		}
@@ -852,7 +852,7 @@ bool sdDeclVehicleScript::ParseEngineSoundToken( sdDeclVehicleEngineSound* engin
 
 		bool error;
 		engineSound->soundInfo.lowDB = src.ParseFloat( &error );
-		
+
 		if( error ) {
 			return false;
 		}
@@ -983,7 +983,7 @@ sdDeclVehicleScript::ParseLightToken
 ================
 */
 bool sdDeclVehicleScript::ParseLightToken( sdDeclVehicleLight* light, idParser& src, idToken& token ) {
-	
+
 	if( !token.Icmp( "group" ) ) {
 
 		light->lightInfo.group = src.ParseInt();
@@ -1260,7 +1260,7 @@ bool sdDeclVehicleScript::Parse( const char *text, const int textLength ) {
 			sdPair< idStr, idDict >& info = cockpitInfo.Alloc();
 
 			info.first = token;
-			
+
 			if ( !info.second.Parse( src ) ) {
 				return false;
 			}

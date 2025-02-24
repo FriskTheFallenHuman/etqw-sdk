@@ -6,7 +6,7 @@
 #define __GAME_GUIS_USERINTERFACERENDERWORLD_H__
 
 #include "UserInterfaceTypes.h"
-#include "../Camera.h"
+#include "Camera.h"
 
 extern const char sdUITemplateFunctionInstance_IdentifierRenderWorld[];
 SD_UI_PROPERTY_TAG(
@@ -27,10 +27,10 @@ public:
 
 	static void									InitFunctions( void );
 	static void									ShutdownFunctions( void ) { renderWorldFunctions.DeleteContents(); }
-	static const RenderWorldTemplateFunction*	FindFunction( const char* name );	
+	static const RenderWorldTemplateFunction*	FindFunction( const char* name );
 
 protected:
-	virtual void								DrawLocal();	
+	virtual void								DrawLocal();
 
 protected:
 	SD_UI_PROPERTY_TAG(
@@ -42,8 +42,8 @@ protected:
 	sdStringProperty	atmosphere;
 	// ===========================================
 
-private:	
-	void OnAtmosphereChanged( const idStr& oldValue, const idStr& newValue );	
+private:
+	void OnAtmosphereChanged( const idStr& oldValue, const idStr& newValue );
 	void Update_r( sdUIObject* child );
 
 private:
@@ -63,7 +63,7 @@ class sdUIRenderWorld_Child :
 	public sdUIObject {
 public:
 	SD_UI_DECLARE_ABSTRACT_CLASS( sdUIRenderWorld_Child )
-				
+
 						sdUIRenderWorld_Child();
 	virtual				~sdUIRenderWorld_Child() {}
 
@@ -327,7 +327,7 @@ private:
 	void				OnCameraAnimChanged( const idStr& oldValue, const idStr& newValue );
 	void				OnCameraOriginChanged( const idVec3& oldValue, const idVec3& newValue );
 	void				OnCycleChanged( const float oldValue, const float newValue );
-	
+
 protected:
 	SD_UI_PROPERTY_TAG(
 	title				= "Drawing/RenderCameraAnimated/CameraAnim";

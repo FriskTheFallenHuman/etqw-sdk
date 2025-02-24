@@ -8,11 +8,11 @@
 #ifndef __GAME_CLIENT_ENTITY_H__
 #define __GAME_CLIENT_ENTITY_H__
 
-#include "../Game.h"
-#include "../Entity.h"
-#include "../anim/Anim.h"
-#include "../script/Script_Interface.h"
-#include "../physics/Physics_Parabola.h"
+#include "Game.h"
+#include "Entity.h"
+#include "anim/Anim.h"
+#include "script/Script_Interface.h"
+#include "physics/Physics_Parabola.h"
 
 class idSoundShader;
 class rvClientPhysics;
@@ -40,7 +40,7 @@ public:
 	type *					GetEntity		( void ) const;
 	int						GetEntityNum	( void ) const;
 
-	type *					operator->		( void ) const { return GetEntity ( ); }			
+	type *					operator->		( void ) const { return GetEntity ( ); }
 	operator				type*			( void ) const { return GetEntity ( ); }
 
 private:
@@ -73,7 +73,7 @@ public:
 	void						SetAxis				( const idMat3& axis );
 	const idVec3&				GetOrigin			( void );
 	const idMat3&				GetAxis				( void );
-	
+
 	rvClientEffect*				PlayEffect( const int effectHandle, const idVec3& color, jointHandle_t joint, bool loop = false, const idVec3& endOrigin = vec3_origin );
 	virtual rvClientEffect*		PlayEffect( const char* effectName, const idVec3& color, const char* materialType, jointHandle_t joint, bool loop = false, const idVec3& endOrigin = vec3_origin );
 
@@ -119,7 +119,7 @@ protected:
 	void						RemoveClientEntities ( void );		// deletes any client entities bound to this object
 
 public:
-	
+
 	int								entityNumber;
 
 	idLinkList<rvClientEntity>		spawnNode;
@@ -139,7 +139,7 @@ protected:
 	idVec3								bindOrigin;
 	idMat3								bindAxis;
 	jointHandle_t						bindJoint;
-	
+
 	refSound_t					refSound;
 
 	bool						axisBind;
@@ -241,7 +241,7 @@ public:
 	void					Event_StopEffectHandle( int handle );
 	void					Event_KillEffect( const char *effectName );
 	void					Event_Bind( idEntity *bindMaster );
-	void					Event_BindToJoint( idEntity *bindMaster, const char *boneName, float rotateWithMaster ); 
+	void					Event_BindToJoint( idEntity *bindMaster, const char *boneName, float rotateWithMaster );
 	void					Event_UnBind( void );
 	void					Event_AddCheapDecal( idEntity *attachTo, idVec3 &origin, idVec3 &normal, const char* decalName, const char* materialName );
 	void					Event_GetJointHandle( const char* jointName );
@@ -319,7 +319,7 @@ protected:
 	idAnimator				animator;
 	renderEntity_t			renderEntity;
 	qhandle_t				renderEntityHandle;
-	
+
 	struct animatedFlags_t {
 		bool				hidden;
 	};

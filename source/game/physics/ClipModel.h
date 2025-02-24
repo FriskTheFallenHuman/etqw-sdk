@@ -157,7 +157,7 @@ ID_INLINE const idMaterial * idClipModel::GetMaterial( void ) const {
 }
 
 ID_INLINE void idClipModel::SetContents( int newContents ) {
-	backupContents = contents = newContents;	
+	backupContents = contents = newContents;
 }
 
 ID_INLINE int idClipModel::GetContents( void ) const {

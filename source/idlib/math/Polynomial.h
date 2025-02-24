@@ -152,7 +152,7 @@ ID_INLINE idPolynomial idPolynomial::operator-() const {
 	return n;
 }
 
-ID_INLINE idPolynomial &idPolynomial::operator=( const idPolynomial &p ) { 
+ID_INLINE idPolynomial &idPolynomial::operator=( const idPolynomial &p ) {
 	Resize( p.degree, false );
 	for ( int i = 0; i <= degree; i++ ) {
 		coefficient[i] = p.coefficient[i];

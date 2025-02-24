@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -162,7 +162,7 @@ sdPredictionErrorDecay_Origin::sdPredictionErrorDecay_Origin( void ) {
 
 	isNew = true;
 	owner = NULL;
-	
+
 	numDuplicates = 0;
 	lastDuplicateTime = 0;
 	isStationary = true;
@@ -475,7 +475,7 @@ void sdPredictionErrorDecay_Origin::Decay( idVec3& renderOrigin, const sdPredict
 
 			// scale back a bit for less overshoot
 			noPhysicsVelocity *= 0.6f;
-			
+
 			// decay velocity down if timeSinceNewPacket is getting big
 			int velocityDecayStart = lerpDuration + lerpDuration / 2 + currentPrediction;
 			if ( timeSinceNewPacket > velocityDecayStart ) {
@@ -511,14 +511,14 @@ void sdPredictionErrorDecay_Origin::Decay( idVec3& renderOrigin, const sdPredict
 		if ( !hasLocalPhysics && ( boxDecayClip || pointDecayClip || heightMapDecayClip ) ) {
 			// crude clipping to try to stop it dipping through the ground
 			idBounds bounds = owner->GetPhysics()->GetBounds();
-			idVec3 center = bounds.GetCenter(); 
+			idVec3 center = bounds.GetCenter();
 			idVec3 size = bounds.GetSize();
 			for ( int i = 0; i < 3; i++ ) {
 				if ( size[ i ] > 48.0f ) {
 					size[ i ] -= 16.0f;
 				}
 			}
-			
+
 			bounds = idBounds( center - size * 0.5f, center + size * 0.5f );
 
 			idVec3 direction = futureOrigin - predictedOrigin;
@@ -538,7 +538,7 @@ void sdPredictionErrorDecay_Origin::Decay( idVec3& renderOrigin, const sdPredict
 			trace_t trace;
 			if ( boxDecayClip ) {
 				gameLocal.clip.TraceBounds( CLIP_DEBUG_PARMS trace, start, end, bounds, owner->GetPhysics()->GetAxis(), CONTENTS_SOLID | CONTENTS_VEHICLECLIP, owner );
-			} else if ( pointDecayClip ) { 
+			} else if ( pointDecayClip ) {
 				end += direction * sizeInDirection * 2.0f;
 				gameLocal.clip.TracePoint( CLIP_DEBUG_PARMS trace, start, end, CONTENTS_SOLID | CONTENTS_VEHICLECLIP, owner );
 			} else {
@@ -593,7 +593,7 @@ void sdPredictionErrorDecay_Origin::Decay( idVec3& renderOrigin, const sdPredict
 			// since this does a bunch of masking to cover up jerking, can blend in more of what is REALLY happening
 			tweenOrigin = Lerp( predictedOrigin, tweenOrigin, lerpToPhysicsCutoff );
 
-			float lerpValue = LimitApparentVelocity( lastReturnedOrigin, predictedOrigin, tweenOrigin, 
+			float lerpValue = LimitApparentVelocity( lastReturnedOrigin, predictedOrigin, tweenOrigin,
 													limitVelocity, currentPrediction );
 			tweenVelocity = Lerp( lastReturnedVelocity, tweenVelocity, lerpValue );
 			tweenAcceleration = Lerp( lastReturnedAcceleration, tweenAcceleration, lerpValue );
@@ -814,7 +814,7 @@ sdPredictionErrorDecay_Angles::sdPredictionErrorDecay_Angles( void ) {
 
 	isNew = true;
 	owner = NULL;
-	
+
 	numDuplicates = 0;
 	lastDuplicateTime = 0;
 	isStationary = true;
@@ -998,8 +998,8 @@ void sdPredictionErrorDecay_Angles::Decay( idMat3& renderAxis, bool yawOnly ) {
 				hasPhysicsVelocity = ( predictedAngles - networkAngles ) / MS2SEC( gameLocal.msec * 4 );
 				timeOffset = gameLocal.msec * 5;
 			}
-		} 
-		
+		}
+
 		//
 		// estimate velocity from what has been sent on the network
 		{

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 //#define DEBUG_EVAL
@@ -645,7 +645,7 @@ void idParser::AddBuiltinDefines( void ) {
 		char *string;
 		int id;
 	} builtin[] = {
-		{ "__LINE__",	BUILTIN_LINE }, 
+		{ "__LINE__",	BUILTIN_LINE },
 		{ "__FILE__",	BUILTIN_FILE },
 		{ "__DATE__",	BUILTIN_DATE },
 		{ "__TIME__",	BUILTIN_TIME },
@@ -856,7 +856,7 @@ int idParser::ExpandDefine( idToken *deftoken, define_t *define, idToken **first
 			// add the token to the list
 			t->next = NULL;
 			// the token being read from the define list should use the line number of
-			// the original file, not the header file			
+			// the original file, not the header file
 			t->line = deftoken->line;
 
 			if ( last ) {
@@ -951,7 +951,7 @@ int idParser::ReadLine( idToken *token, bool multiline ) {
 		if ( !ReadSourceToken( token ) ) {
 			return false;
 		}
-		
+
 		if ( token->linesCrossed > crossline ) {
 			UnreadSourceToken( *token );
 			return false;
@@ -1003,7 +1003,7 @@ idParser::AddInclude
 int idParser::AddInclude( const char *string ) {
 	idStr str = va( "#include <%s>", string );
 	idLexer src( str, str.Length(), "AddInclude", LEXFL_ALLOWPATHNAMES );
-	
+
 	idToken token1;
 	idToken token2;
 	idToken token3;
@@ -1354,7 +1354,7 @@ int idParser::EvaluateTokens( idToken *tokens, signed long int *intvalue, double
 							break;
 						}
 					}
-					
+
 					case P_MUL:
 					case P_DIV:
 					case P_MOD:
@@ -3450,7 +3450,7 @@ void idParser::FreeSource( bool keepDefines ) {
 			definehash = NULL;
 		}
 	}
-	loaded = false;	
+	loaded = false;
 }
 
 /*

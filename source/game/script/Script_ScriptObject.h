@@ -33,7 +33,7 @@ private:
 	idClass*						_object;
 
 	idLinkList< sdProgramThread >	autoThreads; // threads created in the script system, we will terminate them on destruction
-	
+
 public:
 									idScriptObject( int handle, idClass* object, sdProgram* program );
 									~idScriptObject();

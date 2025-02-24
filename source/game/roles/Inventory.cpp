@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,14 +12,14 @@ static char THIS_FILE[] = __FILE__;
 
 #include "Inventory.h"
 
-#include "../decls/DeclInvItem.h"
-#include "../Player.h"
-#include "../Weapon.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../proficiency/StatsTracker.h"
+#include "decls/DeclInvItem.h"
+#include "Player.h"
+#include "Weapon.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "proficiency/StatsTracker.h"
 
-#include "../botai/BotThreadData.h"
+#include "botai/BotThreadData.h"
 
 /*
 ===============================================================================
@@ -863,7 +863,7 @@ void sdInventory::BuildSlotBankLookup( void ) {
 			gameLocal.Error( "sdInventory::BuildSlotBankLookup Multiple Slots Using Weapon Bank %i", slotBank );
 		}
 
-		slotForBank[ slotBank ] = slot->Index();		
+		slotForBank[ slotBank ] = slot->Index();
 	}
 }
 
@@ -948,7 +948,7 @@ int sdInventory::FindBestWeapon( bool allowCurrent ) {
 sdInventory::CycleNextSafeWeapon
 ============
 */
-void sdInventory::SelectBestWeapon( bool allowCurrent ) {	
+void sdInventory::SelectBestWeapon( bool allowCurrent ) {
 	int bestIndex = FindBestWeapon( allowCurrent );
 	if ( bestIndex != -1 ) {
 		SetIdealWeapon( bestIndex );
@@ -960,7 +960,7 @@ void sdInventory::SelectBestWeapon( bool allowCurrent ) {
 sdInventory::CycleNextSafeWeapon
 ============
 */
-void sdInventory::CycleNextSafeWeapon( void ) {	
+void sdInventory::CycleNextSafeWeapon( void ) {
 	int bestIndex = FindBestWeapon( false );
 	if ( bestIndex != -1 ) {
 		SetSwitchingWeapon( bestIndex );
@@ -981,7 +981,7 @@ void sdInventory::CycleWeaponsNext( int currentSlot ) {
 		force = false;
 		currentSlot = ChooseCurrentSlot();
 	}
-	
+
 	weapon = CycleWeaponByPosition( currentSlot, true, looped, false, false );
 
 	if( !looped && weapon != -1 ) {
@@ -1078,9 +1078,9 @@ sdInventory::UpdatePrimaryWeapon
 */
 void sdInventory::UpdatePrimaryWeapon( void ) {
     for ( int i = 0; i < items.Num(); i++ ) {
-		
+
 		const sdDeclInvItem* item = items[ i ].GetItem();
-	
+
 		if ( item == NULL || !item->UsesSlot( slotForBank[ GUN_SLOT ] ) ) {
 			continue;
 		}
@@ -1110,9 +1110,9 @@ bool sdInventory::CheckWeaponSlotHasAmmo( int slot ) {
 	clientInfo_t &client = botThreadData.GetGameWorldState()->clientInfo[ owner->entityNumber ];
 
     for ( i = 0; i < items.Num(); i++ ) {
-		
+
 		const sdDeclInvItem* item = items[ i ].GetItem();
-	
+
 		if ( item == NULL || !item->UsesSlot( slotForBank[ slot ] ) ) {
 			continue;
 		}
@@ -1410,7 +1410,7 @@ void sdInventory::SetIdealWeapon( int pos, bool force ) {
 		idealWeapon = pos;
 		weaponChanged = true;
 
-		if ( pos != -1 ) {		
+		if ( pos != -1 ) {
 			currentWeaponIndex = items[ pos ].item->Index();
 			owner->SpawnToolTip( items[ pos ].item->GetToolTip() );
 		} else {
@@ -1481,7 +1481,7 @@ bool sdInventory::IsWeaponBankValid( int slot ) const {
 	if( slot < 0 || slot >= slotForBank.Num() ) {
 		return false;
 	}
-	
+
 	bool allValid = false;
 	for ( int i = 0; i < items.Num(); i++ ) {
 		if ( !CanEquip( i, true ) ) {
@@ -1624,7 +1624,7 @@ void sdInventory::SetupModel( const sdDeclPlayerClass* cls ) {
 	}
 
 	const idDict& dict = cls->GetModelData();
-	
+
 	owner->SetModel( cls->GetModel()->GetName() );
 	owner->UpdateShadows();
 
@@ -1674,7 +1674,7 @@ void sdInventory::SetupLocationalDamage( const idDict& dict ) {
 			gameLocal.Warning( "Invalid locational damage joint %d", i );
 			continue;
 		}
-		
+
 		if( !owner->GetAnimator()->GetJointTransform( info.joint, gameLocal.time, info.pos ) ) {
 			gameLocal.Warning( "Invalid local transform for locational damage joint %d", i );
 			continue;
@@ -1732,7 +1732,7 @@ void sdInventory::CheckPlayerClass( bool setWeapon ) {
 
 	if ( oldCachedClassSetup.GetClass() == playerClass.GetClass() ) {
 		playerClass.SetOptions( oldCachedClassSetup.GetOptions() );
-	
+
 		SetupClassOptions( true, setWeapon );
 
 		sendInfo = true;
@@ -2088,7 +2088,7 @@ void sdInventory::SetupClassOptions( bool clearAmmo, bool setWeapon, bool allowC
 		}
 
 		AddItems( cls->GetDisguisePackage() );
-	} else { 
+	} else {
 
 		if ( clearAmmo ) {
 			ClearAmmo();
@@ -2161,7 +2161,7 @@ void sdInventory::SortClips( void ) {
 		const sdDeclInvItem* item = GetItem( i );
 		for( int clip = 0; clip < item->GetClips().Num(); clip++ ) {
 			const itemClip_t& clipInfo = item->GetClips()[ clip ];
-			
+
 			if ( clipInfo.maxAmmo > 0 && clipInfo.ammoPerShot > 0 ) {
 				int max = Min( clipInfo.maxAmmo, GetAmmo( clipInfo.ammoType ) );
 				SetClip( i, clip, max );
@@ -2726,6 +2726,6 @@ void sdInventory::UpdatePlayerClassInfo( const sdDeclPlayerClass* pc ) {
  	if ( !pc ) {
 		return;
 	}
-	
+
 	botThreadData.GetGameWorldState()->clientInfo[ owner->entityNumber ].classType = pc->GetPlayerClassNum();
 }

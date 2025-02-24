@@ -92,7 +92,7 @@ public:
 
 	void							Init( void );
 	void							CreateUserGroupList( sdUIList* list );
-	void							CreateServerConfigList( sdUIList* list );	
+	void							CreateServerConfigList( sdUIList* list );
 
 	int								GetVoteLevel( const char* voteName );
 

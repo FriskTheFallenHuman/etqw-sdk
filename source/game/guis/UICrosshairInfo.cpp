@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 
@@ -16,14 +16,14 @@ static char THIS_FILE[] = __FILE__;
 #include "UIWindow.h"
 #include "UICrosshairInfo.h"
 #include "UserInterfaceLocal.h"
-#include "../CrosshairInfo.h"
-#include "../Player.h"
-#include "../misc/WorldToScreen.h"
-#include "../script/Script_Helper.h"
-#include "../roles/WayPointManager.h"
-#include "../ContentMask.h"
+#include "CrosshairInfo.h"
+#include "Player.h"
+#include "misc/WorldToScreen.h"
+#include "script/Script_Helper.h"
+#include "roles/WayPointManager.h"
+#include "ContentMask.h"
 
-#include "../../sys/sys_local.h"
+#include "sys/sys_local.h"
 
 idCVar g_damageIndicatorFadeTime( "g_damageIndicatorFadeTime", "2.0", CVAR_FLOAT | CVAR_GAME | CVAR_NOCHEAT, "number of seconds that a damage indicator stays visible" );
 idCVar g_damageIndicatorWidth( "g_damageIndicatorWidth", "256", CVAR_FLOAT | CVAR_GAME | CVAR_NOCHEAT, "width of the damage indicators" );
@@ -61,13 +61,13 @@ sdUICrosshairInfo::sdUICrosshairInfo( void ) {
 	scriptState.GetProperties().RegisterProperty( "barFillMaterial",		barFillMaterial );
 	scriptState.GetProperties().RegisterProperty( "barLineMaterial",		barLineMaterial );
 	scriptState.GetProperties().RegisterProperty( "barLineColor",			barLineColor );
-	
-	scriptState.GetProperties().RegisterProperty( "bracketBaseColor",		bracketBaseColor );	
-	scriptState.GetProperties().RegisterProperty( "bracketLeftMaterial",	bracketLeftMaterial );	
-	scriptState.GetProperties().RegisterProperty( "bracketRightMaterial",	bracketRightMaterial );	
+
+	scriptState.GetProperties().RegisterProperty( "bracketBaseColor",		bracketBaseColor );
+	scriptState.GetProperties().RegisterProperty( "bracketLeftMaterial",	bracketLeftMaterial );
+	scriptState.GetProperties().RegisterProperty( "bracketRightMaterial",	bracketRightMaterial );
 	scriptState.GetProperties().RegisterProperty( "damageMaterial",			damageMaterial );
 	scriptState.GetProperties().RegisterProperty( "crosshairInfoFlags",		crosshairInfoFlags );
-	
+
 	barLineColor = colorWhite;
 	bracketBaseColor = colorWhite;
 
@@ -80,7 +80,7 @@ sdUICrosshairInfo::sdUICrosshairInfo( void ) {
 	UI_ADD_STR_CALLBACK( damageMaterial,		sdUICrosshairInfo, OnDamageMaterialChanged );
 
 	waypointTextFadeTime = 0;
-	bracketFadeTime = 0;	
+	bracketFadeTime = 0;
 	dockedIcons.SetNum( 6 );
 }
 
@@ -110,7 +110,7 @@ sdUICrosshairInfo::DrawCrosshairInfo
 void sdUICrosshairInfo::DrawCrosshairInfo( idPlayer* player ) {
 	const float width = SCREEN_WIDTH * 1.0f / deviceContext->GetAspectRatioCorrection();
 
-	const sdCrosshairInfo& info = gameLocal.serverIsRepeater ? GetRepeaterCrosshairInfo() : player->GetCrosshairInfoDirect();	
+	const sdCrosshairInfo& info = gameLocal.serverIsRepeater ? GetRepeaterCrosshairInfo() : player->GetCrosshairInfoDirect();
 
 	if( info.IsValid() && ( TestCrosshairInfoFlag( CF_CROSSHAIR ) || g_radialMenuStyle.GetInteger() == 1 ) ) {
 		float w, h;
@@ -134,7 +134,7 @@ void sdUICrosshairInfo::DrawCrosshairInfo( idPlayer* player ) {
 							  }
 				case CI_BAR: {
 					w = line.xy.x;
-					h = line.xy.y;					
+					h = line.xy.y;
 
 					color = borderColor;//line.backColor;
 					color[ 3 ] *= info.GetAlpha();
@@ -189,7 +189,7 @@ void sdUICrosshairInfo::DrawDamageIndicators( idPlayer* player ) {
 	float y = -( h * 0.5f ) - g_damageIndicatorHeight.GetFloat();
 
 	float viewYaw = player->renderView.viewaxis.ToAngles().yaw;
-	
+
 	float fadeTime = SEC2MS( g_damageIndicatorFadeTime.GetFloat() );
 
 	idMat2 matrix;
@@ -225,7 +225,7 @@ void sdUICrosshairInfo::DrawDamageIndicators( idPlayer* player ) {
 		} else {
 			part = &crosshairParts[ CP_LARGE_DAMAGE ];
 		}
-		
+
 		drawWinding.Clear();
 
 		drawWinding.AddPoint( x, y, part->mi.st0.x, part->mi.st0.y );
@@ -309,7 +309,7 @@ sdUICrosshairInfo::GetFunction
 */
 sdUIFunctionInstance* sdUICrosshairInfo::GetFunction( const char* name ) {
 	const CrosshairInfoTemplateFunction* function = sdUICrosshairInfo::FindFunction( name );
-	if ( !function ) {		
+	if ( !function ) {
 		return sdUIWindow::GetFunction( name );
 	}
 	return new sdUITemplateFunctionInstance< sdUICrosshairInfo, sdUITemplateFunctionInstance_IdentifierCrosshairInfo >( this, function );
@@ -425,7 +425,7 @@ void sdUICrosshairInfo::OnRightBracketMaterialChanged( const idStr& oldValue, co
 sdUICrosshairInfo::DrawEntityIcons
 ==============
 */
-void sdUICrosshairInfo::DrawEntityIcons( void ) {	
+void sdUICrosshairInfo::DrawEntityIcons( void ) {
 	idPlayer* viewPlayer = gameLocal.GetLocalViewPlayer();
 	if ( viewPlayer == NULL ) {
 		return;
@@ -457,7 +457,7 @@ void sdUICrosshairInfo::DrawEntityIcons( void ) {
 	for ( idLinkList< idEntity >* node = gameLocal.GetIconEntities(); node; node = node->NextNode() ) {
 		idEntity* ent = node->Owner();
 		assert( ent->GetDisplayIconInterface() );
-	
+
 		if ( ent->GetDisplayIconInterface()->GetEntityDisplayIconInfo( viewPlayer, converter, icons[ iconUpto ] ) ) {
 			iconUpto++;
 		}
@@ -500,7 +500,7 @@ void sdUICrosshairInfo::DrawEntityIcons( void ) {
 sdUICrosshairInfo::DrawPlayerIcons2D
 ==============
 */
-void sdUICrosshairInfo::DrawPlayerIcons2D( void ) {	
+void sdUICrosshairInfo::DrawPlayerIcons2D( void ) {
 	idPlayer* viewPlayer = gameLocal.GetLocalViewPlayer();
 	if ( viewPlayer == NULL ) {
 		return;
@@ -604,7 +604,7 @@ sdUICrosshairInfo::DrawWayPoints
 ============
 */
 void sdUICrosshairInfo::DrawWayPoints( idEntity* exclude ) {
-	
+
 	if ( !g_showWayPoints.GetBool() && !sdWayPointManager::GetInstance().GetShowWayPoints() ) {
 		return;
 	}
@@ -656,7 +656,7 @@ void sdUICrosshairInfo::DrawWayPoints( idEntity* exclude ) {
 		idBounds bounds		= wayPoint->GetBounds();
 		idVec3	size		= bounds.GetSize();
 		idVec3	center		= bounds.GetCenter();
-		
+
 		float smallestAxis = idMath::INFINITY;
 		float largestAxis = -idMath::INFINITY;
 		for( int i = 0; i < 3; i++ ) {
@@ -717,7 +717,7 @@ void sdUICrosshairInfo::DrawWayPoints( idEntity* exclude ) {
 			// ao: implicitly know it's a mission/objective if there's no LOS check
 			if ( !TestCrosshairInfoFlag( CF_OBJ_MIS ) ) {
 				isVisible = false;
-			} 
+			}
 		}
 
 		if ( !isVisible ) {
@@ -775,7 +775,7 @@ void sdUICrosshairInfo::DrawWayPoints( idEntity* exclude ) {
 									idMath::Fabs( ( SCREEN_HEIGHT * 0.5f ) - drawCenter.y ) / ( SCREEN_HEIGHT * 0.5f ) );
 
 		idVec4 localColor = colorWhite;
-		
+
 		if ( gameLocal.ToGuiTime( gameLocal.time ) < wayPoint->GetFlashEndTime() ) {
 			localColor.w = idMath::Cos( gameLocal.ToGuiTime( gameLocal.time ) * 0.02f ) * 0.5f + 0.5f;
 		}
@@ -825,7 +825,7 @@ void sdUICrosshairInfo::DrawWayPoints( idEntity* exclude ) {
 				icon->highlightedTime = wayPoint->Selected();
 			}
 		}
-		
+
 		if( isVisible && distanceFromCenter.x < 0.1f && distanceFromCenter.y < 0.1f && distanceFromCenter.x < bestDistanceFromCenter.x && distanceFromCenter.y < bestDistanceFromCenter.y ) {
 			waypointTextFadeTime = gameLocal.time;
 			bestDistanceFromCenter = distanceFromCenter;
@@ -835,7 +835,7 @@ void sdUICrosshairInfo::DrawWayPoints( idEntity* exclude ) {
 			bestWidth = width;
 			bestDistSqr = distSquare;
 			bestLeft = left;
-		}			
+		}
 
 		if ( wayPoint->Bracketed() ) {
 			if( exclude != NULL && wayPoint->GetOwner() == exclude ) {
@@ -853,7 +853,7 @@ void sdUICrosshairInfo::DrawWayPoints( idEntity* exclude ) {
 
 	static const int TEXT_FADE_TIME = SEC2MS( 1 );
 
-	const sdCrosshairInfo& info = localPlayer->GetCrosshairInfoDirect();	
+	const sdCrosshairInfo& info = localPlayer->GetCrosshairInfoDirect();
 	if( !info.IsValid() && highlightedWaypoint != NULL && ( gameLocal.time - waypointTextFadeTime ) <= TEXT_FADE_TIME ) {
 		static const int TEXT_SCALE = 12;
 		idVec4 colorLocal = colorWhite;
@@ -923,8 +923,8 @@ void sdUICrosshairInfo::DrawDockedIcons( void ) {
 			if ( !dock.flipped ) {
 				screenPos.x -= dock.icon.size.x;
 			}
-			
-			float drawScale = 1.0f;			
+
+			float drawScale = 1.0f;
 
 			deviceContext->DrawMaterial( screenPos.x, screenPos.y, dock.icon.size.x * drawScale, dock.icon.size.y * drawScale, dock.icon.material, dock.icon.color, 1.f );
 
@@ -1054,10 +1054,10 @@ void sdUICrosshairInfo::DrawBrackets( const sdBounds2D& bounds, const idVec4& co
 	rect.Set( left - crosshairParts[ CP_L_BRACKET_TOP ].width, top, crosshairParts[ CP_L_BRACKET_TOP ].width, height );
 
 	DrawThreeVerticalParts( rect, color, vec2_one, crosshairParts[ CP_L_BRACKET_TOP ], crosshairParts[ CP_L_BRACKET_CENTER ], crosshairParts[ CP_L_BRACKET_BOTTOM ] );
-	
+
 	rect.Set( right, top, crosshairParts[ CP_L_BRACKET_TOP ].width, height );
-	DrawThreeVerticalParts( rect, color, vec2_one, crosshairParts[ CP_R_BRACKET_TOP ], crosshairParts[ CP_R_BRACKET_CENTER ], crosshairParts[ CP_R_BRACKET_BOTTOM ] );	
-	
+	DrawThreeVerticalParts( rect, color, vec2_one, crosshairParts[ CP_R_BRACKET_TOP ], crosshairParts[ CP_R_BRACKET_CENTER ], crosshairParts[ CP_R_BRACKET_BOTTOM ] );
+
 }
 
 /*

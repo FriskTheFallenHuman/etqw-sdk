@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -13,7 +13,7 @@ static char THIS_FILE[] = __FILE__;
 #include "TireTread.h"
 
 #include "HardcodedParticleSystem.h"
-#include "../../decllib/DeclSurfaceType.h"
+#include "decllib/DeclSurfaceType.h"
 
 
 /*********************************************************************************************************
@@ -23,7 +23,7 @@ sdTireTread
 static const float MIN_DISTANCE = 16.f;
 
 class sdTireTread {
-	
+
 public:
 	static const int MAX_POINTS = 16;
 private:
@@ -117,7 +117,7 @@ void sdTireTread::Think( void ) {
 	if ( ( gameLocal.time - age ) > SEC2MS( 60 ) ) {
 		Free();
 	}
-/*	
+/*
 	int curidx = startPoint % MAX_POINTS;
 	if ( (gameLocal.framenum - points[curidx].age) > 100 * 10 ) {
 		startPoint++;
@@ -316,7 +316,7 @@ public:
 	virtual unsigned int  StartSkid( bool isStrogg );
 	virtual bool AddSkidPoint( unsigned int handle, const idVec3 & point, const idVec3 &forward, const idVec3 &up, const sdDeclSurfaceType *surface );
 	virtual void StopSkid( unsigned int handle );
-	
+
 	virtual void Think( void );
 };
 

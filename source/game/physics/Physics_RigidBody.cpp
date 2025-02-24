@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,9 +11,9 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Physics_RigidBody.h"
-#include "../Entity.h"
-#include "../Player.h"
-#include "../ContentMask.h"
+#include "Entity.h"
+#include "Player.h"
+#include "ContentMask.h"
 
 CLASS_DECLARATION( idPhysics_Base, idPhysics_RigidBody )
 END_CLASS
@@ -200,7 +200,7 @@ bool idPhysics_RigidBody::CollisionImpulse( const trace_t &collision, idVec3 &im
 	idVec3	v1B		= info.velocity;
 
 	idVec3	v1AB	= v1A - v1B;
-	
+
 	float j = STOP_SPEED;
 
 
@@ -1645,7 +1645,7 @@ bool idPhysics_RigidBody::CheckNetworkStateChanges( networkStateMode_t mode, con
 		return false;
 	}
 
-	if ( mode == NSM_BROADCAST ) { 
+	if ( mode == NSM_BROADCAST ) {
 		NET_GET_BASE( sdRigidBodyBroadcastState );
 
 		if ( baseData.localPosition != localOrigin ) {

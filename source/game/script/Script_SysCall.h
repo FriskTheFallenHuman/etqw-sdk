@@ -4,7 +4,7 @@
 #ifndef __SCRIPT_SYSCALL_H__
 #define __SCRIPT_SYSCALL_H__
 
-#include "../CommandMapInfo.h"
+#include "CommandMapInfo.h"
 
 extern const idEventDefInternal EV_Thread_Execute;
 
@@ -229,7 +229,7 @@ public:
 	void						Event_LocalizeStringIndexArgs( const int index );
 	void						Event_LocalizeStringArgs( const char* str );
 	void						Event_LocalizeString( const char* str );
-	
+
 	void						Event_GetMatchTimeRemaining( void );
 	void						Event_GetMatchState( void );
 

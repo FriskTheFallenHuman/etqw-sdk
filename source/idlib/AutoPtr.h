@@ -23,7 +23,7 @@ public:
 	typedef CleanupPolicy cleanupPolicy;
 	typedef CheckingPolicy checkingPolicy;
 
-	explicit sdAutoPtr( T* p = NULL ) : 
+	explicit sdAutoPtr( T* p = NULL ) :
 		Pointee ( p )
 #ifdef _DEBUG
 		,size( 0 )
@@ -31,20 +31,20 @@ public:
 									{ ; }
 	~sdAutoPtr()					{ cleanupPolicy::Free( Pointee ); }
 
-	sdAutoPtr( sdAutoPtr< T, CleanupPolicy, CheckingPolicy >& rhs ) { 
+	sdAutoPtr( sdAutoPtr< T, CleanupPolicy, CheckingPolicy >& rhs ) {
 		Pointee = rhs.Release();
 #ifdef _DEBUG
 		size = rhs.size;
 #endif
 	}
-	
+
 	sdAutoPtr< T, CleanupPolicy, CheckingPolicy >& operator=( sdAutoPtr< T, CleanupPolicy, CheckingPolicy >& rhs ) {
 		if ( &rhs != this ) {
 #ifdef _DEBUG
 			Reset( rhs.Release(), rhs.size );
 #else
 			Reset( rhs.Release() );
-#endif			
+#endif
 		}
 
 		return (*this);
@@ -77,7 +77,7 @@ public:
 	const T&	operator*() const		{ checkingPolicy::Check( Pointee ); return *Get(); }
 	T*			Get()					{ return Pointee; }
 	const T*	Get() const				{ return Pointee; }
-	
+
 	/*
 	============
 	Release
@@ -85,7 +85,7 @@ public:
 	*/
 	T*	Release() {
 		T* tmp = Pointee;
-		Pointee = NULL; 
+		Pointee = NULL;
 		return tmp;
 	}
 

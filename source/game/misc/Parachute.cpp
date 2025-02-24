@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,7 +11,7 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Parachute.h"
-#include "../PredictionErrorDecay.h"
+#include "PredictionErrorDecay.h"
 
 /*
 ===============================================================================
@@ -67,8 +67,8 @@ void sdParachute::Think( void ) {
 	if ( owner.IsValid() ) {
 		// convert velocity to metric
 		idVec3 velocity = InchesToMetres( owner->GetPhysics()->GetLinearVelocity() );
-		
-		float speedSquared = velocity.LengthSqr();		
+
+		float speedSquared = velocity.LengthSqr();
 		if ( velocity.z > -maxSpeed ) {
 			if ( !gameLocal.isClient ) {
 				if ( !tooSlowTime ) {
@@ -84,7 +84,7 @@ void sdParachute::Think( void ) {
 				if ( time < deployTime ) {
 					canopyScale = time / deployTime;
 				}
-			
+
 				ApplyParachute( owner, canopyScale );
 			}
 		}
@@ -131,14 +131,14 @@ void sdParachute::ApplyParachute( idEntity* owner, float canopyScale ) {
 	idVec3 sideVel = velocity - upSpeed * forceUp;
 	float sideSpeedSq = sideVel.LengthSqr();
 
-	
+
 	idVec3 upDragDirection = forceUp;
 	idVec3 sideDragDirection = velocity; //velocity.Normalize();
 	sideDragDirection.Normalize();
 	float upComponent = -( upDragDirection * sideDragDirection );
 
 	sideDragDirection += upComponent * upDragDirection;
-	
+
 	//
 	// Up axis
 	//

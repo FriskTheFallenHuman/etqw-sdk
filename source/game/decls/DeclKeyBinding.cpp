@@ -2,11 +2,11 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclKeyBinding.h"
-#include "../../framework/DeclParseHelper.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -85,7 +85,7 @@ bool sdDeclKeyBinding::Parse( const char *text, const int textLength ) {
 			continue;
 		}
 	}
-	
+
 	return true;
 }
 

@@ -45,7 +45,7 @@ enum botActionGoals_t {
 	ACTION_SUPPLY_HINT,
 	ACTION_MCP_OUTPOST,
 	ACTION_SHIELD_HINT,			// a good place to drop a shield.
-	ACTION_TELEPORTER_HINT,	
+	ACTION_TELEPORTER_HINT,
 	ACTION_FORWARD_SPAWN,		// forward deployment area
 	ACTION_PREVENT_DELIVER,
 	ACTION_DROP_DEPLOYABLE,		// team can drop a deployable here.
@@ -167,7 +167,7 @@ public:
 private:
 
 	bool					active;								// is this action currently active?
-	bool					noHack;								
+	bool					noHack;
 	bool					priority;
 	bool					blindFire;
 	bool					requiresVehicleType;				// if true - wont do goal unless can find vehicle type.
@@ -187,7 +187,7 @@ private:
 	int						spawnControllerEntityNum;			// only used for forward spawns - points to the entity that the action encompansses.
 	int						actionActivateTime;
 	float					radius;								// this actions range of effect
-	
+
 	botChatTypes_t			VOChatFlag;							// what chat the bot should play when selecting this action.
 	leanTypes_t				leanDir;
 	playerWeaponTypes_t		weapType;

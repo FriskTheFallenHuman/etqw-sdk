@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -14,9 +14,9 @@ static char THIS_FILE[] = __FILE__;
 #include "Script_Helper.h"
 #include "Script_Program.h"
 #include "Script_ScriptObject.h"
-#include "../Entity.h"
-#include "../structures/TeamManager.h"
-#include "../../idlib/PropertiesImpl.h"
+#include "Entity.h"
+#include "structures/TeamManager.h"
+#include "idlib/PropertiesImpl.h"
 
 /*
 ===========

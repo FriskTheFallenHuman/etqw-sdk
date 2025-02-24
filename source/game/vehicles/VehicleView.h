@@ -13,8 +13,8 @@ typedef sdFactory< sdVehicleView > sdVehicleViewFactory;
 
 class sdVehicleView {
 public:
-									sdVehicleView() : freshEntry( false ) { } 
-	virtual							~sdVehicleView() { } 
+									sdVehicleView() : freshEntry( false ) { }
+	virtual							~sdVehicleView() { }
 
 	virtual const char*				GetTypeName() const { return TypeName(); }
 	static const char*				TypeName() { return "standard"; }
@@ -37,7 +37,7 @@ public:
 	bool							GetSensitivity( float& x, float& y );
 
 	bool							AutoCenter( void ) const { return viewMode.autoCenter; }
-	bool							ShowCockpit( void ) const { return viewMode.showCockpit; }	
+	bool							ShowCockpit( void ) const { return viewMode.showCockpit; }
 	bool							IsInterior( void ) const { return viewMode.isInterior; }
 	bool							HasPlayerShadow( void ) const { return viewMode.playerShadow; }
 	bool							IsCockpitShadowed( void ) const { return !viewMode.noCockpitShadows; }
@@ -212,13 +212,13 @@ protected:
 		idVec3			ownerCenter;
 		idMat3			ownerAxes;
 		idMat3			ownerAxesT;
-		idAngles		ownerAngles; 
+		idAngles		ownerAngles;
 		idVec3			ownerVelocity;
 		idVec3			ownerDirection;
 		float			ownerSpeed;
 
 		idAngles		oldAxisAngles;
-		idAngles		viewAngles; 
+		idAngles		viewAngles;
 	} viewEvalProperties_t;
 
 	// viewEvalState_t is just used to pass around to the various evaluation functions

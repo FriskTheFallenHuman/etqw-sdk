@@ -2,13 +2,13 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclDeployableObject.h"
-#include "../Game_local.h"
+#include "Game_local.h"
 
-#include "../../framework/DeclParseHelper.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -41,7 +41,7 @@ sdDeclDeployableObject::DefaultDefinition
 ================
 */
 const char* sdDeclDeployableObject::DefaultDefinition( void ) const {
-	return 
+	return
 		"{\n"							\
 		"}\n";
 }

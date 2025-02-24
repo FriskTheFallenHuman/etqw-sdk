@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -100,7 +100,7 @@ void sdHardcodedParticleSystem::FreeRenderEntity( void ) {
 		gameRenderWorld->FreeEntityDef( renderEntityHandle );
 		renderEntityHandle = -1;
 	}
-}	
+}
 
 /*
 ================

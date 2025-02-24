@@ -245,7 +245,7 @@ public:
 #endif // CLIP_DEBUG_EXTREME
 
 	const idClipModel*		GetTemporaryClipModel( const idBounds& bounds );
-	
+
 	const idClipModel*		GetThirdPersonOffsetModel( void );
 	const idClipModel*		GetBigThirdPersonOffsetModel( void );
 	const idClipModel*		GetLeanOffsetModel( void );

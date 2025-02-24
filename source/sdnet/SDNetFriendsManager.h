@@ -17,7 +17,7 @@
 
 class sdNetTask;
 
-typedef idList< sdNetFriend* > sdNetFriendsList; 
+typedef idList< sdNetFriend* > sdNetFriendsList;
 
 class sdNetFriendsManager {
 public:

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,11 +11,11 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "GameRules_Objective.h"
-#include "../Player.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../guis/UserInterfaceLocal.h"
-#include "../rules/VoteManager.h"
+#include "Player.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "guis/UserInterfaceLocal.h"
+#include "rules/VoteManager.h"
 
 sdGameRulesObjectiveNetworkState::sdGameRulesObjectiveNetworkState( void ) {
 }
@@ -296,7 +296,7 @@ bool sdGameRulesObjective::CheckNetworkStateChanges( const sdEntityStateNetworkD
 	NET_GET_BASE( sdGameRulesObjectiveNetworkState );
 
 	NET_CHECK_FIELD( winningTeam, GetWinningTeam() );
-	
+
 	return false;
 }
 
@@ -349,7 +349,7 @@ bool sdGameRulesObjective::ChangeMap( const char* mapName ) {
 ================
 sdGameRulesObjective::OnUserStartMap
 ================
-*/	
+*/
 userMapChangeResult_e sdGameRulesObjective::OnUserStartMap( const char* text, idStr& reason, idStr& mapName ) {
 	return sdGameRules_SingleMapHelper::OnUserStartMap( text, reason, mapName );
 }
@@ -360,7 +360,7 @@ sdGameRulesObjective::GetGameTime
 ================
 */
 int sdGameRulesObjective::GetGameTime( void ) const {
-	int ms;	
+	int ms;
 
 	if ( gameState == GS_WARMUP ) {
 		ms = 0;
@@ -416,7 +416,7 @@ void sdGameRulesObjective::UpdateClientFromServerInfo( const idDict& serverInfo,
 
 		if( allowMedia ) {
 			const sdDeclMapInfo* mapInfo = gameLocal.declMapInfoType.LocalFind( metaData->GetString( "mapinfo", "_default" ) );
-			
+
 			// setup the backdrop
 			if ( sdProperty* property = scope->GetProperty( "backdrop", PT_STRING ) ) {
 				const char* value = mapInfo->GetData().GetString( "mtr_backdrop", "guis/assets/black" );

@@ -1,7 +1,7 @@
 // Copyright (C) 2005 Splash Damage Ltd.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 idRandom idRandom::staticRandom;

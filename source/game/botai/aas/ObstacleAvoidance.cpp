@@ -1,16 +1,16 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #include "ObstacleAvoidance.h"
 #include "AAS.h"
 
-#include "../../Player.h"
+#include "Player.h"
 
-#include "../BotThread.h"
-#include "../BotThreadData.h"
+#include "botai/BotThread.h"
+#include "botai/BotThreadData.h"
 
 /*
 ===============================================================================
@@ -269,7 +269,7 @@ void idObstacleAvoidance::GetPointOutsideObstacles( idVec2 &point, int *obstacle
 			return;
 		}
 	}
-	botThreadData.Warning( "GetPointOutsideObstacles: no valid point found" ); 
+	botThreadData.Warning( "GetPointOutsideObstacles: no valid point found" );
 }
 
 /*
@@ -634,9 +634,9 @@ bool idObstacleAvoidance::GetPathNodeDelta( pathNode_t *node, const idVec2 &seek
 idObstacleAvoidance::BuildPathTree
 ============
 */
-idObstacleAvoidance::pathNode_t *idObstacleAvoidance::BuildPathTree( const idBounds &clipBounds, 
-																	 const idVec2 &startPos, 
-																	 const idVec2 &seekPos, 
+idObstacleAvoidance::pathNode_t *idObstacleAvoidance::BuildPathTree( const idBounds &clipBounds,
+																	 const idVec2 &startPos,
+																	 const idVec2 &seekPos,
 																	 obstaclePath_t &path ) {
 	int blockingEdgeNum, blockingObstacle, obstaclePoints, bestNumNodes;
 	float blockingScale;
@@ -796,8 +796,8 @@ void idObstacleAvoidance::PrunePathTree( pathNode_t *root, const idVec2 &seekPos
 OptimizePath
 ============
 */
-int idObstacleAvoidance::OptimizePath( const pathNode_t *root, 
-									   const pathNode_t *leafNode, 
+int idObstacleAvoidance::OptimizePath( const pathNode_t *root,
+									   const pathNode_t *leafNode,
 									   idVec2 optimizedPath[MAX_OBSTACLE_PATH] ) {
 	int i, numPathPoints, edgeNums[2];
 	const pathNode_t *curNode, *nextNode;
@@ -860,7 +860,7 @@ int idObstacleAvoidance::OptimizePath( const pathNode_t *root,
 PathLength
 ============
 */
-float idObstacleAvoidance::PathLength( const idVec2 optimizedPath[MAX_OBSTACLE_PATH], 
+float idObstacleAvoidance::PathLength( const idVec2 optimizedPath[MAX_OBSTACLE_PATH],
 									   int numPathPoints, const idVec2 &curDir ) {
 	int i;
 	float pathLength;
@@ -1231,6 +1231,6 @@ bool idObstacleAvoidance::TestQuery( const char *fileName, const idAAS *aas ) {
 	bool result = FindPathAroundObstacles( lastQuery.bounds, lastQuery.radius, aas, lastQuery.startPos, lastQuery.seekPos, path );
 
 	gameRenderWorld->DebugBounds( colorOrange, lastQuery.bounds, lastQuery.startPos );
-	
+
 	return true;
 }

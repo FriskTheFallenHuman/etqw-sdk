@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,10 +11,10 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Walker.h"
-#include "../ContentMask.h"
-#include "../script/Script_Helper.h"
+#include "ContentMask.h"
+#include "script/Script_Helper.h"
 #include "VehicleControl.h"
-#include "../../decllib/DeclSurfaceType.h"
+#include "decllib/DeclSurfaceType.h"
 
 /*
 ===============================================================================
@@ -278,13 +278,13 @@ void sdWalker::Spawn( void ) {
 	// move up to make sure the monster is at least an epsilon above the floor
 	physicsObj.SetOrigin( GetPhysics()->GetOrigin() + idVec3( 0, 0, CM_CLIP_EPSILON ) );
 	physicsObj.SetAxis( mat3_identity );
-	
+
 	idVec3 gravity = spawnArgs.GetVector( "gravityDir", "0 0 -1" );
 	float gravityScale;
 	if ( spawnArgs.GetFloat( "gravity", DEFAULT_GRAVITY_STRING, gravityScale ) ) {
 		gravity *= gravityScale;
 	} else {
-		gravity *= g_gravity.GetFloat();		
+		gravity *= g_gravity.GetFloat();
 	}
 
 	physicsObj.SetGravity( gravity );

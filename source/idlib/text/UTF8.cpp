@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 template< typename T > ID_INLINE bool Is1ByteUTF8SequenceStart( const T value ) { return ( ( value & 0x80 ) == 0x00 ); }
@@ -46,7 +46,7 @@ int sdUTF8::DecodeLength() const {
 	int length = 0;
 
 	const byte* ptr = data;
-	
+
 	while ( ( ptr - data ) < len ) {
 		if ( Is1ByteUTF8SequenceStart( *ptr ) ) {
 			length++;
@@ -64,7 +64,7 @@ int sdUTF8::DecodeLength() const {
 			// malformed UTF-8 data
 			//assert( false );
 			length++;
-			ptr += 1; 
+			ptr += 1;
 		}
 	}
 
@@ -114,7 +114,7 @@ void sdUTF8::Encode( idFile* file, const wchar_t* data, int len ) {
 		} else if( Is2ByteUTF8Sequence( data[ index ] ) ) {
 			file->WriteUnsignedChar( 0xC0 | ( ( data[ index ] >> 6 ) & 0x1F ) );
 			file->WriteUnsignedChar( 0x80 | ( data[ index ] & 0x3F ) );
-		} else {			
+		} else {
 			file->WriteUnsignedChar( data[ index ] );
 		}
 		index++;

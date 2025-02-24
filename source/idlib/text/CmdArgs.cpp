@@ -1,10 +1,10 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
-#include "../../framework/CVarSystem.h"
+#include "framework/CVarSystem.h"
 
 /*
 ============

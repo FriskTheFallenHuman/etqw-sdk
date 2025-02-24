@@ -111,7 +111,7 @@ enum playerClassTypes_t { //mal: we dont care about the strogg, since the classe
     NOCLASS = -1,
 	MEDIC,
 	SOLDIER,
-	ENGINEER, 
+	ENGINEER,
 	FIELDOPS,
 	COVERTOPS,
 	MAX_BOT_TEAMS
@@ -187,8 +187,8 @@ enum botPostureFlags_t {
 	IS_STANDING
 };
 
-enum botChatTypes_t { 
-//NOTE: for many of these, there is more then 1 chat that works, so we'll randomly pick one for variety.	
+enum botChatTypes_t {
+//NOTE: for many of these, there is more then 1 chat that works, so we'll randomly pick one for variety.
 	NULL_CHAT,
 	HEAL_ME,
 	REVIVE_ME,

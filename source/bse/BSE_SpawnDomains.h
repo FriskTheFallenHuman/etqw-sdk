@@ -40,7 +40,7 @@ enum
 	SPF_SPHERE_0,
 	SPF_SPHERE_1,
 	SPF_SPHERE_2,
-	SPF_SPHERE_3,	
+	SPF_SPHERE_3,
 
 	SPF_SURFACE_SPHERE_0,
 	SPF_SURFACE_SPHERE_1,
@@ -51,16 +51,16 @@ enum
  	SPF_CYLINDER_1,
  	SPF_CYLINDER_2,
  	SPF_CYLINDER_3,
- 
+
  	SPF_SURFACE_CYLINDER_0,
  	SPF_SURFACE_CYLINDER_1,
  	SPF_SURFACE_CYLINDER_2,
  	SPF_SURFACE_CYLINDER_3,
- 
+
 	SPF_SPIRAL_0,
 	SPF_SPIRAL_1,
 	SPF_SPIRAL_2,
-	SPF_SPIRAL_3,	
+	SPF_SPIRAL_3,
 
 	SPF_MODEL_0,
 	SPF_MODEL_1,
@@ -69,7 +69,7 @@ enum
 
 	SPF_COUNT
 };
-   
+
 typedef void ( *TSpawnFunc )( float *, const class rvParticleParms &, idVec3 *, const idVec3 * );
 
 #define	PPFLAG_SURFACE			( 1 << 0 )
@@ -142,7 +142,7 @@ class rvParticleParms : public sdPoolAllocator< rvParticleParms, sdPoolAllocator
 public:
 				rvParticleParms( void ) { mModelInfo = NULL; mStatic = 0;}
 				~rvParticleParms( void ) { delete mModelInfo; }
-				
+
 	void operator= ( const rvParticleParms &other ) {
 		memcpy( this, &other, sizeof( rvParticleParms ) );
 		if ( other.mModelInfo ) {

@@ -146,7 +146,7 @@ public:
 	void			RegisterExternalFunctionCall( functionDef_t& funcDef );
 	int				RegisterSysCall( const function_t* function );
 	int				RegisterEventCall( const function_t* function );
-	
+
 	int				RegisterCall( const function_t* function, int baseParm, idList< callDef_t* >& list );
 
 	void			EnterNamespace( const char* name );

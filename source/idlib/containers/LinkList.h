@@ -59,7 +59,7 @@ Node is initialized to be the head of an empty list
 template< class type >
 idLinkList<type>::idLinkList() {
 	owner	= NULL;
-	head	= this;	
+	head	= this;
 	next	= this;
 	prev	= this;
 }
@@ -326,7 +326,7 @@ operator==( idLinkList< type >, idLinkList< type > )
 */
 template< class type >
 bool operator==( const idLinkList< type >& lhs, const idLinkList< type >& rhs ) {
-	return (	lhs.Owner() == rhs.Owner() && 
+	return (	lhs.Owner() == rhs.Owner() &&
 				lhs.ListHead() == rhs.ListHead() &&
 				lhs.NextNode() == rhs.NextNode() &&
 				lhs.PrevNode() == rhs.PrevNode()

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,13 +12,13 @@ static char THIS_FILE[] = __FILE__;
 
 #include "VehicleWeapon.h"
 #include "Transport.h"
-#include "../Weapon.h"
-#include "../Player.h"
-#include "../Projectile.h"
-#include "../ContentMask.h"
-#include "../Misc.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
+#include "Weapon.h"
+#include "Player.h"
+#include "Projectile.h"
+#include "ContentMask.h"
+#include "Misc.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
 
 // Gordon: FIXME: Move all IK chains out to vehicle IK so weapons only deal with weapon issues
 /*
@@ -77,7 +77,7 @@ void sdVehicleWeapon::Event_GetVectorKey( const char* key ) {
 sdVehicleWeapon::Event_GetVehicle
 ================
 */
-void sdVehicleWeapon::Event_GetVehicle( void ) {	
+void sdVehicleWeapon::Event_GetVehicle( void ) {
 	sdProgram::ReturnEntity( vehicle );
 }
 
@@ -86,7 +86,7 @@ void sdVehicleWeapon::Event_GetVehicle( void ) {
 sdVehicleWeapon::Event_GetPlayer
 ================
 */
-void sdVehicleWeapon::Event_GetPlayer( void ) {	
+void sdVehicleWeapon::Event_GetPlayer( void ) {
 	sdProgram::ReturnEntity( GetPlayer() );
 }
 
@@ -220,16 +220,16 @@ bool sdVehicleWeapon::IsValidLockDirection( const idVec3& worldDirection ) const
 	idAngles localAngles = localDirection.ToAngles();
 	localAngles.Normalize180();
 
-	if ( lockClampYaw.flags.enabled 
+	if ( lockClampYaw.flags.enabled
 		&& ( localAngles.yaw < lockClampYaw.extents[ 0 ] || localAngles.yaw > lockClampYaw.extents[ 1 ] ) ) {
 		return false;
 	}
 
-	if ( lockClampPitch.flags.enabled 
+	if ( lockClampPitch.flags.enabled
 		&& ( localAngles.pitch < lockClampPitch.extents[ 0 ] || localAngles.pitch > lockClampPitch.extents[ 1 ] ) ) {
 		return false;
 	}
-	
+
 	return true;
 }
 
@@ -427,7 +427,7 @@ idEntity* sdVehicleWeapon::GetEnemy( void ) {
 	if ( player != NULL ) {
 		return NULL;
 	}
-	
+
 	return player->GetTargetLocked() ? player->targetEntity.GetEntity() : NULL;
 }
 
@@ -545,7 +545,7 @@ bool sdVehicleWeaponFixedMinigun::CanAimAt( const idVec3& idealAimPosition ) {
 	assert( transport );
 
 	trace_t trace;
-	gameLocal.clip.TracePoint( CLIP_DEBUG_PARMS trace, player->firstPersonViewOrigin, idealAimPosition, 
+	gameLocal.clip.TracePoint( CLIP_DEBUG_PARMS trace, player->firstPersonViewOrigin, idealAimPosition,
 								( MASK_SHOT_RENDERMODEL | MASK_SHOT_BOUNDINGBOX )  & ~CONTENTS_FORCEFIELD, transport );
 	idVec3 aimPosition = trace.endpos;
 
@@ -593,7 +593,7 @@ bool sdVehicleWeaponLocked::Spawn( const sdDeclStringMap& weaponParms, const ang
 
 	const idDict& weaponDict = weaponParms.GetDict();
 
-	// list of joints to 
+	// list of joints to
 	idAnimator* animator	= vehicle->GetAnimator();
 	for ( int i = 1; i <= MAX_CANAIM_JOINTS; i++ ) {
 		const char* jointDefName = va( "canaim_joint_%i", i );
@@ -629,7 +629,7 @@ bool sdVehicleWeaponLocked::CanAimAt( const idVec3& idealAimPosition ) {
 	assert( transport );
 
 	trace_t trace;
-	gameLocal.clip.TracePoint( CLIP_DEBUG_PARMS trace, player->firstPersonViewOrigin, idealAimPosition, 
+	gameLocal.clip.TracePoint( CLIP_DEBUG_PARMS trace, player->firstPersonViewOrigin, idealAimPosition,
 								( MASK_SHOT_RENDERMODEL | MASK_SHOT_BOUNDINGBOX )  & ~CONTENTS_FORCEFIELD, transport );
 	idVec3 aimPosition = trace.endpos;
 

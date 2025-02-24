@@ -133,7 +133,7 @@ protected:
 
 	float		accelPitchMultiplier;
 	float		accelPitchOffset;
-	
+
 	float		accelMinSpeed;
 	float		accelMidSpeed;
 	float		accelMaxSpeed;

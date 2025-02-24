@@ -73,7 +73,7 @@ public:
 	virtual const idBounds&	GetBounds( int id = -1 ) const;
 	virtual const idBounds&	GetAbsBounds( int id = -1 ) const;
 
-	
+
 	virtual void			SetContents( int mask, int id = -1 );
 
 	virtual float			InWater( void ) const { return waterLevel; }

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,8 +12,8 @@ static char THIS_FILE[] = __FILE__;
 
 #include "GUIDState.h"
 #include "UserGroup.h"
-#include "../Player.h"
-#include "../../idlib/PropertiesImpl.h"
+#include "Player.h"
+#include "idlib/PropertiesImpl.h"
 #include "GameRules.h"
 
 /*

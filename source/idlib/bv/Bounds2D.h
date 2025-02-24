@@ -9,10 +9,10 @@ class sdBounds2D {
 public:
 
 	enum eSide		{ SIDE_LEFT		= BITT< 0 >::VALUE,
-					  SIDE_RIGHT	= BITT< 1 >::VALUE, 
+					  SIDE_RIGHT	= BITT< 1 >::VALUE,
 					  SIDE_TOP		= BITT< 2 >::VALUE,
 					  SIDE_BOTTOM	= BITT< 3 >::VALUE,
-					  SIDE_INTERIOR = BITT< 4 >::VALUE 
+					  SIDE_INTERIOR = BITT< 4 >::VALUE
 	};
 
 	enum eScreenSpace { SPACE_INCREASE_FROM_TOP,
@@ -42,7 +42,7 @@ public:
 
 	bool			AddPoint( const idVec2& p );
 	bool			AddBounds( const sdBounds2D &rhs );
-	
+
 	int				GetLargestAxis( void ) const;
 
 	idVec2&			GetMins();
@@ -51,7 +51,7 @@ public:
 	idVec2&			GetMaxs();
 	const idVec2&	GetMaxs() const;
 
-	bool			Compare( const sdBounds2D& rhs ) const;	
+	bool			Compare( const sdBounds2D& rhs ) const;
 
 	idVec2			GetCenter() const;
 
@@ -291,7 +291,7 @@ sdBounds2D::IsCollapsed
 ============
 */
 ID_INLINE bool sdBounds2D::IsCollapsed( float epsilon ) const {
-	return(	( idMath::Fabs( bounds[ 1 ][ 0 ] - bounds[ 0 ][ 0 ] ) < epsilon )  || 
+	return(	( idMath::Fabs( bounds[ 1 ][ 0 ] - bounds[ 0 ][ 0 ] ) < epsilon )  ||
 			( idMath::Fabs( bounds[ 1 ][ 1 ] - bounds[ 0 ][ 1 ] ) < epsilon ) );
 }
 
@@ -423,21 +423,21 @@ ID_INLINE sdBounds2D::sdBounds2D( const idBounds& rhs, size_t ignoreAxis ) {
 	switch( ignoreAxis ) {
 		case 0:
 			bounds[ 0 ][ 0 ] = mins[ 1 ];
-			bounds[ 1 ][ 0 ] = maxs[ 1 ];	
+			bounds[ 1 ][ 0 ] = maxs[ 1 ];
 
 			bounds[ 0 ][ 1 ] = mins[ 2 ];
 			bounds[ 1 ][ 1 ] = maxs[ 2 ];
 			break;
 		case 1:
 			bounds[ 0 ][ 0 ] = mins[ 0 ];
-			bounds[ 1 ][ 0 ] = maxs[ 0 ];	
+			bounds[ 1 ][ 0 ] = maxs[ 0 ];
 
 			bounds[ 0 ][ 1 ] = mins[ 2 ];
 			bounds[ 1 ][ 1 ] = maxs[ 2 ];
 			break;
 		case 2:
 			bounds[ 0 ][ 0 ] = mins[ 0 ];
-			bounds[ 1 ][ 0 ] = maxs[ 0 ];	
+			bounds[ 1 ][ 0 ] = maxs[ 0 ];
 
 			bounds[ 0 ][ 1 ] = mins[ 1 ];
 			bounds[ 1 ][ 1 ] = maxs[ 1 ];

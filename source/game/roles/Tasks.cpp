@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,14 +11,14 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Tasks.h"
-#include "../Player.h"
-#include "../interfaces/TaskInterface.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../roles/WayPointManager.h"
+#include "Player.h"
+#include "interfaces/TaskInterface.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "roles/WayPointManager.h"
 #include "FireTeams.h"
-#include "../rules/GameRules.h"
-#include "../rules/VoteManager.h"
+#include "rules/GameRules.h"
+#include "rules/VoteManager.h"
 
 /*
 ===============================================================================
@@ -260,7 +260,7 @@ void sdPlayerTask::ShowWayPoint( int i ) {
 	sdWayPoint* wayPoint = sdWayPointManager::GetInstance().AllocWayPoint();
 	if ( wayPoint == NULL ) {
 		return;
-	}		
+	}
 	_wayPointInfo[ i ].wayPoint = wayPoint;
 
 	if ( _wayPointInfo[ i ].fixed ) {
@@ -289,7 +289,7 @@ void sdPlayerTask::ShowWayPoint( int i ) {
 	if ( IsObjective() || IsMission() || _taskInfo->NoOcclusion() ) {
 		wayPoint->SetCheckLineOfSight( false );
 	}
-	
+
 	wayPoint->SetBracketed( waypointData.GetBool( "bracketed" ) );
 	if ( waypointData.GetBool( "bracket_use_rendermodel" ) ) {
 		wayPoint->UseRenderModel();
@@ -710,7 +710,7 @@ void sdPlayerTask::Write( idFile* file ) const {
 	file->WriteInt( _entity.GetSpawnId() );
 
 	file->WriteInt( _flags );
-	
+
 	int count = _wayPointInfo.Num();
 	file->WriteInt( count );
 	for ( int i = 0; i < count; i++ ) {
@@ -1436,7 +1436,7 @@ void sdTaskManagerLocal::Think( void ) {
 			ft = NULL;
 		}
 	}
-	
+
 	for ( int i = 0; i < MAX_CLIENTS; i++ ) {
 		idPlayer* player = gameLocal.GetClient( i );
 		if ( player == NULL ) {

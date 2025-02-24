@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -15,13 +15,13 @@ static char THIS_FILE[] = __FILE__;
 #include "VehicleView.h"
 #include "VehicleControl.h"
 #include "TransportComponents.h"
-#include "../Actor.h"
-#include "../Player.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../../decllib/DeclSurfaceType.h"
-#include "../botai/BotThreadData.h"
-#include "../botai/Bot.h"
+#include "Actor.h"
+#include "Player.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "decllib/DeclSurfaceType.h"
+#include "botai/BotThreadData.h"
+#include "botai/Bot.h"
 
 /*
 ===============================================================================
@@ -76,9 +76,9 @@ void sdVehicle_RigidBody::DoLoadVehicleScript( void ) {
 	physicsObj.SetBouncyness( spawnArgs.GetFloat( "bouncyness" ) );
 	physicsObj.SetWaterRestThreshold( spawnArgs.GetFloat( "water_rest_threshold", "1" ) );
 
-	LoadParts( VPT_PART | VPT_WHEEL | VPT_HOVER | VPT_SIMPLE_PART | VPT_SCRIPTED_PART 
-			| VPT_MASS | VPT_TRACK | VPT_ROTOR | VPT_THRUSTER | VPT_SUSPENSION | VPT_VTOL 
-			| VPT_ANTIGRAV | VPT_PSEUDO_HOVER | VPT_DRAGPLANE | VPT_RUDDER 
+	LoadParts( VPT_PART | VPT_WHEEL | VPT_HOVER | VPT_SIMPLE_PART | VPT_SCRIPTED_PART
+			| VPT_MASS | VPT_TRACK | VPT_ROTOR | VPT_THRUSTER | VPT_SUSPENSION | VPT_VTOL
+			| VPT_ANTIGRAV | VPT_PSEUDO_HOVER | VPT_DRAGPLANE | VPT_RUDDER
 			| VPT_AIRBRAKE | VPT_HURTZONE | VPT_ANTIROLL | VPT_ANTIPITCH );
 
 	physicsObj.CalculateMassProperties();
@@ -199,7 +199,7 @@ bool sdVehicle_RigidBody::Collide( const trace_t &collision, const idVec3 &veloc
 			otherControl = otherTransport->GetVehicleControl();
 		}
 
-		partDamageInfo_t damageInfo;	
+		partDamageInfo_t damageInfo;
 
 		sdVehicleDriveObject* object = PartForCollisionById( collision, PFC_SELF_COLLISION );
 		if ( object ) {
@@ -285,7 +285,7 @@ sdVehicle_RigidBody::CollideFatal
 void sdVehicle_RigidBody::CollideFatal( idEntity* other ) {
 	idEntity* driver = positionManager.FindDriver();
 	idPlayer* playerDriver = NULL;
-	
+
 	if ( driver != NULL ) {
 		playerDriver = driver->Cast< idPlayer >();
 		assert( playerDriver != NULL );

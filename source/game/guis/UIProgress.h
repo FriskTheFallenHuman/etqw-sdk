@@ -117,8 +117,8 @@ private:
 	)
 	sdVec4Property		highlightColor;
 	// ===========================================
-	
-private:	
+
+private:
 	idStaticList< uiDrawPart_t, SP_MAX > sliderParts;
 };
 

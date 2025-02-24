@@ -1,0 +1,13 @@
+![SDK Version 1.5](https://cdn2.steamgriddb.com/logo_thumb/220fa6ad88533e8a1848a9e2f760ec42.png)
+
+# Miscellaneous Coding Notes:
+- You can use Visual Studio 2022 Community edition to compile the SDK.
+- You can find the final **gamex86.dll** in `sdk_output/mod_base/` copy it to the same folder as your **etqw.exe** and the game will automatically load your new dll.
+- We recommend setting up a post-build event to automatically pack the dll to the game folder.
+ 
+## Miscellaneous Mapping Notes:
+- You must add your custom map script to `base/scripts/main.script` (look for the #includes before game_main)
+- You must add your custom map or campaign metadata to `sdk_output/mod_base/base/pakmeta.conf` while developing this file will only be loaded when using the SDK version of ETQW.
+- To include your metadata for use with the full game, you must create an **addon.conf** and package your map in a PK4.
+ 
+See sample_addon.conf for an example of how to create an addon.conf file.

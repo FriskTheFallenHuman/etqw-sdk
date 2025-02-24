@@ -5,7 +5,7 @@
 #ifndef __GUIDSTATE_H__
 #define __GUIDSTATE_H__
 
-#include "../../sdnet/SDNet.h"
+#include "sdnet/SDNet.h"
 
 struct clientGUIDLookup_t {
 	int				ip;

@@ -2,7 +2,7 @@
 //
 
 
-#include "./precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 idBlockAlloc< sdProperties::sdProperty, 64> sdProperties::sdPropertyHandler::propertyAllocator;

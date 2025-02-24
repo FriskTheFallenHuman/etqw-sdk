@@ -6,8 +6,8 @@
 #define __GAME_VEHICLES_JETPACK_H__
 
 #include "Transport.h"
-#include "../physics/Physics_JetPack.h"
-#include "../client/ClientEntity.h"
+#include "physics/Physics_JetPack.h"
+#include "client/ClientEntity.h"
 
 class sdJetPackVisuals : public sdClientAnimated {
 public:

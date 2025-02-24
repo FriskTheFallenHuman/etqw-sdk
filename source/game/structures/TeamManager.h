@@ -8,7 +8,7 @@ class sdDeployableEntity;
 class sdTeamInfo;
 class sdRadarInterface;
 
-#include "../roles/RoleManager.h"
+#include "roles/RoleManager.h"
 
 class sdFireTeam;
 
@@ -49,7 +49,7 @@ public:
 		int								GetMask( void ) const { return mask; }
 		const idVec2&					GetOrigin( void ) const { return origin; }
 		const idVec2&					GetDirection( void ) const { return direction; }
-		idEntity*						GetOwner( void ) const { return owner; }		
+		idEntity*						GetOwner( void ) const { return owner; }
 
 	private:
 		float							maxAngle;
@@ -202,7 +202,7 @@ public:
 	}
 
 	idList< const sdDeclProficiencyType* >& GetProficiencyTypes( void ) { return proficiencyTypes; }
-	
+
 	idCVar*								GetPasswordCVar( void ) const { return passwordCVar; }
 
 	int									GetNumPlayers( bool excludeBots = false ) const;
@@ -239,7 +239,7 @@ private:
 	float								crashLandThreshold;
 	idStr								parachuteLandFxName;
 	float								parachuteLandThreshold;
-	
+
 	sdRequirementContainer				playerHealthBoostRequirements;
 	int									maxHealthBoost;
 	int									healthBoost;
@@ -303,7 +303,7 @@ public:
 	sdTeamInfo&					GetTeamByIndex( int index );
 	int							GetIndexForTeam( const char* name );
 	int							GetNumTeams( void ) const { return teamInfo.Num(); }
-	
+
 	void						ApplyNetworkState( const sdEntityStateNetworkData& newState );
 	void						ReadNetworkState( const sdEntityStateNetworkData& baseState, sdEntityStateNetworkData& newState, const idBitMsg& msg ) const;
 	void						WriteNetworkState( const sdEntityStateNetworkData& baseState, sdEntityStateNetworkData& newState, idBitMsg& msg ) const;

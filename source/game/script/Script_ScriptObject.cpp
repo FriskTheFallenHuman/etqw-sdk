@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -61,7 +61,7 @@ idScriptObject::idScriptObject( int handle, idClass* object, sdProgram* _program
 	program				= _program;
 	_handle				= handle;
 	_object				= object;
-	
+
 	for ( int i = 0; i < NSM_NUM_MODES; i++ ) {
 		networkFields[ i ].size = 0;
 	}
@@ -476,7 +476,7 @@ void idScriptObject::WriteNetworkState( networkStateMode_t mode, const sdEntityS
 					idEntity* ent = object->GetClass()->Cast< idEntity >();
 					id = gameLocal.GetSpawnId( ent );
 				}
-				
+
 				const int& oldBase = baseData.GetInt();
 				int& newBase = newData.GetInt();
 

@@ -5,8 +5,8 @@
 #ifndef __REPAIR_DRONE_H__
 #define __REPAIR_DRONE_H__
 
-#include "../ScriptEntity.h"
-#include "../effects/Effects.h"
+#include "ScriptEntity.h"
+#include "effects/Effects.h"
 
 class sdRepairDroneBroadcastData : public sdScriptEntityBroadcastData {
 public:

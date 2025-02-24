@@ -5,15 +5,15 @@
 #define __GAME_TEMPLATEDPARTICLE_SYSTEM_H__
 
 #include "HardcodedParticleSystem.h"
-#include "../Player.h"
-#include "../demos/DemoManager.h"
+#include "Player.h"
+#include "demos/DemoManager.h"
 
 /************************************************************************
 
 	This is a templated particle system, it does all the list management for
 	you you just give it a class that defines the behaviour of a single particle.
 	Making this templated instead of using a particle class with virtual methods
-	means we can have particles wich are differently sized and that all method 
+	means we can have particles wich are differently sized and that all method
 	calls are statically linked or inlined.
 	ParticleClass is a class wich defines the actual logic of the particles
 	rendered by this system, it needs to have the following methods
@@ -29,7 +29,7 @@
 	void StaticInitializeAndRender( sdTemplatedParticleSystem<class> * )
 		This method will be called to initialize the particles once when
 		the system is initialized. This method can write to the tirangle
-		surface if it wants to setup triangle index/vertex data that 
+		surface if it wants to setup triangle index/vertex data that
 		doesn't change.
 
 	bool Initialize( sdTemplatedParticleSystem<class> * )
@@ -39,7 +39,7 @@
 		may be called again next frame tough)
 
 	bool Update( sdTemplatedParticleSystem<class> * )
-		Updates the "physics" associated with this particle, returns false if the 
+		Updates the "physics" associated with this particle, returns false if the
 		particle died and should be reinitialized, true to continue like normal.
 
 	void Render( sdTemplatedParticleSystem<class> * )
@@ -59,7 +59,7 @@ public:
 	virtual void Init( void ) = 0;
 };
 
-template< class ParticleClass, class ParameterClass > class sdTemplatedParticleSystem : public sdAbstractTemplatedParticleSystem { 
+template< class ParticleClass, class ParameterClass > class sdTemplatedParticleSystem : public sdAbstractTemplatedParticleSystem {
 protected:
 	int maxParticles;
 	int activeParticles;
@@ -79,7 +79,7 @@ public:
 	void				SetMaterial( const char *name ) { material = declHolder.declMaterialType.LocalFind( name ); }
 	void				SetMaterial( const idMaterial* material ) { this->material = material; }
 	void				SetMaxParticles( int num ) { maxParticles = num; maxActiveParticles = num; } //Need to call update after this
-	virtual void		SetMaxActiveParticles( int num ) { maxActiveParticles = num; } 
+	virtual void		SetMaxActiveParticles( int num ) { maxActiveParticles = num; }
 	const idMat3 &		GetViewAxis( void ) { return viewAxis; }
 	const idVec3 &		GetViewOrg( void ) { return viewOrg; }
 
@@ -180,7 +180,7 @@ template< class ParticleClass, class ParameterClass > void sdTemplatedParticleSy
 			}
 		}
 		particle->Render( this );
-		dropsActive++;		
+		dropsActive++;
 	}
 	activeParticles = dropsActive;
 

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 #include <wctype.h>
@@ -404,7 +404,7 @@ idWStr::StripFilename
 */
 wchar_t* idWStr::StripFilename( wchar_t* string ) {
 	int pos;
-	
+
 	pos = idWStr::Length( string ) - 1;
 	while( ( pos > 0 ) && ( string[ pos ] != L'/' ) && ( string[ pos ] != L'\\' ) ) {
 		pos--;
@@ -581,7 +581,7 @@ int idWStr::IcmpNoColor( const wchar_t *s1, const wchar_t *s2 ) {
 /*
 =============
 idWStr::Copynz
- 
+
 Safe strncpy that ensures a trailing zero
 =============
 */
@@ -591,7 +591,7 @@ void idWStr::Copynz( wchar_t *dest, const wchar_t *src, int destsize ) {
 		return;
 	}
 	if ( destsize < 1 ) {
-		idLib::common->Warning( "idWStr::Copynz: destsize < 1" ); 
+		idLib::common->Warning( "idWStr::Copynz: destsize < 1" );
 		return;
 	}
 
@@ -658,7 +658,7 @@ wchar_t *idWStr::RemoveColors( wchar_t *string ) {
 	while( (c = *s) != 0 ) {
 		if ( IsColor( s ) ) {
 			s++;
-		}		
+		}
 		else {
 			*d++ = c;
 		}
@@ -793,7 +793,7 @@ int swprintf( idWStr &string, const wchar_t *fmt, ... ) {
 	int l;
 	va_list argptr;
 	wchar_t buffer[BUFFER_SIZE];
-	
+
 	va_start( argptr, fmt );
 	l = idWStr::vsnPrintf( buffer, BUFFER_SIZE, fmt, argptr );
 	va_end( argptr );
@@ -813,9 +813,9 @@ int vswprintf( idWStr &string, const wchar_t *fmt, va_list argptr ) {
 	static const int BUFFER_SIZE = 32000;
 	int l;
 	wchar_t buffer[BUFFER_SIZE];
-	
+
 	l = idWStr::vsnPrintf( buffer, BUFFER_SIZE, fmt, argptr );
-	
+
 	string = buffer;
 	return l;
 }
@@ -855,7 +855,7 @@ void idWStr::InitMemory( void ) {
 		stringDataAllocator = new wideStringDataAllocator_t;
 		stringDataAllocator->Init();
 		stringAllocatorIsShared = false;
-	}	
+	}
 }
 
 /*
@@ -936,7 +936,7 @@ void idWStr::EraseRange( int start, int len ) {
 	if( len == INVALID_POSITION ) {
 		len = totalLength - start;
 	}
-	
+
 	if( len == totalLength ) {
 		// erase the whole thing
 		Empty();
@@ -947,7 +947,7 @@ void idWStr::EraseRange( int start, int len ) {
 	if ( totalLength - start - len ) {
 		::wmemmove( &data[ start ], &data[ start + len ], totalLength - start - len );
 	}
-	
+
 	data[ totalLength - len ] = L'\0';
 	this->len -= len;
 }

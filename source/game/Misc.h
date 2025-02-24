@@ -68,7 +68,7 @@ public:
 
 						sdDynamicSpawnPoint( void );
 						~sdDynamicSpawnPoint( void );
-						
+
 	void				Spawn( void );
 
 	virtual bool		CanCollide( const idEntity* other, int traceId ) const;
@@ -159,7 +159,7 @@ private:
 
 	void					PlayNextAnim( void );
 
-	void					Event_Activate( idEntity *activator );	
+	void					Event_Activate( idEntity *activator );
 	void					Event_Start( void );
 	void					Event_StartRagdoll( void );
 	void					Event_AnimDone( int animIndex );
@@ -349,7 +349,7 @@ sdJumpPad
 ===============================================================================
 */
 
-class sdJumpPad : public idTrigger_Multi { 
+class sdJumpPad : public idTrigger_Multi {
 public:
 	CLASS_PROTOTYPE( sdJumpPad );
 

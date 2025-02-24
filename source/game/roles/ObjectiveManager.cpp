@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,15 +11,15 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "ObjectiveManager.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../structures/TeamManager.h"
-#include "../Player.h"
-#include "../rules/GameRules.h"
-#include "../rules/GameRules_Campaign.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "structures/TeamManager.h"
+#include "Player.h"
+#include "rules/GameRules.h"
+#include "rules/GameRules_Campaign.h"
 
-#include "../botai/BotThreadData.h"
-#include "../botai/BotAI_Actions.h"
+#include "botai/BotThreadData.h"
+#include "botai/BotAI_Actions.h"
 
 idCVar g_logObjectives( "g_logObjectives", "1", CVAR_BOOL | CVAR_GAME | CVAR_NOCHEAT | CVAR_RANKLOCKED, "log objective completion info" );
 
@@ -295,7 +295,7 @@ void sdObjectiveManagerLocal::Init( void ) {
 	for ( int i = 0; i < numTeams; i++ ) {
 		nextObjective[ i ] = -1;
 	}
-	
+
 	SetCriticalClass( GDF, NOCLASS );
 	SetCriticalClass( STROGG, NOCLASS );
 }
@@ -386,7 +386,7 @@ void sdObjectiveManagerLocal::LogPlayerStats( void ) {
 			for ( int j = 0; j < gameLocal.declProficiencyTypeType.Num(); j++ ) {
 				float value = player->GetProficiencyTable().GetPoints( j );
 				const char* name = gameLocal.declProficiencyTypeType[ j ]->GetName();
-				
+
 				gameLocal.LogObjective( va( "XP: %s %f\n", name, value ) );
 			}
 		}
@@ -469,7 +469,7 @@ void sdObjectiveManagerLocal::OnGameStateChange( int newState ) {
 			if ( campaignRules != NULL ) {
 				const sdDeclCampaign* campaign = campaignRules->GetCampaign();
 				assert( campaign != NULL );
-				
+
 				gameLocal.LogObjective( va( "Campaign: %s\n", campaign->GetName() ) );
 			}
 			LogPlayerStats();
@@ -698,7 +698,7 @@ void sdObjectiveManagerLocal::Event_GetObjectiveState( idScriptObject* object, i
 	}
 
 	sdProgram::ReturnInteger( objectives[ objectiveIndex ].GetState( team->GetIndex() ) );
-	
+
 }
 
 /*
@@ -879,7 +879,7 @@ void sdObjectiveManagerLocal::Event_DeactivateBotActionGroup( int actionGroupNum
 			hasActiveForever = true;
 			continue;
 		}
-		
+
 		if ( botThreadData.botActions[ i ]->GetActionGroup() != actionGroupNum ) {
 			continue;
 		}
@@ -913,7 +913,7 @@ void sdObjectiveManagerLocal::Event_KillBotActionGroup( int actionGroupNum ) {
 			hasActiveForever = true;
 			continue;
 		}
-		
+
 		if ( botThreadData.botActions[ i ]->GetActionGroup() != actionGroupNum ) {
 			continue;
 		}
@@ -940,7 +940,7 @@ for( int i = 0; i < botThreadData.botActions.Num(); i++ ) {
 		if ( !botThreadData.botActions[ i ]->ActionIsValid() ) {
 			continue;
 		}
-		
+
 		if ( botThreadData.botActions[ i ]->GetActionGroup() != actionGroupNum ) {
 			continue;
 		}
@@ -964,7 +964,7 @@ for( int i = 0; i < botThreadData.botActions.Num(); i++ ) {
 		if ( !botThreadData.botActions[ i ]->ActionIsValid() ) {
 			continue;
 		}
-		
+
 		if ( botThreadData.botActions[ i ]->GetActionGroup() != actionGroupNum ) {
 			continue;
 		}
@@ -1104,7 +1104,7 @@ try_again:
 				Event_NotifyBotOfEvent( NOTEAM, NOCLASS, ACTION_STATE_BUILD_FIZZLED ); //mal: let the bot's know a major event just happened!
 				break;
 			}
-			
+
 			case ACTION_STATE_START_HACK: {
 				botThreadData.botActions[ i ]->SetActionState( ACTION_STATE_START_HACK );
 				Event_NotifyBotOfEvent( NOTEAM, NOCLASS, ACTION_STATE_START_HACK ); //mal: let the bot's know a major event just happened!
@@ -1117,7 +1117,7 @@ try_again:
 			}
 
 			case ACTION_STATE_GUN_READY: {
-				botThreadData.botActions[ i ]->SetActionState( ACTION_STATE_GUN_READY ); 
+				botThreadData.botActions[ i ]->SetActionState( ACTION_STATE_GUN_READY );
 				break;
 			}
 
@@ -1312,7 +1312,7 @@ void sdObjectiveManagerLocal::Event_IsActionGroupActive( int actionGroupNum ) {
 		if ( !botThreadData.botActions[ i ]->ActionIsValid() ) {
 			continue;
 		}
-		
+
 		if ( botThreadData.botActions[ i ]->GetActionGroup() != actionGroupNum ) {
 			continue;
 		}
@@ -1466,7 +1466,7 @@ void sdObjectiveManagerLocal::Event_SwitchTeamWeapons( const playerTeamTypes_t p
 		if ( client.weapInfo.primaryWeapon == desiredWeapType ) {
 			continue;
 		}
-		
+
 		if ( randomly ) {
 			if ( gameLocal.random.RandomInt( 100 ) > 50 ) {
 				continue;
@@ -1482,7 +1482,7 @@ void sdObjectiveManagerLocal::Event_SwitchTeamWeapons( const playerTeamTypes_t p
 			}
 
 			classWeapon = 1;
-		
+
 			if ( client.classType == SOLDIER ) {
 				classWeapon = 3;
 			}
@@ -1532,7 +1532,7 @@ void sdObjectiveManagerLocal::Event_NotifyBotOfEvent( const playerTeamTypes_t pl
 	botActionGoals_t actionGoal;
 	idBox actionBBox;
 	int resetState = MAJOR_RESET_EVENT; //mal: by default, all resets are major resets.
-	
+
 	for( int i = 0; i < MAX_CLIENTS; i++ ) {
 
 		clientInfo_t& playerInfo = botThreadData.GetGameWorldState()->clientInfo[ i ];
@@ -1574,7 +1574,7 @@ void sdObjectiveManagerLocal::Event_NotifyBotOfEvent( const playerTeamTypes_t pl
 
 		if ( botThreadData.GetGameWorldState()->botGoalInfo.team_GDF_PrimaryAction != -1 && botThreadData.GetGameWorldState()->botGoalInfo.team_STROGG_PrimaryAction != -1 ) {
             if ( eventType != ACTION_STATE_NULL ) {
-                
+
 				if ( playerInfo.team == GDF ) {
 					actionNumber = botThreadData.GetGameWorldState()->botGoalInfo.team_GDF_PrimaryAction;
 			        actionGoal = botThreadData.botActions[ actionNumber ]->GetHumanObj();
@@ -1862,7 +1862,7 @@ void sdObjectiveManagerLocal::Event_MapIsTrainingMap() {
 
 /*
 ================
-sdObjectiveManagerLocal::Event_SetPlayerIsOnFinalMission 
+sdObjectiveManagerLocal::Event_SetPlayerIsOnFinalMission
 ================
 */
 void sdObjectiveManagerLocal::Event_SetPlayerIsOnFinalMission() {
@@ -1871,7 +1871,7 @@ void sdObjectiveManagerLocal::Event_SetPlayerIsOnFinalMission() {
 	botThreadData.actorMissionInfo.actionNumber = ACTION_NULL;
 	botThreadData.actorMissionInfo.hasBriefedPlayer = false;
 	botThreadData.actorMissionInfo.deployableStageIsActive = false;
-	
+
 	if ( botThreadData.actorMissionInfo.actorClientNum > -1 && botThreadData.actorMissionInfo.actorClientNum < MAX_CLIENTS ) {
 		clientInfo_t& player = botThreadData.GetGameWorldState()->clientInfo[ botThreadData.actorMissionInfo.actorClientNum ];
 		player.resetState = 2; //mal: now clear the bots AI, so they can prepare for the next mission....
@@ -2083,7 +2083,7 @@ void sdObjectiveManagerLocal::Event_SetActionObjState( const botActionStates_t s
 		for( i = 0; i < MAX_CARRYABLES; i++ ) {
 			if ( botThreadData.GetGameWorldState()->botGoalInfo.carryableObjs[ i ].entNum != carryableObjective->entityNumber ) {
 				continue;
-			} 
+			}
 
 			onGround = botThreadData.GetGameWorldState()->botGoalInfo.carryableObjs[ i ].onGround;
 			actionNumber = botThreadData.GetGameWorldState()->botGoalInfo.carryableObjs[ i ].parentActionNum;
@@ -2092,7 +2092,7 @@ void sdObjectiveManagerLocal::Event_SetActionObjState( const botActionStates_t s
 				sdScriptHelper h1;
 				h1.Push( botThreadData.botActions[ actionNumber ]->GetActionName() );
 				scriptObject->CallNonBlockingScriptEvent( onCarryableItemStolenFunc, h1 );
-			} 
+			}
 
 			botThreadData.GetGameWorldState()->botGoalInfo.carryableObjs[ i ].onGround = false;
 			botThreadData.GetGameWorldState()->botGoalInfo.carryableObjs[ i ].carrierEntNum = carrier->entityNumber;
@@ -2254,7 +2254,7 @@ void sdObjectiveManagerLocal::Event_SetSpawnActionOwner( const playerTeamTypes_t
 			} else {
 				scriptObject->CallNonBlockingScriptEvent( onSpawnCapturedFunc, h1 );
 			}
-		} 
+		}
 
 	   botThreadData.botActions[ i ]->SetActionTeamOwner( playerTeam );
 	   break;
@@ -2474,7 +2474,7 @@ void sdObjectiveManagerLocal::Event_SetTeamNeededClass( const playerTeamTypes_t 
 	}
 
 	const sdDeclPlayerClass* pc;
-	
+
 	if ( playerTeam == GDF ) {
         if ( neededClass == MEDIC ) {
 			pc = gameLocal.declPlayerClassType[ "medic" ];

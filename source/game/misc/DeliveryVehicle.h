@@ -5,8 +5,8 @@
 #ifndef __DELIVERY_VEHICLE_H__
 #define __DELIVERY_VEHICLE_H__
 
-#include "../ScriptEntity.h"
-#include "../effects/Effects.h"
+#include "ScriptEntity.h"
+#include "effects/Effects.h"
 
 class sdDeliveryVehicleBroadcastData : public sdScriptEntityBroadcastData {
 public:

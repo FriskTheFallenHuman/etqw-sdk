@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -13,7 +13,7 @@ static char THIS_FILE[] = __FILE__;
 
 #include "AdEntity.h"
 #include "WorldToScreen.h"
-#include "../Player.h"
+#include "Player.h"
 
 /*
 ===============================================================================
@@ -97,7 +97,7 @@ void sdAdEntity::Spawn( void ) {
 		}
 
 		for ( int i = 0; i < renderEntity.hModel->NumSurfaces(); i++ ) {
-			const modelSurface_t* surface = renderEntity.hModel->Surface( i );		
+			const modelSurface_t* surface = renderEntity.hModel->Surface( i );
 			if ( !surface->material->TestMaterialFlag( MF_ADVERT ) ) {
 				continue;
 			}
@@ -185,7 +185,7 @@ void sdAdEntity::UpdateImpression( impressionInfo_t& impression, const renderVie
 	sdWorldToScreenConverter::TransformClipped( surfaceBounds, renderEntity.axis, renderEntity.origin, clippedImpressionBounds, f, idVec2( impression.screenWidth, impression.screenHeight ) );
 	impression.size		= ( clippedImpressionBounds.GetMaxs() - clippedImpressionBounds.GetMins() ).Length();
 
-	// Angle calculation	
+	// Angle calculation
 	idVec3 objectNormal = adSurfaceNormal * renderEntity.axis;
 
 	impression.angle	= objectNormal * -view.viewaxis[ 0 ];
@@ -213,7 +213,7 @@ sdAdEntity::Think
 	idEntity::Think();
 
 	if ( adSurface ) {
-		gameRenderWorld->DebugBounds( colorRed, adSurface->geometry->bounds, renderEntity.origin, renderEntity.axis );		
+		gameRenderWorld->DebugBounds( colorRed, adSurface->geometry->bounds, renderEntity.origin, renderEntity.axis );
 
 		idPlayer* localPlayer = gameLocal.GetLocalPlayer();
 		if ( localPlayer ) {

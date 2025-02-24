@@ -34,11 +34,11 @@ public:
 	static void								InitFunctions();
 	static void								ShutdownFunctions( void ) { creditFunctions.DeleteContents(); }
 
-protected:	
+protected:
 	virtual void							DrawLocal();
-	void									ClearItems();	
+	void									ClearItems();
 
-	static const sdUITemplateFunction< sdUICreditScroll >*	FindFunction( const char* name );	
+	static const sdUITemplateFunction< sdUICreditScroll >*	FindFunction( const char* name );
 
 private:
 	enum eScrollOrientation{ SO_VERTICAL, SO_HORIZONTAL };
@@ -50,7 +50,7 @@ private:
 	datatype			= "float";
 	)
 	sdFloatProperty		speed;
-	// ===========================================		
+	// ===========================================
 
 private:
 	static idHashMap< sdUITemplateFunction< sdUICreditScroll >* >	creditFunctions;
@@ -58,12 +58,12 @@ private:
 	class sdCreditItem :
 		public sdPoolAllocator< sdCreditItem, sdPoolAllocator_DefaultIdentifier, 64 > {
 	public:
-		sdCreditItem() : 
+		sdCreditItem() :
 			next( NULL ),
 			fontSize( 0 ),
 			color( colorLtGrey ),
 			rect( vec4_zero ) {}
-	
+
 		idVec4				rect;
 		idVec4				color;
 		idWStr				text;

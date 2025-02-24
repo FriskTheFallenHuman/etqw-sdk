@@ -2,7 +2,7 @@
 //
 
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -30,8 +30,8 @@ static char THIS_FILE[] = __FILE__;
 #include "script/Script_Helper.h"
 #include "script/Script_ScriptObject.h"
 
-#include "../decllib/declTypeHolder.h"
-#include "../decllib/declLocStr.h"
+#include "decllib/declTypeHolder.h"
+#include "decllib/declLocStr.h"
 #include "demos/DemoManager.h"
 
 #include "rules/VoteManager.h"
@@ -55,7 +55,7 @@ sdPlayerProperties::sdPlayerProperties
 ================
 */
 sdPlayerProperties::sdPlayerProperties( void ) {
-	localPlayer			= NULL;	
+	localPlayer			= NULL;
 	commandMapExpanding	= false;
 
 	killedPlayerMessage			= NULL;
@@ -105,7 +105,7 @@ void sdPlayerProperties::InitGUIs( void ) {
 
 	gameLocal.FreeUserInterface( scoreBoard );
 	scoreBoard			= gameLocal.LoadUserInterface( "scoreboard", false, false );
-	
+
 	InitGUIStates();
 }
 
@@ -272,9 +272,9 @@ void sdPlayerProperties::Init( void ) {
 	properties.RegisterProperty( "lagOMeter",				lagOMeter );
 
 //	properties.RegisterProperty( "mapLoadPercent",			mapLoadPercent );
-	properties.RegisterProperty( "taskInfo",				taskInfo );	
+	properties.RegisterProperty( "taskInfo",				taskInfo );
 
-	properties.RegisterProperty( "isReady",					isReady );	
+	properties.RegisterProperty( "isReady",					isReady );
 	properties.RegisterProperty( "needsReady",				needsReady );
 
 	properties.RegisterProperty( "lastVoiceSender",			lastVoiceSender );
@@ -324,7 +324,7 @@ void sdPlayerProperties::Init( void ) {
 
 	SD_UI_ENUM_TAG( TA_ENEMY, "Enemy." )
 	sdDeclGUI::AddDefine( va( "TA_ENEMY %i", TA_ENEMY ) );
-	
+
 	SD_UI_ENUM_TAG( TA_NEUTRAL, "Neutral." )
 	sdDeclGUI::AddDefine( va( "TA_NEUTRAL %i", TA_NEUTRAL ) );
 
@@ -367,7 +367,7 @@ void sdPlayerProperties::ShutdownGUIs( void ) {
 	fireTeamMenu.Reset();
 	chatMenu.Reset();
 	takeViewNoteMenu.Reset();
-	weaponSelectionMenu.Reset();	
+	weaponSelectionMenu.Reset();
 	playerHud.Reset();
 	postProcess.Reset();
 
@@ -404,7 +404,7 @@ sdPlayerProperties::UpdateTeam
 */
 void sdPlayerProperties::UpdateTeam( sdTeamInfo* team ) {
 	teamName = team ? team->GetLookupName() : "spectating";
-	
+
 	if ( teamNameView.GetValue().Length() <= 0 ) {
 		teamNameView = teamName;
 	}
@@ -414,7 +414,7 @@ void sdPlayerProperties::UpdateTeam( sdTeamInfo* team ) {
 ================
 sdPlayerProperties::Update
 ================
-*/ 
+*/
 void sdPlayerProperties::PacifierUpdate( void ) {
 //	mapLoadPercent = static_cast< float >( fileSystem->GetReadCount() ) / gameLocal.GetBytesNeededForMapLoad();
 }
@@ -424,7 +424,7 @@ void sdPlayerProperties::PacifierUpdate( void ) {
 ================
 sdPlayerProperties::Update
 ================
-*/ 
+*/
 void sdPlayerProperties::Update( idPlayer* player ) {
 	using namespace sdProperties;
 
@@ -441,7 +441,7 @@ void sdPlayerProperties::Update( idPlayer* player ) {
 
 		isDead						= localPlayer->IsDead();
 		isInLimbo					= localPlayer->IsInLimbo();
-		isSpawning					= localPlayer->WantRespawn();		
+		isSpawning					= localPlayer->WantRespawn();
 		isReady						= localPlayer->IsReady();
 		needsReady					= gameLocal.rules->IsWarmup() && ( !gameLocal.serverInfoData.adminStart && !gameLocal.rules->IsCountDown() );
 		isLagged					= localPlayer->GetIsLagged() ? 1.0f : 0.0f;
@@ -526,7 +526,7 @@ void sdPlayerProperties::Update( idPlayer* player ) {
 		spectateClient	= player->userInfo.name;
 		health			= player->GetHealth();
 		maxHealth		= player->GetMaxHealth();
-		
+
 		role			= ( playerClass != NULL ) ? playerClass->GetName() : "spec";
 		roleTitle		= ( playerClass != NULL ) ? playerClass->GetTitle()->Index() : declHolder.FindLocStr( "spec" )->Index();
 
@@ -557,7 +557,7 @@ void sdPlayerProperties::Update( idPlayer* player ) {
 		spectateClient	= "";
 		health			= 0.f;
 		maxHealth		= 0.f;
-		
+
 		role			= "spec";
 		roleTitle		= declHolder.FindLocStr( "spec" )->Index();
 
@@ -579,7 +579,7 @@ void sdPlayerProperties::Update( idPlayer* player ) {
 	matchTime		= gameLocal.rules->GetGameTime();
 
 	idEntity* proxy = player != NULL ? player->GetProxyEntity() : NULL;
-	sdTransport* vehicle = proxy ? proxy->Cast< sdTransport >() : NULL;	
+	sdTransport* vehicle = proxy ? proxy->Cast< sdTransport >() : NULL;
 	sdUsableInterface* iface = proxy ? proxy->GetUsableInterface() : NULL;
 
 	// speed
@@ -648,7 +648,7 @@ void sdPlayerProperties::Update( idPlayer* player ) {
 		const sdVehiclePosition& pos = vehicle->GetPositionManager().PositionForPlayer( player );
 
 		// e.g. the buffalo allows passengers to fire their weapons
-		showWeaponInfo = pos.GetAllowWeapon();		
+		showWeaponInfo = pos.GetAllowWeapon();
 	} else if( proxy != NULL || inv == NULL ) {
 		showWeaponInfo = false;
 		vehicleYaw = 0.0f;
@@ -735,10 +735,10 @@ void sdPlayerProperties::Update( idPlayer* player ) {
 
 	sdTransport* viewVehicle = activeObjectView->Cast< sdTransport >();
 	if ( viewVehicle && localPlayer ) {
-		if ( proxyOverlay.Get() != NULL ) {			
+		if ( proxyOverlay.Get() != NULL ) {
 			if( proxyOverlay->GetGuiHandle().IsValid() ) {
 				viewVehicle->GetUsableInterface()->UpdateHud( localPlayer, proxyOverlay->GetGuiHandle() );
-			}			
+			}
 		}
 	}
 
@@ -811,7 +811,7 @@ void sdPlayerProperties::Update( idPlayer* player ) {
 			break;
 	}
 
-	isChatting		= 0.0f;	
+	isChatting		= 0.0f;
 
 	// Campaign/Match status
 
@@ -878,7 +878,7 @@ void sdPlayerProperties::Update( idPlayer* player ) {
 			proficiency[ i ] = static_cast< float >( table.GetLevel( profIndex ) );
 
 			const sdDeclProficiencyType* prof = gameLocal.declProficiencyTypeType.LocalFindByIndex( profIndex );
-			float currentCost = 0.0f;			
+			float currentCost = 0.0f;
 			int maxLevel = Min( table.GetLevel( profIndex ) + 1, prof->GetNumLevels() );
 			int levelIndex;
 			for( levelIndex = 0; levelIndex < maxLevel; levelIndex++ ) {
@@ -917,7 +917,7 @@ void sdPlayerProperties::SetToolTipInfo( const wchar_t* text, int index, const i
 FindItemWithData
 ============
 */
-static iconHandle_t FindItemWithData( sdUIIconNotification* icons, int data ) {	
+static iconHandle_t FindItemWithData( sdUIIconNotification* icons, int data ) {
 	iconHandle_t handle = icons->GetFirstItem();
 	while( handle.IsValid() ) {
 		int itemData = icons->GetItemDataInt( handle );
@@ -1066,7 +1066,7 @@ void sdPlayerProperties::UpdateTargetingInfo( idPlayer* player ) {
 	idEntity* targetEnt = NULL;
 
 	if ( player != NULL ) {
-		idEntity* proxy = player->GetProxyEntity();	
+		idEntity* proxy = player->GetProxyEntity();
 		targetEnt = player->targetEntity;
 
 		if ( targetEnt ) {
@@ -1092,7 +1092,7 @@ void sdPlayerProperties::UpdateTargetingInfo( idPlayer* player ) {
 		}
 		targetingCenter = point;
 
-		if( player->targetLockEndTime ) {	
+		if( player->targetLockEndTime ) {
 			float f = 1.0f - static_cast< float >( player->targetLockEndTime - gameLocal.time ) / player->targetLockDuration;
 			targetingPercent = idMath::ClampFloat( 0.0f, 1.0f, f );
 		} else if( player->targetLockLastTime != 0 ) {
@@ -1111,7 +1111,7 @@ void sdPlayerProperties::UpdateTargetingInfo( idPlayer* player ) {
 sdPlayerProperties::UpdateFireTeam
 ================
 */
-void sdPlayerProperties::UpdateFireTeam( idPlayer* player ) {	
+void sdPlayerProperties::UpdateFireTeam( idPlayer* player ) {
 	sdFireTeam* fireTeam = player != NULL ? gameLocal.rules->GetPlayerFireTeam( player->entityNumber ) : NULL;
 
 	if ( fireTeam != NULL ) {
@@ -1121,7 +1121,7 @@ void sdPlayerProperties::UpdateFireTeam( idPlayer* player ) {
 		fireTeamShow	= 1.f;
 		return;
 	}
-	
+
 	fireTeamActive	= 0.f;
 	fireTeamLeader	= 0.f;
 	fireTeamShow	= sdObjectiveManager::GetInstance().GetNumObjectives() > 0 ? 1.0f : 0.0f;
@@ -1235,7 +1235,7 @@ void sdPlayerProperties::OnTaskSelected( sdPlayerTask* task ) {
 			taskInfo	= va( L"%ls - %ls (%ls)", task->GetTitle(), task->GetInfo()->GetXPString(), taskIndex.GetValue().c_str() );
 		}
 	} else {
-		// see if there's an objective to show		
+		// see if there's an objective to show
 		sdTeamInfo* team = localPlayer->GetGameTeam();
 		if ( team != NULL ) {
 			const sdPlayerTask::nodeType_t& objectiveTasks = sdTaskManager::GetInstance().GetObjectiveTasks( team );
@@ -1244,14 +1244,14 @@ void sdPlayerProperties::OnTaskSelected( sdPlayerTask* task ) {
 				if( taskIndex.GetValue().IsEmpty() ) {
 					taskInfo	= va( L"%ls - %ls", objectiveTask->GetTitle(), objectiveTask->GetInfo()->GetXPString() );
 				} else {
-					taskInfo	= va( L"%ls - %ls (%ls)", objectiveTask->GetTitle(), objectiveTask->GetInfo()->GetXPString(), taskIndex.GetValue().c_str() );					
+					taskInfo	= va( L"%ls - %ls (%ls)", objectiveTask->GetTitle(), objectiveTask->GetInfo()->GetXPString(), taskIndex.GetValue().c_str() );
 				}
 			} else {
 				taskInfo	= common->LocalizeText( "guis/game/scoreboard/nomission" ).c_str();
 			}
 		} else {
 			taskInfo	= L"";
-		}	
+		}
 	}
 */
 	sdTeamInfo* team = localPlayer->GetGameTeam();
@@ -1320,7 +1320,7 @@ void sdPlayerProperties::OnObituary( idPlayer* self, idPlayer* other ) {
 sdPlayerProperties::OnActiveViewProxyChanged
 ============
 */
-void sdPlayerProperties::OnActiveViewProxyChanged( idEntity* object ) {	
+void sdPlayerProperties::OnActiveViewProxyChanged( idEntity* object ) {
 	proxyOverlay.Reset();
 
 	activeObjectView = object;
@@ -1330,7 +1330,7 @@ void sdPlayerProperties::OnActiveViewProxyChanged( idEntity* object ) {
 			const sdDeclGUI* gui = iface->GetOverlayGUI();
 			if ( gui != NULL ) {
 				proxyOverlay.Reset( new sdPassiveHudModule );
-				proxyOverlay->InitGui( gui->GetName(), false );				
+				proxyOverlay->InitGui( gui->GetName(), false );
 				proxyOverlay->SetSort( object->spawnArgs.GetInt( "hud_sort", "0" ) );
 			}
 		}
@@ -1618,8 +1618,8 @@ void sdGlobalProperties::Init( void ) {
 		return;
 	}
 
-	gameLocal.Printf( "Initializing global UI namespaces\n" ); 
-	sdGlobalPropertiesNameSpace::Init( stringMap->GetDict() );	
+	gameLocal.Printf( "Initializing global UI namespaces\n" );
+	sdGlobalPropertiesNameSpace::Init( stringMap->GetDict() );
 	gameLocal.Printf( "...%i namespaces\n...%i properties\n", GetNumNamespaces(), GetNumProperties() );
 }
 
@@ -1677,7 +1677,7 @@ sdGlobalPropertiesNameSpace::Init
 void sdGlobalPropertiesNameSpace::Init( const idDict& dict ) {
 	int i;
 	for ( i = 0; i < dict.GetNumKeyVals(); i++ ) {
-		const idKeyValue* kv = dict.GetKeyVal( i );		
+		const idKeyValue* kv = dict.GetKeyVal( i );
 
 		const char* typeName = kv->GetValue();
 
@@ -1812,7 +1812,7 @@ sdPlayerProperties::AddDrawHudModule
 smaller values are drawn after larger values
 ============
 */
-void sdPlayerProperties::AddDrawHudModule( sdHudModule& module ) {	
+void sdPlayerProperties::AddDrawHudModule( sdHudModule& module ) {
 	int localSort = module.GetSort();
 
 	sdHudModule* other;

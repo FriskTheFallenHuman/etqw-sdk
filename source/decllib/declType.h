@@ -18,7 +18,7 @@ sdDeclInfo
 sdDeclInfo::sdDeclInfo
 =================
 */
-ID_INLINE sdDeclInfo::sdDeclInfo( const char* typeName, int flags, pfnCacheFromDict cacheFromDict, pfnOnReload onReload ) : 
+ID_INLINE sdDeclInfo::sdDeclInfo( const char* typeName, int flags, pfnCacheFromDict cacheFromDict, pfnOnReload onReload ) :
 	_cacheFromDictFunction( cacheFromDict ),
 	_onReload( onReload ),
 	_flags( flags )

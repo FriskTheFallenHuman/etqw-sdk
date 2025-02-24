@@ -7,7 +7,7 @@
 /*
 ================================================================================
 
-idObstacleAvoidance 
+idObstacleAvoidance
 
 ================================================================================
 */
@@ -24,9 +24,9 @@ public:
 		float					targetDist;					// how close the path around obstacles gets to the target
 		int						firstObstacle;				// if != OBSTACLE_ID_INVALID the first obstacle along the path
 		idVec3					startPosOutsideObstacles;	// start position outside obstacles
-		int						startPosObstacle;			// if != OBSTACLE_ID_INVALID the obstacle containing the start position 
+		int						startPosObstacle;			// if != OBSTACLE_ID_INVALID the obstacle containing the start position
 		idVec3					seekPosOutsideObstacles;	// seek position outside obstacles
-		int						seekPosObstacle;			// if != OBSTACLE_ID_INVALID the obstacle containing the seek position 
+		int						seekPosObstacle;			// if != OBSTACLE_ID_INVALID the obstacle containing the seek position
 		float					pathLength;					// length of the path
 		bool					hasValidPath;				//mal: did we find a valid path?
 	};

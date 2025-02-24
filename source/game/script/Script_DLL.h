@@ -157,7 +157,7 @@ public:
 	virtual void				ReturnObjectInternal( idScriptObject* value );
 
 	virtual const sdTypeInfo*	GetDefaultType( void ) const { return defaultType; }
-	
+
 	virtual int					GetReturnedInteger( void ) { return returnValue.intValue; }
 	virtual float				GetReturnedFloat( void ) { return returnValue.floatValue; }
 	virtual bool				GetReturnedBoolean( void ) { return returnValue.intValue != 0 ? true : false; }
@@ -199,7 +199,7 @@ public:
 	void						FreeStack( char* stack, size_t size );
 
 	void						OnThreadShutdown( sdDLLThread* thread );
-	
+
 private:
 	void						CloseDLL( void );
 
@@ -267,7 +267,7 @@ public:
 
 	void					Init( void );
 	void					Clear( void );
-	
+
 	void					Create( sdDLLProgram* _program, int _threadNum );
 
 	virtual void			CallFunction( const sdProgram::sdFunction* function );
@@ -320,7 +320,7 @@ public:
 		}
 
 		virtual void Go( void ) {
-			reinterpret_cast< const sdDLLFunction* >( function )->GetWrapper()( 
+			reinterpret_cast< const sdDLLFunction* >( function )->GetWrapper()(
 				reinterpret_cast< const sdDLLFunction* >( function )->GetFunction(),
 				data );
 		}
@@ -344,7 +344,7 @@ public:
 				return;
 			}
 
-			reinterpret_cast< const sdDLLClassFunction* >( function )->GetWrapper()( 
+			reinterpret_cast< const sdDLLClassFunction* >( function )->GetWrapper()(
 				reinterpret_cast< sdDLLTypeObject* >( obj->GetObject() )->GetInstance(),
 				reinterpret_cast< const sdDLLClassFunction* >( function )->GetFunction(),
 				data );
@@ -364,7 +364,7 @@ public:
 
 	void AllocStack( char* stack ) {
 		FreeStack();
-		storedStackSize = storedStackPointer - stack;		
+		storedStackSize = storedStackPointer - stack;
 		localStack = program->AllocStack( storedStackSize, actualStackSize );
 		memcpy( localStack, stack, storedStackSize );
 	}
@@ -377,7 +377,7 @@ public:
 	}
 
 	void					SetCall( sdProcedureCall* _call ) { flags.threadDying = false; call = _call; flags.reset = true; if ( GetActiveThread() == this ) { Coroutine_Detach( this ); } }
-	
+
 	static void				KillThread( int number );
 	static void				KillThread( const char* name );
 	static sdDLLThread*		GetActiveThread( void ) { return s_current; }

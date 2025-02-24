@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -122,7 +122,7 @@ bool idIK::Init( idEntity *self, const char *anim, const idVec3 &modelOffset ) {
 								self->name.c_str(), self->GetPhysics()->GetOrigin().ToString(0) );
 		return false;
 	}
-	
+
 	this->modelOffset = modelOffset;
 
 	return true;
@@ -185,7 +185,7 @@ idIK::GetBoneAxis
 */
 float idIK::GetBoneAxis( const idVec3 &startPos, const idVec3 &endPos, const idVec3 &dir, idMat3 &axis ) {
 	float length;
-	
+
 	axis[ 0 ] = endPos - startPos;
 	length = axis[ 0 ].Normalize();
 
@@ -1013,8 +1013,8 @@ bool sdIK_Aim::Evaluate( void ) {
 
 		group.lastDir = org2 - org1;
 		group.lastDir.Normalize();
-		
-		
+
+
 		axes1[ 0 ] = org2 - org1;
 		axes1[ 0 ] *= axis1.Transpose();
 		axes1[ 0 ].Normalize();
@@ -1035,7 +1035,7 @@ bool sdIK_Aim::Evaluate( void ) {
 		axes2[ 2 ] -= ( axes2[ 0 ] * axes2[ 2 ] ) * axes2[ 0 ];
 		axes2[ 2 ].Normalize();
 
-		axes2[ 1 ] = axes2[ 2 ].Cross( axes2[ 0 ] );		
+		axes2[ 1 ] = axes2[ 2 ].Cross( axes2[ 0 ] );
 
 		self->GetAnimator()->SetJointAxis( group.joint1, JOINTMOD_LOCAL, axes1 );
 		self->GetAnimator()->SetJointAxis( group.joint2, JOINTMOD_LOCAL, axes2 );

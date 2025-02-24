@@ -183,7 +183,7 @@ namespace sdFunctions {
 	public:
 		virtual ~sdCallableBase0() {}
 		virtual Ret operator()() = 0;
-		virtual sdCallableBase0< Ret >* Clone() const = 0;	
+		virtual sdCallableBase0< Ret >* Clone() const = 0;
 	};
 
 	/*
@@ -196,7 +196,7 @@ namespace sdFunctions {
 	public:
 		virtual ~sdCallableBase1() {}
 		virtual Ret operator()( T1 arg1 ) = 0;
-		virtual sdCallableBase1< Ret, T1 >* Clone() const = 0;	
+		virtual sdCallableBase1< Ret, T1 >* Clone() const = 0;
 	};
 
 	/*
@@ -235,7 +235,7 @@ namespace sdFunctions {
 	============
 	*/
 	template< class Func, class Ret >
-	class sdCallableCaller0 : 
+	class sdCallableCaller0 :
 		public sdCallableBase0< Ret > {
 	public:
 		sdCallableCaller0( Func f ) : function( f ) {}
@@ -282,11 +282,11 @@ namespace sdFunctions {
 	sdCallableCaller1
 	============
 	*/
-	template< class Func = sdEmptyType, class R = sdEmptyType, class T1 = sdEmptyType > 
+	template< class Func = sdEmptyType, class R = sdEmptyType, class T1 = sdEmptyType >
 	class sdCallableCaller1;
 
 	template< class Func, class Ret, class T1 >
-	class sdCallableCaller1 : 
+	class sdCallableCaller1 :
 		public sdCallableBase1< Ret, T1 > {
 	public:
 		sdCallableCaller1( Func f ) : function( f ) {}
@@ -327,7 +327,7 @@ namespace sdFunctions {
 	template< class Func, class Ret, class T1 >
 		typename sdCallableCaller1< Func, Ret, T1 >::sdDynamicBlockManager sdCallableCaller1< Func, Ret, T1 >::memoryManager;
 
-	template< class Func = sdEmptyType, class R = sdEmptyType, class T1 = sdEmptyType, class T2 = sdEmptyType > 
+	template< class Func = sdEmptyType, class R = sdEmptyType, class T1 = sdEmptyType, class T2 = sdEmptyType >
 	class sdCallableCaller2;
 
 	/*
@@ -336,7 +336,7 @@ namespace sdFunctions {
 	============
 	*/
 	template< class Func, class Ret, class T1, class T2 >
-	class sdCallableCaller2 : 
+	class sdCallableCaller2 :
 		public sdCallableBase2< Ret, T1, T2 > {
 	public:
 		sdCallableCaller2( Func f ) : function( f ) {}
@@ -377,7 +377,7 @@ namespace sdFunctions {
 	template< class Func, class Ret, class T1, class T2 >
 	typename sdCallableCaller2< Func, Ret, T1, T2 >::sdDynamicBlockManager sdCallableCaller2< Func, Ret, T1, T2 >::memoryManager;
 
-	template< class Func = sdEmptyType, class R = sdEmptyType, class T1 = sdEmptyType, class T2 = sdEmptyType , class T3 = sdEmptyType > 
+	template< class Func = sdEmptyType, class R = sdEmptyType, class T1 = sdEmptyType, class T2 = sdEmptyType , class T3 = sdEmptyType >
 	class sdCallableCaller3;
 	/*
 	============
@@ -385,7 +385,7 @@ namespace sdFunctions {
 	============
 	*/
 	template< class Func, class Ret, class T1, class T2, class T3 >
-	class sdCallableCaller3 : 
+	class sdCallableCaller3 :
 		public sdCallableBase3< Ret, T1, T2, T3 > {
 	public:
 		sdCallableCaller3( Func f ) : function( f ) {}
@@ -442,7 +442,7 @@ namespace sdFunctions {
 
 		template< class Func >
 			sdCallable( Func f ) {
-				function = new sdCallableCaller0< Func, Ret >( f );		
+				function = new sdCallableCaller0< Func, Ret >( f );
 			}
 
 			sdCallable& operator=( const sdCallable& f ) {
@@ -546,7 +546,7 @@ namespace sdFunctions {
 				return (*function)( arg1, arg2 );
 			}
 
-			void Release() { 
+			void Release() {
 				delete function;
 				function = NULL;
 			}
@@ -592,7 +592,7 @@ namespace sdFunctions {
 				return (*function)( arg1, arg2, arg3 );
 			}
 
-			void Release() { 
+			void Release() {
 				delete function;
 				function = NULL;
 			}
@@ -620,7 +620,7 @@ namespace sdFunctions {
 	typedef no_ref_type* type;
 	};
 
-	template <typename T> typename 
+	template <typename T> typename
 	add_pointer< T >::type addressof( T& t ) {
 	return reinterpret_cast< T* >( &const_cast< char& >( reinterpret_cast< const volatile char & >( t )));
 	}

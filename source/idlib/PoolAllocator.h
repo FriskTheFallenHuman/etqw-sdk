@@ -138,7 +138,7 @@ void sdPoolAlloc<type,blockSize>::Free( type *t ) {
 sdPoolAlloc<type,blockSize>::Compact
 find blocks that are completely empty and free them
 
-this is relatively slow and should only be called after an event that is known to 
+this is relatively slow and should only be called after an event that is known to
 free a large chunk of elements
 
 returns the number of bytes freed
@@ -173,13 +173,13 @@ int sdPoolAlloc<type,blockSize>::Compact( void ) {
 		// all elements are in the free list, unlink and deallocate this block
 		if( allFreed ) {
 			// unlink all elements from the free list
-			
+
 			for( int i = 0; i < blockSize; i++ ) {
 				element_t* current = &block->elements[ i ];
 				element_t* prev = NULL;
 				element_t* iter = free;
 				while( iter != NULL ) {
-					element_t* next = iter->next;					
+					element_t* next = iter->next;
 					if( iter == current ) {
 						if( prev != NULL ) {
 							prev->next = next;
@@ -188,7 +188,7 @@ int sdPoolAlloc<type,blockSize>::Compact( void ) {
 						}
 						break;
 					}
-					prev = iter;					
+					prev = iter;
 					iter = next;
 				}
 			}
@@ -206,7 +206,7 @@ int sdPoolAlloc<type,blockSize>::Compact( void ) {
 		block_t* prev = NULL;
 		block_t* iter = blocks;
 		while( iter != NULL ) {
-			block_t* next = iter->next;					
+			block_t* next = iter->next;
 			if( iter == current ) {
 				if( prev != NULL ) {
 					prev->next = next;
@@ -215,7 +215,7 @@ int sdPoolAlloc<type,blockSize>::Compact( void ) {
 				}
 				break;
 			}
-			prev = iter;					
+			prev = iter;
 			iter = next;
 		}
 		delete current;
@@ -267,7 +267,7 @@ extern const char sdPoolAllocator_DefaultIdentifier[];
 class sdDynamicBlockManagerBase {
 public:
 	virtual				~sdDynamicBlockManagerBase() {}
-	
+
 	virtual void		Init() = 0;
 	virtual	void		Shutdown() = 0;
 
@@ -279,7 +279,7 @@ public:
 	virtual bool		IsValid() const = 0;
 
 	static void			MemoryReport( const idCmdArgs& args );
-	
+
 	static void			InitPools();
 	static void			ShutdownPools();
 	static void			CompactPools();
@@ -287,7 +287,7 @@ public:
 protected:
 	typedef idList< sdDynamicBlockManagerBase* > blockManagerList_t;
 	static blockManagerList_t& GetList() {
-		static blockManagerList_t list;		
+		static blockManagerList_t list;
 		return list;
 	}
 };
@@ -302,7 +302,7 @@ class sdDynamicBlockManager :
 	public sdDynamicBlockManagerBase {
 public:
 	typedef sdDetails::sdPoolAlloc< T, blockSize > allocatorType_t;
-	
+
 					sdDynamicBlockManager() {
 						Init();
 						GetList().Append( this );
@@ -392,14 +392,14 @@ private:
 sdPoolAllocator
 ============
 */
-template< class T, const char* name = sdPoolAllocator_DefaultIdentifier, size_t baseBlockSize = 512, class lockingPolicy = sdLockingPolicy_None >		
+template< class T, const char* name = sdPoolAllocator_DefaultIdentifier, size_t baseBlockSize = 512, class lockingPolicy = sdLockingPolicy_None >
 class sdPoolAllocator {
 
-public:	
+public:
 	static const size_t ELEMENTS_PER_PAGE = baseBlockSize;
-	
+
 	// free the entire pool
-	static void PurgeAllocator() { 
+	static void PurgeAllocator() {
 		GetMemoryManager().Purge();
 	}
 
@@ -418,7 +418,7 @@ public:
 		if( size != sizeof( T )) {
 			assert( 0 );
 		}
-		
+
 		lock.Acquire();
 		void* retVal = static_cast< void* >( GetMemoryManager().Alloc() );
 		lock.Release();
@@ -435,7 +435,7 @@ public:
 		if( size != sizeof( T )) {
 			assert( 0 );
 		}
-		
+
 		lock.Acquire();
 		void* retVal = static_cast< void* >( GetMemoryManager().Alloc() );
 		lock.Release();

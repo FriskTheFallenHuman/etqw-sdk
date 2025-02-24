@@ -4,7 +4,7 @@
 #ifndef __GAME_ROLES_INVENTORY_H__
 #define __GAME_ROLES_INVENTORY_H__
 
-#include "../misc/RenderEntityBundle.h"
+#include "misc/RenderEntityBundle.h"
 
 class idEntity;
 class sdRequirement;
@@ -43,7 +43,7 @@ private:
 		bool							disabled	: 1;
 		bool							hidden		: 1;
 	} flags_t;
-	
+
 	sdRenderEntityBundle				renderEntity;
 
 	flags_t								flags;
@@ -91,7 +91,7 @@ public:
 	bool						CheckPlayerStateChanges( const sdInventoryPlayerStateData& baseState ) const;
 
 	int							Num( void ) const { return items.Num(); }
-	
+
 	void						UpdateJoints( void );
 
 	void						OnHide( void );
@@ -152,7 +152,7 @@ class sdInventory {
 public:
 								sdInventory( void );
 								~sdInventory( void );
-	typedef enum iconType_e {
+	enum iconType_e {
 		IT_ICON, IT_CLASS, IT_UNKNOWN
 	};
 
@@ -302,7 +302,7 @@ public:
 	void						LogClassTime( void );
 
 private:
-	int							ChooseCurrentSlot() const { return IsSwitchActive() ? GetSwitchingSlot() : GetCurrentSlot(); }	
+	int							ChooseCurrentSlot() const { return IsSwitchActive() ? GetSwitchingSlot() : GetCurrentSlot(); }
 	void						SetupClassOptions( bool clearAmmo, bool setWeapon, bool allowCurrentWeapon = true );
 	void						SetPlayerClass( const sdDeclPlayerClass* cls );
 	bool						AddItems( const sdDeclItemPackage* package, bool enabled = true );

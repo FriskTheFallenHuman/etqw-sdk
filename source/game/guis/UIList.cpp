@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -16,9 +16,9 @@ static char THIS_FILE[] = __FILE__;
 #include "UIList.h"
 #include "UserInterfaceManager.h"
 
-#include "../../sys/sys_local.h"
-#include "../../idlib/Sort.h"
-#include "../../decllib/declTypeHolder.h"
+#include "sys/sys_local.h"
+#include "idlib/Sort.h"
+#include "decllib/declTypeHolder.h"
 
 SD_UI_IMPLEMENT_CLASS( sdUIList, sdUIWindow )
 
@@ -88,14 +88,14 @@ sdUIList::sdUIList
 */
 sdUIList::sdUIList() :
 	scrollAmount( 0.0f ),
-	scrollAmountMax( 0.0f ),	
+	scrollAmountMax( 0.0f ),
 	columnHeight( 0.0f ),
 	activeColumn( -1.0f ),
 	activeColumnSort( 1.0f ),
 	pageSize( 0.0f ),
-	storedScrollAmount( -1.0f ),	
+	storedScrollAmount( -1.0f ),
 	numItems( 0.0f ) {
-	
+
 	inBatchOperation = false;
 	sizeLastColumnDelta = 0.0f;
 	scrollToItem = -1;
@@ -104,7 +104,7 @@ sdUIList::sdUIList() :
 
 	scriptState.GetProperties().RegisterProperty( "columnFontSize",					columnFontSize );
 	scriptState.GetProperties().RegisterProperty( "columnBorder",					columnBorder );
-	
+
 	scriptState.GetProperties().RegisterProperty( "rowSpacing",						rowSpacing );
 	scriptState.GetProperties().RegisterProperty( "fixedRowHeight",					fixedRowHeight );
 
@@ -129,7 +129,7 @@ sdUIList::sdUIList() :
 	fixedRowHeight				= 0.0f;
 	rowSpacing					= 0.0f;
 	textAlignment				= idVec2( TA_LEFT, TA_VCENTER );
-	
+
 	selectedItemForeColor		= colorWhite;
 
 	currentSelection			= -1.0f;
@@ -181,7 +181,7 @@ sdUIList::GetFunction
 */
 sdUIFunctionInstance* sdUIList::GetFunction( const char* name ) {
 	const ListTemplateFunction* function = sdUIList::FindFunction( name );
-	if ( !function ) {		
+	if ( !function ) {
 		return sdUIWindow::GetFunction( name );
 	}
 	return new sdUITemplateFunctionInstance< sdUIList, sdUITemplateFunctionInstance_IdentifierList >( this, function );
@@ -234,7 +234,7 @@ void sdUIList::DrawLocal() {
 
 	idVec4 borderRect( cachedClientRect.x, cachedClientRect.y + headerHeight, cachedClientRect.z, cachedClientRect.w - headerHeight );
 	DrawBackground( borderRect );
-	
+
 	bool selected = false;
 	int active = idMath::Ftoi( activeColumn );
 
@@ -318,13 +318,13 @@ void sdUIList::DrawLocal() {
 		}
 
 		if ( firstVisibleItem >= 0 ) {
-			int lastVisibleItem = GetLastVisibleItem( firstVisibleItem );			
+			int lastVisibleItem = GetLastVisibleItem( firstVisibleItem );
 
 			for( int j = firstVisibleItem; j <= lastVisibleItem; j++ ) {
 				sdUIListItem* item			= column->items[ indices[ j ] ];
 				sdTransition& transition	= column->itemTransitions[ indices[ j ] ];
 
-				selected = ( j == selectedItem );				
+				selected = ( j == selectedItem );
 
 				idVec4 itemRect;
 				GetItemRect( j, i, itemRect, columnWidths );
@@ -340,13 +340,13 @@ void sdUIList::DrawLocal() {
 
 					for( int col = i + 1; col < columns.Num(); col++ ) {
 						rect.z += columnWidths[ col ];
-					}					
-					
+					}
+
 					GetUI()->PushScriptVar( rect );
 					if( selected && drawSelectedItemBackHandle.IsValid() ) {
 						GetUI()->PushScriptVar( j );
 						RunEventHandle( drawSelectedItemBackHandle );
-					} else if( drawItemBackHandle.IsValid() ) {						
+					} else if( drawItemBackHandle.IsValid() ) {
 						GetUI()->PushScriptVar( transition.backColor.Evaluate( now ) );
 						GetUI()->PushScriptVar( j );
 						RunEventHandle( drawItemBackHandle );
@@ -355,10 +355,10 @@ void sdUIList::DrawLocal() {
 				}
 
 				// script-controlled drawing
-				if( item->flags.customDraw ) {										
+				if( item->flags.customDraw ) {
 					GetUI()->PushScriptVar( i );
 					GetUI()->PushScriptVar( j );
-					
+
 					if( RunEventHandle( drawItemHandle ) ) {
 						bool continueDrawing;
 						GetUI()->PopScriptVar( continueDrawing );
@@ -389,7 +389,7 @@ void sdUIList::DrawLocal() {
 
 					DrawText( text, selected ? selectedItemForeColor.GetValue() : transition.foreColor.Evaluate( now ), fontSize, itemBounds, cachedFontHandle, ( item->textFlags | extraTextFlags ) & ~removeFlags );
 				}
-			}			
+			}
 			firstColumn = false;
 		}
 
@@ -436,13 +436,13 @@ void sdUIList::ApplyLayout() {
 
 		columnHeight.SetReadOnly( true );
 
-		cachedClientRect = clientRect;	
-		cachedClientRect.ToVec2() += CalcWorldOffset();	
+		cachedClientRect = clientRect;
+		cachedClientRect.ToVec2() += CalcWorldOffset();
 
 		if( TestFlag( LF_VARIABLE_HEIGHT_ROWS ) )  {
 			float* columnWidths = static_cast< float* >( _alloca( columns.Num() * sizeof( float ) ) );
 			CalcColumnWidths( columnWidths );
-			
+
 			idVec4 rect;
 			int height;
 			if( fixedRowHeight > 0.0f ) {
@@ -455,7 +455,7 @@ void sdUIList::ApplyLayout() {
 				sdUIListColumn* c = columns[ i ];
 				for( int j = 0; j < c->items.Num(); j++ ) {
 					const sdUIListItem& item = *c->items[ j ];
-					
+
 					// reset to default height first
 					if( i == 0 ) {
 						rowHeights[ j ] = height;
@@ -468,7 +468,7 @@ void sdUIList::ApplyLayout() {
 					const wchar_t* text = item.textHandle != -1 ? declHolder.declLocStrType.LocalFindByIndex( item.textHandle )->GetText() : item.text.c_str();
 					if( text[ 0 ] != L'\0' ) {
 						deviceContext->GetTextDimensions( text, sdBounds2D( rect ), DTF_LEFT | DTF_WORDWRAP | DTF_VCENTER, cachedFontHandle, fontSize, w, h );
-						
+
 						// keep the element as a multiple of the fixed row height
 						if( fixedRowHeight > 0.0f ) {
 							float num = idMath::Floor( ( h / fixedRowHeight ) + 0.5f );
@@ -477,29 +477,29 @@ void sdUIList::ApplyLayout() {
 					} else {
 						h = height;
 					}
-					
+
 					rowHeights[ j ] = Max( rowHeights[ j ], h );
 				}
-			}	
+			}
 		} else {
 			if( fixedRowHeight > 0.0f ) {
 				for( int i = 0; i < rowHeights.Num(); i++ ) {
 					rowHeights[ i ] = fixedRowHeight;
-				}		
+				}
 			} else {
 				int fontHeight = Max( 2, deviceContext->GetFontHeight( cachedFontHandle, fontSize ) );
 				for( int i = 0; i < rowHeights.Num(); i++ ) {
 					rowHeights[ i ] = fontHeight;
 				}
 			}
-		}	
+		}
 
-		
+
 		bool updateChildren = false;
 		if ( TestFlag( WF_AUTO_SIZE_HEIGHT ) ) {
 			cachedClientRect.w = idMath::ClampFloat( 2.0f, cachedClientRect.w, ( 2.0f * internalBorderWidth ) + columnHeight + GetTotalHeight() );
 		}
-		
+
 		scrollAmountMax.SetReadOnly( false );
 		scrollAmountMax = GetMaxScrollAmount();
 		scrollAmountMax.SetReadOnly( true );
@@ -597,7 +597,7 @@ bool sdUIList::CheckHeaderClick( const sdSysEvent* event, const idVec2& point ) 
 			}
 			activeColumn = selectedColumn;
 			Sort();
-		}		
+		}
 	}
 	if( selectedColumn > -1 ) {
 		RunEvent( sdUIEventInfo( LE_CLICK_COLUMN, 0 ) );
@@ -619,9 +619,9 @@ bool sdUIList::CheckItemClick( const sdSysEvent* event, const idVec2& point ) {
 		sdBounds2D bounds( rect.x, rect.y, rect.z, rect.w );
 
 		if(	bounds.ContainsPoint( point )) {
-			currentSelection = j;	
+			currentSelection = j;
 			return true;
-		}					
+		}
 	}
 	return false;
 }
@@ -708,13 +708,13 @@ bool sdUIList::PostEvent( const sdSysEvent* event ) {
 	}
 
 	idVec2 point( ui->cursorPos );
-	
+
 	bool retVal = false;
-	bool hitItem = false;	
+	bool hitItem = false;
 
 	if ( IsMouseClick( event ) && !cachedClippedRect.ContainsPoint( point ) ) {
 		return false;
-	}	
+	}
 
 	if( columns.Num() > 0 ) {
 		if( event->IsMouseEvent() ) {
@@ -742,13 +742,13 @@ bool sdUIList::PostEvent( const sdSysEvent* event ) {
 					if ( !result && !TestFlag( LF_NO_NULL_SELECTION )) {
 						currentSelection = -1;
 					}
-				} else if ( GetUI()->IsFocused( this )  ) {					
+				} else if ( GetUI()->IsFocused( this )  ) {
 					retVal |= HandleKeyInput( event );
 				}
 			}
 		} else if ( event->IsKeyEvent() ) {
 			if ( event->IsKeyDown() ) {
-				if ( GetUI()->IsFocused( this )  ) {					
+				if ( GetUI()->IsFocused( this )  ) {
 					retVal |= HandleKeyInput( event );
 				}
 			}
@@ -787,7 +787,7 @@ bool sdUIList::CheckHeaderMouseOver( const sdBounds2D& windowBounds, const idVec
 				GetUI()->PushScriptVar( i );
 				RunEvent( sdUIEventInfo( LE_EXIT_COLUMN, 0 ) );
 				columns[ i ]->flags.mouseFocused = false;
-			}			
+			}
 		}
 	} else {
 		for( int i = 0; i < columns.Num(); i++ ) {
@@ -807,7 +807,7 @@ sdUIList::CheckItemMouseOver
 ============
 */
 bool sdUIList::CheckItemMouseOver( const sdBounds2D& windowBounds, const idVec2& point ) {
-	bool retVal = false;	
+	bool retVal = false;
 
 	if( windowBounds.ContainsPoint( point ) ) {
 		idVec4 rect;
@@ -822,12 +822,12 @@ bool sdUIList::CheckItemMouseOver( const sdBounds2D& windowBounds, const idVec2&
 		float baseX = cachedClientRect.x + ( 2.0f * ( borderWidth + internalBorderWidth ) ) - columnBorder;
 
 		for( int i = 0; i < columns.Num(); baseX += columnWidths[ i ], i++ ) {
-			sdUIListColumn* col = columns[ i ];	
-			
+			sdUIListColumn* col = columns[ i ];
+
 			for( int j = firstVisible; j <= lastVisibleItem; j++ ) {
 				sdUIListItem* item = col->items[ j ];
 				if( point.x < baseX || point.x > ( baseX + columnWidths[ i ] ) ) {
-					if( item->flags.mouseFocused ) {					
+					if( item->flags.mouseFocused ) {
 						GetUI()->PushScriptVar( i );
 						GetUI()->PushScriptVar( j );
 						RunEvent( sdUIEventInfo( LE_EXIT_ITEM, 0 ) );
@@ -835,13 +835,13 @@ bool sdUIList::CheckItemMouseOver( const sdBounds2D& windowBounds, const idVec2&
 						item->flags.mouseFocused = false;
 					}
 					continue;
-				}	
-				
+				}
+
 				GetItemRect( j, i, rect, columnWidths );
 
 				sdBounds2D bounds( rect.x, rect.y, rect.z, rect.w );
 				if( bounds.ContainsPoint( point ) ) {
-					if( !item->flags.mouseFocused ) {						
+					if( !item->flags.mouseFocused ) {
 						GetUI()->PushScriptVar( i );
 						GetUI()->PushScriptVar( j );
 						RunEvent( sdUIEventInfo( LE_ENTER_ITEM, 0 ) );
@@ -849,7 +849,7 @@ bool sdUIList::CheckItemMouseOver( const sdBounds2D& windowBounds, const idVec2&
 						item->flags.mouseFocused = true;
 						retVal = true;
 					}
-				} else if( item->flags.mouseFocused ) {					
+				} else if( item->flags.mouseFocused ) {
 					GetUI()->PushScriptVar( i );
 					GetUI()->PushScriptVar( j );
 					RunEvent( sdUIEventInfo( LE_EXIT_ITEM, 0 ) );
@@ -863,7 +863,7 @@ bool sdUIList::CheckItemMouseOver( const sdBounds2D& windowBounds, const idVec2&
 			sdUIListColumn* col = columns[ i ];
 			for( int j = 0; j < col->items.Num(); j++ ) {
 				sdUIListItem* item = col->items[ j ];
-				if( item->flags.mouseFocused ) {					
+				if( item->flags.mouseFocused ) {
 					GetUI()->PushScriptVar( i );
 					GetUI()->PushScriptVar( j );
 					RunEvent( sdUIEventInfo( LE_EXIT_ITEM, 0 ) );
@@ -884,7 +884,7 @@ sdUIList::InsertItem
 int sdUIList::InsertItem( sdUIWindow* list, const wchar_t* name, int item, int column ) {
 	assert( list );
 
-	sdUIFunctionStack stack;	
+	sdUIFunctionStack stack;
 	stack.Push( column );				// column
 	stack.Push( item );					// index
 	stack.Push( name );
@@ -907,7 +907,7 @@ sdUIList::DeleteItem
 void sdUIList::DeleteItem( sdUIWindow* list, int item ) {
 	assert( list );
 
-	sdUIFunctionStack stack;	
+	sdUIFunctionStack stack;
 	stack.Push( item );					// index
 
 	list->RunNamedMethod( "deleteItem", stack );
@@ -921,12 +921,12 @@ sdUIList::SetItemText
 void sdUIList::SetItemText( sdUIWindow* list, const wchar_t* name, int item, int column ) {
 	assert( list );
 
-	sdUIFunctionStack stack;	
+	sdUIFunctionStack stack;
 	stack.Push( column );				// column
 	stack.Push( item );					// index
 	stack.Push( name );
 
-	list->RunNamedMethod( "setItemText", stack );	
+	list->RunNamedMethod( "setItemText", stack );
 }
 
 /*
@@ -937,7 +937,7 @@ sdUIList::SetItemForeColor
 void sdUIList::SetItemForeColor( sdUIWindow* list, const idVec4& color, int item, int column ) {
 	assert( list );
 
-	sdUIFunctionStack stack;	
+	sdUIFunctionStack stack;
 	stack.Push( column );				// column
 	stack.Push( item );					// index
 	stack.Push( color );
@@ -953,7 +953,7 @@ sdUIList::SetItemBackColor
 void sdUIList::SetItemBackColor( sdUIWindow* list, const idVec4& color, int item, int column ) {
 	assert( list );
 
-	sdUIFunctionStack stack;	
+	sdUIFunctionStack stack;
 	stack.Push( column );				// column
 	stack.Push( item );					// index
 	stack.Push( color );
@@ -996,8 +996,8 @@ void sdUIList::SetItemIcon( sdUIWindow* list, const char* iconMaterial, int item
 	sdUIFunctionStack stack;
 	stack.Push( column );
 	stack.Push( item );
-	stack.Push( iconMaterial );	
-	
+	stack.Push( iconMaterial );
+
 	list->RunNamedMethod( "setItemIcon", stack );
 }
 
@@ -1010,7 +1010,7 @@ void sdUIList::EnumerateEvents( const char* name, const idList<unsigned short>& 
 	if ( !idStr::Icmp( name, "onSelectItem" ) ) {
 		events.Append( sdUIEventInfo( LE_SELECT_ITEM, 0 ) );
 		return;
-	}	
+	}
 	if ( !idStr::Icmp( name, "onItemAdded" ) ) {
 		events.Append( sdUIEventInfo( LE_ITEM_ADDED, 0 ) );
 		return;
@@ -1126,9 +1126,9 @@ void sdUIList::Sort() {
 	if( columns.Num() == 0 || TestFlag( LF_DIRECT_UPDATES ) ) {
 		return;
 	}
-	
+
 	int numRows = columns[ 0 ]->items.Num();
-	
+
 	// this needs to be setup regardless of whether we sort or not
 	int index;
 	indices.AssureSize( numRows );
@@ -1142,7 +1142,7 @@ void sdUIList::Sort() {
 	}
 
 	int active = idMath::Ftoi( activeColumn );
-	sdUIListColumn* column = active == -1 ? columns[ 0 ] : columns[ active ];	
+	sdUIListColumn* column = active == -1 ? columns[ 0 ] : columns[ active ];
 
 	// quick-sort the indices based on the active column, then fix up all of the columns
 	if( column->flags.dataSort ) {
@@ -1179,7 +1179,7 @@ void sdUIList::ExtractTextFormatFromString( const wchar_t* format, const wchar_t
 			continue;
 		}
 		idWLexer src( format + offset, idWStr::Length( format + offset ), "ExtractTextFormatFromString", LEXFL_NOERRORS );
-		
+
 		while( true ) {
 			if( !src.ReadToken( &token ) ) {
 				break;
@@ -1241,11 +1241,11 @@ void sdUIList::ExtractTextFormatFromString( const wchar_t* format, const wchar_t
 				if( token.Cmp( L">" ) == 0 ) {
 					break;
 				}
-			}			
+			}
 			break;
 		}
 		offset += src.GetFileOffset();
-	}	
+	}
 
 	if( !horizontalSet ) {
 		flags |= DTF_LEFT;
@@ -1315,7 +1315,7 @@ void sdUIList::ExtractColumnWidthFromString( const wchar_t* format, const wchar_
 				}
 			}
 			if( !src.ExpectTokenString( L">" )) {
-				src.Warning( "'%s' bad text format string", name.GetValue().c_str() );			
+				src.Warning( "'%s' bad text format string", name.GetValue().c_str() );
 			}
 			break;
 		}
@@ -1340,7 +1340,7 @@ void sdUIList::ExtractLocalizedTextFromString( const wchar_t* format, const wcha
 		}
 
 		idWLexer src( format + offset, idWStr::Length( format + offset ), "ExtractLocalizedTextFromString", LEXFL_NOERRORS );
-		
+
 		while( true ) {
 			if( !src.ReadToken( &token ) ) {
 				break;
@@ -1368,10 +1368,10 @@ void sdUIList::ExtractLocalizedTextFromString( const wchar_t* format, const wcha
 
 			const sdDeclLocStr* loc = declHolder.declLocStrType.LocalFind( va( "%ls", token.c_str() ) );
 			handle = loc->Index();
-			
+
 			if( !src.ExpectTokenString( L">" )) {
-				src.Warning( "'%s' bad format string '%ls'", name.GetValue().c_str(), format );			
-			}	
+				src.Warning( "'%s' bad format string '%ls'", name.GetValue().c_str(), format );
+			}
 			break;
 		}
 		offset += src.GetFileOffset();
@@ -1404,7 +1404,7 @@ bool sdUIList::ExtractColorFromString( const wchar_t* format, const wchar_t* ind
 			}
 			if( token.Cmp( L"<" ) != 0 ) {
 				continue;
-			}		
+			}
 			if( !src.ReadToken( &token ) ) {
 				src.Warning( "'%s' bad format string '%ls'", name.GetValue().c_str(), format );
 				break;
@@ -1491,12 +1491,12 @@ void sdUIList::ExtractMaterialFromString( const wchar_t* format, const wchar_t* 
 			}
 			if( token.Length() ) {
 				idStr material;
-				
+
 				bool globalLookup;
 				bool literal;
 				uiDrawMode_e mode;	// FIXME: support this at some point
 				int offset = sdUserInterfaceLocal::ParseMaterial( va( "%ls", token.c_str() ), material, globalLookup, literal, mode );
-				
+
 				if( globalLookup ) {
 					material = "::" + material;
 				}
@@ -1506,12 +1506,12 @@ void sdUIList::ExtractMaterialFromString( const wchar_t* format, const wchar_t* 
 				} else if( ( material.Length() && !globalLookup ) || ( material.Length() > 2 && globalLookup ) ) {
 					GetUI()->LookupMaterial( material, part.mi );
 				}
-				
+
 			}
 			if( !src.ExpectTokenString( L">" )) {
 				src.Warning( "'%s' bad material format string", name.GetValue().c_str() );
 				break;
-			}	
+			}
 		}
 		offset += src.GetFileOffset();
 	}
@@ -1530,7 +1530,7 @@ void sdUIList::StripFormatting( idWStr& string ) {
 			break;
 		}
 		string.EraseRange( start, end - start + 1 );
-		start = string.Find( L"<" );		
+		start = string.Find( L"<" );
 	}
 	string.Replace( L"&lt", L"<" );
 	string.Replace( L"&gt", L">" );
@@ -1565,7 +1565,7 @@ void sdUIList::SelectItem( int item ) {
 		gameLocal.Warning( "SelectItem: '%s' %i out of range", name.GetValue().c_str(), item );
 		return;
 	}
-	currentSelection = item; 
+	currentSelection = item;
 }
 
 /*
@@ -1577,7 +1577,7 @@ void sdUIList::SetItemDataInt( int integer, int item, int column, bool direct ) 
 	sdUIListItem* listItem = GetItem( item, column, "SetItemDataInt", direct );
 	if( listItem != NULL ) {
 		listItem->data.integer = integer;
-	}	
+	}
 }
 
 /*
@@ -1589,7 +1589,7 @@ void sdUIList::SetItemDataPtr( void* ptr, int item, int column, bool direct ) {
 	sdUIListItem* listItem = GetItem( item, column, "SetItemDataPtr", direct );
 	if( listItem != NULL ) {
 		listItem->data.ptr = ptr;
-	}	
+	}
 }
 
 /*
@@ -1763,12 +1763,12 @@ sdUIListColumn::sdUIListColumn
 */
 sdUIList::sdUIListColumn::sdUIListColumn() :
 	baseWidth( 0.0f ),
-	textHandle( -1 ), 
+	textHandle( -1 ),
 	textFlags( DTF_LEFT | DTF_BOTTOM | DTF_SINGLELINE ) {
-	flags.sortDescending = false;	
-	flags.widthPercent = false;	
+	flags.sortDescending = false;
+	flags.widthPercent = false;
 	flags.mouseFocused = false;
-	
+
 	ResetUserFlags();
 }
 
@@ -1807,7 +1807,7 @@ void sdUIList::FormatItemText( sdUIListItem& item, sdTransition& transition, con
 	ExtractMaterialFromString( text,		L"material",	item.part );
 	ExtractTextFormatFromString( text,		L"align",		item.textFlags );
 	ExtractLocalizedTextFromString( text,	L"loc",			item.textHandle );
-	ExtractItemFlagsFromString( text,		L"flags",		item );	
+	ExtractItemFlagsFromString( text,		L"flags",		item );
 
 	StripFormatting( item.text );
 }
@@ -1861,11 +1861,11 @@ void sdUIList::ExtractItemFlagsFromString( const wchar_t* format, const wchar_t*
 				break;
 			}
 
-			if( token.Cmp( L"," ) == 0 ) {			
+			if( token.Cmp( L"," ) == 0 ) {
 				continue;
 			}
 			if( token.Cmp( L">" ) != 0 ) {
-				src.Warning( "'%s' bad text format string", name.GetValue().c_str() );			
+				src.Warning( "'%s' bad text format string", name.GetValue().c_str() );
 			}
 			break;
 		}
@@ -1999,7 +1999,7 @@ void sdUIList::ExtractColumnFlagsFromString( const wchar_t* format, const wchar_
 			}
 
 			if( token.Cmp( L">" ) != 0 ) {
-				src.Warning( "'%s' bad text format string", name.GetValue().c_str() );			
+				src.Warning( "'%s' bad text format string", name.GetValue().c_str() );
 			}
 			break;
 		}
@@ -2025,9 +2025,9 @@ void sdUIList::CalcColumnWidths( float* columnWidths ) const {
 		sdUIListColumn* column = columns[ i ];
 		if( column->flags.widthPercent ) {
 			assert( column->baseWidth >= 0.0f && column->baseWidth <= 1.0f );
-			columnWidths[ i ] = ( cachedClientRect.z - constantColumnWidths ) * column->baseWidth;			
+			columnWidths[ i ] = ( cachedClientRect.z - constantColumnWidths ) * column->baseWidth;
 		} else {
-			columnWidths[ i ] = column->baseWidth;			
+			columnWidths[ i ] = column->baseWidth;
 		}
 	}
 }

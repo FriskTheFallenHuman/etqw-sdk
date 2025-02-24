@@ -70,7 +70,7 @@ public:
 
 	// Get number of bot clients
 	virtual const int			GetNumBotClients() const = 0;
-	
+
 	// Retrieve client data
 	virtual const sessionClientInfo_t& GetClientInfo( int clientNum ) const = 0;
 

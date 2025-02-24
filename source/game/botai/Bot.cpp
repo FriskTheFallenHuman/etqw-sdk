@@ -1,22 +1,22 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Player.h"
-#include "../rules/GameRules.h"
-#include "../Game_local.h"
-#include "../vehicles/Transport.h"
-#include "../vehicles/VehicleView.h"
-#include "../vehicles/VehicleControl.h"
-#include "../../game/ContentMask.h"
+#include "Player.h"
+#include "rules/GameRules.h"
+#include "Game_local.h"
+#include "vehicles/Transport.h"
+#include "vehicles/VehicleView.h"
+#include "vehicles/VehicleControl.h"
+#include "game/ContentMask.h"
 
 #include "aas/ObstacleAvoidance.h"
 #include "Bot.h"
 #include "BotThreadData.h"
 #include "BotThread.h"
-#include "../WorldSpawn.h"
+#include "WorldSpawn.h"
 
 
 idCVar bot_testObstacleAvoidance( "bot_testObstacleAvoidance", "0", CVAR_GAME | CVAR_BOOL, "test obstacle avoidance" );
@@ -88,7 +88,7 @@ every game frame by the server.
 void idBot::Think() {
 
 	if ( !gameLocal.isServer ) { //mal: for client prediction, just run the bot's latest ucmds.
-        idPlayer::Think();  
+        idPlayer::Think();
 		return;
 	}
 
@@ -153,7 +153,7 @@ void idBot::Bot_InputToUserCmd() {
 	const botAIOutput_t& botOutput = botThreadData.GetGameOutputState()->botOutput[ entityNumber ];
 	clientInfo_t& botInfo = botThreadData.GetGameWorldState()->clientInfo[ entityNumber ];
 
-	
+
 //mal: always keep these current!
 	ucmd.gameTime = gameLocal.time;
 	ucmd.gameFrame = gameLocal.framenum;
@@ -244,7 +244,7 @@ void idBot::Bot_InputToUserCmd() {
 ================
 idBotAI::Pain
 
-If the bot gets hurt - lets check to see who did it. 
+If the bot gets hurt - lets check to see who did it.
 We might want to change our tactics, or just complain (if a stupid mate hit us).
 ================
 */
@@ -260,17 +260,17 @@ bool idBot::Pain( idEntity *inflictor, idEntity *attacker, int damage, const idV
 	//mal: the game now auto "complains" for us if a teammate hits us.
 /*
 	if ( attacker )	{
-		if ( attacker != this && ( attacker->entityNumber > -1 && attacker->entityNumber < MAX_CLIENTS )) {		
+		if ( attacker != this && ( attacker->entityNumber > -1 && attacker->entityNumber < MAX_CLIENTS )) {
 			if ( GetEntityAllegiance( inflictor ) == TA_FRIEND )  {
 				if ( inflictor != NULL ) {
 					if ( !inflictor->IsType( sdTransport::Type ) ) { //mal: dont say hold your fire if our teammate is running us over! :-D
 						chatPain = true;
 					}
 				}
-	
+
 				if ( chatPain ) {
                     botThreadData.VOChat( HOLDFIRE, entityNumber, false );
-				}				
+				}
 			}
 		}
 	}
@@ -317,7 +317,7 @@ void idBot::Bot_ResetGameState() {
 	} else {
 		botTeam = 2; //STROGG!
 	}
-		
+
 	gameLocal.rules->SetClientTeam( this, botTeam, true, "" );
 
 	botClass = botThreadData.GetGameWorldState()->clientInfo[ entityNumber ].classType;
@@ -341,7 +341,7 @@ the bot last set them to.
 void idBot::Bot_SetClassType( idPlayer* player, int classType, int classWeapon ) {
 
 	const sdDeclPlayerClass* pc;
-	
+
 	if ( botThreadData.GetGameWorldState()->clientInfo[ player->entityNumber ].team == GDF ) { //GDF!
 
         if ( classType == 0 ) {
@@ -395,7 +395,7 @@ void idBot::Bot_SetWeapon() {
 	}
 
 	if ( botThreadData.GetGameOutputState()->botOutput[ entityNumber ].idealWeaponSlot == NO_WEAPON || botThreadData.GetGameOutputState()->botOutput[ entityNumber ].idealWeaponSlot == RESET_WEAPON ) {
-		
+
 		if ( botThreadData.GetGameOutputState()->botOutput[ entityNumber ].idealWeaponNum != NULL_WEAP ) {
 			GetInventory().SelectWeaponByNumber( botThreadData.GetGameOutputState()->botOutput[ entityNumber ].idealWeaponNum );
 		}
@@ -473,7 +473,7 @@ void idBot::Bot_ChangeViewAngles( const idAngles &idealAngle, bool fast ) {
 ================
 idBot::Bot_ClientAimAtEnemy
 
-Has the bot aim towards its target - could be a vehicle (with player inside) or a player on foot. Used for 
+Has the bot aim towards its target - could be a vehicle (with player inside) or a player on foot. Used for
 weapon aiming. Varies the aim based on the bots aim skill.
 ================
 */
@@ -518,22 +518,22 @@ void idBot::Bot_ClientAimAtEnemy( int clientNum ) {
 
 	if ( hasRocket || hasGrenade ) {
 		if ( aimSkill == 0 ) {
-			aim = 0.50f; 
+			aim = 0.50f;
 		} else if ( aimSkill == 1 ) {
 		    aim = 0.20f;
 		} else if ( aimSkill == 2 ) {
-		    aim = 0.15f; 
-		} else { 
+		    aim = 0.15f;
+		} else {
 			aim = 0.0f;
 		}
 	} else {
 		if ( aimSkill == 0 ) {
-		   aim = ( dist > Square( 200.0f ) ) ? -0.55f : -0.40f; 
+		   aim = ( dist > Square( 200.0f ) ) ? -0.55f : -0.40f;
 		} else if ( aimSkill == 1 ) {
 			aim = ( dist > Square( 500.0f ) ) ? 0.35f : 0.20f;
 		} else if ( aimSkill == 2 ) {
-			aim = ( dist > Square( 1100.0f ) ) ? 0.20f : 0.15f; 
-		} else { 
+			aim = ( dist > Square( 1100.0f ) ) ? 0.20f : 0.15f;
+		} else {
 			aim = ( dist > Square( 1900.0f ) ) ? 0.10f : 0.05f; //mal: holy bullet holes Batman!
 		}
 	}
@@ -545,21 +545,21 @@ void idBot::Bot_ClientAimAtEnemy( int clientNum ) {
 	if ( hasSniperWeap ) {
 		if ( aimSkill == 1 ) {
 			SetSwayScale( 0.70f );
-		} else if ( aimSkill == 2 ) { 
+		} else if ( aimSkill == 2 ) {
 			SetSwayScale( 0.50f );
 			aim -= 0.05f;
-		} else if ( aimSkill == 3 ) { 
+		} else if ( aimSkill == 3 ) {
 			SetSwayScale( 0.10f );
 			aim -= 0.05f;
 		}
 	}
-     
+
 	bool isPlayer = ( player->InVehicle() ) ? false : true;
 	idVec3 velocity = ( isPlayer ) ? player->GetPhysics()->GetLinearVelocity() : player->proxyEntity->GetPhysics()->GetLinearVelocity();
 	vec = ( isPlayer ) ? GetPlayerViewPosition( clientNum ) : player->proxyEntity->GetPhysics()->GetOrigin();
 
 	if ( !isPlayer ) { //mal: for vehicles, the origin can be kinda low, so up it a bit.
-		proxyInfo_t enemyVehicleInfo;	
+		proxyInfo_t enemyVehicleInfo;
 		GetVehicleInfo( player->GetProxyEntity()->entityNumber, enemyVehicleInfo );
 
 		if ( playerInfo.proxyInfo.weapon == MINIGUN && ( enemyVehicleInfo.type == MCP || enemyVehicleInfo.type == TITAN ) ) {
@@ -776,7 +776,7 @@ void idBot::AngleUcmds( usercmd_t &ucmd ) {
 					}
 
 					desiredAngles = vec.ToAngles();
-				} 
+				}
 			} else {
 				if ( botOutput.viewEntityNum >= 0 && botOutput.viewEntityNum < MAX_GENTITIES ) {
 					idEntity *entity = gameLocal.entities[ botOutput.viewEntityNum ];
@@ -839,7 +839,7 @@ void idBot::MoveUcmds( usercmd_t &ucmd ) {
 	bool disableRun = false;
 	bool disableSprint = false;
 	idVec2 xyDir = GetPhysics()->GetLinearVelocity().ToVec2();
-	float xySpeed = xyDir.Normalize(); 
+	float xySpeed = xyDir.Normalize();
 	idVec3 origin = GetPhysics()->GetOrigin();
 	idVec3 moveGoal1 = botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveGoal;
 	idVec3 moveGoal2 = botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveGoal2;
@@ -998,7 +998,7 @@ void idBot::MoveUcmds( usercmd_t &ucmd ) {
             ucmd.rightmove = -127;
 			break;
 		}
-		
+
 		case BACKSTEP: {
 			ucmd.forwardmove = -127;
 			break;
@@ -1021,7 +1021,7 @@ void idBot::MoveUcmds( usercmd_t &ucmd ) {
 					ucmd.upmove = 127;
 				}
 			}
-			
+
 			ucmd.rightmove = -127;
 			break;
 	   }
@@ -1037,7 +1037,7 @@ void idBot::MoveUcmds( usercmd_t &ucmd ) {
 			break;
 		}
 #endif
-		
+
 		case RANDOM_DIR_JUMP: {
 			if ( !bot_noRandomJump.GetBool() && botThreadData.GetBotSkill() != BOT_SKILL_DEMO ) {
 				ucmd.upmove = 127;
@@ -1074,7 +1074,7 @@ void idBot::MoveUcmds( usercmd_t &ucmd ) {
 			}
 			break;
 		}
-#else 
+#else
 		case PRONE: { //mal: on the consoles, any call to prone, becomes a call to crouch ( the anims are being removed to save memory ).
 			ucmd.upmove = -127;
 			break;
@@ -1090,13 +1090,13 @@ void idBot::MoveUcmds( usercmd_t &ucmd ) {
             ucmd.buttons.btn.run = false;
 			break;
 		}
-		
+
 		case SPRINT: {
 			ucmd.buttons.btn.sprint = true;
 			break;
 		}
 
-		case STRAFEJUMP: { //mal: moving like the l33t players.... 
+		case STRAFEJUMP: { //mal: moving like the l33t players....
             ucmd.buttons.btn.sprint = true;
 
 			if ( xySpeed > SPRINTING_SPEED - 5.0f ) { //mal: give ourselves some time to pick up some speed...
@@ -1105,7 +1105,7 @@ void idBot::MoveUcmds( usercmd_t &ucmd ) {
 				}
 
 				leftyTimer++;
-            
+
 				if ( jumpTimer >= 10 ) {
 					ucmd.upmove = 127;
 					jumpTimer = 0;
@@ -1126,14 +1126,14 @@ void idBot::MoveUcmds( usercmd_t &ucmd ) {
 			}
 			break;
 		}
-		
+
 		case JUMP_MOVE: {
 			if ( !bot_noRandomJump.GetBool() && botThreadData.GetBotSkill() != BOT_SKILL_DEMO ) {
 				ucmd.upmove = 127;
 			}
 			break;
 		}
-			
+
 		default: {
             break;
 		}
@@ -1243,7 +1243,7 @@ void idBot::BuildMoveLookups( float runFwd, float runSide, float runBack, float 
 idBot::BuildMoveLookup
 ================
 */
-void idBot::BuildMoveLookup( moveLookupArray_t& moveForward, moveLookupArray_t& moveRight, 
+void idBot::BuildMoveLookup( moveLookupArray_t& moveForward, moveLookupArray_t& moveRight,
 							float fwdSpeed, float sideSpeed, float backSpeed ) {
 
 	// init values to magic number that isn't possible
@@ -1331,22 +1331,22 @@ void idBot::ActionUcmds( usercmd_t &ucmd ) {
 	} else {
         hasIronSightsOn = clientInfo.weapInfo.isIronSightsEnabled;
 	}
-    
+
 	if ( realWeapon ) {
         if ( realWeapon->IsReady() ) {
             weaponReady = true;
 		}
 	}
-	
+
 	if ( clientUcmd.botCmds.attack ) {
 		if ( clientUcmd.botCmds.constantFire || ( clientInfo.classType == SOLDIER && clientInfo.weapInfo.weapon == PISTOL && clientInfo.team == STROGG ) ) {
             ucmd.buttons.btn.attack = true;
 		} else {
 			if ( weaponReady && clientInfo.weapInfo.weapon != PISTOL && clientInfo.weapInfo.weapon != SCOPED_SMG ) {
-                ucmd.buttons.btn.attack = true; 
+                ucmd.buttons.btn.attack = true;
 			} else {
                 firePistol = !firePistol;
-				ucmd.buttons.btn.attack = firePistol; 
+				ucmd.buttons.btn.attack = firePistol;
 			}
 		}
 	}
@@ -1363,7 +1363,7 @@ void idBot::ActionUcmds( usercmd_t &ucmd ) {
 			ucmd.buttons.btn.attack = firePistol;
 		}
 	}
-	
+
 	if ( clientUcmd.botCmds.reload ) {
 		Reload();
 	}
@@ -1425,7 +1425,7 @@ void idBot::ActionUcmds( usercmd_t &ucmd ) {
 		idEntity* proxy = GetProxyEntity();
 		if ( proxy == NULL ) {
 			PerformImpulse( UCI_USE_VEHICLE );
-		}            
+		}
 	}
 
 	if ( clientUcmd.botCmds.switchAwayFromSniperRifle ) {
@@ -1463,7 +1463,7 @@ void idBot::ActionUcmds( usercmd_t &ucmd ) {
 					altAttackDelay = gameLocal.time + 900;
 				}
 			}
-		} 
+		}
 	}
 
 	bool needPause;
@@ -1521,7 +1521,7 @@ void idBot::VehicleUcmds( usercmd_t &ucmd ) {
 
 	GetVehicleInfo( GetProxyEntity()->entityNumber, vehicleInfo );
 
-	if ( vehicleInfo.type > ICARUS ) { 
+	if ( vehicleInfo.type > ICARUS ) {
 		AirVehicleControls( ucmd );
 	} else if ( vehicleInfo.type == ICARUS ) { //mal: special enough to get its own vehicle control scheme.
 		IcarusVehicleControls( ucmd );
@@ -1532,7 +1532,7 @@ void idBot::VehicleUcmds( usercmd_t &ucmd ) {
 	if ( clientUcmd.botCmds.attack ) {
 		ucmd.buttons.btn.attack = true;
 	}
-	
+
 	if ( clientUcmd.botCmds.honkHorn == true || hornTime > gameLocal.time ) {
 		if ( gameLocal.random.RandomInt( 100 ) > 20 ) {
 			ucmd.buttons.btn.modeSwitch = true;
@@ -1708,14 +1708,14 @@ void idBot::GroundVehicleControls( usercmd_t &ucmd ) {
 	GetVehicleInfo( transport->entityNumber, vehicleInfo );
 
 //mal: setup some basic variables for vehicle handling.
-	switch( vehicleInfo.type ) {   
-		case HUSKY: 
+	switch( vehicleInfo.type ) {
+		case HUSKY:
 			lookAheadDist = 100.0f;
 			takeHardTurns = true;
-			break; 
+			break;
 
 		case BADGER:
-			lookAheadDist = 150.0f; 
+			lookAheadDist = 150.0f;
 			canHandleJumpsWell = false;
 			canSprintFast = false;
 			takeHardTurns = true;
@@ -1729,7 +1729,7 @@ void idBot::GroundVehicleControls( usercmd_t &ucmd ) {
 		case HOG:
 			lookAheadDist = 175.0f;
 			takeHardTurns = true;
-			canHandleJumpsWell = false; 
+			canHandleJumpsWell = false;
 			break;
 
 		case GOLIATH:
@@ -1761,7 +1761,7 @@ void idBot::GroundVehicleControls( usercmd_t &ucmd ) {
 			lookAheadDist = 100.0f;
 			break;
 	}
- 
+
     if ( botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveViewOrigin != vec3_zero ) {
 		idVec3 aimPoint = botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveViewOrigin;
 
@@ -1788,7 +1788,7 @@ void idBot::GroundVehicleControls( usercmd_t &ucmd ) {
 						aimPoint.z += ( entity->GetPhysics()->GetBounds()[ 1 ][ 2 ] - entity->GetPhysics()->GetBounds()[ 0 ][ 2 ] ) * 0.4f;
 						Bot_GetProjectileAimPoint( PROJECTILE_TANK_ROUND, aimPoint, entity->entityNumber );
 					}
-		
+
 					Bot_ChangeVehicleViewAngles( transport->GetViewForPlayer( this ).GetRequiredViewAngles( aimPoint ), aimFast );
 				}
 			}
@@ -1802,10 +1802,10 @@ void idBot::GroundVehicleControls( usercmd_t &ucmd ) {
 	ucmd.angles[2] = ANGLE2SHORT( botViewAngles[2] - deltaViewAngles[2] );
 
 	ucmd.buttons.btn.run = true; //mal: this will be true by default
-	
+
 	if ( botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveGoal != vec3_zero ) {
         idVec3 moveDir;
-	
+
 		idVec3 origin = transport->GetRenderEntity()->origin;
 		idVec3 forward = transport->GetRenderEntity()->axis[ 0 ];
 		idVec3 right = transport->GetRenderEntity()->axis[ 1 ] * -1;
@@ -1827,8 +1827,8 @@ void idBot::GroundVehicleControls( usercmd_t &ucmd ) {
 		} else {
 			if ( moveRight > 0 ) {
 				ucmd.rightmove = 127;
-			} else if ( moveRight < 0 ) { 
-				ucmd.rightmove = -127; 
+			} else if ( moveRight < 0 ) {
+				ucmd.rightmove = -127;
 			}
 		}
 
@@ -1839,14 +1839,14 @@ void idBot::GroundVehicleControls( usercmd_t &ucmd ) {
 
 		ucmd.forwardmove = FixUcmd( moveForward );
 
-		if ( vehicleInfo.forwardSpeed < 0 && ucmd.forwardmove > 0 ) { 
+		if ( vehicleInfo.forwardSpeed < 0 && ucmd.forwardmove > 0 ) {
 			ucmd.forwardmove = 127;
-		}			
+		}
 
 		vec = botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveGoal - origin;
 
 		end = transport->GetRenderEntity()->origin;
-		end += ( lookAheadDist * transport->GetRenderEntity()->axis[ 0 ] ); 
+		end += ( lookAheadDist * transport->GetRenderEntity()->axis[ 0 ] );
 
 		if ( isBlocked ) {
 			if ( turnInPlace ) {
@@ -1855,22 +1855,22 @@ void idBot::GroundVehicleControls( usercmd_t &ucmd ) {
 				} else if ( ucmd.rightmove < 0 ) {
 					ucmd.rightmove = -127;
 				}
-				ucmd.forwardmove = 0; 
+				ucmd.forwardmove = 0;
 			}
-		} else {  
+		} else {
 			if ( takeHardTurns && movingForward > 60 ) {
 				end = botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveGoal - transport->GetRenderEntity()->origin;
 				end.NormalizeFast();
 
-				if ( end * transport->GetRenderEntity()->axis[ 0 ] < 0.4f ) { 
+				if ( end * transport->GetRenderEntity()->axis[ 0 ] < 0.4f ) {
 					useBrakes = true;
 				}
 			}
 
-			ucmd.forwardmove = 127; 
+			ucmd.forwardmove = 127;
 		}
 
-		if ( !canHandleJumpsWell ) { 
+		if ( !canHandleJumpsWell ) {
 			if ( vehicleInfo.isFlipped ) {
 				ucmd.forwardmove = -127;
 				useBrakes = true;
@@ -1901,7 +1901,7 @@ void idBot::GroundVehicleControls( usercmd_t &ucmd ) {
 						jumpTimer++;
 
 						if ( botThreadData.GetGameWorldState()->clientInfo[ entityNumber ].xySpeed < 1100.0f ) {
-							if ( jumpTimer > 60 ) { 
+							if ( jumpTimer > 60 ) {
                                 ucmd.buttons.btn.sprint = true;
 							}
 						} else {
@@ -1910,7 +1910,7 @@ void idBot::GroundVehicleControls( usercmd_t &ucmd ) {
 					}
 				}
 			}
-		}   
+		}
 
 		if ( botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveFlag == REVERSE ) {
 			ucmd.forwardmove = -127;
@@ -1960,7 +1960,7 @@ void idBot::GroundVehicleControls( usercmd_t &ucmd ) {
 	if ( vehicleInfo.type == GOLIATH && !goliathMustJump ) {
 		ucmd.upmove = 0;
 	}
-	
+
 	if ( botThreadData.GetGameOutputState()->botOutput[ entityNumber ].specialMoveType == FULL_STOP ) {
 		ucmd.forwardmove = 0;
 		ucmd.rightmove = 0;
@@ -2074,11 +2074,11 @@ bool idBot::Bot_GetProjectileAimPoint( const projectileTypes_t projectileType, i
 	c = gravity * gravity;
 
 	d = b * b - 4.0f * a * c;
-	
+
 	if ( d <= 0.0f ) {
 		return false;
 	}
-	
+
 	sqrtd = idMath::Sqrt( d );
 	p[0] = ( - b + sqrtd ) / ( 2.0f * a );
 	p[1] = ( - b - sqrtd ) / ( 2.0f * a );
@@ -2164,7 +2164,7 @@ bool idBot::Bot_GetProjectileAimPoint( const projectileTypes_t projectileType, i
 ================
 idBot::Bot_VehicleAimAtEnemy
 
-Has the bot aim towards its target - could be a vehicle (with player inside) or a player on foot. Used for 
+Has the bot aim towards its target - could be a vehicle (with player inside) or a player on foot. Used for
 weapon aiming. Varies the aim based on the bots aim skill. Only called when bot is in certain vehicles.
 ================
 */
@@ -2196,19 +2196,19 @@ void idBot::Bot_VehicleAimAtEnemy( int clientNum ) {
 	GetVehicleInfo( GetProxyEntity()->entityNumber, vehicleInfo );
 
 	if ( bot_aimSkill.GetInteger() == 0 ) {
-        aim = -0.05f;			
+        aim = -0.05f;
 	} else if ( bot_aimSkill.GetInteger() == 1 ) {
 	    aim = -0.15f;
 	} else if ( bot_aimSkill.GetInteger() == 2 ) {
 	    aim = -0.20f;
-	} else { 
+	} else {
 		aim = -0.30f;
 	}
-	
+
 	if ( dist < Square( 1200.0f ) && bot_aimSkill.GetInteger() > 1 ) {
 		aim = 0.15f;
 	} //mal: if your REALLY close, they dont overshoot as much!
-     
+
 	isPlayer = ( player->InVehicle() ) ? false : true;
 	velocity = ( isPlayer ) ? player->GetPhysics()->GetLinearVelocity() : player->proxyEntity->GetPhysics()->GetLinearVelocity();
 	vec = ( isPlayer ) ? GetPlayerViewPosition( clientNum ) : player->proxyEntity->GetPhysics()->GetOrigin();
@@ -2264,7 +2264,7 @@ void idBot::AirVehicleControls( usercmd_t &ucmd ) {
 	idVec3 origin;
 	idVec3 forward;
 	idVec3 right;
-	
+
 	sdTransport* transport = GetProxyEntity()->Cast< sdTransport >();
 
 	height = GetPhysics()->GetOrigin().z;
@@ -2290,10 +2290,10 @@ void idBot::AirVehicleControls( usercmd_t &ucmd ) {
 			mustBrakeIfCantBoost = false;
 			needsFastAntiRoll = false;
 			useMaxBoostConstraints = false;
-			break; 
+			break;
 
 		case HORNET:
-			alwaysBoost = false;  
+			alwaysBoost = false;
 			lookAheadDist = 1500.0f;
 			alwaysRun = false;
 			takesHardTurnsWell = false;
@@ -2326,12 +2326,12 @@ void idBot::AirVehicleControls( usercmd_t &ucmd ) {
 			break;
 	}
 
-	if ( alwaysRun ) {   
-        ucmd.buttons.btn.run = true; 
+	if ( alwaysRun ) {
+        ucmd.buttons.btn.run = true;
 	}
 
 	if ( botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveGoal != vec3_zero ) {
-        
+
 		if ( height < botThreadData.GetGameWorldState()->gameLocalInfo.maxVehicleHeight && botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveType != IGNORE_ALTITUDE ) {
             ucmd.forwardmove = 127;
 		}
@@ -2346,9 +2346,9 @@ void idBot::AirVehicleControls( usercmd_t &ucmd ) {
 		moveDir[1] = botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveGoal[1] - origin[1];
 		moveDir[2] = 0.0f;
 
-		moveDir.Normalize(); 
-	
-		moveRight = ( right * moveDir ) * 128;  
+		moveDir.Normalize();
+
+		moveRight = ( right * moveDir ) * 128;
 
 		if ( InVehicleGunSights( botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveGoal, false ) ) {
 			moveGoalInFront = true;
@@ -2356,19 +2356,19 @@ void idBot::AirVehicleControls( usercmd_t &ucmd ) {
 		} else {
 			if ( moveRight > 0 ) {
 				ucmd.rightmove = 127;
-			} else if ( moveRight < 0 ) { 
-				ucmd.rightmove = -127; 
+			} else if ( moveRight < 0 ) {
+				ucmd.rightmove = -127;
 			}
-		} 
+		}
 
 		if ( altitude.z < 60.0f || vehicleTime + 5000 > gameLocal.time ) { //mal: make sure we're at a safe altitude before we start moving...
-			if ( vehicleTime + 15000 > gameLocal.time ) {   
+			if ( vehicleTime + 15000 > gameLocal.time ) {
 				return;
 			}
 		}
 
-		if ( !useBrakes ) {       
-	        if ( !alwaysBoost ) { 
+		if ( !useBrakes ) {
+	        if ( !alwaysBoost ) {
 				vec = botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveGoal - origin;
 				if ( moveGoalInFront ) {
 					if ( !useMaxBoostConstraints ) {
@@ -2434,7 +2434,7 @@ void idBot::AirVehicleControls( usercmd_t &ucmd ) {
 		ucmd.buttons.btn.sprint = false;
 	}
 
-	if ( botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveType == LAND ) { 
+	if ( botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveType == LAND ) {
 		if ( vehicleInfo.forwardSpeed > 50.0f ) {
 			ucmd.buttons.btn.run = false;
 			isBraking = true;
@@ -2442,7 +2442,7 @@ void idBot::AirVehicleControls( usercmd_t &ucmd ) {
 			ucmd.buttons.btn.sprint = true;
 		}
 
-		ucmd.forwardmove = -127; 
+		ucmd.forwardmove = -127;
 	}
 
 	if ( takingOff ) {
@@ -2456,11 +2456,11 @@ void idBot::AirVehicleControls( usercmd_t &ucmd ) {
 			moveViewOrigin.z -= vec.z;
 		}
 
-		Bot_ChangeAirVehicleViewAngles( transport->GetViewForPlayer( this ).GetRequiredViewAngles( botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveViewOrigin ), takesHardTurnsWell, false ); 
+		Bot_ChangeAirVehicleViewAngles( transport->GetViewForPlayer( this ).GetRequiredViewAngles( botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveViewOrigin ), takesHardTurnsWell, false );
 
-		if ( moveGoalInFront && !isBraking  ) { //mal: goal has to be in front, and we can't be braking else we'll stall, then we'll nose up to gain altitude.  
+		if ( moveGoalInFront && !isBraking  ) { //mal: goal has to be in front, and we can't be braking else we'll stall, then we'll nose up to gain altitude.
 			if ( altitude.z < 50.0f ) {
-				if ( vehiclePitch > -30 ) { 
+				if ( vehiclePitch > -30 ) {
                     ucmd.angles[ PITCH ] -= 1500;
 				}
 			} else if ( takesHardTurnsWell && vehiclePitch < dangerousDownPitch && !isPitchSensitive ) {
@@ -2485,8 +2485,8 @@ void idBot::AirVehicleControls( usercmd_t &ucmd ) {
 					moveDir[0] = enemyOrg[0] - origin[0];
 					moveDir[1] = enemyOrg[1] - origin[1];
 					moveDir[2] = 0.0f;
-					moveDir.Normalize(); 
-					moveRight = ( right * moveDir ) * 128; 
+					moveDir.Normalize();
+					moveRight = ( right * moveDir ) * 128;
 
 					bool inFront = InVehicleGunSights( enemyOrg, false );
 
@@ -2495,8 +2495,8 @@ void idBot::AirVehicleControls( usercmd_t &ucmd ) {
 					} else {
 						if ( moveRight > 0 ) {
 							ucmd.rightmove = 127;
-						} else if ( moveRight < 0 ) { 
-							ucmd.rightmove = -127; 
+						} else if ( moveRight < 0 ) {
+							ucmd.rightmove = -127;
 						}
 					}
 
@@ -2513,7 +2513,7 @@ void idBot::AirVehicleControls( usercmd_t &ucmd ) {
 
 						moveDir = enemyOrg - origin;
 						float enemyHeight = moveDir.z;
-	
+
 						if ( enemyHeight < -1000.0f ) {
 							ucmd.forwardmove = -127;
 						} else {
@@ -2575,12 +2575,12 @@ void idBot::AirVehicleControls( usercmd_t &ucmd ) {
 
 	const idAngles &deltaViewAngles = GetDeltaViewAngles();
 
-	ucmd.angles[0] = ANGLE2SHORT( botViewAngles[0] - deltaViewAngles[0] ); 
+	ucmd.angles[0] = ANGLE2SHORT( botViewAngles[0] - deltaViewAngles[0] );
 	ucmd.angles[1] = ANGLE2SHORT( botViewAngles[1] - deltaViewAngles[1] );
-	ucmd.angles[2] = ANGLE2SHORT( botViewAngles[2] - deltaViewAngles[2] ); 
+	ucmd.angles[2] = ANGLE2SHORT( botViewAngles[2] - deltaViewAngles[2] );
 
 //mal: bit of anti roll..
-	if ( needsFastAntiRoll ) { 
+	if ( needsFastAntiRoll ) {
 		if ( vehicleRoll < -10.0f ) {
 			ucmd.angles[ YAW ] += -1000;
 		} else if ( vehicleRoll > 10.0f ) {
@@ -2589,7 +2589,7 @@ void idBot::AirVehicleControls( usercmd_t &ucmd ) {
 	} else { //mal:  anti roll that gets weaker the closer the bot gets to normal.
 		if ( vehicleRoll < -20.0f ) {
 			ucmd.angles[ YAW ] += -500; //-1000;
-		} else if ( vehicleRoll < -10.0f ) {  
+		} else if ( vehicleRoll < -10.0f ) {
 			ucmd.angles[ YAW ] += -100; //-500;
 		} else if ( vehicleRoll > 20.0f ) {
 			ucmd.angles[ YAW ] += 500; //1000;
@@ -2599,7 +2599,7 @@ void idBot::AirVehicleControls( usercmd_t &ucmd ) {
 	}
 
 //mal: anti pitch!
-	if ( vehiclePitch > ( ( lookingAtClient ) ? 90 : dangerousDownPitch ) ) { 
+	if ( vehiclePitch > ( ( lookingAtClient ) ? 90 : dangerousDownPitch ) ) {
 		ucmd.angles[ PITCH ] -= 1500;
 	}
 
@@ -2635,7 +2635,7 @@ idVec3 idBot::GetPlayerViewPosition( int clientNum ) const {
 	if ( botThreadData.GetGameWorldState()->clientInfo[ clientNum ].weapInfo.covertToolInfo.entNum == 0 && botThreadData.GetGameWorldState()->clientInfo[ clientNum ].weapInfo.covertToolInfo.clientIsUsing == false ) {
 		return player->firstPersonViewOrigin;
 	}
-	
+
 	vec = player->GetPhysics()->GetOrigin();
 	vec.z += player->eyeOffset.z;
 	return vec;
@@ -2661,8 +2661,8 @@ bool idBot::InVehicleGunSights( const idVec3 &org, bool precise ) {
 
 	if ( dir * GetProxyEntity()->GetRenderEntity()->axis[ 0 ] > dotProductCheck ) {
 		return true;//mal: have someone in front of us..
-	} 
-	
+	}
+
 	return false;
 }
 
@@ -2690,9 +2690,9 @@ void idBot::IcarusVehicleControls( usercmd_t &ucmd ) {
 
 	moveDir.Normalize();
 
-	float moveRight = ( right * moveDir ) * 128; 
+	float moveRight = ( right * moveDir ) * 128;
 	float moveForward = ( forward * moveDir ) * 128.0f;
-	
+
 	ucmd.forwardmove = 127; //FixUcmd( moveForward );
 
 	if ( InVehicleGunSights( botThreadData.GetGameOutputState()->botOutput[ entityNumber ].moveGoal, false ) ) {
@@ -2700,15 +2700,15 @@ void idBot::IcarusVehicleControls( usercmd_t &ucmd ) {
 	} else {
 		if ( moveRight > 0 ) {
 			ucmd.rightmove = 127;
-		} else if ( moveRight < 0 ) { 
-			ucmd.rightmove = -127; 
+		} else if ( moveRight < 0 ) {
+			ucmd.rightmove = -127;
 		}
 	}
 
-	proxyInfo_t vehicleInfo;	
+	proxyInfo_t vehicleInfo;
 	GetVehicleInfo( GetProxyEntity()->entityNumber, vehicleInfo );
 
-	AngleUcmds( ucmd );		
+	AngleUcmds( ucmd );
 	ActionUcmds( ucmd );
 
 	const botAIOutput_t &clientUcmd = botThreadData.GetGameOutputState()->botOutput[ entityNumber ];

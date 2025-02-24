@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
- 
-#include "precompiled.h"
+
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -154,7 +154,7 @@ void sdProjectileBroadcastData::Read( idFile* file ) {
 ===============================================================================
 
   idProjectile
-	
+
 ===============================================================================
 */
 
@@ -232,7 +232,7 @@ idProjectile::~idProjectile
 =================
 */
 idProjectile::~idProjectile( void ) {
-	
+
 	DeconstructScriptObject();
 
 	if ( baseScriptThread != NULL ) {
@@ -250,7 +250,7 @@ void idProjectile::Spawn( void ) {
 	projectileFlags.allowOwnerCollisions	= spawnArgs.GetBool( "owner_collisions" );
 	projectileFlags.hasThrust				= spawnArgs.GetBool( "has_thrust" );
 	projectileFlags.faceVelocity			= spawnArgs.GetBool( "face_velocity" );
-	
+
 	BecomeActive( TH_THINK );
 
 	maxHealth = health = spawnArgs.GetInt( "health" );
@@ -365,7 +365,7 @@ idProjectile::Event_GetLaunchTime
 =================
 */
 void idProjectile::Event_GetLaunchTime( void ) {
-	sdProgram::ReturnFloat( MS2SEC( launchTime ) ); 
+	sdProgram::ReturnFloat( MS2SEC( launchTime ) );
 }
 
 /*
@@ -404,7 +404,7 @@ void idProjectile::Launch( const idVec3& start, const idVec3& dir, const idVec3&
 	GetPhysics()->SetAxis( axes );
 	UpdateVisuals();
 	Present();
-	
+
 	idAngles tracerMuzzleAngles = axes.ToAngles();
 	idVec3 anglesVec( tracerMuzzleAngles.pitch, tracerMuzzleAngles.yaw, tracerMuzzleAngles.roll );
 
@@ -457,7 +457,7 @@ idProjectile::Event_SetEnemy
 ================
 */
 void idProjectile::Event_SetEnemy( idEntity* other ) {
-	CancelEvents( &EV_SetEnemy );	
+	CancelEvents( &EV_SetEnemy );
 
 	SetEnemy( other );
 }
@@ -486,7 +486,7 @@ idProjectile::IsOwner
 ================
 */
 bool idProjectile::IsOwner( idEntity* other ) const {
-	if ( other == owner ) {		
+	if ( other == owner ) {
 		return true;
 	}
 
@@ -539,7 +539,7 @@ void idProjectile::SetThrust( bool value ) {
 
 	projectileFlags.thustOn = value;
 
-	if ( projectileFlags.thustOn ) {		
+	if ( projectileFlags.thustOn ) {
 		scriptObject->CallEvent( "OnThrustStarted" );
 	} else {
 		scriptObject->CallEvent( "OnThrustStopped" );
@@ -571,7 +571,7 @@ void idProjectile::Think( void ) {
 
 		if ( projectileFlags.hasThrust && gameLocal.time >= thrustStartTime ) {
 			SetThrust( true );
-			
+
 			UpdateTargeting();
 
 			Thrust();
@@ -613,7 +613,7 @@ idProjectile::UpdateVisibility
 ================
 */
 void idProjectile::UpdateVisibility( void ) {
-	bool hide = projectileFlags.scriptHide;	
+	bool hide = projectileFlags.scriptHide;
 
 	if ( hide ) {
 		Hide();
@@ -765,7 +765,7 @@ bool idProjectile::Collide( const trace_t &collision, const idVec3& velocity, in
 	bool retVal = CallFloatNonBlockingScriptEvent( scriptObject->GetFunction( "OnCollide" ), helper ) != 0.0f;
 
 	gameLocal.FreeLoggedTrace( loggedTrace );
-	
+
 	return retVal;
 }
 
@@ -824,7 +824,7 @@ void idProjectile::ApplyNetworkState( networkStateMode_t mode, const sdEntitySta
 		NET_GET_NEW( sdProjectileBroadcastData );
 		NET_APPLY_STATE_PHYSICS;
 		NET_APPLY_STATE_SCRIPT;
-		
+
 		// update state
 		team							= newData.team;
 		owner.SetSpawnId( newData.ownerId );
@@ -943,7 +943,7 @@ idProjectile::CheckNetworkStateChanges
 ================
 */
 bool idProjectile::CheckNetworkStateChanges( networkStateMode_t mode, const sdEntityStateNetworkData& baseState ) const {
-	if ( mode == NSM_VISIBLE ) {	
+	if ( mode == NSM_VISIBLE ) {
 		NET_GET_BASE( sdProjectileNetworkData );
 		NET_CHECK_STATE_PHYSICS;
 		NET_CHECK_STATE_SCRIPT;
@@ -951,7 +951,7 @@ bool idProjectile::CheckNetworkStateChanges( networkStateMode_t mode, const sdEn
 		return false;
 	}
 
-	if ( mode == NSM_BROADCAST ) {	
+	if ( mode == NSM_BROADCAST ) {
 		NET_GET_BASE( sdProjectileBroadcastData );
 		NET_CHECK_STATE_PHYSICS;
 		NET_CHECK_STATE_SCRIPT;
@@ -966,7 +966,7 @@ bool idProjectile::CheckNetworkStateChanges( networkStateMode_t mode, const sdEn
 
 		if ( baseData.enemyId != enemy.GetSpawnId() ) {
 			return true;
-		}		
+		}
 
 		if ( baseData.launchTime != launchTime ) {
 			return true;
@@ -1119,7 +1119,7 @@ void idProjectile_RigidBody::CheckWater( const idVec3& waterBodyOrg, const idMat
 	if ( waterEffects ) {
 		waterEffects->SetOrigin( GetPhysics()->GetOrigin() );
 		waterEffects->SetAxis( GetPhysics()->GetAxis() );
-		waterEffects->SetVelocity( GetPhysics()->GetLinearVelocity() );		
+		waterEffects->SetVelocity( GetPhysics()->GetLinearVelocity() );
 		waterEffects->CheckWater( this, waterBodyOrg, waterBodyAxis, waterBodyModel );
 	}
 }
@@ -1202,7 +1202,7 @@ void sdProjectile_Parabolic::CheckWater( const idVec3& waterBodyOrg, const idMat
 	if ( waterEffects ) {
 		waterEffects->SetOrigin( GetPhysics()->GetOrigin() );
 		waterEffects->SetAxis( GetPhysics()->GetAxis() );
-		waterEffects->SetVelocity( GetPhysics()->GetLinearVelocity() );		
+		waterEffects->SetVelocity( GetPhysics()->GetLinearVelocity() );
 		waterEffects->CheckWater( this, waterBodyOrg, waterBodyAxis, waterBodyModel );
 	}
 }

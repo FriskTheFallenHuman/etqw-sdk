@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -17,11 +17,11 @@ static char THIS_FILE[] = __FILE__;
 #include "physics/Physics_Actor.h"
 #include "physics/Physics_AF.h"
 #include "client/ClientEffect.h"
-#include "../bse/BSEInterface.h"
-#include "../bse/BSE_Envelope.h"
-#include "../bse/BSE_SpawnDomains.h"
-#include "../bse/BSE_Particle.h"
-#include "../bse/BSE.h"
+#include "bse/BSEInterface.h"
+#include "bse/BSE_Envelope.h"
+#include "bse/BSE_SpawnDomains.h"
+#include "bse/BSE_Particle.h"
+#include "bse/BSE.h"
 #include "WorldSpawn.h"
 #include "Mover.h"
 #include "ContentMask.h"
@@ -31,9 +31,9 @@ static char THIS_FILE[] = __FILE__;
 #include "Player.h"
 #include "guis/UserInterfaceLocal.h"
 #include "vehicles/Transport.h"
-#include "../decllib/declTypeHolder.h"
+#include "decllib/declTypeHolder.h"
 #include "rules/GameRules.h"
-#include "../decllib/DeclSurfaceType.h"
+#include "decllib/DeclSurfaceType.h"
 #include "guis/GuiSurface.h"
 #include "effects/Flares.h"
 #include "effects/FootPrints.h"
@@ -257,7 +257,7 @@ const idEventDef EV_SetHealth( "setHealth", '\0', DOC_TEXT( "Sets the current he
 const idEventDef EV_GetMaxHealth( "getMaxHealth", 'd', DOC_TEXT( "Returns the maximum health of the object." ), 0, NULL );
 const idEventDef EV_SetMaxHealth( "setMaxHealth", '\0', DOC_TEXT( "Sets the maximum health of the object." ), 1, NULL, "d", "max", "Maximum health value to set." );
 const idEventDef EV_SetCanCollideWithTeam( "setCanCollideWithTeam", '\0', DOC_TEXT( "Controls whether this entity can collide with entities on the same team as it." ), 1, NULL, "b", "state", "Whether to allow collsions or not." );
-const idEventDef EV_IsInWater( "isInWater", 'f', DOC_TEXT( "Returns the fraction of the entity which is under water." ), 0, "Not all physics types support this, if they do not, they will always return 0." ); 
+const idEventDef EV_IsInWater( "isInWater", 'f', DOC_TEXT( "Returns the fraction of the entity which is under water." ), 0, "Not all physics types support this, if they do not, they will always return 0." );
 const idEventDef EV_SpawnClientEffect( "spawnClientEffect", 'e', DOC_TEXT( "Spawns a client entity of type $class:rvClientEffect$, and returns it." ), 1, "The key must begin with 'fx_'.\nThe result will be $null$ if spawning the effect fails.", "s", "key", "Key to look up the $decl:effect$ from." );
 const idEventDef EV_SpawnClientCrawlEffect( "spawnClientCrawlEffect", 'e', DOC_TEXT( "Spawns a client crawl effect of type $class:rvClientCrawlEffect$ on the specified entity, and returns it." ), 3, "The key must begin with 'fx_'.\nThe result will be $null$ if spawning the effect fails.", "s", "key", "Key to look up the $decl:effect$ from.", "e", "entity", "Entity the effect will crawl over.", "f", "time", "How long the effect will last, in seconds." );
 
@@ -493,7 +493,7 @@ ABSTRACT_DECLARATION( idClass, idEntity )
 	EVENT( EV_IsSpotted,					idEntity::Event_IsSpotted )
 	EVENT( EV_ForceNetworkUpdate,			idEntity::Event_ForceNetworkUpdate )
 
-	EVENT( EV_AddCheapDecal,				idEntity::Event_AddCheapDecal )	
+	EVENT( EV_AddCheapDecal,				idEntity::Event_AddCheapDecal )
 
 	EVENT( EV_GetEntityNumber,				idEntity::Event_GetEntityNumber )
 
@@ -585,7 +585,7 @@ void idGameEdit::RefreshRenderEntity( const idDict& args, renderEntity_t& render
 	}
 
 	temp = args.GetString( "ambientCubeMap" );
-	if ( *temp != '\0' ) {	
+	if ( *temp != '\0' ) {
 		renderEntity.ambientCubeMap = declHolder.FindAmbientCubeMap( temp );
 	}
 
@@ -877,7 +877,7 @@ void idEntity::Spawn( void ) {
 	gameEdit->ParseSpawnArgsToRenderEntity( spawnArgs, renderEntity );
 
 	renderEntity.spawnID = gameLocal.GetSpawnId( this );//.entityNum = entityNumber;
-	
+
 	idVec3 origin	= renderEntity.origin;
 	idMat3 axis		= renderEntity.axis;
 	lastPushedOrigin = origin;
@@ -922,7 +922,7 @@ void idEntity::Spawn( void ) {
 	fl.forceDecalUsageLocal	= spawnArgs.GetBool( "force_decalusagelocal", "0" );
 
 	temp = spawnArgs.GetString( "task_name" );
-	taskName = declHolder.declLocStrType.LocalFind( temp, false ); 
+	taskName = declHolder.declLocStrType.LocalFind( temp, false );
 
 	if ( spawnArgs.GetBool( "no_damage_feedback" ) ) {
 		fl.noDamageFeedback = true;
@@ -937,7 +937,7 @@ void idEntity::Spawn( void ) {
 			if ( *guiName == '\0' ) {
 				continue;
 			}
-			
+
 			idStr theme = spawnArgs.GetString( guiSurface->guiNum == 0 ? "gui_theme" : va( "gui%d_theme", guiSurface->guiNum + 1 ), "default" );
 
 			guiHandle_t handle = gameLocal.LoadUserInterface( guiName, true, false, theme );
@@ -1031,7 +1031,7 @@ idEntity::~idEntity( void ) {
 	gameLocal.RemoveEntityFromHash( name.c_str(), this );
 
 	StopSound( SCHANNEL_ANY );
-	
+
 	RemoveClientEntities();
 
 	FreeModelDef();
@@ -1220,7 +1220,7 @@ bool idEntity::CallBooleanNonBlockingScriptEvent( const sdProgram::sdFunction* f
 /*
 ================
 idEntity::CallFloatNonBlockingScriptEvent
-================ 
+================
 */
 float idEntity::CallFloatNonBlockingScriptEvent( const sdProgram::sdFunction* function, sdScriptHelper& helper ) const {
 	if ( !function ) {
@@ -1282,7 +1282,7 @@ const char * idEntity::GetName( void ) const {
 /***********************************************************************
 
 	Thinking
-	
+
 ***********************************************************************/
 
 /*
@@ -1396,7 +1396,7 @@ void idEntity::BecomeInactive( int flags, bool force ) {
 /***********************************************************************
 
 	Visuals
-	
+
 ***********************************************************************/
 
 /*
@@ -1666,9 +1666,9 @@ void idEntity::NotifyVisChanged() {
 	idEntity* next;
 	for( idEntity* ent = teamChain; ent != NULL; ent = next ) {
 		next = ent->teamChain;
-		
+
 		ent->OnBindMasterVisChanged();
-	} 
+	}
 }
 
 /*
@@ -1762,7 +1762,7 @@ void idEntity::Present( void ) {
 
 		if ( renderSystem->IsSMPEnabled() ) {
 			idAnimator *animator = GetAnimator();
-			if ( animator ) {		
+			if ( animator ) {
 				if ( animator->CreateFrame( gameLocal.time, false ) ) {
 				}
 			}
@@ -1806,7 +1806,7 @@ idEntity::UpdateRenderEntity
 */
 bool idEntity::UpdateRenderEntity( renderEntity_t *renderEntity, const renderView_t *renderView, int& lastGameModifiedTime ) {
 	idAnimator *animator = GetAnimator();
-	if ( animator ) {		
+	if ( animator ) {
 		if ( animator->CreateFrame( gameLocal.time, false ) || lastGameModifiedTime != animator->GetTransformCount() ) {
 			lastGameModifiedTime = animator->GetTransformCount();
 			return true;
@@ -1853,7 +1853,7 @@ renderView_t *idEntity::GetRenderView( void ) {
 /***********************************************************************
 
   effects
-	
+
 ***********************************************************************/
 
 /*
@@ -1862,7 +1862,7 @@ idEntity::PlayEffect
 ================
 */
 rvClientEffect* idEntity::PlayEffect( const int effectHandle, const idVec3& color, jointHandle_t joint, bool loop, const idVec3& endOrigin ) {
-	if ( !gameLocal.DoClientSideStuff() ) { 
+	if ( !gameLocal.DoClientSideStuff() ) {
 		return NULL;
 	}
 
@@ -1870,7 +1870,7 @@ rvClientEffect* idEntity::PlayEffect( const int effectHandle, const idVec3& colo
 		gameLocal.Warning( "idEntity::PlayEffect Invalid Joint" );
 		return NULL;
 	}
-//	assert ( joint != INVALID_JOINT );	
+//	assert ( joint != INVALID_JOINT );
 
 	if ( effectHandle < 0 ) {
 		return NULL;
@@ -1882,17 +1882,17 @@ rvClientEffect* idEntity::PlayEffect( const int effectHandle, const idVec3& colo
 	effect->Bind( this, joint );
 	effect->SetGravity( gameLocal.GetGravity() );
 	effect->SetMaterialColor( color );
-	
+
 	if ( !effect->Play ( gameLocal.time, loop, endOrigin ) ) {
 		delete effect;
 		return NULL;
 	}
-	
+
 	return effect;
 }
 
 rvClientEffect* idEntity::PlayEffectMaxVisDist( const int effectHandle, const idVec3& color, jointHandle_t joint, bool loop, bool isStatic, float maxVisDist, const idVec3& endOrigin ) {
-	if ( !gameLocal.DoClientSideStuff() ) { 
+	if ( !gameLocal.DoClientSideStuff() ) {
 		return NULL;
 	}
 
@@ -1900,7 +1900,7 @@ rvClientEffect* idEntity::PlayEffectMaxVisDist( const int effectHandle, const id
 		gameLocal.Warning( "idEntity::PlayEffect Invalid Joint" );
 		return NULL;
 	}
-//	assert ( joint != INVALID_JOINT );	
+//	assert ( joint != INVALID_JOINT );
 
 	if ( effectHandle < 0 ) {
 		return NULL;
@@ -1914,12 +1914,12 @@ rvClientEffect* idEntity::PlayEffectMaxVisDist( const int effectHandle, const id
 	effect->SetMaterialColor( color );
 	effect->SetMaxVisDist( maxVisDist );
 	effect->GetRenderEffect()->isStatic = isStatic;
-	
+
 	if ( !effect->Play ( gameLocal.time, loop, endOrigin ) ) {
 		delete effect;
 		return NULL;
 	}
-	
+
 	return effect;
 }
 
@@ -1935,7 +1935,7 @@ rvClientEffect* idEntity::PlayEffect ( const int effectHandle, const idVec3& col
 
 	idVec3 localOrigin;
 	idMat3 localAxis;
-	
+
 	// jrad - the isNewFrame check causes issues in network games for effects and sounds played via scripts
 	// since this is primarily how we play effects and sounds now, this check is removed
 	if ( effectHandle < 0 /*|| !gameLocal.isNewFrame */ ) {
@@ -1961,7 +1961,7 @@ rvClientEffect* idEntity::PlayEffect ( const int effectHandle, const idVec3& col
 		delete effect;
 		return NULL;
 	}
-	
+
 	return effect;
 }
 
@@ -1972,7 +1972,7 @@ rvClientEffect* idEntity::PlayEffectMaxVisDist ( const int effectHandle, const i
 
 	idVec3 localOrigin;
 	idMat3 localAxis;
-	
+
 	// jrad - the isNewFrame check causes issues in network games for effects and sounds played via scripts
 	// since this is primarily how we play effects and sounds now, this check is removed
 	if ( effectHandle < 0 /*|| !gameLocal.isNewFrame */ ) {
@@ -2000,7 +2000,7 @@ rvClientEffect* idEntity::PlayEffectMaxVisDist ( const int effectHandle, const i
 		delete effect;
 		return NULL;
 	}
-	
+
 	return effect;
 }
 
@@ -2019,7 +2019,7 @@ void idEntity::StopAllEffects ( bool destroyParticles ) {
 		if ( effect ) {
 			effect->Stop( destroyParticles );
 		}
-	}		
+	}
 }
 
 /*
@@ -2027,7 +2027,7 @@ void idEntity::StopAllEffects ( bool destroyParticles ) {
 idEntity::StopEffect
 ================
 */
-void idEntity::StopEffect( int effectIndex, bool destroyParticles ) {	
+void idEntity::StopEffect( int effectIndex, bool destroyParticles ) {
 	rvClientEntity* next;
 	for ( rvClientEntity* cent = clientEntities.Next(); cent != NULL; cent = next ) {
 		next = cent->bindNode.Next();
@@ -2036,7 +2036,7 @@ void idEntity::StopEffect( int effectIndex, bool destroyParticles ) {
 		if ( effect == NULL ) {
 			continue;
 		}
-		
+
 		if ( effect->GetEffectIndex() == effectIndex ) {
 			effect->Stop( destroyParticles );
 		}
@@ -2052,7 +2052,7 @@ void idEntity::StopEffect( const char* effectName, bool destroyParticles ) {
 idEntity::StopEffectHandle
 ================
 */
-void idEntity::StopEffectHandle( unsigned int handle, bool destroyParticles ) {	
+void idEntity::StopEffectHandle( unsigned int handle, bool destroyParticles ) {
 	rvClientEntityPtr< rvClientEffect > effect;
 	effect.ForceSpawnId( handle );
 	if ( effect.GetEntity() ) {
@@ -2119,7 +2119,7 @@ void idEntity::Event_GetEffectEndOrigin( int handle ) {
 idEntity::SetEffectAttenuation
 ================
 */
-void idEntity::SetEffectAttenuation( unsigned int handle, float attenuation ) {	
+void idEntity::SetEffectAttenuation( unsigned int handle, float attenuation ) {
 	rvClientEntityPtr< rvClientEffect > effect;
 	effect.ForceSpawnId( handle );
 	if ( effect.GetEntity() ) {
@@ -2196,7 +2196,7 @@ void idEntity::Event_DisableCrosshairTrace( bool value ) {
 /***********************************************************************
 
   Sound
-	
+
 ***********************************************************************/
 
 /*
@@ -2467,7 +2467,7 @@ void idEntity::FadeSound( const soundChannel_t channel, float to, float over ) {
 /***********************************************************************
 
   client entities
-	
+
 ***********************************************************************/
 
 /*
@@ -2484,7 +2484,7 @@ void idEntity::RemoveClientEntities ( void ) {
 		next = cent->bindNode.Next();
 
 		rvClientEffect* effect = cent->Cast< rvClientEffect >();
-		if ( effect ) {			
+		if ( effect ) {
 			effect->Stop();
 			continue;
 		}
@@ -2497,7 +2497,7 @@ void idEntity::RemoveClientEntities ( void ) {
 /***********************************************************************
 
   entity binding
-	
+
 ***********************************************************************/
 
 /*
@@ -2990,7 +2990,7 @@ float idEntity::DistanceTo2d ( const idVec3& pos ) {
 idEntity::GetLocalAngles
 ================
 */
-void idEntity::GetLocalAngles(idAngles &localAng) 
+void idEntity::GetLocalAngles(idAngles &localAng)
 {
 	idVec3 localVec = GetPhysics()->GetAxis()[0];
 
@@ -3170,7 +3170,7 @@ void idEntity::JoinTeam( idEntity *teammember ) {
 
 	teamMaster = master;
 
-	// reorder the active entity list 
+	// reorder the active entity list
 	gameLocal.sortTeamMasters = true;
 }
 
@@ -3294,7 +3294,7 @@ void idEntity::QuitTeam( void ) {
 /***********************************************************************
 
   Physics.
-	
+
 ***********************************************************************/
 
 
@@ -3361,7 +3361,7 @@ idEntity::InitDefaultPhysics
 ================
 */
 void idEntity::InitDefaultPhysics( const idVec3 &origin, const idMat3 &axis ) {
-	
+
 	idClipModel* clipModel = InitDefaultClipModel();
 
 	defaultPhysicsObj.SetSelf( this );
@@ -3442,7 +3442,7 @@ bool idEntity::RunPhysics( void ) {
 		return false;
 	}
 
-	if ( gameLocal.isClient && IsPhysicsInhibited() ) {		
+	if ( gameLocal.isClient && IsPhysicsInhibited() ) {
 		return false;
 	}
 
@@ -3799,7 +3799,7 @@ void idEntity::RemoveContactEntity( idEntity *ent ) {
 /***********************************************************************
 
 	Damage
-	
+
 ***********************************************************************/
 
 /*
@@ -3839,7 +3839,7 @@ explosions and melee attacks.
 ============
 */
 bool idEntity::CanDamage( const idVec3 &origin, idVec3 &damagePoint, int mask, idEntity* passEntity, trace_t* _tr ) const {
-	idVec3 	dest;	
+	idVec3 	dest;
 	idVec3 	midpoint;
 
 	trace_t		__tr;
@@ -4059,8 +4059,8 @@ bool idEntity::CanCollide( const idEntity* other, int traceId ) const {
 		if ( GetEntityAllegiance( other ) == TA_FRIEND ) {
 			return false;
 		}
-	} 
-	
+	}
+
 	return other != this;
 }
 
@@ -4096,7 +4096,7 @@ void idEntity::CheckForDuplicateRenderEntityHandles( void ) {
 		if ( checkList[ handle ] != NULL ) {
 			gameLocal.Warning( "Duplicate Render Entity Handle" );
 		}
-		
+
 		checkList[ handle ] = &entity->renderEntity;
 	}
 
@@ -4129,7 +4129,7 @@ void idEntity::CheckForDuplicateRenderEntityHandles( void ) {
 /***********************************************************************
 
   Script functions
-	
+
 ***********************************************************************/
 
 /*
@@ -4205,7 +4205,7 @@ void idEntity::DeconstructScriptObject( void ) {
 /***********************************************************************
 
   Targets
-	
+
 ***********************************************************************/
 
 /*
@@ -4249,7 +4249,7 @@ void idEntity::RemoveNullTargets( void ) {
 /***********************************************************************
 
   Misc.
-	
+
 ***********************************************************************/
 
 /*
@@ -4286,9 +4286,9 @@ void idEntity::Event_PlayMaterialEffect( const char *effectName, const idVec3& c
 	joint = GetAnimator() ? GetAnimator()->GetJointHandle( jointName ) : INVALID_JOINT;
 	if ( joint != INVALID_JOINT ) {
 		eff = PlayEffect( effectName, color, materialType, joint, loop );
-	} else {				  
+	} else {
 		eff = PlayEffect( effectName, color, materialType, renderEntity.origin, renderEntity.axis, loop );
-	}	
+	}
 
 	sdProgram::ReturnHandle( eff.GetSpawnId() );
 }
@@ -4300,9 +4300,9 @@ void idEntity::Event_PlayMaterialEffectMaxVisDist( const char *effectName, const
 	joint = GetAnimator() ? GetAnimator()->GetJointHandle( jointName ) : INVALID_JOINT;
 	if ( joint != INVALID_JOINT ) {
 		eff = PlayEffectMaxVisDist( effectName, color, materialType, joint, loop, isStatic, maxVisDist );
-	} else {				  
+	} else {
 		eff = PlayEffectMaxVisDist( effectName, color, materialType, renderEntity.origin, renderEntity.axis, loop, isStatic, maxVisDist );
-	}	
+	}
 
 	sdProgram::ReturnHandle( eff.GetSpawnId() );
 }
@@ -4379,7 +4379,7 @@ idEntity::Event_PlayBeamEffect
 ============
 */
 void idEntity::Event_PlayBeamEffect( const char* effectName, const char* materialType, const idVec3& origin, const idVec3& endOrigin, bool loop ) {
-	rvClientEntityPtr< rvClientEffect > eff;	
+	rvClientEntityPtr< rvClientEffect > eff;
 	eff = PlayEffect( effectName, colorWhite.ToVec3(), materialType, origin, mat3_identity, loop, endOrigin );	// FIXME: mat3_identity to dir.ToMat3() ?
 	sdProgram::ReturnHandle( eff.GetSpawnId() );
 }
@@ -4462,7 +4462,7 @@ idEntity::Event_SpawnClientEffect
 ============
 */
 void idEntity::Event_SpawnClientEffect( const char* effectName ) {
-	int effectHandle = gameLocal.GetEffectHandle( spawnArgs, effectName, NULL );	
+	int effectHandle = gameLocal.GetEffectHandle( spawnArgs, effectName, NULL );
 
 	if( effectHandle != -1 ) {
 		rvClientEffect* effect = new rvClientEffect( effectHandle );
@@ -4489,7 +4489,7 @@ idEntity::Event_SpawnClientCrawlEffect
 ============
 */
 void idEntity::Event_SpawnClientCrawlEffect( const char* effectName, idEntity* ent, float crawlTime ) {
-	int effectHandle = gameLocal.GetEffectHandle( spawnArgs, effectName, NULL );	
+	int effectHandle = gameLocal.GetEffectHandle( spawnArgs, effectName, NULL );
 
 	if( effectHandle != -1 ) {
 		rvClientCrawlEffect* effect = new rvClientCrawlEffect( effectHandle, ent, SEC2MS( crawlTime ) );
@@ -4543,7 +4543,7 @@ bool idEntity::TouchTriggers( void ) {
 
 	numClipModels = gameLocal.clip.ClipModelsTouchingBounds( CLIP_DEBUG_PARMS GetPhysics()->GetAbsBounds(), CONTENTS_TRIGGER, clipModels, MAX_GENTITIES, this );
 	numEntities = 0;
-	
+
 	if ( !numClipModels ) {
 		return false;
 	}
@@ -4637,7 +4637,7 @@ void idEntity::ShowEditingDialog( void ) {
 /***********************************************************************
 
    Events
-	
+
 ***********************************************************************/
 
 /*
@@ -5192,7 +5192,7 @@ void idEntity::Event_Touches( idEntity *ent, bool ignoreNonTrace ) {
 		for ( int otherClipNum = 0; otherClipNum < entPhysics->GetNumClipModels(); otherClipNum++ ) {
 			idClipModel* otherClip = entPhysics->GetClipModel( otherClipNum );
 
-			int touches = gameLocal.clip.ContentsModel( CLIP_DEBUG_PARMS_SCRIPT myOrigin, myClip, myAxis, -1, 
+			int touches = gameLocal.clip.ContentsModel( CLIP_DEBUG_PARMS_SCRIPT myOrigin, myClip, myAxis, -1,
 														otherClip, otherClip->GetOrigin(), otherClip->GetAxis() );
 			if ( touches != 0 ) {
 				sdProgram::ReturnBoolean( true );
@@ -5226,7 +5226,7 @@ void idEntity::Event_TouchesBounds( idEntity *ent ) {
 	idBox a = idBox( GetPhysics()->GetBounds(), GetPhysics()->GetOrigin(), GetPhysics()->GetAxis() );
 	idBox b = idBox( ent->GetPhysics()->GetBounds(), ent->GetPhysics()->GetOrigin(), ent->GetPhysics()->GetAxis() );
 	bool touches = a.IntersectsBox( b );
-	
+
 	sdProgram::ReturnBoolean( touches );
 }
 
@@ -5356,7 +5356,7 @@ void idEntity::Event_DistanceToPoint( const idVec3 &point ) {
 /***********************************************************************
 
    Network
-	
+
 ***********************************************************************/
 
 /*
@@ -5753,7 +5753,7 @@ void idEntity::Event_EntitiesInTranslation( const idVec3& start, const idVec3& e
 	for ( int i = 0; i < count; i++ ) {
 		scriptEntityCache[ i ] = entityList[ i ];
 	}
-	sdProgram::ReturnInteger( count );	
+	sdProgram::ReturnInteger( count );
 }
 
 /*
@@ -5798,7 +5798,7 @@ void idEntity::Event_EntitiesOfType( int typeHandle ) {
 			*ent = find;
 		};
 	}
-	
+
 	sdProgram::ReturnInteger( scriptEntityCache.Num() );
 }
 
@@ -5819,7 +5819,7 @@ void idEntity::Event_EntitiesOfCollection( const char* name ) {
 			if ( !ent ) {
 				break;
 			}
-			*ent = ( *collection )[ i ];			
+			*ent = ( *collection )[ i ];
 		}
 	}
 
@@ -5877,7 +5877,7 @@ void idEntity::Event_EntitiesInBounds( const idVec3& mins, const idVec3& maxs, i
 	if ( !absoluteCoords ) {
 		bounds.TranslateSelf( GetPhysics()->GetOrigin() );
 	}
-	
+
 	idEntity* entityList[ MAX_PROXIMITY_ENTITIES ];
 
 	int count = gameLocal.clip.EntitiesTouchingBounds( bounds, contentMask, entityList, MAX_PROXIMITY_ENTITIES, true );
@@ -5904,7 +5904,7 @@ void idEntity::Event_EntitiesInLocalBounds( const idVec3& mins, const idVec3& ma
 	idBounds worldBounds = bounds;
 	worldBounds.RotateSelf( GetPhysics()->GetAxis() );
 	worldBounds.TranslateSelf( GetPhysics()->GetOrigin() );
-	
+
 	idEntity* entityList[ MAX_PROXIMITY_ENTITIES ];
 	int count = gameLocal.clip.EntitiesTouchingBounds( worldBounds, contentMask, entityList, MAX_PROXIMITY_ENTITIES, true );
 
@@ -5935,7 +5935,7 @@ void idEntity::Event_EntitiesInLocalBounds( const idVec3& mins, const idVec3& ma
 idEntity::Event_FilterEntitiesByRadius
 ================
 */
-void idEntity::Event_FilterEntitiesByRadius( const idVec3& origin, float radius, bool inclusive ) {	
+void idEntity::Event_FilterEntitiesByRadius( const idVec3& origin, float radius, bool inclusive ) {
 	radius *= radius;
 
 	int i;
@@ -6032,7 +6032,7 @@ void idEntity::FilterEntitiesByAllegiance( int mask, bool inclusive, bool ignore
 		if ( match != inclusive ) {
 			scriptEntityCache.RemoveIndex( i );
 		} else {
-			i++;			
+			i++;
 		}
 	}
 }
@@ -6053,7 +6053,7 @@ void idEntity::Event_FilterEntitiesByTouching( bool inclusive ) {
 		if ( other->GetPhysics()->GetAbsBounds().IntersectsBounds( bounds ) == ( inclusive ? false : true ) ) {
 			scriptEntityCache.RemoveIndex( i );
 		} else {
-			i++;			
+			i++;
 		}
 	}
 	sdProgram::ReturnInteger( scriptEntityCache.Num() );
@@ -6082,7 +6082,7 @@ void idEntity::Event_FilterEntitiesByFilter( int filterIndex, bool inclusive ) {
 		if ( match == ( inclusive ? false : true ) ) {
 			scriptEntityCache.RemoveIndex( i );
 		} else {
-			i++;			
+			i++;
 		}
 	}
 	sdProgram::ReturnInteger( scriptEntityCache.Num() );
@@ -6375,9 +6375,9 @@ void idEntity::Event_TurnTowards( const idVec3& dir, float maxAngularSpeed ) {
 
 	idMat3 change;
 	TransposeMultiply( GetPhysics()->GetAxis(), newAxes, change );
-	
+
 	idRotation rotation = change.ToRotation();
-	float rate = maxAngularSpeed * MS2SEC( gameLocal.msec );		
+	float rate = maxAngularSpeed * MS2SEC( gameLocal.msec );
 	rotation.SetAngle( idMath::ClampFloat( -rate, rate, rotation.GetAngle() ) );
 
 	GetPhysics()->SetAxis( GetPhysics()->GetAxis() * rotation.ToMat3() );
@@ -6462,7 +6462,7 @@ void idEntity::Event_LaunchMissile( idEntity* owner, idEntity* owner2, idEntity*
 		sdProgram::ReturnEntity( NULL );
 		return;
 	} else {
-		if ( gameLocal.isClient ) {		
+		if ( gameLocal.isClient ) {
 			if ( clientEntityDef ) {
 				sdClientProjectile* clientEntity = new sdClientProjectile();
 				clientEntity->CreateByName( &clientEntityDef->dict, clientEntityDef->dict.GetString( "scriptobject" )) ;
@@ -6567,7 +6567,7 @@ void idEntity::Event_LaunchBullet( idEntity* owner, idEntity* ignoreEntity, int 
 
 /*
 =====================
-idEntity::PlayEffect 
+idEntity::PlayEffect
 =====================
 */
 rvClientEffect* idEntity::PlayEffect( const char* effectName, const idVec3& color, const char* materialType, const idVec3& origin, const idMat3& axis, bool loop, const idVec3& endOrigin, bool viewSuppress ) {
@@ -6595,7 +6595,7 @@ void idEntity::Event_LookupEffect( const char* effectName, const char* materialT
 
 /*
 =====================
-idEntity::PlayEffect 
+idEntity::PlayEffect
 =====================
 */
 rvClientEffect* idEntity::PlayEffect( const char* effectName, const idVec3& color, const char* materialType, jointHandle_t jointHandle, bool loop, const idVec3& endOrigin ) {
@@ -7066,7 +7066,7 @@ void idEntity::Event_AllocBeam( const char* shader ) {
 	info->beamHandle = -1;
 	memset( &info->beamEnt, 0, sizeof( info->beamEnt ) );
 
-	info->beamEnt.axis.Identity();	
+	info->beamEnt.axis.Identity();
 	info->beamEnt.hModel = renderModelManager->FindModel( "_beam" );
 	info->beamEnt.customShader = declHolder.declMaterialType.LocalFind( shader );
 	info->beamEnt.bounds.Clear();
@@ -7304,7 +7304,7 @@ bool idEntity::LaunchBullet( idEntity* owner, idEntity* ignoreEntity, const idDi
 	}
 
 	idPlayer* playerOwner = owner->Cast< idPlayer >();
-	
+
 	if ( bulletDamage->GetRecordHitStats() ) {
 		if ( playerOwner != NULL ) {
 			if ( gameLocal.totalShotsFiredStat != NULL ) {
@@ -7318,7 +7318,7 @@ bool idEntity::LaunchBullet( idEntity* owner, idEntity* ignoreEntity, const idDi
 	idVec3 endPos = startPos + ( axis[ 0 ] * bulletRange );
 
 	if ( g_debugBulletFiring.GetBool() ) {
-		idVec4 colors[] = { 
+		idVec4 colors[] = {
 			idVec4( 1.0f, 0.0f, 0.0f, 1.0f ),
 			idVec4( 0.0f, 1.0f, 0.0f, 1.0f ),
 			idVec4( 0.0f, 0.0f, 1.0f, 1.0f ),
@@ -7347,7 +7347,7 @@ bool idEntity::LaunchBullet( idEntity* owner, idEntity* ignoreEntity, const idDi
 			if ( player == NULL || player == playerOwner ) {
 				continue;
 			}
-	
+
 
 			player->GetPhysics()->GetClipModel( 1 )->Draw( player->GetPhysics()->GetOrigin(), player->GetPhysics()->GetAxis(), 0.0, 20000 );
 		}
@@ -7365,7 +7365,7 @@ bool idEntity::LaunchBullet( idEntity* owner, idEntity* ignoreEntity, const idDi
 			idMat3 axis = playerOwner->firstPersonViewAxis;
 			idVec3 origin = playerOwner->firstPersonViewOrigin;
 			gameRenderWorld->DebugArrow( colorYellow, origin, origin + axis[ 0 ] * 2048.0f, 8, 20000 );
-			
+
 			gameLocal.Printf( "%i %.4f %.4f %.4f %.6f %.6f %.6f ", gameLocal.time, origin.x, origin.y, origin.z, axis[ 0 ].x, axis[ 0 ].y, axis[ 0 ].z );
 			for ( int i = 0; i < MAX_CLIENTS; i++ ) {
 				idPlayer* player = gameLocal.GetClient( i );
@@ -7442,7 +7442,7 @@ bool idEntity::DoLaunchBullet( idEntity* owner, idEntity* ignoreEntity, const id
 
 			idStr collisionSurface;
 			if ( trace.c.surfaceType != NULL ) {
-				collisionSurface = trace.c.surfaceType->GetName();	
+				collisionSurface = trace.c.surfaceType->GetName();
 			} else if ( collisionEnt != NULL ) {
 				collisionSurface = collisionEnt->GetDefaultSurfaceType();
 			}
@@ -7515,7 +7515,7 @@ bool idEntity::DoLaunchBullet( idEntity* owner, idEntity* ignoreEntity, const id
 				idVec3 dir = trace.endpos - tracerMuzzleOrigin;
 				dir.Normalize();
 
-				rvClientEffect* tracerEffect = gameLocal.PlayEffect( effectHandle, idVec3( 1.0f, 1.0f, 1.0f ), tracerMuzzleOrigin, dir.ToMat3(), false, trace.endpos ); 
+				rvClientEffect* tracerEffect = gameLocal.PlayEffect( effectHandle, idVec3( 1.0f, 1.0f, 1.0f ), tracerMuzzleOrigin, dir.ToMat3(), false, trace.endpos );
 				if ( tracerOut != NULL ) {
 					*tracerOut = tracerEffect;
 				}
@@ -7712,7 +7712,7 @@ void idEntity::Event_GetPositionPlayer( int index ) {
 	if ( index < 0 || index >= iface->GetNumPositions() ) {
 		sdProgram::ReturnEntity( NULL );
 		return;
-	}	
+	}
 	sdProgram::ReturnEntity( iface->GetPlayerAtPosition( index ) );
 }
 

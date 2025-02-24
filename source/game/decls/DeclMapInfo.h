@@ -4,7 +4,7 @@
 #ifndef __DECLMAPINFO_H__
 #define __DECLMAPINFO_H__
 
-#include "../Common.h"
+#include "Common.h"
 
 class sdDeclMapInfo : public idDecl {
 public:

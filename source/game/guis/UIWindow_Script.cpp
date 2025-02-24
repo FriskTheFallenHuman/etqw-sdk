@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -13,10 +13,10 @@ static char THIS_FILE[] = __FILE__;
 #include "UserInterfaceManager.h"
 #include "UIWindow.h"
 #include "UserInterfaceLocal.h"
-#include "../../decllib/declTypeHolder.h"
-#include "../../renderer/Image.h"
+#include "decllib/declTypeHolder.h"
+#include "renderer/Image.h"
 
-#include "../../sys/sys_local.h"
+#include "sys/sys_local.h"
 
 using namespace sdProperties;
 
@@ -220,7 +220,7 @@ void sdUIWindow::InitFunctions( void ) {
 		SD_UI_FUNC_PARM( float, "inherit", "If not 0, multiply the color with the color on the top of the color stack before pushing." )
 	SD_UI_END_FUNC_TAG
 	INIT_SCRIPT_FUNCTION( "pushColorComponents", 'v', "fffff", Script_PushColor );				// r,g,b,a, inherit previous alpha	(not a C&P error, just different ways of getting the same inputs)
-	
+
 	SD_UI_FUNC_TAG( popColor, "Pop a color from the GUI's color stack." )
 	SD_UI_END_FUNC_TAG
 	INIT_SCRIPT_FUNCTION( "popColor", 'v', "", Script_PopColor );
@@ -322,7 +322,7 @@ sdUIWindow::Script_AttachRenderCallback
 void sdUIWindow::Script_AttachRenderCallback( sdUIFunctionStack& stack ) {
 	idStr name;
 	stack.Pop( name );
-	
+
 	uiManager->SetRenderCallback( this, name );
 }
 
@@ -334,7 +334,7 @@ sdUIWindow::Script_AttachInputHandler
 void sdUIWindow::Script_AttachInputHandler( sdUIFunctionStack& stack ) {
 	idStr name;
 	stack.Pop( name );
-	
+
 	uiManager->SetInputHandler( this, name );
 }
 
@@ -359,7 +359,7 @@ void sdUIWindow::Script_DrawMaterial( sdUIFunctionStack& stack ) {
 	stack.Pop( angle );
 
 	uiMaterialInfo_t mi;
-	GetUI()->LookupMaterial( material, mi );	
+	GetUI()->LookupMaterial( material, mi );
 	deviceContext->DrawMaterial( rect, mi.material, color, scale, shift, angle );
 }
 
@@ -428,12 +428,12 @@ void sdUIWindow::Script_DrawText( sdUIFunctionStack& stack ) {
 	}
 
 	ActivateFont( false );
-	
+
 	int iFlags = idMath::Ftoi( flags );
 
 	sdWStringBuilder_Heap  builder;
 	const wchar_t* drawText = text.c_str();
-	if( ( iFlags & DTF_TRUNCATE ) && ( iFlags & DTF_SINGLELINE ) ) {		
+	if( ( iFlags & DTF_TRUNCATE ) && ( iFlags & DTF_SINGLELINE ) ) {
 
 		const wchar_t* truncationText = L"...";
 		int truncationWidth;
@@ -500,7 +500,7 @@ void sdUIWindow::Script_MeasureLocalizedText( sdUIFunctionStack& stack ) {
 	if ( str != NULL && str->GetText()[ 0 ] != L'\0' ) {
 		deviceContext->GetTextDimensions( str->GetText(), sdBounds2D( rect ), idMath::Ftoi( flags ), cachedFontHandle, idMath::Ftoi( scale ), w, h );
 	}
-	
+
 	stack.Push( idVec2( w, h ) );
 }
 
@@ -543,11 +543,11 @@ void sdUIWindow::Script_DrawLocalizedText( sdUIFunctionStack& stack ) {
 			ShortenText(textStr, sdBounds2D( rect ), cachedFontHandle, iFlags, scale, truncationText, truncationWidth, builder );
 			drawText = builder.c_str();
 		}
-		
+
 		deviceContext->SetColor( color );
 		deviceContext->SetFontSize( scale );
 		deviceContext->DrawText( drawText, sdBounds2D( rect ), iFlags );
-	}	
+	}
 }
 
 
@@ -735,8 +735,8 @@ void sdUIWindow::Script_ContainsPoint( sdUIFunctionStack& stack ) {
 	stack.Pop( rect );
 
 	idVec2 point;
-	stack.Pop( point );	
-	
+	stack.Pop( point );
+
 	sdBounds2D bounds( rect );
 	bool contained = bounds.ContainsPoint( point );
 	stack.Push( contained ? 1.0f : 0.0f );
@@ -755,7 +755,7 @@ void sdUIWindow::Script_DrawCachedMaterial( sdUIFunctionStack& stack ) {
 	stack.Pop( handle );
 	stack.Pop( rect );
 	stack.Pop( color );
-		
+
 	uiMaterialCache_t::Iterator iter = GetUI()->FindCachedMaterialForHandle( handle );
 	if( !GetUI()->IsValidMaterial( iter ) ) {
 		//assert( 0 );
@@ -775,7 +775,7 @@ void sdUIWindow::Script_DrawCachedMaterial( sdUIFunctionStack& stack ) {
 		case BDM_FIVE_PART_H:	// FALL THROUGH
 			DrawFrame( rect, iter, color );
 			break;
-	}	
+	}
 }
 
 /*
@@ -808,7 +808,7 @@ void sdUIWindow::Script_DrawTiledMaterial( sdUIFunctionStack& stack ) {
 	idVec4 drawRect = rect;
 	for( int x = 0; x < xRepeat; x++ ) {
 		drawRect.x = rect.x + ( x * rect.z );
-		for( int y = 0; y < yRepeat; y++ ) {			
+		for( int y = 0; y < yRepeat; y++ ) {
 			drawRect.y = rect.y + ( y * rect.w );
 			switch( cached.drawMode ) {
 			case BDM_USE_ST:
@@ -837,7 +837,7 @@ void sdUIWindow::Script_DrawRenderCallback ( sdUIFunctionStack& stack ) {
 
 	idVec4 rect;
 	stack.Pop( rect );
-	 
+
 	uiRenderCallback_t callback = uiManager->GetRenderCallback( callbackHandle );
 	if( callback != NULL ) {
 		callback( GetUI(), rect.x, rect.y, rect.z, rect.w );
@@ -871,7 +871,7 @@ void sdUIWindow::Script_DrawTimer( sdUIFunctionStack& stack ) {
 
 	idVec4 color;
 	stack.Pop( color );
-	
+
 	float percent;
 	stack.Pop( percent );
 
@@ -938,7 +938,7 @@ void sdUIWindow::Script_GetCachedMaterialDimensions( sdUIFunctionStack& stack ) 
 		case BDM_FRAME:
 		case BDM_TRI_PART_H:	// FALL THROUGH
 		case BDM_TRI_PART_V:	// FALL THROUGH
-		case BDM_FIVE_PART_H:	// FALL THROUGH			
+		case BDM_FIVE_PART_H:	// FALL THROUGH
 			break;
 	}
 	stack.Push( idVec2( cachedClientRect.z, cachedClientRect.w ) );
@@ -963,7 +963,7 @@ void sdUIWindow::Script_PushColor( sdUIFunctionStack& stack ) {
 	stack.Pop( color );
 	bool inherit;
 	stack.Pop( inherit );
-	
+
 	if( inherit ) {
 		const idVec4& parent = GetUI()->TopColor();
 		color.x *= parent.x;
@@ -991,7 +991,7 @@ sdUIWindow::Script_SetShaderParm
 void sdUIWindow::Script_SetShaderParm( sdUIFunctionStack& stack ) {
 	int parm;
 	stack.Pop( parm );
-	
+
 	float value;
 	stack.Pop( value );
 

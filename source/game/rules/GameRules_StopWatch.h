@@ -92,7 +92,7 @@ public:
 protected:
 	virtual void						GameState_Review( void );
 	virtual void						GameState_NextGame( void );
-	virtual void						GameState_Warmup( void );	
+	virtual void						GameState_Warmup( void );
 	virtual void						GameState_Countdown( void );
 	virtual void						GameState_GameOn( void );
 	virtual void						GameState_NextMap( void );

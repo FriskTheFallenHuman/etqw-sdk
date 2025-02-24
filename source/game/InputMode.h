@@ -9,7 +9,7 @@
 
 class sdInputMode {
 public:
-	static void				ControllerMove( bool doGameCallback, const int controllerNum, const float* controllerAxis, 
+	static void				ControllerMove( bool doGameCallback, const int controllerNum, const float* controllerAxis,
 											idVec3& viewAngles, usercmd_t& cmd ) {};
 
 protected:
@@ -28,7 +28,7 @@ protected:
 
 class sdInputModePlayer : public sdInputMode {
 public:
-	static void			ControllerMove( bool doGameCallback, const int controllerNum, const float* controllerAxis, 
+	static void			ControllerMove( bool doGameCallback, const int controllerNum, const float* controllerAxis,
 											idVec3& viewAngles, usercmd_t& cmd );
 
 	INPUTMODE_AXIS_DEFINE( pitch );
@@ -39,7 +39,7 @@ public:
 
 class sdInputModeCar : public sdInputMode {
 public:
-	static void			ControllerMove( bool doGameCallback, const int controllerNum, const float* controllerAxis, 
+	static void			ControllerMove( bool doGameCallback, const int controllerNum, const float* controllerAxis,
 											idVec3& viewAngles, usercmd_t& cmd );
 
 	INPUTMODE_AXIS_DEFINE( throttle );
@@ -50,7 +50,7 @@ public:
 
 class sdInputModeHeli : public sdInputMode {
 public:
-	static void			ControllerMove( bool doGameCallback, const int controllerNum, const float* controllerAxis, 
+	static void			ControllerMove( bool doGameCallback, const int controllerNum, const float* controllerAxis,
 											idVec3& viewAngles, usercmd_t& cmd );
 
 	INPUTMODE_AXIS_DEFINE( throttle );
@@ -61,7 +61,7 @@ public:
 
 class sdInputModeHovertank : public sdInputMode {
 public:
-	static void			ControllerMove( bool doGameCallback, const int controllerNum, const float* controllerAxis, 
+	static void			ControllerMove( bool doGameCallback, const int controllerNum, const float* controllerAxis,
 											idVec3& viewAngles, usercmd_t& cmd );
 
 	INPUTMODE_AXIS_DEFINE( forward );

@@ -55,7 +55,7 @@ public:
 
 	int								Selected() const { return _selected; }
 	void							SetSelected( int time ) { _selected = time; }
-	
+
 	void							MakeActive( void );
 	void							MakeInActive( void );
 

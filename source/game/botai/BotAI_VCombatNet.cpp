@@ -1,10 +1,10 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h" 
+#include "Game_local.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -72,7 +72,7 @@ bool idBotAI::COMBAT_Vehicle_EvadeEnemy() {
 				evadeDist = 550.0f;
 				bailOut = true;
 				vec.z = 0.0f;
-			}			
+			}
 
 			if ( vec.LengthSqr() > Square( evadeDist ) ) {
 				Bot_SetupVehicleMove( vec3_zero, -1, AIStack.stackActionNum );
@@ -90,7 +90,7 @@ bool idBotAI::COMBAT_Vehicle_EvadeEnemy() {
 			}
 		} else {
 //			assert( false );
-			VEHICLE_COMBAT_AI_SUB_NODE = &idBotAI::Enter_COMBAT_Vehicle_AttackEnemy; 
+			VEHICLE_COMBAT_AI_SUB_NODE = &idBotAI::Enter_COMBAT_Vehicle_AttackEnemy;
 			return false;
 		}
 	}
@@ -104,7 +104,7 @@ bool idBotAI::COMBAT_Vehicle_EvadeEnemy() {
 
 	if ( !enemyInfo.enemyVisible && enemyInfo.enemyLastVisTime + 500 < botWorld->gameLocalInfo.time ) {
         UpdateNonVisEnemyInfo();
-		
+
 		if ( BotLeftEnemysSight() ) {
             vec = bot_LS_Enemy_Pos;
 		} else {
@@ -162,15 +162,15 @@ bool idBotAI::COMBAT_Vehicle_AttackEnemy() {
 	if ( !enemyInfo.enemyVisible && enemyInfo.enemyLastVisTime + 5000 < botWorld->gameLocalInfo.time ) {
 		if ( !Bot_ShouldVehicleChaseHiddenEnemy() ) {
 			Bot_ResetEnemy();
-			return false; 
+			return false;
 		}
 
-        Bot_PickVehicleChaseType();	
+        Bot_PickVehicleChaseType();
 		return false;
 	}
 
 	Bot_PickBestVehicleWeapon();
-	
+
 	if ( vehicleUpdateTime < botWorld->gameLocalInfo.time ) {
         if ( VEHICLE_COMBAT_MOVEMENT_STATE == NULL ) {
 			keepEnemy = Bot_FindBestVehicleCombatMovement();
@@ -229,7 +229,7 @@ bool idBotAI::COMBAT_Vehicle_ChaseEnemy() {
 
 	if ( chaseEnemyTime < botWorld->gameLocalInfo.time ) {
 		Bot_ResetEnemy();
-		return false; 
+		return false;
 	}
 
     Bot_SetupVehicleMove( vec3_zero, enemy, ACTION_NULL );

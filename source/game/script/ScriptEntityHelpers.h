@@ -30,7 +30,7 @@ private:
 class sdScriptedEntityHelper {
 public:
 	typedef sdFactory< sdScriptedEntityHelper > factoryType_t;
-	
+
 												sdScriptedEntityHelper( void ) : _owner( NULL ) { _node.SetOwner( this ); }
 	virtual										~sdScriptedEntityHelper( void ) { }
 
@@ -169,7 +169,7 @@ private:
 	jointHandle_t								gunJoints[ AIMER_NUM_JOINTS ];
 	idVec3										ikPaths[ AIMER_IK_NUM_PATHS ];
 	idMat3										baseAxes[ AIMER_NUM_JOINTS ];
-	
+
 	idMat3										yawTranspose;
 	idMat3										pitchTranspose;
 

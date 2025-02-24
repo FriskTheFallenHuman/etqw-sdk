@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,16 +11,16 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../misc/WorldToScreen.h"
+#include "misc/WorldToScreen.h"
 #include "UIWindow.h"
 #include "UIRadialMenu.h"
 #include "UserInterfaceLocal.h"
 #include "UserInterfaceManager.h"
-#include "../Player.h"
-#include "../script/Script_Helper.h"
+#include "Player.h"
+#include "script/Script_Helper.h"
 
 
-#include "../../sys/sys_local.h"
+#include "sys/sys_local.h"
 
 // the angles on the circle
 static const float DEFAULT_WEDGE_SIZE		= 45.0f;
@@ -111,8 +111,8 @@ bool sdUIRadialMenu::radialItem_t::Update() {
 							gameLocal.Warning( "Invalid title %s", title->GetName() );
 						}
 						*/
-						
-					} 
+
+					}
 					if ( list.Num() >= 2 ) {
 						if ( list[ 1 ].Length() == 0 ) {
 							part.mi.Clear();
@@ -214,7 +214,7 @@ void sdUIRadialMenu::InitFunctions() {
 		SD_UI_FUNC_PARM( string, "enumerator", "Name of enumerator." )
 	SD_UI_END_FUNC_TAG
 	radialMenuFunctions.Set( "fillFromEnumerator",	new sdUITemplateFunction< sdUIRadialMenu >( 'v', "s",	&sdUIRadialMenu::Script_FillFromEnumerator ) );
- 
+
 	SD_UI_FUNC_TAG( transitionItemVec4, "Transition for an item." )
 		SD_UI_FUNC_PARM( float, "propertyType", "Property type. Either RTP_FORECOLOR/RTP_BACKCOLOR/RTP_PROPERTY_0/RTP_PROPERTY_1/RTP_PROPERTY_2/RTP_PROPERTY_3." )
 		SD_UI_FUNC_PARM( vec4, "from", "Transition from." )
@@ -334,7 +334,7 @@ sdUIRadialMenu::EnumerateEvents
 */
 void sdUIRadialMenu::EnumerateEvents( const char* name, const idList<unsigned short>& flags, idList< sdUIEventInfo >& events, const idTokenCache& tokenCache ) {
 	if( !idStr::Icmp( name, "onCommand" )) {
-		int id = -1;		
+		int id = -1;
 		for( int i = 0; i < flags.Num(); i++ ) {
 			const idToken& name = tokenCache[ flags[ i ] ];
 			id = NamedEventHandleForString( name.c_str() );
@@ -342,7 +342,7 @@ void sdUIRadialMenu::EnumerateEvents( const char* name, const idList<unsigned sh
 		}
 		return;
 	}
-	
+
 	if( !idStr::Icmp( name, "onMeasureItem" )) {
 		events.Append( sdUIEventInfo( RME_MEASUREITEM, 0 ) );
 		return;
@@ -388,7 +388,7 @@ sdUIRadialMenu::GetFunction
 */
 sdUIFunctionInstance* sdUIRadialMenu::GetFunction( const char* name ) {
 	const sdUITemplateFunction< sdUIRadialMenu >* function = sdUIRadialMenu::FindFunction( name );
-	if ( !function ) {		
+	if ( !function ) {
 		return sdUIWindow::GetFunction( name );
 	}
 
@@ -449,13 +449,13 @@ void sdUIRadialMenu::DrawLocal() {
 		int currentItem				= idMath::Ftoi( this->currentItem );
 
 		idVec2 origin;
-		
+
 		if( drawStyle == DS_ARC ) {
 			origin.Set( cachedClientRect.x + cachedClientRect.z * 0.5f, cachedClientRect.y + cachedClientRect.w * 0.5f );
 		} else if( drawStyle == DS_VERTICAL ) {
 			origin.Set( cachedClientRect.x + cachedClientRect.z * 0.5f, cachedClientRect.y );
 		}
-		
+
 		for ( int i = 0; i < page.items.Num(); i++ ) {
 			page.items[ i ].Update();
 		}
@@ -463,7 +463,7 @@ void sdUIRadialMenu::DrawLocal() {
 		DrawTitle( page, origin );
 		if( drawStyle == DS_ARC ) {
 			DrawItemCircle( page, origin );
-		} else if( drawStyle == DS_VERTICAL ) {			
+		} else if( drawStyle == DS_VERTICAL ) {
 			DrawItemLine( page, origin );
 		}
 	}
@@ -482,7 +482,7 @@ void sdUIRadialMenu::DrawItemCircle( radialPage_t& page, const idVec2& center ) 
 	// calculate an approximate angle interval to place the items at
 	int numDivisions = page.items.Num();
 	float angleInterval = 360.0f / ( numDivisions - 2 );
-	
+
 	// calculate the radius the circle will need to be
 	float minHeight = page.maxSize.y + verticalPadding;
 	float deltaD = 2.0f * radius * idMath::Sin( DEG2RAD( angleInterval * 0.5f ) );
@@ -501,7 +501,7 @@ void sdUIRadialMenu::DrawItemCircle( radialPage_t& page, const idVec2& center ) 
 		deviceContext->DrawCircle( center.x, center.y, idVec2( newRadius, newRadius ), 1.0f, 32, colorGreen );
 		deviceContext->DrawClippedRect( center.x - 2.0f, center.y - 2.0f, 4.0f, 4.0f, colorYellow );
 	}
-	
+
 	// calculate where the first position down can be
 	int numRows = ( page.items.Num() - 1 ) / 2;
 
@@ -513,7 +513,7 @@ void sdUIRadialMenu::DrawItemCircle( radialPage_t& page, const idVec2& center ) 
 
 	float currentY = ( numRows * ( page.maxSize.y ) ) * 0.5f;
 	float xOffset = cachedClientRect.z * 0.5f - page.maxSize.y;
-	
+
 	// draw the first item right in the center - this is the default
 	DrawItem( page, page.items[ 0 ], 0, center, center, RIS_CENTER );
 
@@ -636,7 +636,7 @@ sdUIRadialMenu::DrawItem
 ============
 */
 void sdUIRadialMenu::DrawItem( radialPage_t& page, radialItem_t& item, int index, const idVec2& center, const idVec2& offset, int radialItemStyle ) {
-	sdBounds2D	drawRect;	
+	sdBounds2D	drawRect;
 
 	idVec2 size( page.maxSize.x, item.size.y );
 
@@ -647,7 +647,7 @@ void sdUIRadialMenu::DrawItem( radialPage_t& page, radialItem_t& item, int index
 	if( RunEvent( sdUIEventInfo( RME_MEASUREITEM, 0 ) ) ) {
 		GetUI()->PopScriptVar( size );
 	}
-	
+
 	GetUI()->ClearScriptStack();
 
 	drawRect.FromRectangle( 0.0f, 0.0f, size.x, size.y );
@@ -656,7 +656,7 @@ void sdUIRadialMenu::DrawItem( radialPage_t& page, radialItem_t& item, int index
 	if( drawStyle == DS_ARC ) {
 		drawRect.TranslateSelf( 0.0f, -size.y * 0.5f );
 	}
-	
+
 	drawRect.TranslateSelf( -0.5f * drawRect.GetWidth(), 0.0f );
 
 	idVec2 delta = drawRect.GetCenter() - center;
@@ -664,9 +664,9 @@ void sdUIRadialMenu::DrawItem( radialPage_t& page, radialItem_t& item, int index
 	float distance;
 	ToPolar( delta, theta, distance );
 
-	item.lastDrawAngle = theta;	
-		
-	if ( item.title != NULL ) {				
+	item.lastDrawAngle = theta;
+
+	if ( item.title != NULL ) {
 		bool useIndex = TestFlag( RMF_USE_NUMBER_SHORTCUTS );
 		const wchar_t* shortcutKey = L"";
 
@@ -683,7 +683,7 @@ void sdUIRadialMenu::DrawItem( radialPage_t& page, radialItem_t& item, int index
 				}
 			} else {
 				shortcutKey = va( L"%hs", item.commandKey.c_str() );
-			}			
+			}
 		}
 
 		GetUI()->PushScriptVar( item.drawCallback.c_str() );
@@ -759,7 +759,7 @@ void sdUIRadialMenu::HandleArcMouseMove( const sdSysEvent* event, const idVec2 d
 	idVec2 moveDelta = ( newPosition - lastCursorPos );
 
 	// if it hasn't moved a few units from the last position that was processed then don't process it
-	float moveDist = moveDelta.Length();	
+	float moveDist = moveDelta.Length();
 
 	// record the processing
 	lastArcMoveInfo.Set( distance, angle );
@@ -773,15 +773,15 @@ void sdUIRadialMenu::HandleArcMouseMove( const sdSysEvent* event, const idVec2 d
 	bool useDelta = false;
 
 	if ( event->IsControllerMouseEvent() ) {
-	
+
 	} else {
 		// check whether the player has made a fast movement (to be handled gesturally)
-		bool isExtremeVerticalItem =	( iCurrentItem != -1 && 
+		bool isExtremeVerticalItem =	( iCurrentItem != -1 &&
 										( ( idMath::Fabs( page.items[ iCurrentItem ].lastDrawAngle - 180.0f ) < 4.0f ) ||
 										idMath::Fabs( page.items[ iCurrentItem ].lastDrawAngle ) < 4.0f ) );
 		bool isVerticalMove = idMath::Fabs( angle - 180.0f ) < 4.0f || idMath::Fabs( angle ) < 4.0f;
 
-		
+
 		if ( moveDist > 5.0f || ( isVerticalMove && moveDist >= 2.0f ) ) {
 			if ( idMath::Fabs( moveDelta.x ) < 2.0f ) {
 				// not as sensitive to movements if they're largely up & down
@@ -800,7 +800,7 @@ void sdUIRadialMenu::HandleArcMouseMove( const sdSysEvent* event, const idVec2 d
 
 		if ( useDelta ) {
 			// do a super-fast snappy move
-			
+
 			// find the closest point of the flick line relative to the center
 			idVec2 dir = moveDelta;
 			dir.Normalize();
@@ -846,11 +846,11 @@ void sdUIRadialMenu::HandleArcMouseMove( const sdSysEvent* event, const idVec2 d
 	int	newItem = iCurrentItem;
 	int checkedItems = 0;
 	bool found = false;
-	
+
 	int i = ( iCurrentItem + 1 ) % numItems;
 	while( checkedItems < page.items.Num() ) {
 		float min = page.items[ i ].lastDrawAngle - angleInterval * 0.5f;
-		
+
 		float max = min + angleInterval;
  		float angleDifference = idMath::AngleNormalize360( idMath::Fabs( angle - page.items[ i ].lastDrawAngle ) );
 
@@ -933,7 +933,7 @@ bool sdUIRadialMenu::PostEvent( const sdSysEvent* event ) {
 			}
 			this->currentItem = idMath::ClampInt( 0, page.items.Num() - 1, currentItem );
 		}
-	
+
 	} else if ( event->IsMouseButtonEvent() ) {
 		if ( event->IsButtonDown() ) {
 			// handle mouse wheel
@@ -968,7 +968,7 @@ bool sdUIRadialMenu::PostEvent( const sdSysEvent* event ) {
 							keyNum = K_0;
 						} else {
 							keyNum = (keyNum_t)( K_1 + i );
-						}						
+						}
 					}
 				} else {
 					keyNum = sys->Keyboard().ConvertCharToKey( item.commandKey.c_str()[0] );	// FIXME: change storage to just a char
@@ -1023,11 +1023,11 @@ bool sdUIRadialMenu::PostEvent( const sdSysEvent* event ) {
 sdUIRadialMenu::Script_InsertItem
 ============
 */
-void sdUIRadialMenu::Script_InsertItem( sdUIFunctionStack& stack ) {	
+void sdUIRadialMenu::Script_InsertItem( sdUIFunctionStack& stack ) {
 	int pageNum;
 	stack.Pop( pageNum );
 	if( pageNum < 0 ) {
-		pageNum = idMath::Ftoi( currentPage );		
+		pageNum = idMath::Ftoi( currentPage );
 	}
 
 	if( pageNum < 0 || pageNum > pages.Num() ) {
@@ -1074,7 +1074,7 @@ void sdUIRadialMenu::Script_InsertItem( sdUIFunctionStack& stack ) {
 sdUIRadialMenu::Script_InsertPage
 ============
 */
-void sdUIRadialMenu::Script_InsertPage( sdUIFunctionStack& stack ) {	
+void sdUIRadialMenu::Script_InsertPage( sdUIFunctionStack& stack ) {
 	radialPage_t& page = pages.Alloc();
 
 	idStr title;
@@ -1093,7 +1093,7 @@ void sdUIRadialMenu::Script_InsertPage( sdUIFunctionStack& stack ) {
 sdUIRadialMenu::Script_PushPage
 ============
 */
-void sdUIRadialMenu::Script_PushPage( sdUIFunctionStack& stack ) {	
+void sdUIRadialMenu::Script_PushPage( sdUIFunctionStack& stack ) {
 	int index;
 	stack.Pop( index );
 	pageStack.Push( index );
@@ -1113,11 +1113,11 @@ void sdUIRadialMenu::Script_PushPage( sdUIFunctionStack& stack ) {
 sdUIRadialMenu::Script_PopPage
 ============
 */
-void sdUIRadialMenu::Script_PopPage( sdUIFunctionStack& stack ) {	
+void sdUIRadialMenu::Script_PopPage( sdUIFunctionStack& stack ) {
 	int index = -1;
-	
+
 	if( !pageStack.Empty() ) {
-		pageStack.Pop();		
+		pageStack.Pop();
 	}
 	if( !pageStack.Empty() ) {
 		index = pageStack.Top();
@@ -1144,7 +1144,7 @@ void sdUIRadialMenu::OnCurrentPageChanged( const float oldValue, const float new
 		} else {
 			currentItem = -1.0f;
 		}
-			
+
 		newPage->maxSize.Zero();
 		MakeLayoutDirty();
 	} else {
@@ -1172,9 +1172,9 @@ void sdUIRadialMenu::Script_GetItemData( sdUIFunctionStack& stack ) {
 	if( pageNum < 0 ) {
 		pageNum = idMath::Ftoi( currentPage );
 	}
-	
+
 	if( itemNum < 0 ) {
-		itemNum = idMath::Ftoi( currentItem );		
+		itemNum = idMath::Ftoi( currentItem );
 	}
 
 	radialItem_t* item = GetSafeItem( pageNum, itemNum );
@@ -1182,7 +1182,7 @@ void sdUIRadialMenu::Script_GetItemData( sdUIFunctionStack& stack ) {
 		stack.Push( "" );
 		return;
 	}
-	
+
 	stack.Push( item->commandData[ dataIndex ] );
 }
 
@@ -1280,7 +1280,7 @@ void sdUIRadialMenu::Script_LoadFromDef( sdUIFunctionStack& stack ) {
 		page.popFactor = def->GetPage( i ).GetKeys().GetFloat( "popFactor", "1.5" );
 		LoadFromDef( def->GetPage( i ), page );
 	}
-	
+
 	if( pages.Num() ) {
 		currentPage = 0.0f;
 		if( pages.Front().items.Num() ) {
@@ -1331,10 +1331,10 @@ void sdUIRadialMenu::LoadFromDef( const sdDeclRadialMenu& def, radialPage_t& pag
 		const idDict& keys = def.GetItemKeys( i );
 		LoadPrefixFromDict( "data",		keys, item.commandData );
 		LoadPrefixFromDict( "command",	keys, item.commandID );
-		
+
 		item.commandKey				= keys.GetString( "key" );
 		item.commandNumberKey		= keys.GetString( "numberKey" );
-		
+
 		item.title					= def.GetItemTitle( i );
 		item.flags.drawChevron		= keys.GetBool( "drawChevron", "0" );
 		item.flags.enabled			= keys.GetBool( "enabled", "1" );
@@ -1508,7 +1508,7 @@ void sdUIRadialMenu::Script_TransitionItemVec4( sdUIFunctionStack& stack ) {
 	stack.Pop( to );
 	stack.Pop( time );
 	stack.Pop( accel );
-	stack.Pop( item );	
+	stack.Pop( item );
 	stack.Pop( page );
 
 	if( time < 0.0f ) {
@@ -1518,7 +1518,7 @@ void sdUIRadialMenu::Script_TransitionItemVec4( sdUIFunctionStack& stack ) {
 
 	// handle all pages
 	if( page < 0.0f ) {
-		for( int i = 0; i < pages.Num(); i++ ) {			
+		for( int i = 0; i < pages.Num(); i++ ) {
 			InitVec4Transition( idMath::Ftoi( property ), from, to, idMath::Ftoi( time ), accel, item, i );
 		}
 	} else {
@@ -1578,7 +1578,7 @@ void sdUIRadialMenu::Script_GetItemTransitionVec4Result( sdUIFunctionStack& stac
 
 	stack.Pop( property );
 	stack.Pop( defaultValue );
-	stack.Pop( item );	
+	stack.Pop( item );
 	stack.Pop( page );
 
 	if( property < RTP_FORECOLOR || property >= RTP_PROPERTY_MAX ) {
@@ -1631,7 +1631,7 @@ void sdUIRadialMenu::Script_ClearTransitions( sdUIFunctionStack& stack ) {
 			if( iItem < 0 ) {
 				for( int trans = 0; trans < page.items.Num(); trans++ ) {
 					ClearTransition( page.items[ trans ].transition );
-				}				
+				}
 			} else {
 				ClearTransition( page.items[ iItem ].transition );
 			}
@@ -1640,8 +1640,8 @@ void sdUIRadialMenu::Script_ClearTransitions( sdUIFunctionStack& stack ) {
 		radialPage_t& radialPage = pages[ page ];
 		if( iItem < 0 ) {
 			for( int trans = 0; trans < radialPage.items.Num(); trans++ ) {
-				ClearTransition( radialPage.items[ trans ].transition );				
-			}			
+				ClearTransition( radialPage.items[ trans ].transition );
+			}
 		} else if( iItem < radialPage.items.Num() ) {
 			ClearTransition( radialPage.items[ iItem ].transition );
 		}
@@ -1692,10 +1692,10 @@ void sdUIRadialMenu::MoveToFirstEnabledItem( int index ) {
 	if( currentPage < 0 || currentPage >= pages.Num() ) {
 		currentItem = -1.0f;
 		return;
-	}	
+	}
 	currentItem = index;
 	/* jrad - allow selection of disabled items to improve usability (muscle-memory)
-	int item = idMath::Ftoi( currentItem );	
+	int item = idMath::Ftoi( currentItem );
 	radialPage_t& page = pages[ idMath::Ftoi( currentPage ) ];
 
 	if( page.items.Num() == 0 ) {
@@ -1705,7 +1705,7 @@ void sdUIRadialMenu::MoveToFirstEnabledItem( int index ) {
 	if( item < 0 || item >= page.items.Num() ) {
 		item = 0;
 	}
-	
+
 	if( item >= page.items.Num() ) {
 		return;
 	}
@@ -1746,7 +1746,7 @@ bool sdUIRadialMenu::OnValidateDrawStyle( const float newValue ) {
 sdUIRadialMenu::ApplyLayout
 ============
 */
-void sdUIRadialMenu::ApplyLayout() {	
+void sdUIRadialMenu::ApplyLayout() {
 	if( windowState.recalculateLayout ) {
 		int textWidth;
 		int textHeight;
@@ -1755,7 +1755,7 @@ void sdUIRadialMenu::ApplyLayout() {
 			assert( 0 );
 			return;
 		}
-		
+
 		ActivateFont( true );
 		sdBounds2D screenBounds( 0.0f, 0.0f, SCREEN_WIDTH, SCREEN_HEIGHT );
 

@@ -77,8 +77,8 @@ ID_INLINE type * idEntityPtr<type>::operator->( void ) const {
 }
 
 template< class type >
-ID_INLINE idEntityPtr<type>::operator type * ( void ) const { 
-	return GetEntity(); 
+ID_INLINE idEntityPtr<type>::operator type * ( void ) const {
+	return GetEntity();
 }
 
 #endif // __ENTITY_PTR_H__

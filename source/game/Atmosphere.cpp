@@ -7,7 +7,7 @@ Atmosphere class
 The level designer places this entity class in his level if he wants an atmosphere.
 */
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -22,9 +22,9 @@ static char THIS_FILE[] = __FILE__;
 #include "script/Script_ScriptObject.h"
 #include "Player.h"
 #include "Misc.h"
-#include "../renderer/Material.h"
-#include "../decllib/declTypeHolder.h"
-#include "../decllib/declRenderBinding.h"
+#include "renderer/Material.h"
+#include "decllib/declTypeHolder.h"
+#include "decllib/declRenderBinding.h"
 #include "effects/PrecipitationSystem.h"
 #include "effects/RainEffect.h"
 #include "effects/SnowEffect.h"
@@ -35,7 +35,7 @@ static char THIS_FILE[] = __FILE__;
 ===============================================================================
 
 	sdAbstractTemplatedParticlePrecipitationSystem
-	
+
 ===============================================================================
 */
 
@@ -96,7 +96,7 @@ void sdAbstractTemplatedParticlePrecipitationSystem::FreeRenderEntity( void ) {
 ===============================================================================
 
 	sdAtmosphereInstance
-	
+
 ===============================================================================
 */
 
@@ -170,7 +170,7 @@ sdAtmosphereInstance::DeActivate
 */
 void sdAtmosphereInstance::DeActivate() {
 	active = false;
-	
+
 	// Hide stuff
 	renderable->FreeModelDef();
 	renderable->FreeLightDef();
@@ -196,7 +196,7 @@ void sdAtmosphereInstance::UpdatePrecipitationParms( bool force ) {
 		const sdPlayZone* pz = gameLocal.GetPlayZone( player->renderView.vieworg, sdPlayZone::PZF_HEIGHTMAP );
 		if ( pz != NULL ) {
 			newHeightMap = &pz->GetHeightMap();
-		}		
+		}
 	}
 
 	if ( force || newHeightMap != cachedHeightMap ) {
@@ -265,7 +265,7 @@ void sdAtmosphereInstance::SetupPrecipitation( const sdHeightMapInstance* height
 				precParms[ i ].tumbleStrength == newParms.tumbleStrength &&
 				precParms[ i ].material == newParms.material &&
 				precParms[ i ].model == newParms.model &&
-				precParms[ i ].effect == newParms.effect ) {	
+				precParms[ i ].effect == newParms.effect ) {
 				continue;
 			}
 		}
@@ -301,7 +301,7 @@ void sdAtmosphereInstance::SetupPrecipitation( const sdHeightMapInstance* height
 ===============================================================================
 
 	sdAtmosphere
-	
+
 ===============================================================================
 */
 
@@ -330,7 +330,7 @@ CLASS_DECLARATION( idEntity, sdAtmosphere )
 	EVENT( EV_Atmosphere_setPostProcessSaturation,	sdAtmosphere::Event_SetPostProcessSaturation )
 	EVENT( EV_Atmosphere_setPostProcessContrast,	sdAtmosphere::Event_SetPostProcessContrast )
 	EVENT( EV_Atmosphere_setPostProcessGlareParms,	sdAtmosphere::Event_SetPostProcessGlareParms )
-	
+
 	EVENT( EV_Atmosphere_isNight, sdAtmosphere::Event_IsNight )
 END_CLASS
 
@@ -406,7 +406,7 @@ void sdAtmosphere::SetAtmosphere_f( const idCmdArgs &args ) {
 	// I don't trust renderworld updates from the command system, just reset the timestamp so the gamecode picks it up later...
 	currentAtmosphere->currentAtmosphereInstance->SetDecl( atm );
 
-	const sdDeclAmbientCubeMap* ambientCubeMap = atm->GetAmbientCubeMap();	
+	const sdDeclAmbientCubeMap* ambientCubeMap = atm->GetAmbientCubeMap();
 	FloodAmbientCubeMap( currentAtmosphere->currentAtmosphereInstance->GetFloodOrigin(), ambientCubeMap );
 
 	currentAtmosphere->forceUpdate = true;
@@ -430,7 +430,7 @@ void sdAtmosphere::Spawn( void ) {
 		InitCommands();
 
 		instances.Append( instance );
-		
+
 		currentAtmosphereInstance = instance;
 		currentAtmosphereInstance->Activate();
 
@@ -441,7 +441,7 @@ void sdAtmosphere::Spawn( void ) {
 
 	int areaNum = gameRenderWorld->PointInArea( GetPhysics()->GetOrigin() );
 	instance->SetFloodOrigin( GetPhysics()->GetOrigin() );
-	
+
 	const sdDeclAmbientCubeMap* ambientCubeMap = atmosphere->GetAmbientCubeMap();
 
 	gameRenderWorld->SetCubemapSunProperties( ambientCubeMap, atmosphere->GetSunDirection(), atmosphere->GetSunColor() );
@@ -491,7 +491,7 @@ sdAtmosphere::sdAtmosphere() :
 	areaAtmospheres = NULL;
 	windVector.Zero();
 	windVectorRB = declHolder.FindRenderBinding( "windWorld", false );
-} 
+}
 
 /*
 ================
@@ -542,7 +542,7 @@ sdAtmosphere::Think
 void sdAtmosphere::Think( void ) {
 
 	renderView_t* useView = NULL;
-	
+
 	renderView_t view;
 	if ( sdDemoManager::GetInstance().CalculateRenderView( &view ) ) {
 		useView = &view;

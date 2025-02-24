@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 #include "Simd_Generic.h"
@@ -49,7 +49,7 @@ const char * idSIMD_3DNow::GetName( void ) const {
 // uses the software prefetch instruction to pre-read the data.
 // USE 64 * 1024 FOR THIS VALUE IF YOU'RE ALWAYS FILLING A "CLEAN CACHE"
 
-#define BLOCK_PREFETCH_COPY  infinity // no limit for movq/movntq w/block prefetch 
+#define BLOCK_PREFETCH_COPY  infinity // no limit for movq/movntq w/block prefetch
 #define CACHEBLOCK 80h // number of 64-byte blocks (cache lines) for block prefetch
 // For the largest size blocks, a special technique called Block Prefetch
 // can be used to accelerate the read operations.   Block Prefetch reads
@@ -221,7 +221,7 @@ $memcpy_bp_3:
 	add		esi, 64						// update source pointer
 	movntq	[edi   ], mm0				// write 64 bits, bypassing cache
 	movntq	[edi+ 8], mm1				//    note: movntq also prevents the CPU
-	movntq	[edi+16], mm2				//    from READING the destination address 
+	movntq	[edi+16], mm2				//    from READING the destination address
 	movntq	[edi+24], mm3				//    into the cache, only to be over-written,
 	movntq	[edi+32], mm4				//    so that also helps performance
 	movntq	[edi+40], mm5
@@ -261,7 +261,7 @@ $memcpy_last_few:						// dword aligned from before movsd's
 	jz		$memcpy_final				// no more, let's leave
 	rep		movsb						// the last 1, 2, or 3 bytes
 
-$memcpy_final: 
+$memcpy_final:
 	emms								// clean up the MMX state
 	sfence								// flush the write buffer
 	mov		eax, [dest]					// ret value = destination pointer

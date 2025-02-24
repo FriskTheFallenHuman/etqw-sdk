@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -211,7 +211,7 @@ void idDragEntity::Update( idPlayer *player ) {
 						newBodyName = af->GetAFPhysics()->GetBody( trace.c.id )->GetName();
 						// always drag the center of the body for stability
 						trace.c.point = af->GetAFPhysics()->GetOrigin( trace.c.id );
-						
+
 					} else if ( newEnt->IsType( sdTransport::Type ) ) {
 
 						// joint being dragged
@@ -640,7 +640,7 @@ void idEditEntities::DisplayEntities( void ) {
 			const char* string = ent->spawnArgs.GetString( textKey );
 
 			const idSoundShader *ss = NULL;
-			
+
 			if( idStr::Length( string ) > 0 ) {
 				ss = declHolder.declSoundShaderType.LocalFind( string );
 			}
@@ -822,7 +822,7 @@ idGameEdit::FindEntity
 ================
 */
 idEntity *idGameEdit::FindEntity( const char *name ) const {
-	return gameLocal.FindEntity( name ); 
+	return gameLocal.FindEntity( name );
 }
 
 /*
@@ -947,7 +947,7 @@ void idGameEdit::EntityChangeSpawnArgs( idEntity *ent, const idDict *newArgs ) {
 	if ( ent ) {
 		for ( int i = 0 ; i < newArgs->GetNumKeyVals () ; i ++ ) {
 			const idKeyValue *kv = newArgs->GetKeyVal( i );
-	        
+
 			if ( kv->GetValue().Length() > 0 ) {
 				ent->spawnArgs.Set ( kv->GetKey(), kv->GetValue() );
 			} else {
@@ -1070,7 +1070,7 @@ idGameEdit::PlayerGetViewAngles
 void idGameEdit::PlayerGetViewAngles( idAngles &angles ) const {
 	if( gameLocal.GetLocalPlayer() != NULL )  {
 		angles = gameLocal.GetLocalPlayer()->viewAngles;
-	}	
+	}
 }
 
 /*
@@ -1119,13 +1119,13 @@ idGameEdit::MapSaveClass
 */
 void idGameEdit::MapSaveClass( const char *path, const char* classname ) const {
 
-	idMapFile *mapFile = gameLocal.GetLevelMap();	
+	idMapFile *mapFile = gameLocal.GetLevelMap();
 	if ( mapFile != NULL ) {
 		idFile* f = fileSystem->OpenFileWrite( ( path != NULL && path[0] != '\0' ) ? path : va( "%s.entities", mapFile->GetName()) );
 		if ( f != NULL ) {
 			int num = 0;
 			for( int i = 0; i < mapFile->GetNumEntities(); i++ ) {
-				idMapEntity* ent = mapFile->GetEntity( i ); 
+				idMapEntity* ent = mapFile->GetEntity( i );
 				if( idStr::Icmp( ent->epairs.GetString( "classname" ), classname ) == 0 ) {
 					ent->Write( f, num );
 					num++;
@@ -1239,7 +1239,7 @@ int idGameEdit::MapGetEntitiesMatchingClassWithString( const char *classname, co
 			if ( ent != NULL ) {
 				idStr work = ent->epairs.GetString( "classname" );
 				if ( work.Icmp( classname ) == 0 ) {
-					if ( matchKey && *matchKey && matchValue && *matchValue ) { 
+					if ( matchKey && *matchKey && matchValue && *matchValue ) {
 						work = ent->epairs.GetString( matchKey );
 						if ( count < max && work.Icmp( matchValue ) == 0 ) {
 							list[count++] = ent->epairs.GetString( "name" );
@@ -1265,13 +1265,13 @@ bool idGameEdit::PlayerTraceFromEye ( trace_t &results, float length, int conten
 	idVec3		start;
 	idVec3		end;
 	idAngles	angles;
-		
+
 	PlayerGetEyePosition( start );
 	PlayerGetEyePosition( end );
 	PlayerGetViewAngles ( angles );
-	
+
 	end += angles.ToForward() * length;
-	
+
 	return gameLocal.clip.TracePoint ( CLIP_DEBUG_PARMS results, start, end, contentMask, gameLocal.GetLocalPlayer() );
 }
 
@@ -1281,7 +1281,7 @@ idGameEdit::EffectRefreshTemplate
 ================
 */
 void idGameEdit::EffectRefreshTemplate ( int effectIndex ) const {
-	rvClientEntity* cent;	
+	rvClientEntity* cent;
 
 	// Restart all effects
 	for ( cent = gameLocal.clientSpawnedEntities.Next(); cent; cent = cent->spawnNode.Next() ) {
@@ -1301,7 +1301,7 @@ int idGameEdit::GetGameTime ( int *previous ) const {
 	if ( previous ) {
 		*previous = gameLocal.previousTime;
 	}
-	
+
 	return gameLocal.time;
 }
 

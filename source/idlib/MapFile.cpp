@@ -279,7 +279,7 @@ bool idMapPatch::Write( idFile *fp, int primitiveNum, const idVec3 &origin ) con
 		fp->WriteFloatString( " )\n" );
 	}
 	fp->WriteFloatString( "  )\n" );
-	
+
 	// write patch epairs
 	for ( i = 0; i < epairs.GetNumKeyVals(); i++) {
 		fp->WriteFloatString( "  \"%s\" \"%s\"\n", epairs.GetKeyVal(i)->GetKey().c_str(), epairs.GetKeyVal(i)->GetValue().c_str());
@@ -407,7 +407,7 @@ idMapBrush *idMapBrush::Parse( idLexer &src, const idVec3 &origin, bool newForma
 			return NULL;
 		}
 		side->origin = origin;
-		
+
 		// read the material
 		if ( !src.ReadTokenOnLine( &token ) ) {
 			src.Error( "idMapBrush::Parse: unable to read brush side material" );
@@ -498,7 +498,7 @@ idMapBrush *idMapBrush::ParseQ3( idLexer &src, const idVec3 &origin ) {
 		side->texMat[0] = idVec3( 0.03125f, 0.0f, 0.0f );
 		side->texMat[1] = idVec3( 0.0f, 0.03125f, 0.0f );
 		side->origin = origin;
-		
+
 		// Q2 allowed override of default flags and values, but we don't any more
 		if ( src.ReadTokenOnLine( &token ) ) {
 			if ( src.ReadTokenOnLine( &token ) ) {
@@ -1191,12 +1191,12 @@ bool idMapFile::ParseBotEntities( const char *filename ) {
 		return false;
 	}
 
-	while( 1 ) {		
+	while( 1 ) {
 		botEnt = idMapEntity::ParseActions( src );
-		
+
 		if ( !botEnt ) {
 			break;
-		}		
+		}
 		entities.Append( botEnt );
 	}
 

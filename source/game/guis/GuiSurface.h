@@ -4,7 +4,7 @@
 #ifndef __GUISURFACE_H__
 #define __GUISURFACE_H__
 
-#include "../client/ClientEntity.h"
+#include "client/ClientEntity.h"
 #include "GuiSurfaceRenderable.h"
 
 class sdGuiSurface : public rvClientEntity {

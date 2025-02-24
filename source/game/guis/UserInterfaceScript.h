@@ -16,7 +16,7 @@ private:
 		EO_CALL_EVENT,						// event handle
 		EO_IF,								// if statement
 		EO_BREAK,							// trigger a breakpoint
-		EO_RETURN,							// stop execution		
+		EO_RETURN,							// stop execution
 		EO_NUM_OPS,
 	} opCode_t;
 

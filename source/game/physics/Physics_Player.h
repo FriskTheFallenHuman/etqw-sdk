@@ -227,7 +227,7 @@ public:	// common physics interface
 	void					UpdateBounds( void );
 
 	void					UpdateCollisionMerge( void );
-	void					ResetCollisionMerge( const idVec3& origin ); 
+	void					ResetCollisionMerge( const idVec3& origin );
 
 	const idClipModel*		GetNormalClipModel( void ) const { return clipModel_normal; }
 	const idClipModel*		GetCrouchClipModel( void ) const { return clipModel_crouch; }
@@ -342,7 +342,7 @@ protected:
 	float 					pm_waterFriction;
 	float 					pm_flyFriction;
 	float 					pm_noclipFriction;
-	
+
 	int						proneTimes[ PT_MAX ];
 
 	int						jumpAllowedTime;

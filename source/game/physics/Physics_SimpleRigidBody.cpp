@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,11 +11,11 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Physics_SimpleRigidBody.h"
-#include "../Entity.h"
-#include "../Player.h"
-#include "../ContentMask.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
+#include "Entity.h"
+#include "Player.h"
+#include "ContentMask.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
 
 CLASS_DECLARATION( idPhysics_Base, sdPhysics_SimpleRigidBody )
 END_CLASS
@@ -240,7 +240,7 @@ bool sdPhysics_SimpleRigidBody::TestIfAtRest( void ) const {
 		return true;
 	}
 
-	// when its finished bouncing the collision impulse code manually sets the 
+	// when its finished bouncing the collision impulse code manually sets the
 	// velocities to zero
 	if ( current.linearVelocity != vec3_origin || current.angularVelocity != vec3_origin ) {
 		return false;
@@ -1314,7 +1314,7 @@ bool sdPhysics_SimpleRigidBody::CheckNetworkStateChanges( networkStateMode_t mod
 		return false;
 	}
 
-	if ( mode == NSM_BROADCAST ) { 
+	if ( mode == NSM_BROADCAST ) {
 		NET_GET_BASE( sdSimpleRigidBodyBroadcastState );
 
 		if ( baseData.localPosition != localOrigin ) {

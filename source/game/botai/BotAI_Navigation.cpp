@@ -1,15 +1,15 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
 #define new DEBUG_NEW
 #endif
 
-#include "../Game_local.h"
-#include "../ContentMask.h"
+#include "Game_local.h"
+#include "ContentMask.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -68,7 +68,7 @@ void idBotNodeGraph::SaveNodes( const char * filename ) {
 		return;
 	}
 
-	file->WriteInt( NODE_VERSION );	
+	file->WriteInt( NODE_VERSION );
 
 	file->WriteInt( nodes.Num() );
 
@@ -119,7 +119,7 @@ void idBotNodeGraph::LoadNodes( const char *filename ) {
 
 	if ( version == OLD_NODE_VERSION ) { //mal: too late to redo the nodes now, so support the old format for a bit....
 		file->ReadInt( numNodes );
-	
+
 		nodes.SetNum( numNodes );
 		for( int i = 0; i < numNodes; i++ ) {
 			nodes[ i ] = new idBotNode;
@@ -146,7 +146,7 @@ void idBotNodeGraph::LoadNodes( const char *filename ) {
 		}
 	} else if ( version == NODE_VERSION ) {
 		file->ReadInt( numNodes );
-	
+
 		nodes.SetNum( numNodes );
 		for( int i = 0; i < numNodes; i++ ) {
 		    nodes[ i ] = new idBotNode;
@@ -295,7 +295,7 @@ void idBotNodeGraph::CreateNodePath( const struct clientInfo_t *botInfo, const i
 	openList.AssureSize( MAX_OPEN, 0 );
 
 	// Add the starting node to the list. Its costs will always be 0
-	openList[ 1 ] = start->num; 
+	openList[ 1 ] = start->num;
 	gCost[ start->num ] = 0.0f;
 	fCost[ start->num ] = 0.0f;
 	numOpen++;
@@ -340,7 +340,7 @@ void idBotNodeGraph::CreateNodePath( const struct clientInfo_t *botInfo, const i
 		}
 
         for( j = 0; j < currentNode->links.Num(); j++ ) {
-            
+
 			const idBotNode * newNode = currentNode->links[ j ].node;
 
 			if ( newNode->team != botInfo->team && newNode->team != NOTEAM ) {
@@ -564,7 +564,7 @@ void idBotNodeGraph::DrawNodes() {
 
 	idBotNode * nearestNode = GetNearestEditNode();
 
-    for( i = 0; i < nodes.Num(); i++ ) { 
+    for( i = 0; i < nodes.Num(); i++ ) {
 
 		if ( bot_drawNodeNumber.GetInteger() != -1 && bot_drawNodeNumber.GetInteger() != i ) {
 			continue;
@@ -587,7 +587,7 @@ void idBotNodeGraph::DrawNodes() {
 			end = node->origin;
 			end.z += 48.0f;
 			gameRenderWorld->DebugLine( colorRed, node->origin, end, 16 );
-			
+
 			end = node->origin;
 			end.z += ( 48.0f + 8.0f );
 

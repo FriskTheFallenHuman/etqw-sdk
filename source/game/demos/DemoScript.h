@@ -15,7 +15,7 @@ public:
 		virtual bool		Run( sdDemoScript& script ) const = 0;
 		virtual bool		Parse( idParser& src ) = 0;
 	};
-	
+
 									sdDemoScript() {}
 									~sdDemoScript() {
 										cameras.DeleteContents();

@@ -1,5 +1,5 @@
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,7 +12,7 @@ static char THIS_FILE[] = __FILE__;
 #include "UserInterfaceLocal.h"
 #include "UINews.h"
 
-#include "../../sys/sys_local.h"
+#include "sys/sys_local.h"
 
 SD_UI_IMPLEMENT_CLASS( sdUINews, sdUIWindow )
 
@@ -88,7 +88,7 @@ sdUINews::GetFunction
 */
 sdUIFunctionInstance* sdUINews::GetFunction( const char* name ) {
 	const sdUITemplateFunction< sdUINews >* function = sdUINews::FindFunction( name );
-	if( !function ) {		
+	if( !function ) {
 		return sdUIWindow::GetFunction( name );
 	}
 
@@ -159,7 +159,7 @@ void sdUINews::CalcOffsets() {
 
 		scrollTargetTime = scrollStartTime + SEC2MS( speed );
 		float totalTime = static_cast< float >( scrollTargetTime - scrollStartTime );
-		float percent = static_cast< float >( now - scrollStartTime ) / totalTime;	
+		float percent = static_cast< float >( now - scrollStartTime ) / totalTime;
 
 		if ( percent >= 1.0f ) {
 			percent = 1.0f;
@@ -191,7 +191,7 @@ void sdUINews::CalcOffsets() {
 
 		scrollTargetTime = scrollStartTime + SEC2MS( speed );
 		float totalTime = static_cast< float >( scrollTargetTime - scrollStartTime );
-		float percent = static_cast< float >( now - scrollStartTime ) / totalTime;	
+		float percent = static_cast< float >( now - scrollStartTime ) / totalTime;
 
 		if ( percent >= 1.0f ) {
 			percent = 1.0f;
@@ -379,7 +379,7 @@ sdUINews::EnumerateEvents
 ================
 */
 void sdUINews::EnumerateEvents( const char* name, const idList<unsigned short>& flags, idList< sdUIEventInfo >& events, const idTokenCache& tokenCache ) {
-	
+
 	if( !idStr::Icmp( name, "onDrawButton" ) ) {
 		events.Append( sdUIEventInfo( NE_DRAW_BUTTON, 0 ));
 		return;
@@ -488,12 +488,12 @@ bool sdUINews::CheckButtonMouseOver( const sdSysEvent* event, const idVec2& poin
 		} else if ( currentButton == BR_NEXT ) {
 			RunEvent( sdUIEventInfo( NE_MOUSE_EXIT_NEXT, 0 ) );
 		}
-		
+
 		currentButton = BR_NONE;
 		currentClickedButton = BR_NONE; // cancel any button up events
 		return true;
-	} 
-	
+	}
+
 	// enter button
 	if( button != BR_NONE && currentButton == BR_NONE ) {
 		currentButton = button;

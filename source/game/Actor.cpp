@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -171,7 +171,7 @@ idAnimState::AnimDone
 */
 bool idAnimState::AnimDone( int blendFrames ) const {
 	int animDoneTime;
-	
+
 	animDoneTime = animator->CurrentAnim( channel )->GetEndTime();
 	if ( animDoneTime < 0 ) {
 		// playing a cycle
@@ -347,7 +347,7 @@ void idActor::Spawn( void ) {
 	for( int i = 0; i < ANIM_NumAnimChannels; i++ ) {
 		prefixes[ i ].AssureSize( AP_MAX );
 	}
-	
+
 
 	state		= NULL;
 	idealState	= NULL;
@@ -504,7 +504,7 @@ sdProgramThread* idActor::ConstructScriptObject( void ) {
 	} else {
 		scriptThread->EndThread();
 	}
-	
+
 	// init the script object's data
 	scriptObject->ClearObject();
 
@@ -587,7 +587,7 @@ void idActor::UpdateScript( void ) {
 		if ( scriptThread->IsWaiting() ) {
 			break;
 		}
-        
+
 		scriptThread->Execute();
 		if ( idealState == state ) {
 			break;
@@ -835,7 +835,7 @@ int idActor::GetAnim( int channel, const char *animname ) {
 												APF_WEAPON			| APF_STANCE_ACTION,											// pliers_forward_<anim>
 												APF_WEAPON			| APF_STANCE,													// pliers_crouch_<anim>
 												APF_WEAPON			| APF_CHANNEL_NAME,												// pliers_torso_<anim>
-												
+
 												APF_WEAPON_CLASS	| APF_STANCE			| APF_CHANNEL_NAME,						// pliers_crouch_torso_<anim>
 												APF_WEAPON_CLASS	| APF_STANCE			| APF_STANCE_ACTION,					// pliers_crouch_forward_<anim>
 												APF_WEAPON_CLASS	| APF_STANCE_ACTION,											// pliers_forward_<anim>
@@ -878,7 +878,7 @@ idActor::AssembleAnimName
 */
 void idActor::AssembleAnimName( animChannel_t channel, const char* action, unsigned int prefixToUse ) {
 	completeAnim.Clear();
-	
+
 	const idStrList& prefixesLocal = prefixes[ channel ];
 	if( ( prefixToUse & APF_WEAPON_CLASS ) && prefixesLocal[ AP_WEAPON_CLASS ].Length() ) {
 		completeAnim.Append( prefixesLocal[ AP_WEAPON_CLASS ] );
@@ -1152,7 +1152,7 @@ void idActor::Event_IdleAnim( animChannel_t channel, const char *animname ) {
 		return;
 	}
 
-	
+
 	switch( channel ) {
 	case ANIMCHANNEL_TORSO :
 		torsoAnim.BecomeIdle();
@@ -1436,7 +1436,7 @@ void idActor::SetPrefix( animChannel_t channel, ePrefixes prefix, const char *pr
 			prefixes[ i ][ prefix ] = prefixValue;
 		}
 	}
-		
+
 	if( changed && g_debugAnimStance.GetInteger() == entityNumber ) {
 		gameLocal.Printf( "%s, channel %i: set prefix '%s' to '%s'\n", name.c_str(), channel, stanceNames[ prefix ], prefixValue );
 	}
@@ -1456,13 +1456,13 @@ void idActor::ReportCurrentState_f( const idCmdArgs& args ) {
 	int entityNum = atoi( args.Argv( 1 ));
 	if( entityNum >= 0 && entityNum < MAX_GENTITIES ) {
 		idEntity* entity = gameLocal.entities[ entityNum ];
-	
+
 		if( entity ) {
 			if( idActor* actor = entity->Cast< idActor >() ) {
 				gameLocal.Printf( "%s: Legs: '%s'   Torso: '%s'\n", actor->name.c_str(), actor->legsAnim.state.c_str(), actor->torsoAnim.state.c_str() );
 			}
 		}
-	}	
+	}
 }
 
 /*

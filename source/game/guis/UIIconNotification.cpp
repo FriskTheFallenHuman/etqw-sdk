@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -16,8 +16,8 @@ static char THIS_FILE[] = __FILE__;
 #include "UIIconNotification.h"
 #include "UserInterfaceManager.h"
 
-#include "../../sys/sys_local.h"
-#include "../../idlib/Sort.h"
+#include "sys/sys_local.h"
+#include "idlib/Sort.h"
 
 
 const float sdUINotifyIcon::ICON_FADE_TIME = SEC2MS( 0.5f );
@@ -87,7 +87,7 @@ void sdUINotifyIcon::Draw( const int time, int itemId, idVec2& origin ) {
 		parent.RunEventHandle( handle );
 
 		parent.GetUI()->ClearScriptStack();
-	}	
+	}
 
 	deviceContext->DrawMaterial( drawRect.GetMins().x, drawRect.GetMins().y, drawRect.GetWidth(), drawRect.GetHeight(), part.mi.material, color, part.mi.st0, part.mi.st1 );
 }
@@ -173,7 +173,7 @@ void sdUINotifyIcon::GetAnimatedColor( const int time, idVec4& color ) const {
 sdUINotifyIcon::AnimateOrigin
 ============
 */
-void sdUINotifyIcon::GetAnimatedOrigin( const int time, const originEvaluator_t& evaluator, eOriginAnimation anim, idVec2& origin ) const {	
+void sdUINotifyIcon::GetAnimatedOrigin( const int time, const originEvaluator_t& evaluator, eOriginAnimation anim, idVec2& origin ) const {
 	switch( anim ) {
 		case OA_NONE:
 			break;
@@ -271,7 +271,7 @@ sdUIIconNotification::GetFunction
 */
 sdUIFunctionInstance* sdUIIconNotification::GetFunction( const char* name ) {
 	const IconNotificationTemplateFunction* function = sdUIIconNotification::FindFunction( name );
-	if ( !function ) {		
+	if ( !function ) {
 		return sdUIWindow::GetFunction( name );
 	}
 
@@ -308,9 +308,9 @@ void sdUIIconNotification::DrawLocal() {
 	const int now = GetUI()->GetCurrentTime();
 
 	sdUINotifyIcon* icon = drawNode.Next();
-	while( icon != NULL ) { 
+	while( icon != NULL ) {
 		iconHandle_t handle = FindIcon( *icon );
-		icon->Draw( now, handle, origin );	
+		icon->Draw( now, handle, origin );
 		GetNextOrigin( icon, origin );
 		icon = icon->GetNode().Next();
 	}
@@ -330,7 +330,7 @@ void sdUIIconNotification::InitFunctions() {
 		SD_UI_FUNC_RETURN_PARM( handle, "Icon handle." )
 	SD_UI_END_FUNC_TAG
 	iconNotificationFunctions.Set( "addIcon",				new sdUITemplateFunction< sdUIIconNotification >( 'i', "s",	&sdUIIconNotification::Script_AddIcon ) );
-	
+
 	SD_UI_FUNC_TAG( removeIcon, "Remove an icon from the list of notify icons." )
 		SD_UI_FUNC_PARM( handle, "itemHandle", "Handle of icon to remove." )
 	SD_UI_END_FUNC_TAG
@@ -456,7 +456,7 @@ sdUIIconNotification::Script_AddIcon
 void sdUIIconNotification::Script_AddIcon( sdUIFunctionStack& stack ) {
 	idStr material;
 	stack.Pop( material );
-	
+
 	iconHandle_t handle = AddIcon( material.c_str() );
 	stack.Push( handle );
 }
@@ -554,8 +554,8 @@ void sdUIIconNotification::GetNextOrigin( sdUINotifyIcon* icon, idVec2& origin )
 
 	switch( idMath::Ftoi( orientation ) ) {
 		case IO_HORIZONTAL:
-			origin.x += iconSpacing + icon->GetPart().width;		
-			
+			origin.x += iconSpacing + icon->GetPart().width;
+
 			// wrap to next line
 			if( ( origin.x + icon->GetPart().width ) > ( cachedClientRect.x + cachedClientRect.z - iconSpacing ) ) {
 				origin.x = GetBaseOrigin().x;
@@ -564,7 +564,7 @@ void sdUIIconNotification::GetNextOrigin( sdUINotifyIcon* icon, idVec2& origin )
 		break;
 
 		case IO_HORIZONTAL_RIGHT:
-			origin.x -= iconSpacing + icon->GetPart().width;		
+			origin.x -= iconSpacing + icon->GetPart().width;
 
 			// wrap to next line
 			if( ( origin.x ) < ( cachedClientRect.x ) ) {
@@ -578,7 +578,7 @@ void sdUIIconNotification::GetNextOrigin( sdUINotifyIcon* icon, idVec2& origin )
 			// wrap to next line
 			if( ( origin.y + icon->GetPart().height ) > ( cachedClientRect.y + cachedClientRect.w - iconSpacing ) ) {
 				origin.x += iconSpacing + maxIconDimensions.x;
-				origin.y = GetBaseOrigin().y;			
+				origin.y = GetBaseOrigin().y;
 			}
 		break;
 	}
@@ -608,7 +608,7 @@ void sdUIIconNotification::RetireIcons() {
 	iconHandle_t handle = icons.GetFirst();
 	while( handle.IsValid() ) {
 		const sdUINotifyIcon* icon = icons[ handle ];
-		if( icon->ShouldRemove( now) ) {			
+		if( icon->ShouldRemove( now) ) {
 			iconHandle_t current = handle;
 			handle = icons.GetNext( handle );
 
@@ -616,7 +616,7 @@ void sdUIIconNotification::RetireIcons() {
 			icons.Release( current );
 		} else {
 			handle = icons.GetNext( handle );
-		}		
+		}
 	}
 	CalculateMaxDimensions();
 }
@@ -689,7 +689,7 @@ void sdUIIconNotification::RemoveIcon( iconHandle_t& handle ) {
 
 	// start fading the icon out
 	int now = GetUI()->GetCurrentTime();
-	
+
 	sdUINotifyIcon::colorEvaluator_t evaluator;
 
 	idVec4 faded = icon->GetColor();
@@ -704,8 +704,8 @@ void sdUIIconNotification::RemoveIcon( iconHandle_t& handle ) {
 	sdUINotifyIcon* next = icon->GetNode().Next();
 	if( next != NULL ) {
 		sdUINotifyIcon::originEvaluator_t evaluator;
-		switch( static_cast< eOrientation >( idMath::Ftoi( orientation ) ) ) {			
-			case IO_HORIZONTAL:				
+		switch( static_cast< eOrientation >( idMath::Ftoi( orientation ) ) ) {
+			case IO_HORIZONTAL:
 				evaluator.SetParms( now, now + idMath::Ftoi( iconSlideTime ), vec2_zero, idVec2( -( icon->GetPart().width + iconSpacing ), 0.0f ) );
 				break;
 			case IO_HORIZONTAL_RIGHT:
@@ -748,8 +748,8 @@ void sdUIIconNotification::BumpIcon( const iconHandle_t& handle, const char* tab
 
 	sdUINotifyIcon::originEvaluator_t evaluator;
 	evaluator.InitTableEvaluation( table );
-	switch( static_cast< eOrientation >( idMath::Ftoi( orientation ) ) ) {			
-		case IO_HORIZONTAL:			// FALL THROUGH		
+	switch( static_cast< eOrientation >( idMath::Ftoi( orientation ) ) ) {
+		case IO_HORIZONTAL:			// FALL THROUGH
 		case IO_HORIZONTAL_RIGHT:
 			evaluator.SetParms( now, now + iconSlideTime, vec2_zero, idVec2( 0.0f, iconSpacing ) );
 			break;
@@ -757,7 +757,7 @@ void sdUIIconNotification::BumpIcon( const iconHandle_t& handle, const char* tab
 			evaluator.SetParms( now, now + iconSlideTime, vec2_zero, idVec2( iconSpacing, 0.0f ) );
 	}
 
-	icon->AnimateVisualOrigin( evaluator, sdUINotifyIcon::OA_SLIDING );	
+	icon->AnimateVisualOrigin( evaluator, sdUINotifyIcon::OA_SLIDING );
 }
 
 
@@ -900,7 +900,7 @@ void sdUIIconNotification::Script_SetItemText( sdUIFunctionStack& stack ) {
 
 	idWStr text;
 	stack.Pop( text );
-	
+
 	iconHandle_t handle( handleRaw );
 	SetItemText( handle, text.c_str() );
 }
@@ -913,7 +913,7 @@ sdUIIconNotification::Script_GetItemText
 void sdUIIconNotification::Script_GetItemText( sdUIFunctionStack& stack ) {
 	int handleRaw;
 	stack.Pop( handleRaw );
-	
+
 	iconHandle_t handle( handleRaw );
 
 	const wchar_t* text = GetItemText( handle );
@@ -932,7 +932,7 @@ void sdUIIconNotification::SetItemText( const iconHandle_t& handle, const wchar_
 	}
 
 	sdUINotifyIcon* icon = icons[ handle ];
-	icon->SetText( text );	
+	icon->SetText( text );
 }
 
 /*
@@ -965,13 +965,13 @@ void sdUIIconNotification::Script_GetItemAtPoint( sdUIFunctionStack& stack ) {
 	sdBounds2D drawBounds;
 
 	sdUINotifyIcon* icon = drawNode.Next();
-	while( icon != NULL ) {		
-		icon->GetDrawBounds( now, origin, drawBounds );	
+	while( icon != NULL ) {
+		icon->GetDrawBounds( now, origin, drawBounds );
 		if( drawBounds.ContainsPoint( point ) ) {
 			stack.Push( FindIcon( *icon ) );
 			return;
 		}
-		GetNextOrigin( icon, origin );		
+		GetNextOrigin( icon, origin );
 		icon = icon->GetNode().Next();
 	}
 

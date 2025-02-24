@@ -4,9 +4,9 @@
 #ifndef __DECLVEHICLESCRIPT_H__
 #define __DECLVEHICLESCRIPT_H__
 
-#include "../Game.h"
-#include "../../decllib/declEntityDef.h"
-#include "../../decllib/declTypeHolder.h"
+#include "Game.h"
+#include "decllib/declEntityDef.h"
+#include "decllib/declTypeHolder.h"
 
 //******************************************
 // Consts
@@ -257,7 +257,7 @@ public:
 	bool									ParseEngineSoundToken( sdDeclVehicleEngineSound* engineSound, idParser& src, idToken& token );
 	bool									ParseExitToken( sdDeclVehicleExit* exit, idParser& src, idToken& token );
 	bool									ParsePositionToken( sdDeclVehiclePosition* position, idParser& src, idToken& token );
-	bool									ParseLightToken( sdDeclVehicleLight* light, idParser& src, idToken& token );	
+	bool									ParseLightToken( sdDeclVehicleLight* light, idParser& src, idToken& token );
 
 	bool									ParseView( positionViewMode_t& view, idParser& src );
 	bool									ParseClamp( angleClamp_t& clamp, idParser& src );

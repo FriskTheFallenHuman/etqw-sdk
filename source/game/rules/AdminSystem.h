@@ -277,7 +277,7 @@ private:
 	datatype			= "wstring";
 	)
 	sdWStringProperty							userGroup;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CommandState";
 	desc				= "If command succeded or failed (CS_SUCCESS/CS_FAILED).";
@@ -291,7 +291,7 @@ private:
 	datatype			= "float";
 	)
 	sdFloatProperty								commandStateTime;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanAddBot";
 	desc				= "Local player is allowed to add bots.";
@@ -319,133 +319,133 @@ private:
 	datatype			= "float";
 	)
 	sdFloatProperty								canBan;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanSetTeam";
 	desc				= "Local player is allowed to change other players team.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canSetTeam;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanChangeCampaign";
 	desc				= "Local player is allowed to change the campaign.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canChangeCampaign;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanChangeMap";
 	desc				= "Local player is allowed to change the map.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canChangeMap;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanGlobalMute";
 	desc				= "Local player is allowed mute chat globally.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canGlobalMute;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanGlobalMuteVoip";
 	desc				= "Local player is allowed to mute VOIP globally.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canGlobalMuteVoip;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanPlayerMute";
 	desc				= "Local player is allowed to mute a player.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canPlayerMute;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanPlayerMuteVoip";
 	desc				= "Local player is allowed to mute a player from VOIP.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canPlayerMuteVoip;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanWarn";
 	desc				= "Local player is allowed to warn a player. If player recieves g_maxPlayerWarnings warnings the player will be kicked.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canWarn;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanRestartMap";
 	desc				= "Local player is allowed to restart the map.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canRestartMap;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanRestartCampaign";
 	desc				= "Local player is allowed to restart the campaign.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canRestartCampaign;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanStartMatch";
 	desc				= "Local player is allowed to start the match (valid while in warmup).";
 	datatype			= "float";
 	)
 	sdFloatProperty								canStartMatch;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanExecConfig";
 	desc				= "Local player is allowed to exec a server config.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canExecConfig;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanShuffleTeams";
 	desc				= "Local player is allowed to shuffle the teams.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canShuffleTeams;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/IsSuperUser";
 	desc				= "User typing commands in the console is super user.";
 	datatype			= "float";
 	)
 	sdFloatProperty								isSuperUser;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanLogin";
 	desc				= "True if any of the user groups requires a password to login to.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canLogin;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanDisableProficiency";
 	desc				= "Local player is allowed to disable XP gaining.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canDisableProficiency;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanSetTimelimit";
 	desc				= "Local player is allowed to set the timelimit.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canSetTimelimit;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanSetTeamDamage";
 	desc				= "Local player is allowed to toggle team damage.";
 	datatype			= "float";
 	)
 	sdFloatProperty								canSetTeamDamage;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "AdminProperties/CanSetTeamBalance";
 	desc				= "Local player is allowed to toggle team balancing, disallowing players to join the team with less players.";

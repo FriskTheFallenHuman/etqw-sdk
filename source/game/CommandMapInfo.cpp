@@ -2,7 +2,7 @@
 //
 
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -15,7 +15,7 @@ static char THIS_FILE[] = __FILE__;
 #include "Player.h"
 #include "vehicles/Transport.h"
 #include "rules/GameRules.h"
-#include "../renderer/DeviceContext.h"
+#include "renderer/DeviceContext.h"
 
 idCVar sdCommandMapInfo::g_rotateCommandMap( "g_rotateCommandMap", "1", CVAR_BOOL | CVAR_GAME | CVAR_NOCHEAT | CVAR_ARCHIVE | CVAR_PROFILE, "Rotate the command map around the player" );
 
@@ -110,7 +110,7 @@ void sdCommandMapInfo::FreeFont( void ) {
 sdCommandMapInfo::SetShaderParm
 ============
 */
-void sdCommandMapInfo::SetShaderParm( int index, float value ) {	
+void sdCommandMapInfo::SetShaderParm( int index, float value ) {
 	_shaderParms[ index - 4 ] = value;
 }
 
@@ -178,7 +178,7 @@ void sdCommandMapInfo::GetOrigin( idVec2& out ) const {
 				if ( player != NULL && remote != NULL && _flags & CMF_FOLLOWREMOTECAMERAORIGIN ) {
 					out = player->GetRenderView()->vieworg.ToVec2();
 				} else {
-					out = owner->GetPhysics()->GetOrigin().ToVec2();		
+					out = owner->GetPhysics()->GetOrigin().ToVec2();
 				}
 			} else {
 				out = vec2_origin;
@@ -230,7 +230,7 @@ void sdCommandMapInfo::Draw( idPlayer* player, const idVec2& position, const idV
 				} else {
 					myFireTeam = gameLocal.rules->GetPlayerFireTeam( playerOwner->GetDisguiseEntity()->entityNumber );
 				}
-				
+
 				if ( localFireTeam != NULL && myFireTeam == localFireTeam ) {
 					sameFireTeam = true;
 				}
@@ -290,7 +290,7 @@ void sdCommandMapInfo::Draw( idPlayer* player, const idVec2& position, const idV
 			break;
 	}
 
-	if ( flashing ) { 
+	if ( flashing ) {
 		drawColor.w = idMath::Cos( gameLocal.ToGuiTime( gameLocal.time ) * 0.02f ) * 0.5f + 0.5f;
 	}
 
@@ -428,11 +428,11 @@ void sdCommandMapInfo::Draw( idPlayer* player, const idVec2& position, const idV
 				} else {
 					angle = _angle;
 				}
-//				deviceContext->DrawFilledArc( drawPos[ 0 ], drawPos[ 1 ], drawSize.x, _sides, _arcAngle / 360.0f, 
+//				deviceContext->DrawFilledArc( drawPos[ 0 ], drawPos[ 1 ], drawSize.x, _sides, _arcAngle / 360.0f,
 //					drawColor, angle + ( _arcAngle / 2.0f ), material );
-				deviceContext->DrawFilledArcMasked( drawPos[ 0 ], drawPos[ 1 ], drawSize.x, _sides, _arcAngle / 360.0f, 
-					drawColor, 
-					screenPos[ 0 ], screenPos[ 1 ], screenSize.x, screenSize.y, 
+				deviceContext->DrawFilledArcMasked( drawPos[ 0 ], drawPos[ 1 ], drawSize.x, _sides, _arcAngle / 360.0f,
+					drawColor,
+					screenPos[ 0 ], screenPos[ 1 ], screenSize.x, screenSize.y,
 					angle + ( _arcAngle / 2.0f ), material );
 			}
 			break;
@@ -444,7 +444,7 @@ void sdCommandMapInfo::Draw( idPlayer* player, const idVec2& position, const idV
 			break;
 		case DM_CROSSHAIR:
 			if ( material != NULL ) {
-				float scale = 2.0f;		
+				float scale = 2.0f;
 				idVec2 stPos( ( drawPos.x - ( drawSize.x * 0.5f * 1.0f / scale ) - screenPos.x ) / screenSize.x, ( drawPos.y - ( drawSize.y * 0.5f * 1.0f / scale ) - screenPos.y ) / screenSize.y );
 
 
@@ -459,7 +459,7 @@ void sdCommandMapInfo::Draw( idPlayer* player, const idVec2& position, const idV
 				float minY = ( totalY * -stPos.y )  / 10.0f;
 				float maxY = ( totalY * ( 1.0f - stPos.y ) )  / 10.0f;
 
-				idWinding2D w; 
+				idWinding2D w;
 				w.AddPoint( screenPos.x,					screenPos.y,				minX, minY );
 				w.AddPoint( screenPos.x + screenSize.x,		screenPos.y,				maxX, minY );
 				w.AddPoint( screenPos.x + screenSize.x,		screenPos.y + screenSize.y, maxX, maxY );

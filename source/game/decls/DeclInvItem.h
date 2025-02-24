@@ -11,7 +11,7 @@ class sdDeclInvItemType;
 class idRenderModel;
 class sdDeclToolTip;
 
-#include "../roles/RoleManager.h"
+#include "roles/RoleManager.h"
 
 typedef struct itemClip_s {
 	ammoType_t						ammoType;
@@ -36,7 +36,7 @@ public:
 	bool							UsesSlot( int index ) const { return slot == index ; }
 	bool							operator== ( const sdDeclInvItem& other ) const { return Index() == other.Index(); }
 	int								GetSlot() const { return slot; }
-	
+
 	const sdRequirementContainer&	GetUsageRequirements( void ) const { return usageRequirements; }
 	const idDict&					GetData( void ) const { return data; }
 
@@ -61,7 +61,7 @@ protected:
 	const sdDeclToolTip*			tooltipSelect;
 
 	idRenderModel*					model;
-	
+
 	const sdDeclInvItemType*		type;
 
 	idList< itemClip_t >			clips;

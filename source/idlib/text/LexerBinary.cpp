@@ -2,10 +2,10 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
-#include "../../framework/Licensee.h"
+#include "framework/Licensee.h"
 
 /*
 ============
@@ -19,7 +19,7 @@ unsigned short idTokenCache::FindToken( const idToken& token ) {
 		// from mac version
 		if (( i < 0 ) || ( i > uniqueTokens.Num())) break;	// JWW - Added this line to circumvent assert/crash when 'i' is out-of-bounds
 		const idToken& hashedToken = uniqueTokens[ i ];
-		if (( hashedToken.type == token.type ) && 
+		if (( hashedToken.type == token.type ) &&
 			( ( hashedToken.subtype & ~TT_VALUESVALID ) == ( token.subtype & ~TT_VALUESVALID ) ) &&
 			( hashedToken.linesCrossed == token.linesCrossed ) &&
 			( hashedToken.WhiteSpaceBeforeToken() == token.WhiteSpaceBeforeToken() ) &&
@@ -41,7 +41,7 @@ unsigned short idTokenCache::FindToken( const idToken& token ) {
 idTokenCache::WriteFile
 ============
 */
-bool idTokenCache::Write( idFile* f ) {	
+bool idTokenCache::Write( idFile* f ) {
 	assert( uniqueTokens.Num() < USHRT_MAX );
 
 	f->WriteInt( uniqueTokens.Num() );
@@ -57,7 +57,7 @@ bool idTokenCache::Write( idFile* f ) {
 		f->WriteInt( token.flags );
 		f->WriteChar( ( token.whiteSpaceEnd_p - token.whiteSpaceStart_p ) > 0 ? 1 : 0 );
 	}
-	
+
 	uniqueTokenHash.Write( f );
 
 	return true;
@@ -139,7 +139,7 @@ void idLexerBinary::AddToken( const idToken& token, idTokenCache* cache ) {
 idLexerBinary::WriteFile
 ============
 */
-bool idLexerBinary::Write( idFile* f ) {	
+bool idLexerBinary::Write( idFile* f ) {
 	f->WriteString( LEXB_VERSION );
 
 	tokenCache.Write( f );
@@ -181,7 +181,7 @@ bool idLexerBinary::Read( idFile* f ) {
 		// Header
 		idStr temp;
 		f->ReadString( temp );
-		
+
 		if( temp.Cmp( LEXB_VERSION ) != 0 ) {
 			idLib::common->Warning( "idLexerBinary::ReadFile: expected '" LEXB_VERSION "' but found '%s'", temp.c_str() );
 			return false;
@@ -218,14 +218,14 @@ int idLexerBinary::ReadToken( idToken *token ) {
 	}
 	const idList<unsigned short>* localTokens = tokensData != NULL ? tokensData : &tokens;
 	const idTokenCache* localTokenCache = tokenCacheData != NULL ? tokenCacheData : &tokenCache;
-	
+
 	if ( nextToken >= localTokens->Num() ) {
 		return 0;
 	}
-	
+
 	*token = (*localTokenCache)[ (*localTokens)[ nextToken ] ];
 	token->binaryIndex = (*localTokens)[ nextToken ];
-	
+
 	nextToken++;
 	return 1;
 }

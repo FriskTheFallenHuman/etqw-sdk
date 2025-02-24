@@ -86,7 +86,7 @@ bool sdSysThread::Start( threadHandle_t& handle ) {
 			}
 			main_priority = current_prio;
 		}
-		
+
 		if ( priority != THREAD_NORMAL ) {
 			localCreateProc = setPriorityProc;
 		}
@@ -161,7 +161,7 @@ unsigned int sdSysThread::Exit( unsigned int retVal ) {
 sdSysThread::Join
 =============
 */
-void sdSysThread::Join( threadHandle_t& handle ) {	
+void sdSysThread::Join( threadHandle_t& handle ) {
 	int ret = pthread_join( handle, NULL );
 	if ( ret != 0 ) {
 		common->Printf( "sdSysThread::Join pthread_join failed: %d %s\n", ret, strerror( ret ) );

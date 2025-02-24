@@ -9,7 +9,7 @@
 sdTextUtilities::WriteFloatString
 ============
 */
-int sdTextUtilities::Write( idFile* file, const char* string, bool indent ) {	
+int sdTextUtilities::Write( idFile* file, const char* string, bool indent ) {
 	int indentLevel = 0;
 	int index = fileList.FindIndex( file );
 

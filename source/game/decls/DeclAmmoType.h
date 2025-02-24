@@ -4,7 +4,7 @@
 #ifndef __DECLAMMOTYPE_H__
 #define __DECLAMMOTYPE_H__
 
-#include "../Common.h"
+#include "Common.h"
 
 class sdDeclAmmoType : public idDecl {
 public:

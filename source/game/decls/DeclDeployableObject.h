@@ -4,7 +4,7 @@
 #ifndef __DECLDEPLOYABLEOBJECT_H__
 #define __DECLDEPLOYABLEOBJECT_H__
 
-#include "../../framework/declManager.h"
+#include "framework/declManager.h"
 
 class sdDeclStringMap;
 

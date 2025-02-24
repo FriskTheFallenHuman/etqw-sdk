@@ -140,7 +140,7 @@ public:
 	virtual void				DisableWarnings( void ) = 0;
 
 	virtual void				PacifierUpdate( void ) = 0;
-	
+
 	virtual void				UpdateLevelLoadScreen( const wchar_t* status ) = 0;
 
 								// Localization of the current language

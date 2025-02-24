@@ -10,13 +10,13 @@ WARNING: This is included by the radiant project as well... don't try to use any
 */
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #include "UserInterfaceManager.h"
 #include "GuiSurfaceRenderable.h"
-#include "../gamesys/Pvs.h"
-#include "../../renderer/DeviceContext.h"
+#include "gamesys/Pvs.h"
+#include "renderer/DeviceContext.h"
 
 /*
 ===============================================================================
@@ -113,8 +113,8 @@ void R_ModelMatrixToAxis( const float modelMatrix[16], idMat3 &axis, idVec3 &ori
 	axis[2][1] = modelMatrix[9];
 	axis[2][2] = modelMatrix[10];
 
-	origin[0]  = modelMatrix[12];			   
-	origin[1]  = modelMatrix[13];			   
+	origin[0]  = modelMatrix[12];
+	origin[1]  = modelMatrix[13];
 	origin[2]  = modelMatrix[14];
 }
 
@@ -372,7 +372,7 @@ guiPoint_t sdGuiSurfaceRenderable::Trace( const idVec3& start, const idVec3& end
 
 	float denom = d1 - d2;
 	float t = d1 / denom;
-	
+
 	pt.worldPos = localStart + t * ( localEnd - localStart );
 
 	// compute the barycentric coordinates

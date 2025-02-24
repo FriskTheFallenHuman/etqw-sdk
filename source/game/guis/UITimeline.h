@@ -58,7 +58,7 @@ public:
 	virtual sdProperties::sdPropertyHandler& GetProperties()												{ static sdProperties::sdPropertyHandler handler; assert( 0 ); return handler; }
 
 	virtual void						SetPropertyExpression( int propertyKey, int propertyIndex, sdUIExpression* expression ) { assert( 0 ); }
-	virtual int							IndexForProperty( sdProperties::sdProperty*	property )				{ assert( 0 ); return -1; }	
+	virtual int							IndexForProperty( sdProperties::sdProperty*	property )				{ assert( 0 ); return -1; }
 	virtual void						ClearPropertyExpression( int propertyKey, int propertyIndex )		{ assert( 0 ); }
 	virtual void						RunFunction( int expressionIndex )									{ assert( 0 ); }
 
@@ -67,13 +67,13 @@ public:
 
 	virtual int							AddExpression( sdUIExpression* expression )							{ assert( 0 ); return -1;  }
 	virtual sdUIExpression*				GetExpression( int index )											{ assert( 0 ); return NULL;  }
-	
+
 
 	virtual const char*					GetName() const														{ return "sdUITimelineManager"; }
 	virtual const char*					GetScopeClassName() const											{ return "sdUITimelineManager"; }
 
 	virtual sdUserInterfaceScope*		GetSubScope( const char* name );
-	
+
 
 private:
 	typedef sdHashMapGeneric< idStr, sdUITimeline*, sdHashCompareStrIcmp, sdHashGeneratorIHash > timelineHash_t;
@@ -103,7 +103,7 @@ sdUITimeline
 class sdUITimeline :
 	public sdUIWritablePropertyHolder {
 public:
-	typedef enum timelineEvent_e {
+	enum timelineEvent_e {
 		TE_NOOP,
 		TE_CONSTRUCTOR,
 		TE_ONTIME,
@@ -119,7 +119,7 @@ public:
 
 	bool											RunTimeEvent( int time );
 	virtual sdProperties::sdPropertyHandler&		GetProperties() { return properties; }
-	
+
 	bool											CreateEvents( const sdDeclGUITimeline& events, const sdDeclGUI* guiDecl, idTokenCache& tokenCache );
 	bool											CreateProperties( const sdDeclGUITimeline& declProperties, const sdDeclGUI* guiDecl, const idTokenCache& tokenCache );
 

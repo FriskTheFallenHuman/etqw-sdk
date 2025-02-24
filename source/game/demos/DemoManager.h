@@ -4,7 +4,7 @@
 #ifndef __GAME_DEMOS_DEMOMANAGER_H__
 #define __GAME_DEMOS_DEMOMANAGER_H__
 
-#include "../guis/UserInterfaceTypes.h"
+#include "guis/UserInterfaceTypes.h"
 #include "DemoAnalyzer.h"
 
 class sdDemoCamera;

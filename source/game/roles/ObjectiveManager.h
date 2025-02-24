@@ -5,7 +5,7 @@
 #ifndef __GAME_ROLES_OBJECTIVEMANAGER_H__
 #define __GAME_ROLES_OBJECTIVEMANAGER_H__
 
-#include "../../game/botai/BotAI_Actions.h" //mal: gonna need this for the bot actions
+#include "game/botai/BotAI_Actions.h" //mal: gonna need this for the bot actions
 
 class idScriptObject;
 class sdDeclLocStr;

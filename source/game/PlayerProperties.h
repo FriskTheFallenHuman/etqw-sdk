@@ -165,7 +165,7 @@ private:
 	sdAutoPtr< sdQuickChatMenu >			quickChatMenu;
 	sdAutoPtr< sdQuickChatMenu >			contextMenu;
 	sdAutoPtr< sdFireTeamMenu >				fireTeamMenu;
-	sdAutoPtr< sdChatMenu >					chatMenu;	
+	sdAutoPtr< sdChatMenu >					chatMenu;
 	sdAutoPtr< sdWeaponSelectionMenu >		weaponSelectionMenu;
 	sdAutoPtr< sdPlayerHud >				playerHud;
 	sdAutoPtr< sdPostProcess >				postProcess;
@@ -374,7 +374,7 @@ private:
 	desc				= "Map loading percent.";
 	datatype			= "float";
 	)
-//	sdFloatProperty		mapLoadPercent;	
+//	sdFloatProperty		mapLoadPercent;
 
 	SD_UI_PROPERTY_TAG(
 	title				= "PlayerProperties/Position";
@@ -615,7 +615,7 @@ private:
 	sdStringProperty	crosshairDistance;
 
 	SD_UI_PUSH_GROUP_TAG( "Misson System Properties" )
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "PlayerProperties/FireTeamName";
 	desc				= "Fire team name.";

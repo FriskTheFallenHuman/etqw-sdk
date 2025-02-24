@@ -4,7 +4,7 @@
 #ifndef __DECLTARGETINFO_H__
 #define __DECLTARGETINFO_H__
 
-#include "../roles/RoleManager.h"
+#include "roles/RoleManager.h"
 
 class idEntity;
 class sdEntityCollection;

@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -223,13 +223,13 @@ sdUITimeline::sdUITimeline
 */
 sdUITimeline::sdUITimeline( const char* name_, sdUITimelineManager* manager_ ) :
 	name( name_ ),
-	needsReset( false ),	
+	needsReset( false ),
 	resetTime( 0 ),
 	active( 1.0f ),
 	manager( manager_ ) {
 
 	events.SetNumEvents( TE_NUM_EVENTS );
-	
+
 	properties.RegisterProperty( "active", active );
 	properties.RegisterProperty( "name", name );
 
@@ -321,7 +321,7 @@ sdUITimeline::GetFunction
 */
 sdUIFunctionInstance* sdUITimeline::GetFunction( const char* name ) {
 	const sdUITemplateFunction< sdUITimeline >* function = sdUITimeline::FindFunction( name );
-	if( !function ) {		
+	if( !function ) {
 		return manager->GetScope().GetFunction( name );
 	}
 
@@ -345,7 +345,7 @@ sdUITimeline::InitFunctions
 ============
 */
 void sdUITimeline::InitFunctions() {
-	timelineFunctions.Set( "resetTime",	new sdUITemplateFunction< sdUITimeline >( 'v', "f",	&sdUITimeline::Script_ResetTime ) );	
+	timelineFunctions.Set( "resetTime",	new sdUITemplateFunction< sdUITimeline >( 'v', "f",	&sdUITimeline::Script_ResetTime ) );
 }
 
 /*
@@ -411,7 +411,7 @@ bool sdUITimeline::CreateEvents( const sdDeclGUITimeline& timelineInfo, const sd
 		parser.LoadTokenStream( eventInfo->GetTokenIndices(), tokenCache, va( "onTime '%i'", eventInfo->GetStartTime() ) );
 		//parser.LoadMemory( eventInfo->GetText(), eventInfo->GetTextLength(), va( "onTime '%i'", eventInfo->GetStartTime()) );
 
-		script.ParseEvent( &parser, sdUIEventInfo( TE_ONTIME, eventIndex ), this );					
+		script.ParseEvent( &parser, sdUIEventInfo( TE_ONTIME, eventIndex ), this );
 
 		timeline[ eventIndex ] = eventInfo->GetStartTime();
 

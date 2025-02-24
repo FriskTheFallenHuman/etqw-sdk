@@ -9,7 +9,7 @@ WARNING: This is included by the radiant project as well... don't try to use any
 ================================================================================================================================
 */
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -21,11 +21,11 @@ static char THIS_FILE[] = __FILE__;
 #include "AtmosphereRenderable.h"
 //#include "Player.h"
 
-#include "../renderer/Model.h"
-#include "../renderer/ModelManager.h"
-#include "../renderer/DeviceContext.h"
+#include "renderer/Model.h"
+#include "renderer/ModelManager.h"
+#include "renderer/DeviceContext.h"
 
-#include "../decllib/declAtmosphere.h"
+#include "decllib/declAtmosphere.h"
 
 idCVar sdAtmosphereRenderable::a_sun(						"a_sun",						"85",		CVAR_GAME | CVAR_FLOAT,	"" );
 idCVar sdAtmosphereRenderable::a_glowScale(					"a_glowScale",					"0.25",		CVAR_GAME | CVAR_FLOAT,	"Blurred image contribution factor" );

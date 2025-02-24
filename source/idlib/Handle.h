@@ -34,11 +34,11 @@ namespace sdUtility {
 			return !IsValid();
 		}
 
-		bool IsValid() const { 
+		bool IsValid() const {
 			return value != INVALID_VALUE;
 		}
 
-		void Release() { 
+		void Release() {
 			value = INVALID_VALUE;
 		}
 
@@ -48,7 +48,7 @@ namespace sdUtility {
 
 	private:
 		T value;
-		static T INVALID_VALUE;		
+		static T INVALID_VALUE;
 	};
 	template< class T, T invalidValue > T sdHandle< T, invalidValue >::INVALID_VALUE = invalidValue;
 }

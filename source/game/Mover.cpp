@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -379,7 +379,7 @@ void idMover_Binary::PostMapSpawn( void ) {
 
 		idMover_Binary* slave;
 		for ( slave = moveMaster; slave; slave = slave->activateChain ) {
-			soundOrigin += slave->GetPhysics()->GetAbsBounds();			
+			soundOrigin += slave->GetPhysics()->GetAbsBounds();
 		}
 		moveMaster->refSound.origin = soundOrigin.GetCenter();
 	} else {
@@ -537,7 +537,7 @@ void idMover_Binary::Event_MatchActivateTeam( moverState_t newstate, int time ) 
 ================
 idMover_Binary::BindTeam
 
-All entities in a mover team will be bound 
+All entities in a mover team will be bound
 ================
 */
 void idMover_Binary::BindTeam( idEntity *bindTo ) {
@@ -907,7 +907,7 @@ idMover_Binary::CheckNetworkStateChanges
 bool idMover_Binary::CheckNetworkStateChanges( networkStateMode_t mode, const sdEntityStateNetworkData& baseState ) const {
 	if ( mode == NSM_BROADCAST ) {
 		NET_GET_BASE( sdMoverBinaryBroadcastState );
-		
+
 		if ( baseData.closeTime != closeTime ) {
 			return true;
 		}
@@ -1165,7 +1165,7 @@ void idPlat::SpawnPlatTrigger( idVec3 &pos ) {
 		tmin[1] = ( bounds[0][1] + bounds[1][1] ) * 0.5f;
 		tmax[1] = tmin[1] + 1;
 	}
-	
+
 	trigger = new idClipModel( idTraceModel( idBounds( tmin, tmax ) ), true );
 	trigger->Link( gameLocal.clip, this, 255, GetPhysics()->GetOrigin(), mat3_identity );
 	trigger->SetContents( CONTENTS_TRIGGER );

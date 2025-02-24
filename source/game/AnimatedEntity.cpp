@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -132,7 +132,7 @@ void idAnimatedEntity::Event_SetAnimFrame( const char* animname, animChannel_t c
 	int anim = animator.GetAnim( animname );
 
 	if ( !anim ) {
-		if( anim_showMissingAnims.GetBool() ) { 
+		if( anim_showMissingAnims.GetBool() ) {
 			gameLocal.Warning( "idAnimatedEntity::Event_SetAnimFrame missing '%s' animation on '%s' (%s)", animname, name.c_str(), GetEntityDefName() );
 		}
 		animator.Clear( channel, gameLocal.time, 0 );
@@ -150,9 +150,9 @@ void idAnimatedEntity::Event_PlayAnim( animChannel_t channel, const char *animna
 	int anim = animator.GetAnim( animname );
 
 	if ( !anim ) {
-		if( anim_showMissingAnims.GetBool() ) { 
+		if( anim_showMissingAnims.GetBool() ) {
 			gameLocal.Warning( "idAnimatedEntity::Event_PlayAnim missing '%s' animation on '%s' (%s)", animname, name.c_str(), GetEntityDefName() );
-		}		
+		}
 		animator.Clear( channel, gameLocal.time, 0 );
 		sdProgram::ReturnFloat( 0 );
 	} else {
@@ -170,7 +170,7 @@ void idAnimatedEntity::Event_PlayCycle( animChannel_t channel, const char *animn
 	int anim = animator.GetAnim( animname );
 
 	if ( anim == 0 ) {
-		if( anim_showMissingAnims.GetBool() ) { 
+		if( anim_showMissingAnims.GetBool() ) {
 			gameLocal.Warning( "idAnimatedEntity::Event_PlayCycle missing '%s' animation on '%s' (%s)", animname, name.c_str(), GetEntityDefName() );
 		}
 		animator.Clear( channel, gameLocal.time, 0 );
@@ -190,7 +190,7 @@ void idAnimatedEntity::Event_PlayAnimBlended( animChannel_t channel, const char 
 	int anim = animator.GetAnim( animname );
 
 	if ( !anim ) {
-		if( anim_showMissingAnims.GetBool() ) { 
+		if( anim_showMissingAnims.GetBool() ) {
 			gameLocal.Warning( "idAnimatedEntity::Event_PlayAnim missing '%s' animation on '%s' (%s)", animname, name.c_str(), GetEntityDefName() );
 		}
 		animator.Clear( channel, gameLocal.time, 0 );
@@ -721,11 +721,11 @@ void idAnimatedEntity::Event_AnimLength( const char* animName ) {
 	int anim = animator.GetAnim( animName );
 
 	if ( !anim ) {
-		if( anim_showMissingAnims.GetBool() ) { 
+		if( anim_showMissingAnims.GetBool() ) {
 			gameLocal.Warning( "idAnimatedEntity::Event_AnimLength missing '%s' animation on '%s' (%s)", animName, name.c_str(), GetEntityDefName() );
 		}
 		sdProgram::ReturnFloat( 0 );
-	} else {		
+	} else {
 		sdProgram::ReturnFloat( MS2SEC( animator.AnimLength( anim ) ) );
 	}
 }

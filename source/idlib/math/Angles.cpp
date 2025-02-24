@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 #include <float.h>
@@ -48,7 +48,7 @@ idAngles& idAngles::Normalize180( void ) {
 	if ( pitch > 180.0f ) {
 		pitch -= 360.0f;
 	}
-	
+
 	if ( yaw > 180.0f ) {
 		yaw -= 360.0f;
 	}
@@ -66,7 +66,7 @@ idAngles::ToVectors
 */
 void idAngles::ToVectors( idVec3 *forward, idVec3 *right, idVec3 *up ) const {
 	float sr, sp, sy, cr, cp, cy;
-	
+
 	idMath::SinCos( DEG2RAD( yaw ), sy, cy );
 	idMath::SinCos( DEG2RAD( pitch ), sp, cp );
 	idMath::SinCos( DEG2RAD( roll ), sr, cr );
@@ -91,7 +91,7 @@ idAngles::ToForward
 */
 idVec3 idAngles::ToForward( void ) const {
 	float sp, sy, cp, cy;
-	
+
 	idMath::SinCos( DEG2RAD( yaw ), sy, cy );
 	idMath::SinCos( DEG2RAD( pitch ), sp, cp );
 
@@ -212,7 +212,7 @@ idAngles::ToMat3NoRoll
 */
 void idAngles::ToMat3NoRoll( idMat3& mat ) const {
 	float sp, sy, cp, cy;
-		
+
 	idMath::SinCos( DEG2RAD( yaw ), sy, cy );
 	idMath::SinCos( DEG2RAD( pitch ), sp, cp );
 

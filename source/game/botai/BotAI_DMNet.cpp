@@ -1,10 +1,10 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h" 
+#include "Game_local.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -12,7 +12,7 @@
 ================
 idBotAI::Run_LTG_Node
 
-This is the bot's long term goal thinking. 
+This is the bot's long term goal thinking.
 ================
 */
 bool idBotAI::Run_LTG_Node() {
@@ -70,7 +70,7 @@ bool idBotAI::Run_LTG_Node() {
 ================
 idBotAI::Run_NBG_Node
 
-This is the bot's short term goal thinking. 
+This is the bot's short term goal thinking.
 ================
 */
 bool idBotAI::Run_NBG_Node() {
@@ -97,7 +97,7 @@ bool idBotAI::Run_NBG_Node() {
 	}
 
 	if ( NBG_AI_SUB_NODE == false ) { //mal: if we have no NBG sub node, we're done here and need to reset and find a LTG next frame
-		Bot_ResetState( false, false ); 
+		Bot_ResetState( false, false );
 		return false;
 	}
 
@@ -123,7 +123,7 @@ bool idBotAI::Run_NBG_Node() {
 ================
 idBotAI::Run_Combat_Node
 
-This is the bot's combat thinking. 
+This is the bot's combat thinking.
 ================
 */
 bool idBotAI::Run_Combat_Node() {
@@ -175,7 +175,7 @@ bool idBotAI::Run_Combat_Node() {
 		if ( !Bot_FindEnemy( enemy ) ) {
 			if ( haveClientToHaze ) {
                 if ( !Bot_PickPostCombatGoal() ) {
-					Bot_ResetState( true, false ); 
+					Bot_ResetState( true, false );
 				}
 			} else {
 				Bot_ResetState( true, false );
@@ -194,7 +194,7 @@ bool idBotAI::Run_Combat_Node() {
 		if ( vehicleInfo.type == MCP && vehicleInfo.isImmobilized && vehicleInfo.driverEntNum == enemy ) {
 			needNewEnemy = true;
 		} else if ( ( vehicleInfo.type == GOLIATH || vehicleInfo.type == TITAN || vehicleInfo.type == DESECRATOR ) && vehicleInfo.health > ( vehicleInfo.maxHealth / 3 ) ) {
-			
+
 			bool canNadeAttack = ( !botInfo->weapInfo.hasNadeAmmo || enemyInfo.enemyDist > GRENADE_ATTACK_DIST ) ? false : true;
 
 			if ( botInfo->classType == FIELDOPS ) {
@@ -216,7 +216,7 @@ bool idBotAI::Run_Combat_Node() {
 					needNewEnemy = true;
 				}
 			} else {
-				if ( ( !canNadeAttack && enemyInfo.enemyDist > INFANTRY_ATTACK_HEAVY_DIST ) && !botInfo->weapInfo.primaryWeapHasAmmo ) {		
+				if ( ( !canNadeAttack && enemyInfo.enemyDist > INFANTRY_ATTACK_HEAVY_DIST ) && !botInfo->weapInfo.primaryWeapHasAmmo ) {
 					needNewEnemy = true;
 				}
 			}
@@ -225,7 +225,7 @@ bool idBotAI::Run_Combat_Node() {
 
 	if ( needNewEnemy ) {
 		if ( !Bot_FindEnemy( enemy ) ) {
-			Bot_ResetState( true, false ); 
+			Bot_ResetState( true, false );
 			return false;
 		}
 	}
@@ -236,7 +236,7 @@ bool idBotAI::Run_Combat_Node() {
 
 	if ( !enemyInfo.enemyVisible && enemyInfo.enemyLastVisTime + 5000 < botWorld->gameLocalInfo.time && !chasingEnemy ) {
 		if ( !Bot_FindEnemy( enemy ) ) {
-            Bot_ResetState( true, false ); 
+            Bot_ResetState( true, false );
 		}
 		return false;
 	}
@@ -245,7 +245,7 @@ bool idBotAI::Run_Combat_Node() {
 
 	if ( turretDangerExists && turretDangerEntNum != -1 && combatNBGType != COMBAT_ATTACK_TURRET && enemyInfo.enemyDist > 500.0f && Bot_HasExplosives( true, true ) && !Client_IsCriticalForCurrentObj( botNum, BOT_WILL_ATTACK_TURRETS_IN_COMBAT_DIST ) ) {
 		combatNBGTarget = turretDangerEntNum;
-		COMBAT_AI_SUB_NODE = &idBotAI::Enter_COMBAT_Foot_AttackTurret; 
+		COMBAT_AI_SUB_NODE = &idBotAI::Enter_COMBAT_Foot_AttackTurret;
 	}
 
 	if ( COMBAT_AI_SUB_NODE == NULL ) {
@@ -364,7 +364,7 @@ bool idBotAI::Run_Warmup_Node() {
 			}
 
 			vec = playerInfo.viewOrigin - botInfo->viewOrigin;
-			
+
 			dist = vec.LengthFast();
 
 			if ( dist > attackDist ) { //mal: too far away - ignore!
@@ -376,7 +376,7 @@ bool idBotAI::Run_Warmup_Node() {
 
 			botIdealWeapNum = NULL_WEAP;
 
-			if ( botThreadData.random.RandomInt( 100 ) > 50 || dist > 2500.0f ) { //mal: lets have a little fun - sometimes we'll try to knife our enemy! 
+			if ( botThreadData.random.RandomInt( 100 ) > 50 || dist > 2500.0f ) { //mal: lets have a little fun - sometimes we'll try to knife our enemy!
 				botIdealWeapSlot = GUN;
 			} else {
 				if ( botThreadData.random.RandomInt( 100 ) > 50 ) {
@@ -407,7 +407,7 @@ bool idBotAI::Run_Warmup_Node() {
 	}
 
 	if ( warmupUseActionMoveGoalTime > botWorld->gameLocalInfo.time ) { //mal: don't always attack, sometimes move away from the spawn, and attack from a diff position
-		
+
 		Bot_SetupMove( vec3_zero, -1, warmupActionMoveGoal );
 
 		if ( MoveIsInvalid() ) {
@@ -457,7 +457,7 @@ bool idBotAI::Run_Warmup_Node() {
 	UpdateEnemyInfo();
 
 	if ( !ClientIsVisibleToBot( enemy, false, false ) ) {
-		
+
 		Bot_SetupMove(vec3_zero, enemy, ACTION_NULL );
 
 		if ( MoveIsInvalid() ) { //mal: cant find a valid path - ignore this client for a while!
@@ -490,7 +490,7 @@ bool idBotAI::Run_Warmup_Node() {
 		}
 
 		combatMoveFailedCount = 0;
-		
+
 		COMBAT_MOVEMENT_STATE = &idBotAI::Crazy_Jump_Attack_Movement;
 
 		if ( botThreadData.random.RandomInt( 100 ) > 95 ) {
@@ -514,7 +514,7 @@ bool idBotAI::Run_Warmup_Node() {
 ================
 idBotAI::Enter_Run_Dead_Node
 
-This node is run if the bot is killed/dead/waiting for a medic. 
+This node is run if the bot is killed/dead/waiting for a medic.
 ================
 */
 bool idBotAI::Enter_Run_Dead_Node() {
@@ -555,7 +555,7 @@ bool idBotAI::Enter_Run_Dead_Node() {
 ================
 idBotAI::Run_Dead_Node
 
-This node is run if the bot is killed/dead/waiting for a medic. 
+This node is run if the bot is killed/dead/waiting for a medic.
 ================
 */
 bool idBotAI::Run_Dead_Node() {
@@ -572,7 +572,7 @@ bool idBotAI::Run_Dead_Node() {
 		 return false;
 	}
 
-	if ( botInfo->health > 0 ) { 
+	if ( botInfo->health > 0 ) {
 		if ( botInfo->revived ) {
             Bot_ResetState( true, false ); //mal: got revived - get back into the action doing whatever we were doing before.
 		} else {

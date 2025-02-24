@@ -35,7 +35,7 @@ public:
 	virtual const char*		GetScopeClassName() const { return "sdUIBinder"; }
 
 	virtual bool			PostEvent( const sdSysEvent* event );
-	virtual void			EnumerateEvents( const char* name, const idList<unsigned short>& flags, idList< sdUIEventInfo >& events, const idTokenCache& tokenCache );	
+	virtual void			EnumerateEvents( const char* name, const idList<unsigned short>& flags, idList< sdUIEventInfo >& events, const idTokenCache& tokenCache );
 	virtual int				GetMaxEventTypes( void ) const { return BE_NUM_EVENTS; }
 	virtual const char*		GetEventNameForType( int event ) const { return ( event < ( WE_NUM_EVENTS + 1 )) ? sdUIWindow::GetEventNameForType( event ): eventNames[ event - WE_NUM_EVENTS - 1 ]; }
 

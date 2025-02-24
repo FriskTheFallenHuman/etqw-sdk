@@ -7,7 +7,7 @@
 
 #include "UserInterfaceTypes.h"
 #include "UIObject.h"
-#include "../../renderer/DeviceContext.h"
+#include "renderer/DeviceContext.h"
 
 // grrr, namespace cleanup
 #undef TA_LEFT
@@ -28,7 +28,7 @@ SD_UI_PUSH_CLASS_TAG( sdUIWindow )
 SD_UI_CLASS_INFO_TAG(
 /* ============ */
 	"The most common window type can be used to draw text or materials within its rectangle.\n\n" \
-	"In many places it is also used just for managing other windows, handling events and timelines." 
+	"In many places it is also used just for managing other windows, handling events and timelines."
 /* ============ */
 )
 SD_UI_CLASS_EXAMPLE_TAG(
@@ -101,7 +101,7 @@ public:
 	};
 	static const int NEXT_WINDOW_FLAG = NEXT_OBJECT_FLAG + 13;	// derived classes should use bit fields from this bit up to avoid conflicts
 
-protected:	
+protected:
 	enum textAlignmentX_e {
 		TA_LEFT,
 		TA_CENTER,
@@ -119,7 +119,7 @@ protected:
 		bool	recalculateLayout		: 1;
 		bool	lookupFont				: 1;
 		bool	fullyClipped			: 1;
-#ifdef _DEBUG	
+#ifdef _DEBUG
 		bool	breakOnDraw				: 1;
 		bool	breakOnLayout			: 1;
 #endif // _DEBUG
@@ -143,7 +143,7 @@ public:
 	virtual void							OnActivate( void );
 	virtual void							OnGainFocus( void );
 	virtual void							OnLoseFocus( void );
-	
+
 	virtual void							SetRenderCallback( uiRenderCallback_t callback, uiRenderCallbackType_t type );
 	virtual void							SetInputHandler( uiInputHandler_t handler );
 
@@ -177,7 +177,7 @@ public:
 	void									Script_NextTabStop( sdUIFunctionStack& stack );
 	void									Script_PrevTabStop( sdUIFunctionStack& stack );
 	void									Script_SetTabStop( sdUIFunctionStack& stack );
-	void									Script_ContainsPoint( sdUIFunctionStack& stack );	
+	void									Script_ContainsPoint( sdUIFunctionStack& stack );
 	void									Script_CacheRenderCallback( sdUIFunctionStack& stack );
 	void									Script_MeasureText( sdUIFunctionStack& stack );
 	void									Script_MeasureLocalizedText( sdUIFunctionStack& stack );
@@ -197,12 +197,12 @@ public:
 	static void											ShutdownFunctions( void ) { windowFunctions.DeleteContents(); }
 
 	virtual bool							HandleFocus( const sdSysEvent* event );
-	virtual bool							PostEvent( const sdSysEvent* event );	
+	virtual bool							PostEvent( const sdSysEvent* event );
 	bool									PostKeyBindingEvent( const char* key );
 
 	virtual void							MakeLayoutDirty();
 
-	virtual	const idVec4&					GetWorldRect() const	{ return cachedClientRect; }	
+	virtual	const idVec4&					GetWorldRect() const	{ return cachedClientRect; }
 
 protected:
 	unsigned int							GetDrawTextFlags() const;
@@ -211,7 +211,7 @@ protected:
 	void									DrawText();
 	void									DrawBackground( const idVec4& rect );
 	void									DrawFrame( const idVec4& rect, uiMaterialCache_t::Iterator& cacheEntry, const idVec4& color );
-	virtual void							DrawLocal( );		
+	virtual void							DrawLocal( );
 
 	static void								ShortenText( const wchar_t* src, const sdBounds2D& rect, qhandle_t font, int drawFlags, int fontSize, const wchar_t* truncation, int truncationWidth, sdWStringBuilder_Heap& builder );
 
@@ -225,7 +225,7 @@ protected:
 
 	bool									HandleBoundKeyInput( const sdSysEvent* event );
 	bool									ParseKeys( const char* name, const idList<unsigned short>& flags, idList< sdUIEventInfo >& events, const idTokenCache& tokenCache, const char* identifier, int type );
-	
+
 	virtual void							InitPartsForBaseMaterial( const char* material, uiCachedMaterial_t& cached );
 
 	void									DrawThreeHorizontalParts( const idVec4& rect, const idVec4& color, const idVec2& scale, const uiDrawPart_t& left, const uiDrawPart_t& center, const uiDrawPart_t& right );
@@ -242,7 +242,7 @@ protected:
 	void									BeginLayout();
 	idVec2									CalcWorldOffset() const;
 	void									EndLayout();
-	
+
 
 private:
 											sdUIWindow( const sdUIWindow& );
@@ -257,21 +257,21 @@ private:
 	void									OnClientRectChanged( const idVec4& oldValue, const idVec4& newValue );
 	void									OnMaterialChanged( const idStr& oldValue, const idStr& newValue );
 	void									OnFontChanged( const idStr& oldValue, const idStr& newValue );
-	void									OnFlagsChanged( const float oldValue, const float newValue );	
+	void									OnFlagsChanged( const float oldValue, const float newValue );
 
 	void									Show_r( bool show );
 	void									ClearCapture_r( sdUIWindow* window );
-	
+
 											// returns an object that is a tab stop (or NULL if none exist), starting with object and searching its children recursively
 	const sdUIObject*						IsTabStop( const sdUIObject* object ) const;
 	int										NumTabStops_r( const sdUIObject* object ) const;
 	void									ListTabStops_r( const sdUIObject* object, const sdUIObject** objects, int& index ) const;
 	bool									ClipBounds( sdBounds2D& bounds );
-	
-protected:	
+
+protected:
 	uiRenderCallback_t						renderCallback[ UIRC_MAX ];
 	uiInputHandler_t						inputHandler;
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "1. Common/Background Color";
 	desc				= "RGBA of the window rectangle. If a material is specified, the material will be modulated by this color.";
@@ -359,14 +359,14 @@ protected:
 	desc				= "Window's rectangle";
 	editor				= "edit";
 	option1				= "{editorComponents} {x,y,w,h}";
-	option2				= "{editorSeparator} {,}";	
+	option2				= "{editorSeparator} {,}";
 	datatype			= "vec4";
 	aliasdatatype		= "rect";
 	alias				= "rect";
 	)
 	sdVec4Property		clientRect;
 	// ===========================================
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "1. Common/Material";
 	desc				= "Window's material.";
@@ -395,7 +395,7 @@ protected:
 	)
 	sdFloatProperty		visible;
 	// ===========================================
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "2. Drawing/Material Scale";
 	desc				= "Number of repetitions for the material. Negative values will flip the material for that axis.";
@@ -417,7 +417,7 @@ protected:
 	)
 	sdVec2Property		materialShift;
 	// ===========================================
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "2. Drawing/Border Width";
 	desc				= "Width of the window's border.";
@@ -438,7 +438,7 @@ protected:
 	)
 	sdVec4Property		borderColor;
 	// ===========================================
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "3. Behavior/Allow Events";
 	desc				= "When disabled, the window (and its children) won't respond to any events.";
@@ -481,7 +481,7 @@ protected:
 	desc				= "Window's absolute rectangle.";
 	editor				= "edit";
 	option1				= "{editorComponents} {x,y,w,h}";
-	option2				= "{editorSeparator} {,}";	
+	option2				= "{editorSeparator} {,}";
 	datatype			= "vec4";
 	readOnly			= "true";
 	)
@@ -493,7 +493,7 @@ protected:
 	sdUIEventHandle		preDrawHandle;
 	sdUIEventHandle		postDrawHandle;
 	sdUIEventHandle		postDrawChildHandle;
-	
+
 protected:
 	// cache the text origin until certain properties are flagged dirty (text, window size, etc)
 	idVec4						cachedClientRect;
@@ -502,7 +502,7 @@ protected:
 
 	static idHashMap< sdUITemplateFunction< sdUIWindow >* >	windowFunctions;
 
-	static const char*			eventNames[ WE_NUM_EVENTS - OE_NUM_EVENTS ];	
+	static const char*			eventNames[ WE_NUM_EVENTS - OE_NUM_EVENTS ];
 };
 
 /*

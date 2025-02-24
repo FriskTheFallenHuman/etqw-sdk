@@ -164,7 +164,7 @@ public:
 	void					ReadCampaign( const class sdDeclCampaign *&campaign );
 
 	void					ReadBuildNumber( void );
- 
+
 	//						Used to retrieve the saved game buildNumber from within class Restore methods
 	int						GetBuildNumber( void );
 

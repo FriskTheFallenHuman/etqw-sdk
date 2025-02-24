@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -15,7 +15,7 @@ static char THIS_FILE[] = __FILE__;
 #include "UserInterfaceLocal.h"
 #include "UIBinder.h"
 
-#include "../../sys/sys_local.h"
+#include "sys/sys_local.h"
 
 SD_UI_IMPLEMENT_CLASS( sdUIBinder, sdUIWindow )
 
@@ -59,7 +59,7 @@ bool sdUIBinder::PostEvent( const sdSysEvent* event ) {
 	if ( event->IsMouseEvent() ) {
 		return false;
 	}
-	
+
 	bool down;
 	idKey* key = keyInputManager->GetKeyForEvent( *event, down );
 	if ( !down || key == NULL ) {
@@ -141,7 +141,7 @@ sdUIBinder::GetFunction
 */
 sdUIFunctionInstance* sdUIBinder::GetFunction( const char* name ) {
 	const sdUITemplateFunction< sdUIBinder >* function = sdUIBinder::FindFunction( name );
-	if ( !function ) {		
+	if ( !function ) {
 		return sdUIWindow::GetFunction( name );
 	}
 

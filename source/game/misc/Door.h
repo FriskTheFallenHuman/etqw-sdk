@@ -5,8 +5,8 @@
 #ifndef __GAME_DOOR_H__
 #define __GAME_DOOR_H__
 
-#include "../Mover.h"
-#include "../misc/RenderEntityBundle.h"
+#include "Mover.h"
+#include "misc/RenderEntityBundle.h"
 
 class sdDoorPhysicsNetworkData : public sdEntityStateNetworkData {
 public:
@@ -167,14 +167,14 @@ public:
 
 	virtual void			OnTeamBlocked( idEntity *blockedEntity, idEntity *blockingEntity );
 	virtual void			OnTouch( idEntity *other, const trace_t& trace );
-	
+
 	idEntity*				GetActivator( void ) const { return activator; }
 
 	void					SpawnDoorTrigger( void );
 	void					SpawnSoundTrigger( void );
 
 	void					SpectatorTouch( idPlayer* p, const trace_t& trace );
-	
+
 	virtual void			ReachedPosition( void );
 	virtual void			Think( void );
 

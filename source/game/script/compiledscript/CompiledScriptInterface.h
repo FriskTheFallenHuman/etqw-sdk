@@ -48,7 +48,7 @@ public:
 				child = child->GetNext();
 			}
 			while ( child != NULL ) {
-				if ( *root == child->GetSuperName() ) {					
+				if ( *root == child->GetSuperName() ) {
 					return child;
 				}
 				child = child->GetNext();

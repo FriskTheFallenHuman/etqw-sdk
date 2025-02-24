@@ -1,14 +1,14 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../../Game_local.h"		// for cvars and debug drawing
-#include "../../Player.h"
-#include "../../Misc.h"
-#include "../../ContentMask.h"
-#include "../../botai/BotThreadData.h"
+#include "Game_local.h"		// for cvars and debug drawing
+#include "Player.h"
+#include "Misc.h"
+#include "ContentMask.h"
+#include "botai/BotThreadData.h"
 
 #include "AAS_local.h"
 #include "AASCallback_FindCoverArea.h"
@@ -213,7 +213,7 @@ void idAASLocal::ShowArea( const idVec3 &origin, int mode ) const {
 	if ( aas_showTravelTime.GetInteger() ) {
 		int travelTime;
 		const aasReachability_t *reach;
-		
+
 		RouteToGoalArea( areaNum, org, aas_showTravelTime.GetInteger(), TFL_WALK|TFL_AIR, travelTime, &reach );
 		gameLocal.Printf( "\rtt = %4d", travelTime );
 		if ( reach ) {

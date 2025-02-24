@@ -4,9 +4,9 @@
 #ifndef __ANIM_TESTMODEL_H__
 #define __ANIM_TESTMODEL_H__
 
-#include "../AnimatedEntity.h"
-#include "../physics/Physics_Parametric.h"
-#include "../Actor.h"
+#include "AnimatedEntity.h"
+#include "physics/Physics_Parametric.h"
+#include "Actor.h"
 
 /*
 ==============================================================================================

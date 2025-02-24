@@ -51,7 +51,7 @@ public:
 #if !defined( SD_STRICT_EVENTDEFS )
 								idEventDef( const char* command, const char* formatspec = NULL, char returnType = 0 );
 #endif // SD_STRICT_EVENTDEFS
-								
+
 	const char*					GetName( void ) const;
 	const char*					GetArgFormat( void ) const;
 	unsigned int				GetFormatspecIndex( void ) const;
@@ -127,7 +127,7 @@ public:
 
 	static idEvent*				Alloc( const idEventDef *evdef, int numargs, va_list args, bool guiEvent );
 	static void					CopyArgs( const idEventDef *evdef, int numargs, va_list args, UINT_PTR data[ D_EVENT_MAXARGS ]  );
-	
+
 	static bool					ArgsMatch( char format, const idEventArg* arg );
 
 	void						Free( void );
@@ -141,7 +141,7 @@ public:
 	static void					Init( void );
 	static void					Shutdown( void );
 	static void					ListEvents( const idCmdArgs& cmdArgs );
-	
+
 	static idLinkList< idEvent >	freeEvents;
 	static idLinkList< idEvent >	eventQueue;
 	static idLinkList< idEvent >	guiEventQueue;

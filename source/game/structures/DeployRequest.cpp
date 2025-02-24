@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,10 +12,10 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "DeployRequest.h"
-#include "../Player.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../structures/DeployMask.h"
+#include "Player.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "structures/DeployMask.h"
 
 /*
 ===============================================================================
@@ -30,11 +30,11 @@ static char THIS_FILE[] = __FILE__;
 sdDeployRequest::sdDeployRequest
 ==============
 */
-sdDeployRequest::sdDeployRequest( idFile* file ) : 
+sdDeployRequest::sdDeployRequest( idFile* file ) :
 	object( NULL ), owner( NULL ), renderEntityHandle( -1 ), position( vec3_origin ), rotation( 0.f ), team( NULL ), callTime( -1 ) {
 
 	file->ReadFloat( rotation );
-	
+
 	int ownerSpawnId;
 	file->ReadInt( ownerSpawnId );
 	owner.ForceSpawnId( ownerSpawnId );
@@ -61,7 +61,7 @@ sdDeployRequest::sdDeployRequest( idFile* file ) :
 sdDeployRequest::sdDeployRequest
 ==============
 */
-sdDeployRequest::sdDeployRequest( const sdDeclDeployableObject* _object, idPlayer* _owner, const idVec3& _position, float _rotation, sdTeamInfo* _team, int delayMS ) : 
+sdDeployRequest::sdDeployRequest( const sdDeclDeployableObject* _object, idPlayer* _owner, const idVec3& _position, float _rotation, sdTeamInfo* _team, int delayMS ) :
 	object( _object ), owner( _owner ), renderEntityHandle( -1 ), position( _position ), rotation( _rotation ), team( _team ), callTime( -1 ) {
 
 	if ( !team ) {

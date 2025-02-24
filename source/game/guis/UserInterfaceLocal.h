@@ -5,12 +5,12 @@
 #ifndef __GAME_GUIS_USERINTERFACELOCAL_H__
 #define __GAME_GUIS_USERINTERFACELOCAL_H__
 
-#include "../../idlib/PropertiesImpl.h"
+#include "idlib/PropertiesImpl.h"
 #include "UserInterfaceTypes.h"
 #include "UITimeline.h"
 #include "UserInterfaceScript.h"
-#include "../../renderer/DeviceContext.h"
-#include "../gamesys/DeviceContextHelper.h"
+#include "renderer/DeviceContext.h"
+#include "gamesys/DeviceContextHelper.h"
 
 class sdFloatParmExpression;
 class sdSingleParmExpression;
@@ -68,7 +68,7 @@ public:
 	void								ClearExpressions();
 	void								Update( void );
 
-	
+
 	void								OnSnapshotHitch( int delta );
 
 	virtual sdUserInterfaceLocal*		GetUI() { return ui; }

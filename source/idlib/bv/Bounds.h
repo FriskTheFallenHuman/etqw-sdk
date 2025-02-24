@@ -483,7 +483,7 @@ ID_INLINE idBounds &idBounds::ExpandSelf( const float d ) {
 
 // RAVEN BEGIN
 // jscott: for BSE
-ID_INLINE idBounds &idBounds::ExpandSelf( const idVec3 &d ) 
+ID_INLINE idBounds &idBounds::ExpandSelf( const idVec3 &d )
 {
 	b[0][0] -= d[0];
 	b[0][1] -= d[1];

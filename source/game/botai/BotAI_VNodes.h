@@ -4,7 +4,7 @@
 #ifndef __BOTAI_NODES_H__
 #define __BOTAI_NODES_H__
 
-#define OLD_NODE_VERSION	7 // 6 
+#define OLD_NODE_VERSION	7 // 6
 #define NODE_VERSION		8 // 7
 
 #define NODE_MAX_RANGE		4096.0f
@@ -32,7 +32,7 @@ private:
 	};
 
 	int						num;
-	int						flags; 
+	int						flags;
 	bool					active;
 	float					radius;
 	playerTeamTypes_t		team;

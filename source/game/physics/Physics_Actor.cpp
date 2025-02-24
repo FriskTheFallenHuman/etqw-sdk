@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,7 +12,7 @@ static char THIS_FILE[] = __FILE__;
 
 #include "Physics_Actor.h"
 #include "Clip.h"
-#include "../Entity.h"
+#include "Entity.h"
 
 CLASS_DECLARATION( idPhysics_Base, idPhysics_Actor )
 END_CLASS

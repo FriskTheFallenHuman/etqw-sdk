@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -16,7 +16,7 @@ static char THIS_FILE[] = __FILE__;
 #include "UIWindow_Shaped.h"
 #include "UserInterfaceLocal.h"
 
-#include "../../sys/sys_local.h"
+#include "sys/sys_local.h"
 
 using namespace sdProperties;
 
@@ -69,7 +69,7 @@ sdUIWindow_Shaped::GetFunction
 */
 sdUIFunctionInstance* sdUIWindow_Shaped::GetFunction( const char* name ) {
 	const ShapedTemplateFunction* function = sdUIWindow_Shaped::FindFunction( name );
-	if ( !function ) {		
+	if ( !function ) {
 		return sdUIWindow::GetFunction( name );
 	}
 	return new sdUITemplateFunctionInstance< sdUIWindow_Shaped, sdUITemplateFunctionInstance_IdentifierShaped >( this, function );

@@ -23,11 +23,11 @@ public:
 	int					RandomInt( int maxValue );		// random integer in the range [0, maxValue[
 	float				RandomFloat( void );		// random number in the range [0.0f, 1.0f[
 	float				CRandomFloat( void );		// random number in the range [-1.0f, 1.0f[
-	idVec3				RandomVectorInCone( float halfOpeningAngle ); //Random vector in the cone with angle 2 * halfOpeningAngle centered around the z-axis 
+	idVec3				RandomVectorInCone( float halfOpeningAngle ); //Random vector in the cone with angle 2 * halfOpeningAngle centered around the z-axis
 	idVec3				RandomVectorInCone( idVec3 dir, float halfOpeningAngle );
 	static const int	MAX_RAND = 0x7fff;
 	static idRandom		&StaticRandom( void ) { return staticRandom; }
-	
+
 private:
 	static idRandom		staticRandom;
 	int					seed;

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,9 +11,9 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Physics_JetPack.h"
-#include "../Entity.h"
-#include "../Actor.h"
-#include "../vehicles/JetPack.h"
+#include "Entity.h"
+#include "Actor.h"
+#include "vehicles/JetPack.h"
 
 #define CHECKCURRENT for ( int index = 0; index < 3; index++ ) { if ( FLOAT_IS_NAN( current.origin[ index ] ) ) { assert( false ); } }
 
@@ -167,7 +167,7 @@ void sdPhysics_JetPack::CheckGround( void ) {
 		state.onWater = false;
 
 		// let the entity know about the collision
-		groundEntityPtr->Hit( groundTrace, state.velocity, self );	
+		groundEntityPtr->Hit( groundTrace, state.velocity, self );
 		self->Collide( groundTrace, state.velocity, -1 );
 	}
 }
@@ -181,7 +181,7 @@ sdPhysics_JetPack::sdPhysics_JetPack( void ) {
 
 	memset( &current, 0, sizeof( current ) );
 	saved = current;
-	
+
 	maxStepHeight = 18.0f;
 	noImpact = false;
 
@@ -366,7 +366,7 @@ idVec3 sdPhysics_JetPack::GroundMoveForce( bool skiing, const idVec3& desiredMov
 	idVec3 endVel = current.velocity + accel * timeStep;
 	VEC_CHECK_BAD( endVel );
 
-	// factor in the forces applied so far (NOTE: don't have to cancel out the vertical 
+	// factor in the forces applied so far (NOTE: don't have to cancel out the vertical
 	// component since this only includes the friction force!)
 	VEC_CHECK_BAD( forceSoFar );
 	idVec3 accelFromForceSoFar = ( forceSoFar - ( ( forceSoFar * surfaceUp ) * surfaceUp ) ) * timeStep;
@@ -377,7 +377,7 @@ idVec3 sdPhysics_JetPack::GroundMoveForce( bool skiing, const idVec3& desiredMov
 	FLOAT_CHECK_BAD( clampSpeed );
 
 	if ( skiing && currentSpeed > clampSpeed ) {
-		// when skiing, the speed you're going at can be the maximum	
+		// when skiing, the speed you're going at can be the maximum
 		clampSpeed = currentSpeed;
 	}
 
@@ -931,7 +931,7 @@ bool sdPhysics_JetPack::SlideMove( bool stepUp, bool stepDown, bool push, int ve
 				current.velocity *= 1.0f - idMath::ClampFloat( 0.0f, 1000.0f, totalMass - 20.0f ) * ( 1.0f / 950.0f );
 				pushed = true;
 			}
-	
+
 			current.origin = trace.endpos;
 			CHECKCURRENT
 			time_left -= time_left * trace.fraction;
@@ -961,7 +961,7 @@ bool sdPhysics_JetPack::SlideMove( bool stepUp, bool stepDown, bool push, int ve
 		if ( !stepped && !vehiclePushed ) {
 			// let the entity know about the collision
 			idEntity *ent = gameLocal.entities[ trace.c.entityNum ];
-			ent->Hit( trace, current.velocity, self );			
+			ent->Hit( trace, current.velocity, self );
 			self->Collide( trace, current.velocity, -1 );
 		}
 
@@ -1532,7 +1532,7 @@ VEC_CHECK_BAD( oldOrigin );
 		}
 		current.velocity = move / timeDelta;
 VEC_CHECK_BAD( current.velocity );
-		
+
 //		pusher->Disable();
 		SlideMove( true, true, false, pushCount + 1, timeDelta );
 //		pusher->Enable();
@@ -1541,7 +1541,7 @@ VEC_CHECK_BAD( current.velocity );
 VEC_CHECK_BAD( current.velocity );
 VEC_CHECK_BAD( current.origin );
 
-		clipModel->Link( gameLocal.clip, self, 0, current.origin, clipModel->GetAxis() );	
+		clipModel->Link( gameLocal.clip, self, 0, current.origin, clipModel->GetAxis() );
 		LinkShotModel();
 		CheckGround();
 		// HACK - force the driver to update its position
@@ -1624,7 +1624,7 @@ VEC_CHECK_BAD( normalFinderStart );
 VEC_CHECK_BAD( normalFinderEnd );
 
 			trace_t normalFinder;
-			gameLocal.clip.TranslationModel( CLIP_DEBUG_PARMS normalFinder, normalFinderStart, normalFinderEnd, clipModel, 
+			gameLocal.clip.TranslationModel( CLIP_DEBUG_PARMS normalFinder, normalFinderStart, normalFinderEnd, clipModel,
 																clipModel->GetAxis(), GetClipMask(), pusher,
 																pusher->GetOrigin(), pusher->GetAxis() );
 			if ( normalFinder.fraction == 1.0f ) {

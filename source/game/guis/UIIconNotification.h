@@ -95,7 +95,7 @@ private:
 	eOriginAnimation		visualOriginAnimation;
 
 	floatEvaluator_t		sizeEvaluator;
-	eSizeAnimation			sizeAnimation;		
+	eSizeAnimation			sizeAnimation;
 
 	int						finalizeTime;
 
@@ -108,7 +108,7 @@ private:
 		void*				ptr;
 		int					integer;
 	}						data;
-	
+
 	sdUIIconNotification&	parent;
 };
 
@@ -187,7 +187,7 @@ protected:
 	iconHandle_t							FindIcon( sdUINotifyIcon& icon );
 
 private:
-	enum eOrientation{ IO_VERTICAL, IO_HORIZONTAL, IO_HORIZONTAL_RIGHT };	
+	enum eOrientation{ IO_VERTICAL, IO_HORIZONTAL, IO_HORIZONTAL_RIGHT };
 
 	void									GetNextOrigin( sdUINotifyIcon* icon, idVec2& origin ) const;
 	void									FinishAnimations();
@@ -205,7 +205,7 @@ private:
 	sdFloatProperty				iconSlideTime;
 	sdVec2Property				iconSize;
 	sdUIEventHandle				iconPreDrawHandle;
-	
+
 private:
 	static const char*			eventNames[ INE_NUM_EVENTS - WE_NUM_EVENTS ];
 	icons_t						icons;

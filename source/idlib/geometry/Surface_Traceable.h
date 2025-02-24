@@ -149,7 +149,7 @@ ID_INLINE const idBounds& idSurface_Traceable::GetBounds( void ) {
 
 	if ( bounds.IsCleared() ) {
 		//SIMDProcessor->MinMax( bounds[0], bounds[1], verts.Begin(), indexes.Begin(), indexes.Num() );
-	} 
+	}
 
 	return bounds;
 }

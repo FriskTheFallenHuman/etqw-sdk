@@ -2,12 +2,12 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclQuickChat.h"
-#include "../../decllib/declTypeHolder.h"
-#include "../../framework/DeclParseHelper.h"
+#include "decllib/declTypeHolder.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -59,7 +59,7 @@ bool sdDeclQuickChat::Parse( const char *_text, const int textLength ) {
 	idParser src;
 
 	src.SetFlags( DECL_LEXER_FLAGS );
-//	src.LoadMemory( _text, textLength, GetFileName(), GetLineNum() );	
+//	src.LoadMemory( _text, textLength, GetFileName(), GetLineNum() );
 //	src.AddIncludes( GetFileLevelIncludeDependencies() );
 	sdDeclParseHelper declHelper( this, _text, textLength, src );
 

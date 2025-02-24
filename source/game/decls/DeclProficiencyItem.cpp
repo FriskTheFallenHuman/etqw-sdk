@@ -2,13 +2,13 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclProficiencyItem.h"
-#include "../Game_local.h"
-#include "../proficiency/StatsTracker.h"
-#include "../../framework/DeclParseHelper.h"
+#include "Game_local.h"
+#include "proficiency/StatsTracker.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================

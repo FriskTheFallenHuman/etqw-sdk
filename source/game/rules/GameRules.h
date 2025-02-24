@@ -5,7 +5,7 @@
 #ifndef __GAME_RULES_GAMERULES_H__
 #define __GAME_RULES_GAMERULES_H__
 
-#include "../roles/Inventory.h"
+#include "roles/Inventory.h"
 
 class sdTeamInfo;
 class idPlayer;
@@ -36,7 +36,7 @@ enum muteFlags_e {
 
 enum readyState_e {
 	RS_READY,
-	RS_NOT_ENOUGH_CLIENTS,		
+	RS_NOT_ENOUGH_CLIENTS,
 	RS_NOT_ENOUGH_READY,
 };
 
@@ -53,7 +53,7 @@ public:
 		int					fireTeamIndex;
 		bool				fireTeamLeader;
 		bool				fireTeamPublic;
-		idStr				fireTeamName;	
+		idStr				fireTeamName;
 	};
 
 	struct playerState_t {
@@ -306,7 +306,7 @@ protected:
 	void						SendCameraEvent( idEntity* entity, const sdReliableMessageClientInfoBase& target );
 
 	void						CallScriptEndGame( void );
-	static void					RecordWinningTeam( sdTeamInfo* winner, const char* prefix, bool includeTeamName );	
+	static void					RecordWinningTeam( sdTeamInfo* winner, const char* prefix, bool includeTeamName );
 
 	static void					SetupLoadScreenUI( sdUserInterfaceScope& scope, const char* status, bool currentMap, int mapIndex, const idDict& metaData, const sdDeclMapInfo* mapInfo );
 
@@ -316,7 +316,7 @@ protected:
 protected:
 	virtual void				GameState_Review( void ) = 0;
 	virtual void				GameState_NextGame( void ) = 0;
-	virtual void				GameState_Warmup( void ) = 0;	
+	virtual void				GameState_Warmup( void ) = 0;
 	virtual void				GameState_Countdown( void ) = 0;
 	virtual void				GameState_GameOn( void ) = 0;
 	virtual void				GameState_NextMap( void ) = 0;
@@ -360,7 +360,7 @@ protected:
 			flags.team		= false;
 			flags.obituary	= false;
 			node.SetOwner( this );
-		}	
+		}
 
 		void Set( const wchar_t* text, chatMode_t mode );
 
@@ -375,7 +375,7 @@ protected:
 
 		node_t&			GetNode()				{ return node; }
 		const node_t&	GetNode() const			{ return node; }
-		
+
 		int				GetTime() const			{ return time; }
 
 	private:
@@ -388,7 +388,7 @@ protected:
 		int			time;
 		idVec4		color;
 		idWStr		text;
-		node_t		node;		
+		node_t		node;
 	};
 
 protected:
@@ -413,13 +413,13 @@ protected:
 	bool						commandsAdded;
 	mutable int					autoReadyStartTime;
 
-//	static const char *			gameStateStrings[ GS_STATE_COUNT ];	
+//	static const char *			gameStateStrings[ GS_STATE_COUNT ];
 
 	static const int MAX_CHAT_LINES = 128;
 	idStaticList< sdChatLine, MAX_CHAT_LINES >		chatLines;
 	sdChatLine::node_t								chatHead;
 	sdChatLine::node_t								chatFree;
-	
+
 	idList< sdCallVote* >							callVotes;
 
 	idWStr						statusText;
@@ -430,7 +430,7 @@ protected:
 
 // Encapsulate some common behaviour for game types that manage a single map
 class sdGameRules_SingleMapHelper {
-public:	
+public:
 	static void						ArgCompletion_StartGame( const idCmdArgs& args, argCompletionCallback_t callback );
 	static userMapChangeResult_e	OnUserStartMap( const char* text, idStr& reason, idStr& mapName );
 	static void						SanitizeMapName( idStr& mapName, bool setExtension );

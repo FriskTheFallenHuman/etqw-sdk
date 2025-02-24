@@ -84,7 +84,7 @@ public:
 						~sdStringBuilder();
 
 	void				Clear();
-	
+
 						// take care when using c_str and an alloca-based allocator
 						// and passing to a new function
 	const CharType*		c_str() const;
@@ -94,7 +94,7 @@ public:
 	void				Append( CharType rhs );
 	void				AppendNoColors( const CharType* rhs );
 	int					Length() const;
-	
+
 
 	sdStringBuilder&	operator+=( CharType rhs );
 	sdStringBuilder&	operator+=( const CharType* rhs );
@@ -147,7 +147,7 @@ ID_INLINE void sdStringBuilder< StrType, CharAllocator >::Clear() {
 	if( data != &baseBuffer[ 0 ] ) {
 		Allocator::Free( data );
 	}
-	
+
 	data = &baseBuffer[ 0 ];
 	data[ 0 ] = '\0';
 	len = 0;
@@ -187,7 +187,7 @@ ID_INLINE void sdStringBuilder< StrType, CharAllocator >::EnsureAlloced( int amo
 	if( data != &baseBuffer[ 0 ] ) {
 		Allocator::Free( data );
 	}
-	
+
 
 	data = newbuffer;
 }
@@ -217,7 +217,7 @@ ID_INLINE void sdStringBuilder< StrType, CharAllocator >::AppendNoColors( const 
 			} else {
 				data[ len + offset ] = rhs[ i ];
 				offset++;
-			}			
+			}
 		}
 		len = newLen;
 		data[ len ] = '\0';

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -92,7 +92,7 @@ sdDemoScript::sdOnTime::Parse
 bool sdDemoScript::sdOnTime::Parse( idParser& src ) {
 
 	time = src.ParseInt();
-	
+
 	if ( !src.ExpectTokenString( "{" ) ) {
 		return false;
 	}
@@ -141,7 +141,7 @@ sdDemoScript::InitClass
 */
 void sdDemoScript::InitClass() {
 	eventFactory.RegisterType( sdSetCameraEvent::GetType(), sdEventFactory::Allocator< sdSetCameraEvent > );
-	eventFactory.RegisterType( sdClearCameraEvent::GetType(), sdEventFactory::Allocator< sdClearCameraEvent > );	
+	eventFactory.RegisterType( sdClearCameraEvent::GetType(), sdEventFactory::Allocator< sdClearCameraEvent > );
 	eventFactory.RegisterType( sdExecEvent::GetType(), sdEventFactory::Allocator< sdExecEvent > );
 }
 
@@ -232,7 +232,7 @@ sdDemoScript::ParseTimeLine
 ============
 */
 bool sdDemoScript::ParseTimeLine( idParser& src ) {
-	
+
 	if ( !src.ExpectTokenString( "{" ) ) {
 		return false;
 	}
@@ -253,7 +253,7 @@ bool sdDemoScript::ParseTimeLine( idParser& src ) {
 				delete onTime;
 				return false;
 			}
-            
+
 			timedEvents.Append( onTime );
 		} else {
 			src.Error( "sdDemoScript::ParseTimeLine : Unknown keyword '%s'", token.c_str() );

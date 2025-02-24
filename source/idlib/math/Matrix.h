@@ -135,16 +135,16 @@ ID_INLINE idMat2 idMat2::operator*( const idMat2 &a ) const {
 
 ID_INLINE idMat2 idMat2::operator*( const float a ) const {
 	return idMat2(
-		mat[0].x * a, mat[0].y * a, 
+		mat[0].x * a, mat[0].y * a,
 		mat[1].x * a, mat[1].y * a );
 }
 
 ID_INLINE idMat2 idMat2::operator+( const idMat2 &a ) const {
 	return idMat2(
-		mat[0].x + a[0].x, mat[0].y + a[0].y, 
+		mat[0].x + a[0].x, mat[0].y + a[0].y,
 		mat[1].x + a[1].x, mat[1].y + a[1].y );
 }
-    
+
 ID_INLINE idMat2 idMat2::operator-( const idMat2 &a ) const {
 	return idMat2(
 		mat[0].x - a[0].x, mat[0].y - a[0].y,
@@ -491,7 +491,7 @@ ID_INLINE idMat3 idMat3::operator*( const idMat3 &a ) const {
 
 // RAVEN BEGIN
 // jscott: divide is overridden to multiply by transpose
-ID_INLINE idVec3 idMat3::operator/( const idVec3 &vec ) const 
+ID_INLINE idVec3 idMat3::operator/( const idVec3 &vec ) const
 {
 	return( idVec3(
 		mat[0].x * vec.x + mat[0].y * vec.y + mat[0].z * vec.z,
@@ -504,7 +504,7 @@ ID_INLINE idMat3& idMat3::operator=( const idMat3 &a ) {
 	return *this;
 }
 
-ID_INLINE idMat3 idMat3::operator/( const idMat3 &a ) const 
+ID_INLINE idMat3 idMat3::operator/( const idMat3 &a ) const
 {
 	idMat3		dst;
 
@@ -537,7 +537,7 @@ ID_INLINE idMat3 idMat3::operator+( const idMat3 &a ) const {
 		mat[1].x + a[1].x, mat[1].y + a[1].y, mat[1].z + a[1].z,
 		mat[2].x + a[2].x, mat[2].y + a[2].y, mat[2].z + a[2].z );
 }
-    
+
 ID_INLINE idMat3 idMat3::operator-( const idMat3 &a ) const {
 	return idMat3(
 		mat[0].x - a[0].x, mat[0].y - a[0].y, mat[0].z - a[0].z,
@@ -547,7 +547,7 @@ ID_INLINE idMat3 idMat3::operator-( const idMat3 &a ) const {
 
 ID_INLINE idMat3 &idMat3::operator*=( const float a ) {
 	mat[0].x *= a; mat[0].y *= a; mat[0].z *= a;
-	mat[1].x *= a; mat[1].y *= a; mat[1].z *= a; 
+	mat[1].x *= a; mat[1].y *= a; mat[1].z *= a;
 	mat[2].x *= a; mat[2].y *= a; mat[2].z *= a;
 
     return *this;
@@ -1055,15 +1055,15 @@ ID_INLINE idMat4 idMat4::operator*( const idMat4 &a ) const {
 }
 
 ID_INLINE idMat4 idMat4::operator+( const idMat4 &a ) const {
-	return idMat4( 
+	return idMat4(
 		mat[0].x + a[0].x, mat[0].y + a[0].y, mat[0].z + a[0].z, mat[0].w + a[0].w,
 		mat[1].x + a[1].x, mat[1].y + a[1].y, mat[1].z + a[1].z, mat[1].w + a[1].w,
 		mat[2].x + a[2].x, mat[2].y + a[2].y, mat[2].z + a[2].z, mat[2].w + a[2].w,
 		mat[3].x + a[3].x, mat[3].y + a[3].y, mat[3].z + a[3].z, mat[3].w + a[3].w );
 }
-    
+
 ID_INLINE idMat4 idMat4::operator-( const idMat4 &a ) const {
-	return idMat4( 
+	return idMat4(
 		mat[0].x - a[0].x, mat[0].y - a[0].y, mat[0].z - a[0].z, mat[0].w - a[0].w,
 		mat[1].x - a[1].x, mat[1].y - a[1].y, mat[1].z - a[1].z, mat[1].w - a[1].w,
 		mat[2].x - a[2].x, mat[2].y - a[2].y, mat[2].z - a[2].z, mat[2].w - a[2].w,

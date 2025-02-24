@@ -102,7 +102,7 @@ public:
 //mal: allow the network to access some engine side bot functions....
 	virtual int				AllocateClientSlotForBot( int maxPlayersOnServer );
 	virtual int				ServerSetBotUserCommand( int clientNum, int frameNum, const usercmd_t& cmd );
-	virtual int				ServerSetBotUserName( int clientNum, const char* playerName ); 
+	virtual int				ServerSetBotUserName( int clientNum, const char* playerName );
 //mal: end of bot network functions
 
 	virtual void			ClientSendReliableMessage( const idBitMsg &msg );

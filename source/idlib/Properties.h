@@ -19,13 +19,13 @@ namespace sdProperties {
 		sdPropertyValueBase() {
 			flags.callbackEnabled	= true;
 			flags.validationEnabled = true;
-			flags.readOnly			= false;			
+			flags.readOnly			= false;
 		}
-		
+
 		sdPropertyValueBase( const sdPropertyValueBase& rhs ) {
 			flags.callbackEnabled	= rhs.flags.callbackEnabled;
 			flags.validationEnabled = rhs.flags.validationEnabled ;
-			flags.readOnly			= rhs.flags.readOnly;			
+			flags.readOnly			= rhs.flags.readOnly;
 		}
 
 		virtual ~sdPropertyValueBase() {}
@@ -42,7 +42,7 @@ namespace sdProperties {
 		struct flags_t {
 			bool callbackEnabled	: 1;
 			bool validationEnabled	: 1;
-			bool readOnly			: 1;			
+			bool readOnly			: 1;
 		} flags;
 	};
 
@@ -66,14 +66,14 @@ namespace sdProperties {
 	private:
 		ValueType							value;
 
-	public:		
+	public:
 		sdPropertyValue() {}
 
 		sdPropertyValue( typename Traits::ConstParameter ref ) :
 			value( ref ), onChange( 1 ), onValidate( 1 ) {}
 
 		sdPropertyValue( const sdPropertyValue< T >& rhs ) :
-			value( rhs.value ), 
+			value( rhs.value ),
 			onChange( 1 ),
 			onValidate( 1 ),
 			sdPropertyValueBase( rhs ) {
@@ -98,7 +98,7 @@ namespace sdProperties {
 
 		CallbackHandle				AddOnChangeHandler( CallbackTarget newCallback );
 		void						RemoveOnChangeHandler( CallbackHandle& handle );
-		
+
 		CallbackHandle				AddValidator( ValidatorCallbackTarget newCallback );
 		void						RemoveValidator( CallbackHandle& handle );
 
@@ -113,7 +113,7 @@ namespace sdProperties {
 									}
 
 
-	private:		
+	private:
 		idList< CallbackTarget >			onChange;	// these should always be checked, since they can be freed, but still left in the list
 		idList< ValidatorCallbackTarget >	onValidate;	// these should always be checked, since they can be freed, but still left in the list
 	};
@@ -154,9 +154,9 @@ namespace sdProperties {
 			sdPropertyValue< idAngles >* 	anglesValue;
 		} value;
 
-		bool IsValid() const				{ return value.baseValue != NULL; }		
+		bool IsValid() const				{ return value.baseValue != NULL; }
 		bool IsReadOnly() const 			{ return value.baseValue->IsReadOnly();	}
-		const char* TypeToString() const	{ return TypeToString( valueType ); }		
+		const char* TypeToString() const	{ return TypeToString( valueType ); }
 		ePropertyType GetValueType() const	{ return valueType; }
 
 		static const char* TypeToString( int type ) {
@@ -180,7 +180,7 @@ namespace sdProperties {
 				case PT_COLOR3:		value.color3Value->	NumAttached( onChange, onValidate );	break;
 				case PT_COLOR4:		value.color4Value->	NumAttached( onChange, onValidate );	break;
 				case PT_ANGLES: 	value.anglesValue-> NumAttached( onChange, onValidate );	break;
-			}		
+			}
 		}
 
 		void RemoveOnChangeHandler( CallbackHandle handle ) {
@@ -197,7 +197,7 @@ namespace sdProperties {
 				case PT_COLOR4:		value.color4Value->	RemoveOnChangeHandler( handle );	break;
 				case PT_ANGLES:		value.anglesValue-> RemoveOnChangeHandler( handle );	break;
 			}
-		}		
+		}
 
 	private:
 		friend class sdPropertyHandler;
@@ -225,7 +225,7 @@ namespace sdProperties {
 		~sdPropertyHandler() {
 			Clear();
 		}
-		
+
 		typedef sdHashMapGeneric< idStr, sdProperty*, sdHashCompareStrIcmp > propertyHashMap_t;
 		typedef propertyHashMap_t::Pair propertyPair_t;
 
@@ -244,7 +244,7 @@ namespace sdProperties {
 									assert( false );
 								}
 								return ret;
-							}	
+							}
 
 		void				Remove( const char* name );
 
@@ -302,7 +302,7 @@ namespace sdProperties {
 		}
 	private:
 		bool oldState;
-		sdPropertyValue< T >& property;		
+		sdPropertyValue< T >& property;
 	};
 }
 

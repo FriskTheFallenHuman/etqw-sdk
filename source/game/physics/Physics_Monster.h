@@ -118,7 +118,7 @@ public:	// common physics interface
 	virtual void						WriteNetworkState( networkStateMode_t mode, const sdEntityStateNetworkData& baseState, sdEntityStateNetworkData& newState, idBitMsg& msg ) const;
 	virtual void						ReadNetworkState( networkStateMode_t mode, const sdEntityStateNetworkData& baseState, sdEntityStateNetworkData& newState, const idBitMsg& msg ) const;
 	virtual sdEntityStateNetworkData*	CreateNetworkStructure( networkStateMode_t mode ) const;
-	
+
 	virtual float			InWater( void ) const { return waterLevel; }
 
 	const idVec3&			GetGroundNormal( void ) const { return groundTrace.c.normal; }

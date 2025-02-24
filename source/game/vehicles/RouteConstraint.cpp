@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,8 +11,8 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "RouteConstraint.h"
-#include "../structures/DeployMask.h"
-#include "../Player.h"
+#include "structures/DeployMask.h"
+#include "Player.h"
 
 idCVar g_drawRouteConstraints( "g_drawRouteConstraints", "0", CVAR_INTEGER | CVAR_GAME, "draws lines showing route constraints" );
 idCVar g_noRouteConstraintKick( "g_noRouteConstraintKick", "0", CVAR_BOOL | CVAR_GAME | CVAR_NOCHEAT | CVAR_RANKLOCKED, "enables/disables players being kicked for deviating from routes" );
@@ -408,7 +408,7 @@ void sdRouteConstraintController::Event_Link( void ) {
 		}
 
 		direction.Normalize();
-		
+
 		points[ i ]->SetAngles( direction.ToAngles() );
 	}
 
@@ -427,7 +427,7 @@ void sdRouteConstraintController::AddPoint( sdRouteConstraintMarker* marker ) {
 	if ( linked ) {
 		gameLocal.Error( "sdRouteConstraintController::AddPoint Controller is Already Linked" );
 	}
-		
+
 	sdRoutePoint* point = sdRoutePoint::Allocate();
 	point->Init( marker );
 

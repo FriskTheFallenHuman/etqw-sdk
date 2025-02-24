@@ -4,7 +4,7 @@
 #ifndef __GAME_STRUCTURES_DEPLOYZONE_H__
 #define __GAME_STRUCTURES_DEPLOYZONE_H__
 
-#include "../ScriptEntity.h"
+#include "ScriptEntity.h"
 
 class sdDeployZoneBroadcastData : public sdScriptEntityBroadcastData {
 public:

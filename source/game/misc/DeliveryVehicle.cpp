@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,9 +11,9 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "DeliveryVehicle.h"
-#include "../script/Script_Helper.h"
-#include "../physics/Physics.h"
-#include "../ContentMask.h"
+#include "script/Script_Helper.h"
+#include "physics/Physics.h"
+#include "ContentMask.h"
 
 
 #define JOTUN_FLY_HEIGHT			4096
@@ -74,7 +74,7 @@ sdDeliveryVehicle::Think
 ================
 */
 void sdDeliveryVehicle::Think( void ) {
-	
+
 	if ( vehicleMode == VMODE_JOTUN ) {
 		Jotun_Think();
 	} else if ( vehicleMode == VMODE_MAGOG ) {
@@ -150,15 +150,15 @@ void sdDeliveryVehicle::Jotun_Think( void ) {
 	PathGetPosition( aheadPosition, aheadPoint );
 	PathGetDirection( aheadPosition, aheadPointDir );
 	aheadPoint.z += JOTUN_FLY_HEIGHT;
-	
+
 	if ( deliveryMode == DMODE_DELIVER ) {
 		bool levelOut = false;
 		if ( aheadPosition > pathLength - 10000.0f ) {
 			levelOut = true;
 		}
-	
+
 		Jotun_DoMove( aheadPoint, aheadPointDir, endPoint, levelOut, false, pathSpeed );
-	} else if ( deliveryMode == DMODE_RETURN ) { 
+	} else if ( deliveryMode == DMODE_RETURN ) {
 		Jotun_DoMove( aheadPoint, aheadPointDir, endPoint, false, true, pathSpeed );
 	}
 }
@@ -179,11 +179,11 @@ void sdDeliveryVehicle::Jotun_DoMove( const idVec3& aheadPointIdeal, const idVec
 	const idMat3& axis = GetPhysics()->GetAxis();
 	const idAngles angles = axis.ToAngles();
 	const idVec3& angVel = GetPhysics()->GetAngularVelocity();
-	
+
 	const idVec3& currentFwd = axis[ 0 ];
 	const idVec3& currentRight = axis[ 1 ];
 	const idVec3& currentUp = axis[ 2 ];
-	
+
 	float rollVel = angVel * currentFwd;
 	float pitchVel = angVel * currentRight;
 	float yawVel = angVel * currentUp;
@@ -194,7 +194,7 @@ void sdDeliveryVehicle::Jotun_DoMove( const idVec3& aheadPointIdeal, const idVec
 	}
 
 	float currentHeight = JOTUN_FLY_HEIGHT_RESCUE;
-	
+
 	// check out ahead and see that we're not going to collide with something
 	if ( velocity != vec3_origin ) {
 		idVec3 futureSpot = velocity * 1.0f;
@@ -207,7 +207,7 @@ void sdDeliveryVehicle::Jotun_DoMove( const idVec3& aheadPointIdeal, const idVec
 		gameLocal.clip.TraceBounds( CLIP_DEBUG_PARMS trace, origin, futureSpot, GetPhysics()->GetBounds(), axis, MASK_SOLID | MASK_OPAQUE, this );
 		futureSpot = trace.endpos;
 		float futureFrac = trace.fraction;
-				
+
 		float futureDist = futureFrac * 3500.0f;
 		if ( futureDist < 3500.0f ) {
 			int surfaceFlags = trace.c.material != NULL ? trace.c.material->GetSurfaceFlags() : 0;
@@ -220,7 +220,7 @@ void sdDeliveryVehicle::Jotun_DoMove( const idVec3& aheadPointIdeal, const idVec
 					aheadPoint.z += moveUp * 4096.0f;
 					aheadPointDir.z += moveUp * 10.0f;
 				}
-				
+
 				aheadPoint.z += moveUp * 4096.0f;
 				aheadPointDir.z += moveUp * 2.0f;
 				aheadPointDir.Normalize();
@@ -228,16 +228,16 @@ void sdDeliveryVehicle::Jotun_DoMove( const idVec3& aheadPointIdeal, const idVec
 				futureDist = 3500.0f;
 			}
 		}
-		
+
 		currentHeight = futureDist;
-		
+
 //		gameRenderWorld->DebugCircle( colorRed, origin, idVec3( 0.0f, 0.0f, 1.0f ), 16, 8 );
 //		gameRenderWorld->DebugArrow( colorRed, origin, futureSpot, 256 );
 //		gameRenderWorld->DebugCircle( colorRed, futureSpot, idVec3( 0.0f, 0.0f, 1.0f ), 16, 8 );
 	}
 //	gameRenderWorld->DebugCircle( colorGreen, aheadPoint, idVec3( 0.0f, 0.0f, 1.0f ), 256, 16 );
-	
-	
+
+
 	// generate a cubic spline between the two points
 	idVec3 point = vec3_origin;
 
@@ -246,40 +246,40 @@ void sdDeliveryVehicle::Jotun_DoMove( const idVec3& aheadPointIdeal, const idVec
 		idVec3 x1 = aheadPoint;
 		idVec3 dx0 = velocity * 3.0f;					// maintaining our current velocity is more important
 		idVec3 dx1 = aheadPointDir * pathSpeed * 1.0f;	// than matching the destination vector
-		
+
 		// calculate coefficients
 		idVec3 D = x0;
 		idVec3 C = dx0;
 		idVec3 B = 3*x1 - dx1 - 2*C - 3*D;
 		idVec3 A = x1 - B - C - D;
-		
+
 		float distanceLeft = ( endPoint - origin ).Length();
 		float lookaheadFactor = ( distanceLeft / 4096.0f ) * 0.5f;
 		lookaheadFactor = idMath::ClampFloat( 0.2f, 0.5f, lookaheadFactor );
-		
+
 		point = ( A * lookaheadFactor + B )*lookaheadFactor*lookaheadFactor + C*lookaheadFactor + D;
 	}
 
 	idVec3 idealNewForward = point - origin;
 	idealNewForward.Normalize();
-	
+
 	idVec3 delta = point - origin;
 	idVec3 endDelta = endPoint - origin;
 	endDelta.Normalize();
 	endDelta.z = 0.0f;
-	
+
 	idAngles endAngles = endDelta.ToAngles().Normalize180();
-	
+
 	// treat the local delta as if the thing is on a flat plane - simplifies everything
 	idVec3 localDelta = axis.TransposeMultiply( delta );
 
 	idVec3 newVelocity = vec3_origin;
 	idVec3 newAngVel = angVel;
-	
+
 	//
 	// A flying vehicle needs to roll and then pull up to turn (to look cool)
 	//
-	
+
 	//
 	// Roll!
 	float targetRoll = endAngles.roll;
@@ -289,7 +289,7 @@ void sdDeliveryVehicle::Jotun_DoMove( const idVec3& aheadPointIdeal, const idVec
 	}
 
 	float rollAmount = idMath::AngleNormalize180( targetRoll - angles.roll );
-	
+
 	// so we know how much we need to roll to get to our new angle
 	// how fast do we want to go to get there?
 	float targetRollVel = ( rollAmount / 15 ) * 30;
@@ -299,20 +299,20 @@ void sdDeliveryVehicle::Jotun_DoMove( const idVec3& aheadPointIdeal, const idVec
 	if ( levelOut ) {
 		maxRollAccel = 35.0f;
 	}
-	
+
 	// now figure out what roll acceleration that needs, clamp it
 	float rollAccel = idMath::AngleNormalize180( targetRollVel - rollVel ) / frameTime;
 	rollAccel = idMath::ClampFloat( -maxRollAccel, maxRollAccel, rollAccel );
-	
+
 	// dampen out the rolling inputs, like its a guy on a stick controlling it
 	rollAccel = rollAccel * 0.2f + lastRollAccel * 0.8f;
 	if ( idMath::Fabs( rollAccel ) < idMath::FLT_EPSILON ) {
 		rollAccel = 0.f;
 	}
 	newAngVel += rollAccel * frameTime * currentFwd;
-	 
+
 	lastRollAccel = rollAccel;
-	
+
 	//
 	// Pull up!
 	float targetPitch = -( localDelta.z / 256.0f ) * 15.0f;
@@ -321,32 +321,32 @@ void sdDeliveryVehicle::Jotun_DoMove( const idVec3& aheadPointIdeal, const idVec
 	} else {
 		targetPitch = idMath::ClampFloat( -25.0f, 15.0f, targetPitch );
 	}
-		
+
 	if ( leaving && targetPitch > -15.0f ) {
 		targetPitch = -15.0f;
 	}
 
 	float pitchAmount = idMath::AngleNormalize180( targetPitch - angles.pitch );
-	
+
 	// so we know how much we need to pitch to get to our new angle
 	// how fast do we want to go to get there?
 	float targetPitchVel = ( pitchAmount / 8 ) * 15;
 	if ( !leaving ) {
 		targetPitchVel = idMath::ClampFloat( -25.0f, 15.0f, targetPitchVel );
 	} else {
-		targetPitchVel = idMath::ClampFloat( -35.0f, 15.0f, targetPitchVel );	
+		targetPitchVel = idMath::ClampFloat( -35.0f, 15.0f, targetPitchVel );
 	}
-	
+
 	// now figure out what roll acceleration that needs, clamp it
 	float pitchAccel = idMath::AngleNormalize180( targetPitchVel - pitchVel ) / frameTime;
 	if ( !leaving ) {
 		pitchAccel = idMath::ClampFloat( -12.0f, 12.0f, pitchAccel );
-	} else { 
+	} else {
 		pitchAccel = idMath::ClampFloat( -36.0f, 12.0f, pitchAccel );
 	}
-	
+
 	newAngVel += pitchAccel * frameTime * currentRight;
-		
+
 	//
 	// Yaw
 	float targetYaw = angles.yaw;
@@ -356,35 +356,35 @@ void sdDeliveryVehicle::Jotun_DoMove( const idVec3& aheadPointIdeal, const idVec
 	} else {
 		targetYaw = endAngles.yaw;
 	}
-	
+
 	float yawAmount = idMath::AngleNormalize180( targetYaw - angles.yaw );
 
 	// so we know how much we need to yaw to get to our new angle
 	// how fast do we want to go to get there?
 	float targetYawVel = ( yawAmount / 8 ) * 15;
 	targetYawVel = idMath::ClampFloat( -15.0f, 15.0f, targetYawVel );
-	
+
 	// now figure out what yaw acceleration that needs, clamp it
 	float yawAccel = idMath::AngleNormalize180( targetYawVel - yawVel ) / frameTime;
 	yawAccel = idMath::ClampFloat( -10.0f, 10.0f, yawAccel );
-	
-	newAngVel += yawAccel * frameTime * currentUp;		
+
+	newAngVel += yawAccel * frameTime * currentUp;
 
 	newVelocity = currentFwd * pathSpeed;
 	if ( levelOut ) {
 		// HACK: Drift back towards the target, to try to ensure it gets there ok
 		newVelocity = newVelocity * 0.7f + endDelta * pathSpeed * 0.3f;
 	}
-	
-	
+
+
 	// HACK: ensure it never gets below the minimum height
 	if ( currentHeight < JOTUN_FLY_HEIGHT_MIN ) {
 		idVec3 newOrigin = origin;
 		newOrigin.z = newOrigin.z - currentHeight + JOTUN_FLY_HEIGHT_MIN;
-		GetPhysics()->SetOrigin( newOrigin );			
+		GetPhysics()->SetOrigin( newOrigin );
 	} else if ( currentHeight < JOTUN_FLY_HEIGHT_RESCUE ) {
 		float oldNewVelLength = newVelocity.Length();
-	
+
 		float scale = ( JOTUN_FLY_HEIGHT_RESCUE - currentHeight ) / ( JOTUN_FLY_HEIGHT_RESCUE - JOTUN_FLY_HEIGHT_MIN );
 		scale = idMath::Sqrt( scale );
 		float rescueVelocity = scale * ( JOTUN_FLY_HEIGHT_RESCUE - JOTUN_FLY_HEIGHT_MIN ) / 0.5f;
@@ -394,11 +394,11 @@ void sdDeliveryVehicle::Jotun_DoMove( const idVec3& aheadPointIdeal, const idVec
 		if ( rescueVelocity > newVelocity.z ) {
 			newVelocity.z = rescueVelocity;
 		}
-		
+
 		newVelocity.Normalize();
 		newVelocity *= oldNewVelLength;
 	}
-	
+
 	//
 	// set the new stuff
 	//
@@ -459,7 +459,7 @@ void sdDeliveryVehicle::Magog_Think() {
 
 	float time = MS2SEC( gameLocal.time - modeStartTime );
 	float frameTime = MS2SEC( gameLocal.msec );
-	
+
 	float position = time * pathSpeed;
 
 	// look ahead by a couple of seconds
@@ -476,11 +476,11 @@ void sdDeliveryVehicle::Magog_Think() {
 
 	if ( deliveryMode == DMODE_DELIVER ) {
 		slowNearEnd = true;
-		
+
 		if ( position > pathLength - 6000.0f ) {
 			approachingEnd = true;
 			clampRoll = false;
-			
+
 			// scale the max yaw
 			yawScale = ( ( pathLength - position ) / 4096.0f );
 			yawScale = 5.0f - 5.0f * yawScale * yawScale * yawScale;
@@ -492,7 +492,7 @@ void sdDeliveryVehicle::Magog_Think() {
 
 		if ( position < 4096.0f ) {
 			clampRoll = false;
-			
+
 			// scale the max yaw
 			yawScale = ( 4096.0f - position ) / 4096.0f;
 			yawScale = 5.0f - 5.0f * yawScale * yawScale * yawScale;
@@ -517,11 +517,11 @@ void sdDeliveryVehicle::Magog_DoMove( const idVec3& aheadPointIdeal, const idVec
 	const idMat3& axis = GetPhysics()->GetAxis();
 	const idAngles angles = axis.ToAngles();
 	const idVec3& angVel = GetPhysics()->GetAngularVelocity();
-	
+
 	const idVec3& currentFwd = axis[ 0 ];
 	const idVec3& currentRight = axis[ 1 ];
 	const idVec3& currentUp = axis[ 2 ];
-	
+
 	float rollVel = angVel * currentFwd;
 	float pitchVel = angVel * currentRight;
 	float yawVel = angVel * currentUp;
@@ -543,7 +543,7 @@ void sdDeliveryVehicle::Magog_DoMove( const idVec3& aheadPointIdeal, const idVec
 
 	// shift the ahead point based on the trace
 	float currentHeight = origin.z - futureSpot.z;
-	if ( currentHeight < HOVER_DOWNCAST_LENGTH ) { 
+	if ( currentHeight < HOVER_DOWNCAST_LENGTH ) {
 		aheadPoint.z = origin.z - currentHeight + HOVER_HEIGHT_AIM;
 	} else {
 		aheadPoint.z = origin.z - HOVER_DOWNCAST_LENGTH + HOVER_HEIGHT_AIM;
@@ -564,20 +564,20 @@ void sdDeliveryVehicle::Magog_DoMove( const idVec3& aheadPointIdeal, const idVec
 		idVec3 x1 = aheadPoint;
 		idVec3 dx0 = velocity * 3.0f;					// maintaining our current velocity is more important
 		idVec3 dx1 = aheadPointDir * pathSpeed * 1.0f;	// than matching the destination vector
-		
+
 		// calculate coefficients
 		idVec3 D = x0;
 		idVec3 C = dx0;
 		idVec3 B = 3*x1 - dx1 - 2*C - 3*D;
 		idVec3 A = x1 - B - C - D;
-		
+
 		float distanceLeft = ( endPoint - origin ).Length();
 		lookaheadFactor = ( distanceLeft / 6096.0f ) * 0.5f;
 		lookaheadFactor = idMath::ClampFloat( 0.2f, 0.5f, lookaheadFactor );
 		if ( !slowNearEnd ) {
 			lookaheadFactor = 0.5f;
 		}
-		
+
 		point = ( A * lookaheadFactor + B )*lookaheadFactor*lookaheadFactor + C*lookaheadFactor + D;
 	}
 
@@ -597,27 +597,27 @@ void sdDeliveryVehicle::Magog_DoMove( const idVec3& aheadPointIdeal, const idVec
 	// figure out what Z velocity is needed to get where we want to go within a frame
 	float Zvel = aheadDelta.z / frameTime;
 	Zvel = idMath::ClampFloat( -maxZVel, maxZVel, Zvel );
-	
+
 	// figure out what Z acceleration is neccessary
 	float ZAccel = ( Zvel - velocity.z ) / frameTime;
 	ZAccel = idMath::ClampFloat( -maxZAccel, maxZAccel, ZAccel );
-	
+
 	// chop the Z acceleration when its nearing the end - helps to avoid settling issues
 	if ( lookaheadFactor < 0.5f ) {
 		ZAccel *= idMath::Sqrt( lookaheadFactor * 2.0f );
 	}
-	
+
 	Zvel = velocity.z + ZAccel * frameTime;
-	
+
 	// rapidly prevent acceleration downwards when its below the target
 	if ( aheadDelta.z > 0.0f && Zvel < 0.0f ) {
 		Zvel *= 0.9f;
 	}
-			
+
 	//
 	// X & Y
 	//
-	
+
 	// ignore Z
 	delta.z = 0.0f;
 	aheadDelta.z = 0.0f;
@@ -631,13 +631,13 @@ void sdDeliveryVehicle::Magog_DoMove( const idVec3& aheadPointIdeal, const idVec
 	} else {
 		direction = vec3_origin;
 	}
-	
+
 	// figure out how fast it needs to go to get there in time
 	float vel = distance / 0.5f;
 	vel = idMath::ClampFloat( -pathSpeed, pathSpeed, vel );
-	
+
 	idVec3 vecVel = vel * direction;
-	
+
 	// figure out what acceleration is neccessary
 	idVec3 velDelta = vecVel - flatVelocity;
 	idVec3 velDeltaDir = velDelta;
@@ -645,22 +645,22 @@ void sdDeliveryVehicle::Magog_DoMove( const idVec3& aheadPointIdeal, const idVec
 
 	float accel = velDeltaLength / frameTime;
 	accel = idMath::ClampFloat( -600.0f, 600.0f, accel );
-	
+
 	idVec3 vecAccel = accel * frameTime * velDeltaDir;
 	newVelocity = flatVelocity + vecAccel;
-	
-	
+
+
 	newVelocity.z = Zvel;
-	
+
 	//
 	// Angles
 	//
 	idVec3 velDir = velocity;
 	float velLength = velDir.Normalize();
-	
+
 	// calculate what acceleration we are undergoing
 	idVec3 velAccel = ( newVelocity - velocity ) / frameTime;
-	
+
 	// calculate a component due to air resistance
 	float speed = InchesToMetres( velLength );
 	float rho = 1.2f;
@@ -669,22 +669,22 @@ void sdDeliveryVehicle::Magog_DoMove( const idVec3& aheadPointIdeal, const idVec
 	float dragForceMagnitude = MetresToInches( 0.5 *  Cd * sideArea * rho * speed * speed );
 	// assume mass is 10,000 -> I know this works nicely
 	idVec3 dragAccel = ( dragForceMagnitude / 10000.f ) * velDir;
-	
+
 	idVec3 desiredAccel = velAccel + dragAccel;
 	desiredAccel *= 0.4f;
 	desiredAccel.z += MetresToInches( 9.8f );
-	
+
 	// ok, so we desire to be looking at the target
 	idVec3 forwards = endPoint - origin;
 	forwards.z = 0.0f;
 	forwards.Normalize();
-			
+
 	if ( orientToEnd ) {
 		idAngles targetAngles = ang_zero;
 		targetAngles.yaw = idMath::AngleNormalize180( itemRotation );
 		forwards = targetAngles.ToForward();
 	}
-	
+
 	// figure out the axes corresponding to this orientation
 	idVec3 up = desiredAccel;
 	up.Normalize();
@@ -692,7 +692,7 @@ void sdDeliveryVehicle::Magog_DoMove( const idVec3& aheadPointIdeal, const idVec
 	right.Normalize();
 	forwards = right.Cross( up );
 	forwards.Normalize();
-	
+
 	// convert that to an angles
 	idAngles desiredAngles = ( idMat3( forwards, right, up ) ).ToAngles();
 	if ( clampRoll ) {
@@ -708,38 +708,38 @@ void sdDeliveryVehicle::Magog_DoMove( const idVec3& aheadPointIdeal, const idVec
 	diffAngles = diffAngles / frameTime;
 	diffAngles *= 0.1f;
 
-	
+
 	// translate the old angular velocity back to an angle diff style value
 	idAngles oldDiffAngles;
 	oldDiffAngles.pitch = angVel * currentRight;
 	oldDiffAngles.yaw = angVel * currentUp;
 	oldDiffAngles.roll = angVel * currentFwd;
-	
+
 	// blend the old and the new to soften the quick changes
 	diffAngles = oldDiffAngles * 0.9f + diffAngles * 0.1f;
-	
+
 	// figure out how much we're trying to change by in a single frame
 	idAngles angleAccel = diffAngles - oldDiffAngles;
 	float maxAngleAccel = 45.0f * frameTime;
 	float maxYawAccel = maxAngleAccel * maxYawScale;
-	
+
 	angleAccel.pitch = idMath::ClampFloat( -maxAngleAccel, maxAngleAccel, angleAccel.pitch );
 	angleAccel.yaw = idMath::ClampFloat( -maxYawAccel, maxYawAccel, angleAccel.yaw );
 	angleAccel.roll = idMath::ClampFloat( -maxAngleAccel, maxAngleAccel, angleAccel.roll );
 
-	diffAngles = oldDiffAngles + angleAccel;	
-	idVec3 newAngVel = diffAngles.pitch * currentRight + 
-						diffAngles.yaw * currentUp + 
+	diffAngles = oldDiffAngles + angleAccel;
+	idVec3 newAngVel = diffAngles.pitch * currentRight +
+						diffAngles.yaw * currentUp +
 						diffAngles.roll * currentFwd;
 
 	// HACK: ensure it never gets below the minimum height
 	if ( currentHeight < HOVER_HEIGHT_MIN ) {
 		idVec3 newOrigin = origin;
 		newOrigin.z = origin.z - currentHeight + HOVER_HEIGHT_MIN;
-		GetPhysics()->SetOrigin( newOrigin );			
+		GetPhysics()->SetOrigin( newOrigin );
 	} else if ( currentHeight < HOVER_HEIGHT_RESCUE ) {
 		float oldNewVelLength = newVelocity.Length();
-	
+
 		float scale = ( HOVER_HEIGHT_RESCUE - currentHeight ) / ( HOVER_HEIGHT_RESCUE - HOVER_HEIGHT_MIN );
 		scale = idMath::Sqrt( scale );
 		float rescueVelocity = scale * ( HOVER_HEIGHT_RESCUE - HOVER_HEIGHT_MIN ) / 0.5f;
@@ -749,11 +749,11 @@ void sdDeliveryVehicle::Magog_DoMove( const idVec3& aheadPointIdeal, const idVec
 		if ( rescueVelocity > newVelocity.z ) {
 			newVelocity.z = rescueVelocity;
 		}
-		
+
 		newVelocity.Normalize();
 		newVelocity *= oldNewVelLength;
 	}
-			
+
 	GetPhysics()->SetLinearVelocity( newVelocity );
 	GetPhysics()->SetAxis( angles.ToMat3() );
 	GetPhysics()->SetAngularVelocity( newAngVel );

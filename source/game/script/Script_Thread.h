@@ -12,7 +12,7 @@ private:
 	int								waitingUntil;
 	bool							waitFrame;
 	idInterpreter					interpreter;
-									
+
 	int 							threadNum;
 	idStr 							threadName;
 
@@ -35,9 +35,9 @@ private:
 	void						Pause( void );
 	void						Finalize( void );
 
-public:							
+public:
 								CLASS_PROTOTYPE( idThread );
-								
+
 								idThread();
 
 	void						Init( idInterpreter *source, const sdProgram::sdFunction* func, int args, bool guiThread );
@@ -50,7 +50,7 @@ public:
 
 	void						WaitMS( int time );
 	void						WaitFrame( void );
-								
+
 	virtual void				Wait( float time );
 	virtual void				Assert( void );
 
@@ -70,9 +70,9 @@ public:
 	static void					FreeThread( idThread* thread );
 
 	static idLinkList<idThread>*GetThreads ( void );
-									
+
 	bool						IsDoneProcessing ( void );
-								
+
 	void						End( void );
 	static void					KillThread( const char *name );
 	static void					KillThread( int num );
@@ -89,7 +89,7 @@ public:
 
 	void						Error( const char* text ) const;
 	void						Warning( const char *fmt, ... ) const;
-								
+
 	static int					GetFreeThreadNum( void );
 	static idThread*			CurrentThread( void );
 	static int					CurrentThreadNum( void );
@@ -135,7 +135,7 @@ idThread::GetThreads
 */
 ID_INLINE idLinkList<idThread>* idThread::GetThreads ( void ) {
 	return &threadList;
-}	
+}
 
 /*
 ================

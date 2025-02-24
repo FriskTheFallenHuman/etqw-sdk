@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -13,8 +13,8 @@ static char THIS_FILE[] = __FILE__;
 #include "DemoManager.h"
 #include "DemoScript.h"
 
-#include "../Player.h"
-#include "../guis/UserInterfaceLocal.h"
+#include "Player.h"
+#include "guis/UserInterfaceLocal.h"
 
 //===============================================================
 //
@@ -54,7 +54,7 @@ void sdDemoProperties::Init() {
 	properties.RegisterProperty( "time",			time );
 	properties.RegisterProperty( "size",			size );
 	properties.RegisterProperty( "position",		position );
-	properties.RegisterProperty( "frame",			frame );	
+	properties.RegisterProperty( "frame",			frame );
 	properties.RegisterProperty( "cutIsSet",		cutIsSet );
 	properties.RegisterProperty( "cutStartMarker",	cutStartMarker );
 	properties.RegisterProperty( "cutEndMarker",	cutEndMarker );
@@ -511,7 +511,7 @@ void sdDemoManagerLocal::EndDemoFrame() {
 			// origin
 			idVec3 originMaya = (ent->GetPhysics()->GetOrigin()).ToMaya();
 			//idVec3 originMaya = (ent->GetRenderEntity()->origin).ToMaya();
- 
+
 			melDataFile->WriteDouble( originMaya.x );
 			melDataFile->WriteDouble( originMaya.y );
 			melDataFile->WriteDouble( originMaya.z );
@@ -675,7 +675,7 @@ bool sdDemoManagerLocal::CalculateRenderView( renderView_t* renderView ) {
 			if ( accelspeed > addspeed ) {
 				accelspeed = addspeed;
 			}
-			
+
 			currentVelocity += accelspeed * wishdir;
 		}
 

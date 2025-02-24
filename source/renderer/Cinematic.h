@@ -22,7 +22,7 @@ struct cinData_t {
 #if 0
 class idSndWindow : public idCinematic {
 public:
-	
+
 								idSndWindow() { showWaveform = false; }
 								~idSndWindow() {}
 

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -70,13 +70,13 @@ void idPhysics::WakeEntitiesContacting( idEntity* self, const idClipModel* clipM
 
 	const idClipModel* otherModels[ MAX_GENTITIES ];
 	int numModels = gameLocal.clip.ClipModelsTouchingBounds( CLIP_DEBUG_PARMS clipModel->GetAbsBounds(), -1, otherModels, MAX_GENTITIES, clipModel->GetEntity() );
-	
+
 	const idBounds& bounds = clipModel->GetBounds();
 	idMat3 axisT = clipModel->GetAxis().Transpose();
 	idVec3 origin = clipModel->GetOrigin();
 	for ( int i = 0; i < numModels; i++ ) {
 		const idClipModel* cm = otherModels[ i ];
-		
+
 		if ( cm->GetEntity() == NULL ) {
 			continue;
 		}

@@ -2,15 +2,15 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclDamage.h"
 #include "DeclDamageFilter.h"
 #include "DeclTargetInfo.h"
-#include "../Game_local.h"
-#include "../proficiency/StatsTracker.h"
-#include "../../framework/DeclParseHelper.h"
+#include "Game_local.h"
+#include "proficiency/StatsTracker.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -142,7 +142,7 @@ bool sdDeclDamage::Parse( const char *text, const int textLength ) {
 
 		} else if( !token.Icmp( "noPain" ) ) {
 
-			flags.noPain = true;			
+			flags.noPain = true;
 
 		} else if( !token.Icmp( "noTeam" ) ) {
 
@@ -300,7 +300,7 @@ bool sdDeclDamage::Parse( const char *text, const int textLength ) {
 				return false;
 			}
 
-			teamKillObituary = gameLocal.declToolTipType[ token ];			
+			teamKillObituary = gameLocal.declToolTipType[ token ];
 
 		} else if( !token.Icmp( "tt_obituary_unknown" ) ) {
 			if( !src.ExpectTokenType( TT_STRING, 0, &token ) ) {
@@ -308,7 +308,7 @@ bool sdDeclDamage::Parse( const char *text, const int textLength ) {
 				return false;
 			}
 
-			unknownObituary = gameLocal.declToolTipType[ token ];			
+			unknownObituary = gameLocal.declToolTipType[ token ];
 
 		} else if( !token.Icmp( "tt_obituary_unknown_friendly" ) ) {
 			if( !src.ExpectTokenType( TT_STRING, 0, &token ) ) {
@@ -316,7 +316,7 @@ bool sdDeclDamage::Parse( const char *text, const int textLength ) {
 				return false;
 			}
 
-			unknownFriendlyObituary = gameLocal.declToolTipType[ token ];			
+			unknownFriendlyObituary = gameLocal.declToolTipType[ token ];
 
 		} else if( !token.Icmp( "prof_damage" ) ) {
 			if( !src.ExpectTokenType( TT_STRING, 0, &token ) ) {
@@ -356,7 +356,7 @@ bool sdDeclDamage::Parse( const char *text, const int textLength ) {
 				src.Error( "sdDeclDamage::Parse Missing or Bad Parameter for 'team_kill_cvar' keyword in damage def '%s'", base->GetName() );
 				return false;
 			}
-			
+
 			teamKillCVar = cvarSystem->Find( token.c_str() );
 			if ( teamKillCVar == NULL ) {
 				gameLocal.Warning( "Unknown CVar '%s' in damage def '%s'", token.c_str(), base->GetName() );
@@ -377,7 +377,7 @@ bool sdDeclDamage::Parse( const char *text, const int textLength ) {
 		} else if( !token.Cmp( "}" ) ) {
 
 			break;
-			
+
 		} else {
 
 			src.Error( "sdDeclDamage::Parse Invalid Token '%s' in damage def '%s'", token.c_str(), base->GetName() );

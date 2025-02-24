@@ -4,8 +4,8 @@
 #ifndef __GAME_MISC_ADENTITY_H__
 #define __GAME_MISC_ADENTITY_H__
 
-#include "../Entity.h"
-#include "../../framework/AdManager.h"
+#include "Entity.h"
+#include "framework/AdManager.h"
 
 class sdAdEntity;
 

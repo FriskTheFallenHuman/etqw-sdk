@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -10,10 +10,10 @@
 
 #include "AAS_local.h"
 
-#include "../../../libs/AASLib/AASFile.h"
+#include "libs/AASLib/AASFile.h"
 
-#include "../BotThread.h"
-#include "../BotThreadData.h"
+#include "botai/BotThread.h"
+#include "botai/BotThreadData.h"
 
 #define CACHETYPE_AREA				1
 #define CACHETYPE_PORTAL			2
@@ -1194,7 +1194,7 @@ bool idAASLocal::FindNearestGoal( idAASGoal &goal, int startAreaNum, const idVec
 
 				// add travel time through the area
 				t += AreaTravelTime( reach->toAreaNum, reach->GetEnd(), AreaCenter( nextAreaNum ) );
-	
+
 				if ( !bestTravelTime || t < bestTravelTime ) {
 					// test the area
 					if ( callback.AreaIsGoal( this, reach->toAreaNum ) ) {

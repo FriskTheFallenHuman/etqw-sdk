@@ -44,7 +44,7 @@
 // name sub type is the length of the name
 
 extern const char sdPoolAllocator_idToken[];
-class idToken : 
+class idToken :
 	public idStr,
 	public sdPoolAllocator< idToken, sdPoolAllocator_idToken, 128 > {
 

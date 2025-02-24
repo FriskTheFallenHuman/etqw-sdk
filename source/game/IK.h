@@ -50,7 +50,7 @@ protected:
 /*
 ===============================================================================
 
-  IK controller for a walking character with an arbitrary number of legs.	
+  IK controller for a walking character with an arbitrary number of legs.
 
 ===============================================================================
 */

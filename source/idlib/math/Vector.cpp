@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 idVec2 vec2_origin( 0.0f, 0.0f );
@@ -63,7 +63,7 @@ idVec3::ToYaw
 */
 float idVec3::ToYaw( void ) const {
 	float yaw;
-	
+
 	if ( ( y == 0.0f ) && ( x == 0.0f ) ) {
 		yaw = 0.0f;
 	} else {
@@ -84,7 +84,7 @@ idVec3::ToPitch
 float idVec3::ToPitch( void ) const {
 	float	forward;
 	float	pitch;
-	
+
 	if ( ( x == 0.0f ) && ( y == 0.0f ) ) {
 		if ( z > 0.0f ) {
 			pitch = 90.0f;
@@ -111,7 +111,7 @@ idAngles idVec3::ToAngles( void ) const {
 	float forward;
 	float yaw;
 	float pitch;
-	
+
 	if ( ( x == 0.0f ) && ( y == 0.0f ) ) {
 		yaw = 0.0f;
 		if ( z > 0.0f ) {
@@ -141,35 +141,35 @@ idAngles idVec3::ToAngles( void ) const {
 idVec3::ToRadians
 =============
 */
-rvAngles idVec3::ToRadians( void ) const 
+rvAngles idVec3::ToRadians( void ) const
 {
 	float forward;
 	float yaw;
 	float pitch;
-	
-	if( !x && !y ) 
+
+	if( !x && !y )
 	{
 		yaw = 0.0f;
-		if( z > 0.0f ) 
+		if( z > 0.0f )
 		{
 			pitch = idMath::HALF_PI;
 		}
-		else 
+		else
 		{
 			pitch = idMath::THREEFOURTHS_PI;
 		}
-	} 
-	else 
+	}
+	else
 	{
 		yaw = atan2f( y, x );
-		if( yaw < 0.0f ) 
+		if( yaw < 0.0f )
 		{
 			yaw += idMath::TWO_PI;
 		}
 
 		forward = ( float )idMath::Sqrt( x * x + y * y );
 		pitch = atan2f( z, forward );
-		if( pitch < 0.0f ) 
+		if( pitch < 0.0f )
 		{
 			pitch += idMath::TWO_PI;
 		}
@@ -188,7 +188,7 @@ idPolar3 idVec3::ToPolar( void ) const {
 	float forward;
 	float yaw;
 	float pitch;
-	
+
 	if ( ( x == 0.0f ) && ( y == 0.0f ) ) {
 		yaw = 0.0f;
 		if ( z > 0.0f ) {

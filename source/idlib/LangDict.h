@@ -28,7 +28,7 @@ public:
 	void					Save( const char *fileName );
 
 	const wchar_t*			GetString( const char *str ) const;
-	
+
 	const idLangKeyValue*	FindKeyValue( const char* str ) const;
 
 							// adds the value and key as passed (doesn't generate a "#str_xxxxx" key or ensure the key/value pair is unique)

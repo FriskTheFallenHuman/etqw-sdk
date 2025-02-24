@@ -236,7 +236,7 @@ public:
 	void				ReplaceFirst( const char *old, const char *nw );
 	void				ReplaceChar( char oldChar, char newChar );
 	void				EraseRange( int start, int len = INVALID_POSITION );
-	void				EraseChar( const char c, int start = 0 );	
+	void				EraseChar( const char c, int start = 0 );
 
 	// file name methods
 	int					FileNameHash( const int hashSize ) const;						// hash key for the filename (skips extension)
@@ -305,7 +305,7 @@ public:
 	static bool			ToCRLF( const char *src, char *dest, int maxLength );
 	static const char *	CStyleQuote( const char *str );
 	static const char *	CStyleUnQuote( const char *str );
-	static void			IndentAndPad( int indent, int pad, idStr &str, const char *fmt, ... );  // indent and pad out formatted text	
+	static void			IndentAndPad( int indent, int pad, idStr &str, const char *fmt, ... );  // indent and pad out formatted text
 
 	static void			StringToBinaryString( idStr& out, void *pv, int size);
 	static bool			BinaryStringToString( const char* str,  void *pv, int size );
@@ -372,7 +372,7 @@ protected:
 	void				EnsureAlloced( int amount, bool keepold = true );	// ensure string data buffer is large enough
 
 	static				stringDataAllocator_t*	stringDataAllocator;
-	static				bool					stringAllocatorIsShared;	
+	static				bool					stringAllocatorIsShared;
 	static hmsFormat_t	defaultHMSFormat;
 
 public:

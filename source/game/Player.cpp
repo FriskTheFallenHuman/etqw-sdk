@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -36,19 +36,19 @@ static char THIS_FILE[] = __FILE__;
 #include "misc/PlayerBody.h"
 #include "roles/Tasks.h"
 #include "misc/WorldToScreen.h"
-#include "../decllib/DeclSurfaceType.h"
+#include "decllib/DeclSurfaceType.h"
 #include "./effects/FootPrints.h"
-#include "../bse/BSEInterface.h"
-#include "../bse/BSE_Envelope.h"
-#include "../bse/BSE_SpawnDomains.h"
-#include "../bse/BSE_Particle.h"
-#include "../bse/BSE.h"
-#include "../decllib/declTypeHolder.h"
+#include "bse/BSEInterface.h"
+#include "bse/BSE_Envelope.h"
+#include "bse/BSE_SpawnDomains.h"
+#include "bse/BSE_Particle.h"
+#include "bse/BSE.h"
+#include "decllib/declTypeHolder.h"
 #include "rules/VoteManager.h"
 #include "roles/FireTeams.h"
 #include "vehicles/Pathing.h"
 #include "misc/DefenceTurret.h"
-#include "../sdnet/SDNetFriendsManager.h"
+#include "sdnet/SDNetFriendsManager.h"
 
 #include "botai/Bot.h"
 #include "botai/BotThreadData.h"
@@ -1510,7 +1510,7 @@ void idPlayer::Revive( idPlayer* other, float healthScale ) {
 				idVec3 end = org + sweepOffset + reachableOffset;
 				trace_t trace;
 				gameLocal.clip.TracePoint( trace, start, end, MASK_PLAYERSOLID & ( ~CONTENTS_SLIDEMOVER ), this );
-				if ( trace.fraction < 1.0f ) { 
+				if ( trace.fraction < 1.0f ) {
 					// can't reach it
 //					gameRenderWorld->DebugBounds( colorRed, clipModel->GetBounds(), org + sweepOffset, mat3_identity, 10000 );
 					continue;
@@ -1832,7 +1832,7 @@ void idPlayer::SpawnToolTip( const sdDeclToolTip* toolTip, sdToolTipParms* toolT
 	if ( demoState == sdDemoManagerLocal::DS_PAUSED || demoState == sdDemoManagerLocal::DS_PLAYING ) {
 		return;
 	}
-	
+
 	if ( gameLocal.localClientNum != entityNumber || !toolTip || toolTip == currentToolTip ) {
 		return;
 	}
@@ -2651,7 +2651,7 @@ void idPlayer::SpawnToPoint( const idVec3& spawnOrigin, const idAngles& spawnAng
 			botThreadData.GetGameWorldState()->clientInfo[ entityNumber ].backPedalTime = gameLocal.time + SPAWN_CONSIDER_TIME;
 		}
 	}
-	
+
 	ResetAntiLag();
 
 	suppressPredictionReset = false;
@@ -2673,7 +2673,7 @@ void idPlayer::UserInfoChanged( void ) {
 	if ( oldName.Length() > 0 && userInfo.rawName.Length() > 0 ) {
 		if ( oldName.Icmp( userInfo.rawName ) != 0 ) {
 			gameLocal.OnUserNameChanged( this, oldName, userInfo.rawName );
-			
+
 			idWStrList args( 2 );
 			args.Append( va( L"%hs", oldFullName.c_str() ) );
 			args.Append( va( L"%hs", userInfo.rawName.c_str() ) );
@@ -4062,7 +4062,7 @@ void idPlayer::SelectWeapon( int num, bool force ) {
 	if ( weapon != -1 ) {
 		if ( num == unpauseWeaponSlot && gameLocal.isPaused && gameLocal.isServer ) {
 			lastWeaponSwitchPos = -1;
-			cmdSystem->BufferCommandText( CMD_EXEC_APPEND, "unPauseGame\n" ); 
+			cmdSystem->BufferCommandText( CMD_EXEC_APPEND, "unPauseGame\n" );
 		}
 
 		GetInventory().SetSwitchingWeapon( weapon );
@@ -4787,7 +4787,7 @@ idPlayer* idPlayer::GetNextSpectateClient( bool reverse ) const {
 				return player;
 			}
 
-			// attempt to find the first person 
+			// attempt to find the first person
 			temp = -1;
 			if ( reverse ) {
 				temp = MAX_CLIENTS;
@@ -7226,12 +7226,12 @@ void idPlayer::CalcLifeStats( void ) {
 	if ( gameLocal.isClient ) {
 		return;
 	}
-	if ( team != NULL && 
-		gameLocal.rules->GetState() == sdGameRules::GS_GAMEON && 
-		!gameLocal.IsDoingMapRestart() && 
+	if ( team != NULL &&
+		gameLocal.rules->GetState() == sdGameRules::GS_GAMEON &&
+		!gameLocal.IsDoingMapRestart() &&
 		( gameLocal.GetLocalPlayer() == NULL || !g_trainingMode.GetBool() ) // Gordon: training mode only applies here when using a listen server
 		) {
-		
+
 		sdStatsTracker& tracker = sdGlobalStatsTracker::GetInstance();
 		const idList< lifeStat_t >& lifeStats = gameLocal.lifeStats;
 
@@ -7574,7 +7574,7 @@ float idPlayer::GetDamageScaleForTrace( const trace_t& t, const idVec3& traceDir
 	// do the head check
 	idVec3 headModelCenter;
 	GetHeadModelCenter( headModelCenter );
-	
+
 	const idClipModel* headModel = physicsObj.GetHeadClipModel();
 	if ( headModel != NULL && headModel->IsLinked() ) {
 		// see if the trace would hit the head model
@@ -7679,7 +7679,7 @@ void idPlayer::CalcDamagePoints( idEntity *inflictor, idEntity *attacker, const 
 	locationDamageArea_t area = LDA_INVALID;
 	if ( !noScale ) {
 		float scale = ( 1.f - armor ) * damageScale;
-		
+
 		if ( collision != NULL && !gameLocal.isClient && damageDecl->GetCanHeadshot() ) {
 			scale *= GetDamageScaleForTrace( *collision, dir, area );
 		}
@@ -8061,7 +8061,7 @@ void idPlayer::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
 	if ( !attacker ) {
 		attacker = gameLocal.world;
 	}
-	
+
 	bool headshot = false;
 	CalcDamagePoints( inflictor, attacker, damageDecl, damageScale, collision, damage, dir, headshot );
 
@@ -8645,7 +8645,7 @@ void idPlayer::UpdatePausedObjectiveView() {
 		// clear out roll
 		idAngles nowAngles = nowQuat.ToAngles();
 		nowAngles.roll = 0.0f;
-		
+
 		SetViewAngles( nowAngles );
 		firstPersonViewAxis = nowAngles.ToMat3();
 	}
@@ -8764,7 +8764,7 @@ bool idPlayer::IsFPSUnlock( void ) {
 	if ( this != localPlayer ) {
 		return false;
 	}
-	
+
 	if ( localViewPlayer == NULL ) {
 		return false;
 	}
@@ -8794,11 +8794,11 @@ bool idPlayer::IsFPSUnlock( void ) {
 	if ( ( viewPlayer == localPlayer ) && gameLocal.localPlayerProperties.GetDeployMenu()->Active() ) {
 		return false;
 	}
-	
+
 	if ( pm_thirdPerson.GetBool() ) {
 		return false;
 	}
-	
+
 	if ( this == localViewPlayer ) {
 		if ( viewPlayer->IsDead() ) {
 			return false;
@@ -8953,7 +8953,7 @@ void idPlayer::CalculateRenderView( void ) {
 			viewPlayer->OffsetThirdPersonView( pm_deathThirdPersonAngle.GetFloat(), pm_deathThirdPersonRange.GetFloat(), pm_deathThirdPersonHeight.GetFloat(), pm_thirdPersonClip.GetBool(), renderView );
 			gameLocal.CalcFov( CalcFov(), renderView.fov_x, renderView.fov_y );
 			return;
-		} 
+		}
 	}
 
 	// Standard view
@@ -9636,7 +9636,7 @@ idPlayer::ClientReceiveEvent
 bool idPlayer::ClientReceiveEvent( int event, int time, const idBitMsg& msg ) {
 	switch ( event ) {
 		case EVENT_RESPAWN: {
-			idVec3 org;			
+			idVec3 org;
 			org[ 0 ] = msg.ReadFloat( PLAYER_ORIGIN_EXPONENT_BITS, PLAYER_ORIGIN_MANTISSA_BITS );
 			org[ 1 ] = msg.ReadFloat( PLAYER_ORIGIN_EXPONENT_BITS, PLAYER_ORIGIN_MANTISSA_BITS );
 			org[ 2 ] = msg.ReadFloat( PLAYER_ORIGIN_EXPONENT_BITS, PLAYER_ORIGIN_MANTISSA_BITS );
@@ -13733,7 +13733,7 @@ void idPlayer::Event_SetBotEscort( idEntity* botEscort ) {
 		if ( botPlayer.classType == COVERTOPS && botPlayer.isDisguised ) {
 			botThreadData.bots[ botEscort->entityNumber ]->Bot_AddDelayedChat( botEscort->entityNumber, IM_DISGUISED, 3, true );
 			return;
-		} 
+		}
 
 		botThreadData.GetGameWorldState()->clientInfo[ entityNumber ].escortSpawnID = gameLocal.GetSpawnId( botEscort );
 		botThreadData.GetGameWorldState()->clientInfo[ entityNumber ].escortRequestTime = gameLocal.time;
@@ -14506,7 +14506,7 @@ void idPlayer::UpdatePlayerInformation( void ) {
 		} else {
 			clientInfo.usingMountedGPMG = true;
 			clientInfo.mountedGPMGEntNum = GetProxyEntity()->entityNumber;
-		}		
+		}
 	}
 
 	if ( gun != NULL ) {
@@ -15172,9 +15172,9 @@ void idPlayer::GetAORView( idVec3& origin, idMat3& axis ) {
 idPlayer::GetLastPredictionErrorDecayOrigin
 ================
 */
-const idVec3& idPlayer::GetLastPredictionErrorDecayOrigin( void ) { 
+const idVec3& idPlayer::GetLastPredictionErrorDecayOrigin( void ) {
 	if ( gameLocal.isClient ) {
-		return predictionErrorDecay_Origin.GetLastReturned(); 
+		return predictionErrorDecay_Origin.GetLastReturned();
 	} else {
 		return renderEntity.origin;
 	}
@@ -15243,7 +15243,7 @@ void idPlayer::UpdateBriefingView() {
 
 				idAngles nowAngles = nowQuat.ToAngles();
 				nowAngles.roll = 0.0f;
-		
+
 				SetViewAngles( nowAngles );
 				firstPersonViewAxis = nowAngles.ToMat3();
 			}

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -10,10 +10,10 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../Atmosphere.h"
+#include "Atmosphere.h"
 #include "SnowEffect.h"
-#include "../Player.h"
-#include "../demos/DemoManager.h"
+#include "Player.h"
+#include "demos/DemoManager.h"
 
 
 CLASS_DECLARATION( idEntity, sdSnowEffect )
@@ -74,14 +74,14 @@ void		sdSnowEffect::Think( void ) {
 			groups[i].axis.Normalize();
 			groups[i].rotate = 0.f;
 			groups[i].rotateSpeed = idRandom::StaticRandom().RandomFloat() * 50.f + 50.f;
-			groups[i].rotationPoint = idVec3( idRandom::StaticRandom().RandomFloat() * extents.x, 
-				idRandom::StaticRandom().RandomFloat() * extents.y, 
+			groups[i].rotationPoint = idVec3( idRandom::StaticRandom().RandomFloat() * extents.x,
+				idRandom::StaticRandom().RandomFloat() * extents.y,
 				idRandom::StaticRandom().RandomFloat() * extents.z );
 
 			groups[i].alpha = 0.f;
 			groups[i].time = idRandom::StaticRandom().RandomFloat() * 1.f + 1.f;
-			groups[i].worldPos = v + idVec3( (idRandom::StaticRandom().RandomFloat()-0.5f) * extents.x * 3, 
-				(idRandom::StaticRandom().RandomFloat()-0.5f) * extents.y * 3, 
+			groups[i].worldPos = v + idVec3( (idRandom::StaticRandom().RandomFloat()-0.5f) * extents.x * 3,
+				(idRandom::StaticRandom().RandomFloat()-0.5f) * extents.y * 3,
 				(idRandom::StaticRandom().RandomFloat()-0.5f) * extents.z * 3 );
 		} else {
 			if ( groups[i].time > 0.25f ) {
@@ -109,7 +109,7 @@ void		sdSnowEffect::Think( void ) {
 	sdInstInfo *inst = re->insts;
 	for (int i=0; i<MAX_GROUPS; i++) {
 		idRotation r( groups[i].rotationPoint, groups[i].axis, groups[i].rotate );
-		
+
 		idBounds bb2;
 		inst->inst.color[0] = 0xff;
 		inst->inst.color[1] = 0xff;
@@ -225,14 +225,14 @@ void sdSnowPrecipitation::Update( void ) {
 			groups[i].axis.Normalize();
 			groups[i].rotate = 0.f;
 			groups[i].rotateSpeed = idRandom::StaticRandom().RandomFloat() * 50.f + 50.f;
-			groups[i].rotationPoint = idVec3( idRandom::StaticRandom().RandomFloat() * extents.x, 
-				idRandom::StaticRandom().RandomFloat() * extents.y, 
+			groups[i].rotationPoint = idVec3( idRandom::StaticRandom().RandomFloat() * extents.x,
+				idRandom::StaticRandom().RandomFloat() * extents.y,
 				idRandom::StaticRandom().RandomFloat() * extents.z );
 
 			groups[i].alpha = 0.f;
 			groups[i].time = idRandom::StaticRandom().RandomFloat() * 1.f + 1.f;
-			groups[i].worldPos = v + idVec3( (idRandom::StaticRandom().RandomFloat()-0.5f) * extents.x * 3, 
-				(idRandom::StaticRandom().RandomFloat()-0.5f) * extents.y * 3, 
+			groups[i].worldPos = v + idVec3( (idRandom::StaticRandom().RandomFloat()-0.5f) * extents.x * 3,
+				(idRandom::StaticRandom().RandomFloat()-0.5f) * extents.y * 3,
 				(idRandom::StaticRandom().RandomFloat()-0.5f) * extents.z * 3 );
 		} else {
 			if ( groups[i].time > 0.25f ) {
@@ -260,7 +260,7 @@ void sdSnowPrecipitation::Update( void ) {
 	sdInstInfo *inst = re->insts;
 	for (int i=0; i<MAX_GROUPS; i++) {
 		idRotation r( groups[i].rotationPoint, groups[i].axis, groups[i].rotate );
-		
+
 		idBounds bb2;
 		inst->inst.color[0] = 0xff;
 		inst->inst.color[1] = 0xff;

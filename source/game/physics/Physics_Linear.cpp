@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,7 +12,7 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Physics_Linear.h"
-#include "../Entity.h"
+#include "Entity.h"
 
 /*
 ================
@@ -723,7 +723,7 @@ void sdPhysics_Linear::ApplyNetworkState( networkStateMode_t mode, const sdEntit
 		current.atRest				= newData.atRest;
 		current.localOrigin			= newData.localOrigin;
 
-		current.linearExtrapolation.Init( MS2SEC( newData.startTime ), MS2SEC( newData.duration ), newData.startValue, 
+		current.linearExtrapolation.Init( MS2SEC( newData.startTime ), MS2SEC( newData.duration ), newData.startValue,
 											newData.baseSpeed, newData.speed, newData.extrapolationType );
 
 		self->UpdateVisuals();

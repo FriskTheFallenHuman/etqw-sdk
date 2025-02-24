@@ -9,7 +9,7 @@
 #define __GAME_CLIENT_MOVEABLE_H__
 
 #include "ClientEffect.h"
-#include "../physics/Physics_RigidBody.h"
+#include "physics/Physics_RigidBody.h"
 
 struct trace_t;
 
@@ -20,14 +20,14 @@ public:
 
 	rvClientMoveable ( void );
 	~rvClientMoveable ( void );
-	
+
 	virtual void			Spawn			( const idDict* args, int effectSet = 0 );
 	virtual void			Think			( void );
-	virtual idPhysics*		GetPhysics		( void ) const;	
+	virtual idPhysics*		GetPhysics		( void ) const;
 	virtual bool			Collide			( const trace_t& collision, const idVec3 &velocity );
-	
+
 	renderEntity_t*			GetRenderEntity	( void );
-	
+
 	virtual const idDict*	GetSpawnArgs( void ) const { return spawnArgs; }
 
 protected:
@@ -39,9 +39,9 @@ protected:
 
 	rvClientEffectPtr		trailEffect;
 	float					trailAttenuateSpeed;
-		
+
 	idPhysics_RigidBody		physicsObj;
-	
+
 	int						bounceSoundTime;
 	const idSoundShader*	bounceSoundShader;
 	bool					firstBounce;
@@ -51,9 +51,9 @@ protected:
 	const idDict*			spawnArgs;
 
 	int						effectSet;
-	
+
 private:
-	
+
 	void					Event_FadeOut			( int duration );
 };
 

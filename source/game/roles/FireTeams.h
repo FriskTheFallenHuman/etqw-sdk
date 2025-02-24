@@ -175,7 +175,7 @@ public:
 
 	void								Init( void );
 	void								Clear( void );
-	
+
 	void								Think( void );
 
 	sdFireTeam*							FireTeamForHandle( qhandle_t handle );
@@ -183,7 +183,7 @@ public:
 	int									NumFireTeams() const { return _fireTeams.Num(); }
 	sdFireTeam*							FireTeamForIndex( int index ) { return _fireTeams[ index ]; }
 	const sdFireTeam*					FireTeamForIndex( int index ) const { return _fireTeams[ index ]; }
-	
+
 	void								WriteInitialReliableMessages( const sdReliableMessageClientInfoBase& target ) const;
 
 	void								Write( idFile* file ) const;

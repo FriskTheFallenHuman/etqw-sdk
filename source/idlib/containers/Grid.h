@@ -9,7 +9,7 @@
 ===============================================================================
 
 	3D Grid Container
-	
+
 	Allows fast iteration over all objects and can quickly gather objects
 	in proximity of a specific object.
 

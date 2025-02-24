@@ -13,7 +13,7 @@ public:
 	virtual unsigned int  StartSkid( bool isStrogg ) = 0;
 	virtual bool AddSkidPoint( unsigned int handle, const idVec3 & point, const idVec3 &forward, const idVec3 &up, const class sdDeclSurfaceType *surface ) = 0;
 	virtual void StopSkid( unsigned int handle ) = 0;
-	
+
 	virtual void Think( void ) = 0;
 };
 

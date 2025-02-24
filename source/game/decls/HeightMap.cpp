@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -107,7 +107,7 @@ sdHeightMap::GetInterpolatedHeight
 ==============
 */
 float sdHeightMap::GetInterpolatedHeight( const idVec3& pos, const sdHeightMapScaleData& scale ) const {
-	
+
 	// find which points to sample
 	int minCoords[ 2 ];
 	int maxCoords[ 2 ];

@@ -2,15 +2,15 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclRequirement.h"
-#include "../structures/TeamManager.h"
-#include "../Player.h"
-#include "../vehicles/Transport.h"
-#include "../../framework/DeclParseHelper.h"
-#include "../rules/GameRules.h"
+#include "structures/TeamManager.h"
+#include "Player.h"
+#include "vehicles/Transport.h"
+#include "framework/DeclParseHelper.h"
+#include "rules/GameRules.h"
 
 
 
@@ -512,7 +512,7 @@ bool sdRequirementCheck_Property::Check( idEntity* main, idEntity* other ) const
 			} else {
 				player = useOther ? other->Cast< idPlayer >() : main->Cast< idPlayer >();
 			}
-			 
+
 			if( player == NULL ) {
 				return false;
 			}
@@ -816,7 +816,7 @@ bool sdDeclRequirement::Parse( const char *text, const int textLength ) {
 		}
 
 		if( !token.Icmp( "parms" ) ) {
-			
+
 			if ( !parms.Parse( src ) ) {
 				return false;
 			}

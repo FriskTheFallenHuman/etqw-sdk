@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,13 +11,13 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "CommandMapPost.h"
-#include "../Player.h"
-#include "../CommandMapInfo.h"
+#include "Player.h"
+#include "CommandMapInfo.h"
 
-#include "../guis/UserInterfaceLocal.h"
-#include "../guis/UIWindow.h"
+#include "guis/UserInterfaceLocal.h"
+#include "guis/UIWindow.h"
 
-#include "../../sys/sys_local.h"
+#include "sys/sys_local.h"
 
 /*
 ================
@@ -68,7 +68,7 @@ bool sdCommandMapPost::HandleLocalPlayerCommandMapInput( sdUIWindow* window, con
 	idVec2 screenPos( rect.x, rect.y );
 	idVec2 screenExtents( rect.z, rect.w );
 
-	float scale = 1.f;	
+	float scale = 1.f;
 
 	// jrad - allow local overrides for vehicle cockpits, warroom maps, etc
 	sdProperties::sdProperty* prop =  window->GetUI()->GetState().GetProperty( "mapZoomLevel", sdProperties::PT_FLOAT );
@@ -76,7 +76,7 @@ bool sdCommandMapPost::HandleLocalPlayerCommandMapInput( sdUIWindow* window, con
 		sdUserInterfaceScope* scope = gameLocal.globalProperties.GetSubScope( "gameHud" );
 		if( scope ) {
 			prop = scope->GetProperty( "mapZoomLevel", sdProperties::PT_FLOAT );
-		}		
+		}
 	}
 	if( prop ) {
 		scale = *prop->value.floatValue;
@@ -99,7 +99,7 @@ bool sdCommandMapPost::HandleLocalPlayerCommandMapInput( sdUIWindow* window, con
 
 	// Gordon: Draw Map out from camera
 	// [
-	
+
 	idVec2 worldMins		= playZone->GetBounds().GetMins();
 	idVec2 worldMaxs		= playZone->GetBounds().GetMaxs();
 	idVec2 worldSpaceBounds = worldMaxs - worldMins;
@@ -111,7 +111,7 @@ bool sdCommandMapPost::HandleLocalPlayerCommandMapInput( sdUIWindow* window, con
 	Swap( worldMins.y, worldMaxs.y );
 
 	worldMaxs -= worldMins;
-	
+
 	float radius = screenExtents.x * 0.5f;
 	idVec2 mapCenter( rect.x + rect.z * 0.5f, rect.y + rect.w * 0.5f );
 
@@ -232,7 +232,7 @@ void sdCommandMapPost::DrawLocalPlayerCommandMapInfo( sdUserInterfaceLocal* ui, 
 	idVec2	screenExtents( w, h );
 
 	float	scale = 1.f;
-	bool	drawSquare = false;	
+	bool	drawSquare = false;
 
 	// jrad - allow local overrides for vehicle cockpits, warroom maps, etc
 	sdProperties::sdProperty* prop = ui->GetState().GetProperty( "mapZoomLevel", sdProperties::PT_FLOAT );
@@ -240,7 +240,7 @@ void sdCommandMapPost::DrawLocalPlayerCommandMapInfo( sdUserInterfaceLocal* ui, 
 		sdUserInterfaceScope* scope = gameLocal.globalProperties.GetSubScope( "gameHud" );
 		if( scope ) {
 			prop = scope->GetProperty( "mapZoomLevel", sdProperties::PT_FLOAT );
-		}		
+		}
 	}
 	if( prop != NULL ) {
 		scale = *prop->value.floatValue;
@@ -251,7 +251,7 @@ void sdCommandMapPost::DrawLocalPlayerCommandMapInfo( sdUserInterfaceLocal* ui, 
 	bool fullSize = idMath::Fabs( scale - 1.0f ) < idMath::FLT_EPSILON;
 
 	if ( sdProperties::sdProperty* prop = ui->GetState().GetProperty( "drawSquare", sdProperties::PT_FLOAT )) {
-		drawSquare = *prop->value.floatValue == 1.0f;		
+		drawSquare = *prop->value.floatValue == 1.0f;
 	}
 	if( drawSquare ) {
 		fullSize = true;
@@ -274,7 +274,7 @@ void sdCommandMapPost::DrawLocalPlayerCommandMapInfo( sdUserInterfaceLocal* ui, 
 	}
 
 	const sdPlayZone* playZone = GetPlayZone( ui, worldPos );
-	
+
 	if ( playZone == NULL ) {
 		return;
 	}
@@ -342,7 +342,7 @@ void sdCommandMapPost::DrawLocalPlayerCommandMapInfo_Icons( sdUserInterfaceLocal
 	idVec2 screenExtents( w, h );
 
 	float scale = 1.f;
-	bool drawSquare = false;	
+	bool drawSquare = false;
 
 	// jrad - allow local overrides for vehicle cockpits, warroom maps, etc
 	sdProperties::sdProperty* prop = ui->GetState().GetProperty( "mapZoomLevel", sdProperties::PT_FLOAT );
@@ -350,7 +350,7 @@ void sdCommandMapPost::DrawLocalPlayerCommandMapInfo_Icons( sdUserInterfaceLocal
 		sdUserInterfaceScope* scope = gameLocal.globalProperties.GetSubScope( "gameHud" );
 		if( scope != NULL ) {
 			prop = scope->GetProperty( "mapZoomLevel", sdProperties::PT_FLOAT );
-		}		
+		}
 	}
 	if( prop ) {
 		scale = *prop->value.floatValue;
@@ -359,7 +359,7 @@ void sdCommandMapPost::DrawLocalPlayerCommandMapInfo_Icons( sdUserInterfaceLocal
 	bool fullSize = idMath::Fabs( scale - 1.0f ) < idMath::FLT_EPSILON;
 
 	if ( sdProperties::sdProperty* prop = ui->GetState().GetProperty( "drawSquare", sdProperties::PT_FLOAT )) {
-		drawSquare = *prop->value.floatValue == 1.0f;		
+		drawSquare = *prop->value.floatValue == 1.0f;
 	}
 
 	if( drawSquare ) {
@@ -434,7 +434,7 @@ void sdCommandMapPost::DrawLocalPlayerCommandMapInfo_Icons( sdUserInterfaceLocal
 	idVec2 radius = screenExtents * 0.5f;
 	idVec2 center( w * 0.5f, h * 0.5f );
 	idVec2 mapCenter( x + center.x, y + center.y );
-	
+
 	float sizeAdjustment = 1.0f;
 	if ( sdProperties::sdProperty* prop = ui->GetState().GetProperty( "iconScaleAdjustment", sdProperties::PT_FLOAT )) {
 		sizeAdjustment = *prop->value.floatValue;
@@ -453,7 +453,7 @@ void sdCommandMapPost::DrawLocalPlayerCommandMapInfo_Icons( sdUserInterfaceLocal
 				continue;
 			}
 		}
-		
+
 		if ( info->OnlyInFullView() && scale < 1.0f ) {
 			continue;
 		}
@@ -481,7 +481,7 @@ void sdCommandMapPost::DrawLocalPlayerCommandMapInfo_Icons( sdUserInterfaceLocal
 					known = info->EnemyOnly() ^ sameTeam;
 				}
 			}
-		}		
+		}
 
 		idVec2 coords;
 		info->GetOrigin( coords );

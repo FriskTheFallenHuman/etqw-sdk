@@ -83,7 +83,7 @@ typedef enum {
 #define BIT( num )				BITT< num >::VALUE
 #endif
 
-template< unsigned int B > 
+template< unsigned int B >
 class BITT {
 public:
 	typedef enum bitValue_e {
@@ -107,7 +107,7 @@ public:
 #endif
 
 #if defined(__i386__)
-#define ALIGN16( x )					x __attribute__ ((aligned (16))) 
+#define ALIGN16( x )					x __attribute__ ((aligned (16)))
 #else
 #define ALIGN16( x )					x
 #endif
@@ -135,7 +135,7 @@ public:
 #define SD_DEPRECATED
 // from gcc 4.0 manual:
 // The __thread specifier may be used alone, with the extern or static specifiers, but with no other storage class specifier. When used with extern or static, __thread must appear immediately after the other storage class specifier.
-// The __thread specifier may be applied to any global, file-scoped static, function-scoped static, or static data member of a class. It may not be applied to block-scoped automatic or non-static data member. 
+// The __thread specifier may be applied to any global, file-scoped static, function-scoped static, or static data member of a class. It may not be applied to block-scoped automatic or non-static data member.
 #define ID_TLS							__thread
 
 #define assertmem( x, y )

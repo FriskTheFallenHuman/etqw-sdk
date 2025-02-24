@@ -2,7 +2,7 @@
 //
 
 
-#include "../../renderer/DeviceContext.h"
+#include "renderer/DeviceContext.h"
 
 #ifndef __GAME_MISC_WORLDTOSCREEN_H__
 #define __GAME_MISC_WORLDTOSCREEN_H__
@@ -91,7 +91,7 @@ ID_INLINE void sdWorldToScreenConverter::Transform( const idVec3& src, idVec2& d
 	idPlane eye, clip;
 
 	for ( i = 0 ; i < 4 ; i++ ) {
-		eye[i] = 
+		eye[i] =
 			src[0] * modelViewMatrix[ i + 0 * 4 ] +
 			src[1] * modelViewMatrix[ i + 1 * 4 ] +
 			src[2] * modelViewMatrix[ i + 2 * 4 ] +
@@ -99,7 +99,7 @@ ID_INLINE void sdWorldToScreenConverter::Transform( const idVec3& src, idVec2& d
 	}
 
 	for ( i = 0 ; i < 4 ; i++ ) {
-		clip[i] = 
+		clip[i] =
 			eye[0] * projectionMatrix[ i + 0 * 4 ] +
 			eye[1] * projectionMatrix[ i + 1 * 4 ] +
 			eye[2] * projectionMatrix[ i + 2 * 4 ] +

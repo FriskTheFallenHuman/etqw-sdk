@@ -2,12 +2,12 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclMapInfo.h"
-#include "../../decllib/declTypeHolder.h"
-#include "../../framework/DeclParseHelper.h"
+#include "decllib/declTypeHolder.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -57,7 +57,7 @@ bool sdDeclMapInfo::Parse( const char *text, const int textLength ) {
 	src.SetFlags( DECL_LEXER_FLAGS );
 //	src.LoadMemory( text, textLength, GetFileName(), GetLineNum() );
 //	src.AddIncludes( GetFileLevelIncludeDependencies() );
-	
+
 	sdDeclParseHelper declHelper( this, text, textLength, src );
 
 	src.SkipUntilString( "{", &token );

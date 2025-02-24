@@ -11,7 +11,7 @@
 
 	Simple physics
 
-	This is just an AABB - it has no angular info. 
+	This is just an AABB - it has no angular info.
 	It can't be pushed, but it can push.
 	Applying forces & impulses works appropriately.
 
@@ -118,7 +118,7 @@ public:	// common physics interface
 	virtual void						WriteNetworkState( networkStateMode_t mode, const sdEntityStateNetworkData& baseState, sdEntityStateNetworkData& newState, idBitMsg& msg ) const;
 	virtual void						ReadNetworkState( networkStateMode_t mode, const sdEntityStateNetworkData& baseState, sdEntityStateNetworkData& newState, const idBitMsg& msg ) const;
 	virtual sdEntityStateNetworkData*	CreateNetworkStructure( networkStateMode_t mode ) const;
-	
+
 private:
 	int						atRest;
 	bool					rotates;

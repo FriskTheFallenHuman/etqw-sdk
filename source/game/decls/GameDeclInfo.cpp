@@ -2,7 +2,7 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,13 +11,13 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../vehicles/Transport.h"
-#include "../guis/UserInterfaceLocal.h"
-#include "../guis/UserInterfaceManagerLocal.h"
+#include "vehicles/Transport.h"
+#include "guis/UserInterfaceLocal.h"
+#include "guis/UserInterfaceManagerLocal.h"
 
-#include "../anim/Anim.h"
+#include "anim/Anim.h"
 
-#include "../decls/declVehicleScript.h"
+#include "decls/declVehicleScript.h"
 
 #include "GameDeclIdentifiers.h"
 

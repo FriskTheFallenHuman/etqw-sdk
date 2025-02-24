@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -13,7 +13,7 @@ static char THIS_FILE[] = __FILE__;
 #include "PlayerIcon.h"
 #include "Player.h"
 #include "misc/WorldToScreen.h"
-#include "../decllib/declTypeHolder.h"
+#include "decllib/declTypeHolder.h"
 #include "rules/GameRules.h"
 #include "vehicles/JetPack.h"
 

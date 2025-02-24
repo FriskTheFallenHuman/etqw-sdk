@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 #define PUNCTABLE
@@ -420,7 +420,7 @@ int idLexer::ReadEscapeCharacter( char *ch ) {
 	} else {
 		c = *script_p;
 	}
-	
+
 	// step over the escape character or the last digit of the number
 	idLexer::script_p++;
 	// store the escape character
@@ -1214,7 +1214,7 @@ bool idLexer::SkipBracedSectionExact( int tabs, bool parseFirstBrace ) {
 		}
 	}
 
-	depth = 1;	
+	depth = 1;
 	skipWhite = false;
 	doTabs = ( tabs >= 0 );
 
@@ -1249,7 +1249,7 @@ bool idLexer::SkipBracedSectionExact( int tabs, bool parseFirstBrace ) {
 			case '}': {
 				depth--;
 				tabs--;
-				break;				
+				break;
 			}
 		}
 
@@ -1470,7 +1470,7 @@ bool idLexer::ParseBracedSectionExact( idStr &out, int tabs, bool parseFirstBrac
 		builder = "{";
 	}
 
-	depth = 1;	
+	depth = 1;
 	skipWhite = false;
 	doTabs = ( tabs >= 0 );
 
@@ -1506,7 +1506,7 @@ bool idLexer::ParseBracedSectionExact( idStr &out, int tabs, bool parseFirstBrac
 			case '}': {
 				depth--;
 				tabs--;
-				break;				
+				break;
 			}
 		}
 
@@ -1784,7 +1784,7 @@ bool idLexer::LoadFile( const char *filename, bool OSPath, int startLine ) {
 			return true;
 		}
 	}
-*/	
+*/
 	if ( !OSPath && ( baseFolder[0] != '\0' ) ) {
 		pathname = va( "%s/%s", baseFolder, filename );
 	} else {
@@ -1882,7 +1882,7 @@ bool idLexer::LoadMemoryBinary( const byte* ptr, int length, const char *name, i
 	idLexer::length = 0;
 	// pointer in script buffer
 	idLexer::script_p = NULL;
-	
+
 	idLexer::lastScript_p = NULL;
 	// pointer to end of script buffer
 	idLexer::end_p = NULL;
@@ -1894,9 +1894,9 @@ bool idLexer::LoadMemoryBinary( const byte* ptr, int length, const char *name, i
 	idLexer::loaded = true;
 
 	sdLibFileMemoryPtr memFile( idLib::fileSystem->OpenMemoryFile( name ) );
-	
+
 	memFile->SetData( reinterpret_cast< const char* >( ptr ), length );
-	
+
 	bool retVal = binary.Read( memFile.Get() );
 	binary.SetData( NULL, globals );
 	return retVal;
@@ -1925,7 +1925,7 @@ bool idLexer::LoadTokenStream( const idList<unsigned short>& indices, const idTo
 	idLexer::lastline = 0;
 	idLexer::allocated = false;
 	idLexer::loaded = true;
-	
+
 	binary.Clear();
 	binary.SetData( &indices, &tokens );
 

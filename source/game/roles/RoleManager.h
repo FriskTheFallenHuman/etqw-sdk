@@ -21,10 +21,10 @@ public:
 		ROP_TYPE_NE,
 		ROP_TYPE_AND,
 		ROP_TYPE_OR,
-	} rexpOpType_t;	
-	
+	} rexpOpType_t;
+
 	typedef struct rexpOp_s {
-		rexpOpType_t opType;	
+		rexpOpType_t opType;
 		int	a, b, c;
 	} rexpOp_t;
 
@@ -77,7 +77,7 @@ public:
 	qhandle_t						RegisterAbility( const char* name );
 
 	void							Init( void );
-	void							Shutdown( void );	
+	void							Shutdown( void );
 
 private:
 	idHashMap< qhandle_t >			registeredAbilities;

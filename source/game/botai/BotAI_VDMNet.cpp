@@ -1,11 +1,11 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h"
-#include "../ContentMask.h"
+#include "Game_local.h"
+#include "ContentMask.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -13,7 +13,7 @@
 ================
 idBotAI::Run_VLTG_Node
 
-This is the bot's long term goal thinking when he is in a vehicle. 
+This is the bot's long term goal thinking when he is in a vehicle.
 ================
 */
 bool idBotAI::Run_VLTG_Node() {
@@ -134,7 +134,7 @@ bool idBotAI::Run_VLTG_Node() {
 		return true;
 	}
 
-	if ( V_LTG_AI_SUB_NODE == NULL && botExitTime < botWorld->gameLocalInfo.time ) { 
+	if ( V_LTG_AI_SUB_NODE == NULL && botExitTime < botWorld->gameLocalInfo.time ) {
 		Bot_FindLongTermGoal();
 	}
 
@@ -148,7 +148,7 @@ bool idBotAI::Run_VLTG_Node() {
 	aiState = VLTG;
 
 	if ( V_LTG_AI_SUB_NODE != NULL ) {
-   
+
 		CallFuncPtr( V_LTG_AI_SUB_NODE );		//mal: run the bot's current Long Term Goal think node
 
 		if ( botUcmd->botCmds.exitVehicle == false ) {
@@ -156,7 +156,7 @@ bool idBotAI::Run_VLTG_Node() {
 				Bot_FindDeadWhileInVehicle();
 			}
 
-			if ( vLTGType != V_STOP_VEHICLE ) { 
+			if ( vLTGType != V_STOP_VEHICLE ) {
 				if ( botInfo->classType == ENGINEER && ( ( botVehicleInfo->health < ( botVehicleInfo->maxHealth / 2 ) && botVehicleInfo->type != MCP && !( botVehicleInfo->flags & AIR ) ) || ( botVehicleInfo->type == MCP && botVehicleInfo->isImmobilized ) || botVehicleInfo->damagedPartsCount > 0 ) && enemy == -1 && !botVehicleInfo->inWater && ( botVehicleInfo->hasGroundContact || botVehicleInfo->type == DESECRATOR ) ) {
 					if ( !Client_IsCriticalForCurrentObj( botNum, -1.0f ) && !VehicleIsIgnored( botInfo->proxyInfo.entNum ) /* && !Bot_IsInHeavyAttackVehicle() */ ) {
 						V_LTG_AI_SUB_NODE = &idBotAI::Enter_VLTG_StopVehicle;	//mal: engs will jump out of own vehicle and fix it.
@@ -169,7 +169,7 @@ bool idBotAI::Run_VLTG_Node() {
 				}
 			}
 
-			if ( enemy <= -1 ) { 
+			if ( enemy <= -1 ) {
 				Bot_VehicleFindEnemy();
 			}
 		}
@@ -181,7 +181,7 @@ bool idBotAI::Run_VLTG_Node() {
 	if ( botVehicleInfo->type == PLATYPUS && botVehicleInfo->driverEntNum == botNum && botVehicleInfo->xyspeed < WALKING_SPEED ) {
 		if ( ( botVehiclePathList.Num() == 0 && vLTGPauseTime < botWorld->gameLocalInfo.time ) || ( botVehicleInfo->hasGroundContact == true && botVehicleInfo->inWater == false ) ) {
 			botPathFailedCounter++;
-			
+
 			if ( botPathFailedCounter > MAX_PATH_FAILED_COUNT ) {
 				Bot_ExitVehicle();
 			}
@@ -196,7 +196,7 @@ bool idBotAI::Run_VLTG_Node() {
 ================
 idBotAI::Run_VCombat_Node
 
-This is the bot's combat thinking when he is in a vehicle. 
+This is the bot's combat thinking when he is in a vehicle.
 ================
 */
 bool idBotAI::Run_VCombat_Node() {
@@ -212,14 +212,14 @@ bool idBotAI::Run_VCombat_Node() {
 		return false;
 	}
 
-	const clientInfo_t& playerInfo = botWorld->clientInfo[ enemy ]; 
+	const clientInfo_t& playerInfo = botWorld->clientInfo[ enemy ];
 
 	if ( playerInfo.proxyInfo.entNum != CLIENT_HAS_NO_VEHICLE ) {
 		GetVehicleInfo( playerInfo.proxyInfo.entNum, enemyVehicleInfo );
 
 		if ( enemyVehicleInfo.type == MCP && enemyVehicleInfo.isImmobilized && enemyVehicleInfo.driverEntNum == enemy ) {
 			if ( !Bot_VehicleFindEnemy() ) {
-		       Bot_ResetState( true, false ); 
+		       Bot_ResetState( true, false );
 			}
 			return false;
 		}
@@ -231,7 +231,7 @@ bool idBotAI::Run_VCombat_Node() {
 	}
 
 	if ( botVehicleInfo->type != BUFFALO && Bot_VehicleIsUnderAVTAttack() != -1 && ( ( botVehicleInfo->flags & ARMOR ) || botVehicleInfo->type > ICARUS ) ) {
-		Bot_ResetState( true, true ); 
+		Bot_ResetState( true, true );
 		return false;
 	}
 
@@ -248,7 +248,7 @@ bool idBotAI::Run_VCombat_Node() {
 
 	if ( !enemyInfo.enemyVisible && enemyInfo.enemyLastVisTime + 9000 < botWorld->gameLocalInfo.time && !chasingEnemy ) {
 		if ( !Bot_VehicleFindEnemy() ) {
-            Bot_ResetState( true, false ); 
+            Bot_ResetState( true, false );
 		}
 		return false;
 	}
@@ -256,7 +256,7 @@ bool idBotAI::Run_VCombat_Node() {
 	if ( !vehicleEnemyWasInheritedFromFootCombat ) {
 		if ( playerInfo.proxyInfo.entNum == CLIENT_HAS_NO_VEHICLE && enemyInfo.enemyDist > ENEMY_VEHICLE_SIGHT_DIST && !ClientHasObj( enemy ) && !ClientIsDefusingOurTeamCharge( enemy ) ) { //mal: we wont bother with ppl on foot too much
 		if ( !Bot_VehicleFindEnemy() ) {
-            Bot_ResetState( true, false ); 
+            Bot_ResetState( true, false );
 		}
 		return false;
 	}
@@ -265,7 +265,7 @@ bool idBotAI::Run_VCombat_Node() {
 	if ( playerInfo.proxyInfo.entNum != CLIENT_HAS_NO_VEHICLE && enemyInfo.enemyDist > ENEMY_VEHICLE_SIGHT_DIST ) {
 		if ( ( !enemyVehicleInfo.isAirborneVehicle && !botVehicleInfo->isAirborneVehicle ) && !ClientHasObj( enemy ) || botWorld->gameLocalInfo.botSkill == BOT_SKILL_EASY ) { //nal: if enemy far away, leave him alone.
 			if ( !Bot_VehicleFindEnemy() ) {
-			    Bot_ResetState( true, false ); 
+			    Bot_ResetState( true, false );
 			}
 			return false;
 		}
@@ -303,7 +303,7 @@ bool idBotAI::Run_VCombat_Node() {
 ================
 idBotAI::Enter_VLTG_RoamGoal
 
-The bot is in a vehicle, and wants to move to a location on the map. 
+The bot is in a vehicle, and wants to move to a location on the map.
 ================
 */
 bool idBotAI::Enter_VLTG_RoamGoal() {
@@ -321,7 +321,7 @@ bool idBotAI::Enter_VLTG_RoamGoal() {
 					botUcmd->botCmds.honkHorn = true; //mal: honk our horn to get the humans attention.
 					vLTGChat = true;
 				}
-			} 
+			}
 		}
 	}
 
@@ -332,7 +332,7 @@ bool idBotAI::Enter_VLTG_RoamGoal() {
 	vLTGTime = botWorld->gameLocalInfo.time + 60000;
 
 	vLTGDeployableTargetAttackTime = 0;
-	
+
 	vLTGDeployableTarget = -1;
 
 	lastAINode = "Vehicle Roam Goal";
@@ -456,13 +456,13 @@ idBotAI::Enter_VLTG_GotoReviveMate
 */
 bool idBotAI::Enter_VLTG_GotoReviveMate() {
 	vLTGChat = false;
-	
+
 	vLTGPauseTime = 0;
-    
+
 	vLTGType = V_GOTO_REVIVE_MATE;
 
 	V_LTG_AI_SUB_NODE = &idBotAI::VLTG_GotoReviveMate;
-	
+
 	vLTGTime = botWorld->gameLocalInfo.time + 25000; //mal: 25 seconds to revive this guy!
 
 	vLTGOrigin = botWorld->clientInfo[ vLTGTarget ].origin;
@@ -472,12 +472,12 @@ bool idBotAI::Enter_VLTG_GotoReviveMate() {
 	vLTGReached = false;
 
 	Bot_FindParkingSpotAoundLocaction( vLTGOrigin );
-    
+
 	lastAINode = "Vehicle Reviving Mate";
 
 	vehicleAINodeSwitch.nodeSwitchCount++;
 
-	return true;	
+	return true;
 }
 
 /*
@@ -486,7 +486,7 @@ idBotAI::VLTG_GotoReviveMate
 ================
 */
 bool idBotAI::VLTG_GotoReviveMate() {
-    
+
 	float dist;
 	idVec3 vec;
 
@@ -537,7 +537,7 @@ bool idBotAI::VLTG_GotoReviveMate() {
 			Bot_ExitVehicleAINode( true );
 			return false;
 		}
-		
+
 		Bot_MoveToGoal( botAAS.path.moveGoal, vec3_zero, RUN, NULLMOVETYPE );
 
 		Bot_LookAtLocation( botAAS.path.viewGoal, SMOOTH_TURN );
@@ -547,7 +547,7 @@ bool idBotAI::VLTG_GotoReviveMate() {
 
 	vLTGReached = true; //mal: once we reach our goal point, don't come back here again!
 
-	if ( botInfo->xySpeed > 50.0f && !botVehicleInfo->bbox.IntersectsBounds( botWorld->clientInfo[ vLTGTarget ].absBounds ) ) { 
+	if ( botInfo->xySpeed > 50.0f && !botVehicleInfo->bbox.IntersectsBounds( botWorld->clientInfo[ vLTGTarget ].absBounds ) ) {
         Bot_MoveToGoal( vec3_zero, vec3_zero, NULLMOVEFLAG, FULL_STOP ); //hit the brakes!
 		Bot_LookAtLocation( vLTGOrigin, SMOOTH_TURN );
 		return true;
@@ -558,20 +558,20 @@ bool idBotAI::VLTG_GotoReviveMate() {
 
 	Bot_ExitVehicle();
 
-	return true;	
+	return true;
 }
 
 /*
 ================
 idBotAI::Enter_VLTG_TravelGoal
 
-The bot is in a vehicle, and wants to move to a location on the map. 
+The bot is in a vehicle, and wants to move to a location on the map.
 The bot won't look for gunners/passengers because he has somewhere important to go to ( which is similiar to human behavior ).
 ================
 */
 bool idBotAI::Enter_VLTG_TravelGoal() {
 	vLTGChat = false;
-	
+
 	vLTGPauseTime = 0;
 
 	vLTGType = V_TRAVEL_GOAL;
@@ -639,7 +639,7 @@ debugSkipChecks:
 			}
 		}
 	}
-	
+
 	vec = botThreadData.botActions[ actionNum ]->origin - botInfo->origin;
 
 	if ( botVehicleInfo->type >= ICARUS ) {
@@ -705,16 +705,16 @@ debugSkipChecks:
 ================
 idBotAI::Enter_VLTG_RideWithMate
 
-The bot is in a vehicle riding along with someone he wants to escort/protect. 
+The bot is in a vehicle riding along with someone he wants to escort/protect.
 ================
 */
 bool idBotAI::Enter_VLTG_RideWithMate() {
 	vLTGChat = false;
-	
+
 	vLTGPauseTime = 0;
 
 	vLTGType = V_FOLLOW_TEAMMATE;
-	
+
 	vLTGTime = botWorld->gameLocalInfo.time + FOLLOW_MATE_TIMELIMIT;
 
 	V_LTG_AI_SUB_NODE = &idBotAI::VLTG_RideWithMate;
@@ -724,7 +724,7 @@ bool idBotAI::Enter_VLTG_RideWithMate() {
 	vehicleAINodeSwitch.nodeSwitchCount++;
 
 	vLTGDeployableTargetAttackTime = 0;
-	
+
 	vLTGDeployableTarget = -1;
 
 	return true;
@@ -746,7 +746,7 @@ bool idBotAI::VLTG_RideWithMate() {
 		if ( !Bot_IsInHeavyAttackVehicle() && ( Client_IsCriticalForCurrentObj( vLTGTarget, 3000.0f ) || ClientHasObj( vLTGTarget ) ) ) {
 			Bot_ExitVehicle();
 			Bot_ExitVehicleAINode( true );
-			ltgTarget = vLTGTarget; 
+			ltgTarget = vLTGTarget;
 			ltgType = FOLLOW_TEAMMATE;
 			ltgTargetSpawnID = botWorld->clientInfo[ vLTGTarget ].spawnID;
 			ROOT_AI_NODE = &idBotAI::Run_LTG_Node;
@@ -756,7 +756,7 @@ bool idBotAI::VLTG_RideWithMate() {
 		}
 		return false;
 	}
- 
+
 	if ( vLTGTime < botWorld->gameLocalInfo.time ) {
 		Bot_ExitVehicleAINode( true );
 		Bot_ExitVehicle();
@@ -776,7 +776,7 @@ bool idBotAI::VLTG_RideWithMate() {
 	if ( botVehicleInfo->driverEntNum == botNum ) { //mal: we're in the drivers seat now, take control!
 		Bot_ExitVehicleAINode( true );
 		return false;
-	}	
+	}
 
 	if ( Bot_WithObjShouldLeaveVehicle() || Bot_WhoIsCriticalForCurrentObjShouldLeaveVehicle() ) {
 		Bot_ExitVehicleAINode( true );
@@ -806,16 +806,16 @@ bool idBotAI::VLTG_RideWithMate() {
 ================
 idBotAI::Enter_VLTG_StopVehicle
 
-The bots wants to stop/land vehicle NOW! Could be for a variety of reasons. 
+The bots wants to stop/land vehicle NOW! Could be for a variety of reasons.
 ================
 */
 bool idBotAI::Enter_VLTG_StopVehicle() {
 	vLTGChat = false;
-	
+
 	vLTGPauseTime = 0;
 
 	vLTGType = V_STOP_VEHICLE;
-	
+
 	vLTGTime = botWorld->gameLocalInfo.time + BOT_INFINITY;
 
 	V_LTG_AI_SUB_NODE = &idBotAI::VLTG_StopVehicle;
@@ -825,7 +825,7 @@ bool idBotAI::Enter_VLTG_StopVehicle() {
 	if ( botVehicleInfo->driverEntNum != botNum && botInfo->classType == ENGINEER ) {
 		if ( botVehicleInfo->driverEntNum > -1 && botVehicleInfo->driverEntNum < MAX_CLIENTS ) {
 			const clientInfo_t& player = botWorld->clientInfo[ botVehicleInfo->driverEntNum ];
-			
+
 			if ( !player.isBot ) {
 				Bot_AddDelayedChat( botNum, STOP_WILL_FIX_RIDE, 1 );
 			}
@@ -833,7 +833,7 @@ bool idBotAI::Enter_VLTG_StopVehicle() {
 	}
 
 	vLTGDeployableTargetAttackTime = 0;
-	
+
 	vLTGDeployableTarget = -1;
 
 	vehicleAINodeSwitch.nodeSwitchCount++;
@@ -854,7 +854,7 @@ bool idBotAI::VLTG_StopVehicle() {
 			Bot_MoveToGoal( vec3_zero, vec3_zero, NULLMOVEFLAG, HAND_BRAKE );
 		} else {
 			Bot_ExitVehicle();
-		}	
+		}
 	} else {
 		if ( botInfo->xySpeed > WALKING_SPEED || !botVehicleInfo->hasGroundContact ) {
 			Bot_MoveToGoal( vec3_zero, vec3_zero, NULLMOVEFLAG, LAND );
@@ -887,7 +887,7 @@ bool idBotAI::VLTG_StopVehicle() {
 ================
 idBotAI::Enter_VLTG_CampGoal
 
-The bot is in a vehicle, and wants to camp a location on the map. 
+The bot is in a vehicle, and wants to camp a location on the map.
 ================
 */
 bool idBotAI::Enter_VLTG_CampGoal() {
@@ -905,7 +905,7 @@ bool idBotAI::Enter_VLTG_CampGoal() {
 					botUcmd->botCmds.honkHorn = true; //mal: honk our horn to get the humans attention.
 					vLTGChat = true;
 				}
-			} 
+			}
 		}
 	}
 
@@ -920,7 +920,7 @@ bool idBotAI::Enter_VLTG_CampGoal() {
 	vLTGReached = false;
 
 	vLTGDeployableTargetAttackTime = 0;
-	
+
 	vLTGDeployableTarget = -1;
 
 	lastAINode = "Vehicle Camp Goal";
@@ -944,7 +944,7 @@ bool idBotAI::VLTG_CampGoal() {
 	botMoveTypes_t moveType = NULLMOVETYPE;
 	idVec3 vec;
 
-	if ( vLTGTime < botWorld->gameLocalInfo.time ) { //mal: times up - leave! 
+	if ( vLTGTime < botWorld->gameLocalInfo.time ) { //mal: times up - leave!
 		Bot_ExitVehicleAINode( true );
 		return false;
 	}
@@ -1076,7 +1076,7 @@ bool idBotAI::VLTG_CampGoal() {
 ================
 idBotAI::Enter_VLTG_DriveMCPToGoal
 
-The bot is in the MCP, taking it to the outpost. 
+The bot is in the MCP, taking it to the outpost.
 ================
 */
 bool idBotAI::Enter_VLTG_DriveMCPToGoal() {
@@ -1088,7 +1088,7 @@ bool idBotAI::Enter_VLTG_DriveMCPToGoal() {
 	lastAINode = "Drive MCP Goal";
 
 	vLTGDeployableTargetAttackTime = 0;
-	
+
 	vLTGDeployableTarget = -1;
 
 	vehicleAINodeSwitch.nodeSwitchCount++;
@@ -1198,7 +1198,7 @@ bool idBotAI::Enter_VLTG_GroundVehicleDestroyDeployable() {
 	vLTGVisTimer = 0;
 
 	vLTGSightTime = 0;
-	
+
 	vLTGDriveTime = 0;
 
 	vLTGReached = false; //mal: goliath will do alternating checks from his viewOrigin, and weap origin, to verify the target is visible.
@@ -1219,7 +1219,7 @@ bool idBotAI::Enter_VLTG_GroundVehicleDestroyDeployable() {
 idBotAI::VLTG_GroundVehicleDestroyDeployable
 ================
 */
-bool idBotAI::VLTG_GroundVehicleDestroyDeployable() { 
+bool idBotAI::VLTG_GroundVehicleDestroyDeployable() {
 	if ( vLTGTime < botWorld->gameLocalInfo.time ) { //mal: times up - leave!
 		Bot_ExitVehicleAINode( true );
 		botUcmd->botCmds.becomeDriver = true;
@@ -1269,7 +1269,7 @@ bool idBotAI::VLTG_GroundVehicleDestroyDeployable() {
 		} else if ( botVehicleInfo->type == TROJAN ) {
 			botOrigin = botVehicleInfo->origin;
 			botOrigin.z += ( botVehicleInfo->bbox[ 1 ][ 2 ] - botVehicleInfo->bbox[ 0 ][ 2 ] ) * 0.90f;
-		}			
+		}
 
 		vLTGReached = !vLTGReached;
 
@@ -1566,7 +1566,7 @@ bool idBotAI::VLTG_AircraftDestroyDeployable() {
 	}
 
 //mal: pick whats our best weapon
-	if ( botInfo->proxyInfo.weapon == LAW ) { 
+	if ( botInfo->proxyInfo.weapon == LAW ) {
 		if ( botInfo->proxyInfo.weaponIsReady == false && rocketTime < botWorld->gameLocalInfo.time && botWorld->gameLocalInfo.botSkill > BOT_SKILL_EASY ) { //mal: use rockets if LAW outta charge
 			rocketTime = botWorld->gameLocalInfo.time + 2000;
 			botUcmd->botCmds.switchVehicleWeap = true;
@@ -1584,7 +1584,7 @@ bool idBotAI::VLTG_AircraftDestroyDeployable() {
 		}
 	} else {
 		idVec3 dir = deployable.origin - botVehicleInfo->origin;
-        dir.NormalizeFast(); 
+        dir.NormalizeFast();
 		if ( dir * botVehicleInfo->axis[ 0 ] > 0.95f ) { //mal: we have them in our sights - FIRE!
 			botUcmd->botCmds.attack = true;
 		}
@@ -1729,7 +1729,7 @@ bool idBotAI::Enter_VLTG_TravelToGoalOrigin() {
 	lastAINode = "Vehicle Origin Goal";
 
 	vLTGDeployableTargetAttackTime = 0;
-	
+
 	vLTGDeployableTarget = -1;
 
 	vehicleAINodeSwitch.nodeSwitchCount++;
@@ -1748,11 +1748,11 @@ bool idBotAI::VLTG_TravelToGoalOrigin() {
 
 	if ( vLTGTime < botWorld->gameLocalInfo.time ) {
 		Bot_ExitVehicleAINode( true );
-		
-		if ( botWorld->gameLocalInfo.gameMap == SLIPGATE ) { 
+
+		if ( botWorld->gameLocalInfo.gameMap == SLIPGATE ) {
 			Bot_ExitVehicle(); //mal: if we can't reach slipgate - need to leave vehicle
 		}
-		
+
 		return false;
 	}
 
@@ -1825,7 +1825,7 @@ bool idBotAI::VLTG_TravelToGoalOrigin() {
 ================
 idBotAI::Enter_VLTG_DriveMCPToRouteGoal
 
-The bot is in the MCP, taking it to a route action goal. 
+The bot is in the MCP, taking it to a route action goal.
 ================
 */
 bool idBotAI::Enter_VLTG_DriveMCPToRouteGoal() {
@@ -1837,7 +1837,7 @@ bool idBotAI::Enter_VLTG_DriveMCPToRouteGoal() {
 	lastAINode = "MCP Route Goal";
 
 	vLTGDeployableTargetAttackTime = 0;
-	
+
 	vLTGDeployableTarget = -1;
 
 	vehicleAINodeSwitch.nodeSwitchCount++;
@@ -1931,7 +1931,7 @@ bool idBotAI::Enter_VLTG_HuntGoal() {
 	lastAINode = "Vehicle Hunt Goal";
 
 	vLTGDeployableTargetAttackTime = 0;
-	
+
 	vLTGDeployableTarget = -1;
 
 	vehicleAINodeSwitch.nodeSwitchCount++;

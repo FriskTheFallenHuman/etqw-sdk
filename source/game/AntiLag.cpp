@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -268,7 +268,7 @@ void sdAntiLagSetPlayer::Setup( sdAntiLagEntity& _antiLagEntity ) {
 
 	cmdForwardMove = playerSelf->usercmd.forwardmove;
 	cmdRightMove = playerSelf->usercmd.rightmove;
-	
+
 
 	if ( OnGround() ) {
 		groundNormal.Set( 0.0f, 0.0f, 1.0f );
@@ -311,7 +311,7 @@ void sdAntiLagSetPlayer::Setup( sdAntiLagEntity& _antiLagEntity, sdAntiLagSet& b
 
 	cmdForwardMove = playerSelf->usercmd.forwardmove;
 	cmdRightMove = playerSelf->usercmd.rightmove;
-	
+
 	groundNormal = playerSet.GetGroundNormal();
 }
 
@@ -402,7 +402,7 @@ idVec2 sdAntiLagSetPlayer::CalcDesiredWalkMove( int forwardmove, int rightmove )
 			// calculate the length of the full-strength move in this direction
 			float fullLengthScale = maxMoveSpeedLimit / maxMoveSpeed;
 			float fullLength = fullLengthScale * idMath::Sqrt( maxMoveSpeed * maxMoveSpeed + minMoveSpeed * minMoveSpeed );
-			
+
 			// scale-back to fit the maximum speed we're allowed
 			maxMoveAdjusted = maxMoveSpeed * maxMoveSpeedLimit / fullLength;
 			minMoveAdjusted = minMoveSpeed * maxMoveSpeedLimit / fullLength;
@@ -456,7 +456,7 @@ void sdAntiLagSetPlayer::Accelerate( const idVec3 &wishdir, const float wishspee
 	if ( accelspeed > addspeed ) {
 		accelspeed = addspeed;
 	}
-	
+
 	velocity += accelspeed * wishdir;
 }
 
@@ -527,7 +527,7 @@ void sdAntiLagSetPlayer::Friction() {
 	idVec3	vel;
 	float	speed, newspeed, control;
 	float	drop;
-	
+
 	idVec3 gravityNormal = gravity;
 	gravityNormal.Normalize();
 
@@ -564,7 +564,7 @@ void sdAntiLagSetPlayer::Friction() {
 //	if ( current.movementType == PM_SPECTATOR ) {
 //		drop += speed * pm_flyFriction * frametime;
 //	} else if ( walking && waterLevel <= WATERLEVEL_FEET ) {
-		// apply ground friction	
+		// apply ground friction
 		// no friction on slick surfaces
 //		if ( !(groundMaterial && groundMaterial->GetSurfaceFlags() & SURF_SLICK) ) {
 
@@ -582,10 +582,10 @@ void sdAntiLagSetPlayer::Friction() {
 //			}
 //		}
 	} else if ( waterLevel > WATERLEVEL_NONE ) {
-		// apply water friction even if just wading	
+		// apply water friction even if just wading
 		drop += speed * pm_waterFriction * waterLevel * frametime;
 	} else {
-		// apply air friction	
+		// apply air friction
 		drop += speed * pm_airFriction * frametime;
 	}
 
@@ -765,8 +765,8 @@ void sdAntiLagEntity::Update() {
 			clientEstimates[ i ].Reset( trueOrigin );
 			continue;
 		}
-		
-		// estimate based on the sets & prediction time etc where 
+
+		// estimate based on the sets & prediction time etc where
 		// the other client is predicting this entity to be
 		int prediction = networkSystem->ServerGetClientPrediction( i );
 		if ( prediction <= 0 ) {
@@ -782,10 +782,10 @@ void sdAntiLagEntity::Update() {
 			clientEstimates[ i ].Reset( trueOrigin );
 			continue;
 		}
-		
+
 		const idVec3* predictedPosition = set->GetPointForTime( gameLocal.time );
 		if ( predictedPosition == NULL ) {
-			// out of bounds of the set - again, means they must be hitting an extreme 
+			// out of bounds of the set - again, means they must be hitting an extreme
 			// network performance case - they won't be able to hit anyway
 			clientEstimates[ i ].Reset( trueOrigin );
 			continue;
@@ -927,7 +927,7 @@ void sdAntiLagEntity::CreateUserCommandBranch( int clientNum ) {
 			continue;
 		}
 
-		if ( antiLagSets[ upto ]->GetBranchTime() == gameLocal.time 
+		if ( antiLagSets[ upto ]->GetBranchTime() == gameLocal.time
 			&& antiLagSets[ upto ]->GetBaseBranchTime() == previousFullBranch->GetBranchTime() ) {
 			// branches from the appropriate time
 			// set it valid for us and move on :)
@@ -1184,7 +1184,7 @@ typedef struct {
 	float				playerSpeed;
 
 	int					cmdForwardMove;
-	int					cmdRightMove;	
+	int					cmdRightMove;
 } antilagSnapshotRecord_t;
 
 typedef struct {
@@ -1277,7 +1277,7 @@ void sdAntiLagManagerLocal::Think() {
 		msg.WriteLong( ANTILAG_SNAPSHOT );
 		msg.WriteLong( gameLocal.time );
 		msg.WriteLong( numToWrite );
-		
+
 		for ( int i = 0; i < MAX_CLIENTS; i++ ) {
 			idPlayer* player = gameLocal.GetClient( i );
 			if ( player == NULL ) {
@@ -1444,7 +1444,7 @@ sdAntiLagManagerLocal::Trace
 */
 void sdAntiLagManagerLocal::Trace( trace_t& result, const idVec3& start, const idVec3& end, int mask, idPlayer* clientShooting, idEntity* ignore ) {
 	result.fraction = 1.0f;
-	
+
 #ifdef ANTILAG_LOGGING
 	if ( gameLocal.isClient ) {
 		if ( clientShooting == gameLocal.GetLocalPlayer() ) {
@@ -1705,11 +1705,11 @@ idClipModel* sdAntiLagManagerLocal::GetModelForBounds( const idBounds& bounds ) 
 			return cachedPlayerModels[ i ];
 		}
 	}
-	
+
 	// couldn't find it in the cache - make a new one
 	idClipModel* newModel = new idClipModel( idTraceModel( bounds, 8 ), false );
 	cachedPlayerModels.Append( newModel );
-	return newModel; 
+	return newModel;
 }
 
 /*
@@ -1732,7 +1732,7 @@ void sdAntiLagManagerLocal::OnNetworkEvent( int clientNum, const idBitMsg& msg )
 	} else if ( type == ANTILAG_SNAPSHOT ) {
 		int time = msg.ReadLong();
 		int num = msg.ReadLong();
-		
+
 		if ( clientLogFile != NULL ) {
 			clientLogFile->WriteInt( ANTILAG_SNAPSHOT );
 			clientLogFile->WriteInt( time );

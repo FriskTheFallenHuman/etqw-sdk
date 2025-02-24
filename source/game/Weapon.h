@@ -11,7 +11,7 @@
 ===============================================================================
 
 	Player Weapon
-	
+
 ===============================================================================
 */
 
@@ -183,7 +183,7 @@ public:
 	void					OwnerDied( void );
 	void					BeginAttack( void );
 	void					EndAttack( void );
-	
+
 	void					UpdateSpreadValue( void );
 	void					UpdateSpreadValue( const idVec3& velocity, const idAngles& angles, const idAngles& oldAngles );
 
@@ -356,7 +356,7 @@ private:
 	idMat3					viewForeShortenAxis;
 
 	idInterpolate< float >	zoomFov;
-	
+
 	weaponSpreadValueIndex_t	ownerStanceState;
 
 	weaponSpreadValues_t	spreadValues[ WSV_NUM ];
@@ -384,7 +384,7 @@ private:
 
 	// weapon definition
 	const sdDeclInvItem*	weaponItem;
-	
+
 	const sdDeclDamage*		meleeDamage;
 	const sdDeclDamage*		meleeSpecialDamage;
 

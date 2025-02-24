@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -10,10 +10,10 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../../framework/BuildVersion.h"
-#include "../../framework/BuildDefines.h"
-#include "../../framework/Licensee.h"
-#include "../rules/GameRules.h"
+#include "framework/BuildVersion.h"
+#include "framework/BuildDefines.h"
+#include "framework/Licensee.h"
+#include "rules/GameRules.h"
 
 #if defined( _DEBUG )
 	#define	BUILD_DEBUG	"(debug)"
@@ -139,12 +139,12 @@ idCVar g_disableVehicleSpawns(		"g_disableVehicleSpawns",	"0",			CVAR_GAME | CVA
 idCVar g_frametime(					"g_frametime",				"0",			CVAR_GAME | CVAR_BOOL, "displays timing information for each game frame" );
 //idCVar g_timeentities(				"g_timeEntities",			"0",			CVAR_GAME | CVAR_FLOAT, "when non-zero, shows entities whose think functions exceeded the # of milliseconds specified" );
 //idCVar g_timetypeentities(			"g_timeTypeEntities",		"",				CVAR_GAME, "" );
-	
+
 idCVar ai_debugScript(				"ai_debugScript",			"-1",			CVAR_GAME | CVAR_INTEGER, "displays script calls for the specified monster entity number" );
 idCVar ai_debugAnimState(			"ai_debugAnimState",		"-1",			CVAR_GAME | CVAR_INTEGER, "displays animState changes for the specified monster entity number" );
 idCVar ai_debugMove(				"ai_debugMove",				"0",			CVAR_GAME | CVAR_BOOL, "draws movement information for monsters" );
 idCVar ai_debugTrajectory(			"ai_debugTrajectory",		"0",			CVAR_GAME | CVAR_BOOL, "draws trajectory tests for monsters" );
-	
+
 idCVar g_kickTime(					"g_kickTime",				"1",			CVAR_GAME | CVAR_FLOAT, "" );
 idCVar g_kickAmplitude(				"g_kickAmplitude",			"0.0001",		CVAR_GAME | CVAR_FLOAT, "" );
 //idCVar g_blobTime(					"g_blobTime",				"1",			CVAR_GAME | CVAR_FLOAT, "" );

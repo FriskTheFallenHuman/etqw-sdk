@@ -9,7 +9,7 @@
 
 template< class T >
 class sdSortLess {
-public:	
+public:
 	int operator()( const T& lhs, const T& rhs ) const {
 		return lhs < rhs;
 	}
@@ -101,7 +101,7 @@ ID_INLINE void sdQuickSort( ElementIter begin, ElementIter end, Cmp comp ) {
 	ElementIter mid;					/* points to middle of subarray */
 	ElementIter loguy, higuy;			/* traveling pointers for partition step */
 	size_t size;					/* size of the sub-array */
-	
+
 	const size_t STKSIZ = ( 8 * sizeof( ElementIter ) - 2 );
 	const size_t CUTOFF = 8;            /* testing shows that this is good value */
 	ElementIter lostk[STKSIZ], histk[STKSIZ];
@@ -122,7 +122,7 @@ ID_INLINE void sdQuickSort( ElementIter begin, ElementIter end, Cmp comp ) {
 	preserved, locals aren't, so we preserve stuff on the stack */
 recurse:
 
-	size = (hi - lo) + 1;        /* number of el's to sort */	
+	size = (hi - lo) + 1;        /* number of el's to sort */
 
 	/* below a certain size, it is faster to use a O(n^2) sorting method */
 	if( size <= CUTOFF ) {
@@ -300,7 +300,7 @@ ID_INLINE ElementIter sdBinarySearch( const Element& element, ElementIter begin,
 
 	size_t num = hi - lo;
 	size_t half;
-	bool result;	
+	bool result;
 
 	while (lo <= hi) {
 		half = num / 2;

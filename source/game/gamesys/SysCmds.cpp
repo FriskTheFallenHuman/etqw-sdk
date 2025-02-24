@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -10,39 +10,39 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#include "../../framework/Licensee.h"
+#include "framework/Licensee.h"
 
-#include "../Entity.h"
-#include "../Projectile.h"
-#include "../Moveable.h"
-#include "../vehicles/Walker.h"
-#include "../Player.h"
+#include "Entity.h"
+#include "Projectile.h"
+#include "Moveable.h"
+#include "vehicles/Walker.h"
+#include "Player.h"
 
-#include "../botai/Bot.h"
-#include "../botai/BotThreadData.h"
-#include "../botai/Bot_Common.h"
+#include "botai/Bot.h"
+#include "botai/BotThreadData.h"
+#include "botai/Bot_Common.h"
 
-#include "../rules/GameRules.h"
-#include "../rules/UserGroup.h"
-#include "../rules/AdminSystem.h"
-#include "../WorldSpawn.h"
-#include "../Light.h"
-#include "../Weapon.h"
-#include "../Misc.h"
-#include "../anim/Anim_Testmodel.h"
-#include "../../idlib/PropertiesImpl.h"
-#include "../Camera.h"
-#include "../rules/VoteManager.h"
-#include "../roles/FireTeams.h"
-#include "../guis/UserInterfaceLocal.h"
-#include "../guis/UserInterfaceManagerLocal.h"
-#include "../proficiency/StatsTracker.h"
-#include "../script/Script_Program.h"
+#include "rules/GameRules.h"
+#include "rules/UserGroup.h"
+#include "rules/AdminSystem.h"
+#include "WorldSpawn.h"
+#include "Light.h"
+#include "Weapon.h"
+#include "Misc.h"
+#include "anim/Anim_Testmodel.h"
+#include "idlib/PropertiesImpl.h"
+#include "Camera.h"
+#include "rules/VoteManager.h"
+#include "roles/FireTeams.h"
+#include "guis/UserInterfaceLocal.h"
+#include "guis/UserInterfaceManagerLocal.h"
+#include "proficiency/StatsTracker.h"
+#include "script/Script_Program.h"
 
-#include "../../sdnet/SDNetUser.h"
-#include "../../sdnet/SDNetAccount.h"
+#include "sdnet/SDNetUser.h"
+#include "sdnet/SDNetAccount.h"
 
-#include "../docs/wiki.h"
+#include "docs/wiki.h"
 
 //#include "TypeInfo.h"
 
@@ -222,7 +222,7 @@ int G_SortTypes( const typeCount_t* typea, const typeCount_t* typeb ) {
 Cmd_EntityList_f
 ===================
 */
-void Cmd_EntityList_f( const idCmdArgs &args ) {	
+void Cmd_EntityList_f( const idCmdArgs &args ) {
 	idStr match;
 	if ( args.Argc() > 1 ) {
 		match = args.Args();
@@ -302,7 +302,7 @@ void Cmd_ActiveEntityList_f( const idCmdArgs &args ) {
 		char	dormant = ' ';
 		gameLocal.Printf( "%4i:%c%-20s %-20s %s\n", check->entityNumber, dormant, check->GetEntityDefName(), check->GetClassname(), check->name.c_str() );
 		count++;
-	}	
+	}
 
 	gameLocal.Printf( "...%d active entities\n", count );
 }
@@ -324,7 +324,7 @@ void Cmd_ListSpawnArgs_f( const idCmdArgs &args ) {
 
 	for ( i = 0; i < ent->spawnArgs.GetNumKeyVals(); i++ ) {
 		const idKeyValue *kv = ent->spawnArgs.GetKeyVal( i );
-		gameLocal.Printf( "\"%s\"  "S_COLOR_WHITE"\"%s\"\n", kv->GetKey().c_str(), kv->GetValue().c_str() );
+		gameLocal.Printf( "\"%s\"  " S_COLOR_WHITE "\"%s\"\n", kv->GetKey().c_str(), kv->GetValue().c_str() );
 	}
 }
 
@@ -605,7 +605,7 @@ void Cmd_Give_f( const idCmdArgs &args ) {
 		sdInventory& inventory = player->GetInventory();
 		for( int i = 0; i < gameLocal.declAmmoTypeType.Num(); i++ ) {
 			inventory.SetAmmo( i, inventory.GetMaxAmmo( i ) );
-		}		
+		}
 		if ( !give_all ) {
 			return;
 		}
@@ -792,7 +792,7 @@ static void Cmd_AddChatLine_f( const idCmdArgs &args ) {
 		idVec4 color;
 		sdProperties::sdFromString( color, sdGameRules::g_chatDefaultColor.GetString() );
 		gameLocal.rules->AddChatLine( sdGameRules::CHAT_MODE_DEFAULT, color, L"%hs", args.Argv( 1 ) );
-	}	
+	}
 }
 
 /*
@@ -803,7 +803,7 @@ Cmd_AddObituaryLine_f
 static void Cmd_AddObituaryLine_f( const idCmdArgs &args ) {
 	if ( gameLocal.rules ) {
 		gameLocal.rules->AddChatLine( sdGameRules::CHAT_MODE_OBITUARY, colorRed , L"%hs", args.Argv( 1 ) );
-	}	
+	}
 }
 
 /*
@@ -1713,7 +1713,7 @@ static void Cmd_TestDamage_f( const idCmdArgs &args ) {
 	}
 
 	const sdDeclDamage* damageDecl = gameLocal.declDamageType[ args.Argv( 1 ) ];
-	if( !damageDecl ) {		
+	if( !damageDecl ) {
 		gameLocal.Warning( "Cmd_TestDamage_f Invalid Damage Def '%s'", args.Argv( 1 ) );
 	}
 
@@ -2138,7 +2138,7 @@ Cmd_DumpMonolithicInfo_f
 struct monolithicClassInfo_t {
 	idStr classDef;
 	idStr fileName;
-};	
+};
 static void Cmd_DumpMonolithicInfo_f( const idCmdArgs &args ) {
 	idList< monolithicClassInfo_t > classDefs;
 
@@ -2242,7 +2242,7 @@ static void Cmd_ToggleTraceLogging_f( const idCmdArgs &args ) {
 Cmd_makeEnvMaps_f
 
 	Ok this looks a bit hacky but everything we need for this is already available as cmd's
-	and you have to wait two frames anyway it seems for the setviewpos to be communicated 
+	and you have to wait two frames anyway it seems for the setviewpos to be communicated
 	to the engine so this is the cleanest way.
 ==================
 */
@@ -2356,7 +2356,7 @@ void Cmd_DumpScriptStats_f( const idCmdArgs &args ) {
 }
 #endif // DEBUG_SCRIPTS
 
-#include "../misc/PlayerBody.h"
+#include "misc/PlayerBody.h"
 
 /*
 ==================
@@ -2476,10 +2476,11 @@ void Cmd_Admin_f( const idCmdArgs &args ) {
 	sdAdminSystem::GetInstance().PerformCommand( args, NULL );
 }
 
+#if defined( ID_ALLOW_TOOLS )
 static void ArgCompletion_DefFile( const idCmdArgs &args, void(*callback)( const char *s ) ) {
 	cmdSystem->ArgCompletion_FolderExtension( args, callback, "def/", true, ".def", NULL );
 }
-
+#endif /* ID_ALLOW_TOOLS */
 
 /*
 ============
@@ -2519,7 +2520,7 @@ static void Cmd_CollisionTest_f( const idCmdArgs& args ) {
 				gameLocal.Warning( "Entity '%s': Unexpected Mins", def->GetName() );
 			}
 		}
-		
+
 		if ( def->dict.GetVector( "maxs", NULL, bounds[ 1 ] ) ) {
 			hasMaxs = true;
 			if ( expectNone ) {
@@ -2559,6 +2560,7 @@ static void Cmd_CollisionTest_f( const idCmdArgs& args ) {
 	}
 }
 
+#if 0
 /*
 ============
 Cmd_Stats_f
@@ -2567,6 +2569,7 @@ Cmd_Stats_f
 static void Cmd_Stats_f( const idCmdArgs& args ) {
 	sdStatsTracker::HandleCommand( args );
 }
+#endif
 
 /*
 ===============
@@ -2866,10 +2869,10 @@ static void Cmd_SetSpawnPoint_f( const idCmdArgs &args ) {
 	if ( team == NULL ) {
 		return;
 	}
-	
+
 	idEntity* desiredSpawn = NULL;
 	idEntity* defaultSpawn = team->GetDefaultSpawn();
-	
+
 	const char* commandString = args.Argv( 1 );
 	bool next = !idStr::Icmp( "next", commandString );
 	bool prev = !idStr::Icmp( "prev", commandString );
@@ -3067,10 +3070,10 @@ void idGameLocal::InitConsoleCommands( void ) {
 	cmdSystem->AddCommand( "damage",				Cmd_Damage_f,				CMD_FL_GAME|CMD_FL_CHEAT,	"apply damage to an entity", idGameLocal::ArgCompletion_EntityName );
 	cmdSystem->AddCommand( "remove",				Cmd_Remove_f,				CMD_FL_GAME|CMD_FL_CHEAT,	"removes an entity", idGameLocal::ArgCompletion_EntityName );
 	cmdSystem->AddCommand( "killMoveables",			Cmd_KillMovables_f,			CMD_FL_GAME|CMD_FL_CHEAT,	"removes all moveables" );
-	cmdSystem->AddCommand( "killTransports",		Cmd_KillTransports_f,		CMD_FL_GAME|CMD_FL_CHEAT,	"removes all transports" );	
+	cmdSystem->AddCommand( "killTransports",		Cmd_KillTransports_f,		CMD_FL_GAME|CMD_FL_CHEAT,	"removes all transports" );
 	cmdSystem->AddCommand( "killRagdolls",			Cmd_KillRagdolls_f,			CMD_FL_GAME|CMD_FL_CHEAT,	"removes all ragdolls" );
-	cmdSystem->AddCommand( "killClass",				Cmd_KillClass_f,			CMD_FL_GAME|CMD_FL_CHEAT,	"removes all entities of 'class'" );	
-	cmdSystem->AddCommand( "killType",				Cmd_KillType_f,				CMD_FL_GAME|CMD_FL_CHEAT,	"removes all entities of 'type'" );	
+	cmdSystem->AddCommand( "killClass",				Cmd_KillClass_f,			CMD_FL_GAME|CMD_FL_CHEAT,	"removes all entities of 'class'" );
+	cmdSystem->AddCommand( "killType",				Cmd_KillType_f,				CMD_FL_GAME|CMD_FL_CHEAT,	"removes all entities of 'type'" );
 	cmdSystem->AddCommand( "activateAFs",			Cmd_ActivateAFs_f,			CMD_FL_GAME|CMD_FL_CHEAT,	"activates idAFEntity based entities" );
 	cmdSystem->AddCommand( "activateVehicles",		Cmd_ActivateVehicles_f,		CMD_FL_GAME|CMD_FL_CHEAT,	"activates physics on sdTransport based entities" );
 	cmdSystem->AddCommand( "addline",				Cmd_AddDebugLine_f,			CMD_FL_GAME|CMD_FL_CHEAT,	"adds a debug line" );

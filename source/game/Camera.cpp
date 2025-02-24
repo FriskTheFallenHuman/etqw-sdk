@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -67,7 +67,7 @@ renderView_t *idCamera::GetRenderView() {
 	InitRenderView();
 
 	GetViewParms( &renderView );
-	
+
 	return &renderView;
 }
 
@@ -252,7 +252,7 @@ bool idCamera_MD5::SkipToEnd() {
 		frameTime	= ( gameLocal.time - starttime ) * frameRate;
 		frame		= frameTime / 1000;
 	}
-	
+
 	if ( frame > camera.Num() + cameraCuts.Num() - 2 ) {
 		if ( cycle > 0 ) {
 			cycle--;

@@ -2,13 +2,13 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclGUI.h"
-#include "../../framework/DeclParseHelper.h"
-#include "../guis/UserInterfaceManager.h"
-#include "../../framework/Licensee.h"
+#include "framework/DeclParseHelper.h"
+#include "guis/UserInterfaceManager.h"
+#include "framework/Licensee.h"
 
 const char sdDeclGUIProperty_Identifier[] = "sdDeclGUIProperty";
 const char sdDeclGUITimeEvent_Identifier[] = "sdDeclGUITimeEvent";
@@ -33,7 +33,7 @@ sdDeclGUIWindow::sdDeclGUIWindow
 */
 sdDeclGUIWindow::sdDeclGUIWindow( void ) : properties(1), events(1), children(1)
 #ifdef _DEBUG
-,breakOnDraw( false ), breakOnLayout( false ) 
+,breakOnDraw( false ), breakOnLayout( false )
 #endif
 {
 	type = s_strPool.AllocString( "window" );
@@ -120,7 +120,7 @@ bool sdDeclGUIWindow::ParseProperties( idList< sdDeclGUIProperty* >& properties,
 sdDeclGUITimelineHolder::ParseTimeline
 ================
 */
-bool sdDeclGUITimelineHolder::ParseTimeline( idLexer& src ) {	
+bool sdDeclGUITimelineHolder::ParseTimeline( idLexer& src ) {
 
 	idToken token;
 	if( !src.ReadToken( &token ) ) {
@@ -148,7 +148,7 @@ bool sdDeclGUITimelineHolder::ParseTimeline( idLexer& src ) {
 	if ( !src.ExpectTokenString( "{" ) ) {
 		return false;
 	}
-	
+
 	while ( true ) {
 		if( !src.ReadToken( &token ) ) {
 			src.Error( "Unexpected End of File" );
@@ -535,7 +535,7 @@ sdDeclGUI::sdDeclGUI( void ) :
 	properties( 1 ),
 	events( 1 )
 #ifdef _DEBUG
- ,breakOnDraw( false ) 
+ ,breakOnDraw( false )
 #endif
 
 {
@@ -586,11 +586,11 @@ sdDeclGUIWindow* sdDeclGUI::ParseWindow( idLexer& src ) {
 sdDeclGUI::Parse
 ================
 */
-bool sdDeclGUI::Parse( const char *text, const int textLength ) {		
+bool sdDeclGUI::Parse( const char *text, const int textLength ) {
 	idToken token;
 	idParser src;
-	src.SetFlags( LEXER_FLAGS ); 	
-	
+	src.SetFlags( LEXER_FLAGS );
+
 	bool binary = HasBinaryBuffer();
 	if( !binary ) {
 		// init code-generated #defines
@@ -603,7 +603,7 @@ bool sdDeclGUI::Parse( const char *text, const int textLength ) {
 	}
 
 	sdDeclParseHelper declHelper( this, text, textLength, src );
-	
+
 	const byte* parseOutput;
 	int parseOutputLength;
 	declHelper.GetBinaryBuffer( parseOutput, parseOutputLength );
@@ -686,7 +686,7 @@ bool sdDeclGUI::Parse( const char *text, const int textLength ) {
 				if( !kv->GetKey().IsEmpty() ) {
 					gameLocal.declAtmosphereType[ kv->GetKey().c_str() ];
 				}
-			}			
+			}
 		} else if ( !token.Icmp( "models" ) ) {
 			tempDict.Clear();
 			if ( !tempDict.Parse( binarySrc ) ) {
@@ -766,7 +766,7 @@ bool sdDeclGUI::Parse( const char *text, const int textLength ) {
 		kv = sounds.GetKeyVal( i );
 		if( kv->GetValue().Length() ) {
 			gameLocal.declSoundShaderType[ kv->GetValue() ];
-		}		
+		}
 	}
 
 	return true;
@@ -825,7 +825,7 @@ void sdDeclGUI::CacheMaterialDictionary( const char* name, const idDict& materia
 					continue;
 				}
 				break;
-			}			
+			}
 
 			if( gameLocal.declMaterialType[ token ] == NULL ) {
 				gameLocal.Warning( "%s: Couldn't precache material '%s'", name, token.c_str() );
@@ -881,7 +881,7 @@ bool sdDeclGUI::ParseBracedSection( idLexer& src, idList< unsigned short >& toke
 		return false;
 	}
 	tokens.Append( token.GetBinaryIndex() );
-	
+
 	int numBraces = 1;
 	while( numBraces > 0 ) {
 		if( !src.ReadToken( &token ) ) {
@@ -895,7 +895,7 @@ bool sdDeclGUI::ParseBracedSection( idLexer& src, idList< unsigned short >& toke
 		if( token.Cmp( close ) == 0 ) {
 			numBraces--;
 			continue;
-		}		
+		}
 	}
 	tokens.Condense();
 	return true;
@@ -920,7 +920,7 @@ bool sdDeclGUI::CreateConstructor( const idList<sdDeclGUIProperty*>& properties,
 
 	idList< unsigned short > constructorTokens;
 	tokens.Append( openBrace );
-	
+
 	bool hasValues = false;
 	for( int i = 0; i < properties.Num(); i++ ) {
 		sdDeclGUIProperty* prop = properties[ i ];

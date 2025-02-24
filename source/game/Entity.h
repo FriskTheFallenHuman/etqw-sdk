@@ -16,8 +16,8 @@
 #include "Pvs.h"
 #include "physics/Physics_Static.h"
 #include "script/Script_Interface.h"
-#include "../sound/SoundShader.h"
-#include "../sound/SoundEmitter.h"
+#include "sound/SoundShader.h"
+#include "sound/SoundEmitter.h"
 #include "guis/UserInterfaceTypes.h"
 
 typedef enum radarMasks_e {
@@ -506,7 +506,7 @@ public:
 	bool					GetMasterPosition( idVec3 &masterOrigin, idMat3 &masterAxis ) const;
 	idEntity*				GetMaster( void ) const { return bindMaster; }
 	void					GetWorldVelocities( idVec3 &linearVelocity, idVec3 &angularVelocity ) const;
-	
+
 	// physics
 							// set a new physics object to be used by this entity
 	void					SetPhysics( idPhysics *phys );
@@ -679,7 +679,7 @@ public:
 	virtual void			OnControllerMove( bool doGameCallback, const int numControllers, const int* controllerNumbers,
 											const float** controllerAxis, idVec3& viewAngles, usercmd_t& cmd );
 	virtual void			OnMouseMove( idPlayer* player, const idAngles& baseAngles, idAngles& angleDelta ) {}
-	
+
 
 	virtual int							GetOcclusionQueryHandle( void ) const { return occlusionQueryHandle; }
 	virtual const occlusionTest_t&		GetOcclusionQueryInfo( void ) const { return occlusionQueryInfo; }
@@ -691,7 +691,7 @@ public:
 
 	const idVec3&			GetLastPushedOrigin( void ) const { return lastPushedOrigin; }
 	const idMat3&			GetLastPushedAxis( void ) const { return lastPushedAxis; }
-			
+
 	virtual bool			DisableClipOnRemove( void ) const { return false; }
 
 protected:
@@ -736,7 +736,7 @@ public:
 	// physics
 							// initialize the default physics
 	void					InitDefaultPhysics( const idVec3 &origin, const idMat3 &axis );
-	
+
 	idClipModel*			InitDefaultClipModel();
 	const char*				GetClipModelName( void ) const;
 
@@ -918,7 +918,7 @@ protected:
 	void					Event_UpdateBeam( int handle, const idVec3& start, const idVec3& end, const idVec3& color, float alpha, float width );
 	void					Event_FreeBeam( int index );
 	void					Event_FreeAllBeams();
-	
+
 	void					Event_GetNextTeamEntity( void );
 
 	void					Event_GetKeyWithDefault( const char *key, const char* defaultvalue );

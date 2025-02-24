@@ -143,7 +143,7 @@ ID_INLINE idPlane idPlane::operator-() const {
 	return idPlane( -a, -b, -c, -d );
 }
 
-ID_INLINE idPlane &idPlane::operator=( const idVec3 &v ) { 
+ID_INLINE idPlane &idPlane::operator=( const idVec3 &v ) {
 	a = v.x;
 	b = v.y;
 	c = v.z;
@@ -172,7 +172,7 @@ ID_INLINE bool idPlane::Compare( const idPlane &p, const float epsilon ) const {
 	if ( idMath::Fabs( a - p.a ) > epsilon ) {
 		return false;
 	}
-			
+
 	if ( idMath::Fabs( b - p.b ) > epsilon ) {
 		return false;
 	}

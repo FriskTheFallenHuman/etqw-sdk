@@ -2,11 +2,11 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclAOR.h"
-#include "../demos/DemoManager.h"
+#include "demos/DemoManager.h"
 
 idCVar aor_physicsCutoffScale( "aor_physicsCutoffScale", "1", CVAR_FLOAT | CVAR_ARCHIVE | CVAR_GAME, "scale the aor physics cutoff distance" );
 idCVar aor_animationCutoffScale( "aor_animationCutoffScale", "1", CVAR_FLOAT | CVAR_ARCHIVE | CVAR_GAME, "scale the aor animation cutoff distance" );

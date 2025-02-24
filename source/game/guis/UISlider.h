@@ -69,7 +69,7 @@ protected:
 
 private:
 								// these buttons are sorted in descending priority for mouse events (ie, the gutter is the last to be checked)
-	enum eScrollButtonType {	NO_BUTTON = -1,	
+	enum eScrollButtonType {	NO_BUTTON = -1,
 								UP_BUTTON,		// increment position
 								DOWN_BUTTON,	// decrement position
 								THUMB_BUTTON,	// draggable button
@@ -83,7 +83,7 @@ private:
 	};
 
 	eScrollButtonType						GetButtonForPoint( const idVec2& point ) const;
-	
+
 	bool									CheckScrollbarButtonMouseOver( const sdSysEvent* event, const idVec2& point );
 	bool									CheckScrollbarButtonClick( const sdSysEvent* event, const idVec2& point );
 	bool									UpdateScrollbarDrag( const sdSysEvent* event, const idVec2& point );
@@ -147,7 +147,7 @@ private:
 	)
 	sdVec4Property		thumbOverlayColor;
 	// ===========================================
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "Drawing/Sliders/FillColor";
 	desc				= "Color of the filled portion, drawn up to the thumb's location";
@@ -188,13 +188,13 @@ private:
 		bool			draggingThumb		: 1;
 		bool			gutterHighlighted	: 1;
 	}					flags;
-	
+
 	float				scrollDirection;
 	int					lastScrollTime;
-	
-	eScrollButtonType	currentScrollButton;	
+
+	eScrollButtonType	currentScrollButton;
 	eScrollButtonType	currentClickedScrollButton;
-	
+
 	typedef sdPair< listEvent_t, listEvent_t > thumbButtonEvent_t;
 	static thumbButtonEvent_t thumbButtonEvents[ MAX_BUTTONS ];
 	static thumbButtonEvent_t thumbButtonClickEvents[ MAX_BUTTONS ];

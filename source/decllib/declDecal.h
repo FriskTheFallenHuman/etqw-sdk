@@ -17,7 +17,7 @@ public:
 	virtual void			FreeData( void );
 	virtual size_t			Size( void ) const { return sizeof(sdDeclDecal); }
 	static  void			CacheFromDict( const idDict& dict );
-	
+
 	// New for this decl
 	idVec4					GetStartColor( void ) const { return startColor; }
 	idVec4					GetEndColor( void ) const { return endColor; }

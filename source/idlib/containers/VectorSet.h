@@ -49,7 +49,7 @@ public:
 	void					Clear( void );
 
 	template< class Cmp >
-	int						FindVector( const type &v, Cmp cmp ) {	
+	int						FindVector( const type &v, Cmp cmp ) {
 								int i, j, hashKey, partialHashKey[dimension];
 
 								for ( i = 0; i < dimension; i++ ) {

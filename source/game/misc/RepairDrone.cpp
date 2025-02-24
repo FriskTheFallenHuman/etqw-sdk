@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,9 +11,9 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "RepairDrone.h"
-#include "../script/Script_Helper.h"
-#include "../physics/Physics_SimpleRigidBody.h"
-#include "../ContentMask.h"
+#include "script/Script_Helper.h"
+#include "physics/Physics_SimpleRigidBody.h"
+#include "ContentMask.h"
 
 /*
 ==============
@@ -117,7 +117,7 @@ void sdRepairDrone::Spawn( void ) {
 
 	lastWaterDamageTime = 0;
 	submergeTime		= 0;
-	damageName			= spawnArgs.GetString( "dmg_water" );	
+	damageName			= spawnArgs.GetString( "dmg_water" );
 	waterDamageDecl		= gameLocal.declDamageType[ damageName ];
 	if ( !waterDamageDecl ) {
 		gameLocal.Warning( "sdRepairDrone::Spawn Couldn't find water Damage Type '%s'", damageName );
@@ -198,7 +198,7 @@ void sdRepairDrone::Event_MoveTo( const idVec3& newOrigin, float timeDelta ) {
 	moveToOrigin = newOrigin;
 
 	// without this slight offset, it has a tendency to fall!
-	moveToOrigin.z += 0.45f;	
+	moveToOrigin.z += 0.45f;
 	moveFromOrigin = GetPhysics()->GetOrigin();
 	moveVelocity = ( moveToOrigin - moveFromOrigin ) * ( 1 / timeDelta );
 }
@@ -225,7 +225,7 @@ void sdRepairDrone::UpdateMove( void ) {
 	idVec3 origin = GetPhysics()->GetOrigin();
 	float tooCloseToGroundMakeup = 0.0f;
 	trace_t	tr;
-	gameLocal.clip.TracePoint( CLIP_DEBUG_PARMS tr, origin, origin - idVec3(0.f, 0.f, 16.f), MASK_SOLID | MASK_OPAQUE, this );	
+	gameLocal.clip.TracePoint( CLIP_DEBUG_PARMS tr, origin, origin - idVec3(0.f, 0.f, 16.f), MASK_SOLID | MASK_OPAQUE, this );
 	if ( tr.fraction < 1.0f ) {
 		tooCloseToGroundMakeup = 16.0f - tr.fraction * 16.0f;
 	}
@@ -255,7 +255,7 @@ void sdRepairDrone::UpdateMove( void ) {
 	const float yawVelocity = angVelocity * upVector;
 	const float pitchVelocity = angVelocity * rightVector;
 	const float rollVelocity = angVelocity * forwardVector;
-	
+
 	const float forwardVelocity = linVelocity * forwardVector;
 	const float rightVelocity = linVelocity * rightVector;
 	const float upVelocity = linVelocity * upVector;
@@ -286,8 +286,8 @@ void sdRepairDrone::UpdateMove( void ) {
 
 	// Clamp the throttle
 	throttle = idMath::ClampFloat( throttleMin, throttleMax, throttle );
-	
-	// try to cap the velocity 
+
+	// try to cap the velocity
 	if ( fabs( upVelocity ) > maxUpVel ) {
 		if ( throttle > throttleMin && upVelocity > 0.0f ) {
 			throttle = throttleMin;
@@ -302,43 +302,43 @@ void sdRepairDrone::UpdateMove( void ) {
 
 	//
 	// Tilt forwards
-	
+
 	// ok! calculate the desired pitch angle from the current stats
 	float pitchAngleVelocity = ( idealForwardVelocity - forwardVelocity ) * velocityToAngle;
 	pitchAngleVelocity = SignedSquare( pitchAngleVelocity );
 	float pitchAngle = pitchAngleVelocity * 0.5;
-	
+
 	if ( ( pitchAngle < 0 && pitchVelocity < 0 ) || ( pitchAngle > 0 && pitchVelocity > 0 ) ) {
 		pitchAngle += pitchVelocity * directionRecovery;
-	}	
+	}
 
 	pitchAngle = idMath::ClampFloat( -angleMax, angleMax, pitchAngle );
 
-	// try to cap the velocity 
+	// try to cap the velocity
 	if ( fabs( forwardVelocity ) > maxSideVel ) {
 		if ( pitchAngle * forwardVelocity > 0.0f ) {
 			pitchAngle = 0.0f;
 		}
 	}
-	
+
 	float pitchNeeded = pitchAngle - angles[0];
 	pitch = pitchNeeded * pitchNeeded * pitchNeeded * angleToForce;
 
 	//
 	// Tilt sideways
-	
+
 	// ok! calculate the desired roll angle from the current stats
 	float rollAngleVelocity = ( idealRightVelocity - rightVelocity ) * velocityToAngle;
 	rollAngleVelocity = SignedSquare( rollAngleVelocity );
 	float rollAngle = rollAngleVelocity * 0.5;
-	
+
 	if ( ( rollAngle < 0 && rollVelocity < 0 ) || ( rollAngle > 0 && rollVelocity > 0 ) ) {
 		rollAngle += rollVelocity * directionRecovery;
-	}	
+	}
 
 	rollAngle = -idMath::ClampFloat( -angleMax, angleMax, rollAngle );
-	
-	// try to cap the velocity 
+
+	// try to cap the velocity
 	if ( fabs( rightVelocity ) > maxSideVel ) {
 		if ( rollAngle * -rightVelocity > 0.0f ) {
 			rollAngle = 0.0f;
@@ -405,13 +405,13 @@ void sdRepairDrone::UpdateMove( void ) {
 			float deltaForce = neededForce - currentForce.z;
 			if ( deltaForce > 0.0f ) {
 				idVec3 worldCoM = GetPhysics()->GetCenterOfMass() + GetPhysics()->GetOrigin();
-				GetPhysics()->AddForce( 0, worldCoM, idVec3( 0.0f, 0.0f, deltaForce ) ); 
+				GetPhysics()->AddForce( 0, worldCoM, idVec3( 0.0f, 0.0f, deltaForce ) );
 			}
 		}
 	}
 
-	// 
-	// Print debugging information 
+	//
+	// Print debugging information
 	//
 	if ( spawnArgs.GetBool( "debug_info" ) ) {
 		idVec4 red( 1.0f, 0.0f, 0.0f, 1.0f );
@@ -580,7 +580,7 @@ void sdRepairDrone::ReadNetworkState( networkStateMode_t mode, const sdEntitySta
 		spawnId = msg.ReadBits( 32 );
 		newData.repairTarget = gameLocal.EntityForSpawnId( spawnId );
 		spawnId = msg.ReadBits( 32 );
-		newData.ownerEntity = gameLocal.EntityForSpawnId( spawnId );	
+		newData.ownerEntity = gameLocal.EntityForSpawnId( spawnId );
 	}
 
 	sdScriptEntity::ReadNetworkState( mode, baseState, newState, msg );

@@ -29,7 +29,7 @@ public:
 	virtual bool						GetShowTargetingInfo( idPlayer* player ) const = 0;
 	virtual playerStance_t				GetPlayerStance( idPlayer* player ) const = 0;
 	virtual jointHandle_t				GetPlayerIconJoint( idPlayer* player ) const = 0;
-	
+
 	virtual float						GetDamageScale( idPlayer* player ) const = 0;
 
 	virtual void						UpdateHud( idPlayer* player, guiHandle_t handle ) = 0;
@@ -55,9 +55,9 @@ public:
 	virtual idPlayer*					GetXPSharer( float& shareFactor ) = 0;
 
 	virtual void						SwapPosition( idPlayer* player ) = 0;
-	virtual void						SelectWeapon( idPlayer* player, int index ) = 0;	
+	virtual void						SelectWeapon( idPlayer* player, int index ) = 0;
 
-	virtual const sdWeaponLockInfo*		GetWeaponLockInfo( idPlayer* player ) const = 0;	
+	virtual const sdWeaponLockInfo*		GetWeaponLockInfo( idPlayer* player ) const = 0;
 
 	virtual void						NextWeapon( idPlayer* player ) const = 0;
 	virtual void						PrevWeapon( idPlayer* player ) const = 0;

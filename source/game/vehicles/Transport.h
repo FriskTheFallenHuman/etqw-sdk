@@ -8,16 +8,16 @@
 #define UPStoKPH( value ) ( InchesToMetres( value ) * 3.6f )
 #define KPHtoUPS( value ) ( MetresToInches( value ) / 3.6f )
 
-#include "../AF.h"
-#include "../Player.h"
+#include "AF.h"
+#include "Player.h"
 #include "TransportSystems.h"
 #include "TransportExtras.h"
-#include "../ScriptEntity.h"
-#include "../physics/Physics_RigidBodyMultiple.h"
-#include "../physics/Physics_AF.h"
-#include "../proficiency/ProficiencyManager.h"
-#include "../effects/Effects.h"
-#include "../effects/WaterEffects.h"
+#include "ScriptEntity.h"
+#include "physics/Physics_RigidBodyMultiple.h"
+#include "physics/Physics_AF.h"
+#include "proficiency/ProficiencyManager.h"
+#include "effects/Effects.h"
+#include "effects/WaterEffects.h"
 #include "RouteConstraint.h"
 
 class sdVehicleWeapon;
@@ -83,7 +83,7 @@ public:
 	virtual bool						GetShowTargetingInfo( idPlayer* player ) const;
 	virtual playerStance_t				GetPlayerStance( idPlayer* player ) const;
 	virtual jointHandle_t				GetPlayerIconJoint( idPlayer* player ) const;
-	
+
 	virtual void						UpdateHud( idPlayer* player, guiHandle_t handle );
 	virtual void						UpdateViewAngles( idPlayer* player );
 	virtual void						UpdateViewPos( idPlayer* player, idVec3& origin, idMat3& axis, bool fullUpdate );
@@ -260,7 +260,7 @@ public:
 	void								Event_GetObject( const char* objectName );
 
 	void								Event_DisableModel( bool disabled );
-	
+
 	void								Event_SetDeathThroeHealth( int health );
 	void								Event_GetMinDisplayHealth( void );
 
@@ -289,7 +289,7 @@ public:
 	void								Event_BanPlayer( idEntity* entity, float time );
 
 	void								Event_ClearLastAttacker();
-	
+
 	void								Event_EMPChanged( void );
 	void								Event_WeaponEMPChanged( void );
 
@@ -528,7 +528,7 @@ protected:
 	void								UpdateLockAlarm();
 	virtual void						UpdateScrapeEffects( void ) {}
 	void								UpdateShaderParms( void );
-	
+
 	sdTransportPositionManager			positionManager;
 	vehicleDriveObjectList_t			driveObjects;
 	vehicleDriveObjectList_t			activeObjects;
@@ -559,7 +559,7 @@ protected:
 	const sdDeclDamage*					flippedDamage;
 
 	float								damageXPScale;
-	
+
 	sdVehicleInput						input;
 	const sdProgram::sdFunction*		weaponSelectedFunction;
 	const sdProgram::sdFunction*		surfaceTypeChangedFunction;
@@ -630,7 +630,7 @@ protected:
 	int									lastWaterDamageTime;
 	const sdDeclDamage*					waterDamageDecl;
 	int									lockAlarmTime;
-	
+
 	int									careenStartTime;
 
 	int									routeMaskWarningEndTime;
@@ -676,7 +676,7 @@ public:
 	virtual								~sdTransport_RB( void );
 
 	void								Spawn( void );
-	
+
 	sdPhysics_RigidBodyMultiple*		GetRBPhysics( void ) { return &physicsObj; }
 	const sdPhysics_RigidBodyMultiple*	GetRBPhysics( void ) const { return &physicsObj; }
 

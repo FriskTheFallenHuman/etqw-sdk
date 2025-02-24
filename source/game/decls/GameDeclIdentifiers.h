@@ -23,7 +23,7 @@ extern const char* declToolTipIdentifier;
 extern const char* declTargetInfoIdentifier;
 extern const char* declProficiencyTypeIdentifier;
 extern const char* declProficiencyItemIdentifier;
-extern const char* declRankIdentifier;	
+extern const char* declRankIdentifier;
 extern const char* declDeployableObjectIdentifier;
 extern const char* declDeployableCategoryIdentifier;
 extern const char* declDeployableZoneIdentifier;

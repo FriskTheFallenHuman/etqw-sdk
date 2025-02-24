@@ -6,7 +6,7 @@
 
 // #define DEBUG_SCRIPTS
 
-#include "../network/SnapshotState.h"
+#include "network/SnapshotState.h"
 #include "Script_Interface.h"
 #include "Script_Exporter.h"
 
@@ -114,7 +114,7 @@ public:
 	int					Size( void ) const;
 
 	idTypeDef			*SuperClass( void ) const;
-	
+
 	idTypeDef			*ReturnType( void ) const;
 	void				SetReturnType( idTypeDef *type );
 
@@ -247,7 +247,7 @@ public:
 	void					SetString( const char *string, bool constant );
 
 	idVarDef*				Next( void ) const { return next; }		// next var def with same name
-	
+
 	void					SetNext( idVarDef* def ) { next = def; }
 	void					SetName( idVarDefName* _name ) { name = _name; }
 
@@ -367,7 +367,7 @@ private:
 	idStaticList< statement_t, MAX_STATEMENTS >		statements;
 
 	idList< byte* >									freeStacks[ MAX_SCRIPT_STACK_SIZE_COUNT ];
-	
+
 	idList< idTypeDef* >							types;
 	idHashIndex										typeHash;
 
@@ -434,7 +434,7 @@ public:
 	void											DisassembleStatement( idFile *file, int instructionPointer ) const;
 	void											Disassemble( void ) const;
 	void											FreeData( void );
-	
+
 	int												GetFunctionIndex( const function_t* function ) const;
 	int												GetTypeDefIndex( const idTypeDef* typeDef ) const;
 	int												GetVarDefIndex( const idVarDef* varDef ) const;
@@ -479,7 +479,7 @@ public:
 	int												NumStatements( void ) { return statements.Num(); }
 
 	int												MatchesVirtualFunction( const idTypeDef& match ) const;
-	
+
 	int												NumFilenames( void ) { return fileList.Num( ); }
 
 

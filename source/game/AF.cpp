@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -13,7 +13,7 @@ static char THIS_FILE[] = __FILE__;
 #include "AF.h"
 #include "Entity.h"
 #include "anim/Anim.h"
-#include "../decllib/declAF.h"
+#include "decllib/declAF.h"
 
 /*
 ===============================================================================
@@ -1066,7 +1066,7 @@ void idAF::LoadState( const idDict &args ) {
 			body->SetWorldOrigin( origin );
 			body->SetWorldAxis( angles.ToMat3() );
 		} else {
-			gameLocal.Warning("Unknown body part %s in articulated figure %s", name.c_str(), this->name.c_str()); 
+			gameLocal.Warning("Unknown body part %s in articulated figure %s", name.c_str(), this->name.c_str());
 		}
 
 		kv = args.MatchPrefix( "body ", kv );

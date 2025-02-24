@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -12,14 +12,14 @@ static char THIS_FILE[] = __FILE__;
 
 #include "StatsTracker.h"
 
-#include "../rules/GameRules.h"
-#include "../Player.h"
+#include "rules/GameRules.h"
+#include "Player.h"
 
-#include "../../sdnet/SDNet.h"
-#include "../../sdnet/SDNetStatsManager.h"
-#include "../../sdnet/SDNetAccount.h"
-#include "../../sdnet/SDNetUser.h"
-#include "../../sdnet/SDNetProfile.h"
+#include "sdnet/SDNet.h"
+#include "sdnet/SDNetStatsManager.h"
+#include "sdnet/SDNetAccount.h"
+#include "sdnet/SDNetUser.h"
+#include "sdnet/SDNetProfile.h"
 
 const char* sdStatsTracker::lifeStatsData_t::GetName( void ) const {
 	return gameLocal.lifeStats[ index ].stat.c_str();
@@ -316,7 +316,7 @@ sdStatsCommand_Display::CommandCompletion
 ================
 */
 void sdStatsCommand_Display::CommandCompletion( sdStatsTracker& tracker, const idCmdArgs& args, argCompletionCallback_t callback ) {
-	for ( int i = 0; i < tracker.GetNumStats(); i++ ) {		
+	for ( int i = 0; i < tracker.GetNumStats(); i++ ) {
 		callback( va( "%s %s %s", args.Argv( 0 ), args.Argv( 1 ), tracker.GetStatName( i ) ) );
 	}
 }
@@ -519,7 +519,7 @@ void sdStatsTracker::HandleCommand( const idCmdArgs& args ) {
 	if ( !s_commands.Get( args.Argv( 1 ), &command ) ) {
 		gameLocal.Printf( "Unknown Command '%s'\n", args.Argv( 1 ) );
 		return;
-	}	
+	}
 
 	if ( !( *command )->Run( sdGlobalStatsTracker::GetInstance(), args ) ) {
 		gameLocal.Printf( "Failed to Complete Command Properly\n" );
@@ -865,7 +865,7 @@ void sdStatsTracker::OnServerStatsRequestMessage( const idBitMsg& msg ) {
 	sdNetStatKeyValList list;
 	int numEntries = msg.ReadLong();
 	for ( int i = 0; i < numEntries; i++ ) {
-		msg.ReadString( buffer, sizeof( buffer ) );		
+		msg.ReadString( buffer, sizeof( buffer ) );
 
 		sdNetStatKeyValue kv;
 		kv.type = ( sdNetStatKeyValue::statValueType )msg.ReadByte();
@@ -1100,7 +1100,7 @@ void sdStatsTracker::UpdateStatsRequest( void ) {
 		sdNetTask::taskStatus_e taskStatus = requestTask->GetState();
 		if ( taskStatus == sdNetTask::TS_DONE ) {
 			sdNetErrorCode_e errorCode = requestTask->GetErrorCode();
-			
+
 			if ( errorCode == SDNET_NO_ERROR ) {
 				requestedStatsValid = true;
 			} else {
@@ -1133,7 +1133,7 @@ void sdStatsTracker::OnStatsRequestFinished( void ) {
 		completeStats[ i ] = requestedStats[ i ];
 		completeStatsHash.Add( completeStatsHash.GenerateKey( completeStats[ i ].key->c_str(), false ), i );
 		requestedStatsHash.Add( requestedStatsHash.GenerateKey( completeStats[ i ].key->c_str(), false ), i );
-	}	
+	}
 
 	for ( int i = 0; i < serverStats.Num(); i++ ) {
 		sdNetStatKeyValue* kv = GetLocalStat( serverStats[ i ].key->c_str() );
@@ -1160,7 +1160,7 @@ void sdStatsTracker::OnStatsRequestFinished( void ) {
 			}
 		} else {
 			completeStatsHash.Add( completeStatsHash.GenerateKey( serverStats[ i ].key->c_str(), false ), completeStats.Append( serverStats[ i ] ) );
-		}	
+		}
 
 		serverStatsHash.Add( serverStatsHash.GenerateKey( serverStats[ i ].key->c_str(), false ), i );
 	}
@@ -1327,12 +1327,12 @@ private:
 						return ( delta / data->oldValue.GetFloat() ) * 100;
 					}
 				}
-				break;				
+				break;
 			case sdNetStatKeyValue::SVT_INT_MAX: {
 					float delta = ( data->newValue.GetInt() - data->oldValue.GetInt() );
 					if( idMath::Abs( data->oldValue.GetInt() ) > 0 ) {
 						return ( delta / data->oldValue.GetInt() ) * 100;
-					}					
+					}
 				}
 				break;
 		}
@@ -1365,7 +1365,7 @@ void sdStatsTracker::GetTopLifeStats( idList< const lifeStatsData_t* >& improved
 				} else {
 					worse.Append( &data );
 				}
-				break;				
+				break;
 			case sdNetStatKeyValue::SVT_INT:
 			case sdNetStatKeyValue::SVT_INT_MAX:
 				if ( data.newValue.GetInt() > data.oldValue.GetInt() ) {

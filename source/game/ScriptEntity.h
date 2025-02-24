@@ -147,7 +147,7 @@ private:
 		const idVec3&						GetFirstPersonViewOffset( void ) const { return firstPersonCameraOffset; }
 		const idMat3&						GetFirstPersonViewAxis( void ) const { return firstPersonCameraAxis; }
 		float								GetThirdpersonDistance( void ) const { return thirdpersonDistance; }
-		float								GetThirdpersonHeight( void ) const { return thirdpersonHeight; }		
+		float								GetThirdpersonHeight( void ) const { return thirdpersonHeight; }
 		const char*							GetPlayerAnim( void ) const { return playerAnim; }
 		float								GetFov( void ) const { return fov; }
 		const sdWeaponLockInfo*				GetWeaponLockInfo( void ) const { return &lockInfo; }
@@ -158,7 +158,7 @@ private:
 		const sdDeclStringMap*				GetCockpit( void ) const { return cockpitInfo; }
 
 		const angleClamp_t&					GetClampYaw( void ) const { return clampYaw; }
-		const angleClamp_t&					GetClampPitch( void ) const { return clampPitch; }	
+		const angleClamp_t&					GetClampPitch( void ) const { return clampPitch; }
 
 		virtual const sdDeclLocStr*			GetWeaponName( void ) const { return weaponName; }
 		virtual const char*					GetWeaponLookupName( void ) const { return weaponLookupName.c_str(); }
@@ -184,7 +184,7 @@ private:
 
 		float								fov;
 
-		idStr								playerAnim;		
+		idStr								playerAnim;
 
 		angleClamp_t						clampYaw;
 		angleClamp_t						clampPitch;
@@ -292,7 +292,7 @@ private:
 	idList< sdPosition >				positions;
 	const sdDeclGUI*					overlay;
 	const sdProgram::sdFunction*		onEnter;
-	const sdProgram::sdFunction*		onExit;	
+	const sdProgram::sdFunction*		onExit;
 	idVec3								originalPos;				// TODO: remove me -- use joints like vehicles
 };
 
@@ -540,7 +540,7 @@ public:
 	virtual sdGuiInterface*					GetGuiInterface( void ) { return guiInterface; }
 	virtual sdNetworkInterface*				GetNetworkInterface( void ) { return networkInterface; }
 	virtual sdTaskInterface*				GetTaskInterface( void ) { return taskInterface; }
-	virtual sdUsableInterface*				GetUsableInterface( void ) { return usableInterface; }	
+	virtual sdUsableInterface*				GetUsableInterface( void ) { return usableInterface; }
 	virtual sdInteractiveInterface*			GetInteractiveInterface( void ) { return interactiveInterface; }
 
 	idLinkList< sdScriptedEntityHelper >&	GetHelpers( void ) { return helpers; }
@@ -603,7 +603,7 @@ public:
 	virtual bool							DisableClipOnRemove( void ) const { return true; }
 
 	virtual sdEntityDisplayIconInterface*	GetDisplayIconInterface( void ) { return &displayIconInterface; }
-	
+
 	void									Event_SetIconMaterial( const char* materialName );
 	void									Event_SetIconSize( float width, float height );
 	void									Event_SetIconColorMode( int mode );
@@ -665,7 +665,7 @@ protected:
 	const sdProgram::sdFunction*			onCollideFunc; // I hit target
 	const sdProgram::sdFunction*			onHitFunc; // Target hit me
 	const sdProgram::sdFunction*			overrideFunc;
-	const sdProgram::sdFunction*			onPostThink;	
+	const sdProgram::sdFunction*			onPostThink;
 
 	const sdProgram::sdFunction*			isDeployedFunc;
 	const sdProgram::sdFunction*			isDisabledFunc;

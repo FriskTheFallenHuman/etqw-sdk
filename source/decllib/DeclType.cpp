@@ -2,7 +2,7 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 const char* declTableIdentifier				= "table";

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -35,11 +35,11 @@ static char THIS_FILE[] = __FILE__;
 #include "proficiency/StatsTracker.h"
 #include "guis/UserInterfaceManager.h"
 
-#include "../bse/BSEInterface.h"
-#include "../bse/BSE_Envelope.h"
-#include "../bse/BSE_SpawnDomains.h"
-#include "../bse/BSE_Particle.h"
-#include "../bse/BSE.h"
+#include "bse/BSEInterface.h"
+#include "bse/BSE_Envelope.h"
+#include "bse/BSE_SpawnDomains.h"
+#include "bse/BSE_Particle.h"
+#include "bse/BSE.h"
 
 #include "botai/BotThreadData.h"
 #include "botai/Bot.h"
@@ -209,7 +209,7 @@ void sdEntityNetEvent::Create( const idEntity* _entity, int _event, bool _saveEv
 	spawnId		= gameLocal.GetSpawnId( _entity );
 	event		= _event;
 	time		= gameLocal.time;
-	saveEvent	= _saveEvent; 
+	saveEvent	= _saveEvent;
 
 	if ( _msg ) {
 		paramsSize = _msg->GetSize();
@@ -380,7 +380,7 @@ bool sdUnreliableEntityNetEvent::GetRepeaterSent( int clientTo ) const {
 idGameLocal::InitAsyncNetwork
 ================
 */
-void idGameLocal::InitAsyncNetwork( void ) {	
+void idGameLocal::InitAsyncNetwork( void ) {
 	entityNetEventQueue.Clear();
 	savedEntityNetEventQueue.Clear();
 
@@ -869,7 +869,7 @@ void idGameLocal::WriteInitialReliableMessages( const sdReliableMessageClientInf
 	int totalCount = 0;
 	int totalBits = 0;
 	int batchCount = 0;
-		
+
 
 
 
@@ -879,7 +879,7 @@ void idGameLocal::WriteInitialReliableMessages( const sdReliableMessageClientInf
 	batchCount = 0;
 
 	idEntity* ent = networkedEntities.Next();
-	
+
 	totalBits = 0;
 	while ( count > 0 ) {
 		const int MAX_COMBINED_CREATE = 128;
@@ -1100,7 +1100,7 @@ void idGameLocal::ClientReadGameState( idFile* file ) {
 		sdEntityNetEvent* event = entityNetEventAllocator.Alloc();
 		event->GetNode().AddToEnd( entityNetEventQueue );
 		event->Read( file );
-		
+
 		ASYNC_SECURITY_READ_FILE( file )
 	}
 
@@ -1134,7 +1134,7 @@ void idGameLocal::FreeEntityNetworkEvents( const idEntity *ent, int eventId ) {
 		if ( eventId == -1 || event->GetEvent() == eventId ) {
 
 			idEntity* eventEnt = gameLocal.EntityForSpawnId( event->GetSpawnId() );
-			if ( eventEnt == ent ) {				
+			if ( eventEnt == ent ) {
 				event->GetNode().Remove();
 				entityNetEventAllocator.Free( event );
 			}
@@ -1438,7 +1438,7 @@ void idGameLocal::WriteSnapshotEntityStates( snapshot_t* snapshot, clientNetwork
 			snapshot->visibleEntities.Alloc() = ent->entityNumber;
 
 			sdEntityState* baseState;
-			
+
 			baseState = nwInfo.states[ ent->entityNumber ][ NSM_VISIBLE ];
 			if ( ent->CheckNetworkStateChanges( NSM_VISIBLE, *baseState->data ) ) {
 				*visibleEntities.Alloc() = ent;
@@ -1566,7 +1566,7 @@ void idGameLocal::ServerWriteSnapshot( int clientNum, int sequence, idBitMsg &ms
 		idPlayer* player = GetClient( clientNum );
 		if ( !player ) {
 			return;
-		}		
+		}
 		SetSnapShotClient( player );
 		SetSnapShotPlayer( player->GetSpectateClient() );
 
@@ -1697,7 +1697,7 @@ void idGameLocal::ServerSendQuickChatMessage( idPlayer* player, const sdDeclQuic
 
 	int sendingClientNum = player == NULL ? -1 : player->entityNumber;
 	idVec3 location = player == NULL ? vec3_origin : player->GetPhysics()->GetOrigin();
-	
+
 	for ( int i = 0; i < MAX_CLIENTS; i++ ) {
 		idPlayer* other = GetClient( i );
 		if ( !other ) {
@@ -2084,14 +2084,14 @@ void idGameLocal::ResetGameState( extNetworkStateMode_t mode ) {
 	if ( newState->data ) {
 		newState->data->MakeDefault();
 	}
-	demoClientNetworkInfo.gameStates[ mode ] = newState;	
+	demoClientNetworkInfo.gameStates[ mode ] = newState;
 
 #ifdef SD_SUPPORT_REPEATER
 	newState = AllocGameState( object );
 	if ( newState->data ) {
 		newState->data->MakeDefault();
 	}
-	repeaterClientNetworkInfo.gameStates[ mode ] = newState;	
+	repeaterClientNetworkInfo.gameStates[ mode ] = newState;
 
 	for ( int i = 0; i < repeaterNetworkInfo.Num(); i++ ) {
 		if ( repeaterNetworkInfo[ i ] == NULL ) {
@@ -2355,7 +2355,7 @@ bool idGameLocal::ClientReadSnapshot( int sequence, const int gameFrame, const i
 		EnsureAlloced( i, ent, oldState, "Visible" );
 
 		ent = entities[ i ];
-		
+
 		ent->snapshotPVSFlags &= ~( PVS_DEFERRED_VISIBLE );
 		ent->snapshotPVSFlags |= PVS_VISIBLE;
 
@@ -2379,7 +2379,7 @@ bool idGameLocal::ClientReadSnapshot( int sequence, const int gameFrame, const i
 		EnsureAlloced( i, ent, oldState, "Broadcast" );
 
 		ent = entities[ i ];
-		
+
 		ent->snapshotPVSFlags |= PVS_BROADCAST;
 
 		sdEntityState* newState = AllocEntityState( NSM_BROADCAST, ent );
@@ -2408,7 +2408,7 @@ bool idGameLocal::ClientReadSnapshot( int sequence, const int gameFrame, const i
 
 	if ( SetupClientAoR() ) {
 		for ( ent = networkedEntities.Next(); ent != NULL; ent = ent->networkNode.Next() ) {
-			// Gordon: Use evaluate position here, which for some fully predictable physics classes 
+			// Gordon: Use evaluate position here, which for some fully predictable physics classes
 			// will return a newly evaluated positon, and not the currently last updated one
 			idPhysics* physics = ent->GetPhysics();
 			bool update = false;
@@ -2438,11 +2438,11 @@ bool idGameLocal::ClientReadSnapshot( int sequence, const int gameFrame, const i
 	// read user commands
 	while ( true ) {
 		int clientNum = ucmdmsg.ReadBits( CLIENTBITS );
-		
+
 		if ( clientNum == MAX_CLIENTS ) {
 			break;
 		}
-		
+
 		networkSystem->ReadClientUserCmds( clientNum, ucmdmsg );
 	}
 
@@ -2530,7 +2530,7 @@ void idGameLocal::WriteClientNetworkInfo( idFile* file ) {
 				idBitMsg temp;
 				byte buffer[ 2048 ];
 				temp.InitWrite( buffer, sizeof( buffer ) );
-				
+
 				sdEntityState* defaultState = AllocEntityState( mode, ent );
 				defaultState->data->MakeDefault();
 
@@ -2572,7 +2572,7 @@ void idGameLocal::WriteClientNetworkInfo( idFile* file ) {
 			idBitMsg temp;
 			byte buffer[ 2048 ];
 			temp.InitWrite( buffer, sizeof( buffer ) );
-			
+
 			sdGameState* defaultState = AllocGameState( obj );
 			defaultState->data->MakeDefault();
 
@@ -2678,7 +2678,7 @@ void idGameLocal::ReadClientNetworkInfo( idFile* file ) {
 			}
 
 			newState.data->Read( file );
-			
+
 			ASYNC_SECURITY_READ_FILE( file )
 			nwInfo.states[ num ][ j ] = &newState;
 		}
@@ -2746,7 +2746,7 @@ void idGameLocal::ReadClientNetworkInfo( idFile* file ) {
 	ASYNC_SECURITY_READ_FILE( file )
 
 	FreeSnapshotsOlderThanSequence( nwInfo, 0x7FFFFFFF );
-	
+
 	int count;
 	file->ReadInt( count );
 
@@ -2832,7 +2832,7 @@ void userInfo_t::FromDict( const idDict& info ) {
 	cleanName				= rawName;
 	idGameLocal::CleanName( cleanName );
 	wideName				= va( L"%hs", name.c_str() );
-	showGun					= info.GetBool( "ui_showGun" );	
+	showGun					= info.GetBool( "ui_showGun" );
 	ignoreExplosiveWeapons	= info.GetBool( "ui_ignoreExplosiveWeapons" );
 	autoSwitchEmptyWeapons	= info.GetBool( "ui_autoSwitchEmptyWeapons" );
 	postArmFindBestWeapon	= info.GetBool( "ui_postArmFindBestWeapon" );
@@ -2930,7 +2930,7 @@ void idGameLocal::ClientProcessEntityNetworkEventQueue( void ) {
 				NetworkEventWarning( *event, "unknown event" );
 			}
 		}
-		
+
 		event->GetNode().Remove();
 		entityNetEventAllocator.Free( event );
 	}
@@ -2957,7 +2957,7 @@ void idGameLocal::ClientProcessEntityNetworkEventQueue( void ) {
 				UnreliableNetworkEventWarning( *event, "unknown event" );
 			}
 		}
-		
+
 		event->GetUnreliableNode().Remove();
 		unreliableEntityNetEventAllocator.Free( event );
 	}
@@ -3093,7 +3093,7 @@ idGameLocal::ClientSpawn
 */
 void idGameLocal::ClientSpawn( int entityNum, int spawnId, int typeNum, int entityDefNumber, int mapSpawnId ) {
 	idTypeInfo* typeInfo = NULL;
-	
+
 	// if there is no entity or an entity of the wrong type
 
 	if ( entities[ entityNum ] ) {
@@ -3247,7 +3247,7 @@ void idGameLocal::ClientProcessReliableMessage( const idBitMsg &msg ) {
 	gameLocal.isNewFrame = true;
 
 	idPlayer* localPlayer = GetLocalPlayer();
-	
+
 	gameReliableServerMessage_t id = static_cast< gameReliableServerMessage_t >( msg.ReadBits( idMath::BitsForInteger( GAME_RELIABLE_SMESSAGE_NUM_MESSAGES ) ) );
 
 	switch( id ) {
@@ -3375,7 +3375,7 @@ void idGameLocal::ClientProcessReliableMessage( const idBitMsg &msg ) {
 
 			if ( entityId == NETWORKEVENT_RULES_ID ) {
 				rules->OnNetworkEvent( buffer );
-            } else if ( entityId == NETWORKEVENT_OBJECTIVE_ID ) { 	 
+            } else if ( entityId == NETWORKEVENT_OBJECTIVE_ID ) {
 				sdObjectiveManager::GetInstance().OnNetworkEvent( buffer );
 			} else {
 				HandleNetworkEvent( EntityForSpawnId( entityId ), buffer );
@@ -3385,7 +3385,7 @@ void idGameLocal::ClientProcessReliableMessage( const idBitMsg &msg ) {
 		}
 		case GAME_RELIABLE_SMESSAGE_CREATEDEPLOYREQUEST: {
 			int index = msg.ReadLong();
-			
+
 			float rotation							= msg.ReadFloat();
 			idPlayer* owner							= EntityForSpawnId( msg.ReadLong() )->Cast< idPlayer >();
 			const sdDeclDeployableObject* object	= declDeployableObjectType[ msg.ReadBits( GetNumDeployObjectBits() ) - 1 ];
@@ -3605,7 +3605,7 @@ void idGameLocal::OnSnapshotHitch( int snapshotTime ) {
 	realClientTime = snapshotTime;
 }
 
-/* 
+/*
 ================
 idGameLocal::OnClientDisconnected
 ================

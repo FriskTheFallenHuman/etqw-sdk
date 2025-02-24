@@ -2,11 +2,11 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclDeployMask.h"
-#include "../../framework/DeclParseHelper.h"
+#include "framework/DeclParseHelper.h"
 
 /*
 ===============================================================================
@@ -57,7 +57,7 @@ bool sdDeclDeployMask::Parse( const char *text, const int textLength ) {
 	src.SetFlags( DECL_LEXER_FLAGS );
 //	src.LoadMemory( text, textLength, GetFileName(), GetLineNum() );
 //	src.AddIncludes( GetFileLevelIncludeDependencies() );
-	sdDeclParseHelper declHelper( this, text, textLength, src );	
+	sdDeclParseHelper declHelper( this, text, textLength, src );
 
 	src.SkipUntilString( "{", &token );
 
@@ -137,7 +137,7 @@ void sdDeployMaskInstance::Init( const char* declName, const sdBounds2D& bounds 
 	if ( declDeployMask == NULL ) {
 		gameLocal.Error( "sdDeployMaskInstance::Init Invalid Deploy Mask '%s'", declName );
 	}
-	
+
 	deployMask = &declDeployMask->GetMask();
 	deployMaskData.Init( bounds );
 }

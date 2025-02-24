@@ -1,11 +1,11 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h"
-#include "../../game/ContentMask.h"
+#include "Game_local.h"
+#include "game/ContentMask.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -15,11 +15,11 @@ idBotAI::Enter_NBG_SupplyTeammate
 ================
 */
 bool idBotAI::Enter_NBG_SupplyTeammate() {
-    
+
 	nbgType = SUPPLY_TEAMMATE;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_SupplyTeammate;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 15000; //mal: 15 seconds to heal this guy!
 
 	nbgReached = false;
@@ -59,7 +59,7 @@ bool idBotAI::Enter_NBG_SupplyTeammate() {
 			} else {
 				if ( botThreadData.random.RandomInt( 100 ) > 50 ) {
 			        Bot_AddDelayedChat( botNum, ACKNOWLEDGE_YES, 1 );
-				} 
+				}
 			}
 		}
 	}
@@ -149,7 +149,7 @@ bool idBotAI::NBG_SupplyTeammate() {
 			Bot_ExitAINode();
 			return false;
 		}
-		
+
 		Bot_MoveAlongPath( ( distSqr > Square( 200.0f ) ) ? SPRINT : RUN );
 		return true;
 	}
@@ -174,12 +174,12 @@ bool idBotAI::NBG_SupplyTeammate() {
 	Bot_LookAtEntity( nbgTarget, SMOOTH_TURN );
 
 	botIdealWeapSlot = NO_WEAPON;
-	
+
 	if ( botInfo->team == GDF ) {
         if ( nbgTargetType == HEAL || nbgTargetType == HEAL_REQUESTED ) {
 			botIdealWeapNum = HEALTH;
 		} else {
-			botIdealWeapNum = AMMO_PACK; 
+			botIdealWeapNum = AMMO_PACK;
 		}
 	} else {
 		botIdealWeapNum = HEALTH;
@@ -189,7 +189,7 @@ bool idBotAI::NBG_SupplyTeammate() {
 		botUcmd->botCmds.launchPacks = true;
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -198,11 +198,11 @@ idBotAI::Enter_NBG_ReviveTeammate
 ================
 */
 bool idBotAI::Enter_NBG_ReviveTeammate() {
-    
+
 	nbgType = REVIVE_TEAMMATE;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_ReviveTeammate;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 15000; //mal: 15 seconds to revive this guy!
 
 	nbgReached = false;
@@ -217,7 +217,7 @@ bool idBotAI::Enter_NBG_ReviveTeammate() {
 				idVec3 vec = playerInfo.origin - botInfo->origin;
 
 				float distSqrToHuman = vec.LengthSqr();
-					
+
 				if ( distSqrToHuman > Square( MEDIC_ACK_MIN_DIST ) ) {
 					Bot_AddDelayedChat( botNum, MEDIC_ACK, 1 );
 				}
@@ -231,7 +231,7 @@ bool idBotAI::Enter_NBG_ReviveTeammate() {
 
 	lastAINode = "Reviving Mate";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -281,7 +281,7 @@ bool idBotAI::NBG_ReviveTeammate() {
 		botIdealWeapNum = NEEDLE;
 	}
 
-	Bot_CheckAdrenaline( playerInfo.origin );	
+	Bot_CheckAdrenaline( playerInfo.origin );
 
 	if ( dist > Square( 65.0f ) || botInfo->onLadder ) {
 		Bot_SetupMove( vec3_zero, nbgTarget, ACTION_NULL );
@@ -291,7 +291,7 @@ bool idBotAI::NBG_ReviveTeammate() {
 			Bot_ExitAINode();
 			return false;
 		}
-		
+
 		Bot_MoveAlongPath( ( dist > Square( 100.0f ) ) ? SPRINT : RUN );
 
 		if ( dist < Square( LOOK_AT_GOAL_DIST ) ) {
@@ -311,7 +311,7 @@ bool idBotAI::NBG_ReviveTeammate() {
 		}
 	}
 
-	if ( !nbgReached ) { 
+	if ( !nbgReached ) {
 		nbgReached = true;
 		nbgTime = botWorld->gameLocalInfo.time + 9000; //mal: give ourselves 9 seconds to complete this task once reach target
 	}
@@ -338,14 +338,14 @@ bool idBotAI::NBG_ReviveTeammate() {
 	Bot_LookAtLocation( playerInfo.origin, SMOOTH_TURN );
 
 	weaponLocked = true;
-	
+
 	botUcmd->botCmds.activate = true;
 
 	if ( botInfo->weapInfo.weapon == NEEDLE && botInfo->team == STROGG ) {
 		botUcmd->botCmds.activateHeld = true;
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -354,11 +354,11 @@ idBotAI::Enter_NBG_CreateSpawnHost
 ================
 */
 bool idBotAI::Enter_NBG_CreateSpawnHost() {
-    
+
 	nbgType = CREATE_SPAWNHOST;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_CreateSpawnHost;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 9000; //mal: 9 seconds to reach this guy!
 
 	nbgReached = false;
@@ -379,7 +379,7 @@ bool idBotAI::Enter_NBG_CreateSpawnHost() {
 
 	lastAINode = "Creating SpawnHost";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -421,7 +421,7 @@ bool idBotAI::NBG_CreateSpawnHost() {
 		if ( botWorld->clientInfo[ nbgTarget ].inLimbo || botWorld->clientInfo[ nbgTarget ].health > 0 ) {
 
 			int newBody = -1;
-	
+
 			nbgTimer++; //mal: it may be a few frames before the body shows up, since there are delays coming from running in a seperate thread, and from the script system itself.
 
 			if ( nbgTimer > 10 ) { //mal: this is taking too long!
@@ -461,14 +461,14 @@ bool idBotAI::NBG_CreateSpawnHost() {
 		if ( botWorld->playerBodies[ nbgTarget ].bodyOwnerClientNum != nbgClientNum || botWorld->playerBodies[ nbgTarget ].isValid == false ) { //mal: list could have been resorted, especially if a lot of action is going on, so check to make sure we're still up to date.
 
 			int newBody = -1;
-	
+
 			newBody = FindBodyOfClient( nbgClientNum, false, nbgOrigin ); //mal: find the body of the client we were originally gunning for.
 
 			if ( newBody == -1 ) {
 				Bot_ExitAINode();
 				return false;
 			}
-		
+
 			nbgTarget = newBody;
 			nbgClientNum = botWorld->playerBodies[ nbgTarget ].bodyOwnerClientNum;
 			nbgOrigin = botWorld->playerBodies[ nbgTarget ].bodyOrigin;
@@ -480,7 +480,7 @@ bool idBotAI::NBG_CreateSpawnHost() {
 		}
 
 		if ( !botWorld->playerBodies[ nbgTarget ].isSpawnHostAble ) { //mal: already spawnhosted, gibbed, uniform stolen, etc.
-            Bot_ExitAINode(); 
+            Bot_ExitAINode();
 			return false;
 		}
 
@@ -569,7 +569,7 @@ bool idBotAI::NBG_CreateSpawnHost() {
 		botUcmd->botCmds.activateHeld = true;
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -578,11 +578,11 @@ idBotAI::Enter_NBG_HumiliateEnemy
 ================
 */
 bool idBotAI::Enter_NBG_HumiliateEnemy() {
-    
+
 	nbgType = HAZE_ENEMY;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_HumiliateEnemy;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 10000; //mal: 10 seconds to reach this guy!
 
 	nbgReached = false;
@@ -591,7 +591,7 @@ bool idBotAI::Enter_NBG_HumiliateEnemy() {
 
 	lastAINode = "Humiliate Enemy";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -619,7 +619,7 @@ bool idBotAI::NBG_HumiliateEnemy() {
 		Bot_ExitAINode();
 		return false;
 	}
-	
+
 	if ( playerInfo.health > 0 ) {
         Bot_ExitAINode(); //mal: he got revived, leave here now incase his buddies are around
 		return false;
@@ -638,7 +638,7 @@ bool idBotAI::NBG_HumiliateEnemy() {
 			Bot_ExitAINode();
 			return false;
 		}
-		
+
 		Bot_MoveAlongPath( ( dist > Square( 100.0f ) ) ? SPRINT : RUN );
 		return true;
 	}
@@ -676,7 +676,7 @@ bool idBotAI::NBG_HumiliateEnemy() {
 		botUcmd->botCmds.constantFire = true;
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -685,7 +685,7 @@ idBotAI::Enter_NBG_Camp
 ================
 */
 bool idBotAI::Enter_NBG_Camp() {
-    
+
 	if ( ltgType == DEFENSE_CAMP_GOAL ) {
 		nbgType = DEFENSE_CAMP;
 	} else if ( ltgType == INVESTIGATE_ACTION ) {
@@ -730,7 +730,7 @@ bool idBotAI::Enter_NBG_Camp() {
 	nbgTimer = 0;
 
 	nbgTryMoveCounter = 0;
-	
+
 	nbgMoveTime = 0;
 
 	nbgMoveType = NULLMOVETYPE;
@@ -740,7 +740,7 @@ bool idBotAI::Enter_NBG_Camp() {
 
 	if ( lean != NULL_LEAN ) {
 		if ( lean == LEAN_BODY_RIGHT ) {
-			nbgMoveType = LEAN_RIGHT;		
+			nbgMoveType = LEAN_RIGHT;
 		} else {
 			nbgMoveType = LEAN_LEFT;
 		}
@@ -767,7 +767,7 @@ bool idBotAI::Enter_NBG_Camp() {
 		lastAINode = "Camping";
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -788,7 +788,7 @@ bool idBotAI::NBG_Camp() {
 	}
 
 	bool isCamping = ( botThreadData.botActions[ actionNum ]->GetObjForTeam( botInfo->team ) == ACTION_CAMP ) ? true : false;
-	int i;  
+	int i;
 	int k = 0;
 	int blockedClient;
 	int linkedTargets[ MAX_LINKACTIONS ];
@@ -838,7 +838,7 @@ bool idBotAI::NBG_Camp() {
 			return false;
 		}
 
-		nbgReached = false; //mal: we're on the move		
+		nbgReached = false; //mal: we're on the move
 		Bot_MoveAlongPath( ( dist > Square( 500.0f ) ) ? SPRINT : RUN );
 		ResetRandomLook();
 		return true;
@@ -955,7 +955,7 @@ bool idBotAI::NBG_Camp() {
 		return true;
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -964,7 +964,7 @@ idBotAI::Enter_NBG_Build
 ================
 */
 bool idBotAI::Enter_NBG_Build() {
-    
+
 	nbgType = BUILD;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_Build;
@@ -1000,7 +1000,7 @@ bool idBotAI::Enter_NBG_Build() {
 
 	lastAINode = "Building";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -1108,7 +1108,7 @@ bool idBotAI::NBG_Build() {
 		botUcmd->botCmds.activateHeld = true;
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -1124,11 +1124,11 @@ bool idBotAI::Enter_NBG_Hack() {
 	}
 
 	int enemiesInArea = ClientsInArea( botNum, botThreadData.botActions[ actionNum ]->GetActionOrigin(), 900.0f, ( botInfo->team == GDF ) ? STROGG : GDF, NOCLASS, false, false, false, true, false );
-    
+
 	nbgType = HACK;
 
  	NBG_AI_SUB_NODE = &idBotAI::NBG_Hack;
-	 
+
 	nbgTime = botWorld->gameLocalInfo.time + BOT_INFINITY; //mal: do this task until its done!
 
 	nbgMoveDir = NULL_DIR;
@@ -1170,7 +1170,7 @@ bool idBotAI::Enter_NBG_Hack() {
 
 	lastAINode = "Hacking";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -1295,7 +1295,7 @@ bool idBotAI::NBG_Hack() {
 		}
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -1304,11 +1304,11 @@ idBotAI::Enter_NBG_PlantBomb
 ================
 */
 bool idBotAI::Enter_NBG_PlantBomb() {
-    
+
 	nbgType = PLANT_BOMB;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_PlantBomb;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + BOT_INFINITY;
 
 	nbgReached = false;
@@ -1339,7 +1339,7 @@ bool idBotAI::Enter_NBG_PlantBomb() {
 	ResetRandomLook();
 
 	nbgTryMoveCounter = 0;
-	
+
 	nbgMoveTime = 0;
 
 	Bot_AddDelayedChat( botNum, NEED_BACKUP, 3 );
@@ -1348,7 +1348,7 @@ bool idBotAI::Enter_NBG_PlantBomb() {
 
 	lastAINode = "Planting Bomb";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -1437,7 +1437,7 @@ bool idBotAI::NBG_PlantBomb() {
 				Bot_ClearAIStack();
 				return false;
 			}
-	
+
 			Bot_MoveToGoal( botAAS.path.moveGoal, vec3_zero, RUN, NULLMOVETYPE );
 			Bot_LookAtLocation( botAAS.path.viewGoal, SMOOTH_TURN );
 			return true;
@@ -1500,7 +1500,7 @@ bool idBotAI::NBG_PlantBomb() {
 			weaponLocked = true;
 
 			botUcmd->botCmds.activate = true;
-		
+
 			if ( botInfo->weapInfo.weapon == PLIERS ) {
 				botUcmd->botCmds.activateHeld = true;
 			}
@@ -1552,7 +1552,7 @@ bool idBotAI::NBG_PlantBomb() {
 				Bot_ClearAIStack();
 				return false; //mal: if random, dont camp charge, just run off.
 			}
-            
+
 			if ( botThreadData.botActions[ actionNum ]->actionTargets[ 0 ].inuse != false ) { //mal: if the first target action == false, they all must, so skip
                 for( i = 0; i < MAX_LINKACTIONS; i++ ) {
 					if ( botThreadData.botActions[ actionNum ]->actionTargets[ i ].inuse != false ) {
@@ -1586,7 +1586,7 @@ bool idBotAI::NBG_PlantBomb() {
 				Bot_ExitAINode();
 				return false;
 			}
-		
+
 			Bot_MoveAlongPath( ( dist > Square( 100.0f ) ) ? SPRINT : RUN );
 			return true;
 		}
@@ -1635,7 +1635,7 @@ bool idBotAI::NBG_PlantBomb() {
 		return true;
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -1644,11 +1644,11 @@ idBotAI::Enter_NBG_StealUniform
 ================
 */
 bool idBotAI::Enter_NBG_StealUniform() {
-    
+
 	nbgType = STEAL_UNIFORM;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_StealUniform;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 15000; //mal: 15 seconds to reach this guy!
 
 	nbgReached = false;
@@ -1669,7 +1669,7 @@ bool idBotAI::Enter_NBG_StealUniform() {
 
 	lastAINode = "Stealing Uniform";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -1678,7 +1678,7 @@ idBotAI::NBG_StealUniform
 ================
 */
 bool idBotAI::NBG_StealUniform() {
-	
+
 	bool isCorpse = ( nbgTargetType == CLIENT ) ? false : true;
     int areaNum;
 	int mates;
@@ -1724,7 +1724,7 @@ bool idBotAI::NBG_StealUniform() {
 		if ( botWorld->clientInfo[ nbgTarget ].inLimbo || botWorld->clientInfo[ nbgTarget ].health > 0 ) {
 
 			int newBody = -1;
-	
+
 			nbgTimer++; //mal: it may be a few frames before the body shows up, since there are delays coming from running in a seperate thread, and from the script system itself.
 
 			if ( nbgTimer > 10 ) { //mal: this is taking too long!
@@ -1773,21 +1773,21 @@ bool idBotAI::NBG_StealUniform() {
 		if ( botWorld->playerBodies[ nbgTarget ].bodyOwnerClientNum != nbgClientNum || botWorld->playerBodies[ nbgTarget ].isValid == false ) { //mal: list could have been resorted, especially if a lot of action is going on, so check to make sure we're still up to date.
 
 			int newBody = -1;
-	
+
 			newBody = FindBodyOfClient( nbgClientNum, true, nbgOrigin ); //mal: find the body of the client we were originally gunning for.
 
 			if ( newBody == -1 ) {
 				Bot_ExitAINode();
 				return false;
 			}
-		
+
 			nbgTarget = newBody;
 			nbgClientNum = botWorld->playerBodies[ nbgTarget ].bodyOwnerClientNum;
 			nbgOrigin = botWorld->playerBodies[ nbgTarget ].bodyOrigin;
 		}
 
 		if ( botWorld->playerBodies[ nbgTarget ].uniformStolen ) { //mal: already spawnhosted, gibbed, uniform stolen, etc.
-            Bot_ExitAINode(); 
+            Bot_ExitAINode();
 			return false;
 		}
 
@@ -1824,7 +1824,7 @@ bool idBotAI::NBG_StealUniform() {
 			Bot_ExitAINode();
 			return false;
 		}
-		
+
 		Bot_MoveAlongPath( ( dist > Square( 100.0f ) ) ? SPRINT : RUN );
 		return true;
 	}
@@ -1865,7 +1865,7 @@ bool idBotAI::NBG_StealUniform() {
 	botUcmd->botCmds.activate = true;
 	botUcmd->botCmds.activateHeld = true;
 
-	return true;	
+	return true;
 }
 
 /*
@@ -1874,11 +1874,11 @@ idBotAI::Enter_NBG_HuntVictim
 ================
 */
 bool idBotAI::Enter_NBG_HuntVictim() {
-    
+
 	nbgType = STALK_VICTIM;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_HuntVictim;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 60000; // a mintute to hunt this guy down - too long?
 
 	nbgTimer = 0;
@@ -1893,7 +1893,7 @@ bool idBotAI::Enter_NBG_HuntVictim() {
 
 	lastAINode = "Hunting Victim";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -1966,7 +1966,7 @@ bool idBotAI::NBG_HuntVictim() {
 			fastAwareness = false;
 			return false;
 		}
-		
+
 		Bot_MoveAlongPath( ( dist > Square( 900.0f ) ) ? SPRINT : RUN ); //mal: dont sprint too close to target, our breathing gives us away!
 		nbgTimer = 0;
 		return true;
@@ -1977,7 +1977,7 @@ bool idBotAI::NBG_HuntVictim() {
 	if ( nbgReached == false ) {
 		if ( isFacingUs || playerInfo.xySpeed > 250.0f ) {
 			if ( nbgSwitch == false ) {
-				if ( dist < Square( 150.0f ) ) { // too close, back up some!  
+				if ( dist < Square( 150.0f ) ) { // too close, back up some!
 					if ( Bot_CanMove( BACK, 100.0f, true )) {
 						Bot_MoveToGoal( botCanMoveGoal, vec3_zero, RUN, NULLMOVETYPE );
 					} else if ( Bot_CanMove( RIGHT, 100.0f, true )) {
@@ -1985,7 +1985,7 @@ bool idBotAI::NBG_HuntVictim() {
 					} else if ( Bot_CanMove( LEFT, 100.0f, true )) {
 						Bot_MoveToGoal( botCanMoveGoal, vec3_zero, RUN, NULLMOVETYPE );
 					}
-        
+
 					Bot_LookAtEntity( nbgTarget, SMOOTH_TURN );
 					nbgTimer = 0;
 					return true;
@@ -2039,7 +2039,7 @@ bool idBotAI::NBG_HuntVictim() {
 	}
 
 	Bot_LookAtLocation( ( playerInfo.posture == IS_PRONE ) ? playerInfo.origin : playerInfo.viewOrigin, INSTANT_TURN );
-       
+
 	if ( botInfo->weapInfo.isReady && botInfo->weapInfo.weapon == KNIFE ) { //mal: DIE!
 		botUcmd->botCmds.activate = true;
 /*
@@ -2048,7 +2048,7 @@ bool idBotAI::NBG_HuntVictim() {
 */
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -2057,17 +2057,17 @@ idBotAI::Enter_NBG_DefuseBomb
 ================
 */
 bool idBotAI::Enter_NBG_DefuseBomb() {
-    
+
 	nbgType = DEFUSE_BOMB;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_DefuseBomb;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + BOT_INFINITY;
 
 	nbgReached = false;
 
 	nbgMoveTimer = botWorld->gameLocalInfo.time + ( MAX_MOVE_FAILED_TIME * 2 );
-	
+
 	lastAINode = "Defusing";
 
 	ResetRandomLook();
@@ -2078,7 +2078,7 @@ bool idBotAI::Enter_NBG_DefuseBomb() {
 
 	nbgReachedTarget = false;
 
-	return true;	
+	return true;
 }
 
 /*
@@ -2149,7 +2149,7 @@ bool idBotAI::NBG_DefuseBomb() {
 
 		if ( nbgReachedTarget == false ) {
 			nbgSwitch = !nbgSwitch;
-			
+
 			bool bombIsVisible = Bot_CheckLocationIsVisible( bombInfo.origin, bombInfo.entNum, -1, nbgSwitch );
 
 			if ( dist > Square( PLIERS_RANGE * distMultiply ) || botInfo->onLadder || !botInfo->hasGroundContact || !bombIsVisible ) { //mal: if we're too far away from the charge, use AAS to path to it.
@@ -2163,7 +2163,7 @@ bool idBotAI::NBG_DefuseBomb() {
 					Bot_ExitAINode();
 					return false;
 				}
-		
+
 				Bot_MoveAlongPath( ( dist > Square( 500.0f ) ) ? SPRINT : RUN );
 				return true;
 			}
@@ -2193,7 +2193,7 @@ bool idBotAI::NBG_DefuseBomb() {
 		weaponLocked = true;
 
 		botUcmd->botCmds.activate = true;
-		
+
 		if ( botInfo->weapInfo.weapon == PLIERS ) {
 			botUcmd->botCmds.activateHeld = true;
 		}
@@ -2202,12 +2202,12 @@ bool idBotAI::NBG_DefuseBomb() {
 			idVec3 vec;
 	        if ( Bot_RandomLook( vec ) )  {
 		        Bot_LookAtLocation( vec, SMOOTH_TURN ); //randomly look around, for enemies and whatnot.
-				nbgExit = true; 
+				nbgExit = true;
 			}
 		}
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -2216,11 +2216,11 @@ idBotAI::Enter_NBG_GetSupplies
 ================
 */
 bool idBotAI::Enter_NBG_GetSupplies() {
-    
+
 	nbgType = GRAB_SUPPLIES;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_GetSupplies;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 9000;
 
 	nbgReached = false;
@@ -2229,7 +2229,7 @@ bool idBotAI::Enter_NBG_GetSupplies() {
 
 	lastAINode = "Grabbing Item";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -2256,7 +2256,7 @@ bool idBotAI::NBG_GetSupplies() {
 			return false;
 		}
 	} else if ( nbgTargetType == HEAL ) {
-        if ( botInfo->health == botInfo->maxHealth ) { 
+        if ( botInfo->health == botInfo->maxHealth ) {
 			Bot_ExitAINode();
 			return false;
 		}
@@ -2284,7 +2284,7 @@ bool idBotAI::NBG_GetSupplies() {
 
 	vec = packOrg - botInfo->origin;
 
-	if ( nbgTargetType == SUPPLY_CRATE ) { 
+	if ( nbgTargetType == SUPPLY_CRATE ) {
 		entBounds.TranslateSelf( packOrg );
 		entBounds.Expand( NORMAL_BOUNDS_EXPAND );
 
@@ -2312,11 +2312,11 @@ bool idBotAI::NBG_GetSupplies() {
 	if ( botThreadData.random.RandomInt( 100 ) > 98 || nbgReached == false ) {
         if ( Bot_RandomLook( vec ) )  {
             Bot_LookAtLocation( vec, SMOOTH_TURN ); //randomly look around, for enemies and whatnot.
-			nbgReached = true; 
+			nbgReached = true;
 		}
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -2325,11 +2325,11 @@ idBotAI::Enter_NBG_BugForSupplies
 ================
 */
 bool idBotAI::Enter_NBG_BugForSupplies() {
-    
+
 	nbgType = BUG_FOR_SUPPLIES;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_BugForSupplies;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 15000;
 
 	nbgReached = false;
@@ -2342,7 +2342,7 @@ bool idBotAI::Enter_NBG_BugForSupplies() {
 
 	lastAINode = "Bugging For Supplies";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -2360,7 +2360,7 @@ bool idBotAI::NBG_BugForSupplies() {
 	}
 
 	if ( nbgTargetType == HEAL ) {
-        if ( botInfo->health >= 100 ) { 
+        if ( botInfo->health >= 100 ) {
 			Bot_ExitAINode();
 			return false;
 		}
@@ -2439,7 +2439,7 @@ bool idBotAI::NBG_BugForSupplies() {
 		}
 	}
 
-	if ( dist < 50.0f ) { // too close, back up some! 
+	if ( dist < 50.0f ) { // too close, back up some!
         if ( Bot_CanMove( BACK, 100.0f, true )) {
             Bot_MoveToGoal( botCanMoveGoal, vec3_zero, RUN, NULLMOVETYPE );
 			Bot_LookAtEntity( nbgTarget, SMOOTH_TURN );
@@ -2455,14 +2455,14 @@ bool idBotAI::NBG_BugForSupplies() {
         if ( botThreadData.random.RandomInt( 100 ) > 95 || nbgReached == false ) {
 			if ( Bot_RandomLook( vec ) )  {
 				Bot_LookAtLocation( vec, SMOOTH_TURN ); //randomly look around, for enemies and whatnot.
-				nbgReached = true; 
+				nbgReached = true;
 			}
 		}
 	} else {
 		Bot_LookAtEntity( nbgTarget, SMOOTH_TURN );
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -2471,11 +2471,11 @@ idBotAI::Enter_NBG_AvoidDanger
 ================
 */
 bool idBotAI::Enter_NBG_AvoidDanger() {
-    
+
 	nbgType = AVOID_DANGER;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_AvoidDanger;
-	
+
 	nbgReached = false;
 
 	nbgSwitch = false;
@@ -2488,7 +2488,7 @@ bool idBotAI::Enter_NBG_AvoidDanger() {
 
 	lastAINode = "Avoiding Danger";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -2514,7 +2514,7 @@ bool idBotAI::NBG_AvoidDanger() {
 		if ( !nbgSwitch ) {
 			nbgSwitch = true;
 			actionNum = Bot_FindNearbySafeActionToMoveToward( currentDangers[ nbgTarget ].origin, avoidDist );
-			
+
 			if ( actionNum == ACTION_NULL ) {
 				nbgReachedTarget = false;
 				return false;
@@ -2539,13 +2539,13 @@ bool idBotAI::NBG_AvoidDanger() {
 				if ( currentDangers[ nbgTarget ].type != THROWN_AIRSTRIKE ) {
 					vec = currentDangers[ nbgTarget ].origin;
 					idVec3 tempOrigin = currentDangers[ nbgTarget ].origin - botInfo->viewOrigin;
-	
+
 					if ( tempOrigin[ 2 ] > -100.0f && tempOrigin[ 2 ] < 100.0f ) { //mal: adjust the origin to eye level, so the bots aren't staring at the ground.
 						vec[ 2 ] -= tempOrigin[ 2 ];
 					}
 
 					botUcmd->specialMoveType = QUICK_JUMP;
-	
+
 					Bot_LookAtLocation( vec, SMOOTH_TURN ); //mal: look at the danger we're aware of - possibly its owner is around.
 				}
 				return true;
@@ -2559,7 +2559,7 @@ bool idBotAI::NBG_AvoidDanger() {
 					Bot_LookAtLocation( vec, SMOOTH_TURN ); //randomly look around, for enemies and whatnot.
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -2568,11 +2568,11 @@ idBotAI::Enter_NBG_PlantMine
 ================
 */
 bool idBotAI::Enter_NBG_PlantMine() {
-    
+
 	nbgType = PLANT_MINE;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_PlantMine;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 15000;
 
 	nbgReached = false;
@@ -2580,7 +2580,7 @@ bool idBotAI::Enter_NBG_PlantMine() {
 	nbgTimer = 0; // track how long we've been trying to plant, if for too long, try something else.
 
 	nbgTryMoveCounter = 0;
-	
+
 	nbgMoveTime = 0;
 
 	ResetRandomLook();
@@ -2599,7 +2599,7 @@ bool idBotAI::Enter_NBG_PlantMine() {
 
 	lastAINode = "Planting Mine";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -2655,7 +2655,7 @@ if ( nbgMoveTime < botWorld->gameLocalInfo.time ) {
 				Bot_ClearAIStack();
 				return false;
 			}
-	
+
 			Bot_MoveToGoal( botAAS.path.moveGoal, vec3_zero, RUN, NULLMOVETYPE );
 			Bot_LookAtLocation( botAAS.path.viewGoal, SMOOTH_TURN );
 			return true;
@@ -2729,7 +2729,7 @@ if ( nbgMoveTime < botWorld->gameLocalInfo.time ) {
 		weaponLocked = true;
 
 		botUcmd->botCmds.activate = true;
-		
+
 		if ( botInfo->weapInfo.weapon == PLIERS ) {
 			botUcmd->botCmds.activateHeld = true;
 		}
@@ -2779,7 +2779,7 @@ if ( nbgMoveTime < botWorld->gameLocalInfo.time ) {
 		return false;
 	}
 
-  	return true;	
+  	return true;
 }
 
 /*
@@ -2788,11 +2788,11 @@ idBotAI::Enter_NBG_Snipe
 ================
 */
 bool idBotAI::Enter_NBG_Snipe() {
-    
+
 	nbgType = SNIPE;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_Snipe;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + ( botThreadData.botActions[ actionNum ]->actionTimeInSeconds * 1000 ); //mal: timelimit is specified by action itself!
 
 	nbgReached = false;
@@ -2802,7 +2802,7 @@ bool idBotAI::Enter_NBG_Snipe() {
 	stayInPosition = false;
 
 	nbgTryMoveCounter = 0;
-	
+
 	nbgMoveTime = 0;
 
 	nbgPosture = botThreadData.botActions[ actionNum ]->posture;
@@ -2832,7 +2832,7 @@ bool idBotAI::Enter_NBG_Snipe() {
 
 	lastAINode = "Sniping";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -2841,7 +2841,7 @@ idBotAI::NBG_Snipe
 ================
 */
 bool idBotAI::NBG_Snipe() {
-	int i;  
+	int i;
 	int k = 0;
 	int blockedClient;
 	int linkedTargets[ MAX_LINKACTIONS ];
@@ -2899,7 +2899,7 @@ bool idBotAI::NBG_Snipe() {
 			return false;
 		}
 
-		nbgReached = false; //mal: we're on the move		
+		nbgReached = false; //mal: we're on the move
 		Bot_MoveAlongPath( ( dist > 100.0f ) ? SPRINT : RUN );
 		ResetRandomLook();
 		return true;
@@ -2963,7 +2963,7 @@ bool idBotAI::NBG_Snipe() {
 		return true;
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -2972,11 +2972,11 @@ idBotAI::Enter_NBG_DestroyDanger
 ================
 */
 bool idBotAI::Enter_NBG_DestroyDanger() {
-    
+
 	nbgType = DESTROY_DANGER;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_DestroyDanger;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + BOT_INFINITY; //mal: we'll attack this target until its dead, or we're incapable of hurting it anymore
 
 	nbgReached = false;
@@ -2991,7 +2991,7 @@ bool idBotAI::Enter_NBG_DestroyDanger() {
 
 	lastAINode = "Destroying Danger";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -3001,7 +3001,7 @@ idBotAI::NBG_DestroyDanger
 */
 bool idBotAI::NBG_DestroyDanger() {
 	float dist;
-	float tooCloseDist = ( nbgTargetType == STROGG_HIVE_DANGER ) ? 900.0f : 500.0f; 
+	float tooCloseDist = ( nbgTargetType == STROGG_HIVE_DANGER ) ? 900.0f : 500.0f;
 	trace_t	tr;
 	idVec3 vec;
 
@@ -3075,7 +3075,7 @@ bool idBotAI::NBG_DestroyDanger() {
 
 	if ( nbgTargetType == STROGG_HIVE_DANGER ) {
 		botIdealWeapNum = NULL_WEAP;
-		
+
 		if ( botInfo->weapInfo.primaryWeapHasAmmo && botInfo->weapInfo.primaryWeapon != ROCKET ) {
 			botIdealWeapSlot = GUN;
 		} else if ( botInfo->weapInfo.sideArmHasAmmo ) {
@@ -3085,8 +3085,8 @@ bool idBotAI::NBG_DestroyDanger() {
 			return false;
 		}
 
-		Bot_LookAtLocation( dangerOrigin, INSTANT_TURN ); 
-		
+		Bot_LookAtLocation( dangerOrigin, INSTANT_TURN );
+
 		if ( InFrontOfClient( botNum, dangerOrigin ) ) {
 			botUcmd->botCmds.attack = true;
 		}
@@ -3117,7 +3117,7 @@ bool idBotAI::NBG_DestroyDanger() {
 		} else if ( botIdealWeapNum == AIRCAN ) {
 			Bot_UseCannister( AIRCAN, dangerOrigin );
 		} else if ( botIdealWeapSlot == GUN || botIdealWeapSlot == SIDEARM ) {
-			Bot_LookAtLocation( dangerOrigin, INSTANT_TURN ); 
+			Bot_LookAtLocation( dangerOrigin, INSTANT_TURN );
 			if ( InFrontOfClient( botNum, dangerOrigin ) ) {
                 botUcmd->botCmds.attack = true;
 			}
@@ -3137,7 +3137,7 @@ bool idBotAI::NBG_DestroyDanger() {
 		}
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -3149,16 +3149,16 @@ bool idBotAI::Enter_NBG_FixProxyEntity() {
 
 	proxyInfo_t vehicleInfo;
 
-	GetVehicleInfo( nbgTarget, vehicleInfo ); 
+	GetVehicleInfo( nbgTarget, vehicleInfo );
 
 	if ( vehicleInfo.type != MCP ) {
 		nbgType = FIX_VEHICLE;
 	} else {
 		nbgType = FIXING_MCP;
 	}
-    
+
 	NBG_AI_SUB_NODE = &idBotAI::NBG_FixProxyEntity;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + ( ( botInfo->abilities.stroggRepairDrone ) ? DRONE_REPAIR_TIME : 30000 ); //mal: 30 seconds to fix this vehicle.
 
 	botIdealWeapSlot = GUN;
@@ -3172,14 +3172,14 @@ bool idBotAI::Enter_NBG_FixProxyEntity() {
 	} else {
 		if ( vehicleInfo.driverEntNum > -1 && vehicleInfo.driverEntNum < MAX_CLIENTS ) {
 			const clientInfo_t& player = botWorld->clientInfo[ vehicleInfo.driverEntNum ];
-			
+
 			if ( !player.isBot ) {
 				Bot_AddDelayedChat( botNum, WILL_FIX_RIDE, 1 );
 			}
 		}
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -3189,14 +3189,14 @@ idBotAI::NBG_FixProxyEntity
 */
 bool idBotAI::NBG_FixProxyEntity() {
 	if ( nbgTime < botWorld->gameLocalInfo.time ) { //mal: times up - leave!
-		Bot_IgnoreVehicle( nbgTarget, 15000 );						
+		Bot_IgnoreVehicle( nbgTarget, 15000 );
 		Bot_ExitAINode();
 		return false;
 	}
 
 	proxyInfo_t vehicleInfo;
 
-	GetVehicleInfo( nbgTarget, vehicleInfo ); 
+	GetVehicleInfo( nbgTarget, vehicleInfo );
 
 	if ( vehicleInfo.entNum == 0 ) {
 		Bot_ExitAINode();
@@ -3232,11 +3232,11 @@ bool idBotAI::NBG_FixProxyEntity() {
 		return true;
 	}
 
-	idVec3 vec = vehicleInfo.origin - botInfo->origin; 
+	idVec3 vec = vehicleInfo.origin - botInfo->origin;
 	float distSqr = vec.LengthSqr();
 
 	if ( ( vehicleInfo.type == MCP && distSqr > Square( 700.0f ) ) || ( vehicleInfo.type != MCP && ( vehicleInfo.forwardSpeed > WALKING_SPEED || vehicleInfo.forwardSpeed < -WALKING_SPEED ) ) ) { //mal: its moving too fast
-        Bot_ExitAINode(); 
+        Bot_ExitAINode();
 		return false;
 	} //mal: chase the MCP and fix as we go if we're close, else we'll give up on moving vehicles.
 
@@ -3281,7 +3281,7 @@ bool idBotAI::NBG_FixProxyEntity() {
 		return true;
 	}
 
-	vec = vehicleInfo.origin;  
+	vec = vehicleInfo.origin;
 	vec.z += 64.0f;
 
 	Bot_LookAtLocation( vec, SMOOTH_TURN );
@@ -3307,23 +3307,23 @@ bool idBotAI::NBG_FixProxyEntity() {
 		}
 	}
 
-	return true;	
+	return true;
 }
 
 /*
 ================
 idBotAI::Enter_NBG_TKReviveTeammate
 
-This is not something your common bot ( or human ) medic will do. But a smart, wise team player will conserve his precious health packs, and take the XP hit, to 
+This is not something your common bot ( or human ) medic will do. But a smart, wise team player will conserve his precious health packs, and take the XP hit, to
 bring a teammate up to full health much faster.
 ================
 */
 bool idBotAI::Enter_NBG_TKReviveTeammate() {
-    
+
 	nbgType = TK_REVIVE_TEAMMATE;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_TKReviveTeammate;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 15000; //mal: 15 seconds to heal this guy!
 
 	nbgDist = 175.0f;
@@ -3396,7 +3396,7 @@ bool idBotAI::NBG_TKReviveTeammate() {
 	vec = playerInfo.origin - botInfo->origin;
 	dist = vec.LengthSqr();
 
-	botUcmd->actionEntityNum = nbgTarget; ///mal: dont avoid this client.  
+	botUcmd->actionEntityNum = nbgTarget; ///mal: dont avoid this client.
 	botUcmd->actionEntitySpawnID = nbgTargetSpawnID;
 
 	if ( dist < Square( 700.0f ) ) { //mal: get the weapon ready....
@@ -3420,7 +3420,7 @@ bool idBotAI::NBG_TKReviveTeammate() {
 			Bot_ExitAINode();
 			return false;
 		}
-		
+
 		Bot_MoveAlongPath( ( dist > Square( 200.0f ) ) ? SPRINT : RUN );
 
 		if ( dist < Square( LOOK_AT_GOAL_DIST ) ) {
@@ -3430,7 +3430,7 @@ bool idBotAI::NBG_TKReviveTeammate() {
 		return true;
 	}
 
-	Bot_ClearAngleMods(); 
+	Bot_ClearAngleMods();
 	Bot_LookAtEntity( nbgTarget, AIM_TURN );
 
 	hasClearShot = ClientIsVisibleToBot( nbgTarget, true, false );
@@ -3456,12 +3456,12 @@ bool idBotAI::NBG_TKReviveTeammate() {
 			nbgDist = 50.0f;
 		}
 	}
-	
+
 	if ( botInfo->weapInfo.isReady && botInfo->weapInfo.weapon == botIdealWeapNum && hasClearShot ) {
 		botUcmd->botCmds.attack = true;
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -3470,11 +3470,11 @@ idBotAI::Enter_NBG_DestroyMCP
 ================
 */
 bool idBotAI::Enter_NBG_DestroyMCP() {
-    
+
 	nbgType = DESTROY_MCP;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_DestroyMCP;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 30000;
 
 	nbgReached = false;
@@ -3483,7 +3483,7 @@ bool idBotAI::Enter_NBG_DestroyMCP() {
 
 	lastAINode = "Destroying MCP";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -3493,7 +3493,7 @@ idBotAI::NBG_DestroyMCP
 */
 bool idBotAI::NBG_DestroyMCP() {
 	float dist;
-	float tooCloseDist = 350.0f; 
+	float tooCloseDist = 350.0f;
 	proxyInfo_t	vehicleInfo;
 	idVec3 vec;
 
@@ -3550,7 +3550,7 @@ bool idBotAI::NBG_DestroyMCP() {
 		}
 	}
 
-	if ( dist < Square( ATTACK_MCP_DIST ) ) { 
+	if ( dist < Square( ATTACK_MCP_DIST ) ) {
         if ( botInfo->weapInfo.hasNadeAmmo ) {
 			botIdealWeapSlot = NADE;
 			botIdealWeapNum = NULL_WEAP;
@@ -3571,8 +3571,8 @@ bool idBotAI::NBG_DestroyMCP() {
 		} else if ( botIdealWeapNum == AIRCAN ) {
 			Bot_UseCannister( AIRCAN, vehicleInfo.origin );
 		} else if ( botIdealWeapSlot == GUN || botIdealWeapSlot == SIDEARM ) {
-			Bot_LookAtLocation( vehicleInfo.origin, INSTANT_TURN ); 
-			
+			Bot_LookAtLocation( vehicleInfo.origin, INSTANT_TURN );
+
 			if ( InFrontOfClient( botNum, vehicleInfo.origin ) ) {
 		        botUcmd->botCmds.attack = true;
 			}
@@ -3586,7 +3586,7 @@ bool idBotAI::NBG_DestroyMCP() {
 			if ( nbgTimer == 0 ) {
 				nbgTimer = botWorld->gameLocalInfo.time + ARTY_LOCKON_TIME;
 			}
-			
+
 			if ( nbgTimer > ARTY_LOCKON_TIME ) {
 				return true;
 			}
@@ -3614,7 +3614,7 @@ bool idBotAI::NBG_DestroyMCP() {
 				}
 			}
 
-			Bot_LookAtLocation( vehicleInfo.origin, INSTANT_TURN ); 
+			Bot_LookAtLocation( vehicleInfo.origin, INSTANT_TURN );
 		} else {
 
 			idVec3 vehicleOrigin = vehicleInfo.origin;
@@ -3632,7 +3632,7 @@ bool idBotAI::NBG_DestroyMCP() {
 		}
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -3641,11 +3641,11 @@ idBotAI::Enter_NBG_DestroySpawnHost
 ================
 */
 bool idBotAI::Enter_NBG_DestroySpawnHost() {
-    
+
 	nbgType = DESTORY_SPAWNHOST;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_DestroySpawnHost;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 9000; //mal: 9 seconds to zap this guy!
 
 	nbgReached = false;
@@ -3663,7 +3663,7 @@ bool idBotAI::Enter_NBG_DestroySpawnHost() {
 		nbgTime += 21000; //mal: give ourselves more time to complete the task since we may be further away from it if ordered to destroy it.
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -3760,13 +3760,13 @@ bool idBotAI::NBG_DestroySpawnHost() {
 
 	weaponLocked = true;
 
-	botUcmd->botCmds.activate = true; 
+	botUcmd->botCmds.activate = true;
 
 	if ( botInfo->weapInfo.weapon == NEEDLE ) {
 		botUcmd->botCmds.activateHeld = true;
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -3779,7 +3779,7 @@ bool idBotAI::Enter_NBG_GrabSpawnPoint() {
 	nbgType = GRAB_SPAWN;
 
  	NBG_AI_SUB_NODE = &idBotAI::NBG_GrabSpawnPoint;
-	 
+
 	nbgTime = botWorld->gameLocalInfo.time + 15000; //mal: 15 seconds to do this task!
 
 	nbgReached = false;
@@ -3803,7 +3803,7 @@ bool idBotAI::Enter_NBG_GrabSpawnPoint() {
 
 	lastAINode = "Grabbing Spawn";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -3889,7 +3889,7 @@ bool idBotAI::NBG_GrabSpawnPoint() {
 	}
 
 	nbgReached = true;
-	return true;	
+	return true;
 }
 
 /*
@@ -3898,18 +3898,18 @@ idBotAI::Enter_NBG_FixDeployable
 ================
 */
 bool idBotAI::Enter_NBG_FixDeployable() {
-    
+
  	nbgType = FIX_DEPLOYABLE;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_FixDeployable;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + ( ( botInfo->abilities.stroggRepairDrone ) ? DRONE_REPAIR_TIME : 30000 ); //mal: 30 seconds to fix this deployable.
 
 	botIdealWeapSlot = GUN;
 
 	lastAINode = "Fixing Deployable";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -3924,7 +3924,7 @@ bool idBotAI::NBG_FixDeployable() {
 	idBox botBox, deployableBox;
 
 	if ( nbgTime < botWorld->gameLocalInfo.time ) { //mal: times up - leave!
-		Bot_IgnoreDeployable( nbgTarget, 15000 );						
+		Bot_IgnoreDeployable( nbgTarget, 15000 );
 		Bot_ExitAINode();
 		return false;
 	}
@@ -3958,13 +3958,13 @@ bool idBotAI::NBG_FixDeployable() {
 		return true;
 	}
 
-	vec = deployableInfo.origin - botInfo->origin; 
+	vec = deployableInfo.origin - botInfo->origin;
 	dist = vec.LengthSqr();
 
 	deployableBox = idBox( deployableInfo.bbox, deployableInfo.origin, deployableInfo.axis );
 	deployableBox.ExpandSelf( VEHICLE_BOX_EXPAND );
 
-	botBox = idBox( botInfo->localBounds, botInfo->origin, botInfo->bodyAxis );   
+	botBox = idBox( botInfo->localBounds, botInfo->origin, botInfo->bodyAxis );
 
 //mal: move into the bbox of this proxy entity, so we know we're close enough to start fixing it
 	if ( !botBox.IntersectsBox( deployableBox ) || botInfo->onLadder ) {
@@ -3982,7 +3982,7 @@ bool idBotAI::NBG_FixDeployable() {
 		return true;
 	}
 
-	vec = deployableInfo.origin;  
+	vec = deployableInfo.origin;
 
 	vec[ 2 ] += 64.0f;
 
@@ -4000,7 +4000,7 @@ bool idBotAI::NBG_FixDeployable() {
 		botUcmd->botCmds.activateHeld = true;
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -4013,7 +4013,7 @@ bool idBotAI::Enter_NBG_PlaceDeployable() {
  	nbgType = DROP_DEPLOYABLE;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_PlaceDeployable;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 10000; //mal: 10 seconds to place this deployable.
 
 	nbgTarget = ltgTarget;
@@ -4033,7 +4033,7 @@ bool idBotAI::Enter_NBG_PlaceDeployable() {
 
 	lastAINode = "Placing Deployable";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -4049,7 +4049,7 @@ bool idBotAI::NBG_PlaceDeployable() {
 	}
 
 	if ( nbgTime < botWorld->gameLocalInfo.time ) { //mal: times up - leave!
-		Bot_IgnoreAction( actionNum, 15000 );				
+		Bot_IgnoreAction( actionNum, 15000 );
 		Bot_ExitAINode();
 		return false;
 	}
@@ -4062,7 +4062,7 @@ bool idBotAI::NBG_PlaceDeployable() {
 
 	Bot_LookAtLocation( nbgOrigin, SMOOTH_TURN );
 
-	Bot_MoveToGoal( vec3_zero, vec3_zero, RUN, NULLMOVETYPE ); 
+	Bot_MoveToGoal( vec3_zero, vec3_zero, RUN, NULLMOVETYPE );
 
 	botIdealWeapSlot = NO_WEAPON;
 	botIdealWeapNum = DEPLOY_TOOL;
@@ -4083,7 +4083,7 @@ bool idBotAI::NBG_PlaceDeployable() {
 		botUcmd->deployInfo.actionNumber = actionNum;
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -4092,11 +4092,11 @@ idBotAI::Enter_NBG_DestroyAPTDanger
 ================
 */
 bool idBotAI::Enter_NBG_DestroyAPTDanger() {
-    
+
 	nbgType = DESTROY_DEPLOYABLE;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_DestroyAPTDanger;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 30000;
 
 	nbgReached = false;
@@ -4107,7 +4107,7 @@ bool idBotAI::Enter_NBG_DestroyAPTDanger() {
 
 	lastAINode = "Destroying APT";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -4176,12 +4176,12 @@ bool idBotAI::NBG_DestroyAPTDanger() {
 	org.z += DEPLOYABLE_ORIGIN_OFFSET;
 	botThreadData.clip->TracePoint( CLIP_DEBUG_PARMS tr, botInfo->viewOrigin, org, MASK_SHOT_BOUNDINGBOX | MASK_VEHICLESOLID | CONTENTS_FORCEFIELD, GetGameEntity( botNum ) );
 
-	if ( tr.fraction < 1.0f && tr.c.entityNum != deployableInfo.entNum ) { 
+	if ( tr.fraction < 1.0f && tr.c.entityNum != deployableInfo.entNum ) {
 		Bot_ExitAINode();
 		return false;
-	} 
+	}
 
-	if ( dist < Square( ATTACK_APT_DIST ) ) { 
+	if ( dist < Square( ATTACK_APT_DIST ) ) {
 		if ( botInfo->classType == FIELDOPS && LocationVis2Sky( deployableInfo.origin ) && ClassWeaponCharged( AIRCAN ) ) {
 			botIdealWeapNum = AIRCAN;
 			botIdealWeapSlot = NO_WEAPON;
@@ -4238,7 +4238,7 @@ bool idBotAI::NBG_DestroyAPTDanger() {
 			idVec3 moveGoal = deployableInfo.origin;
 			moveGoal.z += DEPLOYABLE_PATH_ORIGIN_OFFSET;
 			Bot_SetupMove( moveGoal, -1, ACTION_NULL );
-		
+
 			if ( MoveIsInvalid() ) {
 				Bot_IgnoreDeployable( deployableInfo.entNum, 15000 );
 				Bot_ExitAINode();
@@ -4258,7 +4258,7 @@ bool idBotAI::NBG_DestroyAPTDanger() {
 	} else if ( botIdealWeapNum == AIRCAN ) {
 		Bot_UseCannister( AIRCAN, deployableInfo.origin );
 	} else if ( botIdealWeapSlot == GUN || botIdealWeapSlot == SIDEARM ) {
-		if ( dist < Square( 500.0f ) ) { // too close, back up some!  
+		if ( dist < Square( 500.0f ) ) { // too close, back up some!
 			if ( Bot_CanMove( BACK, 100.0f, true ) ) {
 				Bot_MoveToGoal( botCanMoveGoal, vec3_zero, RUN, NULLMOVETYPE );
 			} else if ( Bot_CanMove( RIGHT, 100.0f, true ) ) {
@@ -4267,10 +4267,10 @@ bool idBotAI::NBG_DestroyAPTDanger() {
 				Bot_MoveToGoal( botCanMoveGoal, vec3_zero, RUN, NULLMOVETYPE );
 			}
 
-			Bot_LookAtLocation( deployableInfo.origin, SMOOTH_TURN ); 
+			Bot_LookAtLocation( deployableInfo.origin, SMOOTH_TURN );
 		} else {
 			Bot_MoveToGoal( vec3_zero, vec3_zero, NULLMOVEFLAG, NULLMOVETYPE );
-			Bot_LookAtLocation( deployableInfo.origin, SMOOTH_TURN ); 
+			Bot_LookAtLocation( deployableInfo.origin, SMOOTH_TURN );
 		}
 
 		if ( nbgReached == false ) {
@@ -4326,7 +4326,7 @@ bool idBotAI::NBG_DestroyAPTDanger() {
 		}
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -4339,7 +4339,7 @@ bool idBotAI::Enter_NBG_GrabSpawnHost() {
 	nbgType = GRAB_SPAWNHOST;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_GrabSpawnHost;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 9000; //mal: 9 seconds to grab the host
 
 	nbgReached = false;
@@ -4348,7 +4348,7 @@ bool idBotAI::Enter_NBG_GrabSpawnHost() {
 
 	lastAINode = "Grabbing SpawnHost";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -4373,7 +4373,7 @@ bool idBotAI::NBG_GrabSpawnHost() {
 	}
 
 	if ( SpawnHostIsUsed( botWorld->spawnHosts[ nbgTarget ].entNum ) ) {
-		Bot_ExitAINode(); 
+		Bot_ExitAINode();
 		return false;;
 	}
 
@@ -4451,8 +4451,8 @@ bool idBotAI::NBG_GrabSpawnHost() {
 		Bot_MoveToGoal( vec3_zero, vec3_zero, nbgPosture, NULLMOVETYPE );
 	}
 
-	botUcmd->botCmds.activate = true; 
-	return true;	
+	botUcmd->botCmds.activate = true;
+	return true;
 }
 
 /*
@@ -4463,11 +4463,11 @@ idBotAI::Enter_NBG_HackDeployable
 bool idBotAI::Enter_NBG_HackDeployable() {
 
 	deployableInfo_t deployableInfo;
-    
+
  	nbgType = HACK_DEPLOYABLE;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_HackDeployable;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 30000; //mal: 30 seconds to hack this deployable.
 
 	lastAINode = "Hack Deployable";
@@ -4491,7 +4491,7 @@ bool idBotAI::Enter_NBG_HackDeployable() {
 		}
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -4506,7 +4506,7 @@ bool idBotAI::NBG_HackDeployable() {
 	idBox botBox, deployableBox;
 
 	if ( nbgTime < botWorld->gameLocalInfo.time ) { //mal: times up - leave!
-		Bot_IgnoreDeployable( nbgTarget, 30000 );						
+		Bot_IgnoreDeployable( nbgTarget, 30000 );
 		Bot_ExitAINode();
 		return false;
 	}
@@ -4521,7 +4521,7 @@ bool idBotAI::NBG_HackDeployable() {
 		return false;
 	}
 
-	vec = deployableInfo.origin - botInfo->origin; 
+	vec = deployableInfo.origin - botInfo->origin;
 	dist = vec.LengthSqr();
 	idVec3 deployableOrigin = deployableInfo.origin;
 	deployableOrigin.z += DEPLOYABLE_PATH_ORIGIN_OFFSET;
@@ -4532,7 +4532,7 @@ bool idBotAI::NBG_HackDeployable() {
 	deployableBox = idBox( deployableInfo.bbox, deployableInfo.origin, deployableInfo.axis );
 	deployableBox.ExpandSelf( NORMAL_BOX_EXPAND );
 
-	botBox = idBox( botInfo->localBounds, botInfo->origin, botInfo->bodyAxis ); 
+	botBox = idBox( botInfo->localBounds, botInfo->origin, botInfo->bodyAxis );
 
 //mal: move into the bbox of this deployable entity, so we know we're close enough to start hacking it
 	if ( !nbgReached && ( !botBox.IntersectsBox( deployableBox ) || botInfo->onLadder ) ) {
@@ -4569,7 +4569,7 @@ bool idBotAI::NBG_HackDeployable() {
 				if ( dist >= Square( THIRD_EYE_SAFE_RANGE ) ) {
 					botUcmd->botCmds.attack = true;
 					Bot_SetupMove( botThreadData.botActions[ actionNum ]->GetActionOrigin(), -1, ACTION_NULL );
-					
+
 					if ( MoveIsInvalid() ) { //mal: can't find a path to our safe action, so just hack it since we're already here.
 						nbgSwitch = false;
 						return false;
@@ -4581,7 +4581,7 @@ bool idBotAI::NBG_HackDeployable() {
 					nbgReached = true;
 
 					Bot_SetupMove( botThreadData.botActions[ actionNum ]->GetActionOrigin(), -1, ACTION_NULL );
-		
+
 					if ( MoveIsInvalid() ) { //mal: can't find a path to our safe action, so just hack it since we're already here.
 						nbgSwitch = false;
 						return false;
@@ -4591,17 +4591,17 @@ bool idBotAI::NBG_HackDeployable() {
 				}
 			} else {
 				Bot_MoveToGoal( vec3_zero, vec3_zero, NULLMOVEFLAG, NULLMOVETYPE );
-				Bot_LookAtLocation( deployableOrigin, SMOOTH_TURN ); 
+				Bot_LookAtLocation( deployableOrigin, SMOOTH_TURN );
 				botUcmd->botCmds.attack = true;
 			}
 		}
 	} else {
-		vec = deployableInfo.origin;  
+		vec = deployableInfo.origin;
 		vec.z += 64.0f;
 
 		Bot_LookAtLocation( vec, SMOOTH_TURN );
 
-		nbgPosture = Bot_FindStanceForLocation( deployableInfo.origin, false );	
+		nbgPosture = Bot_FindStanceForLocation( deployableInfo.origin, false );
 
 		Bot_MoveToGoal( vec3_zero, vec3_zero, nbgPosture, NULLMOVETYPE ); //mal: assume the posture defined by the action...
 
@@ -4614,7 +4614,7 @@ bool idBotAI::NBG_HackDeployable() {
 		}
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -4636,7 +4636,7 @@ bool idBotAI::Enter_NBG_MG_Camp() {
 	nbgReached = false;
 
 	nbgExit = true;
-	
+
 	lastAINode = "MG Camping";
 
 	return true;
@@ -4766,7 +4766,7 @@ bool idBotAI::NBG_MG_Camp() {
 			}
 		}
 	}
-	
+
 	return true;
 }
 
@@ -4778,11 +4778,11 @@ This is a nasty, horrible, special case hack to get Volcano working.
 ================
 */
 bool idBotAI::Enter_NBG_FlyerHive() {
-    
+
  	nbgType = FLYER_HIVE_ATTACK;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_FlyerHive;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + BOT_INFINITY;
 
 	lastAINode = "Flyer Hive";
@@ -4799,7 +4799,7 @@ bool idBotAI::Enter_NBG_FlyerHive() {
 
 	nbgReached = false;
 
-	return true;	
+	return true;
 }
 
 /*
@@ -4823,7 +4823,7 @@ bool idBotAI::NBG_FlyerHive() {
 		botIdealWeapSlot = NO_WEAPON;
 
 		Bot_LookAtLocation( botThreadData.botActions[ actionNum ]->actionTargets[ 0 ].origin, INSTANT_TURN );
-		
+
 		if ( botInfo->weapInfo.weapon == FLYER_HIVE && ClassWeaponCharged( FLYER_HIVE ) && botThreadData.random.RandomInt( 100 ) > 50 ) {
 			botUcmd->botCmds.attack = true;
 		}
@@ -4858,7 +4858,7 @@ bool idBotAI::NBG_FlyerHive() {
 					Bot_MoveToGoal( moveGoal, vec3_zero, RUN, NULLMOVETYPE );
 				} else {
 					Bot_MoveToGoal( botAAS.path.reachability->GetEnd(), vec3_zero, RUN, NULLMOVETYPE );
-				}					
+				}
 			} else {
 				Bot_MoveToGoal( moveGoal, vec3_zero, RUN, NULLMOVETYPE );
 			}
@@ -4883,7 +4883,7 @@ bool idBotAI::NBG_FlyerHive() {
 				botMoveFlags = CROUCH;
 			}
 		}
-		
+
 		if ( vec.LengthSqr() > Square( 25.0f ) ) {
 			Bot_MoveToGoal( moveGoal, vec3_zero, botMoveFlags, NULLMOVETYPE );
 			Flyer_LookAtLocation( moveGoal );
@@ -4912,7 +4912,7 @@ bool idBotAI::NBG_FlyerHive() {
 		botUcmd->botCmds.attack = true;
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -4921,11 +4921,11 @@ idBotAI::Enter_NBG_FixGun
 ================
 */
 bool idBotAI::Enter_NBG_FixGun() {
-    
+
  	nbgType = FIX_GUN;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_FixGun;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 10000; //mal: 10 seconds to fix this gun.
 
 	botIdealWeapSlot = GUN;
@@ -4934,7 +4934,7 @@ bool idBotAI::Enter_NBG_FixGun() {
 
 	nbgPosture = botThreadData.botActions[ actionNum ]->posture;
 
-	return true;	
+	return true;
 }
 
 /*
@@ -4944,7 +4944,7 @@ idBotAI::NBG_FixGun
 */
 bool idBotAI::NBG_FixGun() {
 	if ( nbgTime < botWorld->gameLocalInfo.time ) { //mal: times up - leave!
-		Bot_IgnoreAction( actionNum, 15000 );						
+		Bot_IgnoreAction( actionNum, 15000 );
 		Bot_ExitAINode();
 		return false;
 	}
@@ -4984,7 +4984,7 @@ bool idBotAI::NBG_FixGun() {
 			Bot_ExitAINode();
 			return false;
 		}
-		
+
 		Bot_MoveToGoal( botAAS.path.moveGoal, vec3_zero, ( distSqr < Square( pliersDist ) ) ? WALK : RUN, NULLMOVETYPE ); //mal: assume the posture defined by the action...
 		Bot_LookAtLocation( ( distSqr < Square( pliersDist ) ) ? botThreadData.botActions[ actionNum ]->actionBBox.GetCenter() : botAAS.path.viewGoal, SMOOTH_TURN );
 		return true;
@@ -5002,7 +5002,7 @@ bool idBotAI::NBG_FixGun() {
 		botUcmd->botCmds.activateHeld = true;
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -5011,18 +5011,18 @@ idBotAI::Enter_NBG_Pause
 ================
 */
 bool idBotAI::Enter_NBG_Pause() {
-    
+
  	nbgType = PAUSE;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_Pause;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 2000 + ( botThreadData.random.RandomInt( 5 ) * 1000 );
 
 	botIdealWeapSlot = GUN;
 
 	lastAINode = "Pausing";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -5064,16 +5064,16 @@ idBotAI::Enter_NBG_EngAttackAVTNearMCP
 ================
 */
 bool idBotAI::Enter_NBG_EngAttackAVTNearMCP() {
-    
+
  	nbgType = ENG_ATTACK_AVT;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_EngAttackAVTNearMCP;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 30000;
 
 	lastAINode = "Eng Attack AVT";
 
-	return true;	
+	return true;
 }
 
 /*
@@ -5116,7 +5116,7 @@ bool idBotAI::NBG_EngAttackAVTNearMCP() {
 	bool isVisible = false;
 	bool attackGoal = false;
 
-	if ( tr.fraction == 1.0f || tr.c.entityNum == deployableInfo.entNum ) { 
+	if ( tr.fraction == 1.0f || tr.c.entityNum == deployableInfo.entNum ) {
 		isVisible = true;
 	}
 
@@ -5131,7 +5131,7 @@ bool idBotAI::NBG_EngAttackAVTNearMCP() {
 		botUcmd->actionEntitySpawnID = deployableInfo.spawnID;
 
 		Bot_SetupMove( deployableOrigin, -1, ACTION_NULL );
-		
+
 		if ( MoveIsInvalid() ) {
 			Bot_ExitAINode();
 			return false;
@@ -5153,11 +5153,11 @@ idBotAI::Enter_NBG_ShieldTeammate
 ================
 */
 bool idBotAI::Enter_NBG_ShieldTeammate() {
-    
+
 	nbgType = DROPPING_SHIELD;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_ShieldTeammate;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 15000; //mal: 15 seconds to shield this guy!
 
 	lastAINode = "Shield Mate";
@@ -5171,7 +5171,7 @@ idBotAI::NBG_ShieldTeammate
 ================
 */
 bool idBotAI::NBG_ShieldTeammate() {
-	if ( !ClientIsValid( nbgTarget, nbgTargetSpawnID ) ) { //mal: client disconnected/got kicked/went spec, etc. 
+	if ( !ClientIsValid( nbgTarget, nbgTargetSpawnID ) ) { //mal: client disconnected/got kicked/went spec, etc.
         Bot_ExitAINode();
 		return false;
 	}
@@ -5226,7 +5226,7 @@ bool idBotAI::NBG_ShieldTeammate() {
 			Bot_ExitAINode();
 			return false;
 		}
-		
+
 		Bot_MoveAlongPath( ( distSqr > Square( 200.0f ) ) ? SPRINT : RUN );
 		return true;
 	}
@@ -5249,7 +5249,7 @@ bool idBotAI::NBG_ShieldTeammate() {
 		botUcmd->botCmds.attack = true;
 	}
 
-	return true;	
+	return true;
 }
 
 /*
@@ -5258,11 +5258,11 @@ idBotAI::Enter_NBG_SmokeTeammate
 ================
 */
 bool idBotAI::Enter_NBG_SmokeTeammate() {
-    
+
 	nbgType = DROPPING_SMOKE_FOR_MATE;
 
 	NBG_AI_SUB_NODE = &idBotAI::NBG_SmokeTeammate;
-	
+
 	nbgTime = botWorld->gameLocalInfo.time + 15000; //mal: 15 seconds to smoke this guy!
 
 	lastAINode = "Smoke Mate";
@@ -5276,7 +5276,7 @@ idBotAI::NBG_SmokeTeammate
 ================
 */
 bool idBotAI::NBG_SmokeTeammate() {
-	if ( !ClientIsValid( nbgTarget, nbgTargetSpawnID ) ) { //mal: client disconnected/got kicked/went spec, etc. 
+	if ( !ClientIsValid( nbgTarget, nbgTargetSpawnID ) ) { //mal: client disconnected/got kicked/went spec, etc.
         Bot_ExitAINode();
 		return false;
 	}
@@ -5331,7 +5331,7 @@ bool idBotAI::NBG_SmokeTeammate() {
 			Bot_ExitAINode();
 			return false;
 		}
-		
+
 		Bot_MoveAlongPath( ( distSqr > Square( 200.0f ) ) ? SPRINT : RUN );
 		return true;
 	}
@@ -5351,5 +5351,5 @@ bool idBotAI::NBG_SmokeTeammate() {
 		botUcmd->botCmds.attack = true;
 	}
 
-	return true;	
+	return true;
 }

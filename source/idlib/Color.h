@@ -5,7 +5,7 @@
 #define __COLOR_H__
 
 class sdColor3 {
-public:	
+public:
 	float			r;
 	float			g;
 	float			b;
@@ -39,7 +39,7 @@ public:
 	sdColor3& 		operator-=( const sdColor3& rhs );
 	sdColor3& 		operator/=( const sdColor3& rhs );
 	sdColor3& 		operator/=( const float rhs );
-	sdColor3& 		operator*=( const float rhs );	
+	sdColor3& 		operator*=( const float rhs );
 
 	sdColor3& 		operator=( const idVec3& rhs );
 
@@ -259,7 +259,7 @@ ID_INLINE idVec3&	sdColor3::ToVec3() {
 
 
 class sdColor4 {
-public:	
+public:
 	float			r;
 	float			g;
 	float			b;
@@ -293,7 +293,7 @@ public:
 	sdColor4& 		operator-=( const sdColor4& rhs );
 	sdColor4& 		operator/=( const sdColor4& rhs );
 	sdColor4& 		operator/=( const float rhs );
-	sdColor4& 		operator*=( const float rhs );	
+	sdColor4& 		operator*=( const float rhs );
 
 	sdColor4& 		operator=( const idVec4& rhs );
 

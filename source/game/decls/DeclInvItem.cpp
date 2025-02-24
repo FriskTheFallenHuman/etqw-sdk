@@ -2,14 +2,14 @@
 //
 
 
-#include "precompiled.h"
+#include "GameDecl_Precompiled.h"
 #pragma hdrstop
 
 #include "DeclInvItem.h"
-#include "../Game_local.h"
-#include "../../renderer/ModelManager.h"
-#include "../../decllib/declTypeHolder.h"
-#include "../../framework/DeclParseHelper.h"
+#include "Game_local.h"
+#include "renderer/ModelManager.h"
+#include "decllib/declTypeHolder.h"
+#include "framework/DeclParseHelper.h"
 /*
 ===============================================================================
 
@@ -165,7 +165,7 @@ bool sdDeclInvItem::Parse( const char *text, const int textLength ) {
 				src.Warning( "sdDeclInvItem::Parse Expected String, Found '%s' While Parsing Tooltip_Select", token.c_str() );
 				return false;
 			}
-			
+
 			tooltipSelect = gameLocal.declToolTipType.LocalFind( token, false );
 
 		} else if( !token.Icmp( "clip" ) ) {

@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 idBox box_zero( vec3_zero, vec3_zero, mat3_identity );
@@ -367,7 +367,7 @@ bool idBox::IntersectsBox( const idBox &a ) const {
     float d, e0, e1;	// distance between centers and projected extents
 
 	dir = a.center - center;
-    
+
     // axis C0 + t * A0
     c[0][0] = axis[0] * a.axis[0];
     c[0][1] = axis[0] * a.axis[1];

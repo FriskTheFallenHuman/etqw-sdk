@@ -4,10 +4,10 @@
 #ifndef __GAME_SDNETPROPERTIES_H__
 #define __GAME_SDNETPROPERTIES_H__
 
-#include "../guis/UserInterfaceTypes.h"
-#include "../../sdnet/SDNetErrorCode.h"
-#include "../../sdnet/SDNetTeamMember.h"
-#include "../../framework/NotificationSystem.h"
+#include "guis/UserInterfaceTypes.h"
+#include "sdnet/SDNetErrorCode.h"
+#include "sdnet/SDNetTeamMember.h"
+#include "framework/NotificationSystem.h"
 
 class sdDeclLocStr;
 
@@ -151,7 +151,7 @@ private:
 	)
 	sdFloatProperty					disconnectReason;
 	// ===========================================
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "1. SDNet/DisconnectString";
 	desc				= "Disconnect reason string.";
@@ -160,7 +160,7 @@ private:
 	)
 	sdIntProperty					disconnectString;
 	// ===========================================
-	
+
 	SD_UI_PROPERTY_TAG(
 	title				= "1. SDNet/ServerRefreshComplete";
 	desc				= "True if refresh is complete.";

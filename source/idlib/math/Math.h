@@ -287,9 +287,9 @@ public:
 
 private:
 	enum {
-		LOOKUP_BITS				= 8,							
-		EXP_POS					= 23,							
-		EXP_BIAS				= 127,							
+		LOOKUP_BITS				= 8,
+		EXP_POS					= 23,
+		EXP_BIAS				= 127,
 		LOOKUP_POS				= (EXP_POS-LOOKUP_BITS),
 		SEED_POS				= (EXP_POS-8),
 		SQRT_TABLE_SIZE			= (2<<LOOKUP_BITS),
@@ -1133,7 +1133,7 @@ template< typename T > ID_INLINE float MS2SEC( const T value ) { return static_c
 
 // This is the VC libc version of rand() without multiple seeds per thread or 12 levels
 // of subroutine calls.
-// Both calls have been designed to minimise the inherent number of float <--> int 
+// Both calls have been designed to minimise the inherent number of float <--> int
 // conversions and the additional math required to get the desired value.
 // eg the typical tint = (rand() * 255) / 32768
 // becomes tint = rvRandom::irand( 0, 255 )

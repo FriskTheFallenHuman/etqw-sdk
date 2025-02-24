@@ -86,7 +86,7 @@ namespace sdProperties {
 		} else {
 			value = i;
 			return true;
-		}		
+		}
 	}
 
 	/*
@@ -101,7 +101,7 @@ namespace sdProperties {
 			value = 0;
 		} else {
 			value = i;
-		}		
+		}
 	}
 
 	/*
@@ -116,7 +116,7 @@ namespace sdProperties {
 			value = 0.0f;
 		} else {
 			value = f;
-		}		
+		}
 	}
 
 	/*
@@ -131,7 +131,7 @@ namespace sdProperties {
 			value = vec2_origin;
 		} else {
 			value = vec;
-		}		
+		}
 	}
 
 	/*
@@ -221,7 +221,7 @@ namespace sdProperties {
 			value = false;
 		} else {
 			value = ( i != 0 );
-		}		
+		}
 	}
 
 	/*
@@ -230,7 +230,7 @@ namespace sdProperties {
 	============
 	*/
 	ID_INLINE void sdFromString( idStr& value, const char* str ) {
-		value = str;		
+		value = str;
 	}
 
 	/*
@@ -250,12 +250,12 @@ namespace sdProperties {
 	sdEnforceNumericFormat
 	============
 	*/
-	ID_INLINE idStr sdEnforceNumericFormat( const int numItems, const char* input ) {		
+	ID_INLINE idStr sdEnforceNumericFormat( const int numItems, const char* input ) {
 		idStr retStr;
 		idToken token;
 
 		idLexer src( input, idStr::Length( input ), "sdEnforceNumericFormat" );
-		
+
 		int readItems = 0;
 		while( src.ReadToken( &token ) ) {
 			if( token == "-" ) {
@@ -263,7 +263,7 @@ namespace sdProperties {
 				continue;
 			}
 
-			if( token.IsNumeric() ) {				
+			if( token.IsNumeric() ) {
 				retStr += token;
 				if( token != "-" && token != "." ) {
 					retStr += " ";
@@ -285,7 +285,7 @@ namespace sdProperties {
 		}
 
 		retStr.StripTrailing( ' ' );
-		return retStr;		
+		return retStr;
 	}
 
 
@@ -307,7 +307,7 @@ namespace sdProperties {
 			case PT_FLOAT:	sdFromString( *value.value.floatValue,		sdEnforceNumericFormat( sdPropertyTraits< float >::dimension, str ) ); break;
 			case PT_BOOL:	sdFromString( *value.value.boolValue, 		sdEnforceNumericFormat( sdPropertyTraits< bool >::dimension, str ) ); break;
 			case PT_VEC2:	sdFromString( *value.value.vec2Value, 		sdEnforceNumericFormat( sdPropertyTraits< idVec2 >::dimension, str ) );	break;
-			case PT_VEC3:	sdFromString( *value.value.vec3Value, 		sdEnforceNumericFormat( sdPropertyTraits< idVec3 >::dimension, str ) ); break;			
+			case PT_VEC3:	sdFromString( *value.value.vec3Value, 		sdEnforceNumericFormat( sdPropertyTraits< idVec3 >::dimension, str ) ); break;
 			case PT_VEC4:	sdFromString( *value.value.vec4Value, 		sdEnforceNumericFormat( sdPropertyTraits< idVec4 >::dimension, str ) ); break;
 			case PT_COLOR3:	sdFromString( *value.value.color3Value, 	sdEnforceNumericFormat( sdPropertyTraits< sdColor3 >::dimension, str ) ); break;
 			case PT_COLOR4:	sdFromString( *value.value.color4Value, 	sdEnforceNumericFormat( sdPropertyTraits< sdColor4 >::dimension, str ) ); break;
@@ -379,7 +379,7 @@ namespace sdProperties {
 			case PT_COLOR4:		return sdToString( *value.value.color4Value );
 			case PT_ANGLES:		return sdToString( *value.value.anglesValue );
 			default:
-				assert( !"sdFromString:: Invalid property type" );				
+				assert( !"sdFromString:: Invalid property type" );
 		}
 		return "";
 	}
@@ -389,26 +389,26 @@ namespace sdProperties {
     struct isNaN_impl {
         bool operator()(T) { return false; }
     };
-    
-    template<> 
+
+    template<>
     struct isNaN_impl<float> {
         bool operator()(float x) { return x != x; }
     };
 
-    template<> 
+    template<>
     struct isNaN_impl<double> {
         bool operator()(double x) { return x != x; }
     };
-    
+
     template< typename T > bool isNaN( T x ) {
         static isNaN_impl<T> impl;
         return impl(x);
     }
 #endif
-    
+
 	/*
 	============
-	sdPropertyValue< T >::SetIndex	
+	sdPropertyValue< T >::SetIndex
 	============
 	*/
 	template< class T >
@@ -436,7 +436,7 @@ namespace sdProperties {
 				for( int i = 0; i < onChange.Num(); i++ ) {
 					if( onChange[ i ].IsValid() ) {
 						onChange[ i ]( oldValue, value );
-					}					
+					}
 				}
 			}
 		}
@@ -583,7 +583,7 @@ namespace sdProperties {
 	operator++
 	============
 	*/
-	template<class T, class U> ID_INLINE sdPropertyValue< T >& operator++( sdPropertyValue< T >& lhs ) {	
+	template<class T, class U> ID_INLINE sdPropertyValue< T >& operator++( sdPropertyValue< T >& lhs ) {
 		return ( lhs = ( lhs + 1 ));
 	}
 
@@ -602,7 +602,7 @@ namespace sdProperties {
 	sdPropertyValue< T >::operator &
 	============
 	*/
-	template< class T > ID_INLINE int operator&( const sdPropertyValue< T >& lhs, const int rhs ) { 
+	template< class T > ID_INLINE int operator&( const sdPropertyValue< T >& lhs, const int rhs ) {
 		return lhs.GetValue() & rhs;
 	}
 
@@ -611,7 +611,7 @@ namespace sdProperties {
 	sdPropertyValue< T >::operator &
 	============
 	*/
-	template< class T > ID_INLINE int operator&( const int lhs, const sdPropertyValue< T >& rhs ) { 
+	template< class T > ID_INLINE int operator&( const int lhs, const sdPropertyValue< T >& rhs ) {
 		return lhs & rhs.GetValue();
 	}
 
@@ -620,7 +620,7 @@ namespace sdProperties {
 	sdPropertyValue< T >::operator |
 	============
 	*/
-	template< class T > ID_INLINE int operator|( const sdPropertyValue< T >& lhs, const int rhs ) { 
+	template< class T > ID_INLINE int operator|( const sdPropertyValue< T >& lhs, const int rhs ) {
 		return lhs.GetValue() | rhs;
 	}
 
@@ -629,7 +629,7 @@ namespace sdProperties {
 	sdPropertyValue< T >::operator |
 	============
 	*/
-	template< class T > ID_INLINE int operator|( const int lhs, const sdPropertyValue< T >& rhs ) { 
+	template< class T > ID_INLINE int operator|( const int lhs, const sdPropertyValue< T >& rhs ) {
 		return lhs | rhs.GetValue();
 	}
 
@@ -638,7 +638,7 @@ namespace sdProperties {
 	sdPropertyValue< T >::operator ^
 	============
 	*/
-	template< class T > ID_INLINE int operator^( const sdPropertyValue< T >& lhs, const int rhs ) { 
+	template< class T > ID_INLINE int operator^( const sdPropertyValue< T >& lhs, const int rhs ) {
 		return lhs.GetValue() ^ rhs;
 	}
 
@@ -647,7 +647,7 @@ namespace sdProperties {
 	sdPropertyValue< T >::operator ^
 	============
 	*/
-	template< class T > ID_INLINE int operator^( const int lhs, const sdPropertyValue< T >& rhs ) { 
+	template< class T > ID_INLINE int operator^( const int lhs, const sdPropertyValue< T >& rhs ) {
 		return lhs ^ rhs.GetValue();
 	}
 
@@ -656,7 +656,7 @@ namespace sdProperties {
 	sdPropertyValue< T >::operator %
 	============
 	*/
-	template< class T > ID_INLINE int operator%( const sdPropertyValue< T >& lhs, const int rhs ) { 
+	template< class T > ID_INLINE int operator%( const sdPropertyValue< T >& lhs, const int rhs ) {
 		return lhs.GetValue() % rhs;
 	}
 
@@ -665,7 +665,7 @@ namespace sdProperties {
 	sdPropertyValue< T >::operator %
 	============
 	*/
-	template< class T > ID_INLINE int operator%( const int lhs, const sdPropertyValue< T >& rhs ) { 
+	template< class T > ID_INLINE int operator%( const int lhs, const sdPropertyValue< T >& rhs ) {
 		return lhs % rhs.GetValue();
 	}
 
@@ -674,8 +674,8 @@ namespace sdProperties {
 	sdPropertyValue< T >::Get
 	============
 	*/
-	template< class T > ID_INLINE sdPropertyValue< T >::operator typename sdPropertyValue< T >::Traits::ConstReference() const { 
-		return value; 
+	template< class T > ID_INLINE sdPropertyValue< T >::operator typename sdPropertyValue< T >::Traits::ConstReference() const {
+		return value;
 	}
 
 	/*
@@ -683,8 +683,8 @@ namespace sdProperties {
 	sdPropertyValue< T >::Get
 	============
 	*/
-	template< class T > ID_INLINE typename sdPropertyValue< T >::Traits::ConstReference sdPropertyValue< T >::GetValue() const { 
-		return value; 
+	template< class T > ID_INLINE typename sdPropertyValue< T >::Traits::ConstReference sdPropertyValue< T >::GetValue() const {
+		return value;
 	}
 
 	/*
@@ -783,7 +783,7 @@ namespace sdProperties {
 	*/
 	ID_INLINE void sdPropertyHandler::Remove( const char* name ) {
 		propertyAllocator.Free( GetProperty( name, PT_INVALID ) );
-		properties.Remove( name ); 
+		properties.Remove( name );
 	}
 
 	/*
@@ -800,7 +800,7 @@ namespace sdProperties {
 	sdPropertyHandler::GetProperty
 	============
 	*/
-	ID_INLINE sdPropertyHandler::propertyPair_t	sdPropertyHandler::GetProperty( int index ) const { 
+	ID_INLINE sdPropertyHandler::propertyPair_t	sdPropertyHandler::GetProperty( int index ) const {
 		return *properties.FindIndex( index );
 	}
 
@@ -811,7 +811,7 @@ namespace sdProperties {
 	*/
 	ID_INLINE sdProperty*	sdPropertyHandler::GetProperty( const char* name, ePropertyType type, bool warnIfNotFound ) const {
 		const char* canonicalName = MakeCanonical( name );
-		
+
 		propertyHashMap_t::ConstIterator iter = properties.Find( canonicalName );
 		if ( iter != properties.End() && ( type == PT_INVALID || iter->second->valueType == type ) ) {
 			return iter->second;
@@ -889,13 +889,13 @@ namespace sdProperties {
 sdTypeFromString
 ============
 */
-template< class Result > 
+template< class Result >
 class sdTypeFromString {
 public:
-	sdTypeFromString( const char* input ) {	
+	sdTypeFromString( const char* input ) {
 		sdProperties::sdFromString( output, input );
 	}
-	sdTypeFromString( const wchar_t* input ) {	
+	sdTypeFromString( const wchar_t* input ) {
 		sdProperties::sdFromString( output, va( "%ls", input ) );
 	}
 

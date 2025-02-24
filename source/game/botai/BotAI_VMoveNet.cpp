@@ -1,11 +1,11 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
-#include "../Game_local.h"
-#include "../ContentMask.h"
+#include "Game_local.h"
+#include "ContentMask.h"
 #include "BotThreadData.h"
 #include "BotAI_Main.h"
 
@@ -130,7 +130,7 @@ bool idBotAI::Bot_FindBestVehicleCombatMovement() {
 	if ( ( botInfo->proxyInfo.weapon == MINIGUN || botInfo->proxyInfo.weapon == LAW || botInfo->proxyInfo.weapon == PERSONAL_WEAPON ) && botVehicleInfo->driverEntNum == botNum ) {
 
 		if ( botThreadData.random.RandomInt( 100 ) > 50 && enemyInfo.enemyDist < 1500.0f ) {
-   			VEHICLE_COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Vehicle_Stand_Ground_Movement; 
+   			VEHICLE_COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Vehicle_Stand_Ground_Movement;
 		} else {
 			VEHICLE_COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Vehicle_Chase_Movement; //mal: move around a bit to make ourselves harder to hit.
 		}
@@ -144,7 +144,7 @@ bool idBotAI::Bot_FindBestVehicleCombatMovement() {
 
 	if ( botInfo->proxyInfo.weapon == TANK_GUN && botVehicleInfo->driverEntNum == botNum ) {
 		if ( !enemyReachable && enemyInfo.enemyDist < 3000.0f ) { //mal: dont do chase movement of our enemy, if we cant reach him.
-           VEHICLE_COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Vehicle_Stand_Ground_Movement; 
+           VEHICLE_COMBAT_MOVEMENT_STATE = &idBotAI::Enter_Vehicle_Stand_Ground_Movement;
 		} else {
 			if ( enemyAcquireTime + 10000 < botWorld->gameLocalInfo.time && botInfo->lastAttackClientTime + 10000 < botWorld->gameLocalInfo.time ) {
 				proxyInfo_t enemyVehicleInfo;
@@ -181,7 +181,7 @@ idBotAI::Enter_Vehicle_Stand_Ground_Movement
 ================
 */
 bool idBotAI::Enter_Vehicle_Stand_Ground_Movement() {
- 
+
 	VEHICLE_COMBAT_MOVEMENT_STATE = &idBotAI::Vehicle_Stand_Ground_Movement;
 
 	combatMoveType = VEHICLE_STAND_GROUND;
@@ -189,7 +189,7 @@ bool idBotAI::Enter_Vehicle_Stand_Ground_Movement() {
 	combatMoveDir = NULL_DIR;
 
 	combatMoveFailedCount = 0;
-	
+
 	combatMoveTime = 0;
 
 	lastMoveNode = "Vehicle Stand Ground";
@@ -242,7 +242,7 @@ bool idBotAI::Vehicle_Stand_Ground_Movement() {
 	if ( botVehicleInfo->type == TROJAN && botVehicleInfo->driverEntNum == botNum ) {
 		if ( !InFrontOfVehicle( botVehicleInfo->entNum, botWorld->clientInfo[ enemy ].origin ) ) {
 			Bot_SetupVehicleMove( vec3_zero, enemy, ACTION_NULL );
-            
+
 			if ( MoveIsInvalid() ) {
 				VEHICLE_COMBAT_MOVEMENT_STATE = NULL;
 				return false;
@@ -331,7 +331,7 @@ bool idBotAI::Vehicle_Stand_Ground_Movement() {
 			if ( enemyInfo.enemyDist > 1500.0f ) {
                 botUcmd->botCmds.enterSiegeMode = true;
 			}
-		} /* else {												
+		} /* else {
 			if ( combatMoveTime < botWorld->gameLocalInfo.time ) {		//mal_NOTE: this just caused more problems then its worth.
 				if ( combatMoveDir == NULL_DIR ) {
                     if ( botThreadData.random.RandomInt( 100 ) > 50 ) {
@@ -372,7 +372,7 @@ Used by vehicle gunners.
 ================
 */
 bool idBotAI::Enter_Vehicle_NULL_Movement() {
- 
+
 	VEHICLE_COMBAT_MOVEMENT_STATE = &idBotAI::Vehicle_NULL_Movement;
 
 	combatMoveType = VEHICLE_NULL_MOVEMENT;
@@ -409,7 +409,7 @@ idBotAI::Enter_Vehicle_Random_Movement
 ================
 */
 bool idBotAI::Enter_Vehicle_Random_Movement() {
- 
+
 	VEHICLE_COMBAT_MOVEMENT_STATE = &idBotAI::Vehicle_Random_Movement;
 
 	combatMoveType = VEHICLE_RANDOM_MOVEMENT;
@@ -432,7 +432,7 @@ bool idBotAI::Enter_Vehicle_Random_Movement() {
 idBotAI::Vehicle_Random_Movement
 ================
 */
-bool idBotAI::Vehicle_Random_Movement() { 
+bool idBotAI::Vehicle_Random_Movement() {
 
 	float tooCloseDist = 750.0f;
 	idVec3 vec;
@@ -520,7 +520,7 @@ idBotAI::Enter_Vehicle_Ram_Attack_Movement
 ================
 */
 bool idBotAI::Enter_Vehicle_Ram_Attack_Movement() {
- 
+
 	VEHICLE_COMBAT_MOVEMENT_STATE = &idBotAI::Vehicle_Ram_Attack_Movement;
 
 	combatMoveType = VEHICLE_RAM_ATTACK_MOVEMENT;
@@ -542,7 +542,7 @@ bool idBotAI::Vehicle_Ram_Attack_Movement() {
 	idBox enemyBox;
 
 	if ( enemyInfo.enemyDist < 700.0f && botVehicleInfo->forwardSpeed < 100.0f && botVehicleInfo->type != HOG ) { //mal: somethings holding us up, we can't ram at this speed/dist!
-		VEHICLE_COMBAT_MOVEMENT_STATE = NULL; 
+		VEHICLE_COMBAT_MOVEMENT_STATE = NULL;
 		return false;
 	}
 
@@ -575,7 +575,7 @@ idBotAI::Enter_Vehicle_Chase_Movement
 ================
 */
 bool idBotAI::Enter_Vehicle_Chase_Movement() {
- 
+
 	VEHICLE_COMBAT_MOVEMENT_STATE = &idBotAI::Vehicle_Chase_Movement;
 
 	combatMoveType = VEHICLE_CHASE_MOVEMENT;
@@ -625,7 +625,7 @@ idBotAI::Enter_Vehicle_Air_Movement
 */
 bool idBotAI::Enter_Vehicle_Air_Movement() {
 	proxyInfo_t enemyVehicleInfo;
- 
+
 	combatMoveType = VEHICLE_AIR_MOVEMENT;
 	combatMoveActionGoal = ACTION_NULL;
 	combatMoveTooCloseRange = 0.0f;
@@ -733,7 +733,7 @@ bool idBotAI::Vehicle_Air_To_Air_Movement() {
 
 		if ( combatMoveTime > 0 ) {
 			vec = enemyOrg;
-			vec += ( -desiredRange * enemyVehicleInfo.axis[ 0 ] ); 
+			vec += ( -desiredRange * enemyVehicleInfo.axis[ 0 ] );
 
 			if ( !botThreadData.Nav_IsDirectPath( AAS_VEHICLE, botInfo->team, botInfo->areaNumVehicle, botInfo->aasVehicleOrigin, vec ) ) {
 				combatMoveTime = 0;
@@ -877,13 +877,13 @@ bool idBotAI::Vehicle_Air_To_Ground_Movement() {
 
 	Bot_CheckVehicleAttack(); //mal: always see if we can get a shot off.
 
-	if ( botInfo->enemyHasLockon && dist < Square( 6000.0f ) && botWorld->gameLocalInfo.botSkill > BOT_SKILL_EASY ) { //mal: OH NOES! Panic and run for it. 
+	if ( botInfo->enemyHasLockon && dist < Square( 6000.0f ) && botWorld->gameLocalInfo.botSkill > BOT_SKILL_EASY ) { //mal: OH NOES! Panic and run for it.
 		Bot_IgnoreEnemy( enemy, 3000 );
 		Bot_ResetEnemy();
 		return false;
 	}
 
-//mal: we're too close, so manuever around our enemy and fire. 
+//mal: we're too close, so manuever around our enemy and fire.
 	if ( dist < Square( tooCloseRange ) && combatMoveTime < botWorld->gameLocalInfo.time && enemySpeed < SPRINTING_SPEED ) { //mal: if they're moving fast, just let them move into our crosshairs..
 		int actionNumber = ACTION_NULL;
 

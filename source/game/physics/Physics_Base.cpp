@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,7 +11,7 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "Physics_Base.h"
-#include "../Entity.h"
+#include "Entity.h"
 #include "Force.h"
 
 #if !defined( _XENON ) && !defined( MONOLITHIC )
@@ -792,7 +792,7 @@ idPhysics_Base::GetTraceCollection
 */
 const sdClipModelCollection& idPhysics_Base::GetTraceCollection( void ) {
 	if ( g_useTraceCollection.GetBool() ) {
-		traceCollection.Update( GetBounds(), GetOrigin(), GetAxis(), GetLinearVelocity(), 
+		traceCollection.Update( GetBounds(), GetOrigin(), GetAxis(), GetLinearVelocity(),
 								GetAngularVelocity(), GetClipMask(), self );
 	}
 	return traceCollection;
@@ -813,8 +813,8 @@ void sdClipModelCollection::SetSelf( idEntity* e ) {
 sdClipModelCollection::Update
 ============
 */
-void sdClipModelCollection::Update( const idBounds& bounds, const idVec3& origin, const idMat3& axis, 
-									const idVec3& linearVelocity, const idVec3& angularVelocity, 
+void sdClipModelCollection::Update( const idBounds& bounds, const idVec3& origin, const idMat3& axis,
+									const idVec3& linearVelocity, const idVec3& angularVelocity,
 									int clipMask, idEntity* passEntity ) {
 
 	if ( gameLocal.time != lastUpdate ) {
@@ -891,7 +891,7 @@ void sdClipModelCollection::ForceNextUpdate() {
 sdClipModelCollection::Translation
 ============
 */
-bool sdClipModelCollection::TracePoint( CLIP_DEBUG_PARMS_DECLARATION trace_t &results, const idVec3 &start, 
+bool sdClipModelCollection::TracePoint( CLIP_DEBUG_PARMS_DECLARATION trace_t &results, const idVec3 &start,
 									   const idVec3 &end, int contentMask ) const {
 	return Translation( CLIP_DEBUG_PARMS_PASSTHRU results, start, end, NULL, mat3_identity, contentMask );
 }
@@ -1034,7 +1034,7 @@ bool sdClipModelCollection::Rotation( CLIP_DEBUG_PARMS_DECLARATION trace_t &resu
 sdClipModelCollection::Contacts
 ============
 */
-int sdClipModelCollection::Contacts( CLIP_DEBUG_PARMS_DECLARATION contactInfo_t *contacts, const int maxContacts, 
+int sdClipModelCollection::Contacts( CLIP_DEBUG_PARMS_DECLARATION contactInfo_t *contacts, const int maxContacts,
 										const idVec3 &start, const idVec3 *dir, const float depth,
 										const idClipModel *mdl, const idMat3 &trmAxis, int contentMask ) const {
 

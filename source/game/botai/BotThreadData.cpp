@@ -1,29 +1,29 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
 #define new DEBUG_NEW
 #endif
 
-#include "../Game_local.h" 
-#include "../misc/DefenceTurret.h"
-#include "../decls/GameDeclIdentifiers.h"
-#include "../../game/ContentMask.h"
-#include "../misc/PlayerBody.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../rules/GameRules.h"
-#include "../vehicles/Transport.h"
-#include "../vehicles/VehicleControl.h"
+#include "Game_local.h"
+#include "misc/DefenceTurret.h"
+#include "decls/GameDeclIdentifiers.h"
+#include "game/ContentMask.h"
+#include "misc/PlayerBody.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "rules/GameRules.h"
+#include "vehicles/Transport.h"
+#include "vehicles/VehicleControl.h"
 
 #include "BotThread.h"
 #include "BotThreadData.h"
 #include "Bot.h"
-#include "../Misc.h"
-#include "../../sdnet/SDNetSession.h"
+#include "Misc.h"
+#include "sdnet/SDNetSession.h"
 
 idBotThreadData			botThreadData;
 
@@ -148,7 +148,7 @@ void idBotThreadData::InitClientInfo( int clientNum, bool resetAll, bool leaving
 	client.backPedalTime = 0;
 
 	client.wantsVehicle = false;
-		
+
 	client.areaNum = 0;
 	client.areaNumVehicle = 0;
 
@@ -319,7 +319,7 @@ void idBotThreadData::DrawActionPaths() {
 	}
 
 	idPlayer *player = gameLocal.GetLocalPlayer();
-	if ( !player ) { 
+	if ( !player ) {
 		return;
 	}
 
@@ -354,7 +354,7 @@ void idBotThreadData::DrawActionPaths() {
 	}
 
 	idAAS *aas = GetAAS( aas_test.GetInteger() );
-	
+
 	if ( aas == NULL ) {
 		gameLocal.Warning("No valid aas exists for aas_type %i!", aas_test.GetInteger() );
 		bot_testPathToBotAction.SetInteger( -1 );
@@ -382,7 +382,7 @@ idBotThreadData::DrawDefuseHints
 ==================
 */
 void idBotThreadData::DrawDefuseHints() {
-	for( int i = 0; i < botLocationRemap.Num(); i++ ) { 
+	for( int i = 0; i < botLocationRemap.Num(); i++ ) {
 		gameRenderWorld->DebugBox( colorRed, botLocationRemap[ i ]->bbox );
 		gameRenderWorld->DebugArrow( colorYellow, botLocationRemap[ i ]->bbox.GetCenter(), botLocationRemap[ i ]->target, 4 );
 		gameRenderWorld->DebugLine( colorGreen, botLocationRemap[ i ]->target, botLocationRemap[ i ]->target + idVec3( 0, 0, 64 ) );
@@ -403,7 +403,7 @@ void idBotThreadData::DrawActions() {
 	player = gameLocal.GetLocalPlayer();
 	idVec3 end;
 
-	if ( !player ) { 
+	if ( !player ) {
 		return;
 	}
 
@@ -525,7 +525,7 @@ void idBotThreadData::DrawActions() {
 			}
 
 			if ( bot_drawActionGroupNum.GetInteger() > -1 ) {
-				if ( botActions[ i ]->GetActionGroup() != bot_drawActionGroupNum.GetInteger() ) { 
+				if ( botActions[ i ]->GetActionGroup() != bot_drawActionGroupNum.GetInteger() ) {
 					continue;
 				}
 			}
@@ -534,7 +534,7 @@ void idBotThreadData::DrawActions() {
 				if ( botActions[ i ]->actionVehicleFlags == -1 || !( bot_drawActionVehicleType.GetInteger() & botActions[ i ]->actionVehicleFlags ) && bot_drawActionVehicleType.GetInteger() != 0 ) {
 					continue;
 				}
-			}			
+			}
 
 			end = botActions[ i ]->origin - player->GetPhysics()->GetOrigin();
 
@@ -569,15 +569,15 @@ void idBotThreadData::DrawActions() {
 			end = botRoutes[ i ]->origin;
 			end[ 2 ] += 64.0f;
 			gameRenderWorld->DebugLine( ( botRoutes[ i ]->isHeadNode == true ) ? colorPink : colorDkRed, botRoutes[ i ]->origin, end, 16 );
-		
+
 			end[ 2 ] += 8.0f;
-	
+
 			gameRenderWorld->DrawText( va( "Route %i     RouteID %i", i, botRoutes[ i ]->groupID ), end, 0.20f, colorWhite, viewAxis );
 
 			end[ 2 ] += 8.0f;
-	
+
 			gameRenderWorld->DrawText( va( "Team %i     Active %i", botRoutes[ i ]->team, botRoutes[ i ]->active ), end, 0.20f, colorWhite, viewAxis );
-	
+
 			gameRenderWorld->DebugCircle( ( botRoutes[ i ]->isHeadNode == true ) ? colorYellow : colorGreen, botRoutes[ i ]->origin, idVec3( 0, 0, 1 ), botRoutes[ i ]->radius, 8 );
 
 			for( j = 0; j < botRoutes[ i ]->routeLinks.Num(); j++ ) {
@@ -744,7 +744,7 @@ void idBotThreadData::UpdateState() {
 
 		clientInfo_t &client = GetGameWorldState()->clientInfo[ i ];
 
-		if ( client.inGame == false || client.team == NOTEAM ) { 
+		if ( client.inGame == false || client.team == NOTEAM ) {
 			continue;
 		}
 
@@ -805,7 +805,7 @@ void idBotThreadData::UpdateState() {
 
 		TrainingThink();
 	}
-	
+
 	CheckCurrentChatRequests();
 
 	DynamicEntity_Think(); //mal: check all dynamic entities out there.
@@ -842,7 +842,7 @@ void idBotThreadData::UpdateState() {
 			body.bodyOrigin = bodies[ i ]->GetPhysics()->GetOrigin();
 			body.bodyNum = stiff->entityNumber;
 			body.spawnID = gameLocal.GetSpawnId( stiff );
-	
+
 			if ( body.areaNum == 0 ) {
 				body.areaNum = Nav_GetAreaNum( AAS_PLAYER, body.bodyOrigin );
 			}
@@ -862,7 +862,7 @@ void idBotThreadData::UpdateState() {
 				body.isSpawnHostAble = false; //mal: can't spawnhost strogg bodies!
 				body.isSpawnHost = false;
 			}
-	
+
 			sdScriptHelper h3;
 			body.uniformStolen = stiff->CallBooleanNonBlockingScriptEvent( stiff->hasNoUniformFunc, h3 );
 		}
@@ -929,15 +929,15 @@ void idBotThreadData::UpdateState() {
 	gameLocalInfo.botPauseInVehicleTime = bot_pauseInVehicleTime.GetInteger();
 	gameLocalInfo.botsDoObjsInTrainingMode = bot_doObjsInTrainingMode.GetBool();
 	gameLocalInfo.botTrainingModeObjDelayTime = ( bot_doObjsDelayTimeInMins.GetInteger() * 60 );
-	
+
 	if ( bot_sleepWhenServerEmpty.GetBool() ) {
 		if ( !ServerHasHumans() ) {
 			gameLocalInfo.botsSleep = true;
 		}
 	}
-	
+
 #ifdef BOT_MOVE_LOOKUP
-	// FeaRog: let the bots rebuild the lookup tables for movement if they need to 
+	// FeaRog: let the bots rebuild the lookup tables for movement if they need to
 	//			(this function won't actually do anything unless the cvars have changed)
 	idBot::BuildMoveLookups( pm_runspeedforward.GetFloat(), pm_runspeedstrafe.GetFloat(), pm_runspeedback.GetFloat(),
 								pm_sprintspeedforward.GetFloat(), pm_sprintspeedstrafe.GetFloat() );
@@ -948,7 +948,7 @@ void idBotThreadData::UpdateState() {
 	bool hasSTROGGHumans = gameLocalInfo.teamStroggHasHuman;
 	gameLocalInfo.teamStroggHasHuman = TeamHasHumans( STROGG );
 	gameLocalInfo.teamGDFHasHuman = TeamHasHumans( GDF );
-	
+
 //mal: if the current human situation changed from last frame, update the bot AI. In hero mode, this will dictate whether they do objs or not.
 	if ( hasGDFHumans != gameLocalInfo.teamGDFHasHuman ) {
 		ResetBotAI( GDF );
@@ -1314,7 +1314,7 @@ void idBotThreadData::DebugOutput() {
 //	common->Printf("Speed = %f\n", GetGameWorldState()->clientInfo[ player->entityNumber ].xySpeed );
 
 
-//	common->Printf("Weapon Ready = %i\n", GetGameWorldState()->clientInfo[ player->entityNumber ].proxyInfo.weaponIsReady ); 
+//	common->Printf("Weapon Ready = %i\n", GetGameWorldState()->clientInfo[ player->entityNumber ].proxyInfo.weaponIsReady );
 
 //	if ( player->GetProxyEntity() != NULL ) {
 //		float proxySpeed = player->GetProxyEntity()->GetPhysics()->GetLinearVelocity() * player->GetProxyEntity()->GetRenderEntity()->axis[ 0 ];
@@ -1342,7 +1342,7 @@ void idBotThreadData::DebugOutput() {
 	if ( botPlayer1 != NULL && botPlayer2 != NULL ) {
 		bool humanCanSeeBot = botPlayer1->IsObscuredBySmoke( player );
 		bool botCanSeeHuman = player->IsObscuredBySmoke( botPlayer1 );
-	
+
 		bool nextBotCanSeeHuman = player->IsObscuredBySmoke( botPlayer2 );
 		bool botCanSeeNextBot = botPlayer2->IsObscuredBySmoke( botPlayer1 );
 		bool nextBotCanSeeBot = botPlayer1->IsObscuredBySmoke( botPlayer2 );
@@ -1368,7 +1368,7 @@ void idBotThreadData::DebugOutput() {
 	bool isClear = true;
 
 	for( int i = 0; i < botThreadData.botObstacles.Num(); i++ ) {
-		
+
 		idBotObstacle *obstacle = botThreadData.botObstacles[ i ];
 		idVec3 vec = obstacle->bbox.GetCenter() - player->GetPhysics()->GetOrigin();
 
@@ -1612,7 +1612,7 @@ void idBotThreadData::DisableAASAreaInLocation( int aasType, const idVec3& locat
 	}
 
 	idAAS * aas = botThreadData.GetAAS( aasType );
-	
+
 	if ( aas == NULL ) {
 		gameLocal.DWarning( "AAS type %i can't be found in call to \"disableAASAreaInLocation\"", aasType );
 		return;
@@ -1690,7 +1690,7 @@ bool idBotThreadData::BuildObstacleList( idObstacleAvoidance &obstacleAvoidance,
 
 	for( int i = 0; i < MAX_VEHICLES; i++ ) {
 		const proxyInfo_t &vehicleInfo = GetBotWorldState()->vehicleInfo[ i ];
-	
+
 		if ( vehicleInfo.entNum == 0 ) {
 			continue;
 		}
@@ -1706,7 +1706,7 @@ bool idBotThreadData::BuildObstacleList( idObstacleAvoidance &obstacleAvoidance,
 		idBox box( vehicleInfo.bbox, vehicleInfo.origin, vehicleInfo.axis );
 		box.ExpandSelf( idMath::Fabs( expand * 0.5f ), 0.0f, 0.0f );
 		box.TranslateSelf( box.GetAxis()[0] * expand * 0.5f );
-	
+
 		if ( !box.Expand( DYNAMIC_OBSTACLE_CONSIDER_DISTANCE ).ContainsPoint( origin ) ) {
 			continue;
 		}
@@ -1856,7 +1856,7 @@ void idBotThreadData::DynamicEntity_Think() {
 					if ( GetGameWorldState()->clientInfo[ j ].packs[ i ].checkedAreaNum == false ) {
 						const sdPlayZone* playZone = NULL;
 						playZone = gameLocal.GetPlayZone( pack->GetPhysics()->GetOrigin(), sdPlayZone::PZF_PLAYZONE );
-	
+
 						if ( playZone != NULL ) {
 							const sdDeployMaskInstance* deployMask = playZone->GetMask( gameLocal.GetPlayZoneMask() );
 							if ( deployMask == NULL || deployMask->IsValid( pack->GetPhysics()->GetAbsBounds() ) == DR_CLEAR ) {
@@ -1922,7 +1922,7 @@ void idBotThreadData::DynamicEntity_Think() {
             GetGameWorldState()->clientInfo[ j ].supplyCrate.origin = crate->GetPhysics()->GetOrigin();
 			GetGameWorldState()->clientInfo[ j ].supplyCrate.xySpeed = crate->GetPhysics()->GetLinearVelocity().LengthFast();
 			GetGameWorldState()->clientInfo[ j ].supplyCrate.inWater = ( crate->GetPhysics()->InWater() > 0.0f ) ? true : false;
-	
+
 //mal: cache off the AAS areaNum data, so the bots understand if its reachable or not.
             if ( GetGameWorldState()->clientInfo[ j ].supplyCrate.xySpeed == 0.0f ) {
 				if ( GetGameWorldState()->clientInfo[ j ].supplyCrate.checkedAreaNum == false ) {
@@ -2098,7 +2098,7 @@ void idBotThreadData::DynamicEntity_Think() {
 						bombOrigin = projOrigin;
 						bombOrigin += ( HALF_PLAYER_BBOX * bombAxis[ 1 ] * -1 );
 						areaNum = aas->PointReachableAreaNum( bombOrigin, aas->GetSettings()->boundingBox, AAS_AREA_REACHABLE_WALK, excludeTravelFlags );
-						
+
 						if ( actionNumber != ACTION_NULL ) {
 							canReach = aas->RouteToGoalArea( actionAreaNum, actionOrigin, areaNum, travelFlags, travelTime, &reach );
 						}
@@ -2106,7 +2106,7 @@ void idBotThreadData::DynamicEntity_Think() {
 						if ( areaNum == 0 || !canReach ) {
 							bombOrigin += ( HALF_PLAYER_BBOX * bombAxis[ 1 ] * -1 );
 							areaNum = aas->PointReachableAreaNum( bombOrigin, aas->GetSettings()->boundingBox, AAS_AREA_REACHABLE_WALK, excludeTravelFlags );
-						
+
 							if ( actionNumber != ACTION_NULL ) {
 								canReach = aas->RouteToGoalArea( actionAreaNum, actionOrigin, areaNum, travelFlags, travelTime, &reach );
 							}
@@ -2246,7 +2246,7 @@ void idBotThreadData::DynamicEntity_Think() {
 			GetGameWorldState()->spawnHosts[ j ].areaChecked = false;
 			GetGameWorldState()->spawnHosts[ j ].areaNum = 0;
 
-			if ( bot_debug.GetBool() ) { 
+			if ( bot_debug.GetBool() ) {
 				gameLocal.DWarning( "DynamicEntity_Think called a non-existent spawnhost!\n" );
 			}
 		}
@@ -2296,7 +2296,7 @@ void idBotThreadData::DynamicEntity_Think() {
 				continue;
 			}
 
-			if ( botActions[ i ]->GetBaseObjForTeam( GDF ) != ACTION_DROP_DEPLOYABLE && botActions[ i ]->GetBaseObjForTeam( STROGG ) != ACTION_DROP_DEPLOYABLE && 
+			if ( botActions[ i ]->GetBaseObjForTeam( GDF ) != ACTION_DROP_DEPLOYABLE && botActions[ i ]->GetBaseObjForTeam( STROGG ) != ACTION_DROP_DEPLOYABLE &&
 				botActions[ i ]->GetBaseObjForTeam( GDF ) != ACTION_DROP_PRIORITY_DEPLOYABLE && botActions[ i ]->GetBaseObjForTeam( STROGG ) != ACTION_DROP_PRIORITY_DEPLOYABLE ) {
 				continue;
 			}
@@ -2336,7 +2336,7 @@ void idBotThreadData::DynamicEntity_Think() {
 			sdTeamInfo* turretTeam = turret->GetGameTeam();
 
 			deployableInfo.disabled = turret->IsDisabled();
-			deployableInfo.inPlace = turret->IsDeployed();  
+			deployableInfo.inPlace = turret->IsDeployed();
 			deployableInfo.health = turret->GetHealth();
 			deployableInfo.maxHealth = turret->GetMaxHealth();
 			deployableInfo.origin = turret->GetPhysics()->GetOrigin();
@@ -2360,11 +2360,11 @@ void idBotThreadData::DynamicEntity_Think() {
 						deployableInfo.dangerAreaBox.ExpandSelf( 1500.0f, 900.0f, 500.0f );
 						deployableInfo.dangerAreaBox.TranslateSelf( deployableInfo.dangerAreaBox.GetAxis()[0] * 1700.0f );
 					}
-					
+
 					int actionNumber = GetDeployableActionNumber( deployableActions, deployableInfo.origin, deployableInfo.team, deployableInfo.type );
 					if ( actionNumber != ACTION_NULL && deployableInfo.ownerClientNum != -1 ) {
 						const clientInfo_t& deployableOwner = GetGameWorldState()->clientInfo[ deployableInfo.ownerClientNum ];
-						
+
 						if ( !botActions[ actionNumber ]->ActionIsActive() && deployableOwner.isBot ) {
 							idEntity *deployableEnt = gameLocal.entities[ deployableInfo.entNum ];
 
@@ -2375,7 +2375,7 @@ void idBotThreadData::DynamicEntity_Think() {
 					}
 				}
 			}
-		} else { //mal: hammers/DMC/etc 
+		} else { //mal: hammers/DMC/etc
 
 			sdScriptEntity* miscDeployable = deployable->Cast< sdScriptEntity >();
 			if ( miscDeployable != NULL ) {
@@ -2393,7 +2393,7 @@ void idBotThreadData::DynamicEntity_Think() {
 				deployableInfo.maxAttackRange = miscDeployable->GetDeployableRange();
 				deployableInfo.bbox = miscDeployable->GetPhysics()->GetBounds();
 				deployableInfo.disabled = miscDeployable->GetIsDisabled();
-				deployableInfo.inPlace = miscDeployable->GetIsDeployed();  
+				deployableInfo.inPlace = miscDeployable->GetIsDeployed();
 				deployableInfo.ownerClientNum = deployableOwner == NULL ? -1 : deployableOwner->entityNumber;
 				deployableInfo.team = deployableTeam == NULL ? NOTEAM : deployableTeam->GetBotTeam();
 
@@ -2407,7 +2407,7 @@ void idBotThreadData::DynamicEntity_Think() {
 						int actionNumber = GetDeployableActionNumber( deployableActions, deployableInfo.origin, deployableInfo.team, deployableInfo.type );
 						if ( actionNumber != ACTION_NULL && deployableInfo.ownerClientNum != -1 ) {
 							const clientInfo_t& deployableOwner = GetGameWorldState()->clientInfo[ deployableInfo.ownerClientNum ];
-						
+
 							if ( !botActions[ actionNumber ]->ActionIsActive() && deployableOwner.isBot ) {
 								idEntity *deployableEnt = gameLocal.entities[ deployableInfo.entNum ];
 
@@ -2449,7 +2449,7 @@ void idBotThreadData::DynamicEntity_Think() {
 			continue;
 		}
 
-        if ( sdTransport* transport = transports[ j ] ) { 
+        if ( sdTransport* transport = transports[ j ] ) {
             if ( idPhysics* physics = transport->GetPhysics() ) {
 				proxyInfo_t &vehicleInfo = GetGameWorldState()->vehicleInfo[ i ];
 				vehicleInfo.bbox = physics->GetBounds( 0 );
@@ -2485,10 +2485,10 @@ void idBotThreadData::DynamicEntity_Think() {
 				vehicleInfo.canRotateInPlace = false;
 				vehicleInfo.actionRouteNumber = transport->GetRouteActionNumber();
 				vehicleInfo.isBoobyTrapped = false;
-				
+
 				idEntity* next = NULL;
 				playerTeamTypes_t ignoreTeam = transport->GetVehicleTeam();
-				
+
 				if ( si_teamDamage.GetBool() ) {
 					ignoreTeam = NOTEAM;
 				}
@@ -2526,7 +2526,7 @@ void idBotThreadData::DynamicEntity_Think() {
 				if ( player != NULL ) {
 					if ( player->ownsVehicle != false && ( player->GetProxyEntity() != NULL && player->GetProxyEntity()->entityNumber == transport->entityNumber ) ) { //mal: if player exited vehicle and was killed, or is too far away, bot can take it.
                         idVec3 vec;
-                        
+
 						vec = player->GetPhysics()->GetOrigin() - vehicleInfo.origin;
 
 						if ( vec.LengthSqr() < Square( VEHICLE_OWNERSHIP_DIST ) ) {
@@ -2541,7 +2541,7 @@ void idBotThreadData::DynamicEntity_Think() {
 							}
 						}
 					} else if ( player->ownsVehicle != false && gameLocal.GetSpawnId( transport ) == player->lastOwnedVehicleSpawnID ) {
-						idVec3 vec;                        
+						idVec3 vec;
 						vec = player->GetPhysics()->GetOrigin() - vehicleInfo.origin;
 
 						if ( vec.LengthSqr() < Square( VEHICLE_OWNERSHIP_DIST ) ) {
@@ -2562,7 +2562,7 @@ void idBotThreadData::DynamicEntity_Think() {
 				}
 
 				aasOrigin = physics->GetOrigin();
-				
+
 				areaNum = Nav_GetAreaNumAndOrigin( AAS_PLAYER, physics->GetOrigin(), aasOrigin );
 
 				if ( areaNum > 0 ) { //mal: cache last valid area
@@ -2578,7 +2578,7 @@ void idBotThreadData::DynamicEntity_Think() {
 					vehicleInfo.areaNumVehicle = areaNum;
 					vehicleInfo.aasVehicleOrigin = aasOrigin;
 				}
-				
+
 				if ( vehicleInfo.type == MCP ) {
 					GetGameWorldState()->botGoalInfo.botGoal_MCP_VehicleNum = vehicleInfo.entNum;
 				}
@@ -2600,7 +2600,7 @@ void idBotThreadData::DynamicEntity_Think() {
 					continue;
 				}
 
-				if ( botActions[ i ]->GetBaseObjForTeam( GDF ) != ACTION_DENY_SPAWNPOINT && botActions[ i ]->GetBaseObjForTeam( STROGG ) != ACTION_DENY_SPAWNPOINT && 
+				if ( botActions[ i ]->GetBaseObjForTeam( GDF ) != ACTION_DENY_SPAWNPOINT && botActions[ i ]->GetBaseObjForTeam( STROGG ) != ACTION_DENY_SPAWNPOINT &&
 					botActions[ i ]->GetBaseObjForTeam( GDF ) != ACTION_FORWARD_SPAWN && botActions[ i ]->GetBaseObjForTeam( STROGG ) != ACTION_FORWARD_SPAWN ) {
 					continue;
 				}
@@ -2661,11 +2661,11 @@ void idBotThreadData::LoadActions( const idMapFile *mapFile ) {
 		const char* classname = mapEnt->epairs.GetString( "classname" );
 
 		if ( idStr::Icmp( classname, "bot_action_bbox" ) == 0 ) {
-			
+
 			idBotActions* actionLoader = new idBotActions;
 
 			actionLoader->name = mapEnt->epairs.GetString( "name", "" );
-			
+
 			mapEnt->epairs.GetVector( "box_center", "0 0 0", center );
 			mapEnt->epairs.GetVector( "box_extents", "0 0 0", extents );
 			mapEnt->epairs.GetAngles( "box_angles", "0 0 0", angles );
@@ -2691,7 +2691,7 @@ void idBotThreadData::LoadActions( const idMapFile *mapFile ) {
 			idBotActions* actionLoader = new idBotActions;
 
 			actionLoader->name = mapEnt->epairs.GetString( "name", "" );
-			
+
 			mapEnt->epairs.GetVector( "origin", "", actionLoader->origin );
 			actionLoader->radius = mapEnt->epairs.GetInt( "radius", "70.0f" );
 
@@ -2742,7 +2742,7 @@ void idBotThreadData::LoadActions( const idMapFile *mapFile ) {
 			actionLoader->VOChatFlag = ( botChatTypes_t ) mapEnt->epairs.GetInt( "VOChat", "-1" );
 
 			mapEnt->epairs.GetVector( "origin", "", actionLoader->origin );
-		
+
 			actionLoader->humanObj = ( botActionGoals_t ) mapEnt->epairs.GetInt( "humanGoal", "-1" );
 			actionLoader->stroggObj = ( botActionGoals_t ) mapEnt->epairs.GetInt( "stroggGoal", "-1" );
 			actionLoader->baseHumanObj = actionLoader->humanObj;
@@ -2751,14 +2751,14 @@ void idBotThreadData::LoadActions( const idMapFile *mapFile ) {
 
 			actionLoader->leanDir = ( leanTypes_t ) mapEnt->epairs.GetInt( "leanDir", "-1" );
 
-			actionLoader->baseActionType  = BASE_ACTION;		
+			actionLoader->baseActionType  = BASE_ACTION;
 
 			actionLoader->groupID = mapEnt->epairs.GetInt( "groupID", "0" );
 			actionLoader->posture = ( botMoveFlags_t ) mapEnt->epairs.GetInt( "posture", "2" ); //stand
 			actionLoader->actionTimeInSeconds = mapEnt->epairs.GetInt( "actionTime", "30" );
 
 			actionLoader->actionVehicleFlags = mapEnt->epairs.GetInt( "vehicleType", "-1" );
-			
+
 			int tempWeap = mapEnt->epairs.GetInt( "weaponType", "-1" );
 
 			if ( tempWeap == 0 ) {
@@ -2810,7 +2810,7 @@ void idBotThreadData::LoadActions( const idMapFile *mapFile ) {
 		}
 
 		if ( idStr::Icmp( classname, "bot_locationremap" ) == 0 ) {
-			
+
 			botLocationRemap_t *remap = new botLocationRemap_t;
 
 			mapEnt->epairs.GetVector( "box_center", "0 0 0", center );
@@ -2840,7 +2840,7 @@ void idBotThreadData::LoadActions( const idMapFile *mapFile ) {
 		}
 
 		if ( botActions[ i ]->baseActionType == BBOX_ACTION ) {
-			
+
 			int t = FindActionByName( botActions[ i ]->targetAction );
 
 			if ( t == -1 ) {
@@ -2859,7 +2859,7 @@ void idBotThreadData::LoadActions( const idMapFile *mapFile ) {
 		if ( botActions[ i ]->baseActionType == TARGET_ACTION ) {
 
 			bool foundSlot = false;
-			
+
 			int t = FindActionByName( botActions[ i ]->targetAction );
 
 			if ( t == -1 ) {
@@ -2873,7 +2873,7 @@ void idBotThreadData::LoadActions( const idMapFile *mapFile ) {
 			}
 
 			for ( int j = 0; j < MAX_LINKACTIONS; j++ ) {
-				
+
 				if ( botActions[ t ]->actionTargets[ j ].inuse != false ) {
 					continue;
 				}
@@ -2922,7 +2922,7 @@ Parse the bot routes and load them up.
 ================
 */
 void idBotThreadData::LoadRoutes( const idMapFile *mapFile ) {
-	
+
 	int i, j, k;
 	idBotRoutes *routeLoader;
 
@@ -2983,7 +2983,7 @@ void idBotThreadData::LoadRoutes( const idMapFile *mapFile ) {
 			for( k = 0; k < botRoutes.Num(); k++ ) {
 				if ( k == j ) {
 					continue;
-				}					
+				}
 
 				if ( idStr::Icmp( botRoutes[ k ]->name, kv->GetValue().c_str() ) != 0 ) {
 					continue;
@@ -3002,7 +3002,7 @@ void idBotThreadData::LoadRoutes( const idMapFile *mapFile ) {
 ================
 idBotThreadData::VOChat
 
-A safe way to say chats from anywhere in the game. If forceChat == true, will say the chat 
+A safe way to say chats from anywhere in the game. If forceChat == true, will say the chat
 no matter what.
 
 
@@ -3381,7 +3381,7 @@ void idBotThreadData::VOChat( const botChatTypes_t chatType, int clientNum, bool
 					quickChatName = pc->BuildQuickChatDeclName( "quickchat/self/immedic" );
 				} else {
 					quickChatName = pc->BuildQuickChatDeclName( "quickchat/self/imtechnician" );
-				}				
+				}
 			}
 
 			quickChat = gameLocal.declQuickChatType.LocalFind( quickChatName, false );
@@ -3391,7 +3391,7 @@ void idBotThreadData::VOChat( const botChatTypes_t chatType, int clientNum, bool
         if ( playerInfo.lastChatTime[ AMMO_ACK ] < gameLocal.time || forceChat ) {
             quickChatName = pc->BuildQuickChatDeclName( "botchat/generic/gotammo" );
 			quickChat = gameLocal.declQuickChatType.LocalFind( quickChatName, false );
-			playerInfo.lastChatTime[ AMMO_ACK ] = gameLocal.time + 15000; 
+			playerInfo.lastChatTime[ AMMO_ACK ] = gameLocal.time + 15000;
 		}
 	} else if ( chatType == TK_REVIVE_CHAT ) {
         if ( playerInfo.lastChatTime[ TK_REVIVE_CHAT ] < gameLocal.time || forceChat ) {
@@ -3595,7 +3595,7 @@ void idBotThreadData::VOChat( const botChatTypes_t chatType, int clientNum, bool
 					quickChatName = pc->BuildQuickChatDeclName( "quickchat/global/taunts/grr" );
 				} else {
 					quickChatName = pc->BuildQuickChatDeclName( "quickchat/global/taunts/rrr" );
-				}	
+				}
 			} else if ( n == 5 ) {
 				quickChatName = pc->BuildQuickChatDeclName( "quickchat/global/taunts/cough" );
 			} else if ( n == 6 ) {
@@ -3634,7 +3634,7 @@ void idBotThreadData::VOChat( const botChatTypes_t chatType, int clientNum, bool
 	if ( quickChat == NULL ) {
 		return;
 	}
-	
+
 	gameLocal.ServerSendQuickChatMessage( player, quickChat, NULL, NULL );
 	playerInfo.chatDelay = gameLocal.time + 1000;
 }
@@ -3854,9 +3854,9 @@ void idBotThreadData::FindCurrentWeaponInVehicle( idPlayer *player, sdTransport*
 		return;
 	}
 
-	weapIndex = transport->GetPositionManager().PositionForPlayer( player ).GetWeaponIndex(); 
+	weapIndex = transport->GetPositionManager().PositionForPlayer( player ).GetWeaponIndex();
 
-	if( weapIndex == -1 ) { 
+	if( weapIndex == -1 ) {
 		botThreadData.GetGameWorldState()->clientInfo[ player->entityNumber ].proxyInfo.weapon = NULL_VEHICLE_WEAPON;
 		return;
 	}
@@ -3913,7 +3913,7 @@ void idBotThreadData::FindCurrentWeaponInVehicle( idPlayer *player, sdTransport*
 		case PLATYPUS:
 			if ( weapIndex == 0 ) {
                 botThreadData.GetGameWorldState()->clientInfo[ player->entityNumber ].proxyInfo.weapon = MINIGUN;
-			} 
+			}
 
 			break;
 
@@ -3968,7 +3968,7 @@ int idBotThreadData::FindRouteByName( const char *routeName ) {
 
 	hash = routeHash.GenerateKey( routeName, true );
 
-	for ( i = routeHash.GetFirst( hash ); i != -1; i = routeHash.GetNext( i ) ) {	
+	for ( i = routeHash.GetFirst( hash ); i != -1; i = routeHash.GetNext( i ) ) {
 		if ( botRoutes[ i ]->name.Icmp( routeName ) == 0 ) {
 			return i;
 		}
@@ -4001,7 +4001,7 @@ void idBotThreadData::CheckCrossHairInfo( idEntity *bot, sdCrosshairInfo &botCro
 		}
 
 		vec = botCrossHairEntity->GetPhysics()->GetOrigin() - bot->GetPhysics()->GetOrigin();
-		
+
 		if ( vec.LengthSqr() < Square( entDist ) ) {
 			botCrossHairInfo.SetStartTime( gameLocal.time );
 			botCrossHairInfo.SetDistance( BOT_CROSSHAIR_DIST );
@@ -4012,7 +4012,7 @@ void idBotThreadData::CheckCrossHairInfo( idEntity *bot, sdCrosshairInfo &botCro
 	if ( botThreadData.GetGameOutputState()->botOutput[ bot->entityNumber ].actionEntityNum != -1 ) {
 		idEntity* actionEnt = gameLocal.entities[ botThreadData.GetGameOutputState()->botOutput[ bot->entityNumber ].actionEntityNum ];
 
-		if ( actionEnt != NULL && gameLocal.GetSpawnId( actionEnt ) == botThreadData.GetGameOutputState()->botOutput[ bot->entityNumber ].actionEntitySpawnID ) { //mal: our actionEnt will override our crosshair entity, in the off chance they dont match.    
+		if ( actionEnt != NULL && gameLocal.GetSpawnId( actionEnt ) == botThreadData.GetGameOutputState()->botOutput[ bot->entityNumber ].actionEntitySpawnID ) { //mal: our actionEnt will override our crosshair entity, in the off chance they dont match.
 			if ( actionEnt != botCrossHairEntity ) {
 				entBounds = actionEnt->GetPhysics()->GetBounds( 0 );
 
@@ -4023,7 +4023,7 @@ void idBotThreadData::CheckCrossHairInfo( idEntity *bot, sdCrosshairInfo &botCro
 				entBox = idBox( entBounds, actionEnt->GetPhysics()->GetOrigin(), actionEnt->GetPhysics()->GetAxis() );
 			    entBox.ExpandSelf( VEHICLE_BOX_EXPAND );
 
-				if ( playerBox.IntersectsBox( entBox ) ) { 
+				if ( playerBox.IntersectsBox( entBox ) ) {
 					botCrossHairInfo.SetEntity( actionEnt );
 					botCrossHairInfo.SetStartTime( gameLocal.time );
 					botCrossHairInfo.SetDistance( BOT_CROSSHAIR_DIST );
@@ -4337,7 +4337,7 @@ bool idBotThreadData::RequestDeployableAtLocation( int clientNum, bool& needPaus
 	} else {
 		return false;
 	}
-	
+
 	return true;
 }
 
@@ -4520,7 +4520,7 @@ botDebugInfo_t idBotThreadData::GetBotDebugInfo( int clientNum ) {
 		botDebugInfo_t botInfo;
 		memset( &botInfo, 0, sizeof( botInfo ) );
 		return botInfo;
-	} 
+	}
 
 	idPlayer *player = gameLocal.GetClient( clientNum );
 	botDebugInfo_t botInfo;
@@ -4556,7 +4556,7 @@ void idBotThreadData::ChangeBotName( idPlayer* bot ) {
 			basePlayerName = "GDF Bot";
 		} else {
 			basePlayerName = "Strogg Bot";
-		}	
+		}
 
 		sprintf( playerName, "%s %d", basePlayerName, bot->entityNumber );
 	}
@@ -4591,14 +4591,14 @@ bool idBotThreadData::FindRandomBotName( int clientNum, idStr& botName ) {
 		k = botThreadData.random.RandomInt( tempBotNames.Num() );
 		botName = tempBotNames[ k ];
 		gameLocal.CleanName( botName );
-		
+
 		for ( i = 0; i < MAX_CLIENTS; i++ ) {
 			if ( i == clientNum ) {
 				continue;
 			}
 
 			idPlayer* player = gameLocal.GetClient( i );
-			
+
 			if ( !player ) {
 				continue;
 			}
@@ -4610,7 +4610,7 @@ bool idBotThreadData::FindRandomBotName( int clientNum, idStr& botName ) {
 
 		if ( i == MAX_CLIENTS ) {
 			botName = tempBotNames[ k ];
-			foundName = true; 
+			foundName = true;
 			break;
 		}
 
@@ -4666,7 +4666,7 @@ idBotThreadData::CheckCurrentChatRequests
 */
 void idBotThreadData::CheckCurrentChatRequests() {
 
-	if ( nextChatUpdateTime > gameLocal.time ) { 
+	if ( nextChatUpdateTime > gameLocal.time ) {
 		return;
 	}
 
@@ -4701,7 +4701,7 @@ void idBotThreadData::CheckCurrentChatRequests() {
 			if ( bot.inGame == false || bot.team == NOTEAM ) {
 				continue;
 			}
-	
+
 			if ( !bot.isBot ) {
 				continue;
 			}
@@ -4751,7 +4751,7 @@ void idBotThreadData::CheckCurrentChatRequests() {
 			if ( bot.inGame == false || bot.team == NOTEAM ) {
 				continue;
 			}
-	
+
 			if ( !bot.isBot ) {
 				continue;
 			}
@@ -4793,7 +4793,7 @@ void idBotThreadData::CheckCurrentChatRequests() {
 			if ( bot.inGame == false || bot.team == NOTEAM ) {
 				continue;
 			}
-	
+
 			if ( !bot.isBot ) {
 				continue;
 			}
@@ -4909,7 +4909,7 @@ void idBotThreadData::UpdateClientAbilities( int clientNum, int rankLevel ) {
 idBotThreadData::ClientIsValid
 ============
 */
-bool idBotThreadData::ClientIsValid( int clientNum ) { 
+bool idBotThreadData::ClientIsValid( int clientNum ) {
 	if ( clientNum < 0 || clientNum >= MAX_CLIENTS ) {
 		if ( botThreadData.AllowDebugData() ) {
 			assert( false );
@@ -4991,7 +4991,7 @@ void idBotThreadData::ClearClientBoundEntities( int clientNum ) {
 idBotThreadData::CheckBotClassSpread
 ============
 */
-void idBotThreadData::CheckBotClassSpread() { 
+void idBotThreadData::CheckBotClassSpread() {
 	if( !gameLocal.isServer ) {
 		return;
 	}
@@ -5111,7 +5111,7 @@ void idBotThreadData::CheckBotSpawnLocation( idPlayer* player ) {
 
 	if ( playerInfo.team == STROGG ) {
 		idEntity* spawnHost = player->GetSpawnPoint();
-		
+
 		if ( spawnHost != NULL && spawnHost->IsType( sdDynamicSpawnPoint::Type ) ) {
 			return;
 		} else {
@@ -5166,10 +5166,10 @@ void idBotThreadData::CheckBotSpawnLocation( idPlayer* player ) {
 
 			if ( vehicleNum == -1 ) {
 				useRearSpawn = false;
-			}				
+			}
 		}
-			
-		if ( useRearSpawn && gameLocal.random.RandomInt( 100 ) < percentage && GetNumTeamBotsSpawningAtRearBase( botTeam ) < MAX_REAR_SPAWN_NUMBER ) {	
+
+		if ( useRearSpawn && gameLocal.random.RandomInt( 100 ) < percentage && GetNumTeamBotsSpawningAtRearBase( botTeam ) < MAX_REAR_SPAWN_NUMBER ) {
 			player->SetSpawnPoint( team->GetHomeBaseSpawn() );
 			playerInfo.wantsVehicle = true;
 		}
@@ -5185,7 +5185,7 @@ Expanded to make an intelligent choice as to whether or not the bot should spawn
 */
 int idBotThreadData::FindHeavyVehicleNearLocation( idPlayer* player, const idVec3& org, float range ) {
 	bool hasAirVehicleGoal = false;
-	bool hasArmorGoal = false;	
+	bool hasArmorGoal = false;
 	int entNum = -1;
 	float closest = idMath::INFINITY;
 	sdTeamInfo* playerTeam = player->GetTeam();
@@ -5268,7 +5268,7 @@ int idBotThreadData::FindHeavyVehicleNearLocation( idPlayer* player, const idVec
 	    if ( !vehicle.isEmpty ) {
 			continue;
 		}
-	
+
 		if ( !vehicle.inPlayZone ) {
 			continue;
 		}
@@ -5529,11 +5529,11 @@ idBotThreadData::DrawActionNumber
 */
 void idBotThreadData::DrawActionNumber( int actionNumber, const idMat3& viewAxis, bool drawAllInfo ) {
 	idVec3 end = botActions[ actionNumber ]->origin;
-	
+
 	end.z += 64.0f;
 
 	gameRenderWorld->DebugLine( colorGreen, botActions[ actionNumber ]->origin, end, 16 );
-		
+
 	end.z += 8.0f;
 
 	gameRenderWorld->DrawText( va( "Action: %i", actionNumber ), end, bot_drawActionSize.GetFloat(), colorWhite, viewAxis );
@@ -5565,11 +5565,11 @@ void idBotThreadData::DrawActionNumber( int actionNumber, const idMat3& viewAxis
 	end.z -= 16.0f;
 
 	gameRenderWorld->DrawText( va( "Team Owner: %i     Has Obj: %i", botActions[ actionNumber ]->GetTeamOwner(), botActions[ actionNumber ]->hasObj ), end, 0.2f, colorWhite, viewAxis );
-			
+
 	end.z -= 16.0f;
 
 	gameRenderWorld->DrawText( va( "Action State: %i     Disguise Safe: %i", botActions[ actionNumber ]->actionState, botActions[ actionNumber ]->disguiseSafe ), end, 0.2f, colorWhite, viewAxis );
-	
+
 	end.z -= 16.0f;
 
 	gameRenderWorld->DrawText( va( "No Hack: %i     Requires Vehicle Type: %i", botActions[ actionNumber ]->noHack, botActions[ actionNumber ]->requiresVehicleType ), end, 0.2f, colorWhite, viewAxis );
@@ -5583,7 +5583,7 @@ void idBotThreadData::DrawActionNumber( int actionNumber, const idMat3& viewAxis
 			gameRenderWorld->DebugBox( colorRed, botActions[ actionNumber ]->actionBBox );
 			gameRenderWorld->DebugArrow( colorLtBlue, botActions[ actionNumber ]->actionBBox.GetCenter(), botActions[ actionNumber ]->origin, 16 );
 		}
-	
+
 		gameRenderWorld->DebugCircle( colorBlue, botActions[ actionNumber ]->origin, idVec3( 0, 0, 1 ), botActions[ actionNumber ]->radius, 8 );
 
 		for( int j = 0; j < MAX_LINKACTIONS; j++ ) {
@@ -5700,7 +5700,7 @@ void idBotThreadData::VehicleRouteThink( bool setup, int& routeActionNumber, con
 			}
 
 			idVec3 vec = botThreadData.botActions[ mcpRoutes[ i ] ]->GetActionOrigin() - vehicleOrg;
-			
+
 			if ( vec.LengthSqr() < Square( botThreadData.botActions[ mcpRoutes[ i ] ]->GetRadius() ) ) {
 				routeActionNumber = ACTION_NULL;
 				break;
@@ -5725,7 +5725,7 @@ void idBotThreadData::ManageBotClassesOnSmallServer() {
 		playerClassTypes_t criticalClass = NOCLASS;
 		playerClassTypes_t desiredBotClass = NOCLASS;
 		const sdDeclPlayerClass* pc;
-		
+
 		if ( t == GDF ) {
 			botTeam = GDF;
 			criticalClass = GetGameWorldState()->botGoalInfo.team_GDF_criticalClass;
@@ -5746,7 +5746,7 @@ void idBotThreadData::ManageBotClassesOnSmallServer() {
 		int numCovert = GetNumClassOnTeam( botTeam, COVERTOPS );
 		int numSoldier = GetNumClassOnTeam( botTeam, SOLDIER );
 		int numRLOnTeam = GetNumWeaponsOnTeam( botTeam, ROCKET );
-		int	numHeavyOnTeam = GetNumWeaponsOnTeam( botTeam, HEAVY_MG ); 
+		int	numHeavyOnTeam = GetNumWeaponsOnTeam( botTeam, HEAVY_MG );
 		int numCritical;
 
 		if ( criticalClass != NOCLASS && bot_doObjectives.GetBool() ) {
@@ -5890,7 +5890,7 @@ void idBotThreadData::ManageBotClassesOnSmallServer() {
 			}
 
 			player->ChangeClass( pc, weaponLoadOut );
-					
+
 			if ( player->GetHealth() > 0 ) {
 			player->Kill( NULL ); //mal: hurry up and suicide, and get back into the game as our new class!
 			}
@@ -5944,7 +5944,7 @@ void idBotThreadData::ManageBotClassesOnSmallServer() {
 				continue;
 			}
 			}
-	
+
 			if ( t == GDF ) {
 				pc = gameLocal.declPlayerClassType[ "soldier" ];
 			} else if ( t == STROGG ) {
@@ -5984,7 +5984,7 @@ void idBotThreadData::ManageBotClassesOnSmallServer() {
 
 				player->ChangeClass( pc, switchWeaponNumber );
 				lastWeapChangedTime = gameLocal.time;
-				
+
 				if ( gameLocal.rules->IsWarmup() ) {
 					player->Kill( NULL ); //mal: hurry up and suicide, and get back into the game with our new weapon!
 				}
@@ -6051,7 +6051,7 @@ void idBotThreadData::ManageBotClassesOnSmallServer() {
 			}
 
 			const sdDeclPlayerClass* pc;
-	
+
 			if ( t == GDF ) {
 				pc = gameLocal.declPlayerClassType[ "covertops" ];
 			} else if ( t == STROGG ) {
@@ -6169,7 +6169,7 @@ void idBotThreadData::FindBotToBeActor() {
 		if ( !ClientIsValid( i ) ) {
 			continue;
 		}
-				
+
 		clientInfo_t& playerInfo = GetGameWorldState()->clientInfo[ i ];
 
 		if ( !playerInfo.inGame ) {
@@ -6279,7 +6279,7 @@ void idBotThreadData::TrainingThink() {
 			for( int i = 0; i < gameLocal.declAmmoTypeType.Num(); i++ ) {
 				inventory.SetAmmo( i, inventory.GetMaxAmmo( i ) );
 			}
-		}		
+		}
 	}
 
 	if ( gameLocal.numClients == bot_minClients.GetInteger() && actorMissionInfo.setupBotNames ) {
@@ -6350,7 +6350,7 @@ idBotThreadData::DeactivateBadMapActions
 This is a nasty, 11th hour, 59th minute, 59th second hack! No time to remove these actions ingame, so just disable them.
 ============
 */
-void idBotThreadData::DeactivateBadMapActions() { 
+void idBotThreadData::DeactivateBadMapActions() {
 	if ( GetGameWorldState()->gameLocalInfo.gameMap == QUARRY ) { //mal: these actions face the GDF spawn, and their APTs - leading to MANY Strogg deaths.
 		int actionNumber = botThreadData.FindActionByName( "strogg_jammer_3" );
 
@@ -6383,9 +6383,9 @@ idBotThreadData::CheckIfClientsInGameYet
 */
 bool idBotThreadData::CheckIfClientsInGameYet() {
 	bool hasPlayers = false;
-	
+
 	for( int i = 0; i < MAX_CLIENTS; i++ ) {
-		
+
 		if ( !GetBotWorldState()->clientInfo[ i ].inGame ) {
 			continue;
 		}
@@ -6395,7 +6395,7 @@ bool idBotThreadData::CheckIfClientsInGameYet() {
 		}
 
 		idPlayer* player = gameLocal.GetClient( i );
-		
+
 		if ( player == NULL ) {
 			continue;
 		}

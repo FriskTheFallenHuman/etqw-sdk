@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 
@@ -233,7 +233,7 @@ idRotation idMat3::ToRotation( void ) const {
 
 		t = trace + 1.0f;
 		s = idMath::InvSqrt( t ) * 0.5f;
-    
+
 		r.angle = s * t;
 		r.vec[0] = ( mat[ 2 ][ 1 ] - mat[ 1 ][ 2 ] ) * s;
 		r.vec[1] = ( mat[ 0 ][ 2 ] - mat[ 2 ][ 0 ] ) * s;
@@ -248,12 +248,12 @@ idRotation idMat3::ToRotation( void ) const {
 		if ( mat[ 2 ][ 2 ] > mat[ i ][ i ] ) {
 			i = 2;
 		}
-		j = next[ i ];  
+		j = next[ i ];
 		k = next[ j ];
-    
+
 		t = ( mat[ i ][ i ] - ( mat[ j ][ j ] + mat[ k ][ k ] ) ) + 1.0f;
 		s = idMath::InvSqrt( t ) * 0.5f;
-    
+
 		r.vec[i]	= s * t;
 		r.angle		= ( mat[ k ][ j ] - mat[ j ][ k ] ) * s;
 		r.vec[j]	= ( mat[ j ][ i ] + mat[ i ][ j ] ) * s;
@@ -603,7 +603,7 @@ idMat4::Transpose
 idMat4 idMat4::Transpose( void ) const {
 	idMat4	transpose;
 	int		i, j;
-   
+
 	for( i = 0; i < 4; i++ ) {
 		for( j = 0; j < 4; j++ ) {
 			transpose[ i ][ j ] = mat[ j ][ i ];
@@ -620,7 +620,7 @@ idMat4::TransposeSelf
 idMat4 &idMat4::TransposeSelf( void ) {
 	float	temp;
 	int		i, j;
-   
+
 	for( i = 0; i < 4; i++ ) {
 		for( j = i + 1; j < 4; j++ ) {
 			temp = mat[ i ][ j ];
@@ -1038,7 +1038,7 @@ idMat5::Transpose
 idMat5 idMat5::Transpose( void ) const {
 	idMat5	transpose;
 	int		i, j;
-   
+
 	for( i = 0; i < 5; i++ ) {
 		for( j = 0; j < 5; j++ ) {
 			transpose[ i ][ j ] = mat[ j ][ i ];
@@ -1055,7 +1055,7 @@ idMat5::TransposeSelf
 idMat5 &idMat5::TransposeSelf( void ) {
 	float	temp;
 	int		i, j;
-   
+
 	for( i = 0; i < 5; i++ ) {
 		for( j = i + 1; j < 5; j++ ) {
 			temp = mat[ i ][ j ];
@@ -1152,7 +1152,7 @@ bool idMat5::InverseSelf( void ) {
 	// determinant of 5x5 matrix
 	det = mat[0][0] * det4_1234_1234 - mat[0][1] * det4_1234_0234 + mat[0][2] * det4_1234_0134 - mat[0][3] * det4_1234_0124 + mat[0][4] * det4_1234_0123;
 
-	if( idMath::Fabs( det ) < MATRIX_INVERSE_EPSILON ) {  
+	if( idMath::Fabs( det ) < MATRIX_INVERSE_EPSILON ) {
 		return false;
 	}
 
@@ -1312,7 +1312,7 @@ bool idMat5::InverseFastSelf( void ) {
 	// determinant of 5x5 matrix
 	det = mat[0][0] * det4_1234_1234 - mat[0][1] * det4_1234_0234 + mat[0][2] * det4_1234_0134 - mat[0][3] * det4_1234_0124 + mat[0][4] * det4_1234_0123;
 
-	if( idMath::Fabs( det ) < MATRIX_INVERSE_EPSILON ) {  
+	if( idMath::Fabs( det ) < MATRIX_INVERSE_EPSILON ) {
 		return false;
 	}
 
@@ -1731,7 +1731,7 @@ idMat6::Transpose
 idMat6 idMat6::Transpose( void ) const {
 	idMat6	transpose;
 	int		i, j;
-   
+
 	for( i = 0; i < 6; i++ ) {
 		for( j = 0; j < 6; j++ ) {
 			transpose[ i ][ j ] = mat[ j ][ i ];
@@ -1748,7 +1748,7 @@ idMat6::TransposeSelf
 idMat6 &idMat6::TransposeSelf( void ) {
 	float	temp;
 	int		i, j;
-   
+
 	for( i = 0; i < 6; i++ ) {
 		for( j = i + 1; j < 6; j++ ) {
 			temp = mat[ i ][ j ];
@@ -3909,7 +3909,7 @@ bool idMatX::LU_Factor( int *index, float *det ) {
 	}
 
 	return true;
-}   
+}
 
 /*
 ============
@@ -5385,10 +5385,10 @@ bool idMatX::Cholesky_UpdateRowColumn( const idVecX &v, int r ) {
 #if _MSC_VER == 1310
 			double sum2 = sum * sum;
 			sum = sum2 + v[0];
-#else	 
+#else
 			sum = sum * sum + v[0];
 #endif	// _MSC_VER has value
-#else	// _MSC_VER undefined	 
+#else	// _MSC_VER undefined
 			sum = sum * sum + v[0];
 #endif
 			if ( sum <= 0.0f ) {
@@ -6693,7 +6693,7 @@ bool idMatX::HessenbergToRealSchur( idMatX &H, idVecX &realEigenValues, idVecX &
 			}
 			l--;
 		}
-	   
+
 		// check for convergence
 		if ( l == n ) {			// one root found
 			H[n][n] = H[n][n] + exshift;
@@ -6901,7 +6901,7 @@ bool idMatX::HessenbergToRealSchur( idMatX &H, idVecX &realEigenValues, idVecX &
 			}
 		}
 	}
-	
+
 	// backsubstitute to find vectors of upper triangular form
 	if ( norm == 0.0f ) {
 		return false;
@@ -7241,7 +7241,7 @@ void idMatX::Test( void ) {
 	// invert m1
 	m1.Inverse_GaussJordan();
 
-	// modify and invert m2 
+	// modify and invert m2
 	m2.Update_RankOne( v, w, 1.0f );
 	if ( !m2.Inverse_GaussJordan() ) {
 		assert( 0 );
@@ -7297,7 +7297,7 @@ void idMatX::Test( void ) {
 	// invert m1
 	m1.Inverse_GaussJordan();
 
-	// modify and invert m2 
+	// modify and invert m2
 	m2.Update_Increment( v, w );
 	if ( !m2.Inverse_GaussJordan() ) {
 		assert( 0 );
@@ -7369,7 +7369,7 @@ void idMatX::Test( void ) {
 	// factor m1
 	m1.LU_Factor( index1 );
 
-	// modify and factor m2 
+	// modify and factor m2
 	m2.Update_RankOne( v, w, 1.0f );
 	if ( !m2.LU_Factor( index2 ) ) {
 		assert( 0 );
@@ -7433,7 +7433,7 @@ void idMatX::Test( void ) {
 	// factor m1
 	m1.LU_Factor( index1 );
 
-	// modify and factor m2 
+	// modify and factor m2
 	m2.Update_Increment( v, w );
 	if ( !m2.LU_Factor( index2 ) ) {
 		assert( 0 );
@@ -7539,7 +7539,7 @@ void idMatX::Test( void ) {
 	m1.QR_Factor( c, d );
 	m1.QR_UnpackFactors( q1, r1, c, d );
 
-	// modify and factor m2 
+	// modify and factor m2
 	m2.Update_RankOne( v, w, 1.0f );
 	if ( !m2.QR_Factor( c, d ) ) {
 		assert( 0 );
@@ -7609,7 +7609,7 @@ void idMatX::Test( void ) {
 	m1.QR_Factor( c, d );
 	m1.QR_UnpackFactors( q1, r1, c, d );
 
-	// modify and factor m2 
+	// modify and factor m2
 	m2.Update_Increment( v, w );
 	if ( !m2.QR_Factor( c, d ) ) {
 		assert( 0 );
@@ -7735,7 +7735,7 @@ void idMatX::Test( void ) {
 	m1.Cholesky_Factor();
 	m1.ClearUpperTriangle();
 
-	// modify and factor m2 
+	// modify and factor m2
 	m2.Update_RankOneSymmetric( w, 1.0f );
 	if ( !m2.Cholesky_Factor() ) {
 		assert( 0 );
@@ -7798,7 +7798,7 @@ void idMatX::Test( void ) {
 	// factor m1
 	m1.Cholesky_Factor();
 
-	// modify and factor m2 
+	// modify and factor m2
 	m2.Update_IncrementSymmetric( w );
 	if ( !m2.Cholesky_Factor() ) {
 		assert( 0 );
@@ -7891,7 +7891,7 @@ void idMatX::Test( void ) {
 	m1.LDLT_Factor();
 	m1.ClearUpperTriangle();
 
-	// modify and factor m2 
+	// modify and factor m2
 	m2.Update_RankOneSymmetric( w, 1.0f );
 	if ( !m2.LDLT_Factor() ) {
 		assert( 0 );
@@ -7952,7 +7952,7 @@ void idMatX::Test( void ) {
 	// factor m1
 	m1.LDLT_Factor();
 
-	// modify and factor m2 
+	// modify and factor m2
 	m2.Update_IncrementSymmetric( w );
 	if ( !m2.LDLT_Factor() ) {
 		assert( 0 );

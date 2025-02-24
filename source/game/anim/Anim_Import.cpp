@@ -1,6 +1,6 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,10 +11,10 @@ static char THIS_FILE[] = __FILE__;
 
 #if defined( ID_ALLOW_TOOLS )
 
-#include "../../MayaImport/maya_main.h"
+#include "MayaImport/maya_main.h"
 
 #include "Anim.h"
-#include "../../framework/Licensee.h"
+#include "framework/Licensee.h"
 
 /***********************************************************************
 
@@ -136,7 +136,7 @@ void idModelExport::LoadMayaDll( void ) {
 	}
 
 	// look up the dll interface functions
-	dllEntry = ( exporterDLLEntry_t )sys->DLL_GetProcAddress( importDLL, "dllEntry" ); 
+	dllEntry = ( exporterDLLEntry_t )sys->DLL_GetProcAddress( importDLL, "dllEntry" );
 	Maya_ConvertModel = ( exporterInterface_t )sys->DLL_GetProcAddress( importDLL, "Maya_ConvertModel" );
 	Maya_Shutdown = ( exporterShutdown_t )sys->DLL_GetProcAddress( importDLL, "Maya_Shutdown" );
 	if ( !Maya_ConvertModel || !dllEntry || !Maya_Shutdown ) {
@@ -144,8 +144,8 @@ void idModelExport::LoadMayaDll( void ) {
 		Maya_Shutdown = NULL;
 		sys->DLL_Unload( importDLL );
 		importDLL = 0;
-		
-		gameLocal.Error( "Invalid interface on export DLL. Reasons ( %s %s %s )", 
+
+		gameLocal.Error( "Invalid interface on export DLL. Reasons ( %s %s %s )",
 			!dllEntry ? "No dllEntry" : "",
 			!Maya_ConvertModel ? "No Model Conversion Routine" : "",
 			!Maya_Shutdown ? "No Maya Shutdown Routine" : ""
@@ -169,7 +169,7 @@ void idModelExport::LoadMayaDll( void ) {
 =====================
 idModelExport::ConvertMayaToMD5
 
-Checks if a Maya model should be converted to an MD5, and converts if if the time/date or 
+Checks if a Maya model should be converted to an MD5, and converts if if the time/date or
 version number has changed.
 =====================
 */
@@ -257,7 +257,7 @@ bool idModelExport::ConvertMayaToMD5( void ) {
 	if ( Maya_Error != "Ok" ) {
 		return false;
 	}
-	
+
 	// conversion succeded
 	return true;
 }

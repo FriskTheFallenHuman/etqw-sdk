@@ -500,7 +500,7 @@ idBitMsg::ReadString
 */
 int idBitMsg::ReadString( char *buffer, int bufferSize ) const {
 	int	l, c;
-	
+
 	ReadByteAlign();
 	l = 0;
 	while ( true ) {
@@ -518,7 +518,7 @@ int idBitMsg::ReadString( char *buffer, int bufferSize ) const {
 			l++;
 		}
 	}
-	
+
 	buffer[l] = '\0';
 	return l;
 }
@@ -531,7 +531,7 @@ idBitMsg::ReadString
 int idBitMsg::ReadString( wchar_t *buffer, int bufferSize ) const {
 	int	l, d;
 	wchar_t c;
-	
+
 	ReadByteAlign();
 	l = 0;
 	while ( true ) {
@@ -554,7 +554,7 @@ int idBitMsg::ReadString( wchar_t *buffer, int bufferSize ) const {
 			l++;
 		}
 	}
-	
+
 	buffer[l] = L'\0';
 	return l;
 }
@@ -592,7 +592,7 @@ idBitMsg::ReadNetadr
 */
 void idBitMsg::ReadNetadr( netadr_t *adr ) const {
 	int i;
- 
+
 	adr->type = NA_IP;
 	for ( i = 0; i < 4; i++ ) {
 		adr->ip[ i ] = ReadByte();

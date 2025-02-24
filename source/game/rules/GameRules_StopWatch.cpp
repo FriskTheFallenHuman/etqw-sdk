@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -11,11 +11,11 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 #include "GameRules_StopWatch.h"
-#include "../Player.h"
-#include "../script/Script_Helper.h"
-#include "../script/Script_ScriptObject.h"
-#include "../guis/UserInterfaceLocal.h"
-#include "../rules/VoteManager.h"
+#include "Player.h"
+#include "script/Script_Helper.h"
+#include "script/Script_ScriptObject.h"
+#include "guis/UserInterfaceLocal.h"
+#include "rules/VoteManager.h"
 
 idCVar g_stopWatchMode( "g_stopWatchMode", "0", CVAR_GAME | CVAR_INTEGER, "stopwatch mode, 0 = ABBA, 1 = ABAB" );
 
@@ -191,7 +191,7 @@ void sdGameRulesStopWatch::GameState_NextMap( void ) {
 	}
 
 	if( gameLocal.DoClientSideStuff() ) {
-		UpdateClientFromServerInfo( gameLocal.serverInfo, false );				
+		UpdateClientFromServerInfo( gameLocal.serverInfo, false );
 	}
 
 	winningTeam = NULL;
@@ -229,7 +229,7 @@ void sdGameRulesStopWatch::GameState_NextMap( void ) {
 			}
 			player->SetGameTeam( newTeam );
 			if ( cls ) {
-				player->GetInventory().GiveClass( cls, true ); 
+				player->GetInventory().GiveClass( cls, true );
 			}
 		}
 
@@ -302,7 +302,7 @@ void sdGameRulesStopWatch::EndGame( void ) {
 	if ( !gameLocal.isClient ) {
 		if ( progression == GP_FIRST_MATCH ) {
 			timeToBeat = gameLocal.time - matchStartedTime;
-			
+
 			if ( attackingTeams[ progression ] != NULL ) {
 				attackingTeamXPs[ progression ] = attackingTeams[ progression ]->GetTotalXP();
 			}
@@ -468,7 +468,7 @@ sdGameRulesStopWatch::GetGameTime
 ================
 */
 int sdGameRulesStopWatch::GetGameTime( void ) const {
-	int ms;	
+	int ms;
 
 	if ( gameState == GS_WARMUP ) {
 		ms = 0;
@@ -554,7 +554,7 @@ void sdGameRulesStopWatch::UpdateClientFromServerInfo( const idDict& serverInfo,
 	// update status
 	if ( sdUserInterfaceScope* scope = gameLocal.globalProperties.GetSubScope( "campaignInfo" ) ) {
 		const idDict* metaData = gameLocal.mapMetaDataList->FindMetaData( mapName, &gameLocal.defaultMetaData );
-		
+
 		if( allowMedia ) {
 			const sdDeclMapInfo* mapInfo = gameLocal.declMapInfoType.LocalFind( metaData->GetString( "mapinfo", "_default" ) );
 			// setup the backdrop
@@ -573,7 +573,7 @@ void sdGameRulesStopWatch::UpdateClientFromServerInfo( const idDict& serverInfo,
 		// setup the name
 		if ( sdProperty* property = scope->GetProperty( "name", PT_WSTRING ) ) {
 			*property->value.wstringValue = va( L"%hs", metaData->GetString( "pretty_name" ) );
-		}	
+		}
 
 		if ( sdProperty* property = scope->GetProperty( "numMaps", PT_FLOAT ) ) {
 			*property->value.floatValue = 1.0f;
@@ -595,7 +595,7 @@ void sdGameRulesStopWatch::UpdateClientFromServerInfo( const idDict& serverInfo,
 		// setup the status
 		if ( sdProperty* property = scope->GetProperty( "ruleStatus", PT_WSTRING ) ) {
 			*property->value.wstringValue = text;
-		}	
+		}
 	}
 }
 
@@ -739,7 +739,7 @@ void sdGameRulesStopWatch::OnTimeLimitHit( void ) {
 
 			// record the XP
 			attackingTeamXPs[ progression ] = attackingTeams[ progression ]->GetTotalXP();
-			
+
 			// time ran out without this team having completed all the objectives!
 			sdTeamInfo* firstRoundAttackTeam = defendingTeams[ GP_RETURN_MATCH ];
 			sdTeamInfo* returnRoundAttackTeam = attackingTeams[ GP_RETURN_MATCH ];
@@ -785,7 +785,7 @@ void sdGameRulesStopWatch::OnTimeLimitHit( void ) {
 			//
 			// NOTE: after all this if by some crazy fluke the XP is identical (or if no-one did anything)
 			//       it is counted as the first team winning
-			if ( attackingTeamXPs[ GP_FIRST_MATCH ] >= attackingTeamXPs[ GP_RETURN_MATCH ] ) {			
+			if ( attackingTeamXPs[ GP_FIRST_MATCH ] >= attackingTeamXPs[ GP_RETURN_MATCH ] ) {
 				SetWinner( firstRoundAttackTeam );
 				winReason = WR_XP;
 				return;

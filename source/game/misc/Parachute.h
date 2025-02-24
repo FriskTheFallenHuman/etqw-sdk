@@ -4,7 +4,7 @@
 #ifndef __GAME_MISC_PARACHUTE_H__
 #define __GAME_MISC_PARACHUTE_H__
 
-#include "../ScriptEntity.h"
+#include "ScriptEntity.h"
 
 class sdParachute : public sdScriptEntity {
 	CLASS_PROTOTYPE( sdParachute );

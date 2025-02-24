@@ -169,7 +169,7 @@ class sdAddonMetaDataList {
 	friend class idFileSystemLocal;
 public:
 
-							~sdAddonMetaDataList( void ) { 
+							~sdAddonMetaDataList( void ) {
 								for( int i = 0; i < meta.Num(); i++ ) {
 									delete meta[ i ].meta;
 								}
@@ -239,7 +239,7 @@ public:
 							// Frees the given mod list
 	virtual void			FreeModList( idModList *modList ) = 0;
 							// Lists dll files with the directories specified by fs_toolsPath
-							// Directory should not have either a leading or trailing '/'														
+							// Directory should not have either a leading or trailing '/'
 	virtual idFileList *	ListTools() = 0;
 							// Lists files with the given extension in the given directory.
 							// Directory should not have either a leading or trailing '/'
@@ -387,7 +387,7 @@ public:
 	virtual void			ReportLevelLoadStatistics() = 0;
 
 							// is the pack currently referenced?
-	virtual bool			IsAddonPackReferenced( const char* pak ) = 0;		
+	virtual bool			IsAddonPackReferenced( const char* pak ) = 0;
 							// ensure that the pack is loaded after the next pure restart
 	virtual void			ReferenceAddonPack( const char* pak ) = 0;
 

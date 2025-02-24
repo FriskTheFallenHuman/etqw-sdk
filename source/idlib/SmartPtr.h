@@ -32,7 +32,7 @@ public:
 					explicit sdSmartPtr( Pointer p = NULL ) : pointee( p ), isWeak( false ) {
 						count = GetCountAllocator().Alloc();
 						*count = 1;
-						sdDetail_AssignThis( pointee, *this );						
+						sdDetail_AssignThis( pointee, *this );
 					}
 
 					explicit sdSmartPtr( idNullPtr p ) : pointee( p ), isWeak( false ) {
@@ -64,7 +64,7 @@ public:
 						isWeak	= true;
 					}
 	int				Num() const {
-						return *count;	
+						return *count;
 					}
 
 	template< class U >
@@ -126,7 +126,7 @@ protected:
 
 	// we don't support this, use != NULL instead
 	bool			operator!() const;
-	
+
 	void			MakeWeak() {
 						assert( pointee == NULL || isWeak );
 						if( !isWeak ) {
@@ -169,7 +169,7 @@ public:
 	mutable sdSmartPtr< T > thisPtr;
 };
 
-template< class T > 
+template< class T >
 void sdDetail_AssignThis( const sdSmartPtrFromThis< T >* p, const sdSmartPtr< T >& ptr ) {
 	if( p != NULL ) {
 		p->thisPtr.ResetWeak( ptr );

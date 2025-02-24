@@ -24,7 +24,7 @@ enum extrapolation_t {
 
 template< class type >
 class idExtrapolate {
-	
+
 public:
 						idExtrapolate();
 

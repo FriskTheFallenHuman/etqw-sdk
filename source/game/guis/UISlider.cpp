@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #if defined( _DEBUG ) && !defined( ID_REDIRECT_NEWDELETE )
@@ -16,8 +16,8 @@ static char THIS_FILE[] = __FILE__;
 #include "UISlider.h"
 #include "UserInterfaceManager.h"
 
-#include "../../sys/sys_local.h"
-#include "../../idlib/Sort.h"
+#include "sys/sys_local.h"
+#include "idlib/Sort.h"
 
 SD_UI_IMPLEMENT_CLASS( sdUISlider, sdUIWindow )
 
@@ -37,7 +37,7 @@ const char* sdUISlider::eventNames[ SE_NUM_EVENTS - WE_NUM_EVENTS ] = {
 	SD_UI_EVENT_TAG( "onMouseEnterDownArrow",		"", "Called when the mouse enters the down arrow." ),
 	SD_UI_EVENT_TAG( "onMouseExitDownArrow",		"", "Called when the mouse exits the down arrow." ),
 	SD_UI_EVENT_TAG( "onMouseEnterGutter",			"", "Called when the mouse enters the gutter." ),
-	SD_UI_EVENT_TAG( "onMouseExitGutter",			"", "Called when the mouse exits the gutter." ),	
+	SD_UI_EVENT_TAG( "onMouseExitGutter",			"", "Called when the mouse exits the gutter." ),
 	SD_UI_EVENT_TAG( "onMouseDownUpArrow",			"", "Called when the left mouse button is pressed on the up arrow." ),
 	SD_UI_EVENT_TAG( "onMouseUpUpArrow",			"", "Called when the left mouse button is depressed on the up arrow." ),
 	SD_UI_EVENT_TAG( "onMouseDownDownArrow",		"", "Called when the left mouse button is pressed on the down arrow." ),
@@ -96,13 +96,13 @@ sdUISlider::sdUISlider() :
 	upArrowColor		= colorWhite;
 	downArrowColor		= colorWhite;
 	fillColor			= colorWhite;
-	
+
 	position = 0.0f;
 	range = idVec2( 0.0f, 100.0f );
 	orientation = SO_VERTICAL;
 
 	SetWindowFlag( WF_ALLOW_FOCUS );
-	
+
 	scrollbarParts.SetNum( SBP_MAX );
 }
 
@@ -141,7 +141,7 @@ sdUISlider::GetFunction
 */
 sdUIFunctionInstance* sdUISlider::GetFunction( const char* name ) {
 	const SliderTemplateFunction* function = sdUISlider::FindFunction( name );
-	if ( !function ) {		
+	if ( !function ) {
 		return sdUIWindow::GetFunction( name );
 	}
 
@@ -185,7 +185,7 @@ void sdUISlider::DrawLocal() {
 			position = idMath::ClampFloat( range.GetValue().x, range.GetValue().y, position + scrollDirection );
 			lastScrollTime = ui->GetCurrentTime();
 		}
-	}	
+	}
 
 	// thumb
 	const uiDrawPart_t& top			= scrollbarParts[ SBP_BACK_TOP ];
@@ -198,11 +198,11 @@ void sdUISlider::DrawLocal() {
 
 	idVec4 rect;
 	GetScrollbarButtonRect( GUTTER_AREA, rect );
-	
+
 	sdBounds2D bounds( rect );
 	if( orientation == SO_HORIZONTAL ) {
 		bounds.GetMaxs().x = bounds.GetMins().x + ( thumbRect.x - rect.x );
-		
+
 		deviceContext->PushClipRect( bounds );
 		DrawThreeHorizontalParts( rect, fillColor, materialScale, fillTop, fillCenter, fillBottom );
 		deviceContext->PopClipRect();
@@ -217,7 +217,7 @@ void sdUISlider::DrawLocal() {
 
 		DrawThreeVerticalParts( rect, borderColor, materialScale, top, center, bottom );
 	}
-	
+
 	DrawMaterial( scrollbarParts[ SBP_THUMB ].mi, thumbRect.x, thumbRect.y, thumbRect.z, thumbRect.w, thumbColor );
 	DrawMaterial( scrollbarParts[ SBP_THUMB_OVERLAY ].mi, thumbRect.x, thumbRect.y, thumbRect.z, thumbRect.w, thumbOverlayColor );
 
@@ -226,7 +226,7 @@ void sdUISlider::DrawLocal() {
 
 	GetScrollbarButtonRect( DOWN_BUTTON, rect );
 	DrawMaterial( scrollbarParts[ SBP_ARROW_DOWN ].mi, rect.x, rect.y, rect.z, rect.w, downArrowColor );
-	
+
 	DrawText();
 
 	// border
@@ -274,11 +274,11 @@ bool sdUISlider::CheckScrollbarButtonMouseOver( const sdSysEvent* event, const i
 	if( ( button != currentScrollButton ) && currentScrollButton != NO_BUTTON ) {
 		RunEvent( sdUIEventInfo( thumbButtonEvents[ currentScrollButton ].second, 0 ) );	// exit
 		currentScrollButton = NO_BUTTON;
-	} 
-	
+	}
+
 	if( button != NO_BUTTON && button != GUTTER_AREA && currentScrollButton == NO_BUTTON ) {
 		currentScrollButton = button;
-		RunEvent( sdUIEventInfo( thumbButtonEvents[ currentScrollButton ].first, 0 ) );		// enter				
+		RunEvent( sdUIEventInfo( thumbButtonEvents[ currentScrollButton ].first, 0 ) );		// enter
 	}
 
 	bool lastGutterState = flags.gutterHighlighted;
@@ -331,7 +331,7 @@ bool sdUISlider::CheckScrollbarButtonClick( const sdSysEvent* event, const idVec
 				retVal = true;
 				break;
 		}
-		
+
 		if( currentClickedScrollButton == GUTTER_AREA ) {
 			// scroll by a full page
 			scrollDirection *= pageStep;
@@ -342,7 +342,7 @@ bool sdUISlider::CheckScrollbarButtonClick( const sdSysEvent* event, const idVec
 				value = idMath::Floor( value );
 			}
 			position = value;
-			
+
 			// delay auto-scrolling to allow for a single click
 			lastScrollTime = GetUI()->GetCurrentTime() + 500;
 		}
@@ -358,7 +358,7 @@ sdUISlider::UpdateScrollbarDrag
 */
 bool sdUISlider::UpdateScrollbarDrag( const sdSysEvent* event, const idVec2& point ) {
 	// dragging the scroll thumb
-	if( event->IsMouseEvent() && flags.draggingThumb ) {		
+	if( event->IsMouseEvent() && flags.draggingThumb ) {
 
 		idVec4 rect;
 		GetScrollbarButtonRect( GUTTER_AREA, rect );
@@ -420,15 +420,15 @@ bool sdUISlider::PostEvent( const sdSysEvent* event ) {
 	}
 
 	idVec2 point( ui->cursorPos );
-	
-	if( UpdateScrollbarDrag( event, point ) || 
+
+	if( UpdateScrollbarDrag( event, point ) ||
 		CheckScrollbarButtonClick( event, point ) ) {
-		
+
 		return true;
 	}
 
 	bool retVal = sdUIWindow::PostEvent( event );
-	bool hitItem = false;	
+	bool hitItem = false;
 
 
 	if(	IsMouseClick( event ) && !cachedClippedRect.ContainsPoint( point ) ) {
@@ -478,7 +478,7 @@ bool sdUISlider::PostEvent( const sdSysEvent* event ) {
 			flags.draggingThumb = false;
 			scrollDirection = 0.0f;
 		}
-	}	
+	}
 	return retVal;
 }
 
@@ -559,7 +559,7 @@ void sdUISlider::EnumerateEvents( const char* name, const idList<unsigned short>
 	if ( !idStr::Icmp( name, "onEndScroll" ) ) {
 		events.Append( sdUIEventInfo( SE_END_SCROLL, 0 ) );
 		return;
-	}	
+	}
 
 	sdUIWindow::EnumerateEvents( name, flags, events, tokenCache );
 }
@@ -577,7 +577,7 @@ void sdUISlider::GetScrollbarButtonRect( eScrollButtonType button, idVec4& rect 
 	float positionClamped = idMath::ClampFloat( range.GetValue().x, range.GetValue().y, position );
 	float percent = ( rangeLocal <= idMath::FLT_EPSILON ) ? 0.0f : idMath::Fabs( ( positionClamped - range.GetValue().x ) / rangeLocal );
 
-	idVec2 thumbSize(	Max( scrollbarParts[ SBP_THUMB ].width, scrollbarParts[ SBP_THUMB_OVERLAY ].width ) * materialScale.GetValue().x, 
+	idVec2 thumbSize(	Max( scrollbarParts[ SBP_THUMB ].width, scrollbarParts[ SBP_THUMB_OVERLAY ].width ) * materialScale.GetValue().x,
 						Max( scrollbarParts[ SBP_THUMB ].height, scrollbarParts[ SBP_THUMB_OVERLAY ].height ) * materialScale.GetValue().y );
 	idVec2 arrowSize( scrollbarParts[ SBP_ARROW_UP ].width * materialScale.GetValue().x, scrollbarParts[ SBP_ARROW_UP ].height * materialScale.GetValue().y );
 
@@ -637,7 +637,7 @@ void sdUISlider::InitPartsForBaseMaterial( const char* material, uiCachedMateria
 		scrollbarParts[ i ].mi.material = NULL;
 		scrollbarParts[ i ].width = 0;
 		scrollbarParts[ i ].height = 0;
-		
+
 		bool globalLookup;
 		bool literal;
 		uiDrawMode_e mode;

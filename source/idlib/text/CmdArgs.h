@@ -40,7 +40,7 @@ private:
 #if defined ( SD_PUBLIC_BUILD )
 	static const int		MAX_COMMAND_ARGS = 64;
 	static const int		MAX_COMMAND_STRING = 2 * MAX_STRING_CHARS;
-#else 
+#else
 	static const int		MAX_COMMAND_ARGS = 256;
 	static const int		MAX_COMMAND_STRING = 8 * MAX_STRING_CHARS;
 #endif

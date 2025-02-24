@@ -51,7 +51,7 @@ public:
 	virtual void					FreeData();
 
 	static void						CacheFromDict( const idDict& dict );
-	
+
 	// Getters and setters
 	const idList< ambientLight_t >&	GetAmbientLights() const { return ambientLights; }
 	bool							IsIndoors() const { return indoors; }

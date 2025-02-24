@@ -72,7 +72,7 @@ public:
 	static idVec3	Plane2DFromVecs( const idVec2 &start, const idVec2 &dir, const bool normalize = false );
 	static bool		Plane2DIntersection( const idVec3 &plane1, const idVec3 &plane2, idVec2 &point );
 
-	void			Rotation( const idVec2& org, float angle );	
+	void			Rotation( const idVec2& org, float angle );
 	void			RotationST( const idVec2& org, float angle );
 	void			Scale( const idVec2& scale );
 
@@ -210,7 +210,7 @@ ID_INLINE bool idWinding2D::Plane2DIntersection( const idVec3 &plane1, const idV
 ID_INLINE void idWinding2D::GetBounds( sdBounds2D& bounds ) const {
 	bounds.Clear();
 
-	if ( !numPoints ) {		
+	if ( !numPoints ) {
 		return;
 	}
 
@@ -221,7 +221,7 @@ ID_INLINE void idWinding2D::GetBounds( sdBounds2D& bounds ) const {
 
 ID_INLINE void idWinding2D::GetBoundsST( sdBounds2D& bounds ) const {
 	bounds.Clear();
-	if ( !numPoints ) {		
+	if ( !numPoints ) {
 		return;
 	}
 

@@ -27,7 +27,7 @@ sdCompiledScriptType_WString::sdCompiledScriptType_WString( const sdCompiledScri
 void sdCompiledScriptType_WString::Format( const wchar_t* fmt, ... ) {
 #ifdef _CRT_NON_CONFORMING_SWPRINTS
 #error Using the new VC++ 2005 / C99 vswprintf API - incompatible with _CRT_NON_CONFORMING_SWPRINTS
-#endif 
+#endif
 	va_list argptr;
 	va_start( argptr, fmt );
 	vswprintf( value, MAX_COMPILED_STRING_LENGTH, fmt, argptr );

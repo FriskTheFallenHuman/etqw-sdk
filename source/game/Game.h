@@ -12,16 +12,16 @@
 ===============================================================================
 */
 
-#include "../sound/SoundShader.h"
-#include "../renderer/Material.h"
-#include "../framework/UsercmdGen.h"
-#include "../framework/Session.h"
-#include "../framework/async/NetworkSystem.h"
-#include "../framework/async/AllowFailureReason.h"
-#include "../framework/async/AsyncUpdates.h"
-#include "../framework/CmdSystem.h"
+#include "sound/SoundShader.h"
+#include "renderer/Material.h"
+#include "framework/UsercmdGen.h"
+#include "framework/Session.h"
+#include "framework/async/NetworkSystem.h"
+#include "framework/async/AllowFailureReason.h"
+#include "framework/async/AsyncUpdates.h"
+#include "framework/CmdSystem.h"
 
-#include "../game/botai/BotAI_Debug.h"
+#include "game/botai/BotAI_Debug.h"
 
 class idEntity;
 class idRenderWorld;
@@ -332,7 +332,7 @@ struct guiScope_t {
 	guiScope_t( const char* name_ = "", sdUserInterfaceScope* scope_ = NULL ) : name( name_ ), scope( scope_ ) {}
 	const char*				name;
 	sdUserInterfaceScope*	scope;
-};	
+};
 
 
 // RAVEN END

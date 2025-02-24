@@ -74,7 +74,7 @@ private:
 
 	sdEffect			effect;
 	bool				effectRunning;
-	
+
 };
 
 template < class ParticleClass > void sdPrecipitationSystem<ParticleClass>::PresentRenderEntity( void ) {
@@ -154,7 +154,7 @@ public:
 	static const int NUM_INSTANCE_INDEXES = 3;
 
 	void StaticInitializeAndRender( sdTemplatedParticleSystem<sdFlake, sdPrecipArgs> *sys ) {
-		srfTriangles_t * tri = sys->GetTriSurf(); 
+		srfTriangles_t * tri = sys->GetTriSurf();
 		idDrawVert *verts = tri->verts + tri->numVerts;
 		for ( int i=0; i<3; i++ ) {
 			verts[i].color[0] = 0xFF;
@@ -277,7 +277,7 @@ public:
 		}*/
 
 		size = dist * height;
-		tri = sys->GetTriSurf(); 
+		tri = sys->GetTriSurf();
 		face = tri->verts + tri->numVerts;
 
 		left = sys->GetViewAxis()[1];
@@ -341,7 +341,7 @@ public:
 	static const int NUM_INSTANCE_INDEXES = 3;
 
 	void StaticInitializeAndRender( sdTemplatedParticleSystem<sdDrop, sdPrecipArgs> *sys ) {
-		srfTriangles_t * tri = sys->GetTriSurf(); 
+		srfTriangles_t * tri = sys->GetTriSurf();
 		idDrawVert *verts = tri->verts + tri->numVerts;
 		for ( int i=0; i<3; i++ ) {
 			verts[i].color[0] = 0xFF;
@@ -487,7 +487,7 @@ public:
 		right.Normalize();
 
 		// dist = 1.0;
-		tri = sys->GetTriSurf(); 
+		tri = sys->GetTriSurf();
 		face = tri->verts + tri->numVerts;
 
 		face->xyz = finish;
@@ -549,7 +549,7 @@ public:
 	static const int NUM_INSTANCE_INDEXES = 6;
 
 	void StaticInitializeAndRender( sdTemplatedParticleSystem<sdSplash, sdPrecipArgs> *sys ) {
-		srfTriangles_t * tri = sys->GetTriSurf(); 
+		srfTriangles_t * tri = sys->GetTriSurf();
 		idDrawVert *verts = tri->verts + tri->numVerts;
 		for ( int i=0; i<4; i++ ) {
 			verts[i].color[0] = 0xFF;
@@ -566,10 +566,10 @@ public:
 				break;
 			case 2:
 				verts[i].SetST( 0.0f, 0.0f );
-				break;	
+				break;
 			case 3:
 				verts[i].SetST( 1.0f, 0.0f );
-				break;	
+				break;
 			}
 		}
 
@@ -585,7 +585,7 @@ public:
 		if ( position.z < sys->params.currentWaterHeight ) {
 			position.z = sys->params.currentWaterHeight;
 		}
-		
+
 		velocity = sys->params.p.windScale * sdAtmosphere::currentAtmosphere->GetWindVector();
 		velocity.z = (sys->params.p.fallMin +  idRandom::StaticRandom().RandomFloat() * ( sys->params.p.fallMax - sys->params.p.fallMin ));
 		float blend = idRandom::StaticRandom().RandomFloat(); // weight and height are related
@@ -610,7 +610,7 @@ public:
 		dropTime -= gameLocal.msec;
 
 		position += velocity * (gameLocal.msec * 0.001f);
-		size += weight * (gameLocal.msec * 0.001f); 
+		size += weight * (gameLocal.msec * 0.001f);
 
 		// Snow lives in a box 2*MAX_PRECIPITATION_DISTANCE long and wide and 1.5*MAX_PRECIPITATION_DISTANCE high
 		// This wastes less snow particles in the common case of a player on level ground
@@ -634,7 +634,7 @@ public:
 			wrapped = true;
 		}
 		position = local + sys->GetViewOrg();
-		
+
 		if ( wrapped ) {
 			position.z = sys->params.GetGroundHeightAtPos( position, sys->GetRenderEntity().origin ) + sys->params.p.tumbleStrength;
 			if ( position.z < (sys->params.currentWaterHeight + sys->params.p.tumbleStrength ) ) {
@@ -658,7 +658,7 @@ public:
 		}
 
 		start = position;
-		tri = sys->GetTriSurf(); 
+		tri = sys->GetTriSurf();
 		face = tri->verts + tri->numVerts;
 
 		left = sys->GetViewAxis()[1];

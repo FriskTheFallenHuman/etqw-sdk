@@ -1,7 +1,7 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 
@@ -266,7 +266,7 @@ bool idWLexer::SkipBracedSectionExact( bool parseFirstBrace ) {
 		}
 	}
 
-	depth = 1;	
+	depth = 1;
 
 	while( depth ) {
 		if ( !*idWLexer::script_p ) {
@@ -275,13 +275,13 @@ bool idWLexer::SkipBracedSectionExact( bool parseFirstBrace ) {
 
 		char c = *(idWLexer::script_p++);
 
-		switch ( c ) {			
+		switch ( c ) {
 			case L'{':
 				depth++;
 				break;
 			case L'}':
 				depth--;
-				break;				
+				break;
 		}
 	}
 	return true;
@@ -442,7 +442,7 @@ bool idWLexer::ReadEscapeCharacter( wchar_t* ch ) {
 		}
 #endif
 	}
-	
+
 	// step over the escape character or the last digit of the number
 	script_p++;
 	// store the escape character

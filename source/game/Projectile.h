@@ -15,7 +15,7 @@
 ===============================================================================
 
   idProjectile
-	
+
 ===============================================================================
 */
 
@@ -168,7 +168,7 @@ protected:
 
 	const sdProgram::sdFunction*		targetingFunction;
 
-	const sdProgram::sdFunction*		onPostThink;	
+	const sdProgram::sdFunction*		onPostThink;
 	idLinkList< idEntity >				postThinkEntNode;
 
 protected:
@@ -191,7 +191,7 @@ protected:
 ===============================================================================
 
   idProjectile_RigidBody
-	
+
 ===============================================================================
 */
 
@@ -201,7 +201,7 @@ public :
 
 							idProjectile_RigidBody( void );
 	virtual ~idProjectile_RigidBody( void );
-							
+
 	virtual void			Spawn( void );
 	virtual void			InitPhysics( void );
 	virtual void			InitLaunchPhysics( float launchPower, const idVec3& origin, const idMat3& axes, const idVec3& pushVelocity );

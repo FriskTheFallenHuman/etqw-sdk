@@ -1,11 +1,11 @@
 // Copyright (C) 2007 Id Software, Inc.
 //
 
-#include "../precompiled.h"
+#include "Game_Precompiled.h"
 #pragma hdrstop
 
 #include "wiki.h"
-#include "../script/Script_Program.h"
+#include "script/Script_Program.h"
 
 /*
 ==================
@@ -200,7 +200,7 @@ void sdWikiFormatter::ParseDollarExpressions( const char* input, sdStringBuilder
 			}
 		}
 		if ( j == len ) {
-			gameLocal.Error( "sdWikiFormatter::ParseDollarExpressions Failed to parse '%s'", input ); 
+			gameLocal.Error( "sdWikiFormatter::ParseDollarExpressions Failed to parse '%s'", input );
 		} else {
 			i = j + 1;
 		}
@@ -824,7 +824,7 @@ void sdWikiFormatter::BuildScriptFileList( void ) {
 	}
 
 	for ( int i = 0; i < program->NumFilenames(); i++ ) {
-		info += '*'; 
+		info += '*';
 		AddScriptFileLink( program->GetFilename( i ), info );
 		info += "\r\n";
 	}
@@ -856,7 +856,7 @@ void sdWikiFormatter::BuildScriptClassInfo( const sdProgram::sdTypeInfo* type ) 
 
 	AddHeader( "Implemented In" );
 	for ( int i = 0; i < files.Num(); i++ ) {
-		info += '*'; 
+		info += '*';
 		AddScriptFileLink( files[ i ].c_str(), info );
 		info += "\r\n";
 	}

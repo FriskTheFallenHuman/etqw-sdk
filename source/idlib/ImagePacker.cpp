@@ -44,7 +44,7 @@ public:
 };
 
 sdImagePackerNode* sdImagePackerNode::Insert( const sdSubImage &image ) {
-	
+
 	if ( children[0] ) {
 		sdImagePackerNode*newNode = children[0]->Insert( image );
 		if ( newNode ) return newNode;
@@ -58,7 +58,7 @@ sdImagePackerNode* sdImagePackerNode::Insert( const sdSubImage &image ) {
 
 		// If there is not enough space we will expand at the highest level by doubling the image so just
 		// return null for now
-		if ( ( rect.width < image.width ) || ( rect.height < image.height ) ) { 
+		if ( ( rect.width < image.width ) || ( rect.height < image.height ) ) {
 			// Try again with flipped image dimensions
 			if ( image.x >= 0 /* && tryFlipping */ ) {
 				sdSubImage flip;
@@ -73,7 +73,7 @@ sdImagePackerNode* sdImagePackerNode::Insert( const sdSubImage &image ) {
 		}
 
 		// Exact match
-		if ( ( rect.width == image.width ) && ( rect.height == image.height ) ) { 
+		if ( ( rect.width == image.width ) && ( rect.height == image.height ) ) {
 			isStuffed = true;
 			return this;
 		}
@@ -137,7 +137,7 @@ sdImagePacker::sdImagePacker( int width, int height ) {
 	root->rect.x = 0;
 	root->rect.width = idMath::CeilPowerOfTwo( width );
 	root->rect.y = 0;
-	root->rect.height = idMath::CeilPowerOfTwo( height );	
+	root->rect.height = idMath::CeilPowerOfTwo( height );
 
 }
 
@@ -162,7 +162,7 @@ sdImagePacker &sdImagePacker::operator= ( const sdImagePacker &other ) {
 }
 
 sdSubImage sdImagePacker::PackImage( int width, int height, bool expandIfFull ) {
-	
+
 	// First time, create a root node
 	if ( !root ) {
 		root = new sdImagePackerNode;
@@ -171,13 +171,13 @@ sdSubImage sdImagePacker::PackImage( int width, int height, bool expandIfFull ) 
 		root->rect.y = 0;
 		root->rect.height = idMath::CeilPowerOfTwo( height );
 	}
-	
+
 	// Insert and optionally enlarge the image
 	sdSubImage arg;
 	arg.x = arg.y = 0;
 	arg.width = width;
 	arg.height = height;
-	
+
 	sdImagePackerNode *resultNode = root->Insert( arg );
 
 	if ( !resultNode ) {
@@ -206,7 +206,7 @@ sdSubImage sdImagePacker::PackImage( int width, int height, bool expandIfFull ) 
 			newChild1->rect.width = newRoot->rect.width - usedWidth;
 			root->StuffUnderRect( newChild1->rect ); // Dont let the holes in root use this...
 			root->rect.width = usedWidth;
-			
+
 			newRoot->children[0] = root;
 			newRoot->children[1] = newChild1;
 			root = newRoot;
@@ -219,9 +219,9 @@ sdSubImage sdImagePacker::PackImage( int width, int height, bool expandIfFull ) 
 
 	// Expand if needed
 	while ( expandIfFull && !resultNode ) {
-		
+
 		bool isHorizontal = false;
-		// Is the topmost split a horizontal or a vertical one? 
+		// Is the topmost split a horizontal or a vertical one?
 		if ( root->children[0] && ( root->children[0]->rect.x == root->children[1]->rect.x ) ) {
 			isHorizontal = true;
 		}
@@ -282,16 +282,16 @@ static void DrawRect( byte *data, int width, int height, sdSubImage rect ) {
 
 	for ( int i=rect.x; i<=x2; i++ ) {
 		pixel = data + ( rect.y*width+i )*4;
-		pixel[0] = 255; pixel[1] = pixel[2] = pixel[3] = 0; 
+		pixel[0] = 255; pixel[1] = pixel[2] = pixel[3] = 0;
 		pixel = data + ( y2*width+i )*4;
-		pixel[0] = 255; pixel[1] = pixel[2] = pixel[3] = 0; 
+		pixel[0] = 255; pixel[1] = pixel[2] = pixel[3] = 0;
 	}
 
 	for ( int j=rect.y; j<=y2; j++ ) {
 		pixel = data + ( j*width+rect.x )*4;
-		pixel[0] = 255; pixel[1] = pixel[2] = pixel[3] = 0; 
+		pixel[0] = 255; pixel[1] = pixel[2] = pixel[3] = 0;
 		pixel = data + ( j*width+x2 )*4;
-		pixel[0] = 255; pixel[1] = pixel[2] = pixel[3] = 0; 
+		pixel[0] = 255; pixel[1] = pixel[2] = pixel[3] = 0;
 	}
 }
 
@@ -304,7 +304,7 @@ static void CheckerRect( byte *data, int width, int height, sdSubImage rect ) {
 		for ( int j=rect.y; j<=y2; j++ ) {
 			pixel = data + ( j*width+i )*4;
 			if ( ((j/5) + (i/5)) & 1 ) {
-				pixel[2] = 255; pixel[0] = pixel[1] = pixel[3] = 0; 
+				pixel[2] = 255; pixel[0] = pixel[1] = pixel[3] = 0;
 			}
 		}
 	}

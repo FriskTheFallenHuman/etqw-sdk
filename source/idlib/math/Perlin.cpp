@@ -2,7 +2,7 @@
 //
 
 
-#include "../precompiled.h"
+#include "precompiled.h"
 #pragma hdrstop
 
 sdPerlin::sdPerlin( float _persistence, int _octaves, float _frequency ) {
@@ -34,7 +34,7 @@ float sdPerlin::RawNoise( int x, int y, int z ) {
 	//if (alternative)
 	//	return (1 - ( ( n * ( n * n * 19417 + 189851) + 4967243) & 4945007) / 3354521.0);
 	//else
-	return   1 - ( (n *  ( n * n * 15731 + 789221) + 1376312589) & 0x7fffffff ) / 1073741824.0;    
+	return   1 - ( (n *  ( n * n * 15731 + 789221) + 1376312589) & 0x7fffffff ) / 1073741824.0;
 }
 
 /*
@@ -56,7 +56,7 @@ float sdPerlin::InterpolatedNoise (float x, float y, float z) {
 	ix = static_cast< int >( x );
 	iy = static_cast< int >( y );
 	iz = static_cast< int >( z );
-	
+
 	fx = x - ix;
 	fy = y - iy;
 	fz = z - iz;
@@ -138,7 +138,7 @@ void sdPerlin2::Init( void ) {
 			for ( j = 0; j < 3; j++ ) {
 				v[ j ] = ( ( rand() % ( PERLIN_RANDOM_SAMPLES * 2 ) ) - PERLIN_RANDOM_SAMPLES ) / static_cast< float >( PERLIN_RANDOM_SAMPLES );
 			}
-			s = v * v;			
+			s = v * v;
 		} while( s > 1.f && s != 0.f );
 		s = 1 / sqrt( s );
 		for ( j = 0; j < 3; j++ ) {
@@ -278,8 +278,8 @@ ID_INLINE float Dot3( float rx, float ry, float rz, float* q ) {
 /////////////////////////////////////////////////////////////////////
 // return a random float in [-1,1]
 
-ID_INLINE float sdPerlin2::RandNoiseFloat() { 
-	return (float)((rand() % (NOISE_WRAP_INDEX + NOISE_WRAP_INDEX)) - 
+ID_INLINE float sdPerlin2::RandNoiseFloat() {
+	return (float)((rand() % (NOISE_WRAP_INDEX + NOISE_WRAP_INDEX)) -
 		NOISE_WRAP_INDEX) / NOISE_WRAP_INDEX;
 };
 
@@ -296,7 +296,7 @@ void sdPerlin2::Normalize2d(float vector[2]) {
 // convert a 3D vector into unit length
 
 void sdPerlin2::Normalize3d(float vector[3]) {
-	float length = sqrt((vector[0] * vector[0]) + 
+	float length = sqrt((vector[0] * vector[0]) +
 		(vector[1] * vector[1]) +
 		(vector[2] * vector[2]));
 	vector[0] /= length;
@@ -447,16 +447,16 @@ float sdPerlin2::Noise3d(float pos[2]) {
 /////////////////////////////////////////////////////////////////////
 // you can call noise component-wise, too.
 
-float sdPerlin2::Noise(float x) { 
+float sdPerlin2::Noise(float x) {
 	return Noise1d(&x);
 }
 
-float sdPerlin2::Noise(float x, float y) { 
+float sdPerlin2::Noise(float x, float y) {
 	float p[2] = { x, y };
-	return Noise2d(p); 
+	return Noise2d(p);
 }
 
-float sdPerlin2::Noise(float x, float y, float z) { 
+float sdPerlin2::Noise(float x, float y, float z) {
 	float p[3] = { x, y, z };
 	return Noise3d(p);
 }
@@ -489,7 +489,7 @@ void sdPerlin2::GenerateLookupTables() {
 		// put index into permutationTable[index], we will shuffle later
 		permutationTable[i] = i;
 
-		gradientTable1d[i] = RandNoiseFloat();  
+		gradientTable1d[i] = RandNoiseFloat();
 
 		for (j=0; j<2; j++) { gradientTable2d[i][j] = RandNoiseFloat(); }
 		Normalize2d(gradientTable2d[i]);
@@ -506,7 +506,7 @@ void sdPerlin2::GenerateLookupTables() {
 		permutationTable[j] = temp;
 	}
 
-	// Add the rest of the table entries in, duplicating 
+	// Add the rest of the table entries in, duplicating
 	// indices and entries so that they can effectively be indexed
 	// by unsigned chars.  I think.  Ask Perlin what this is really doing.
 	//
@@ -518,11 +518,11 @@ void sdPerlin2::GenerateLookupTables() {
 		gradientTable1d[NOISE_WRAP_INDEX + i] = gradientTable1d[i];
 
 		for (j=0; j<2; j++) {
-			gradientTable2d[NOISE_WRAP_INDEX + i][j] = gradientTable2d[i][j]; 
+			gradientTable2d[NOISE_WRAP_INDEX + i][j] = gradientTable2d[i][j];
 		}
 
 		for (j=0; j<3; j++) {
-			gradientTable3d[NOISE_WRAP_INDEX + i][j] = gradientTable3d[i][j]; 
+			gradientTable3d[NOISE_WRAP_INDEX + i][j] = gradientTable3d[i][j];
 		}
 	}
 
@@ -532,7 +532,7 @@ void sdPerlin2::GenerateLookupTables() {
 
 ////////////////////////////////////
 
-int sdPerlin3::p[ 512 ] = { 
+int sdPerlin3::p[ 512 ] = {
 	151,160,137,91,90,15,
 	131,13,201,95,96,53,194,233,7,225,140,36,103,30,69,142,8,99,37,240,21,10,23,
 	190, 6,148,247,120,234,75,0,26,197,62,94,252,219,203,117,35,11,32,57,177,33,

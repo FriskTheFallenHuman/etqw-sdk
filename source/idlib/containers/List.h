@@ -55,12 +55,12 @@ public:
 	typedef int				cmp_t( const type *, const type * );
 
 	static const int		DEFAULT_GRANULARITY = 16;
-	
+
 
 	explicit		idList( int newgranularity = DEFAULT_GRANULARITY );
 					idList( const idList &other );
-	
-	template< class Iter >	
+
+	template< class Iter >
 	explicit		idList( Iter begin, Iter end ) :
 						list( NULL ),
 						granularity( DEFAULT_GRANULARITY ) {
@@ -82,7 +82,7 @@ public:
 
 	idList&			operator=( const idList &other );
 	type &			operator[]( int index );
-	const type &	operator[]( int index ) const;	
+	const type &	operator[]( int index ) const;
 
 	void			Condense( void );									// resizes list to exactly the number of elements it contains
 	void			Resize( int newsize );								// resizes list to the given number of elements
@@ -96,15 +96,15 @@ public:
 	int				Append( const type & obj );							// append element
 	int				Append( const idList &other );						// append list
 	int				AddUnique( const type & obj );						// add unique element
-	int				Insert( const type & obj, int index = 0 );			// insert the element at the given index	
-	
-	int				FindIndex( const type & obj ) const;				// find the index for the given element	
+	int				Insert( const type & obj, int index = 0 );			// insert the element at the given index
+
+	int				FindIndex( const type & obj ) const;				// find the index for the given element
 	int				FindIndexBinary ( const type & key, cmp_t *compare = ( cmp_t * )&idListSortCompare<type> ) const;
 	type *			FindElement( const type & obj ) const;				// find pointer to the given element
 	int				FindNull( void ) const;								// find the index for the first NULL pointer in the list
 
 	void			Fill( int num, const type & obj );					// resize the list, if neccessary and set all items to obj
-	
+
 	int				IndexOf( const type *obj ) const;					// returns the index for the pointer to an element in the list
 	bool			RemoveIndex( int index );							// remove the element at the given index
 	bool			RemoveIndexFast( int index );						// remove the element at the given index and put the last element into its spot
@@ -131,7 +131,7 @@ public:
 
 	// Comparison functions
 	// find an object that passes the predicate
-	// IMPORTANT: unlike Find, this returns End() if the element is not found, NOT NULL	
+	// IMPORTANT: unlike Find, this returns End() if the element is not found, NOT NULL
 	template< class Cmp >
 	Iterator		FindIteratorIf( Cmp predicate ) {
 						Iterator begin = Begin();
@@ -162,7 +162,7 @@ public:
 
 	// Comparison functions
 	// find an object that passes the predicate
-	// IMPORTANT: unlike Find, this returns End() if the element is not found, NOT NULL	
+	// IMPORTANT: unlike Find, this returns End() if the element is not found, NOT NULL
 	template< class Cmp >
 	Iterator		FindIteratorIf( const type& element, const Cmp predicate ) {
 						Iterator begin = Begin();
@@ -227,7 +227,7 @@ public:
 	Iterator		FindIteratorBinary( const type& searchElement, Cmp compare ) {
 						return sdBinarySearch( searchElement, Begin(), End(), compare );
 					}
-	
+
 	// IMPORTANT: unlike FindElement, this returns End() if the element is not found, NOT NULL
 	template< class Cmp >
 	ConstIterator	FindIteratorBinary( const type& searchElement, Cmp compare ) const {
@@ -267,7 +267,7 @@ idList<type>::idList( const idList &other )
 ================
 */
 template< class type >
-ID_INLINE idList<type>::idList( const idList &other ) 
+ID_INLINE idList<type>::idList( const idList &other )
 	:	list( NULL ) {
 	*this = other;
 }
@@ -659,7 +659,7 @@ ID_INLINE const type &idList<type>::operator[]( int index ) const {
 /*
 ================
 idList<type>::operator[]
-	
+
 Access operator.	 Index must be within range or an assert will be issued in debug builds.
 Release builds do no range checking.
 ================
@@ -733,7 +733,7 @@ ID_INLINE int idList<type>::Append( type const & obj ) {
 ================
 idList<type>::Insert
 
-Increases the size of the list by at least one element if necessary 
+Increases the size of the list by at least one element if necessary
 and inserts the supplied data into it.
 
 Returns the index of the new element.
@@ -798,8 +798,8 @@ ID_INLINE int idList<type>::Append( const idList &other ) {
 		Resize( granularity + n );
 	} else {
 		Resize( num + n );
-	}	
-	
+	}
+
 	for ( int i = 0; i < n; i++ ) {
 		Append( other[i] );
 	}
@@ -916,7 +916,7 @@ ID_INLINE int idList<type>::FindNull( void ) const {
 idList<type>::IndexOf
 
 Takes a pointer to an element in the list and returns the index of the element.
-This is NOT a guarantee that the object is really in the list. 
+This is NOT a guarantee that the object is really in the list.
 Function will assert in debug builds if pointer is outside the bounds of the list,
 but remains silent in release builds.
 ================
@@ -956,7 +956,7 @@ ID_INLINE bool idList<type>::RemoveIndex( int index ) {
 
 	num--;
 	for( i = index; i < num; i++ ) {
-		list[ i ] = list[ i + 1 ];		
+		list[ i ] = list[ i + 1 ];
 	}
 
 	return true;
@@ -968,10 +968,10 @@ ID_INLINE bool idList<type>::RemoveIndex( int index ) {
 idList<type>::RemoveIndexFast
 
 Removes the element at the specified index and moves the last element into
-it's spot, rather than moving the whole array down by one.  Of course, this 
+it's spot, rather than moving the whole array down by one.  Of course, this
 doesn't maintain the order of elements!
-The number of elements in the list is reduced by one.  Returns false if the 
-index is outside the bounds of the list. Note that the element is not destroyed, 
+The number of elements in the list is reduced by one.  Returns false if the
+index is outside the bounds of the list. Note that the element is not destroyed,
 so any memory used by it may not be freed until the destruction of the list.
 ===============
 */
@@ -985,15 +985,15 @@ ID_INLINE bool idList< type >::RemoveIndexFast( int index ) {
 		return false;
 	}
 
-	num--;	
+	num--;
 
 	// nothing to do
 	if( index == num )  {
 		return true;
 	}
 
-	list[ index ] = list[ num ];	
-	
+	list[ index ] = list[ num ];
+
 	return true;
 }
 
@@ -1014,7 +1014,7 @@ ID_INLINE bool idList<type>::Remove( type const & obj ) {
 	if ( index >= 0 ) {
 		return RemoveIndex( index );
 	}
-	
+
 	return false;
 }
 
@@ -1035,7 +1035,7 @@ ID_INLINE bool idList<type>::RemoveFast( type const & obj ) {
 	if ( index >= 0 ) {
 		return RemoveIndexFast( index );
 	}
-	
+
 	return false;
 }
 

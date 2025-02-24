@@ -4,8 +4,8 @@
 #ifndef __GAME_VEHICLES_PATHING_H__
 #define __GAME_VEHICLES_PATHING_H__
 
-#include "../Entity.h"
-#include "../ScriptEntity.h"
+#include "Entity.h"
+#include "ScriptEntity.h"
 
 typedef idCurve_CubicBezier< idVec3 > splineSection_t;
 
